@@ -3,6 +3,9 @@
 remote="$1"
 url="$2"
 root=$(git rev-parse --show-toplevel)
+git rev-list HEAD --count > $root/stats/commits
+git log -1 --pretty=%B > $root/stats/lastmessage
+	
 scp teggers@teggers.eu:public_html/index.php ./
 sed -i "s/<p>Number of times compiled: <b>[0-9]\+<\/b><\/p>/<p>Number of times compiled: <b>$(cat $root/stats/compiled)<\/b><\/p>/g" index.php
 sed -i "s/<p>Number of pages: <b>[0-9]\+<\/b><\/p>/<p>Number of pages: <b>$(cat $root/stats/pages)<\/b><\/p>/g" index.php
