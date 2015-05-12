@@ -1,0 +1,132 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: thesis_pdf.aux
+A level-1 auxiliary file: ./bose_gasses/chapter.aux
+A level-1 auxiliary file: ./model/chapter.aux
+A level-1 auxiliary file: ./numerics/chapter.aux
+A level-1 auxiliary file: ./wake/chapter.aux
+A level-1 auxiliary file: ./shin/chapter.aux
+A level-1 auxiliary file: appendix.aux
+The style file: jfm.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "taneda41"
+Warning--I didn't find a database entry for "taneda112"
+Warning--I didn't find a database entry for "nagib"
+Warning--I didn't find a database entry for "kwon_moon_14"
+Warning--I didn't find a database entry for "Tabeling"
+Warning--I didn't find a database entry for "Salort"
+Warning--I didn't find a database entry for "Nore"
+Warning--I didn't find a database entry for "Kobayashi"
+Warning--I didn't find a database entry for "Laurie"
+Warning--I didn't find a database entry for "Lvov"
+Warning--I didn't find a database entry for "Frisch"
+Warning--I didn't find a database entry for "barenghi"
+Warning--I didn't find a database entry for "VanSciver1999"
+Warning--I didn't find a database entry for "VanSciver2005"
+Warning--I didn't find a database entry for "sergeev09"
+Warning--I didn't find a database entry for "Hanninen"
+Warning--I didn't find a database entry for "Fujiyama"
+Warning--I didn't find a database entry for "goto08"
+Warning--I didn't find a database entry for "frisch92"
+Warning--I didn't find a database entry for "saito10"
+Warning--I didn't find a database entry for "jma00"
+Warning--I didn't find a database entry for "nore93"
+Warning--I didn't find a database entry for "jma99"
+Warning--I didn't find a database entry for "win00"
+Warning--I didn't find a database entry for "huepe00"
+Warning--I didn't find a database entry for "zwerger00"
+Warning--I didn't find a database entry for "crescimanno00"
+Warning--I didn't find a database entry for "berloff2000"
+Warning--I didn't find a database entry for "rica2001"
+Warning--I didn't find a database entry for "pham2004"
+Warning--I didn't find a database entry for "jackson98"
+Warning--I didn't find a database entry for "fujimoto11"
+Warning--I didn't find a database entry for "aioi11"
+Warning--I didn't find a database entry for "el06"
+Warning--I didn't find a database entry for "carusotto06"
+Warning--I didn't find a database entry for "Raman"
+Warning--I didn't find a database entry for "Onofrio"
+Warning--I didn't find a database entry for "Inouye"
+Warning--I didn't find a database entry for "Neely"
+Warning--I didn't find a database entry for "Pethick"
+Warning--I didn't find a database entry for "Donnelly"
+Warning--I didn't find a database entry for "NozieresPines"
+Warning--I didn't find a database entry for "win01"
+Warning--I didn't find a database entry for "white12"
+Warning--I didn't find a database entry for "and13"
+Warning--I didn't find a database entry for "bagg12"
+Warning--I didn't find a database entry for "winiecki99"
+Warning--I didn't find a database entry for "wacks"
+Warning--I didn't find a database entry for "blaz08"
+Warning--I didn't find a database entry for "brad05"
+Warning--I didn't find a database entry for "Gorlitz"
+Warning--I didn't find a database entry for "fos10"
+Warning--I didn't find a database entry for "white_anderson_14"
+Warning--I didn't find a database entry for "barenghi_skrbek_14"
+Warning--I didn't find a database entry for "barenghi_donnelly_01"
+Warning--I didn't find a database entry for "henn_seman_09"
+Warning--I didn't find a database entry for "parker2005"
+Warning--I didn't find a database entry for "middelkamp"
+Warning--I didn't find a database entry for "neely_bradley_13"
+Warning--I didn't find a database entry for "frisch_92"
+Warning--I didn't find a database entry for "delgado"
+Warning--I didn't find a database entry for "parker2008"
+Warning--I didn't find a database entry for "jackson_proukakis_09"
+Warning--I didn't find a database entry for "shin_private"
+Warning--I didn't find a database entry for "choi_morgan_98"
+Warning--I didn't find a database entry for "tsubota_kasamatsu_02"
+Warning--I didn't find a database entry for "madarassy_barenghi_08"
+Warning--I didn't find a database entry for "allen_zaremba_13"
+Warning--I didn't find a database entry for "yan_proukakis_14"
+Warning--I didn't find a database entry for "jackson_mccann_00"
+Warning--I didn't find a database entry for "sasaki_suzuki_10"
+Warning--I didn't find a database entry for "stagg_parker_14"
+Warning--I didn't find a database entry for "white_barenghi_12"
+Warning--I didn't find a database entry for "reeves_billam_13"
+Warning--I didn't find a database entry for "nazarenko_onorato_07"
+Warning--I didn't find a database entry for "rorai_skreenivasan_12"
+Warning--I didn't find a database entry for "prabhakar_singh_13"
+Warning--I didn't find a database entry for "leadbeater"
+Warning--I didn't find a database entry for "zuccher"
+Warning--I didn't find a database entry for "powis"
+You've used 4 entries,
+            2793 wiz_defined-function locations,
+            791 strings with 6522 characters,
+and the built_in function-call counts, 1646 in all, are:
+= -- 169
+> -- 40
+< -- 4
++ -- 16
+- -- 12
+* -- 126
+:= -- 299
+add.period$ -- 8
+call.type$ -- 4
+change.case$ -- 23
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 81
+empty$ -- 143
+format.name$ -- 16
+if$ -- 331
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 16
+num.names$ -- 16
+pop$ -- 20
+preamble$ -- 1
+purify$ -- 20
+quote$ -- 0
+skip$ -- 55
+stack$ -- 0
+substring$ -- 119
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 33
+warning$ -- 0
+while$ -- 18
+width$ -- 0
+write$ -- 46
+(There were 80 warnings)

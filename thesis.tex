@@ -1,0 +1,122 @@
+%-----------
+% thesis.tex
+%-----------
+% This is a template which hopefully is useful to anyone putting together their
+% thesis.  It is usually a good idea to have one main file (such as this) which
+% includes all your chapters.  That way you can work on separate chapters
+% without having to compile your whole thesis.  I would also recommend not
+% calling your files chap1.tex, chap2.tex etc., since you are bound to want to
+% change the order around, and then the numberings will just cause confusion!
+% My thesis can be downloaded from my website to see how this template could be
+% used (http://www.staff.ncl.ac.uk/a.j.youd/), or you can e-mail me
+% (anthony.youd@newcastle.ac.uk).  Questions/comments to this address as well.
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% Set the class and font size.  The article class does not allow chapters, so
+% you'll want to avoid that.  I used 11pt for final submission.
+\documentclass[11pt]{report}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% Set the left and right margins.  Remember, you will need to leave more space
+% on the left, to allow for binding, when it comes to submission.  You can
+% easily change the margins as you like, but I think there must be at least a
+% 30mm margin on the binding edge.
+%
+% One-sided.
+\usepackage[a4paper,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+%
+% Two-sided.
+%\usepackage[a4paper,twoside,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+%
+% Centred.
+%\usepackage[a4paper,left=30mm,right=30mm,top=40mm,bottom=35mm]{geometry}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% Uncomment the two lines below if you would prefer blank lines for paragraph
+% breaks, rather than indents.
+%\setlength{\parindent}{0em}
+%\setlength{\parskip}{1ex}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% This line prevents LaTeX complaining about \headheight being too small.
+\setlength{\headheight}{15pt}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% If you only want to include certain chapters in the final output, do
+% something like the commented line below.  Note that the entire document must
+% have been compiled at least once for references to work correctly.
+%\includeonly{chapter}
+%------------------------------------------------------------------------------
+
+% The masthesis style file itself.  Many additional packages are already
+% defined in the style file (inputs/masthesis.sty).  Either add your own
+% packages there, or below the following line.
+\usepackage{masthesis}
+
+% One-and-a-half or double-line spacing.  I used 1.5 for final submission.
+\onehalfspacing
+%\doublespacing
+
+\begin{document}
+
+  \phdtitle{Numerical Study of Vortices and Turbulence in Ultra-cold Bose Gases and Superfluid Helium} % Title.
+           {George William Stagg}          % Author.
+           {fig/shield}                 % Graphic for the title page.
+           {June $2016$}                % Date.
+
+  \thispagestyle{empty}
+  \cleardoublepage
+
+  %\input{dedication}                    % Optional dedication.
+
+  \input{acknowledge}                   % Acknowledgements.
+
+  \input{abstract}                      % Abstract.
+
+  \pagenumbering{roman}                 % Change the page numbering style for
+                                        % Table of Contents and Lists.
+  \microtypesetup{protrusion=false}
+  \tableofcontents
+
+  \listoffigures
+
+  \listoftables
+  \microtypesetup{protrusion=true}
+
+  \clearpage                            % End the current page making sure all
+  \thispagestyle{empty}                 % tables/figures are printed.
+  \cleardoublepage                      % Necessary for correct page numbering.
+
+  \pagenumbering{arabic}                % Reset the page numbering style.
+
+  \part{Introduction}
+  \include{./bose_gasses/chapter} 
+  \include{./model/chapter}
+  \include{./numerics/chapter} 
+  \part{Quantum Analogs of Classical Wakes}
+  \include{./wake/chapter}                     % A chapter.
+
+  \part{Generation and Decay of Two Dimensional Quantum Turbulence}
+  \include{./shin/chapter} % Another chapter.
+  
+  \part{Superfluid Flow Around Rough Obstacles and Boundaries}
+
+  \appendix
+
+  \include{appendix}                    % An appendix.
+
+  % Uncomment the line below if you want your Bibliography to appear in the
+  % table of contents.
+  %\addcontentsline{toc}{chapter}{Bibliography}
+  \bibliography{references}             % References.
+  \bibliographystyle{jfm}
+  \nocite{Cou90}                        % How to make a reference appear in the
+                                        % bibliography when not referenced in
+                                        % the text.
+
+\end{document}

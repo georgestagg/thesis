@@ -1,0 +1,21 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Chandrasekhar(1961)]{Cha61}
+{\sc Chandrasekhar, S.} 1961 {\em Hydrodynamic and hydromagnetic stability\/}.
+  Clarendon.
+
+\bibitem[Couette(1890)]{Cou90}
+{\sc Couette, M.~F.~A.} 1890 {\'Etudes} sur le frottement des liquides. {\em
+  Annales de Chimie et de Physique\/} {\bf 21}, 433--510.
+
+\bibitem[Donnelly(1964)]{Don64}
+{\sc Donnelly, R.~J.} 1964 Experiments of the stability of viscous flows
+  between rotating cylinders. {III}. {Enhancement} of stability by modulation.
+  {\em Proc.~R.~Soc.~Lond.~A\/} {\bf 281}, 130--139.
+
+\bibitem[Taylor(1923)]{Tay23}
+{\sc Taylor, G.~I.} 1923 Stability of a viscous liquid contained between two
+  rotating cylinders. {\em Proc.~R.~Soc.~Lond.~A\/} {\bf 223}, 289--343.
+
+\end{thebibliography}
