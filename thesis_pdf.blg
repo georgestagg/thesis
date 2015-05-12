@@ -1,4 +1,5 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis_pdf.aux
 A level-1 auxiliary file: ./bose_gasses/chapter.aux
 A level-1 auxiliary file: ./model/chapter.aux
@@ -11,7 +12,6 @@ Database file #1: references.bib
 Warning--I didn't find a database entry for "taneda41"
 Warning--I didn't find a database entry for "taneda112"
 Warning--I didn't find a database entry for "nagib"
-Warning--I didn't find a database entry for "kwon_moon_14"
 Warning--I didn't find a database entry for "Tabeling"
 Warning--I didn't find a database entry for "Salort"
 Warning--I didn't find a database entry for "Nore"
@@ -67,6 +67,7 @@ Warning--I didn't find a database entry for "henn_seman_09"
 Warning--I didn't find a database entry for "parker2005"
 Warning--I didn't find a database entry for "middelkamp"
 Warning--I didn't find a database entry for "neely_bradley_13"
+Warning--I didn't find a database entry for "kwon_moon_14"
 Warning--I didn't find a database entry for "frisch_92"
 Warning--I didn't find a database entry for "delgado"
 Warning--I didn't find a database entry for "parker2008"

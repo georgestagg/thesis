@@ -36,6 +36,8 @@ LATEX		= pdflatex
 # master document should be listed first.
 SOURCES		= $(OBJECT).tex $(wildcard *.tex) $(wildcard ./*/*.tex)
 
+TMP=$(shell cat stats/compiled)
+
 #---- IMPLICIT RULES ----------------------------------------------------------
 .SUFFIXES: .tex .dvi .ps .pdf .ps.gz .bbl
 
@@ -55,6 +57,12 @@ ifeq ($(LATEX), pdflatex)
 	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
 	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
 	mv $*_pdf.pdf $*.pdf
+	echo "$(TMP) + 1" | bc > stats/compiled
+	pdfinfo thesis.pdf | grep "Pages" | awk '{printf $$2}' > stats/pages
+	pdftotext thesis.pdf - | tr " " "\n" | grep -E "^[A-Za-z]+$$" | wc -l > stats/words
+	pdftotext thesis.pdf - | grep -oE "Figure [0-9]+.[0-9]+" | sort | uniq | wc -l > stats/figures
+	git rev-list HEAD --count > stats/commits
+	git log -1 --pretty=%B > stats/lastmessage
 endif
 
 .tex.dvi:
