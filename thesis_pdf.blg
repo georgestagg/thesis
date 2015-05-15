@@ -6,12 +6,14 @@ A level-1 auxiliary file: ./model/chapter.aux
 A level-1 auxiliary file: ./numerics/chapter.aux
 A level-1 auxiliary file: ./wake/chapter.aux
 A level-1 auxiliary file: ./shin/chapter.aux
+A level-1 auxiliary file: ./nonequib/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: jfm.bst
 Database file #1: references.bib
 Warning--I didn't find a database entry for "taneda41"
 Warning--I didn't find a database entry for "taneda112"
 Warning--I didn't find a database entry for "nagib"
+Warning--I didn't find a database entry for "kwon_moon_14"
 Warning--I didn't find a database entry for "Tabeling"
 Warning--I didn't find a database entry for "Salort"
 Warning--I didn't find a database entry for "Nore"
@@ -67,7 +69,6 @@ Warning--I didn't find a database entry for "henn_seman_09"
 Warning--I didn't find a database entry for "parker2005"
 Warning--I didn't find a database entry for "middelkamp"
 Warning--I didn't find a database entry for "neely_bradley_13"
-Warning--I didn't find a database entry for "kwon_moon_14"
 Warning--I didn't find a database entry for "frisch_92"
 Warning--I didn't find a database entry for "delgado"
 Warning--I didn't find a database entry for "parker2008"
@@ -91,7 +92,7 @@ Warning--I didn't find a database entry for "zuccher"
 Warning--I didn't find a database entry for "powis"
 You've used 4 entries,
             2793 wiz_defined-function locations,
-            791 strings with 6522 characters,
+            792 strings with 6544 characters,
 and the built_in function-call counts, 1646 in all, are:
 = -- 169
 > -- 40

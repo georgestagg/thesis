@@ -2,7 +2,19 @@
 \label{app:App1}My appendix title}
 \end{chapter}
 \begin{chapter}{
-\label{app:App2}Calculating various properties}
+\label{app:App2}Deriving various properties}
 \section{\label{appsection:energy} Energy}
 \section{\label{appsection:force} Force}
+
+\begin{equation}
+T_{jk} = \rho v_j v_k + p\mathrm{\updelta}_{jk} - \frac{\hbar^2}{4m^2}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln \rho
+\label{eq:stressTensor}
+\end{equation} 
+
+\begin{equation}
+F_k =\frac{\partial}{\partial t} \int_V J_k\,\mathrm{d}V = - \int_V \frac{\partial}{\partial x_j} T_{jk}\,\mathrm{d}V - \int_V \rho \frac{\partial}{\partial x_k} \left( \frac{V}{m} \right)\,\mathrm{d}V
+\label{eq:force}
+\end{equation}
+
+
 \end{chapter}

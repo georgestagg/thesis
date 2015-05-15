@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  12 MAY 2015 17:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  15 MAY 2015 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -284,21 +284,301 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+(/home/a8034837/texmf/tex/latex/l3packages/xfrac.sty
+(/home/a8034837/texmf/tex/latex/l3packages/l3keys2e.sty
+(/home/a8034837/texmf/tex/latex/l3kernel/expl3.sty
+(/home/a8034837/texmf/tex/latex/l3kernel/l3names.sty
+(/home/a8034837/texmf/tex/latex/l3kernel/l3bootstrap.sty
+Package: l3bootstrap 2013/07/28 v4581 L3 Experimental bootstrap code
+)
+Package: l3names 2012/12/07 v4346 L3 Namespace for primitives
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count121
+)
+Package: expl3 2013/10/13 v4597 L3 Experimental code bundle wrapper
+
+(/home/a8034837/texmf/tex/latex/l3kernel/l3basics.sty
+Package: l3basics 2013/07/28 v4581 L3 Basic definitions
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3expan.sty
+Package: l3expan 2013/08/17 v4584 L3 Argument expansion
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3tl.sty
+Package: l3tl 2013/09/16 v4592 L3 Token lists
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3seq.sty
+Package: l3seq 2013/07/28 v4581 L3 Sequences and stacks
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3int.sty
+Package: l3int 2013/08/02 v4583 L3 Integers
+\c_max_int=\count122
+\l_tmpa_int=\count123
+\l_tmpb_int=\count124
+\g_tmpa_int=\count125
+\g_tmpb_int=\count126
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3quark.sty
+Package: l3quark 2013/07/21 v4564 L3 Quarks
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3prg.sty
+Package: l3prg 2013/08/25 v4587 L3 Control structures
+\g__prg_map_int=\count127
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3clist.sty
+Package: l3clist 2013/07/28 v4581 L3 Comma separated lists
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3token.sty
+Package: l3token 2013/08/25 v4587 L3 Experimental token manipulation
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3prop.sty
+Package: l3prop 2013/07/28 v4581 L3 Property lists
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3msg.sty
+Package: l3msg 2013/07/28 v4581 L3 Messages
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3file.sty
+Package: l3file 2013/10/13 v4596 L3 File and I/O operations
+\l_iow_line_count_int=\count128
+\l__iow_target_count_int=\count129
+\l__iow_current_line_int=\count130
+\l__iow_current_word_int=\count131
+\l__iow_current_indentation_int=\count132
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3skip.sty
+Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
+\c_zero_dim=\dimen133
+\c_max_dim=\dimen134
+\l_tmpa_dim=\dimen135
+\l_tmpb_dim=\dimen136
+\g_tmpa_dim=\dimen137
+\g_tmpb_dim=\dimen138
+\c_zero_skip=\skip73
+\c_max_skip=\skip74
+\l_tmpa_skip=\skip75
+\l_tmpb_skip=\skip76
+\g_tmpa_skip=\skip77
+\g_tmpb_skip=\skip78
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3keys.sty
+Package: l3keys 2013/07/28 v4581 L3 Experimental key-value interfaces
+\g__keyval_level_int=\count133
+\l_keys_choice_int=\count134
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3fp.sty
+Package: l3fp 2013/07/09 v4521 L3 Floating points
+\c__fp_leading_shift_int=\count135
+\c__fp_middle_shift_int=\count136
+\c__fp_trailing_shift_int=\count137
+\c__fp_big_leading_shift_int=\count138
+\c__fp_big_middle_shift_int=\count139
+\c__fp_big_trailing_shift_int=\count140
+\c__fp_Bigg_leading_shift_int=\count141
+\c__fp_Bigg_middle_shift_int=\count142
+\c__fp_Bigg_trailing_shift_int=\count143
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3box.sty
+Package: l3box 2013/07/28 v4581 L3 Experimental boxes
+\c_empty_box=\box35
+\l_tmpa_box=\box36
+\l_tmpb_box=\box37
+\g_tmpa_box=\box38
+\g_tmpb_box=\box39
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3coffins.sty
+Package: l3coffins 2012/09/09 v4212 L3 Coffin code layer
+\l__coffin_internal_box=\box40
+\l__coffin_internal_dim=\dimen139
+\l__coffin_offset_x_dim=\dimen140
+\l__coffin_offset_y_dim=\dimen141
+\l__coffin_x_dim=\dimen142
+\l__coffin_y_dim=\dimen143
+\l__coffin_x_prime_dim=\dimen144
+\l__coffin_y_prime_dim=\dimen145
+\c_empty_coffin=\box41
+\l__coffin_aligned_coffin=\box42
+\l__coffin_aligned_internal_coffin=\box43
+\l_tmpa_coffin=\box44
+\l_tmpb_coffin=\box45
+\l__coffin_display_coffin=\box46
+\l__coffin_display_coord_coffin=\box47
+\l__coffin_display_pole_coffin=\box48
+\l__coffin_display_offset_dim=\dimen146
+\l__coffin_display_x_dim=\dimen147
+\l__coffin_display_y_dim=\dimen148
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3color.sty
+Package: l3color 2012/08/29 v4156 L3 Experimental color support
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3luatex.sty
+Package: l3luatex 2013/07/28 v4581 L3 Experimental LuaTeX-specific functions
+\g__cctab_allocate_int=\count144
+\g__cctab_stack_int=\count145
+)
+(/home/a8034837/texmf/tex/latex/l3kernel/l3candidates.sty
+Package: l3candidates 2013/07/24 v4576 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen149
+\l__box_bottom_dim=\dimen150
+\l__box_left_dim=\dimen151
+\l__box_right_dim=\dimen152
+\l__box_top_new_dim=\dimen153
+\l__box_bottom_new_dim=\dimen154
+\l__box_left_new_dim=\dimen155
+\l__box_right_new_dim=\dimen156
+\l__box_internal_box=\box49
+\l__coffin_bounding_shift_dim=\dimen157
+\l__coffin_left_corner_dim=\dimen158
+\l__coffin_right_corner_dim=\dimen159
+\l__coffin_bottom_corner_dim=\dimen160
+\l__coffin_top_corner_dim=\dimen161
+\l__coffin_scaled_total_height_dim=\dimen162
+\l__coffin_scaled_width_dim=\dimen163
+))
+Package: l3keys2e 2013/10/13 v4597 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/home/a8034837/texmf/tex/latex/l3packages/xparse.sty
+Package: xparse 2013/10/13 v4597 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count146
+\l__xparse_m_args_int=\count147
+\l__xparse_mandatory_args_int=\count148
+\l__xparse_processor_int=\count149
+\l__xparse_v_nesting_int=\count150
+)
+(/home/a8034837/texmf/tex/latex/l3packages/xtemplate.sty
+Package: xtemplate 2013/10/13 v4597 L3 Experimental prototype document function
+s
+\l__xtemplate_tmp_dim=\dimen164
+\l__xtemplate_tmp_int=\count151
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip79
+Variant \prop_get:NoNTF already defined; not changing it on line 106
+Variant \prop_get:NoNT already defined; not changing it on line 107
+Variant \prop_get:NoNF already defined; not changing it on line 108
+)
+Package: xfrac 2012/11/09 v4299 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box50
+\l__xfrac_tmp_box=\box51
+\l__xfrac_denominator_bot_sep_dim=\dimen165
+\l__xfrac_numerator_bot_sep_dim=\dimen166
+\l__xfrac_numerator_top_sep_dim=\dimen167
+\l__xfrac_slash_left_sep_dim=\dimen168
+\l__xfrac_slash_right_sep_dim=\dimen169
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'xfrac' taking 3 argument(s) on line 96.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \sfrac with arg. spec. 'omom' on line 436.
+.................................................
+)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
 \MT@toks=\toks32
-\MT@count=\count121
+\MT@count=\count152
 LaTeX Info: Redefining \textls on input line 766.
-\MT@outer@kern=\dimen133
+\MT@outer@kern=\dimen170
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count122
+\MT@listname@count=\count153
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip73
+\MT@outer@space=\skip80
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -312,51 +592,223 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
-Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup6
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/newpxtext.sty
+Package: newpxtext 2014/02/10 v1.11
+
+`newpxtext' v1.11, 2014/02/10 Text macros based on pxfonts (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2011/12/16 v1.0c Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \scshape on input line 37.
 )
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 163.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 164.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 165.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 167.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 168.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 170.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 171.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 172.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 173.
-\c@theorem=\count123
-\c@lemma=\count124
-\c@corollary=\count125
-\c@proposition=\count126
-\astrutbox=\box35
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks33
+\XKV@tempa@toks=\toks34
+\XKV@depth=\count154
+File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/newpxmath.sty
+Package: newpxmath 2014/02/10 v1.11
+
+`newpxmath' v1.11, 2014/02/10 Math macros based on pxfonts (msharpe)
+(/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+\px@Isdigit=\count155
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 57.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> T1/zplx/m/n on input line 57.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/zplx/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  T1/zplx/m/n --> T1/zplx/b/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 61.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/qhv/m/n on input line 61.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/qhv/m/n on input line 61.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 62.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/zplx/m/it on input line 62.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/zplx/m/it on input line 62.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/npxtt/m/n on input line 63.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/npxtt/m/n on input line 63.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/zplx/b/n on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/zplx/b/n on input line 65.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  T1/zplx/m/it --> T1/zplx/b/it on input line 66.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/qhv/m/n --> T1/qhv/b/n on input line 68.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/npxtt/m/n --> T1/npxtt/b/n on input line 69.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 75.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/npxmi/m/it on input line 75.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/npxmi/m/it on input line 75.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/npxmi/m/it --> OML/npxmi/b/it on input line 76.
+\symlettersA=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/npxmia/m/it --> U/npxmia/b/it on input line 83.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 85.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 92.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/npxsy/m/n on input line 92.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/npxsy/m/n on input line 92.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/npxsy/m/n --> OMS/npxsy/b/n on input line 93.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 108.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/npxsya/m/n on input line 108.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/npxsya/m/n on input line 108.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/npxsya/m/n --> U/npxsya/b/n on input line 109.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 117.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/npxsyb/m/n on input line 117.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/npxsyb/m/n on input line 117.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/npxsyb/m/n --> U/npxsyb/b/n on input line 118.
+\symsymbolsC=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/npxsyc/m/n --> U/npxsyc/b/n on input line 129.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 149.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 1
+49.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 149.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 149
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 149.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/npxexx/m/n --> LMX/npxexx/b/n on input line 150.
+\symlargesymbolsPXA=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
+
+(Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 165.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 250.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 251.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 252.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 253.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 254.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 255.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 256.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 258.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 260.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 262.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 263.
+LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 265.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 266.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 268.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 269.
+LaTeX Info: Redefining \not on input line 1358.
+LaTeX Info: Redefining \textsquare on input line 1378.
+LaTeX Info: Redefining \openbox on input line 1379.
+)
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 168.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 173.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 178.
+\c@theorem=\count156
+\c@lemma=\count157
+\c@corollary=\count158
+\c@proposition=\count159
+\astrutbox=\box52
 )
 (./thesis_pdf.aux (./bose_gasses/chapter.aux) (./model/chapter.aux
 
 LaTeX Warning: Label `section:gpe' multiply defined.
 
-) (./numerics/chapter.aux) (./wake/chapter.aux) (./shin/chapter.aux)
+) (./numerics/chapter.aux
+
+LaTeX Warning: Label `section:RK4' multiply defined.
+
+) (./wake/chapter.aux) (./shin/chapter.aux) (./nonequib/chapter.aux)
 (./appendix.aux))
 \openout1 = `thesis_pdf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 65.
+LaTeX Font Info:    Try loading font information for OML+npxmi on input line 65
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
+)
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/npxsy/m/n on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+npxsy on input line 65
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/omsnpxsy.fd
+File: omsnpxsy.fd 2013/03/24 Fontinst v1.933 font definitions for OMS/npxsy.
+)
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+pplx on input line 65.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
-File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 65.
+LaTeX Font Info:    Try loading font information for U+npxexa on input line 65.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxexa.fd
+File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Try loading font information for T1+zplx on input line 65.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplx.fd
+File: t1zplx.fd 2013/03/25 T1/TeX Gyre PagellaX-lnum
+)
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 10.95pt on input line 65.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -393,17 +845,17 @@ File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count127
-\scratchdimen=\dimen134
-\scratchbox=\box36
-\nofMPsegments=\count128
-\nofMParguments=\count129
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count130
-\MPscratchDim=\dimen135
-\MPnumerator=\count131
-\makeMPintoPDFobject=\count132
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count160
+\scratchdimen=\dimen171
+\scratchbox=\box53
+\nofMPsegments=\count161
+\nofMParguments=\count162
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count163
+\MPscratchDim=\dimen172
+\MPnumerator=\count164
+\makeMPintoPDFobject=\count165
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -471,113 +923,113 @@ Package microtype Info: Adjustment of interword spacing enabled.
 Package microtype Info: Using default spacing set `basictext'.
 Package microtype Info: Adjustment of character kerning enabled.
 Package microtype Info: Using default kerning set `alltext'.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
-File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
-)
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
-File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
-)
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 70.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 70.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 70.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 70.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 70.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
 Package microtype Info: Loading generic settings for font family
-(microtype)             `zplm' (encoding: OT1).
+(microtype)             `zplx' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+\c@mv@tabular=\count166
+\c@mv@boldtabular=\count167
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 8.0pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 6.1pt on input line 70.
+LaTeX Font Info:    Try loading font information for U+npxsya on input line 70.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsya.fd
+File: unpxsya.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsya.
+)
+LaTeX Font Info:    Try loading font information for U+npxsyb on input line 70.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyb.fd
+File: unpxsyb.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyb.
+)
+LaTeX Font Info:    Try loading font information for U+npxmia on input line 70.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxmia.fd
+File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
+)
+LaTeX Font Info:    Try loading font information for U+npxsyc on input line 70.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyc.fd
+File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
+)
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 17.28pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
+(Font)              scaled to size 17.28pt on input line 70.
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplx/m/sc/17.28'.
+(microtype)             in font `T1/zplx/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 14.4pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
+(Font)              scaled to size 14.4pt on input line 70.
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplx/m/sc/14.4'.
+(microtype)             in font `T1/zplx/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 70.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 70.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 70.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 10.5pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 7.9pt on input line 70.
 
 <fig/shield.pdf, id=1, 263.98625pt x 93.34875pt>
 File: fig/shield.pdf Graphic file (type pdf)
  <use fig/shield.pdf>
 Package pdftex.def Info: fig/shield.pdf used on input line 70.
 (pdftex.def)             Requested size: 263.9856pt x 93.34851pt.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 14.4pt on input line 70.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 10.0pt on input line 70.
  [1
 Non-PDF special ignored!
 
-{/home/a8034837/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./fig/shield.pd
-f>] (./acknowledge.tex
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/shield.pdf>] (./ackn
+owledge.tex
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 10.95pt on input line 1.
  [1
 
 ]) (./abstract.tex [1
 
 ])
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 84.
-
-(./thesis_pdf.toc
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1.
- [1
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 24.88pt on input line 84.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 24.88pt on input line 84.
+ (./thesis_pdf.toc
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 12.0pt on input line 1.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <12> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 12.0pt on input line 1.
+[1
 
 
 ]
-LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `T1/pplx/m/it' tried instead on input line 64.
+LaTeX Font Info:    Font shape `T1/zplx/m/sl' in size <10.95> not available
+(Font)              Font shape `T1/zplx/m/it' tried instead on input line 67.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 10.95pt on input line 67.
  [2])
 \tf@toc=\write4
 \openout4 = `thesis_pdf.toc'.
 
  [3] (./thesis_pdf.lof
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 8.0pt on input line 5.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 6.1pt on input line 5.
+
 
 Package natbib Warning: Citation `taneda41' on page iv undefined on input line 
 5.
@@ -611,8 +1063,12 @@ ne 14.
  [7
 
 ]
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 97.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 20.74pt on input line 97.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 97.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 20.74pt on input line 97.
  [1
 
 
@@ -622,8 +1078,10 @@ LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <20.74> not available
 
  (./bose_gasses/chapter.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 14.4pt on input line 2.
 ) [2
 
 
@@ -632,20 +1090,33 @@ LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
 
  (./model/chapter.tex
 Chapter 2.
-) [3
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 8.0pt on input line 5.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 6.1pt on input line 5.
+[3
 
 
 
 ] [4]
+Overfull \hbox (1.26332pt too wide) in paragraph at lines 61--63
+\T1/zplx/m/n/10.95 (-10) where the com-plex Fourier am-pli-tudes $\OML/npxmi/m/
+it/10.95 a[]$ \T1/zplx/m/n/10.95 (-10) are re-lated to the oc-cu-pa-tion num-be
+rs $\OML/npxmi/m/it/10.95 n[]$ \T1/zplx/m/n/10.95 (-10) through
+ []
+
+) [5] [6
+
+
+]
 \openout2 = `./numerics/chapter.aux'.
 
  (./numerics/chapter.tex
 Chapter 3.
-) [5
+) [7
 
 
-
-] [6
+] [8
 
 
 ]
@@ -653,361 +1124,382 @@ Chapter 3.
 
  (./wake/chapter.tex
 Chapter 4.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Try loading font information for T1+npxtt on input line 4.
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
+File: t1npxtt.fd 2000/12/14 v1.0
 )
+LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 4.
 Package microtype Info: Loading generic settings for font family
-(microtype)             `cmtt' (encoding: T1).
+(microtype)             `npxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 8.
-LaTeX Font Info:    No file OMSpplx.fd. on input line 8.
+LaTeX Font Info:    Try loading font information for TS1+zplx on input line 8.
 
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/ts1zplx.fd
+File: ts1zplx.fd 2013/03/25 TS1/TeX Gyre PagellaX-lnum
+)
+LaTeX Font Info:    Font shape `TS1/zplx/m/n' will be
+(Font)              scaled to size 10.95pt on input line 8.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `zplx' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 8.
-
-<wake/3.png, id=68, 720.6925pt x 555.07375pt>
+<wake/3.png, id=78, 720.6925pt x 555.07375pt>
 File: wake/3.png Graphic file (type png)
  <use wake/3.png>
 Package pdftex.def Info: wake/3.png used on input line 58.
 (pdftex.def)             Requested size: 76.83511pt x 59.18178pt.
 
-<wake/taneda41.pdf, id=69, 919.30751pt x 531.91325pt>
+<wake/taneda41.pdf, id=79, 919.30751pt x 531.91325pt>
 File: wake/taneda41.pdf Graphic file (type pdf)
  <use wake/taneda41.pdf>
 Package pdftex.def Info: wake/taneda41.pdf used on input line 59.
 (pdftex.def)             Requested size: 102.43227pt x 59.26546pt.
 
-<wake/taneda112.pdf, id=70, 917.3pt x 531.91325pt>
+<wake/taneda112.pdf, id=80, 917.3pt x 531.91325pt>
 File: wake/taneda112.pdf Graphic file (type pdf)
  <use wake/taneda112.pdf>
 Package pdftex.def Info: wake/taneda112.pdf used on input line 60.
 (pdftex.def)             Requested size: 102.43227pt x 59.39531pt.
 
-<wake/turb.jpg, id=71, 202.356pt x 97.5645pt>
+<wake/turb.jpg, id=81, 202.356pt x 97.5645pt>
 File: wake/turb.jpg Graphic file (type jpg)
  <use wake/turb.jpg>
 Package pdftex.def Info: wake/turb.jpg used on input line 61.
 (pdftex.def)             Requested size: 123.76662pt x 59.67352pt.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 62.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 62.
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 10.0pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 7.3pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 5.5pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 10.0pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 7.3pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 5.5pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 7.3pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 5.5pt on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <10> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 62.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 10.0pt on input line 62.
 
 
-Package natbib Warning: Citation `taneda41' on page 7 undefined on input line 6
+Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
 2.
 
 
-Package natbib Warning: Citation `taneda41' on page 7 undefined on input line 6
+Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
 2.
 
 
-Package natbib Warning: Citation `taneda112' on page 7 undefined on input line 
+Package natbib Warning: Citation `taneda112' on page 9 undefined on input line 
 62.
 
 
-Package natbib Warning: Citation `nagib' on page 7 undefined on input line 62.
+Package natbib Warning: Citation `nagib' on page 9 undefined on input line 62.
 
 
-Package natbib Warning: Citation `taneda41' on page 7 undefined on input line 6
+Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
 2.
 
 
-Package natbib Warning: Citation `taneda41' on page 7 undefined on input line 6
+Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
 2.
 
 
-Package natbib Warning: Citation `taneda112' on page 7 undefined on input line 
+Package natbib Warning: Citation `taneda112' on page 9 undefined on input line 
 62.
 
 
-Package natbib Warning: Citation `nagib' on page 7 undefined on input line 62.
+Package natbib Warning: Citation `nagib' on page 9 undefined on input line 62.
 
-[7
+[9
 
 
 ]
 
-Package natbib Warning: Citation `Tabeling' on page 8 undefined on input line 6
-5.
+Package natbib Warning: Citation `Tabeling' on page 10 undefined on input line 
+65.
 
 
-Package natbib Warning: Citation `Salort' on page 8 undefined on input line 65.
-
-
-
-Package natbib Warning: Citation `Nore' on page 8 undefined on input line 66.
-
-
-Package natbib Warning: Citation `Kobayashi' on page 8 undefined on input line 
-66.
-
-
-Package natbib Warning: Citation `Laurie' on page 8 undefined on input line 66.
-
-
-
-Package natbib Warning: Citation `Lvov' on page 8 undefined on input line 67.
-
-
-Package natbib Warning: Citation `Frisch' on page 8 undefined on input line 70.
-
-
-
-Package natbib Warning: Citation `barenghi' on page 8 undefined on input line 7
-5.
-
-
-Package natbib Warning: Citation `Frisch' on page 8 undefined on input line 84.
-
-
-
-Package natbib Warning: Citation `VanSciver1999' on page 8 undefined on input l
-ine 101.
-
-
-Package natbib Warning: Citation `VanSciver2005' on page 8 undefined on input l
-ine 101.
-
-
-Package natbib Warning: Citation `sergeev09' on page 8 undefined on input line 
-105.
-
-
-Package natbib Warning: Citation `Hanninen' on page 8 undefined on input line 1
-09.
-
-
-Package natbib Warning: Citation `Fujiyama' on page 8 undefined on input line 1
-09.
-
-
-Package natbib Warning: Citation `goto08' on page 8 undefined on input line 109
+Package natbib Warning: Citation `Salort' on page 10 undefined on input line 65
 .
 
 
-Package natbib Warning: Citation `frisch92' on page 8 undefined on input line 1
-11.
+Package natbib Warning: Citation `Nore' on page 10 undefined on input line 66.
 
 
-Package natbib Warning: Citation `saito10' on page 8 undefined on input line 11
-1.
+Package natbib Warning: Citation `Kobayashi' on page 10 undefined on input line
+ 66.
 
 
-Package natbib Warning: Citation `jma00' on page 8 undefined on input line 111.
-
-
-
-Package natbib Warning: Citation `frisch92' on page 8 undefined on input line 1
-11.
-
-
-Package natbib Warning: Citation `nore93' on page 8 undefined on input line 111
+Package natbib Warning: Citation `Laurie' on page 10 undefined on input line 66
 .
 
 
-Package natbib Warning: Citation `jma99' on page 8 undefined on input line 111.
+Package natbib Warning: Citation `Lvov' on page 10 undefined on input line 67.
 
 
+Package natbib Warning: Citation `Frisch' on page 10 undefined on input line 70
+.
 
-Package natbib Warning: Citation `win00' on page 8 undefined on input line 111.
+
+Package natbib Warning: Citation `barenghi' on page 10 undefined on input line 
+75.
 
 
+Package natbib Warning: Citation `Frisch' on page 10 undefined on input line 84
+.
 
-Package natbib Warning: Citation `huepe00' on page 8 undefined on input line 11
+
+Package natbib Warning: Citation `VanSciver1999' on page 10 undefined on input 
+line 101.
+
+
+Package natbib Warning: Citation `VanSciver2005' on page 10 undefined on input 
+line 101.
+
+
+Package natbib Warning: Citation `sergeev09' on page 10 undefined on input line
+ 105.
+
+
+Package natbib Warning: Citation `Hanninen' on page 10 undefined on input line 
+109.
+
+
+Package natbib Warning: Citation `Fujiyama' on page 10 undefined on input line 
+109.
+
+
+Package natbib Warning: Citation `goto08' on page 10 undefined on input line 10
+9.
+
+
+Package natbib Warning: Citation `frisch92' on page 10 undefined on input line 
+111.
+
+
+Package natbib Warning: Citation `saito10' on page 10 undefined on input line 1
+11.
+
+
+Package natbib Warning: Citation `jma00' on page 10 undefined on input line 111
+.
+
+
+Package natbib Warning: Citation `frisch92' on page 10 undefined on input line 
+111.
+
+
+Package natbib Warning: Citation `nore93' on page 10 undefined on input line 11
 1.
 
 
-Package natbib Warning: Citation `zwerger00' on page 8 undefined on input line 
-111.
+Package natbib Warning: Citation `jma99' on page 10 undefined on input line 111
+.
 
 
-Package natbib Warning: Citation `crescimanno00' on page 8 undefined on input l
-ine 111.
+Package natbib Warning: Citation `win00' on page 10 undefined on input line 111
+.
 
 
-Package natbib Warning: Citation `berloff2000' on page 8 undefined on input lin
-e 111.
-
-
-Package natbib Warning: Citation `rica2001' on page 8 undefined on input line 1
+Package natbib Warning: Citation `huepe00' on page 10 undefined on input line 1
 11.
 
 
-Package natbib Warning: Citation `pham2004' on page 8 undefined on input line 1
-11.
-
-
-Package natbib Warning: Citation `win00' on page 8 undefined on input line 111.
-
-
-
-Package natbib Warning: Citation `jackson98' on page 8 undefined on input line 
-111.
-
-
-Package natbib Warning: Citation `fujimoto11' on page 8 undefined on input line
+Package natbib Warning: Citation `zwerger00' on page 10 undefined on input line
  111.
 
 
-Package natbib Warning: Citation `huepe00' on page 8 undefined on input line 11
+Package natbib Warning: Citation `crescimanno00' on page 10 undefined on input 
+line 111.
+
+
+Package natbib Warning: Citation `berloff2000' on page 10 undefined on input li
+ne 111.
+
+
+Package natbib Warning: Citation `rica2001' on page 10 undefined on input line 
+111.
+
+
+Package natbib Warning: Citation `pham2004' on page 10 undefined on input line 
+111.
+
+
+Package natbib Warning: Citation `win00' on page 10 undefined on input line 111
+.
+
+
+Package natbib Warning: Citation `jackson98' on page 10 undefined on input line
+ 111.
+
+
+Package natbib Warning: Citation `fujimoto11' on page 10 undefined on input lin
+e 111.
+
+
+Package natbib Warning: Citation `huepe00' on page 10 undefined on input line 1
+11.
+
+
+Package natbib Warning: Citation `aioi11' on page 10 undefined on input line 11
 1.
 
 
-Package natbib Warning: Citation `aioi11' on page 8 undefined on input line 111
+Package natbib Warning: Citation `el06' on page 10 undefined on input line 111.
+
+
+
+Package natbib Warning: Citation `carusotto06' on page 10 undefined on input li
+ne 111.
+
+[10 <./wake/3.png> <./wake/taneda41.pdf> <./wake/taneda112.pdf> <./wake/turb.jp
+g>]
+
+Package natbib Warning: Citation `Raman' on page 11 undefined on input line 124
 .
 
 
-Package natbib Warning: Citation `el06' on page 8 undefined on input line 111.
-
-
-Package natbib Warning: Citation `carusotto06' on page 8 undefined on input lin
-e 111.
-
-[8 <./wake/3.png> <./wake/taneda41.pdf> <./wake/taneda112.pdf> <./wake/turb.jpg
->]
-
-Package natbib Warning: Citation `Raman' on page 9 undefined on input line 124.
-
-
-
-Package natbib Warning: Citation `Onofrio' on page 9 undefined on input line 12
-4.
-
-
-Package natbib Warning: Citation `Inouye' on page 9 undefined on input line 124
-.
-
-
-Package natbib Warning: Citation `Neely' on page 9 undefined on input line 124.
-
-
-
-Package natbib Warning: Citation `Neely' on page 9 undefined on input line 124.
-
-
-
-Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 1
+Package natbib Warning: Citation `Onofrio' on page 11 undefined on input line 1
 24.
 
 
-Package natbib Warning: Citation `taneda112' on page 9 undefined on input line 
-124.
+Package natbib Warning: Citation `Inouye' on page 11 undefined on input line 12
+4.
 
 
-Package natbib Warning: Citation `VanSciver1999' on page 9 undefined on input l
-ine 126.
-
-
-Package natbib Warning: Citation `VanSciver2005' on page 9 undefined on input l
-ine 126.
-
-
-Package natbib Warning: Citation `Pethick' on page 9 undefined on input line 12
-8.
-
-
-Package natbib Warning: Citation `Raman' on page 9 undefined on input line 135.
-
-
-
-Package natbib Warning: Citation `Onofrio' on page 9 undefined on input line 13
-5.
-
-
-Package natbib Warning: Citation `Inouye' on page 9 undefined on input line 135
+Package natbib Warning: Citation `Neely' on page 11 undefined on input line 124
 .
 
 
-Package natbib Warning: Citation `Neely' on page 9 undefined on input line 135.
+Package natbib Warning: Citation `Neely' on page 11 undefined on input line 124
+.
 
 
-[9] <wake/figure2ai.pdf, id=97, 825.0825pt x 359.3425pt>
+Package natbib Warning: Citation `taneda41' on page 11 undefined on input line 
+124.
+
+
+Package natbib Warning: Citation `taneda112' on page 11 undefined on input line
+ 124.
+
+
+Package natbib Warning: Citation `VanSciver1999' on page 11 undefined on input 
+line 126.
+
+
+Package natbib Warning: Citation `VanSciver2005' on page 11 undefined on input 
+line 126.
+
+
+Package natbib Warning: Citation `Pethick' on page 11 undefined on input line 1
+28.
+
+
+Package natbib Warning: Citation `Raman' on page 11 undefined on input line 135
+.
+
+
+Package natbib Warning: Citation `Onofrio' on page 11 undefined on input line 1
+35.
+
+
+Package natbib Warning: Citation `Inouye' on page 11 undefined on input line 13
+5.
+
+
+Package natbib Warning: Citation `Neely' on page 11 undefined on input line 135
+.
+
+[11] <wake/figure2ai.pdf, id=107, 825.0825pt x 359.3425pt>
 File: wake/figure2ai.pdf Graphic file (type pdf)
 
 <use wake/figure2ai.pdf>
 Package pdftex.def Info: wake/figure2ai.pdf used on input line 146.
 (pdftex.def)             Requested size: 213.39568pt x 92.93884pt.
 
-<wake/figure2aii.pdf, id=98, 824.07875pt x 358.33875pt>
+<wake/figure2aii.pdf, id=108, 824.07875pt x 358.33875pt>
 File: wake/figure2aii.pdf Graphic file (type pdf)
 
 <use wake/figure2aii.pdf>
 Package pdftex.def Info: wake/figure2aii.pdf used on input line 147.
 (pdftex.def)             Requested size: 213.39568pt x 92.78859pt.
 
-Overfull \hbox (2.41995pt too wide) in paragraph at lines 146--148
+Overfull \hbox (1.825pt too wide) in paragraph at lines 146--148
 [][] [][] 
  []
 
-<wake/figure2bi.pdf, id=99, 823.075pt x 356.33125pt>
+<wake/figure2bi.pdf, id=109, 823.075pt x 356.33125pt>
 File: wake/figure2bi.pdf Graphic file (type pdf)
  <use wake/figure2bi.pdf>
 Package pdftex.def Info: wake/figure2bi.pdf used on input line 153.
 (pdftex.def)             Requested size: 213.39568pt x 92.38295pt.
 
-<wake/figure2bii.pdf, id=100, 824.07875pt x 356.33125pt>
+<wake/figure2bii.pdf, id=110, 824.07875pt x 356.33125pt>
 File: wake/figure2bii.pdf Graphic file (type pdf)
 
 <use wake/figure2bii.pdf>
 Package pdftex.def Info: wake/figure2bii.pdf used on input line 154.
 (pdftex.def)             Requested size: 213.39568pt x 92.26877pt.
 
-Overfull \hbox (4.8399pt too wide) in paragraph at lines 150--155
+Overfull \hbox (3.65pt too wide) in paragraph at lines 150--155
  [] [] 
  []
 
 
-Package natbib Warning: Citation `frisch92' on page 10 undefined on input line 
+Package natbib Warning: Citation `frisch92' on page 12 undefined on input line 
 163.
 
 
-Package natbib Warning: Citation `nore93' on page 10 undefined on input line 16
+Package natbib Warning: Citation `nore93' on page 12 undefined on input line 16
 3.
 
 
-Package natbib Warning: Citation `win00' on page 10 undefined on input line 163
+Package natbib Warning: Citation `win00' on page 12 undefined on input line 163
 .
 
 
-Package natbib Warning: Citation `huepe00' on page 10 undefined on input line 1
+Package natbib Warning: Citation `huepe00' on page 12 undefined on input line 1
 63.
 
-[10 <./wake/figure2ai.pdf> <./wake/figure2aii.pdf> <./wake/figure2bi.pdf> <./wa
+[12 <./wake/figure2ai.pdf> <./wake/figure2aii.pdf> <./wake/figure2bi.pdf> <./wa
 ke/figure2bii.pdf>]
 
-Package natbib Warning: Citation `nore93' on page 11 undefined on input line 16
+Package natbib Warning: Citation `nore93' on page 13 undefined on input line 16
 5.
 
 
-Package natbib Warning: Citation `saito10' on page 11 undefined on input line 1
+Package natbib Warning: Citation `saito10' on page 13 undefined on input line 1
 65.
 
 
-Package natbib Warning: Citation `saito10' on page 11 undefined on input line 1
+Package natbib Warning: Citation `saito10' on page 13 undefined on input line 1
 68.
 
 
-Package natbib Warning: Citation `Donnelly' on page 11 undefined on input line 
+Package natbib Warning: Citation `Donnelly' on page 13 undefined on input line 
 168.
 
-[11] <wake/figure3.pdf, id=160, 867.24pt x 433.62pt>
+<wake/figure3.pdf, id=167, 867.24pt x 433.62pt>
 File: wake/figure3.pdf Graphic file (type pdf)
  <use wake/figure3.pdf>
 Package pdftex.def Info: wake/figure3.pdf used on input line 175.
 (pdftex.def)             Requested size: 384.1096pt x 192.05714pt.
+ [13]
 
-
-Package natbib Warning: Citation `saito10' on page 12 undefined on input line 1
+Package natbib Warning: Citation `saito10' on page 14 undefined on input line 1
 84.
 
-[12 <./wake/figure3.pdf>] <wake/figure4.pdf, id=170, 361.35pt x 252.945pt>
+[14 <./wake/figure3.pdf>] <wake/figure4.pdf, id=181, 361.35pt x 252.945pt>
 File: wake/figure4.pdf Graphic file (type pdf)
 
 <use wake/figure4.pdf>
@@ -1015,108 +1507,108 @@ Package pdftex.def Info: wake/figure4.pdf used on input line 191.
 (pdftex.def)             Requested size: 213.39568pt x 149.37906pt.
 
 
-Package natbib Warning: Citation `berloff2000' on page 13 undefined on input li
+Package natbib Warning: Citation `berloff2000' on page 15 undefined on input li
 ne 196.
 
 
-Package natbib Warning: Citation `rica2001' on page 13 undefined on input line 
+Package natbib Warning: Citation `rica2001' on page 15 undefined on input line 
 196.
 
 
-Package natbib Warning: Citation `pham2004' on page 13 undefined on input line 
+Package natbib Warning: Citation `pham2004' on page 15 undefined on input line 
 196.
 
 
-Package natbib Warning: Citation `NozieresPines' on page 13 undefined on input 
+Package natbib Warning: Citation `NozieresPines' on page 15 undefined on input 
 line 198.
 
-[13 <./wake/figure4.pdf>]
+[15 <./wake/figure4.pdf>]
 
-Package natbib Warning: Citation `win01' on page 14 undefined on input line 204
+Package natbib Warning: Citation `win01' on page 16 undefined on input line 204
 .
 
 
-Package natbib Warning: Citation `rica2001' on page 14 undefined on input line 
+Package natbib Warning: Citation `rica2001' on page 16 undefined on input line 
 209.
 
 
-Package natbib Warning: Citation `huepe00' on page 14 undefined on input line 2
+Package natbib Warning: Citation `huepe00' on page 16 undefined on input line 2
 11.
 
 
-Package natbib Warning: Citation `rica2001' on page 14 undefined on input line 
+Package natbib Warning: Citation `rica2001' on page 16 undefined on input line 
 211.
 
-<wake/figure5.pdf, id=181, 1445.4pt x 542.025pt>
+<wake/figure5.pdf, id=193, 1445.4pt x 542.025pt>
 File: wake/figure5.pdf Graphic file (type pdf)
  <use wake/figure5.pdf>
 Package pdftex.def Info: wake/figure5.pdf used on input line 216.
 (pdftex.def)             Requested size: 426.79135pt x 160.04485pt.
 
-[14 <./wake/figure5.pdf>]
+[16 <./wake/figure5.pdf>]
 
-Package natbib Warning: Citation `jma99' on page 15 undefined on input line 222
+Package natbib Warning: Citation `jma99' on page 17 undefined on input line 222
 .
 
 
-Package natbib Warning: Citation `white12' on page 15 undefined on input line 2
+Package natbib Warning: Citation `white12' on page 17 undefined on input line 2
 25.
 
 
-Package natbib Warning: Citation `and13' on page 15 undefined on input line 225
+Package natbib Warning: Citation `and13' on page 17 undefined on input line 225
 .
 
 
-Package natbib Warning: Citation `bagg12' on page 15 undefined on input line 22
+Package natbib Warning: Citation `bagg12' on page 17 undefined on input line 22
 5.
 
 
-Package natbib Warning: Citation `and13' on page 15 undefined on input line 225
+Package natbib Warning: Citation `and13' on page 17 undefined on input line 225
 .
 
-<wake/figure6.pdf, id=191, 361.35pt x 252.945pt>
+<wake/figure6.pdf, id=203, 361.35pt x 252.945pt>
 File: wake/figure6.pdf Graphic file (type pdf)
  <use wake/figure6.pdf>
 Package pdftex.def Info: wake/figure6.pdf used on input line 229.
 (pdftex.def)             Requested size: 213.39568pt x 149.37906pt.
 
 
-Package natbib Warning: Citation `saito10' on page 15 undefined on input line 2
+Package natbib Warning: Citation `saito10' on page 17 undefined on input line 2
 33.
 
-[15 <./wake/figure6.pdf>]
-<wake/figure7.jpg, id=202, 5714.41943pt x 2703.50873pt>
+[17 <./wake/figure6.pdf>]
+<wake/figure7.jpg, id=212, 5714.41943pt x 2703.50873pt>
 File: wake/figure7.jpg Graphic file (type jpg)
  <use wake/figure7.jpg>
 Package pdftex.def Info: wake/figure7.jpg used on input line 240.
 (pdftex.def)             Requested size: 426.79135pt x 201.8881pt.
 
 
-Package natbib Warning: Citation `win01' on page 16 undefined on input line 244
+Package natbib Warning: Citation `win01' on page 18 undefined on input line 244
 .
 
 
-Package natbib Warning: Citation `winiecki99' on page 16 undefined on input lin
+Package natbib Warning: Citation `winiecki99' on page 18 undefined on input lin
 e 244.
 
 
-Package natbib Warning: Citation `wacks' on page 16 undefined on input line 244
+Package natbib Warning: Citation `wacks' on page 18 undefined on input line 244
 .
 
-[16 <./wake/figure7.jpg>]
-<wake/figure8.jpg, id=206, 5714.41943pt x 2703.50873pt>
+[18 <./wake/figure7.jpg>]
+<wake/figure8.jpg, id=216, 5714.41943pt x 2703.50873pt>
 File: wake/figure8.jpg Graphic file (type jpg)
  <use wake/figure8.jpg>
 Package pdftex.def Info: wake/figure8.jpg used on input line 250.
 (pdftex.def)             Requested size: 426.79135pt x 201.8881pt.
 
-[17 <./wake/figure8.jpg>]
+[19 <./wake/figure8.jpg>]
 
-Package natbib Warning: Citation `blaz08' on page 18 undefined on input line 26
+Package natbib Warning: Citation `blaz08' on page 20 undefined on input line 26
 3.
 
 
-Package natbib Warning: Citation `brad05' on page 18 undefined on input line 26
+Package natbib Warning: Citation `brad05' on page 20 undefined on input line 26
 3.
 
 
@@ -1125,151 +1617,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--265
  []
 
 
-Package natbib Warning: Citation `Gorlitz' on page 18 undefined on input line 2
+Package natbib Warning: Citation `Gorlitz' on page 20 undefined on input line 2
 74.
 
-[18]
+[20]
 
-Package natbib Warning: Citation `fos10' on page 19 undefined on input line 285
+Package natbib Warning: Citation `fos10' on page 21 undefined on input line 285
 .
 
 
-Package natbib Warning: Citation `white12' on page 19 undefined on input line 2
+Package natbib Warning: Citation `white12' on page 21 undefined on input line 2
 85.
 
-) [19] [20
-
-
-]
+) [21]
 \openout2 = `./shin/chapter.aux'.
 
  (./shin/chapter.tex
 Chapter 5.
 
-Package natbib Warning: Citation `white_anderson_14' on page 21 undefined on in
+Package natbib Warning: Citation `white_anderson_14' on page 22 undefined on in
 put line 13.
 
 
-Package natbib Warning: Citation `barenghi_skrbek_14' on page 21 undefined on i
+Package natbib Warning: Citation `barenghi_skrbek_14' on page 22 undefined on i
 nput line 13.
 
 
-Package natbib Warning: Citation `barenghi_donnelly_01' on page 21 undefined on
+Package natbib Warning: Citation `barenghi_donnelly_01' on page 22 undefined on
  input line 13.
 
 
-Package natbib Warning: Citation `henn_seman_09' on page 21 undefined on input 
+Package natbib Warning: Citation `henn_seman_09' on page 22 undefined on input 
 line 13.
 
 
-Package natbib Warning: Citation `parker2005' on page 21 undefined on input lin
+Package natbib Warning: Citation `parker2005' on page 22 undefined on input lin
 e 13.
 
 
-Package natbib Warning: Citation `middelkamp' on page 21 undefined on input lin
+Package natbib Warning: Citation `middelkamp' on page 22 undefined on input lin
 e 13.
 
 
-Package natbib Warning: Citation `neely_bradley_13' on page 21 undefined on inp
+Package natbib Warning: Citation `neely_bradley_13' on page 22 undefined on inp
 ut line 13.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 21 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 22 undefined on input l
 ine 13.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 21 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 22 undefined on input l
 ine 15.
 
 
-Package natbib Warning: Citation `frisch_92' on page 21 undefined on input line
+Package natbib Warning: Citation `frisch_92' on page 22 undefined on input line
  15.
 
-[21
+[22
+
 
 
 ]
 
-Package natbib Warning: Citation `delgado' on page 22 undefined on input line 2
+Package natbib Warning: Citation `delgado' on page 23 undefined on input line 2
 8.
 
 
-Package natbib Warning: Citation `parker2008' on page 22 undefined on input lin
+Package natbib Warning: Citation `parker2008' on page 23 undefined on input lin
 e 28.
 
 
-Package natbib Warning: Citation `jackson_proukakis_09' on page 22 undefined on
+Package natbib Warning: Citation `jackson_proukakis_09' on page 23 undefined on
  input line 32.
 
-[22]
+[23]
 
-Package natbib Warning: Citation `shin_private' on page 23 undefined on input l
+Package natbib Warning: Citation `shin_private' on page 24 undefined on input l
 ine 53.
 
 
-Package natbib Warning: Citation `choi_morgan_98' on page 23 undefined on input
+Package natbib Warning: Citation `choi_morgan_98' on page 24 undefined on input
  line 53.
 
 
-Package natbib Warning: Citation `tsubota_kasamatsu_02' on page 23 undefined on
+Package natbib Warning: Citation `tsubota_kasamatsu_02' on page 24 undefined on
  input line 53.
 
 
-Package natbib Warning: Citation `madarassy_barenghi_08' on page 23 undefined o
+Package natbib Warning: Citation `madarassy_barenghi_08' on page 24 undefined o
 n input line 53.
 
 
-Package natbib Warning: Citation `jackson_proukakis_09' on page 23 undefined on
+Package natbib Warning: Citation `jackson_proukakis_09' on page 24 undefined on
  input line 53.
 
 
-Package natbib Warning: Citation `allen_zaremba_13' on page 23 undefined on inp
+Package natbib Warning: Citation `allen_zaremba_13' on page 24 undefined on inp
 ut line 53.
 
 
-Package natbib Warning: Citation `yan_proukakis_14' on page 23 undefined on inp
+Package natbib Warning: Citation `yan_proukakis_14' on page 24 undefined on inp
 ut line 53.
 
-<shin/fig1.pdf, id=226, 249.93375pt x 162.6075pt>
+<shin/fig1.pdf, id=233, 249.93375pt x 162.6075pt>
 File: shin/fig1.pdf Graphic file (type pdf)
  <use shin/fig1.pdf>
 Package pdftex.def Info: shin/fig1.pdf used on input line 60.
 (pdftex.def)             Requested size: 277.41176pt x 180.5039pt.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 23 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 24 undefined on input l
 ine 61.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 23 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 24 undefined on input l
 ine 61.
 
-[23]
+[24]
 
-Package natbib Warning: Citation `frisch_92' on page 24 undefined on input line
+Package natbib Warning: Citation `frisch_92' on page 25 undefined on input line
  79.
 
 
-Package natbib Warning: Citation `jackson_mccann_00' on page 24 undefined on in
+Package natbib Warning: Citation `jackson_mccann_00' on page 25 undefined on in
 put line 84.
 
 
-Package natbib Warning: Citation `sasaki_suzuki_10' on page 24 undefined on inp
+Package natbib Warning: Citation `sasaki_suzuki_10' on page 25 undefined on inp
 ut line 84.
 
 
-Package natbib Warning: Citation `stagg_parker_14' on page 24 undefined on inpu
+Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
 t line 84.
 
 
-Package natbib Warning: Citation `stagg_parker_14' on page 24 undefined on inpu
+Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
 t line 92.
 
 
-Package natbib Warning: Citation `stagg_parker_14' on page 24 undefined on inpu
+Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
 t line 102.
 
-[24 <./shin/fig1.pdf>] <shin/fig2.pdf, id=238, 246.9225pt x 247.92625pt>
+[25 <./shin/fig1.pdf>] <shin/fig2.pdf, id=245, 246.9225pt x 247.92625pt>
 File: shin/fig2.pdf Graphic file (type pdf)
 
 <use shin/fig2.pdf>
@@ -1277,116 +1767,129 @@ Package pdftex.def Info: shin/fig2.pdf used on input line 110.
 (pdftex.def)             Requested size: 426.79135pt x 428.5509pt.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 25 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 26 undefined on input l
 ine 124.
 
 
-Package natbib Warning: Citation `parker2005' on page 25 undefined on input lin
+Package natbib Warning: Citation `parker2005' on page 26 undefined on input lin
 e 124.
 
 
-Package natbib Warning: Citation `neely_bradley_13' on page 25 undefined on inp
+Package natbib Warning: Citation `neely_bradley_13' on page 26 undefined on inp
 ut line 124.
 
 
-Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
+Package natbib Warning: Citation `stagg_parker_14' on page 26 undefined on inpu
 t line 126.
 
-[25] [26 <./shin/fig2.pdf>]
 
-Package natbib Warning: Citation `white_barenghi_12' on page 27 undefined on in
+Package natbib Warning: Citation `white_barenghi_12' on page 26 undefined on in
 put line 133.
 
 
-Package natbib Warning: Citation `reeves_billam_13' on page 27 undefined on inp
+Package natbib Warning: Citation `reeves_billam_13' on page 26 undefined on inp
 ut line 133.
 
-<shin/fig3.pdf, id=380, 286.06876pt x 175.65625pt>
+[26] [27 <./shin/fig2.pdf>] <shin/fig3.pdf, id=388, 286.06876pt x 175.65625pt>
 File: shin/fig3.pdf Graphic file (type pdf)
- <use shin/fig3.pdf>
+
+<use shin/fig3.pdf>
 Package pdftex.def Info: shin/fig3.pdf used on input line 143.
 (pdftex.def)             Requested size: 298.75264pt x 183.44742pt.
-
-<shin/fig4.pdf, id=381, 440.64626pt x 345.29pt>
+ <shin/fig4.pdf, id=389, 440.64626pt x 345.29pt>
 File: shin/fig4.pdf Graphic file (type pdf)
- <use shin/fig4.pdf>
+
+<use shin/fig4.pdf>
 Package pdftex.def Info: shin/fig4.pdf used on input line 158.
 (pdftex.def)             Requested size: 426.79135pt x 334.44615pt.
- [27 <./shin/fig3.pdf>]
+
 
 Package natbib Warning: Citation `kwon_moon_14' on page 28 undefined on input l
 ine 162.
 
+[28 <./shin/fig3.pdf>] [29 <./shin/fig4.pdf>]
 
-Package natbib Warning: Citation `allen_zaremba_13' on page 28 undefined on inp
+Package natbib Warning: Citation `allen_zaremba_13' on page 30 undefined on inp
 ut line 175.
 
-[28 <./shin/fig4.pdf>]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 179.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 179.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 179.
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 179.
+LaTeX Font Info:    Try loading font information for T1+zpl1 on input line 179.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zpl1.fd
+File: t1zpl1.fd 2013/03/25 T1/TeX Gyre PagellaX-sups
+)
+LaTeX Font Info:    Font shape `T1/zpl1/m/n' will be
+(Font)              scaled to size 10.95pt on input line 179.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `zpl1' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
+(Font)              scaled to size 9.0pt on input line 179.
+LaTeX Font Info:    Font shape `T1/zpl1/m/n' will be
+(Font)              scaled to size 9.0pt on input line 179.
+LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 179.
+LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
+(Font)              scaled to size 9.0pt on input line 179.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 29 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 30 undefined on input l
 ine 179.
 
-<shin/fig5.pdf, id=401, 226.8475pt x 287.0725pt>
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 9.0pt on input line 179.
+<shin/fig5.pdf, id=408, 226.8475pt x 287.0725pt>
 File: shin/fig5.pdf Graphic file (type pdf)
  <use shin/fig5.pdf>
 Package pdftex.def Info: shin/fig5.pdf used on input line 190.
 (pdftex.def)             Requested size: 341.43437pt x 432.08386pt.
 
 
-Package natbib Warning: Citation `nazarenko_onorato_07' on page 29 undefined on
+Package natbib Warning: Citation `nazarenko_onorato_07' on page 30 undefined on
  input line 200.
 
 
-Package natbib Warning: Citation `rorai_skreenivasan_12' on page 29 undefined o
+Package natbib Warning: Citation `rorai_skreenivasan_12' on page 30 undefined o
 n input line 200.
 
 
-Package natbib Warning: Citation `prabhakar_singh_13' on page 29 undefined on i
+Package natbib Warning: Citation `prabhakar_singh_13' on page 30 undefined on i
 nput line 200.
 
 
-Package natbib Warning: Citation `leadbeater' on page 29 undefined on input lin
+Package natbib Warning: Citation `leadbeater' on page 30 undefined on input lin
 e 202.
 
 
-Package natbib Warning: Citation `zuccher' on page 29 undefined on input line 2
+Package natbib Warning: Citation `zuccher' on page 30 undefined on input line 2
 02.
 
 
-Package natbib Warning: Citation `powis' on page 29 undefined on input line 221
+Package natbib Warning: Citation `powis' on page 30 undefined on input line 221
 .
 
-[29] [30 <./shin/fig5.pdf>]
+[30] [31 <./shin/fig5.pdf>]
 
-Package natbib Warning: Citation `stagg_parker_14' on page 31 undefined on inpu
+Package natbib Warning: Citation `stagg_parker_14' on page 32 undefined on inpu
 t line 224.
 
-<shin/fig6.png, id=521, 1487.5575pt x 463.7325pt>
+<shin/fig6.png, id=529, 1487.5575pt x 463.7325pt>
 File: shin/fig6.png Graphic file (type png)
  <use shin/fig6.png>
 Package pdftex.def Info: shin/fig6.png used on input line 229.
 (pdftex.def)             Requested size: 426.79135pt x 133.04962pt.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 31 undefined on input l
+Package natbib Warning: Citation `kwon_moon_14' on page 32 undefined on input l
 ine 234.
 
-) [31] [32 <./shin/fig6.png>] [33
+) [32] [33 <./shin/fig6.png>]
+\openout2 = `./nonequib/chapter.aux'.
+
+ (./nonequib/chapter.tex
+Chapter 6.
+) [34
+
 
 
 ]
@@ -1394,58 +1897,65 @@ ine 234.
 
  (./appendix.tex
 Appendix A.
-[34
+[35
+
 
 
 ]
 Appendix B.
-) [35
+) [36
 
 ] (./thesis_pdf.bbl
+LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 5.
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplx/m/sc/10.95'.
+(microtype)             in font `T1/zplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 )
 
 Package natbib Warning: There were undefined citations.
 
-[36
+[37
 
 
 ] (./thesis_pdf.aux (./bose_gasses/chapter.aux) (./model/chapter.aux)
 (./numerics/chapter.aux) (./wake/chapter.aux) (./shin/chapter.aux)
-(./appendix.aux))
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
+(./nonequib/chapter.aux) (./appendix.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7908 strings out of 494985
- 118257 string characters out of 6180356
- 207938 words of memory out of 5000000
- 10487 multiletter control sequences out of 15000+600000
- 119504 words of font info for 425 fonts, out of 8000000 for 9000
+ 14839 strings out of 494985
+ 256576 string characters out of 6180356
+ 327134 words of memory out of 5000000
+ 17439 multiletter control sequences out of 15000+600000
+ 181344 words of font info for 321 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 44i,12n,52p,1953b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/a8034837/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/
-share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
-athpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fp
-lmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis_pdf.pdf (46 pages, 7372159 bytes).
+ 51i,12n,77p,1956b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_yi34h6.enc}{/usr/share
+/texlive/texmf-dist/fonts/enc/dvips/newpx/a_3p3as7.enc}{/usr/share/texlive/texm
+f-dist/fonts/enc/dvips/newtx/ntxmiaalt.enc}{/usr/share/texlive/texmf-dist/fonts
+/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/tgp
+diff.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_6vkyws.enc}{/us
+r/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_tkkaeb.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/newpx/TeXGyrePagellaX-Bold.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/newpx/TeXGyrePagellaX-Italic.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/newpx/TeXGyrePagellaX-Regular.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/newtx/ntxsyralt.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/pxfonts/pxmia.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/pxfonts/rpxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txex
+-bar.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/newpx/zplx-regular.pfb>
+Output written on thesis_pdf.pdf (47 pages, 7370662 bytes).
 PDF statistics:
- 600 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
+ 608 PDF objects out of 1000 (max. 8388607)
+ 394 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 74346 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 45162 words of extra memory for PDF output out of 51595 (max. 10000000)
 
