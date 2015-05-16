@@ -14,12 +14,12 @@
 \contentsline {subsection}{\numberline {2.4.1} Phenomenological dissipation}{4}
 \contentsline {subsection}{\numberline {2.4.2} The role of the chemical potential}{4}
 \contentsline {section}{\numberline {2.5} Hydrodynamic interpretation}{4}
-\contentsline {section}{\numberline {2.6} A selection of analytical solutions}{4}
-\contentsline {subsection}{\numberline {2.6.1} Density near a wall}{4}
-\contentsline {subsection}{\numberline {2.6.2} Soliton solutions}{4}
-\contentsline {subsection}{\numberline {2.6.3} Vortex solutions}{4}
-\contentsline {section}{\numberline {2.7} Initial Conditions}{4}
-\contentsline {subsection}{\numberline {2.7.1} Thomas Fermi profile of a trapped condensate}{4}
+\contentsline {section}{\numberline {2.6} A selection of analytical solutions}{5}
+\contentsline {subsection}{\numberline {2.6.1} Density near a wall}{5}
+\contentsline {subsection}{\numberline {2.6.2} Soliton solutions}{5}
+\contentsline {subsection}{\numberline {2.6.3} Vortex solutions}{5}
+\contentsline {section}{\numberline {2.7} Initial Conditions}{5}
+\contentsline {subsection}{\numberline {2.7.1} Thomas Fermi profile of a trapped condensate}{5}
 \contentsline {subsection}{\numberline {2.7.2} Classical Field approximation with a homogeneous condensate}{5}
 \contentsline {part}{II\hspace {1em}Numerical Methods}{6}
 \contentsline {chapter}{\numberline {3}Numerical Methods}{7}
