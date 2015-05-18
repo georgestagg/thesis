@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  15 MAY 2015 16:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  18 MAY 2015 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1029,30 +1029,9 @@ LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 (Font)              scaled to size 8.0pt on input line 5.
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 (Font)              scaled to size 6.1pt on input line 5.
+ [4
 
-
-Package natbib Warning: Citation `taneda41' on page iv undefined on input line 
-5.
-
-
-Package natbib Warning: Citation `taneda41' on page iv undefined on input line 
-5.
-
-
-Package natbib Warning: Citation `taneda112' on page iv undefined on input line
- 5.
-
-
-Package natbib Warning: Citation `nagib' on page iv undefined on input line 5.
-
-[4
-
-]
-
-Package natbib Warning: Citation `kwon_moon_14' on page v undefined on input li
-ne 14.
-
-[5])
+] [5])
 \tf@lof=\write5
 \openout5 = `thesis_pdf.lof'.
 
@@ -1076,7 +1055,8 @@ LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
 ]
 \openout2 = `./bose_gasses/chapter.aux'.
 
- (./bose_gasses/chapter.tex
+
+(./bose_gasses/chapter.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/zplx/b/n' tried instead on input line 2.
@@ -1185,49 +1165,10 @@ LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 (Font)              scaled to size 7.3pt on input line 62.
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 (Font)              scaled to size 5.5pt on input line 62.
-LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/zplx/b/n' tried instead on input line 62.
-LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
-(Font)              scaled to size 10.0pt on input line 62.
-
-
-Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
-2.
-
-
-Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
-2.
-
-
-Package natbib Warning: Citation `taneda112' on page 9 undefined on input line 
-62.
-
-
-Package natbib Warning: Citation `nagib' on page 9 undefined on input line 62.
-
-
-Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
-2.
-
-
-Package natbib Warning: Citation `taneda41' on page 9 undefined on input line 6
-2.
-
-
-Package natbib Warning: Citation `taneda112' on page 9 undefined on input line 
-62.
-
-
-Package natbib Warning: Citation `nagib' on page 9 undefined on input line 62.
-
-[9
+ [9
 
 
 ]
-
-Package natbib Warning: Citation `Tabeling' on page 10 undefined on input line 
-65.
-
 
 Package natbib Warning: Citation `Salort' on page 10 undefined on input line 65
 .
@@ -1240,23 +1181,11 @@ Package natbib Warning: Citation `Kobayashi' on page 10 undefined on input line
  66.
 
 
-Package natbib Warning: Citation `Laurie' on page 10 undefined on input line 66
-.
-
-
 Package natbib Warning: Citation `Lvov' on page 10 undefined on input line 67.
-
-
-Package natbib Warning: Citation `Frisch' on page 10 undefined on input line 70
-.
 
 
 Package natbib Warning: Citation `barenghi' on page 10 undefined on input line 
 75.
-
-
-Package natbib Warning: Citation `Frisch' on page 10 undefined on input line 84
-.
 
 
 Package natbib Warning: Citation `VanSciver1999' on page 10 undefined on input 
@@ -1283,20 +1212,8 @@ Package natbib Warning: Citation `goto08' on page 10 undefined on input line 10
 9.
 
 
-Package natbib Warning: Citation `frisch92' on page 10 undefined on input line 
-111.
-
-
-Package natbib Warning: Citation `saito10' on page 10 undefined on input line 1
-11.
-
-
 Package natbib Warning: Citation `jma00' on page 10 undefined on input line 111
 .
-
-
-Package natbib Warning: Citation `frisch92' on page 10 undefined on input line 
-111.
 
 
 Package natbib Warning: Citation `nore93' on page 10 undefined on input line 11
@@ -1365,34 +1282,6 @@ ne 111.
 [10 <./wake/3.png> <./wake/taneda41.pdf> <./wake/taneda112.pdf> <./wake/turb.jp
 g>]
 
-Package natbib Warning: Citation `Raman' on page 11 undefined on input line 124
-.
-
-
-Package natbib Warning: Citation `Onofrio' on page 11 undefined on input line 1
-24.
-
-
-Package natbib Warning: Citation `Inouye' on page 11 undefined on input line 12
-4.
-
-
-Package natbib Warning: Citation `Neely' on page 11 undefined on input line 124
-.
-
-
-Package natbib Warning: Citation `Neely' on page 11 undefined on input line 124
-.
-
-
-Package natbib Warning: Citation `taneda41' on page 11 undefined on input line 
-124.
-
-
-Package natbib Warning: Citation `taneda112' on page 11 undefined on input line
- 124.
-
-
 Package natbib Warning: Citation `VanSciver1999' on page 11 undefined on input 
 line 126.
 
@@ -1403,22 +1292,6 @@ line 126.
 
 Package natbib Warning: Citation `Pethick' on page 11 undefined on input line 1
 28.
-
-
-Package natbib Warning: Citation `Raman' on page 11 undefined on input line 135
-.
-
-
-Package natbib Warning: Citation `Onofrio' on page 11 undefined on input line 1
-35.
-
-
-Package natbib Warning: Citation `Inouye' on page 11 undefined on input line 13
-5.
-
-
-Package natbib Warning: Citation `Neely' on page 11 undefined on input line 135
-.
 
 [11] <wake/figure2ai.pdf, id=107, 825.0825pt x 359.3425pt>
 File: wake/figure2ai.pdf Graphic file (type pdf)
@@ -1456,10 +1329,6 @@ Overfull \hbox (3.65pt too wide) in paragraph at lines 150--155
  []
 
 
-Package natbib Warning: Citation `frisch92' on page 12 undefined on input line 
-163.
-
-
 Package natbib Warning: Citation `nore93' on page 12 undefined on input line 16
 3.
 
@@ -1478,14 +1347,6 @@ Package natbib Warning: Citation `nore93' on page 13 undefined on input line 16
 5.
 
 
-Package natbib Warning: Citation `saito10' on page 13 undefined on input line 1
-65.
-
-
-Package natbib Warning: Citation `saito10' on page 13 undefined on input line 1
-68.
-
-
 Package natbib Warning: Citation `Donnelly' on page 13 undefined on input line 
 168.
 
@@ -1495,10 +1356,6 @@ File: wake/figure3.pdf Graphic file (type pdf)
 Package pdftex.def Info: wake/figure3.pdf used on input line 175.
 (pdftex.def)             Requested size: 384.1096pt x 192.05714pt.
  [13]
-
-Package natbib Warning: Citation `saito10' on page 14 undefined on input line 1
-84.
-
 [14 <./wake/figure3.pdf>] <wake/figure4.pdf, id=181, 361.35pt x 252.945pt>
 File: wake/figure4.pdf Graphic file (type pdf)
 
@@ -1523,10 +1380,6 @@ Package natbib Warning: Citation `NozieresPines' on page 15 undefined on input
 line 198.
 
 [15 <./wake/figure4.pdf>]
-
-Package natbib Warning: Citation `win01' on page 16 undefined on input line 204
-.
-
 
 Package natbib Warning: Citation `rica2001' on page 16 undefined on input line 
 209.
@@ -1572,20 +1425,12 @@ File: wake/figure6.pdf Graphic file (type pdf)
 Package pdftex.def Info: wake/figure6.pdf used on input line 229.
 (pdftex.def)             Requested size: 213.39568pt x 149.37906pt.
 
-
-Package natbib Warning: Citation `saito10' on page 17 undefined on input line 2
-33.
-
 [17 <./wake/figure6.pdf>]
 <wake/figure7.jpg, id=212, 5714.41943pt x 2703.50873pt>
 File: wake/figure7.jpg Graphic file (type jpg)
  <use wake/figure7.jpg>
 Package pdftex.def Info: wake/figure7.jpg used on input line 240.
 (pdftex.def)             Requested size: 426.79135pt x 201.8881pt.
-
-
-Package natbib Warning: Citation `win01' on page 18 undefined on input line 244
-.
 
 
 Package natbib Warning: Citation `winiecki99' on page 18 undefined on input lin
@@ -1662,18 +1507,6 @@ e 13.
 Package natbib Warning: Citation `neely_bradley_13' on page 22 undefined on inp
 ut line 13.
 
-
-Package natbib Warning: Citation `kwon_moon_14' on page 22 undefined on input l
-ine 13.
-
-
-Package natbib Warning: Citation `kwon_moon_14' on page 22 undefined on input l
-ine 15.
-
-
-Package natbib Warning: Citation `frisch_92' on page 22 undefined on input line
- 15.
-
 [22
 
 
@@ -1713,176 +1546,116 @@ Package natbib Warning: Citation `jackson_proukakis_09' on page 24 undefined on
  input line 53.
 
 
-Package natbib Warning: Citation `allen_zaremba_13' on page 24 undefined on inp
-ut line 53.
-
-
 Package natbib Warning: Citation `yan_proukakis_14' on page 24 undefined on inp
 ut line 53.
 
 <shin/fig1.pdf, id=233, 249.93375pt x 162.6075pt>
 File: shin/fig1.pdf Graphic file (type pdf)
  <use shin/fig1.pdf>
-Package pdftex.def Info: shin/fig1.pdf used on input line 60.
+Package pdftex.def Info: shin/fig1.pdf used on input line 59.
 (pdftex.def)             Requested size: 277.41176pt x 180.5039pt.
-
-
-Package natbib Warning: Citation `kwon_moon_14' on page 24 undefined on input l
-ine 61.
-
-
-Package natbib Warning: Citation `kwon_moon_14' on page 24 undefined on input l
-ine 61.
-
-[24]
-
-Package natbib Warning: Citation `frisch_92' on page 25 undefined on input line
- 79.
-
+ [24]
 
 Package natbib Warning: Citation `jackson_mccann_00' on page 25 undefined on in
-put line 84.
+put line 83.
 
 
 Package natbib Warning: Citation `sasaki_suzuki_10' on page 25 undefined on inp
-ut line 84.
-
-
-Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
-t line 84.
-
-
-Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
-t line 92.
-
-
-Package natbib Warning: Citation `stagg_parker_14' on page 25 undefined on inpu
-t line 102.
+ut line 83.
 
 [25 <./shin/fig1.pdf>] <shin/fig2.pdf, id=245, 246.9225pt x 247.92625pt>
 File: shin/fig2.pdf Graphic file (type pdf)
 
 <use shin/fig2.pdf>
-Package pdftex.def Info: shin/fig2.pdf used on input line 110.
+Package pdftex.def Info: shin/fig2.pdf used on input line 109.
 (pdftex.def)             Requested size: 426.79135pt x 428.5509pt.
 
 
-Package natbib Warning: Citation `kwon_moon_14' on page 26 undefined on input l
-ine 124.
-
-
 Package natbib Warning: Citation `parker2005' on page 26 undefined on input lin
-e 124.
+e 123.
 
 
 Package natbib Warning: Citation `neely_bradley_13' on page 26 undefined on inp
-ut line 124.
-
-
-Package natbib Warning: Citation `stagg_parker_14' on page 26 undefined on inpu
-t line 126.
+ut line 123.
 
 
 Package natbib Warning: Citation `white_barenghi_12' on page 26 undefined on in
-put line 133.
+put line 132.
 
 
 Package natbib Warning: Citation `reeves_billam_13' on page 26 undefined on inp
-ut line 133.
+ut line 132.
 
 [26] [27 <./shin/fig2.pdf>] <shin/fig3.pdf, id=388, 286.06876pt x 175.65625pt>
 File: shin/fig3.pdf Graphic file (type pdf)
 
 <use shin/fig3.pdf>
-Package pdftex.def Info: shin/fig3.pdf used on input line 143.
+Package pdftex.def Info: shin/fig3.pdf used on input line 142.
 (pdftex.def)             Requested size: 298.75264pt x 183.44742pt.
  <shin/fig4.pdf, id=389, 440.64626pt x 345.29pt>
 File: shin/fig4.pdf Graphic file (type pdf)
 
 <use shin/fig4.pdf>
-Package pdftex.def Info: shin/fig4.pdf used on input line 158.
+Package pdftex.def Info: shin/fig4.pdf used on input line 157.
 (pdftex.def)             Requested size: 426.79135pt x 334.44615pt.
+ [28 <./shin/fig3.pdf>] [29 <./shin/fig4.pdf>]
+LaTeX Font Info:    Try loading font information for T1+zpl1 on input line 178.
 
-
-Package natbib Warning: Citation `kwon_moon_14' on page 28 undefined on input l
-ine 162.
-
-[28 <./shin/fig3.pdf>] [29 <./shin/fig4.pdf>]
-
-Package natbib Warning: Citation `allen_zaremba_13' on page 30 undefined on inp
-ut line 175.
-
-LaTeX Font Info:    Try loading font information for T1+zpl1 on input line 179.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zpl1.fd
 File: t1zpl1.fd 2013/03/25 T1/TeX Gyre PagellaX-sups
 )
 LaTeX Font Info:    Font shape `T1/zpl1/m/n' will be
-(Font)              scaled to size 10.95pt on input line 179.
+(Font)              scaled to size 10.95pt on input line 178.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `zpl1' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 179.
+(Font)              scaled to size 9.0pt on input line 178.
 LaTeX Font Info:    Font shape `T1/zpl1/m/n' will be
-(Font)              scaled to size 9.0pt on input line 179.
-LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/zplx/b/n' tried instead on input line 179.
+(Font)              scaled to size 9.0pt on input line 178.
 LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
-(Font)              scaled to size 9.0pt on input line 179.
-
-
-Package natbib Warning: Citation `kwon_moon_14' on page 30 undefined on input l
-ine 179.
-
+(Font)              scaled to size 9.0pt on input line 178.
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
-(Font)              scaled to size 9.0pt on input line 179.
+(Font)              scaled to size 9.0pt on input line 178.
+
 <shin/fig5.pdf, id=408, 226.8475pt x 287.0725pt>
 File: shin/fig5.pdf Graphic file (type pdf)
  <use shin/fig5.pdf>
-Package pdftex.def Info: shin/fig5.pdf used on input line 190.
+Package pdftex.def Info: shin/fig5.pdf used on input line 189.
 (pdftex.def)             Requested size: 341.43437pt x 432.08386pt.
 
 
 Package natbib Warning: Citation `nazarenko_onorato_07' on page 30 undefined on
- input line 200.
+ input line 199.
 
 
 Package natbib Warning: Citation `rorai_skreenivasan_12' on page 30 undefined o
-n input line 200.
+n input line 199.
 
 
 Package natbib Warning: Citation `prabhakar_singh_13' on page 30 undefined on i
-nput line 200.
+nput line 199.
 
 
 Package natbib Warning: Citation `leadbeater' on page 30 undefined on input lin
-e 202.
+e 201.
 
 
 Package natbib Warning: Citation `zuccher' on page 30 undefined on input line 2
-02.
+01.
 
 
-Package natbib Warning: Citation `powis' on page 30 undefined on input line 221
+Package natbib Warning: Citation `powis' on page 30 undefined on input line 220
 .
 
-[30] [31 <./shin/fig5.pdf>]
-
-Package natbib Warning: Citation `stagg_parker_14' on page 32 undefined on inpu
-t line 224.
-
-<shin/fig6.png, id=529, 1487.5575pt x 463.7325pt>
+[30] [31 <./shin/fig5.pdf>] <shin/fig6.png, id=529, 1487.5575pt x 463.7325pt>
 File: shin/fig6.png Graphic file (type png)
- <use shin/fig6.png>
-Package pdftex.def Info: shin/fig6.png used on input line 229.
+
+<use shin/fig6.png>
+Package pdftex.def Info: shin/fig6.png used on input line 228.
 (pdftex.def)             Requested size: 426.79135pt x 133.04962pt.
-
-
-Package natbib Warning: Citation `kwon_moon_14' on page 32 undefined on input l
-ine 234.
-
 ) [32] [33 <./shin/fig6.png>]
 \openout2 = `./nonequib/chapter.aux'.
 
@@ -1905,20 +1678,14 @@ Appendix A.
 Appendix B.
 ) [36
 
-] (./thesis_pdf.bbl
-LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 5.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/zplx/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-)
+] (./thesis_pdf.bbl [37
+
+
+])
 
 Package natbib Warning: There were undefined citations.
 
-[37
-
-
-] (./thesis_pdf.aux (./bose_gasses/chapter.aux) (./model/chapter.aux)
+[38] (./thesis_pdf.aux (./bose_gasses/chapter.aux) (./model/chapter.aux)
 (./numerics/chapter.aux) (./wake/chapter.aux) (./shin/chapter.aux)
 (./nonequib/chapter.aux) (./appendix.aux))
 
@@ -1926,11 +1693,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14839 strings out of 494985
- 256576 string characters out of 6180356
- 327134 words of memory out of 5000000
- 17439 multiletter control sequences out of 15000+600000
- 181344 words of font info for 321 fonts, out of 8000000 for 9000
+ 14852 strings out of 494985
+ 256350 string characters out of 6180356
+ 327956 words of memory out of 5000000
+ 17466 multiletter control sequences out of 15000+600000
+ 176490 words of font info for 311 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  51i,12n,77p,1956b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_yi34h6.enc}{/usr/share
@@ -1952,10 +1719,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/newpx/zplx-regular.pfb>
-Output written on thesis_pdf.pdf (47 pages, 7370662 bytes).
+Output written on thesis_pdf.pdf (48 pages, 7372334 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 394 compressed objects within 4 object streams
+ 611 PDF objects out of 1000 (max. 8388607)
+ 396 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 45162 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 41066 words of extra memory for PDF output out of 42996 (max. 10000000)
 
