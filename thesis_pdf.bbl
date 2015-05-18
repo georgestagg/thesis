@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -64,6 +64,23 @@
   \bibinfo{journal}{EPL (Europhysics Letters)} \textbf{\bibinfo{volume}{43}},
   \bibinfo{pages}{29} (\bibinfo{year}{1998}).
 
+\bibitem[{\citenamefont{Salort et~al.}(2010)\citenamefont{Salort, Baudet,
+  Castaing, Chabaud, Daviaud, Didelot, Diribarne, Dubrulle, Gagne, Gauthier
+  et~al.}}]{Salort}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Salort}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Baudet}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Castaing}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Chabaud}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Daviaud}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Didelot}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Diribarne}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Dubrulle}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Gagne}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Gauthier}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Physics of Fluids}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{125102}
+  (\bibinfo{year}{2010}).
+
 \bibitem[{\citenamefont{Baggaley et~al.}(2012)\citenamefont{Baggaley, Laurie,
   and Barenghi}}]{Laurie}
 \bibinfo{author}{\bibfnamefont{A.~W.} \bibnamefont{Baggaley}},
@@ -77,6 +94,14 @@
   \emph{\bibinfo{title}{Turbulence. The legacy of {A\,.N.}\,{K}olmogorov}}
   (\bibinfo{publisher}{Cambridge University Press},
   \bibinfo{address}{Cambridge}, \bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{Barenghi et~al.}(2013)\citenamefont{Barenghi, L'vov,
+  and Roche}}]{barenghi}
+\bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{L'vov}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.-E.} \bibnamefont{Roche}},
+  \emph{\bibinfo{title}{Velocity spectra of quantum turbulence: experiments,
+  numerics and models}} (\bibinfo{year}{2013}), \eprint{arXiv:1306.6248}.
 
 \bibitem[{\citenamefont{Frisch et~al.}(1992)\citenamefont{Frisch, Pomeau, and
   Rica}}]{frisch92}
@@ -131,6 +156,12 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Ketterle}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{87}},
   \bibinfo{pages}{080402} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Donnelly}(1991)}]{Donnelly}
+\bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Donnelly}},
+  \emph{\bibinfo{title}{Quantized Vortices in {H}elium II}}
+  (\bibinfo{publisher}{Cambridge University Press},
+  \bibinfo{address}{Cambridge}, \bibinfo{year}{1991}).
 
 \bibitem[{\citenamefont{Winiecki}(2001)}]{win01}
 \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Winiecki}}, Ph.D. thesis,
