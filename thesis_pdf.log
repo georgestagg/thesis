@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  18 MAY 2015 15:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.20)  18 MAY 2015 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -283,6 +283,9 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
 (/home/a8034837/texmf/tex/latex/l3packages/xfrac.sty
 (/home/a8034837/texmf/tex/latex/l3packages/l3keys2e.sty
@@ -734,17 +737,17 @@ LaTeX Info: Redefining \not on input line 1358.
 LaTeX Info: Redefining \textsquare on input line 1378.
 LaTeX Info: Redefining \openbox on input line 1379.
 )
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 168.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 170.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 171.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 172.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 173.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 174.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 175.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 176.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 177.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 173.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 177.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 178.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 179.
 \c@theorem=\count156
 \c@lemma=\count157
 \c@corollary=\count158
@@ -763,51 +766,51 @@ LaTeX Warning: Label `section:RK4' multiply defined.
 (./appendix.aux))
 \openout1 = `thesis_pdf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 65.
-LaTeX Font Info:    Try loading font information for OML+npxmi on input line 65
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 67.
+LaTeX Font Info:    Try loading font information for OML+npxmi on input line 67
 .
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/npxsy/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for OMS+npxsy on input line 65
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/npxsy/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+npxsy on input line 67
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/omsnpxsy.fd
 File: omsnpxsy.fd 2013/03/24 Fontinst v1.933 font definitions for OMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for U+npxexa on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for U+npxexa on input line 67.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+zplx on input line 65.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+zplx on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplx.fd
 File: t1zplx.fd 2013/03/25 T1/TeX Gyre PagellaX-lnum
 )
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 65.
+(Font)              scaled to size 10.95pt on input line 67.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -909,7 +912,7 @@ Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 65.
+LaTeX Info: Redefining \microtypecontext on input line 67.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -930,61 +933,61 @@ Package microtype Info: Loading generic settings for font family
 \c@mv@tabular=\count166
 \c@mv@boldtabular=\count167
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 70.
+(Font)              scaled to size 8.0pt on input line 72.
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 70.
-LaTeX Font Info:    Try loading font information for U+npxsya on input line 70.
+(Font)              scaled to size 6.1pt on input line 72.
+LaTeX Font Info:    Try loading font information for U+npxsya on input line 72.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsya.fd
 File: unpxsya.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsya.
 )
-LaTeX Font Info:    Try loading font information for U+npxsyb on input line 70.
+LaTeX Font Info:    Try loading font information for U+npxsyb on input line 72.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyb.fd
 File: unpxsyb.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyb.
 )
-LaTeX Font Info:    Try loading font information for U+npxmia on input line 70.
+LaTeX Font Info:    Try loading font information for U+npxmia on input line 72.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
-LaTeX Font Info:    Try loading font information for U+npxsyc on input line 70.
+LaTeX Font Info:    Try loading font information for U+npxsyc on input line 72.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 )
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 17.28pt on input line 70.
+(Font)              scaled to size 17.28pt on input line 72.
 LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 70.
+(Font)              scaled to size 17.28pt on input line 72.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/zplx/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 14.4pt on input line 70.
+(Font)              scaled to size 14.4pt on input line 72.
 LaTeX Font Info:    Font shape `T1/zplx/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 70.
+(Font)              scaled to size 14.4pt on input line 72.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/zplx/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 10.5pt on input line 70.
+(Font)              scaled to size 10.5pt on input line 72.
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 7.9pt on input line 70.
+(Font)              scaled to size 7.9pt on input line 72.
 
 <fig/shield.pdf, id=1, 263.98625pt x 93.34875pt>
 File: fig/shield.pdf Graphic file (type pdf)
  <use fig/shield.pdf>
-Package pdftex.def Info: fig/shield.pdf used on input line 70.
+Package pdftex.def Info: fig/shield.pdf used on input line 72.
 (pdftex.def)             Requested size: 263.9856pt x 93.34851pt.
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
-(Font)              scaled to size 14.4pt on input line 70.
+(Font)              scaled to size 14.4pt on input line 72.
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
-(Font)              scaled to size 10.0pt on input line 70.
+(Font)              scaled to size 10.0pt on input line 72.
  [1
 Non-PDF special ignored!
 
@@ -1000,11 +1003,11 @@ LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
 
 ])
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 24.88pt on input line 84.
+(Font)              scaled to size 24.88pt on input line 86.
 LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/zplx/b/n' tried instead on input line 84.
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
-(Font)              scaled to size 24.88pt on input line 84.
+(Font)              scaled to size 24.88pt on input line 86.
  (./thesis_pdf.toc
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
@@ -1024,30 +1027,13 @@ LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 \tf@toc=\write4
 \openout4 = `thesis_pdf.toc'.
 
- [3] (./thesis_pdf.lof
-LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
-(Font)              scaled to size 8.0pt on input line 5.
-LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
-(Font)              scaled to size 6.1pt on input line 5.
- [4
-
-] [5])
-\tf@lof=\write5
-\openout5 = `thesis_pdf.lof'.
-
- [6] (./thesis_pdf.lot)
-\tf@lot=\write6
-\openout6 = `thesis_pdf.lot'.
-
- [7
-
-]
+ [3]
 LaTeX Font Info:    Font shape `T1/zplx/m/n' will be
-(Font)              scaled to size 20.74pt on input line 97.
+(Font)              scaled to size 20.74pt on input line 99.
 LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/zplx/b/n' tried instead on input line 97.
+(Font)              Font shape `T1/zplx/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
-(Font)              scaled to size 20.74pt on input line 97.
+(Font)              scaled to size 20.74pt on input line 99.
  [1
 
 
@@ -1055,8 +1041,7 @@ LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
 ]
 \openout2 = `./bose_gasses/chapter.aux'.
 
-
-(./bose_gasses/chapter.tex
+ (./bose_gasses/chapter.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/zplx/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/zplx/b/n' tried instead on input line 2.
@@ -1126,25 +1111,25 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<wake/3.png, id=78, 720.6925pt x 555.07375pt>
+<wake/3.png, id=66, 720.6925pt x 555.07375pt>
 File: wake/3.png Graphic file (type png)
  <use wake/3.png>
 Package pdftex.def Info: wake/3.png used on input line 58.
 (pdftex.def)             Requested size: 76.83511pt x 59.18178pt.
 
-<wake/taneda41.pdf, id=79, 919.30751pt x 531.91325pt>
+<wake/taneda41.pdf, id=67, 919.30751pt x 531.91325pt>
 File: wake/taneda41.pdf Graphic file (type pdf)
  <use wake/taneda41.pdf>
 Package pdftex.def Info: wake/taneda41.pdf used on input line 59.
 (pdftex.def)             Requested size: 102.43227pt x 59.26546pt.
 
-<wake/taneda112.pdf, id=80, 917.3pt x 531.91325pt>
+<wake/taneda112.pdf, id=68, 917.3pt x 531.91325pt>
 File: wake/taneda112.pdf Graphic file (type pdf)
  <use wake/taneda112.pdf>
 Package pdftex.def Info: wake/taneda112.pdf used on input line 60.
 (pdftex.def)             Requested size: 102.43227pt x 59.39531pt.
 
-<wake/turb.jpg, id=81, 202.356pt x 97.5645pt>
+<wake/turb.jpg, id=69, 202.356pt x 97.5645pt>
 File: wake/turb.jpg Graphic file (type jpg)
  <use wake/turb.jpg>
 Package pdftex.def Info: wake/turb.jpg used on input line 61.
@@ -1169,39 +1154,10 @@ LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 
 
 ]
-
-Package natbib Warning: Citation `Nore' on page 10 undefined on input line 66.
-
-
-Package natbib Warning: Citation `Kobayashi' on page 10 undefined on input line
- 66.
-
-
-Package natbib Warning: Citation `Lvov' on page 10 undefined on input line 67.
-
-
-Package natbib Warning: Citation `VanSciver1999' on page 10 undefined on input 
-line 101.
-
-
-Package natbib Warning: Citation `VanSciver2005' on page 10 undefined on input 
-line 101.
-
-
-Package natbib Warning: Citation `sergeev09' on page 10 undefined on input line
- 105.
-
-
-Package natbib Warning: Citation `Hanninen' on page 10 undefined on input line 
-109.
-
-
-Package natbib Warning: Citation `Fujiyama' on page 10 undefined on input line 
-109.
-
-
-Package natbib Warning: Citation `goto08' on page 10 undefined on input line 10
-9.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 8.0pt on input line 78.
+LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
+(Font)              scaled to size 6.1pt on input line 78.
 
 
 Package natbib Warning: Citation `jma00' on page 10 undefined on input line 111
@@ -1274,25 +1230,17 @@ ne 111.
 [10 <./wake/3.png> <./wake/taneda41.pdf> <./wake/taneda112.pdf> <./wake/turb.jp
 g>]
 
-Package natbib Warning: Citation `VanSciver1999' on page 11 undefined on input 
-line 126.
-
-
-Package natbib Warning: Citation `VanSciver2005' on page 11 undefined on input 
-line 126.
-
-
 Package natbib Warning: Citation `Pethick' on page 11 undefined on input line 1
 28.
 
-[11] <wake/figure2ai.pdf, id=107, 825.0825pt x 359.3425pt>
+[11] <wake/figure2ai.pdf, id=94, 825.0825pt x 359.3425pt>
 File: wake/figure2ai.pdf Graphic file (type pdf)
 
 <use wake/figure2ai.pdf>
 Package pdftex.def Info: wake/figure2ai.pdf used on input line 146.
 (pdftex.def)             Requested size: 213.39568pt x 92.93884pt.
 
-<wake/figure2aii.pdf, id=108, 824.07875pt x 358.33875pt>
+<wake/figure2aii.pdf, id=95, 824.07875pt x 358.33875pt>
 File: wake/figure2aii.pdf Graphic file (type pdf)
 
 <use wake/figure2aii.pdf>
@@ -1303,13 +1251,13 @@ Overfull \hbox (1.825pt too wide) in paragraph at lines 146--148
 [][] [][] 
  []
 
-<wake/figure2bi.pdf, id=109, 823.075pt x 356.33125pt>
+<wake/figure2bi.pdf, id=96, 823.075pt x 356.33125pt>
 File: wake/figure2bi.pdf Graphic file (type pdf)
  <use wake/figure2bi.pdf>
 Package pdftex.def Info: wake/figure2bi.pdf used on input line 153.
 (pdftex.def)             Requested size: 213.39568pt x 92.38295pt.
 
-<wake/figure2bii.pdf, id=110, 824.07875pt x 356.33125pt>
+<wake/figure2bii.pdf, id=97, 824.07875pt x 356.33125pt>
 File: wake/figure2bii.pdf Graphic file (type pdf)
 
 <use wake/figure2bii.pdf>
@@ -1338,13 +1286,13 @@ ke/figure2bii.pdf>]
 Package natbib Warning: Citation `nore93' on page 13 undefined on input line 16
 5.
 
-<wake/figure3.pdf, id=167, 867.24pt x 433.62pt>
+<wake/figure3.pdf, id=154, 867.24pt x 433.62pt>
 File: wake/figure3.pdf Graphic file (type pdf)
  <use wake/figure3.pdf>
 Package pdftex.def Info: wake/figure3.pdf used on input line 175.
 (pdftex.def)             Requested size: 384.1096pt x 192.05714pt.
  [13]
-[14 <./wake/figure3.pdf>] <wake/figure4.pdf, id=181, 361.35pt x 252.945pt>
+[14 <./wake/figure3.pdf>] <wake/figure4.pdf, id=168, 361.35pt x 252.945pt>
 File: wake/figure4.pdf Graphic file (type pdf)
 
 <use wake/figure4.pdf>
@@ -1363,10 +1311,6 @@ Package natbib Warning: Citation `rica2001' on page 15 undefined on input line
 Package natbib Warning: Citation `pham2004' on page 15 undefined on input line 
 196.
 
-
-Package natbib Warning: Citation `NozieresPines' on page 15 undefined on input 
-line 198.
-
 [15 <./wake/figure4.pdf>]
 
 Package natbib Warning: Citation `rica2001' on page 16 undefined on input line 
@@ -1380,7 +1324,7 @@ Package natbib Warning: Citation `huepe00' on page 16 undefined on input line 2
 Package natbib Warning: Citation `rica2001' on page 16 undefined on input line 
 211.
 
-<wake/figure5.pdf, id=193, 1445.4pt x 542.025pt>
+<wake/figure5.pdf, id=180, 1445.4pt x 542.025pt>
 File: wake/figure5.pdf Graphic file (type pdf)
  <use wake/figure5.pdf>
 Package pdftex.def Info: wake/figure5.pdf used on input line 216.
@@ -1407,14 +1351,14 @@ Package natbib Warning: Citation `bagg12' on page 17 undefined on input line 22
 Package natbib Warning: Citation `and13' on page 17 undefined on input line 225
 .
 
-<wake/figure6.pdf, id=203, 361.35pt x 252.945pt>
+<wake/figure6.pdf, id=190, 361.35pt x 252.945pt>
 File: wake/figure6.pdf Graphic file (type pdf)
  <use wake/figure6.pdf>
 Package pdftex.def Info: wake/figure6.pdf used on input line 229.
 (pdftex.def)             Requested size: 213.39568pt x 149.37906pt.
 
 [17 <./wake/figure6.pdf>]
-<wake/figure7.jpg, id=212, 5714.41943pt x 2703.50873pt>
+<wake/figure7.jpg, id=199, 5714.41943pt x 2703.50873pt>
 File: wake/figure7.jpg Graphic file (type jpg)
  <use wake/figure7.jpg>
 Package pdftex.def Info: wake/figure7.jpg used on input line 240.
@@ -1429,7 +1373,7 @@ Package natbib Warning: Citation `wacks' on page 18 undefined on input line 244
 .
 
 [18 <./wake/figure7.jpg>]
-<wake/figure8.jpg, id=216, 5714.41943pt x 2703.50873pt>
+<wake/figure8.jpg, id=203, 5714.41943pt x 2703.50873pt>
 File: wake/figure8.jpg Graphic file (type jpg)
  <use wake/figure8.jpg>
 Package pdftex.def Info: wake/figure8.jpg used on input line 250.
@@ -1514,10 +1458,6 @@ Package natbib Warning: Citation `jackson_proukakis_09' on page 23 undefined on
 
 [23]
 
-Package natbib Warning: Citation `shin_private' on page 24 undefined on input l
-ine 53.
-
-
 Package natbib Warning: Citation `choi_morgan_98' on page 24 undefined on input
  line 53.
 
@@ -1537,7 +1477,7 @@ Package natbib Warning: Citation `jackson_proukakis_09' on page 24 undefined on
 Package natbib Warning: Citation `yan_proukakis_14' on page 24 undefined on inp
 ut line 53.
 
-<shin/fig1.pdf, id=233, 249.93375pt x 162.6075pt>
+<shin/fig1.pdf, id=220, 249.93375pt x 162.6075pt>
 File: shin/fig1.pdf Graphic file (type pdf)
  <use shin/fig1.pdf>
 Package pdftex.def Info: shin/fig1.pdf used on input line 59.
@@ -1551,7 +1491,7 @@ put line 83.
 Package natbib Warning: Citation `sasaki_suzuki_10' on page 25 undefined on inp
 ut line 83.
 
-[25 <./shin/fig1.pdf>] <shin/fig2.pdf, id=245, 246.9225pt x 247.92625pt>
+[25 <./shin/fig1.pdf>] <shin/fig2.pdf, id=233, 246.9225pt x 247.92625pt>
 File: shin/fig2.pdf Graphic file (type pdf)
 
 <use shin/fig2.pdf>
@@ -1574,13 +1514,13 @@ put line 132.
 Package natbib Warning: Citation `reeves_billam_13' on page 26 undefined on inp
 ut line 132.
 
-[26] [27 <./shin/fig2.pdf>] <shin/fig3.pdf, id=388, 286.06876pt x 175.65625pt>
+[26] [27 <./shin/fig2.pdf>] <shin/fig3.pdf, id=375, 286.06876pt x 175.65625pt>
 File: shin/fig3.pdf Graphic file (type pdf)
 
 <use shin/fig3.pdf>
 Package pdftex.def Info: shin/fig3.pdf used on input line 142.
 (pdftex.def)             Requested size: 298.75264pt x 183.44742pt.
- <shin/fig4.pdf, id=389, 440.64626pt x 345.29pt>
+ <shin/fig4.pdf, id=376, 440.64626pt x 345.29pt>
 File: shin/fig4.pdf Graphic file (type pdf)
 
 <use shin/fig4.pdf>
@@ -1608,7 +1548,7 @@ LaTeX Font Info:    Font shape `T1/zplx/b/n' will be
 LaTeX Font Info:    Font shape `T1/zplx/m/it' will be
 (Font)              scaled to size 9.0pt on input line 178.
 
-<shin/fig5.pdf, id=408, 226.8475pt x 287.0725pt>
+<shin/fig5.pdf, id=395, 226.8475pt x 287.0725pt>
 File: shin/fig5.pdf Graphic file (type pdf)
  <use shin/fig5.pdf>
 Package pdftex.def Info: shin/fig5.pdf used on input line 189.
@@ -1638,7 +1578,7 @@ Package natbib Warning: Citation `zuccher' on page 30 undefined on input line 2
 Package natbib Warning: Citation `powis' on page 30 undefined on input line 220
 .
 
-[30] [31 <./shin/fig5.pdf>] <shin/fig6.png, id=529, 1487.5575pt x 463.7325pt>
+[30] [31 <./shin/fig5.pdf>] <shin/fig6.png, id=517, 1487.5575pt x 463.7325pt>
 File: shin/fig6.png Graphic file (type png)
 
 <use shin/fig6.png>
@@ -1669,7 +1609,13 @@ Appendix B.
 ] (./thesis_pdf.bbl [37
 
 
-])
+]
+Underfull \hbox (badness 4531) in paragraph at lines 151--163
+\T1/zplx/m/n/10.95 (+10) M. Tsub-ota, and T. Hata, Phys. Rev. Lett. \T1/zplx/b/
+n/10.95 100\T1/zplx/m/n/10.95 (+10) , 045301 (2008), URL
+ []
+
+)
 
 Package natbib Warning: There were undefined citations.
 
@@ -1681,18 +1627,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14858 strings out of 494985
- 256460 string characters out of 6180356
- 328174 words of memory out of 5000000
- 17472 multiletter control sequences out of 15000+600000
- 176490 words of font info for 311 fonts, out of 8000000 for 9000
+ 14883 strings out of 494985
+ 256914 string characters out of 6180356
+ 329813 words of memory out of 5000000
+ 17503 multiletter control sequences out of 15000+600000
+ 176299 words of font info for 309 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 51i,12n,77p,1956b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,12n,77p,1956b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_yi34h6.enc}{/usr/share
 /texlive/texmf-dist/fonts/enc/dvips/newpx/a_3p3as7.enc}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/newtx/ntxmiaalt.enc}{/usr/share/texlive/texmf-dist/fonts
-/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/tgp
-diff.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_6vkyws.enc}{/us
+f-dist/fonts/enc/dvips/newpx/tgpdiff.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntxmi
+aalt.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_6vkyws.enc}{/us
 r/share/texlive/texmf-dist/fonts/enc/dvips/newpx/a_tkkaeb.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/newpx/TeXGyrePagellaX-Bold.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/newpx/TeXGyrePagellaX-Italic.pfb></usr/share
@@ -1707,10 +1653,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/newpx/zplx-regular.pfb>
-Output written on thesis_pdf.pdf (48 pages, 7375773 bytes).
+Output written on thesis_pdf.pdf (44 pages, 7368904 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 396 compressed objects within 4 object streams
+ 599 PDF objects out of 1000 (max. 8388607)
+ 388 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  41066 words of extra memory for PDF output out of 42996 (max. 10000000)
 

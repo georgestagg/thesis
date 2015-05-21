@@ -11,15 +11,6 @@ A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "Nore"
-Warning--I didn't find a database entry for "Kobayashi"
-Warning--I didn't find a database entry for "Lvov"
-Warning--I didn't find a database entry for "VanSciver1999"
-Warning--I didn't find a database entry for "VanSciver2005"
-Warning--I didn't find a database entry for "sergeev09"
-Warning--I didn't find a database entry for "Hanninen"
-Warning--I didn't find a database entry for "Fujiyama"
-Warning--I didn't find a database entry for "goto08"
 Warning--I didn't find a database entry for "jma00"
 Warning--I didn't find a database entry for "nore93"
 Warning--I didn't find a database entry for "jma99"
@@ -36,7 +27,6 @@ Warning--I didn't find a database entry for "aioi11"
 Warning--I didn't find a database entry for "el06"
 Warning--I didn't find a database entry for "carusotto06"
 Warning--I didn't find a database entry for "Pethick"
-Warning--I didn't find a database entry for "NozieresPines"
 Warning--I didn't find a database entry for "white12"
 Warning--I didn't find a database entry for "and13"
 Warning--I didn't find a database entry for "bagg12"
@@ -56,7 +46,6 @@ Warning--I didn't find a database entry for "neely_bradley_13"
 Warning--I didn't find a database entry for "delgado"
 Warning--I didn't find a database entry for "parker2008"
 Warning--I didn't find a database entry for "jackson_proukakis_09"
-Warning--I didn't find a database entry for "shin_private"
 Warning--I didn't find a database entry for "choi_morgan_98"
 Warning--I didn't find a database entry for "tsubota_kasamatsu_02"
 Warning--I didn't find a database entry for "madarassy_barenghi_08"
@@ -73,45 +62,46 @@ Warning--I didn't find a database entry for "zuccher"
 Warning--I didn't find a database entry for "powis"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 19 entries,
+Warning--empty author in Lvov
+You've used 30 entries,
             3411 wiz_defined-function locations,
-            1381 strings with 14285 characters,
-and the built_in function-call counts, 14397 in all, are:
-= -- 751
-> -- 566
-< -- 77
-+ -- 486
-- -- 140
-* -- 2003
-:= -- 1516
-add.period$ -- 19
-call.type$ -- 19
-change.case$ -- 77
-chr.to.int$ -- 19
-cite$ -- 19
-duplicate$ -- 1282
-empty$ -- 1187
-format.name$ -- 327
-if$ -- 2686
+            1434 strings with 15557 characters,
+and the built_in function-call counts, 21727 in all, are:
+= -- 1173
+> -- 806
+< -- 112
++ -- 682
+- -- 198
+* -- 2995
+:= -- 2298
+add.period$ -- 30
+call.type$ -- 30
+change.case$ -- 122
+chr.to.int$ -- 30
+cite$ -- 33
+duplicate$ -- 1945
+empty$ -- 1810
+format.name$ -- 481
+if$ -- 4077
 int.to.chr$ -- 1
-int.to.str$ -- 20
-missing$ -- 200
-newline$ -- 72
-num.names$ -- 57
-pop$ -- 337
+int.to.str$ -- 31
+missing$ -- 303
+newline$ -- 105
+num.names$ -- 87
+pop$ -- 531
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 120
 quote$ -- 0
-skip$ -- 549
+skip$ -- 820
 stack$ -- 0
-substring$ -- 432
-swap$ -- 1047
-text.length$ -- 70
+substring$ -- 679
+swap$ -- 1566
+text.length$ -- 99
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
-warning$ -- 0
-while$ -- 52
+type$ -- 172
+warning$ -- 1
+while$ -- 81
 width$ -- 0
-write$ -- 201
-(There were 60 warnings)
+write$ -- 308
+(There were 50 warnings)

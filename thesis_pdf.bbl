@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{30}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -11,32 +11,6 @@
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
-
-\bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
-\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
-  Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{302}
-  (\bibinfo{year}{1956}).
-
-\bibitem[{\citenamefont{Taneda}(1981)}]{taneda112}
-\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
-  Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{50}}, \bibinfo{pages}{1398}
-  (\bibinfo{year}{1981}).
-
-\bibitem[{\citenamefont{Van~Dyke}(1982)}]{nagib}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Van~Dyke}},
-  \emph{\bibinfo{title}{An album of fluid motion}}
-  (\bibinfo{publisher}{Parabolic Press}, \bibinfo{address}{Stanford, CA},
-  \bibinfo{year}{1982}).
-
-\bibitem[{\citenamefont{Kwon et~al.}(2014)\citenamefont{Kwon, Moon, Choi, Seo,
-  and Shin}}]{kwon_moon_14}
-\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
-  \bibinfo{author}{\bibfnamefont{J.-y.} \bibnamefont{Choi}},
-  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{Y.-i.} \bibnamefont{Shin}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{90}},
-  \bibinfo{pages}{063627} (\bibinfo{year}{2014}).
 
 \bibitem[{\citenamefont{Allen et~al.}(2013)\citenamefont{Allen, Zaremba,
   Barenghi, and Proukakis}}]{allen_zaremba_13}
@@ -57,6 +31,22 @@
   \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{104}},
   \bibinfo{pages}{160401} (\bibinfo{year}{2010}).
+
+\bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
+  Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{302}
+  (\bibinfo{year}{1956}).
+
+\bibitem[{\citenamefont{Taneda}(1981)}]{taneda112}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
+  Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{50}}, \bibinfo{pages}{1398}
+  (\bibinfo{year}{1981}).
+
+\bibitem[{\citenamefont{Van~Dyke}(1982)}]{nagib}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Van~Dyke}},
+  \emph{\bibinfo{title}{An album of fluid motion}}
+  (\bibinfo{publisher}{Parabolic Press}, \bibinfo{address}{Stanford, CA},
+  \bibinfo{year}{1982}).
 
 \bibitem[{\citenamefont{Maurer and Tabeling}(1998)}]{Tabeling}
 \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Maurer}} \bibnamefont{and}
@@ -81,6 +71,20 @@
   \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{125102}
   (\bibinfo{year}{2010}).
 
+\bibitem[{\citenamefont{Nore et~al.}(1997)\citenamefont{Nore, Abid, and
+  Brachet}}]{Nore}
+\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Nore}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Abid}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.~E.} \bibnamefont{Brachet}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{78}},
+  \bibinfo{pages}{3896} (\bibinfo{year}{1997}).
+
+\bibitem[{\citenamefont{Kobayashi and Tsubota}(2005)}]{Kobayashi}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Kobayashi}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{94}},
+  \bibinfo{pages}{065302} (\bibinfo{year}{2005}).
+
 \bibitem[{\citenamefont{Baggaley et~al.}(2012)\citenamefont{Baggaley, Laurie,
   and Barenghi}}]{Laurie}
 \bibinfo{author}{\bibfnamefont{A.~W.} \bibnamefont{Baggaley}},
@@ -88,6 +92,10 @@
   \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{109}},
   \bibinfo{pages}{205304} (\bibinfo{year}{2012}).
+
+\bibitem[{Lvo(2004)}]{Lvov}
+\bibinfo{journal}{JETP Letters} \textbf{\bibinfo{volume}{80}},
+  \bibinfo{pages}{479} (\bibinfo{year}{2004}).
 
 \bibitem[{\citenamefont{Frisch}(1995)}]{Frisch}
 \bibinfo{author}{\bibfnamefont{U.}~\bibnamefont{Frisch}},
@@ -102,6 +110,56 @@
   \bibinfo{author}{\bibfnamefont{P.-E.} \bibnamefont{Roche}},
   \emph{\bibinfo{title}{Velocity spectra of quantum turbulence: experiments,
   numerics and models}} (\bibinfo{year}{2013}), \eprint{arXiv:1306.6248}.
+
+\bibitem[{\citenamefont{Smith et~al.}(1999)\citenamefont{Smith, Hilton, and
+  Van~Sciver}}]{VanSciver1999}
+\bibinfo{author}{\bibfnamefont{M.~R.} \bibnamefont{Smith}},
+  \bibinfo{author}{\bibfnamefont{D.~K.} \bibnamefont{Hilton}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Van~Sciver}},
+  \bibinfo{journal}{Phys. Fluids} \textbf{\bibinfo{volume}{11}},
+  \bibinfo{pages}{1} (\bibinfo{year}{1999}).
+
+\bibitem[{\citenamefont{Zhang and Van~Sciver}(2005)}]{VanSciver2005}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Zhang}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Van~Sciver}},
+  \bibinfo{journal}{Nature Physics} \textbf{\bibinfo{volume}{1}},
+  \bibinfo{pages}{36} (\bibinfo{year}{2005}).
+
+\bibitem[{\citenamefont{Sergeev and Barenghi}(2009)}]{sergeev09}
+\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Sergeev}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Barenghi}},
+  \bibinfo{journal}{J. Low Temp. Phys.} \textbf{\bibinfo{volume}{157}},
+  \bibinfo{pages}{429} (\bibinfo{year}{2009}).
+
+\bibitem[{\citenamefont{H\"anninen et~al.}(2007)\citenamefont{H\"anninen,
+  Tsubota, and Vinen}}]{Hanninen}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{H\"anninen}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{W.~F.} \bibnamefont{Vinen}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{75}},
+  \bibinfo{pages}{064502} (\bibinfo{year}{2007}).
+
+\bibitem[{\citenamefont{Fujiyama and Tsubota}(2009)}]{Fujiyama}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fujiyama}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{79}},
+  \bibinfo{pages}{094513} (\bibinfo{year}{2009}).
+
+\bibitem[{\citenamefont{Goto et~al.}(2008)\citenamefont{Goto, Fujiyama, Yano,
+  Nago, Hashimoto, Obara, Ishikawa, Tsubota, and Hata}}]{goto08}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Goto}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fujiyama}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Yano}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Nago}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Hashimoto}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Obara}},
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Ishikawa}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Hata}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{100}},
+  \bibinfo{pages}{045301} (\bibinfo{year}{2008}),
+  \urlprefix\url{http://link.aps.org/doi/10.1103/PhysRevLett.100.045301}.
 
 \bibitem[{\citenamefont{Frisch et~al.}(1992)\citenamefont{Frisch, Pomeau, and
   Rica}}]{frisch92}
@@ -163,9 +221,30 @@
   (\bibinfo{publisher}{Cambridge University Press},
   \bibinfo{address}{Cambridge}, \bibinfo{year}{1991}).
 
+\bibitem[{\citenamefont{Nozi\`eres and Pines}(1990)}]{NozieresPines}
+\bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Nozi\`eres}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Pines}},
+  \emph{\bibinfo{title}{The Theory of Quantum Liquids II}}
+  (\bibinfo{publisher}{Addison-Wesley}, \bibinfo{address}{Redwood City},
+  \bibinfo{year}{1990}).
+
 \bibitem[{\citenamefont{Winiecki}(2001)}]{win01}
 \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Winiecki}}, Ph.D. thesis,
   \bibinfo{school}{The University of Durham} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Kwon et~al.}(2014)\citenamefont{Kwon, Moon, Choi, Seo,
+  and Shin}}]{kwon_moon_14}
+\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
+  \bibinfo{author}{\bibfnamefont{J.-y.} \bibnamefont{Choi}},
+  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.-i.} \bibnamefont{Shin}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{90}},
+  \bibinfo{pages}{063627} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Shin}()}]{shin_private}
+\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Shin}}, \bibinfo{note}{private
+  communication}.
 
 \bibitem[{\citenamefont{Stagg et~al.}(2014)\citenamefont{Stagg, Parker, and
   Barenghi}}]{stagg_parker_14}
