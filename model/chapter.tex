@@ -4,8 +4,8 @@
 	\begin{equation}
 	\mathrm{i} \hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t).
 	\label{eq:gpe}
-	\end{equation} 
-	Where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. When trapped, the trap is harmonic and of the form $V_{\mathrm{trap}}=m\omega^2r^2/2$.
+	\end{equation}
+	Where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. When trapped, the trap is harmonic and of the form $V_{\mathrm{trap}}=m\omega^2r^2/2$, otherwise $V_{\mathrm{trap}}=0$.
 \section{\label{section:gpedimless} Dimensionless Gross-Pitaevskii Equations}
 	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
 		When discussing a homogeneous condensate we drop the dimensionless modifiers for each quantity and use the equation,
@@ -17,7 +17,7 @@
 		\begin{equation}\label{eq:dimgpetrapped}
 		\mathrm{i}\frac{\partial\phi({\bf r},t)}{\partial t} = \left( -\frac{1}{2}\nabla^2 + g|\phi({\bf r},t)|^2 + V({\bf r},t) - 1 \right) \phi({\bf r},t).
 		\end{equation}
-		Where $V({\bf r},t) = \frac{r^2}{2} + V_{\mathrm{trap}}({\bf r},t)$
+		Where $V({\bf r},t) = \frac{r^2}{2} + V_{\mathrm{obj}}({\bf r},t)$
 \section{\label{section:gpe} The Dissipative Gross-Pitaevskii Equation}
 	\subsection{\label{section:gamma} Phenomenological dissipation}
 	In the case with a homogeneous condensate this leaves us with
@@ -31,11 +31,31 @@
 
 	\subsection{\label{section:mu} The role of the chemical potential}
 \section{\label{section:hydrodynamic} Hydrodynamic interpretation}
-	We can perform the Madelung transformation $\Psi({\bf r},t) = \sqrt{n({\bf r},t)}\exp (\mathrm{i}\Phi({\bf r},t))$.
-	[TODO: do this derivation(yellow booklet)]
-	gives us a continuity equation
+	We can perform the Madelung transformation $\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\Phi({\bf r},t))$.
+	Writing in tensor notation the GPE then becomes
+	\begin{equation*}
+		\mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \Phi}{\partial t} R \right)e^{\mathrm{i}\Phi} =
+		-\frac{\hbar^2}{2m}e^{\mathrm{i}\Phi}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \Phi}{\partial x_j}\frac{\partial R}{\partial x_j}+
+		\mathrm{i}\frac{\partial^2 \Phi}{\partial x_j^2}R -  \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\Phi} + VRe^{\mathrm{i}\Phi}
+	\end{equation*}
+	Divide through by $\exp (\mathrm{i}\Phi)$ and equate the real and imaginary parts,
+	\begin{align}
+		-\hbar R \frac{\partial \Phi}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j}  \right) + gR^3 + VR \label{eq:MTre}\\
+		\hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \Phi}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \Phi}{\partial x_j \partial x_j} \right)
+		\label{eq:MTim}
+	\end{align}
+	Consider Equation (\ref{eq:MTim}) and note that the density is written, $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$.
+	\begin{align*}
+		\frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \Phi}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \Phi}{\partial x_j\partial x_j} \right)\\
+		&= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\Phi \right)
+	\end{align*}
+	substituting in the velocity $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right)$ gives us a continuity equation
+	\begin{equation*}
+		\frac{\partial \rho}{\partial t} = \frac{\partial}{\partial x_j} \left( \rho v_j \right).
+	\end{equation*}
+	In vector form this is,
 	\begin{equation}
-		\frac{\partial}{\partial t} n + \nabla(n{\bf v}) = 0
+		\frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0
 		\label{eq:MTcont}
 	\end{equation}
 	and an Euler-like equation:
@@ -43,7 +63,7 @@
 		m\frac{\partial}{\partial t} v + \nabla\left(V + gn + \frac{mv^2}{2} - \frac{\hbar^2}{2m\sqrt{n}}\nabla\sqrt{n}\right) = 0
 		\label{eq:MTeuler}
 	\end{equation}
-	$\mathbf{v} = \hbar/m\nabla\Phi \Rightarrow$ Flow is irrotational, except when there are singularities in the phase. 
+	$\mathbf{v} = \hbar/m\nabla\Phi \Rightarrow$ Flow is irrotational, except when there are singularities in the phase.
 \section{\label{section:solutions} A selection of analytical solutions}
 	\subsection{\label{section:wall} Density near a wall}
 	\subsection{\label{section:soliton} Soliton solutions}
@@ -53,7 +73,7 @@
 	\begin{equation}
 	\sqrt{\frac{\mu - V({\bf r},t)}{g}} =  \Psi({\bf r},t)
 	\label{eq:TF}
-	\end{equation} 
+	\end{equation}
 	\subsection{\label{section:cfield} Classical Field approximation with a homogeneous condensate}
 		\begin{equation}
 		\psi({\bf r},t) = \sum_{\bf k} a_{\bf k} \exp (\mathrm{i}{\bf k}\cdot{\bf r}),
@@ -63,8 +83,8 @@
 
 		We also have the integral distribution function,
 		\begin{equation}
-		D_k = \sum_{k'<k}n_{\bf k},
+		D_k = \sum_{k'<k}n_{\bf k}.
 		\label{eq:intDistFunc}
 		\end{equation}
-		a coarse-grained characteristic of the particle distribution which shows how many particles have momenta less than $k$.
+		This is a coarse-grained characteristic of the particle distribution which shows how many particles have momenta less than $k$.
 \end{chapter}
