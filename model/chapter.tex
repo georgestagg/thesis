@@ -31,47 +31,51 @@
 
 	\subsection{\label{section:mu} The role of the chemical potential}
 \section{\label{section:hydrodynamic} Hydrodynamic interpretation}
-	We can perform the Madelung transformation $\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\Phi({\bf r},t))$.
-	Writing in tensor notation the GPE then becomes
+	Often it can be helpful to write the GPE, via the so called Madelung transformation, as a set of hydrodynamic equations. The transformation reinterprets the wavefunction $\Psi$ as a magnitude directly related to the fluid density and a phase which is directly related to the fluid velocity. We write $\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\Phi({\bf r},t))$ where the fluid density is $\rho=mR^2$ and the velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\Phi$ .
+	Inserting the Madelung transformation into the GPE and writing the result in tensor notation yields
 	\begin{equation*}
 		\mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \Phi}{\partial t} R \right)e^{\mathrm{i}\Phi} =
 		-\frac{\hbar^2}{2m}e^{\mathrm{i}\Phi}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \Phi}{\partial x_j}\frac{\partial R}{\partial x_j}+
-		\mathrm{i}\frac{\partial^2 \Phi}{\partial x_j^2}R -  \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\Phi} + VRe^{\mathrm{i}\Phi}
+		\mathrm{i}\frac{\partial^2 \Phi}{\partial x_j^2}R -  \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\Phi} + VRe^{\mathrm{i}\Phi}.
 	\end{equation*}
-	Divide through by $\exp (\mathrm{i}\Phi)$ and equate the real and imaginary parts,
+	The real and imaginary parts of the GPE, once divided by $\exp (\mathrm{i}\Phi)$, then take the form
 	\begin{align}
-		-\hbar R \frac{\partial \Phi}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j}  \right) + gR^3 + VR \label{eq:MTre}\\
-		\hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \Phi}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \Phi}{\partial x_j \partial x_j} \right)
+		-\hbar R \frac{\partial \Phi}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \Phi}{\partial x_j}\frac{\partial \Phi}{\partial x_j}  \right) + gR^3 + VR, \label{eq:MTre}\\
+		\hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \Phi}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \Phi}{\partial x_j \partial x_j} \right).
 		\label{eq:MTim}
 	\end{align}
-	Consider Equation (\ref{eq:MTim}) and note that the density is written, $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$.
+	Consider Equation (\ref{eq:MTim}) and note that $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$, allowing us to rewrite the equation in terms of $\frac{\partial \rho}{\partial t}$,
 	\begin{align*}
 		\frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \Phi}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \Phi}{\partial x_j\partial x_j} \right)\\
-		&= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\Phi \right)
+		&= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\Phi \right).
 	\end{align*}
-	substituting in the velocity $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right)$ gives us a continuity equation
+	The terms containing the phase can then be directly replaced with the fluid velocity, $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \Phi \right)$. The result is a continuity equation,
 	\begin{equation*}
 		\frac{\partial \rho}{\partial t} = \frac{\partial}{\partial x_j} \left( \rho v_j \right).
 	\end{equation*}
-	In vector form this is,
+	Rewritten in vector form this is
 	\begin{equation}
-		\frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0
+		\frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0.
 		\label{eq:MTcont}
 	\end{equation}
-	and an Euler-like equation:
+	Now consider Equation (\ref{eq:MTre}). Do things and get an Euler-like equation:
 	\begin{equation}
 		m\frac{\partial}{\partial t} v + \nabla\left(V + gn + \frac{mv^2}{2} - \frac{\hbar^2}{2m\sqrt{n}}\nabla\sqrt{n}\right) = 0
 		\label{eq:MTeuler}
 	\end{equation}
-	$\mathbf{v} = \hbar/m\nabla\Phi \Rightarrow$ Flow is irrotational, except when there are singularities in the phase.
 \section{\label{section:solutions} A selection of analytical solutions}
 	\subsection{\label{section:wall} Density near a wall}
 	\subsection{\label{section:soliton} Soliton solutions}
+		\begin{equation}
+		\Psi(x) = \Psi_0 \tanh \left( \frac{x}{\sqrt{2}\xi} \right)
+		\label{eq:soliton}
+		\end{equation}
 	\subsection{\label{section:vortices} Vortex solutions}
 \section{\label{section:inital} Initial Conditions}
 	\subsection{\label{section:tftrap} Thomas Fermi profile of a trapped condensate}
+	Fixed in time $\Psi$ and $V$.
 	\begin{equation}
-	\sqrt{\frac{\mu - V({\bf r},t)}{g}} =  \Psi({\bf r},t)
+	\sqrt{\frac{\mu - V({\bf r})}{g}} =  \Psi({\bf r})
 	\label{eq:TF}
 	\end{equation}
 	\subsection{\label{section:cfield} Classical Field approximation with a homogeneous condensate}

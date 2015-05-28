@@ -7,101 +7,55 @@ A level-1 auxiliary file: ./numerics/chapter.aux
 A level-1 auxiliary file: ./wake/chapter.aux
 A level-1 auxiliary file: ./shin/chapter.aux
 A level-1 auxiliary file: ./nonequib/chapter.aux
+A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "jma00"
-Warning--I didn't find a database entry for "nore93"
-Warning--I didn't find a database entry for "jma99"
-Warning--I didn't find a database entry for "win00"
-Warning--I didn't find a database entry for "huepe00"
-Warning--I didn't find a database entry for "zwerger00"
-Warning--I didn't find a database entry for "crescimanno00"
-Warning--I didn't find a database entry for "berloff2000"
-Warning--I didn't find a database entry for "rica2001"
-Warning--I didn't find a database entry for "pham2004"
-Warning--I didn't find a database entry for "jackson98"
-Warning--I didn't find a database entry for "fujimoto11"
-Warning--I didn't find a database entry for "aioi11"
-Warning--I didn't find a database entry for "el06"
-Warning--I didn't find a database entry for "carusotto06"
-Warning--I didn't find a database entry for "Pethick"
-Warning--I didn't find a database entry for "white12"
-Warning--I didn't find a database entry for "and13"
-Warning--I didn't find a database entry for "bagg12"
-Warning--I didn't find a database entry for "winiecki99"
-Warning--I didn't find a database entry for "wacks"
-Warning--I didn't find a database entry for "blaz08"
-Warning--I didn't find a database entry for "brad05"
-Warning--I didn't find a database entry for "Gorlitz"
-Warning--I didn't find a database entry for "fos10"
-Warning--I didn't find a database entry for "white_anderson_14"
-Warning--I didn't find a database entry for "barenghi_skrbek_14"
-Warning--I didn't find a database entry for "barenghi_donnelly_01"
 Warning--I didn't find a database entry for "henn_seman_09"
-Warning--I didn't find a database entry for "parker2005"
-Warning--I didn't find a database entry for "middelkamp"
-Warning--I didn't find a database entry for "neely_bradley_13"
-Warning--I didn't find a database entry for "delgado"
-Warning--I didn't find a database entry for "parker2008"
-Warning--I didn't find a database entry for "jackson_proukakis_09"
-Warning--I didn't find a database entry for "choi_morgan_98"
-Warning--I didn't find a database entry for "tsubota_kasamatsu_02"
-Warning--I didn't find a database entry for "madarassy_barenghi_08"
-Warning--I didn't find a database entry for "yan_proukakis_14"
-Warning--I didn't find a database entry for "jackson_mccann_00"
 Warning--I didn't find a database entry for "sasaki_suzuki_10"
-Warning--I didn't find a database entry for "white_barenghi_12"
-Warning--I didn't find a database entry for "reeves_billam_13"
-Warning--I didn't find a database entry for "nazarenko_onorato_07"
-Warning--I didn't find a database entry for "rorai_skreenivasan_12"
-Warning--I didn't find a database entry for "prabhakar_singh_13"
-Warning--I didn't find a database entry for "leadbeater"
-Warning--I didn't find a database entry for "zuccher"
-Warning--I didn't find a database entry for "powis"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 30 entries,
+You've used 74 entries,
             3411 wiz_defined-function locations,
-            1434 strings with 15557 characters,
-and the built_in function-call counts, 21727 in all, are:
-= -- 1173
-> -- 806
-< -- 112
-+ -- 682
-- -- 198
-* -- 2995
-:= -- 2298
-add.period$ -- 30
-call.type$ -- 30
-change.case$ -- 122
-chr.to.int$ -- 30
-cite$ -- 33
-duplicate$ -- 1945
-empty$ -- 1810
-format.name$ -- 481
-if$ -- 4077
-int.to.chr$ -- 1
-int.to.str$ -- 31
-missing$ -- 303
-newline$ -- 105
-num.names$ -- 87
-pop$ -- 531
+            1599 strings with 21400 characters,
+and the built_in function-call counts, 56374 in all, are:
+= -- 3065
+> -- 2143
+< -- 284
++ -- 1804
+- -- 522
+* -- 7860
+:= -- 5883
+add.period$ -- 74
+call.type$ -- 74
+change.case$ -- 298
+chr.to.int$ -- 72
+cite$ -- 77
+duplicate$ -- 5006
+empty$ -- 4641
+format.name$ -- 1279
+if$ -- 10622
+int.to.chr$ -- 3
+int.to.str$ -- 75
+missing$ -- 775
+newline$ -- 237
+num.names$ -- 219
+pop$ -- 1344
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 296
 quote$ -- 0
-skip$ -- 820
+skip$ -- 2137
 stack$ -- 0
-substring$ -- 679
-swap$ -- 1566
-text.length$ -- 99
+substring$ -- 1838
+swap$ -- 4096
+text.length$ -- 260
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 172
+type$ -- 432
 warning$ -- 1
-while$ -- 81
+while$ -- 211
 width$ -- 0
-write$ -- 308
-(There were 50 warnings)
+write$ -- 745
+(There were 3 warnings)
