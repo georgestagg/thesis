@@ -42,11 +42,11 @@ int.to.str$ -- 75
 missing$ -- 775
 newline$ -- 237
 num.names$ -- 219
-pop$ -- 1344
+pop$ -- 1346
 preamble$ -- 1
 purify$ -- 296
 quote$ -- 0
-skip$ -- 2137
+skip$ -- 2135
 stack$ -- 0
 substring$ -- 1838
 swap$ -- 4096
