@@ -2,6 +2,21 @@
 \section{\label{section:RK} Numerical procedures for 2D and 3D solutions}
 	\subsection{\label{section:RK4} Runge-Kutta}
 	\subsection{\label{section:imagTime} Imaginary time convergence}
+	\subsection{\label{section:numericalParams} Numerical stability}
+	We now systematically study the numerical stability of common simulated systems. Our aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical solutions are converged and not overly sensitive to small changes computational parameters.
+
+	We use energy to measure because in the undamped gpe energy is conserved.
+
+	We run 100 units of imaginary time stepping to get density profile
+	We run another 100 units for vortex IC
+	We run 500 units in real time to study stability
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{numerics/figures/homg_energy_cons.png}
+\end{figure}
+
 \section{\label{section:vortexidentifying} Identifying vortices}
 	\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
 \section{\label{section:vortextracking} Tracking vortex trajectories}
