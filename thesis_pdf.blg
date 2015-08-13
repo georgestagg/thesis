@@ -1,9 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis_pdf.aux
 A level-1 auxiliary file: ./bose_gasses/chapter.aux
 A level-1 auxiliary file: ./model/chapter.aux
 A level-1 auxiliary file: ./numerics/chapter.aux
+A level-1 auxiliary file: ./vortexdeflection/chapter.aux
 A level-1 auxiliary file: ./wake/chapter.aux
 A level-1 auxiliary file: ./shin/chapter.aux
 A level-1 auxiliary file: ./nonequib/chapter.aux
@@ -19,7 +20,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
 You've used 74 entries,
             3411 wiz_defined-function locations,
-            1599 strings with 21400 characters,
+            1600 strings with 21430 characters,
 and the built_in function-call counts, 56374 in all, are:
 = -- 3065
 > -- 2143

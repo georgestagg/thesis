@@ -72,19 +72,29 @@
 	Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} = \frac{1}{\sqrt{\rho}}\nabla^2\sqrt{\rho}$ and $\frac{\hbar^2}{2m^2} \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} = \frac{v^2}{2} $. It follows that Equation (\ref{eq:MTre}) can be written,
 
 	\begin{align*}
-	\frac{\hbar}{m} \frac{\partial \theta}{\partial t} &= \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
-	\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) &= \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}.
+	&\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
+	&\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
+	&\Rightarrow \rho\frac{\partial v_k}{\partial t} =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - \rho\frac{1}{m}\frac{\partial V}{\partial x_k}.
 	\end{align*}
 
+	By noticing that $p = \frac{1}{2}g \left ( \frac{\rho}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
 	\begin{equation*}
-	\frac{\partial v_k}{\partial t} = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}
+	\rho\frac{\partial v_k}{\partial t} + \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
 	\end{equation*}
 
-	More steps:
+	We now now use the following two results,
+	\begin{align*}
+	v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
+	2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{\rho}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{\rho}\right) &= \frac{1}{\rho} \frac{\partial}{\partial x_j}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{\rho},
+	\end{align*}
 
-	We get a modified Euler equation,
+	and find,
+	\begin{equation*}
+	\rho\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - \rho \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
+	\end{equation*}
+	where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
 	\begin{equation}
-	\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right)
+	\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
 	\end{equation}
 
 \section{\label{section:solutions} A selection of analytical solutions}
