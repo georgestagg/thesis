@@ -18,69 +18,174 @@
 \end{figure}
 
 \section{\label{section:vortexidentifying} Identifying vortices}
+
+\IncMargin{1em}
+	\begin{algorithm}
+	\SetKwFunction{Zero}{Zero}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\SetKwData{Linked}{linked}
+	\SetKw{KwAnd}{and}
+	\Input{A $n_x \times n_y$ field $\theta$. A $n_x \times n_y$ field $P$. A line integral width $l$.}
+	\Output{A $n_x \times n_y$ field $Q$.}
+	\BlankLine
+	\For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
+		\For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
+			$Q[i,j]\leftarrow\oint_\Box \nabla\theta~ds$, where $\Box$ is a square loop of width $l$ centered on $(i,j)$\;
+		}
+		\lIf {$P[i,j]>1$}{$Q[i,j]\leftarrow0$}
+	}
+
+
+\caption{Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.}\label{algo_calcvortexfield}
+\end{algorithm}\DecMargin{1em}
+
+
+\IncMargin{1em}
+	\begin{algorithm}
+	\SetKwFunction{Zero}{Zero}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\SetKwData{Linked}{linked}
+	\SetKwData{Lc}{lc}
+	\SetKwData{Rc}{rc}
+	\SetKwData{Call}{c}
+	\SetKwData{Mtmp}{m}
+	\SetKwFunction{Max}{max}
+	\SetKwFunction{Min}{min}
+	\SetKw{continue}{continue}
+	\SetKw{KwAnd}{and}
+	\Input{A $n_x \times n_y$ binary field $P$.}
+	\Output{A $n_x \times n_y$ field $Q$.}
+	\BlankLine
+	Let \Linked be a $(n_x.n_y) \times 4$ field\;
+	\Linked$\leftarrow -1$ at every point, $Q\leftarrow -1$ at every point\;
+	\Lc$\leftarrow 1$, \Rc$\leftarrow 0$\;
+
+	\For{$i\leftarrow 2$ \KwTo $n_x-1$}{
+		\For{$j\leftarrow 2$ \KwTo $n_y-1$}{
+			\lIf {$P[i,j] = 0$}{skip this loop iteration}
+			\ForEach{\Call $\in(Q[i+1,j-1],Q[i,j-1],Q[i-1,j-1],Q[i-1,j])$}{
+				\If {\Call$\geq 0$}{
+					$Q[i,j]\leftarrow$\Call\;
+					\Linked\!$[$\Lc$,1]\leftarrow$\Call\;
+				}
+			}
+			\lIf{$Q[i,j] \geq 0$}{\Lc$\leftarrow$\Lc$+ 1$}
+			\Else{
+				Q[i,j]$\leftarrow$\Rc\;
+				\Rc$\leftarrow$\Rc$+ 1$\;
+			}
+		}
+	}
+	\For{$i\leftarrow 1$ \KwTo $(n_x \times n_y)$}{
+		\lIf{\Max{$\mathrm{All~elements~of}~\Linked~\mathrm{from~row}~i$}$= -1$}{\continue}
+		\Mtmp $\leftarrow$ \Min{$\mathrm{All~elements~of}~\Linked~\mathrm{from~row}~i~\mathrm{with~value}\geq 0$}\;
+
+		\For{$j\leftarrow 1$ \KwTo $4$}{
+			\If{\Linked\!$[i,j] \neq\,$\Mtmp \KwAnd \Linked\!$[i,j] \geq 0$ }{
+				\For{$k\leftarrow 1$ \KwTo $n_x$}{
+					\For{$l\leftarrow 1$ \KwTo $n_y$}{
+						\lIf{$Q[k,l]  =$~\Linked\!$[i,j]$}{$Q[k,l] = $~\Mtmp}
+					}
+				}
+			}
+		}
+	}
+
+
+\caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
+\end{algorithm}\DecMargin{1em}
+
+
 	\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
 	\IncMargin{1em}
 		\begin{algorithm}
-		\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-		\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-		\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
-		\Input{A field $P \in \mathbb{R}$ of size $nx \times ny$, a Gaussian filter size $g\in\mathbb{R}$, a line integral length $nl\in\mathbb{N}$.}
-		\Output{A field $P \in \mathbb{R}$ of size $nx \times ny$ }
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+		\Input{A $n_x \times n_y$ field $P$, a Gaussian filter width $g$.}
+		\Output{A $n_x \times n_y$ field $Q$.}
 		\BlankLine
-		\emph{special treatment of the first line}\;
-		\For{$i\leftarrow 2$ \KwTo $l$}{
-		\emph{special treatment of the first element of line $i$}\;
-		\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
-		\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
-		\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
-		\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
-		\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
-		\lIf{\Left $<$ \This}{\Union{\Left,\This}}\;
-		\lElse{\Union{\This,\Left}\;}
+		$Q\leftarrow0$ at every point\;
+		\For{$k\leftarrow 1$ \KwTo $n_x$}{
+			\For{$l\leftarrow 1$ \KwTo $n_y$}{
+				\For{$i\leftarrow 1$ \KwTo $n_x$}{
+					\For{$j\leftarrow 1$ \KwTo $n_y$}{
+						$Q[k,l] \leftarrow Q[k,l] + P[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
+					}
+				}
+				$Q[k,l] \leftarrow Q[k,l]/(n_x \times n_y)$\;
+			}
 		}
-		\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
-		\lIf{\Up $<$ \This}{\Union{\Up,\This}}\;
-		\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
-		\lElse{\Union{\This,\Up}}\tcp*[r]{\This linked to \Up}\label{lelse}
-		}
-		}
-		\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
-		}
-	\caption{disjoint decomposition}\label{algo_disjdecomp}
+
+	\caption{Gaussian convolution. Filters out features with structures of size less than the input
+	filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
 	\end{algorithm}\DecMargin{1em}
+
+\IncMargin{1em}
+	\begin{algorithm}
+	\SetKwFunction{Zero}{Zero}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\SetKwData{Linked}{linked}
+	\SetKw{KwAnd}{and}
+	\SetKwFunction{Max}{max}
+	\SetKwFunction{Min}{min}
+	\SetKwData{Call}{C}
+	\Input{A $n_x \times n_y$ field $\theta$. A $n_x \times n_y$ field $P$. A threshold value $t$.}
+	\Output{Number of vortices found, $n_x$. Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$.}
+	\BlankLine
+	$Q\leftarrow$ Algorithm \ref{algo_gaussconv} $\leftarrow$ Algorithm \ref{algo_calcvortexfield} $\leftarrow(\theta,P)$ \;
+	$R\leftarrow0$ at every point, $S\leftarrow0$ at every point\;
+	$n_v\leftarrow 0$\;
+	\For{$i\leftarrow 1$ \KwTo $n_x$}{
+		\For{$j\leftarrow 1$ \KwTo $n_y$}{
+			\lIf {$Q[i,j]>t$}{$R[i,j] = 1$}
+			\lIf {$Q[i,j]<t$}{$S[i,j] = 1$}
+		}
+	}
+
+	\ForEach{$C\in(R,S)$}{
+		$D\leftarrow$ Algorithm \ref{algo_bwlabel} $\leftarrow C$\;
+		\For{$i\leftarrow 1$ \KwTo \Max($D$)}{
+			$V[1,n_v]\leftarrow$ mean row of the points where $D=i$\;
+			$V[2,n_v]\leftarrow$ mean column of the points where $D=i$\;
+			\lIf {$C=R$}{$V[3,n_v]\leftarrow 1$}
+			\lIf {$C=S$}{$V[3,n_v]\leftarrow -1$}
+			$n_v \leftarrow n_v + 1$\;
+		}
+	}
+
+	\caption{Calculate vortex locations and polarity.}\label{algo_calcvortexlocs}
+	\end{algorithm}
+\DecMargin{1em}
+
+
 
 \section{\label{section:vortexclustering} Quantifying vortex clustering}
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
 	\subsection{\label{section:ripleysk} Ripley's K function }
 \section{\label{section:vortextracking} Tracking vortex trajectories}
 \section{\label{section:vortexremoval} Removing vortices with ``phase unwrapping''}
-	\IncMargin{1em}
+\IncMargin{1em}
 	\begin{algorithm}
-	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\Input{A bitmap $Im$ of size $w\times l$}
-	\Output{A partition of the bitmap}
+	\SetKwData{Linked}{linked}
+	\SetKw{KwAnd}{and}
+	\SetKwFunction{Max}{max}
+	\SetKwFunction{Min}{min}
+	\SetKwData{Call}{C}
+	\Input{A $n_x \times n_y$ complex field $\psi$.}
+	\Output{A $n_x \times n_y$ complex field $\phi$.}
 	\BlankLine
-	\emph{special treatment of the first line}\;
-	\For{$i\leftarrow 2$ \KwTo $l$}{
-	\emph{special treatment of the first element of line $i$}\;
-	\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
-	\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
-	\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
-	\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
-	\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
-	\lIf{\Left $<$ \This}{\Union{\Left,\This}}\;
-	\lElse{\Union{\This,\Left}\;}
+	$\phi \leftarrow \psi$\;
+	$(n_v,V_l,V_p)\leftarrow$ Algorithm \ref{algo_calcvortexlocs}~$\leftarrow\psi$\;
+
+	\For{$i\leftarrow 1$ \KwTo $n_v$}{
+		Imprint a vortex of polarity $V_p[i]$ at location $V_l[i]$ in $\phi$\;
+		$\Box\leftarrow$ an area with width of a vortex core and location $V_l[i]$\;
+		$|\phi(\Box)| \leftarrow \psi_{\inf}$\;
 	}
-	\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
-	\lIf{\Up $<$ \This}{\Union{\Up,\This}}\;
-	\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
-	\lElse{\Union{\This,\Up}}\tcp*[r]{\This linked to \Up}\label{lelse}
-	}
-	}
-	\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
-	}
-	\caption{disjoint decomposition}\label{algo_disjdecomp}
-	\end{algorithm}\DecMargin{1em}
+
+	\caption{The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.}\label{algo_vortexkiller}
+	\end{algorithm}
+\DecMargin{1em}
+
 \end{chapter}
