@@ -6,6 +6,10 @@
 	\label{eq:gpe}
 	\end{equation}
 	Where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. When trapped, the trap is harmonic and of the form $V_{\mathrm{trap}}=m\omega^2r^2/2$, otherwise $V_{\mathrm{trap}}=0$.
+\section{\label{section:quasi2dgpe} Quasi-Two-Dimensional Gross-Pitaevskii Equation}
+	When $\omega_z >> \omega_r$ and $\hbar\omega_z >> \mu$ the condensate becomes highly oblate. Tight $z$ confinment causes the dynamics to become essentially two dimentional.
+	In this case a 2DGPE can be used to model the system where $g_{2D} = g/\left( \sqrt{2\pi}l_z\right )$. [CITE PARKER THESIS] The chemical potential is also modified. See Section \ref{section:mu} for details on $\mu$.
+
 \section{\label{section:gpedimless} Dimensionless Gross-Pitaevskii Equations}
 	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
 		When discussing a homogeneous condensate we drop the dimensionless modifiers for each quantity and use the equation,
@@ -18,13 +22,14 @@
 		\mathrm{i}\frac{\partial\phi({\bf r},t)}{\partial t} = \left( -\frac{1}{2}\nabla^2 + g|\phi({\bf r},t)|^2 + V({\bf r},t) - 1 \right) \phi({\bf r},t).
 		\end{equation}
 		Where $V({\bf r},t) = \frac{r^2}{2} + V_{\mathrm{obj}}({\bf r},t)$
+
 \section{\label{section:gpe} The Dissipative Gross-Pitaevskii Equation}
 	\subsection{\label{section:gamma} Phenomenological dissipation}
 	The GPE can be modified to provide a simple phenomenological model of a condensate's interaction with the thermal cloud. The phenomenological damping term, $\gamma$, is added to the right hand side of the GPE with the effect that the energy in the system no longer remains constant. The energy will instead vary over time to approach some constant value. This has the effect of damping out any excitations made to the condensate, and over time the wavefunction approaches the steady state. A microscopic justification for this model was provided by Penckwitt et al [CITE] and Gardiner at al [CITE]; by studying the growth of a condensate in the presence of a rotating thermal cloud an expression for $\gamma$ was found.
 		\begin{equation}\label{eq:dissgamma}
 		\gamma = \frac{4m\tilde{g}a^2kT}{\pi\hbar^2} \approx 0.01,
 		\end{equation}
-	where $k$ is Boltzmann's constant and $\tilde{g} = 3$ is factor used for correction. As $\gamma$ is proportional to temperature, in this thesis various values of $\gamma$ will be used as a qualitative probe of finite-temperature dynamics with only marginally more complex numerical methods.
+	where $k$ is Boltzmann's constant and $\tilde{g} = 3$ is a factor used for correction. As $\gamma$ is proportional to temperature, in this thesis various values of $\gamma$ will be used as a qualitative probe of finite-temperature dynamics with only marginally more complex numerical methods.
 	In the case with a homogeneous condensate this leaves us with
 		\begin{equation}\label{eq:dissgpehomg}
 		(\mathrm{i} - \gamma)\frac{\partial\psi({\bf r},t)}{\partial t} = \left( -\frac{1}{2}\nabla^2 + |\psi({\bf r},t)|^2 + V_{\mathrm{obj}}({\bf r},t) - 1 \right) \psi({\bf r},t),
@@ -36,66 +41,22 @@
 
 	\subsection{\label{section:mu} The role of the chemical potential}
 \section{\label{section:hydrodynamic} Hydrodynamic interpretation}
-	Often it can be helpful to write the GPE, via the so called Madelung transformation, as a set of hydrodynamic equations. The transformation reinterprets the wavefunction $\Psi$ as a magnitude directly related to the fluid density and a phase which is directly related to the fluid velocity. We write $\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\theta({\bf r},t))$ and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ .
-	Inserting the Madelung transformation into the GPE and writing the result in tensor notation yields
-	\begin{equation*}
-		\mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \theta}{\partial t} R \right)e^{\mathrm{i}\theta} =
-		-\frac{\hbar^2}{2m}e^{\mathrm{i}\theta}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j}+
-		\mathrm{i}\frac{\partial^2 \theta}{\partial x_j^2}R -  \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\theta} + VRe^{\mathrm{i}\theta}.
-	\end{equation*}
-	The real and imaginary parts of the GPE, once divided by $\exp (\mathrm{i}\theta)$, then take the form
-	\begin{align}
-		-\hbar R \frac{\partial \theta}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) + gR^3 + VR, \label{eq:MTre}\\
-		\hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j \partial x_j} \right).
-		\label{eq:MTim}
-	\end{align}
-	Consider Equation (\ref{eq:MTim}) and note that $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$, allowing us to rewrite the equation in terms of $\rho$,
-	\begin{align*}
-		\frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \theta}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j\partial x_j} \right)\\
-		&= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right)\\
-		&= -\frac{\partial \rho}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - \rho \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right).
-	\end{align*}
-	The terms containing the phase can then be directly replaced with the fluid velocity, $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right)$.
-	\begin{align*}
-		\frac{\partial \rho}{\partial t} &= -\frac{\partial \rho}{\partial x_j} v_j - \rho \frac{\partial}{\partial x_j} v_j\\
-										 &= -\frac{\partial}{\partial x_j} \left( \rho v_j \right).
-	\end{align*}
-	Rewritten in vector form the result is a continuity equation,
+	Often it can be helpful to write the GPE, via the so called Madelung transformation, as a set of hydrodynamic equations. The transformation reinterprets the wavefunction $\Psi$ as a magnitude directly related to the fluid density and a phase which is directly related to the fluid velocity. We write the wavefunction in the form
 	\begin{equation}
-		\frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0.
-		\label{eq:MTcont}
+		\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\theta({\bf r},t)),
 	\end{equation}
-	Now consider Equation (\ref{eq:MTre}), written in the form
-	\begin{equation*}
-	\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \left( \frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} - \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) - \frac{gR^2}{m} - \frac{V}{m}.
-	\end{equation*}
-	Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} = \frac{1}{\sqrt{\rho}}\nabla^2\sqrt{\rho}$ and $\frac{\hbar^2}{2m^2} \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} = \frac{v^2}{2} $. It follows that Equation (\ref{eq:MTre}) can be written,
-
-	\begin{align*}
-	&\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
-	&\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
-	&\Rightarrow \rho\frac{\partial v_k}{\partial t} =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - \rho\frac{1}{m}\frac{\partial V}{\partial x_k}.
-	\end{align*}
-
-	By noticing that $p = \frac{1}{2}g \left ( \frac{\rho}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
-	\begin{equation*}
-	\rho\frac{\partial v_k}{\partial t} + \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
-	\end{equation*}
-
-	We now now use the following two results,
-	\begin{align*}
-	v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
-	2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{\rho}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{\rho}\right) &= \frac{1}{\rho} \frac{\partial}{\partial x_j}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{\rho},
-	\end{align*}
-
-	and find,
-	\begin{equation*}
-	\rho\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - \rho \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
-	\end{equation*}
-	where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
+	 and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$.
+	In vector form we obtain a continuity equation
+	\begin{equation}
+	  \frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0,
+	  \label{eq:MTcont}
+	\end{equation}
+	and an equation similar to the Euler equation for an inviscid fluid,
 	\begin{equation}
 	\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
 	\end{equation}
+	where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$.
+	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:solutions} A selection of analytical solutions}
 	\subsection{\label{section:wall} Density near a wall}

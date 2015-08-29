@@ -1,12 +1,71 @@
-\begin{chapter}{
-\label{app:App2}Appendix A}
+\begin{chapter}{Detailed Derivations\label{app:App2}}
+\section{\label{appsection:madtrans} Derivation of the Hydrodynamic Equations via the Madelung Transformation}
+Inserting the Madelung transformation (Section \ref{section:hydrodynamic}) into the GPE and writing the result in tensor notation yields
+\begin{equation*}
+  \mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \theta}{\partial t} R \right)e^{\mathrm{i}\theta} =
+  -\frac{\hbar^2}{2m}e^{\mathrm{i}\theta}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j}+
+  \mathrm{i}\frac{\partial^2 \theta}{\partial x_j^2}R -  \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\theta} + VRe^{\mathrm{i}\theta}.
+\end{equation*}
+The real and imaginary parts of the GPE, once divided by $\exp (\mathrm{i}\theta)$, then take the form
+\begin{align}
+  -\hbar R \frac{\partial \theta}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) + gR^3 + VR, \label{eq:MTre}\\
+  \hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j \partial x_j} \right).
+  \label{eq:MTim}
+\end{align}
+Consider Equation (\ref{eq:MTim}) and note that $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$, allowing us to rewrite the equation in terms of $\rho$,
+\begin{align*}
+  \frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \theta}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j\partial x_j} \right)\\
+  &= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right)\\
+  &= -\frac{\partial \rho}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - \rho \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right).
+\end{align*}
+The terms containing the phase can then be directly replaced with the fluid velocity, $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right)$.
+\begin{align*}
+  \frac{\partial \rho}{\partial t} &= -\frac{\partial \rho}{\partial x_j} v_j - \rho \frac{\partial}{\partial x_j} v_j\\
+                   &= -\frac{\partial}{\partial x_j} \left( \rho v_j \right).
+\end{align*}
+Rewritten in vector form the result is a continuity equation,
+\begin{equation}
+  \frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0.
+  \label{eq:MTcont}
+\end{equation}
+Now consider Equation (\ref{eq:MTre}), written in the form
+\begin{equation*}
+\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \left( \frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} - \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) - \frac{gR^2}{m} - \frac{V}{m}.
+\end{equation*}
+Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} = \frac{1}{\sqrt{\rho}}\nabla^2\sqrt{\rho}$ and $\frac{\hbar^2}{2m^2} \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} = \frac{v^2}{2} $. It follows that Equation (\ref{eq:MTre}) can be written,
+
+\begin{align*}
+&\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
+&\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
+&\Rightarrow \rho\frac{\partial v_k}{\partial t} =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - \rho\frac{1}{m}\frac{\partial V}{\partial x_k}.
+\end{align*}
+
+By noticing that $p = \frac{1}{2}g \left ( \frac{\rho}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
+\begin{equation*}
+\rho\frac{\partial v_k}{\partial t} + \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
+\end{equation*}
+
+We now now use the following two results,
+\begin{align*}
+v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
+2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{\rho}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{\rho}\right) &= \frac{1}{\rho} \frac{\partial}{\partial x_j}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{\rho},
+\end{align*}
+
+and find,
+\begin{equation*}
+\rho\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - \rho \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
+\end{equation*}
+where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
+\begin{equation}
+\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
+\end{equation}
 \section{\label{appsection:energy} Energy}
 \section{\label{appsection:force} Force}
 
 \begin{equation}
 T_{jk} = \rho v_j v_k + p\mathrm{\delta}_{jk} - \frac{\hbar^2}{4m^2}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln \rho
 \label{eq:stressTensor}
-\end{equation} 
+\end{equation}
 
 \begin{equation}
 F_k =\frac{\partial}{\partial t} \int_V J_k\,\mathrm{d}V = - \int_V \frac{\partial}{\partial x_j} T_{jk}\,\mathrm{d}V - \int_V \rho \frac{\partial}{\partial x_k} \left( \frac{V}{m} \right)\,\mathrm{d}V

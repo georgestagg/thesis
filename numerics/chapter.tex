@@ -161,6 +161,10 @@
 \section{\label{section:vortexclustering} Quantifying vortex clustering}
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
 	\subsection{\label{section:ripleysk} Ripley's K function }
+		\begin{equation}\label{eq:ripleysk}
+		K(x) = \frac{A}{n^2}\sum\limits_{i \ne j} I\left (d_{ij}<x\right ),
+		\end{equation}
+		where $d_{ij}$ is the distance between the $i$th and $j$th points, $A$ is the area of the region containing every point, $n$ is the number of points, $x$ is the search radius, and I is the indicator function (1 if its argument is true, 0 otherwise). Should the points be distributed homogeneously in space, then $K(s)\approx\pi s^2$.
 \section{\label{section:vortextracking} Tracking vortex trajectories}
 \section{\label{section:vortexremoval} Removing vortices with ``phase unwrapping''}
 \IncMargin{1em}
