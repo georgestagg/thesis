@@ -59,8 +59,8 @@ ifeq ($(LATEX), pdflatex)
 	mv $*_pdf.pdf $*.pdf
 	echo "$(TMP) + 1" | bc > stats/compiled
 	pdfinfo thesis.pdf | grep "Pages" | awk '{printf $$2}' > stats/pages
-	pdftotext thesis.pdf - | tr " " "\n" | grep -E "^[A-Za-z]+$$" | wc -l > stats/words
-	pdftotext thesis.pdf - | grep -oE "Figure [0-9]+.[0-9]+" | sort | uniq | wc -l > stats/figures
+	pdftotext thesis.pdf - | LC_ALL=C  tr " " "\n" | grep -E "^[A-Za-z]+$$" | wc -l > stats/words
+	pdftotext thesis.pdf - | LC_ALL=C  grep -oE "Figure [0-9]+.[0-9]+" | sort | uniq | wc -l > stats/figures
 	git rev-list HEAD --count > stats/commits
 	git log -1 --pretty=%B > stats/lastmessage
 endif
@@ -103,7 +103,7 @@ ps: $(OBJECT).ps
 
 pdf: $(OBJECT).pdf
 
-twoup: $(OBJECT).ps 
+twoup: $(OBJECT).ps
 	psnup -n2 -Pa4 $(OBJECT).ps $(OBJECT).2up.ps
 
 book: ps

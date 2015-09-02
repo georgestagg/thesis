@@ -19,8 +19,7 @@
 
 \section{\label{section:vortexidentifying} Identifying vortices}
 
-\IncMargin{1em}
-	\begin{algorithm}
+	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	\SetKwData{Linked}{linked}
@@ -37,11 +36,11 @@
 
 
 \caption{Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.}\label{algo_calcvortexfield}
-\end{algorithm}\DecMargin{1em}
+\end{algorithm}
 
 
-\IncMargin{1em}
-	\begin{algorithm}
+
+	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	\SetKwData{Linked}{linked}
@@ -77,8 +76,8 @@
 		}
 	}
 	\For{$i\leftarrow 1$ \KwTo $(n_x \times n_y)$}{
-		\lIf{\Max{$\mathrm{All~elements~of}~\Linked~\mathrm{from~row}~i$}$= -1$}{\continue}
-		\Mtmp $\leftarrow$ \Min{$\mathrm{All~elements~of}~\Linked~\mathrm{from~row}~i~\mathrm{with~value}\geq 0$}\;
+		\lIf{\Max{All elements of \Linked from row $i$}$= -1$}{\continue}
+		\Mtmp $\leftarrow$ \Min{All elements of \Linked from row $i$ with value$\geq 0$}\;
 
 		\For{$j\leftarrow 1$ \KwTo $4$}{
 			\If{\Linked\!$[i,j] \neq\,$\Mtmp \KwAnd \Linked\!$[i,j] \geq 0$ }{
@@ -93,12 +92,11 @@
 
 
 \caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
-\end{algorithm}\DecMargin{1em}
+\end{algorithm}
 
 
 	\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
-	\IncMargin{1em}
-		\begin{algorithm}
+		\begin{algorithm}[H]
 		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 		\Input{A $n_x \times n_y$ field $P$, a Gaussian filter width $g$.}
 		\Output{A $n_x \times n_y$ field $Q$.}
@@ -117,10 +115,10 @@
 
 	\caption{Gaussian convolution. Filters out features with structures of size less than the input
 	filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
-	\end{algorithm}\DecMargin{1em}
+	\end{algorithm}
 
-\IncMargin{1em}
-	\begin{algorithm}
+
+	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	\SetKwData{Linked}{linked}
@@ -129,7 +127,7 @@
 	\SetKwFunction{Min}{min}
 	\SetKwData{Call}{C}
 	\Input{A $n_x \times n_y$ field $\theta$. A $n_x \times n_y$ field $P$. A threshold value $t$.}
-	\Output{Number of vortices found, $n_x$. Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$.}
+	\Output{Number of vortices found, $n_v$. Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$.}
 	\BlankLine
 	$Q\leftarrow$ Algorithm \ref{algo_gaussconv} $\leftarrow$ Algorithm \ref{algo_calcvortexfield} $\leftarrow(\theta,P)$ \;
 	$R\leftarrow0$ at every point, $S\leftarrow0$ at every point\;
@@ -154,42 +152,95 @@
 
 	\caption{Calculate vortex locations and polarity.}\label{algo_calcvortexlocs}
 	\end{algorithm}
-\DecMargin{1em}
 
 
 
 \section{\label{section:vortexclustering} Quantifying vortex clustering}
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
+		\begin{algorithm}[H]
+		\SetKwFunction{Zero}{Zero}
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+		\SetKwData{Linked}{linked}
+		\SetKw{KwAnd}{and}
+		\SetKwFunction{Max}{max}
+		\SetKwFunction{Min}{min}
+		\SetKw{continue}{continue}
+		\SetKw{or}{or}
+		\SetKw{and}{and}
+		\SetKwData{Call}{C}
+		\Input{Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$. Number of vortices, $n_v$.}
+		\Output{Vortex decomposition, a vector $V_{\mathrm{rca}}$ of length $n_v$.}
+		\BlankLine
+		$n_{\mathrm{rca}}\leftarrow0$\;
+		$V_{\mathrm{rca}}\leftarrow 0$ at every point\;
+		\While{dipoles continue to be identified}{
+			\For{$i\leftarrow 1$ \KwTo $n_v$}{
+				\If {vortex $i$ is mutual nearest neighbours with some other vortex $j$}{
+				\If {$V_p[i] \neq V_p[i]$}{
+						$V_{\mathrm{rca}}[i] \leftarrow -1$\;
+						$V_{\mathrm{rca}}[j] \leftarrow -1$\;
+					}
+				}
+			}
+		}
+		\While{vortices continue to be added to clusters}{
+			\For{$i\leftarrow 1$ \KwTo $n_v$}{
+				\For{$j\leftarrow 1$ \KwTo $n_v$}{
+					\lIf {$V_{\mathrm{rca}}[i] < 0$ \or $V_{\mathrm{rca}}[j]<0$}{\continue}
+					\If {vortex $i$ and $j$ are closer to one another than one of opposite polarity}{
+						\lIf {$V_{\mathrm{rca}}[i] > 0$ \and $V_{\mathrm{rca}}[j] = 0$}{$V_{\mathrm{rca}}[j]\leftarrow V_{\mathrm{rca}}[i]$}
+						\lElseIf {$V_{\mathrm{rca}}[i] = 0$ \and $V_{\mathrm{rca}}[j] > 0$}{$V_{\mathrm{rca}}[i]\leftarrow V_{\mathrm{rca}}[j]$}
+						\lElseIf {$V_{\mathrm{rca}}[i] > 0$ \and $V_{\mathrm{rca}}[j] > 0$}{($V_{\mathrm{rca}}=V_{\mathrm{rca}}[i]) \leftarrow V_{\mathrm{rca}}[j]$}
+						\Else{
+							$n_{\mathrm{rca}} \leftarrow n_{\mathrm{rca}} + 1$\;
+							$V_{\mathrm{rca}}[i]\leftarrow n_{\mathrm{rca}}$\;
+							$V_{\mathrm{rca}}[j]\leftarrow n_{\mathrm{rca}}$\;
+							}
+					}
+				}
+			}
+		}
+
+		\caption{The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex diploes labeled with $-1$.}\label{algo_vortexkiller}
+		\end{algorithm}
+
+
 	\subsection{\label{section:ripleysk} Ripley's K function }
 		\begin{equation}\label{eq:ripleysk}
 		K(x) = \frac{A}{n^2}\sum\limits_{i \ne j} I\left (d_{ij}<x\right ),
 		\end{equation}
 		where $d_{ij}$ is the distance between the $i$th and $j$th points, $A$ is the area of the region containing every point, $n$ is the number of points, $x$ is the search radius, and I is the indicator function (1 if its argument is true, 0 otherwise). Should the points be distributed homogeneously in space, then $K(s)\approx\pi s^2$.
 \section{\label{section:vortextracking} Tracking vortex trajectories}
-\section{\label{section:vortexremoval} Removing vortices with ``phase unwrapping''}
-\IncMargin{1em}
-	\begin{algorithm}
+\section{\label{section:vortexremoval} Removing vortices with phase unwrapping}
+	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	\SetKwData{Linked}{linked}
 	\SetKw{KwAnd}{and}
 	\SetKwFunction{Max}{max}
 	\SetKwFunction{Min}{min}
+	\SetKwFunction{Phase}{phase}
 	\SetKwData{Call}{C}
-	\Input{A $n_x \times n_y$ complex field $\psi$.}
+	\Input{A $n_x \times n_y$ complex field $\psi$. A `safe' distance $d$. Vortex core radius $c$. }
 	\Output{A $n_x \times n_y$ complex field $\phi$.}
 	\BlankLine
 	$\phi \leftarrow \psi$\;
 	$(n_v,V_l,V_p)\leftarrow$ Algorithm \ref{algo_calcvortexlocs}~$\leftarrow\psi$\;
 
 	\For{$i\leftarrow 1$ \KwTo $n_v$}{
-		Imprint a vortex of polarity $V_p[i]$ at location $V_l[i]$ in $\phi$\;
-		$\Box\leftarrow$ an area with width of a vortex core and location $V_l[i]$\;
-		$|\phi(\Box)| \leftarrow \psi_{\inf}$\;
+		\If{$|V_l[i]| > d$}{
+			Imprint a vortex of polarity $V_p[i]$ at location $V_l[i]$ in $\phi$\;
+			\For{$j\leftarrow -c$ \KwTo $c$}{
+				\For{$k\leftarrow -c$ \KwTo $c$}{
+						$x \leftarrow V_l[1,i]+j$\;
+						$y \leftarrow V_l[2,i]+k$\;
+						\mbox{$\phi(x,y) \leftarrow \psi_{\inf}~\times$~\Phase{$\psi(x,y)$}\;}
+				}
+			}
+		}
 	}
 
 	\caption{The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.}\label{algo_vortexkiller}
 	\end{algorithm}
-\DecMargin{1em}
 
 \end{chapter}
