@@ -59,6 +59,30 @@ where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j
 \begin{equation}
 \rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
 \end{equation}
+
+\section{\label{appsection:gpeqft} Derivation of the Gross-Pitaevskii Equation through Quantum Field Theory}
+This section derives the GPE following the methodology outlined in [NPP GPE tutorial]. We begin by revisting the quantum field theory formalism used to describe a many body quantum system[Fetter 71]. Such a system is described by an N-body wavefunction, $\tilde{\bm\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$ which obeys the famous Schr\"odinger equation
+\begin{equation}
+i \hbar\frac{\partial}{\partial t}\tilde{\bm\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) = \hat{H}\tilde{\bm\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t),
+\end{equation}
+where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Now consider a closed system containing a dilute, weakly interacting Bose gas of N atoms. Such a system would be described by $\tilde{\bm\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$, with a Hamiltonian of the form 
+\begin{equation}
+\hat{H} = \sum_{k=1}^N\hat{h}_0(\mathbf{r}_k) + \frac{1}{2}\sum_{k,l=1}^N \hat{V}(\mathbf{r}_k,\mathbf{r}_l).
+\end{equation}
+Here $\hat{h}_0(\mathbf{r}_k) = -\frac{\hbar}{2m}\nabla^2+V_{ext}(\mathbf{r}_k,t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary; and so the second term arises from collisions between 2 atoms only. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
+
+We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states are infinite, our system contains a fixed number of bosons, $N$, implying that there are at most N states occupied.
+
+The wavefunction is mapped into the `occupation number' basis via
+\begin{equation}
+\tilde{\bm\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) \rightarrow \ket{\tilde{\bm\upPsi}(t)}=\sum_{n_1...n_\infty} c(n_1...n_\infty)\ket{n_1...n_\infty},
+\end{equation}
+with $c(n_1...n_\infty)$ appropriately chosen complex coefficients. The values $c$ must follow the particle statistics rules (i.e for Bosons much be symmetric under swapping of quantum numbers) and be normalised so that the probabilities correctly sum to one,
+
+\begin{equation}
+\int|\tilde{\bm\upPsi}|^2~d\mathbf{r}=1 \Rightarrow \sum_{n_1...n_\infty}|c(n_1...n_\infty)|^2\frac{N!}{n_1!...n_\infty!} = 1
+\end{equation}
+
 \section{\label{appsection:energy} Energy}
 \section{\label{appsection:force} Force}
 
