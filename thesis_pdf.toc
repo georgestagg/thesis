@@ -78,6 +78,6 @@
 \contentsline {chapter}{\numberline {A}Detailed Derivations}{42}
 \contentsline {section}{\numberline {A.1} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{42}
 \contentsline {section}{\numberline {A.2} Derivation of the Gross-Pitaevskii Equation through Quantum Field Theory}{44}
-\contentsline {section}{\numberline {A.3} Energy}{45}
-\contentsline {section}{\numberline {A.4} Force}{45}
-\contentsline {chapter}{Bibliography}{46}
+\contentsline {section}{\numberline {A.3} Energy}{48}
+\contentsline {section}{\numberline {A.4} Force}{48}
+\contentsline {chapter}{Bibliography}{49}
