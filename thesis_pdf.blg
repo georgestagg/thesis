@@ -15,48 +15,124 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
 Warning--I didn't find a database entry for "henn_seman_09"
 Warning--I didn't find a database entry for "sasaki_suzuki_10"
+Warning--I didn't find a database entry for "kwon_2015a"
+Warning--I didn't find a database entry for "kwon_2015b"
+Warning--I didn't find a database entry for "desbuquois_2012"
+Warning--I didn't find a database entry for "saito_2010"
+Warning--I didn't find a database entry for "stagg_2014"
+Warning--I didn't find a database entry for "berloff_2000"
+Warning--I didn't find a database entry for "rica_2001"
+Warning--I didn't find a database entry for "pham_2004"
+Warning--I didn't find a database entry for "stagg_2015b"
+Warning--I didn't find a database entry for "winiecki_2000"
+Warning--I didn't find a database entry for "hodby_2002"
+Warning--I didn't find a database entry for "abo_shaeer_2002"
+Warning--I didn't find a database entry for "williams_2002"
+Warning--I didn't find a database entry for "penckwitt_2002"
+Warning--I didn't find a database entry for "kasamatsu_2003"
+Warning--I didn't find a database entry for "lobo_2004"
+Warning--I didn't find a database entry for "leadbeater_2003"
+Warning--I didn't find a database entry for "Pol_Rev"
+Warning--I didn't find a database entry for "Proukakis"
+Warning--I didn't find a database entry for "finite_temp_book"
+Warning--I didn't find a database entry for "Blakie"
+Warning--I didn't find a database entry for "berloff_2014"
+Warning--I didn't find a database entry for "Svis5"
+Warning--I didn't find a database entry for "Davis"
+Warning--I didn't find a database entry for "PRL.87.210404"
+Warning--I didn't find a database entry for "PhysRevA.66.013603"
+Warning--I didn't find a database entry for "Davis2"
+Warning--I didn't find a database entry for "PhysRevLett.95.263901"
+Warning--I didn't find a database entry for "pattinson_2014"
+Warning--I didn't find a database entry for "nazarenko_2014"
+Warning--I didn't find a database entry for "Davis2006"
+Warning--I didn't find a database entry for "Wright2011"
+Warning--I didn't find a database entry for "Simula"
+Warning--I didn't find a database entry for "berloff_2007"
+Warning--I didn't find a database entry for "Berloff_2006"
+Warning--I didn't find a database entry for "Salman20091482"
+Warning--I didn't find a database entry for "berloff_2002"
+Warning--I didn't find a database entry for "berloff_2001"
+Warning--I didn't find a database entry for "simula_2011"
+Warning--I didn't find a database entry for "zuccher_2012"
+Warning--I didn't find a database entry for "Guo2014"
+Warning--I didn't find a database entry for "Fisher2014"
+Warning--I didn't find a database entry for "WalmsleyGolov2008"
+Warning--I didn't find a database entry for "Barenghi2014"
+Warning--I didn't find a database entry for "WalmsleyTompsett2013"
+Warning--I didn't find a database entry for "Baggaley2014"
+Warning--I didn't find a database entry for "Henn2009"
+Warning--I didn't find a database entry for "Freilich2010"
+Warning--I didn't find a database entry for "Aioi2011"
+Warning--I didn't find a database entry for "Neely2013"
+Warning--I didn't find a database entry for "Kwon2014"
+Warning--I didn't find a database entry for "VinenSkrbek2008"
+Warning--I didn't find a database entry for "Davis2000"
+Warning--I didn't find a database entry for "Guenault1986"
+Warning--I didn't find a database entry for "Bradley2005"
+Warning--I didn't find a database entry for "Bradley2011"
+Warning--I didn't find a database entry for "Fisher2001"
+Warning--I didn't find a database entry for "Goto2008"
+Warning--I didn't find a database entry for "Blaauwgeers2007"
+Warning--I didn't find a database entry for "Bradley2012"
+Warning--I didn't find a database entry for "Schoepe1995"
+Warning--I didn't find a database entry for "Schwarz"
+Warning--I didn't find a database entry for "Hanninen-PNAS"
+Warning--I didn't find a database entry for "Hanninen-sphere"
+Warning--I didn't find a database entry for "Kivotides-sphere"
+Warning--I didn't find a database entry for "Schwarz-bump"
+Warning--I didn't find a database entry for "Henderson"
+Warning--I didn't find a database entry for "Salort2011"
+Warning--I didn't find a database entry for "Salort2012"
+Warning--I didn't find a database entry for "RobertsBerloff"
+Warning--I didn't find a database entry for "Frisch1992"
+Warning--I didn't find a database entry for "Cylinder"
+Warning--I didn't find a database entry for "Sphere"
+Warning--I didn't find a database entry for "Ellipse"
+Warning--I didn't find a database entry for "Rayfield1964"
+Warning--I didn't find a database entry for "Minguzzi2004"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 74 entries,
+You've used 73 entries,
             3411 wiz_defined-function locations,
-            1600 strings with 21430 characters,
-and the built_in function-call counts, 56374 in all, are:
-= -- 3065
-> -- 2143
-< -- 284
-+ -- 1804
-- -- 522
-* -- 7860
-:= -- 5883
-add.period$ -- 74
-call.type$ -- 74
-change.case$ -- 298
-chr.to.int$ -- 72
-cite$ -- 77
-duplicate$ -- 5006
-empty$ -- 4641
-format.name$ -- 1279
-if$ -- 10622
+            1721 strings with 22710 characters,
+and the built_in function-call counts, 55793 in all, are:
+= -- 3035
+> -- 2126
+< -- 281
++ -- 1792
+- -- 518
+* -- 7778
+:= -- 5822
+add.period$ -- 73
+call.type$ -- 73
+change.case$ -- 294
+chr.to.int$ -- 71
+cite$ -- 76
+duplicate$ -- 4950
+empty$ -- 4586
+format.name$ -- 1266
+if$ -- 10513
 int.to.chr$ -- 3
-int.to.str$ -- 75
-missing$ -- 775
-newline$ -- 237
-num.names$ -- 219
-pop$ -- 1346
+int.to.str$ -- 74
+missing$ -- 765
+newline$ -- 234
+num.names$ -- 216
+pop$ -- 1326
 preamble$ -- 1
-purify$ -- 296
+purify$ -- 292
 quote$ -- 0
-skip$ -- 2135
+skip$ -- 2116
 stack$ -- 0
-substring$ -- 1838
-swap$ -- 4096
-text.length$ -- 260
+substring$ -- 1827
+swap$ -- 4053
+text.length$ -- 258
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 432
+type$ -- 428
 warning$ -- 1
-while$ -- 211
+while$ -- 209
 width$ -- 0
-write$ -- 745
-(There were 3 warnings)
+write$ -- 736
+(There were 79 warnings)

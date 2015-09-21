@@ -60,18 +60,18 @@ where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j
 \rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
 \end{equation}
 
-\section{\label{appsection:gpeqft} Derivation of the Gross-Pitaevskii Equation through Quantum Field Theory}
+\section{\label{appsection:gpeqft} Derivation of the Gross-Pitaevskii Equation}
 This section derives the GPE following the methodology outlined in [NPP GPE tutorial]. We begin by revisiting the quantum field theory formalism used to describe a many body quantum system[Fetter 71]. Such a system is described by an N-body wavefunction, $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$ which obeys the famous Schr\"odinger equation
 \begin{equation}
 i \hbar\frac{\partial}{\partial t}\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) = \hat{H}\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t),
 \label{eq:gpeqftscho}
 \end{equation}
-where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Now consider a closed system containing a dilute, weakly interacting Bose gas of N atoms. Such a system would be described by $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$, with a Hamiltonian of the form 
+where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Consider a closed system containing a dilute, weakly interacting Bose gas of N atoms. Such a system would be described by $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$, with a Hamiltonian of the form 
 \begin{equation}
 \hat{H} = \sum_{k=1}^N\hat{h}_0(\mathbf{r}_k,t) + \frac{1}{2}\sum_{k,l=1}^N \hat{V}(\mathbf{r}_k,\mathbf{r}_l).
 \label{eq:gpeqfthamil}
 \end{equation}
-Here $\hat{h}_0(\mathbf{r}_k,t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary; and so the second term arises from collisions between 2 atoms only. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
+Here $\hat{h}_0(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary; and so the second term arises from collisions between 2 atoms. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
 
 We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states are infinite, our system contains a fixed number of bosons, $N$, implying that there are at most N states occupied.
 
@@ -79,13 +79,13 @@ The wavefunction is mapped into the `occupation number' basis via
 \begin{equation*}
 \tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) \rightarrow \ket{\tilde{\upPsi}(t)}=\sum_{n_1...n_\infty} c(n_1...n_\infty,t)\ket{n_1...n_\infty},
 \end{equation*}
-with $c(n_1...n_\infty,t)$, appropriately chosen complex coefficients. The values $c$ must follow the particle statistics rules (e.g. for Bosons much be symmetric under swapping of quantum numbers) and be normalised so that the probabilities correctly sum to one. For our bosons this leads to the 
+with appropriately chosen complex coefficients, $c(n_1...n_\infty,t)$. The values $c$ must follow the particle statistics rules (e.g. for Bosons much be symmetric under swapping of quantum numbers) and be normalised so that the probabilities correctly sum to one. We find that for our bosons,
 
 \begin{equation*}
 \int|\tilde{\upPsi}|^2~d\mathbf{r}=1 \Rightarrow \sum_{n_1...n_\infty}|c(n_1...n_\infty,t)|^2\frac{N!}{n_1!...n_\infty!} = 1.
 \end{equation*}
 
-In this formulation, note that the state vectors $\ket{n_1...n_\infty}$ are time-independent, and the evolution of the system is entirely encoded in the values of $c(n_1...n_\infty,t)$. As part of the overall picture, we also must describe the movement of bosons between different states or energy levels. It is convenient to visualise the simultaneous destruction of a particle in state $j$ and creation of a particle in state $i$, described mathematically using the single particle annihilation and creation operators[Shiff49].
+In this formulation, note that the state vectors $\ket{n_1...n_\infty}$ are time-independent, and the evolution of the system is entirely encoded in the values of $c(n_1...n_\infty,t)$. As part of the overall picture, we also must describe the movement of bosons between different states or energy levels. It is convenient to visualise this as the simultaneous destruction of a particle in state $j$ and creation of a particle in state $i$, described mathematically using the single particle annihilation and creation operators[Shiff49].
 \begin{align*}
 &\hat{a}_j\ket{n_1...n_i...n_j...n_\infty} = \sqrt{n_j}\ket{n_1...n_i...n_j-1...n_\infty},\\
 &\hat{a}^\dagger_i\ket{n_1...n_i...n_j...n_\infty} = \sqrt{n_i+1}\ket{n_1...n_i+1...n_j...n_\infty},
@@ -94,7 +94,7 @@ which satisfy the bosonic commutation relations,
 \begin{equation*}
 [\hat{a}_i,\hat{a}_j^\dagger]=\delta_{ij}\hspace{0.5in}[\hat{a}_i,\hat{a}_j]=[\hat{a}_i^\dagger,\hat{a}_j^\dagger]=0.
 \end{equation*}
-Any single particle changing states can now be described through these operators. A particle moving from state $j$ to state $i$ can be described using a single annihilation operator and a single creation operator, through the product $\hat{a}_i^\dagger\hat{a}_j$. Similarly, as we decided to simplify the system by considering a dilute gas where all interactions are binary collisions, all interactions can be described by two particles changing state, using the product $\hat{a}_i^\dagger\hat{a}_k^\dagger\hat{a}_j\hat{a}_l$. Using these tools and ideas, the original description in Equations \ref{eq:gpeqftscho} and \ref{eq:gpeqfthamil} is now written
+Any single particle changing states can now be described through these operators; a particle moving from state $j$ to state $i$ is described using a single annihilation operator and a single creation operator through the product $\hat{a}_i^\dagger\hat{a}_j$. Similarly, as we decided to simplify the system by considering a dilute gas where all interactions are binary collisions, all interactions can be described by two particles changing state, using the product $\hat{a}_i^\dagger\hat{a}_k^\dagger\hat{a}_j\hat{a}_l$. Using these tools and ideas, the original description in Equations \ref{eq:gpeqftscho} and \ref{eq:gpeqfthamil} is now written
 
 \begin{equation*}
 i \hbar\frac{\partial}{\partial t}\ket{\tilde{\upPsi}} = \hat{H}\ket{\tilde{\upPsi}},
@@ -131,7 +131,7 @@ Using these operators, the Hamiltonian in Equation \ref{eq:gpeqftsechamil} can b
 \end{equation}
 where, as before, $\hat{h}_0(\mathbf{r}_k,t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ and $V(\mathbf{r}-\mathbf{r}')$ is the two body interaction potential.
 
-One of our original assumptions about the Bose gas was the fact it was weakly interacting with only binary collisions. We now add to this approximation a frequent simplification of the interaction potential so that all interactions are considered totally elastic contact collisions. The strength of this interaction is usually taken to be $g=4\pi\hbar^2/m$, where $a$ is the s-wave scattering length, measured for a particular atom in the lab. Our two body interaction potential then becomes,
+We now add to our approximations a frequent simplification of the interaction potential and consider all interactions as totally elastic contact collisions. The strength of this interaction is usually taken to be $g=4\pi\hbar^2a/m$, where $a$ is the s-wave scattering length, measured for a particular atom in the lab. Our two body interaction potential then becomes,
 \begin{equation*}
 V(\mathbf{r}-\mathbf{r}') = g \delta(\mathbf{r}-\mathbf{r}'),
 \end{equation*}
@@ -167,7 +167,7 @@ We now make the Bogoliubov approximation [bogo47], a somewhat violent symmetry b
 \begin{equation*}
 \hat{\psi}(\mathbf{r},t) = \psi(\mathbf{r},t) = \sqrt{N_0}\phi_0(\mathbf{r},t),
 \end{equation*}
-where $N_0$ is the number of particles in the condensate. Written in this way, it is then possible to approximate the condensate density using $n(\mathbf{r},t) = |\psi(\mathbf{r},t)|^2$. Unfortunately a direct consequence of the action is that the physical state described by $\hat{\upPsi}(\mathbf{r},t)$ no longer satisfies the same symmetries as before. In particular, the total number of particles is not conserved. This approximation is justified by the understanding that as the condensate forms, it takes on a single phase, and all the particles in the condensate can be described by a single wavefunction. In addition, it is assumed that if there are many particles in the condensate, the exact value of $N_0$ does not effect the system state significantly, that is, $N_0 \approx N_0+1$. This approximation is essentially equivalent to the statement $\braket{\hat{\upPsi}(\mathbf{r},t)} = \psi(\mathbf{r},t) \ne 0$, where $\braket{...}$ denotes the ensemble average. The non-condensed field operator $\hat{\delta}(\mathbf{r},t)$ remains as an operator in the decomposition, and captures all the fluctuations around $\psi(\mathbf{r},t)$. It is generally assumed that $\braket{\hat{\delta}(\mathbf{r},t)}=0$.
+where $N_0$ is the number of particles in the condensate. Written in this way, it is then possible to approximate the condensate density using $n(\mathbf{r},t) = |\psi(\mathbf{r},t)|^2$. Unfortunately a direct consequence of the action is that the physical state described by $\hat{\upPsi}(\mathbf{r},t)$ no longer satisfies the same symmetries as before. In particular, the total number of particles is not conserved. This approximation is justified by the understanding that as the condensate forms, it takes on a single phase, and all the particles in the condensate can be described by a single wavefunction. In addition, it is assumed that if there are many particles in the condensate, the exact value of $N_0$ does not affect the system state significantly, that is, $N_0 \approx N_0+1$. This approximation is essentially equivalent to the statement $\braket{\hat{\upPsi}(\mathbf{r},t)} = \psi(\mathbf{r},t) \ne 0$, where $\braket{...}$ denotes the ensemble average. The non-condensed field operator $\hat{\delta}(\mathbf{r},t)$ remains as an operator in the decomposition, and captures all the fluctuations around $\psi(\mathbf{r},t)$. It is generally assumed that $\braket{\hat{\delta}(\mathbf{r},t)}=0$.
 
 In principle, the classical field $\psi(\mathbf{r},t)$ is interpreted as the condensed atoms , however it can also be interpreted as the condensate atoms along with excitations of the system, as long as the occupation at high energy states $n_{i\gg1}$ and the size of quantum fluctuations are both negligible. The classical field, or c-field, approaches can be used to model finite temperature effects by modelling part of the thermal cloud with highly populated modes below a certain momentum cutoff [c-field citations].
 
@@ -178,7 +178,7 @@ i \hbar\frac{\partial}{\partial t}\psi(\mathbf{r},t) &= \hat{h}_0\psi(\mathbf{r}
 &= \left ( -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t) + g|\psi(\mathbf{r},t)|^2 \right ) \psi(\mathbf{r},t),
 \end{split}
 \end{equation*}
-the the so called Gross-Pitaevskii equation (GPE), also known as the nonlinear Sch\"odinger equation.
+the the so called Gross-Pitaevskii equation (GPE), also known as the non-linear\;Schr\"odinger equation.
 
 Finally, note that as the particle number is no longer strictly conserved, calculations should be performed within the grand canonical ensemble [Huang]. This approach leads to the modified Hamiltonian $\hat{H} \rightarrow \hat{H} -\mu\hat{N}$, where $\mu$ is the chemical potential and $\hat{N}$ is the total number operator. The above derivations can be easily repeated with the modified Hamiltonian to obtain a physically equivalent version of the GPE with a chemical potential term,
 \begin{equation}

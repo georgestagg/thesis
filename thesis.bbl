@@ -1,4 +1,4 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{73}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -12,25 +12,22 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[{\citenamefont{Allen et~al.}(2013)\citenamefont{Allen, Zaremba,
-  Barenghi, and Proukakis}}]{allen_zaremba_13}
-\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Allen}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Zaremba}},
-  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~P.}
-  \bibnamefont{Proukakis}}, \bibinfo{journal}{Phys. Rev. A}
-  \textbf{\bibinfo{volume}{87}}, \bibinfo{pages}{013630}
-  (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Neely et~al.}(2010)\citenamefont{Neely, Samson,
-  Bradley, Davis, and Anderson}}]{Neely}
-\bibinfo{author}{\bibfnamefont{T.~W.} \bibnamefont{Neely}},
-  \bibinfo{author}{\bibfnamefont{E.~C.} \bibnamefont{Samson}},
-  \bibinfo{author}{\bibfnamefont{A.~S.} \bibnamefont{Bradley}},
-  \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Davis}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{104}},
-  \bibinfo{pages}{160401} (\bibinfo{year}{2010}).
+\bibitem[{\citenamefont{G\"orlitz et~al.}(2001)\citenamefont{G\"orlitz, Vogels,
+  Leanhardt, Raman, Gustavson, Abo-Shaeer, Chikkatur, Gupta, Inouye, Rosenband
+  et~al.}}]{Gorlitz}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{G\"orlitz}},
+  \bibinfo{author}{\bibfnamefont{J.~M.} \bibnamefont{Vogels}},
+  \bibinfo{author}{\bibfnamefont{A.~E.} \bibnamefont{Leanhardt}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Raman}},
+  \bibinfo{author}{\bibfnamefont{T.~L.} \bibnamefont{Gustavson}},
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Abo-Shaeer}},
+  \bibinfo{author}{\bibfnamefont{A.~P.} \bibnamefont{Chikkatur}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Gupta}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Inouye}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Rosenband}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{87}}, \bibinfo{pages}{130402}
+  (\bibinfo{year}{2001}).
 
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
@@ -330,12 +327,15 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{87}},
   \bibinfo{pages}{080402} (\bibinfo{year}{2001}).
 
-\bibitem[{\citenamefont{Pethick and Smith}(2002)}]{Pethick}
-\bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Pethick}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Smith}},
-  \emph{\bibinfo{title}{{B}ose-{E}instein Condensation in Dilute Gases}}
-  (\bibinfo{publisher}{Cambrige University Press},
-  \bibinfo{address}{Cambridge}, \bibinfo{year}{2002}).
+\bibitem[{\citenamefont{Neely et~al.}(2010)\citenamefont{Neely, Samson,
+  Bradley, Davis, and Anderson}}]{Neely}
+\bibinfo{author}{\bibfnamefont{T.~W.} \bibnamefont{Neely}},
+  \bibinfo{author}{\bibfnamefont{E.~C.} \bibnamefont{Samson}},
+  \bibinfo{author}{\bibfnamefont{A.~S.} \bibnamefont{Bradley}},
+  \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Davis}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{104}},
+  \bibinfo{pages}{160401} (\bibinfo{year}{2010}).
 
 \bibitem[{\citenamefont{Donnelly}(1991)}]{Donnelly}
 \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Donnelly}},
@@ -425,23 +425,6 @@
   \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Zaki}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{95}},
   \bibinfo{pages}{035302} (\bibinfo{year}{2005}).
-
-\bibitem[{\citenamefont{G\"orlitz et~al.}(2001)\citenamefont{G\"orlitz, Vogels,
-  Leanhardt, Raman, Gustavson, Abo-Shaeer, Chikkatur, Gupta, Inouye, Rosenband
-  et~al.}}]{Gorlitz}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{G\"orlitz}},
-  \bibinfo{author}{\bibfnamefont{J.~M.} \bibnamefont{Vogels}},
-  \bibinfo{author}{\bibfnamefont{A.~E.} \bibnamefont{Leanhardt}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Raman}},
-  \bibinfo{author}{\bibfnamefont{T.~L.} \bibnamefont{Gustavson}},
-  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Abo-Shaeer}},
-  \bibinfo{author}{\bibfnamefont{A.~P.} \bibnamefont{Chikkatur}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Gupta}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Inouye}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Rosenband}},
-  \bibnamefont{et~al.}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{87}}, \bibinfo{pages}{130402}
-  (\bibinfo{year}{2001}).
 
 \bibitem[{\citenamefont{Foster et~al.}(2010)\citenamefont{Foster, Blakie, and
   Davis}}]{fos10}
@@ -569,6 +552,16 @@
   \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
   \bibinfo{journal}{Journal of Low Temperature Physics}
   \textbf{\bibinfo{volume}{152}}, \bibinfo{pages}{122} (\bibinfo{year}{2008}).
+
+\bibitem[{\citenamefont{Allen et~al.}(2013)\citenamefont{Allen, Zaremba,
+  Barenghi, and Proukakis}}]{allen_zaremba_13}
+\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Allen}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Zaremba}},
+  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~P.}
+  \bibnamefont{Proukakis}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{87}}, \bibinfo{pages}{013630}
+  (\bibinfo{year}{2013}).
 
 \bibitem[{\citenamefont{Yan et~al.}(2014)\citenamefont{Yan,
   Carretero-Gonz\'alez, Frantzeskakis, Kevrekidis, Proukakis, and
