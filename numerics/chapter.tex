@@ -1,7 +1,83 @@
 \begin{chapter}{\label{cha:numerics}Numerical Methods}
 \section{\label{section:RK} Numerical procedures for 2D and 3D solutions}
-	\subsection{\label{section:RK4} Runge-Kutta}
-	\subsection{\label{section:imagTime} Imaginary time convergence}
+	\subsection{\label{section:RK4} Fourth order Runge-Kutta scheme}
+	The classical fourth-order Runge-Kutta formula (RK4) is described equivalently in many texts. We follow the description in \cite{NumericalRecipes}. Let an initial value problem be specified as
+	
+	\begin{align*}
+		\frac{\partial \psi}{\partial t} &= f(\psi,t),\hspace{0.25in}\psi(t_0) = \psi_0.
+	\end{align*}
+
+A step-size, $h>0$, is chosen as the parameter controlling how the solution is advanced over $t$. The scheme for estimating $\psi(t_n)= \psi_n$ is then written
+\begin{equation}
+\begin{split}
+		k_1 &= hf(t_n,\psi_n),\\
+		k_2 &= hf(t_n+\frac{h}{2},\psi_n+\frac{k_1}{2}),\\
+		k_3 &= hf(t_n+\frac{h}{2},\psi_n+\frac{k_2}{2}),\\
+		k_4 &= hf(t_n+h,\psi_n+k_3),\\
+		\psi_{n+1} &= \psi_n + \frac{k_1}{6}+ \frac{k_2}{3}+ \frac{k_3}{3} + \frac{k_4}{6} + O(h^5),\\
+		t_{n+1}  &= t_n + h.
+		\label{eq:rk4}
+\end{split}
+\end{equation}
+
+
+	A full derivation and proof of accuracy for the RK4 scheme is outlined in Appendix \ref{appsection:rk4deriv}.
+	\begin{algorithm}[H]
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+		\Input{A field $n_x \times n_y$ $P$, A function $f$, a step size $h$, current time $t$}
+		\BlankLine
+		\Repeat{satisfied}{
+			$k_1\leftarrow f(P,t)$\;
+			\For{$i\leftarrow 1$ \KwTo $n_x$}{
+			\For{$j\leftarrow 1$ \KwTo $n_y$}{
+				$R[i,j]\leftarrow P[i,j]+ \frac{h}{2} k_1[i,j]$\;
+			}
+			}
+			$k_2\leftarrow f(R,t+h/2)$\;
+			\For{$i\leftarrow 1$ \KwTo $n_x$}{
+			\For{$j\leftarrow 1$ \KwTo $n_y$}{
+				$R[i,j]\leftarrow P[i,j]+ \frac{h}{2} k_2[i,j]$\;
+			}
+			}
+			$k_3\leftarrow f(R,t+h/2)$\;
+			\For{$i\leftarrow 1$ \KwTo $n_x$}{
+			\For{$j\leftarrow 1$ \KwTo $n_y$}{
+				$R[i,j]\leftarrow P[i,j]+ hk_3[i,j]$\;
+			}
+			}
+			$k_4\leftarrow f(R,t+h)$\;
+			\For{$i\leftarrow 1$ \KwTo $n_x$}{
+			\For{$j\leftarrow 1$ \KwTo $n_y$}{
+				$P[i,j]\leftarrow \frac{h}{6}  (k_1[i,j] + 2k_2[i,j] + 2k_3[i,j]+ k_4[i,j])$\;
+			}
+			}
+			$t\leftarrow t + h$\;
+
+			\If{normalization is enabled}{
+			$N\leftarrow \mathrm{norm}(P)$\;
+			\For{$i\leftarrow 1$ \KwTo $n_x$}{
+			\For{$j\leftarrow 1$ \KwTo $n_y$}{
+				$P[i,j]\leftarrow P[i,j]/\sqrt{N}$\;
+			}
+			}
+			
+
+			}
+		}
+	\caption{RK4 algorithm for advancing a ODE/PDE in time. Should normalization of the be required it is included an optional part of this algorithm.}\label{algo_rk4}
+	\end{algorithm}
+
+	In all of our relevant calculations the value of f is set as the right hand side of the homogeneous or trapped GPE. The main loop formulating the RK4 method may be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution.
+
+	\subsection{\label{section:imagTime} Obtaining the ground-state with imaginary time}
+	Many explorations in quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state, the lowest-lying eigenvalue along with its eigenfunction, as either the final result or as a stepping stone for further calculations. Complications arise in calculating the ground-state in the case of the GPE; the non-linearity of the system forces the true ground-state to solve many linear eigenvalue problems as a collection.	This complex problem is therefore often solved numerically using so called eigensolvers. There are several methods available for implementing a numerical eigensolver including but not limited to: inverse iteration and Lanczos methods [CITE], systematic variational techniques [CITE], boundary eigenvalue methods [CITE], conjugate gradient techniques [CITE] and imaginary time propagation [CITE]. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
+
+	The method revolves around moving from real to imaginary time using a Wick rotation $\tau = it$.
+	[IMAGE: Energy of trapped system as imaginary time is run - compare with TF energy]
+	[IMAGE: ground state as found by imaginary time]
+
+
+
 	\subsection{\label{section:numericalParams} Numerical stability}
 	We now systematically study the numerical stability of common simulated systems. Our aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical solutions are converged and not overly sensitive to small changes computational parameters.
 
@@ -190,7 +266,7 @@
 					\If {vortex $i$ and $j$ are closer to one another than one of opposite polarity}{
 						\lIf {$V_{\mathrm{rca}}[i] > 0$ \and $V_{\mathrm{rca}}[j] = 0$}{$V_{\mathrm{rca}}[j]\leftarrow V_{\mathrm{rca}}[i]$}
 						\lElseIf {$V_{\mathrm{rca}}[i] = 0$ \and $V_{\mathrm{rca}}[j] > 0$}{$V_{\mathrm{rca}}[i]\leftarrow V_{\mathrm{rca}}[j]$}
-						\lElseIf {$V_{\mathrm{rca}}[i] > 0$ \and $V_{\mathrm{rca}}[j] > 0$}{($V_{\mathrm{rca}}=V_{\mathrm{rca}}[i]) \leftarrow V_{\mathrm{rca}}[j]$}
+						\lElseIf {$V_{\mathrm{rca}}[i] > 0$ \and $V_{\mathrm{rca}}[j] > 0$}{(All $V_{\mathrm{rca}}=V_{\mathrm{rca}}[i]) \leftarrow V_{\mathrm{rca}}[j]$}
 						\Else{
 							$n_{\mathrm{rca}} \leftarrow n_{\mathrm{rca}} + 1$\;
 							$V_{\mathrm{rca}}[i]\leftarrow n_{\mathrm{rca}}$\;
@@ -201,7 +277,8 @@
 			}
 		}
 
-		\caption{The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex diploes labeled with $-1$.}\label{algo_vortexkiller}
+		\caption{The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex dipoles labelled with $-1$.}\label{algo_rca
+		}
 		\end{algorithm}
 
 

@@ -1,4 +1,5 @@
 \relax 
+\citation{NumericalRecipes}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Numerical Methods}{10}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -7,41 +8,44 @@
 \newlabel{section:RK}{{3.1}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1} Numerical procedures for 2D and 3D solutions}{10}}
 \newlabel{section:RK4}{{3.1.1}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1} Runge-Kutta}{10}}
-\newlabel{section:imagTime}{{3.1.2}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2} Imaginary time convergence}{10}}
-\newlabel{section:numericalParams}{{3.1.3}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3} Numerical stability}{10}}
-\newlabel{section:vortexidentifying}{{3.2}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2} Identifying vortices}{11}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.\relax }}{11}}
-\newlabel{algo_calcvortexfield}{{1}{11}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.\relax }}{12}}
-\newlabel{algo_bwlabel}{{2}{12}}
-\newlabel{section:gaussianblur}{{3.2.1}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Image filters and the Gaussian kernel}{13}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Gaussian convolution. Filters out features with structures of size less than the input filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.\relax }}{13}}
-\newlabel{algo_gaussconv}{{3}{13}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Calculate vortex locations and polarity.\relax }}{14}}
-\newlabel{algo_calcvortexlocs}{{4}{14}}
-\newlabel{section:vortexclustering}{{3.3}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3} Quantifying vortex clustering}{15}}
-\newlabel{section:reevesalgorithm}{{3.3.1}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1} Recursive Cluster Algorithm (RCA) }{15}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex diploes labeled with $-1$.\relax }}{15}}
-\newlabel{algo_vortexkiller}{{5}{15}}
-\newlabel{section:ripleysk}{{3.3.2}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2} Ripley's K function }{16}}
-\newlabel{eq:ripleysk}{{3.1}{16}}
-\newlabel{section:vortextracking}{{3.4}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4} Tracking vortex trajectories}{16}}
-\newlabel{section:vortexremoval}{{3.5}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5} Removing vortices with phase unwrapping}{16}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.\relax }}{16}}
-\newlabel{algo_vortexkiller}{{6}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1} Fourth order Runge-Kutta scheme}{10}}
+\newlabel{eq:rk4}{{3.1}{10}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces RK4 algorithm for advancing a ODE/PDE in time. Should normalization of the be required it is included an optional part of this algorithm.\relax }}{11}}
+\newlabel{algo_rk4}{{1}{11}}
+\newlabel{section:imagTime}{{3.1.2}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2} Obtaining the ground-state with imaginary time}{12}}
+\newlabel{section:numericalParams}{{3.1.3}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3} Numerical stability}{12}}
+\newlabel{section:vortexidentifying}{{3.2}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2} Identifying vortices}{13}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.\relax }}{13}}
+\newlabel{algo_calcvortexfield}{{2}{13}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.\relax }}{14}}
+\newlabel{algo_bwlabel}{{3}{14}}
+\newlabel{section:gaussianblur}{{3.2.1}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Image filters and the Gaussian kernel}{15}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Gaussian convolution. Filters out features with structures of size less than the input filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.\relax }}{15}}
+\newlabel{algo_gaussconv}{{4}{15}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Calculate vortex locations and polarity.\relax }}{16}}
+\newlabel{algo_calcvortexlocs}{{5}{16}}
+\newlabel{section:vortexclustering}{{3.3}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3} Quantifying vortex clustering}{17}}
+\newlabel{section:reevesalgorithm}{{3.3.1}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1} Recursive Cluster Algorithm (RCA) }{17}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex dipoles labelled with $-1$.\relax }}{17}}
+\newlabel{algo_rca }{{6}{17}}
+\newlabel{section:ripleysk}{{3.3.2}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2} Ripley's K function }{18}}
+\newlabel{eq:ripleysk}{{3.2}{18}}
+\newlabel{section:vortextracking}{{3.4}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4} Tracking vortex trajectories}{18}}
+\newlabel{section:vortexremoval}{{3.5}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5} Removing vortices with phase unwrapping}{18}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.\relax }}{18}}
+\newlabel{algo_vortexkiller}{{7}{18}}
 \@setckpt{./numerics/chapter}{
-\setcounter{page}{17}
-\setcounter{equation}{1}
+\setcounter{page}{19}
+\setcounter{equation}{2}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -71,9 +75,9 @@
 \setcounter{LT@chunks}{0}
 \setcounter{r@tfl@t}{0}
 \setcounter{AlgoLine}{0}
-\setcounter{algocfline}{6}
-\setcounter{algocfproc}{6}
-\setcounter{algocf}{6}
+\setcounter{algocfline}{7}
+\setcounter{algocfproc}{7}
+\setcounter{algocf}{7}
 \setcounter{theorem}{0}
 \setcounter{lemma}{0}
 \setcounter{corollary}{0}
