@@ -24,41 +24,35 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 	A full derivation and proof of accuracy for the RK4 scheme is outlined in Appendix \ref{appsection:rk4deriv}.
 	\begin{algorithm}[H]
 		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-		\Input{A field $n_x \times n_y$ $P$, A function $f$, a step size $h$, current time $t$}
+		\Input{An initial field $\Psi$, a step size $h$, optional phase profile $\Theta$}
+		\SetKw{KwIn}{in}
+		\SetKw{KwAll}{all}
+		\SetKw{KwAllPoints}{all points}
 		\BlankLine
+		$t = 0$\;
+		$dt = -ih$\;
+		\Repeat{a suitable ground state is found}{
+			Perform a single step of the RK4 Scheme\;
+			$t = t + dt$\;
+			$n\leftarrow \mathrm{norm}(\Psi)$\;
+			\For{$\KwAllPoints~i~\KwIn~\Psi$}{
+				$\Psi[i]\leftarrow \Psi[i]/\sqrt{n}$\;
+			}
+			\If{we want a phase profile imprinted into the ground state}{
+				\For{$\KwAllPoints~i~\KwIn~\Psi$}{
+					$\Psi[i]\leftarrow \Theta[i].|\Psi[i]|$\;
+				}
+			}
+		}
+		$dt = h$\;
 		\Repeat{satisfied}{
-			$k_1\leftarrow f(P,t)$\;
-			\For{$i\leftarrow 1$ \KwTo $n_x$}{
-			\For{$j\leftarrow 1$ \KwTo $n_y$}{
-				$R[i,j]\leftarrow P[i,j]+ \frac{h}{2} k_1[i,j]$\;
-			}
-			}
-			$k_2\leftarrow f(R,t+h/2)$\;
-			\For{$i\leftarrow 1$ \KwTo $n_x$}{
-			\For{$j\leftarrow 1$ \KwTo $n_y$}{
-				$R[i,j]\leftarrow P[i,j]+ \frac{h}{2} k_2[i,j]$\;
-			}
-			}
-			$k_3\leftarrow f(R,t+h/2)$\;
-			\For{$i\leftarrow 1$ \KwTo $n_x$}{
-			\For{$j\leftarrow 1$ \KwTo $n_y$}{
-				$R[i,j]\leftarrow P[i,j]+ hk_3[i,j]$\;
-			}
-			}
-			$k_4\leftarrow f(R,t+h)$\;
-			\For{$i\leftarrow 1$ \KwTo $n_x$}{
-			\For{$j\leftarrow 1$ \KwTo $n_y$}{
-				$P[i,j]\leftarrow \frac{h}{6}  (k_1[i,j] + 2k_2[i,j] + 2k_3[i,j]+ k_4[i,j])$\;
-			}
-			}
-			$t\leftarrow t + h$\;
+			Perform a single step of the RK4 Scheme\;
+			$t = t + dt$\;
 
-			\If{normalization is enabled}{
-			$N\leftarrow \mathrm{norm}(P)$\;
-			\For{$i\leftarrow 1$ \KwTo $n_x$}{
-			\For{$j\leftarrow 1$ \KwTo $n_y$}{
-				$P[i,j]\leftarrow P[i,j]/\sqrt{N}$\;
-			}
+			\If{real time normalization is enabled}{
+			$n\leftarrow \mathrm{norm}(\Psi)$\;
+			\For{$\KwAllPoints~i~\KwIn~\Psi$}{
+				$\Psi[i]\leftarrow \Psi[i]/\sqrt{n}$\;
 			}
 			
 
@@ -69,14 +63,26 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 
 	In all of our relevant calculations the value of f is set as the right hand side of the homogeneous or trapped GPE. The main loop formulating the RK4 method may be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution.
 
-	\subsection{\label{section:imagTime} Obtaining the ground-state with imaginary time}
-	Many explorations in quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state, as either the final result or as a stepping stone for further calculations. While in theory the ground-state can be easily found by considering the lowest-lying eigenvalue along with its eigenfunction of the appropriate Hamiltonian, complications arise in calculating the ground-state in the case of the GPE; the non-linearity of the system forces the true ground-state to solve many linear eigenvalue problems as a collection.	This complex problem is therefore often solved numerically using so called eigensolvers. There are several methods available for implementing a numerical eigensolver including but not limited to: inverse iteration and Lanczos methods [CITE], systematic variational techniques [CITE], boundary eigenvalue methods [CITE], conjugate gradient techniques [CITE] and imaginary time propagation [CITE]. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
+	\subsection{\label{section:imagTime} The imaginary time propagation method}
+	Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While in theory an expression for the ground-state can be found by considering the lowest-lying eigenvalue (along with its eigenfunction) of the appropriate Hamiltonian, complications arise in calculating the ground-state in the case of the GPE; the non-linearity of the system forces the true ground-state to form as a solution of many simultaneous linear eigenvalue problems.	This complex problem is therefore often solved numerically using so called eigensolvers.
 
-	The method revolves around moving from real to imaginary time using a Wick rotation $\tau = it$.
-	[IMAGE: Energy of trapped system as imaginary time is run - compare with TF energy]
-	[IMAGE: ground state as found by imaginary time]
+	There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
 
-
+	The imaginary time method revolves around moving from real to imaginary time using a Wick rotation $\tau = it$. The substitution transforms the GPE into a form similar to a diffusion equation. As a result, a local equilibrium can be found by propagating $\tau$. This can be understood by considering a trial solution (as similar to the true ground-state as possible) as a collection of eigenfunctions $\Psi_n$ corresponding to eigenvalues $E_n$,
+\begin{equation*}
+\Psi(\mathbf{r},\tau) = \sum_n \Psi_n(\mathbf{r})\exp\left(-\frac{E_n\tau}{\hbar}\right).
+\end{equation*}
+The eigenfunctions decay exponentially under propagation of the GPE in imaginary time. In particular, the decay rate is directly related to the size of the eigenvalues $E_n$, so that eigenfunctions relating to higher eigenvalues decay the fastest. The final ingredient is to inhibit the overall decay of the wavefunction by renormalising during propagation. After a sufficient transient time the contributions from the higher eigenvalues become negligible, forcing the wavefunction to tend towards the lowest energy eigenfunction,
+\begin{equation*}
+\Psi(\mathbf{r},\tau) \rightarrow \Psi_0(\mathbf{r})\exp\left(-\frac{E_0\tau}{\hbar}\right).
+\end{equation*}
+\begin{figure}
+	\centering
+	\includegraphics{numerics/figures/imag-time-prop-energy.pdf}
+	\includegraphics{numerics/figures/imag-time-gs.pdf}
+	\caption{An example of the use of the imaginary time propagation method for finding the condensate ground state for a condensate with interaction energy $\hat{g}=500$ and $\hat{\mu}=12.68$, with the Thomas-Fermi solution as the initial state. The density of the final ground state solution is shown (right) along with the energy of the solution as the method propagates through imaginary time (left).}
+\end{figure}
+The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial steady state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be `smoothed' by fixing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics as minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
 
 	\subsection{\label{section:numericalParams} Numerical stability}
 	We now systematically study the numerical stability of common simulated systems. Our aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical solutions are converged and not overly sensitive to small changes computational parameters.
@@ -98,69 +104,98 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\SetKwData{Linked}{linked}
-	\SetKw{KwAnd}{and}
-	\Input{A $n_x \times n_y$ field $\theta$. A $n_x \times n_y$ field $P$. A line integral width $l$.}
-	\Output{A $n_x \times n_y$ field $Q$.}
+	\Input{A $n_x \times n_y$ wavefunction $\theta$. A $n_x \times n_y$ potential field $V$. A line integral width $l$.}
+	\Output{A `vortex field' $Q$.}
 	\BlankLine
 	\For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
 		\For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
 			$Q[i,j]\leftarrow\oint_\Box \nabla\theta~ds$, where $\Box$ is a square loop of width $l$ centered on $(i,j)$\;
 		}
-		\lIf {$P[i,j]>1$}{$Q[i,j]\leftarrow0$}
+		\lIf {$V[i,j]>1$}{$Q[i,j]\leftarrow0$}
 	}
 
 
 \caption{Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.}\label{algo_calcvortexfield}
 \end{algorithm}
+\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
+		\begin{algorithm}[H]
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+		\SetKw{KwIn}{in}
+		\SetKw{KwAll}{all}
+		\SetKw{KwAllPoints}{all points}
+		\Input{A $n_x \times n_y$ field $Q$, a Gaussian filter width $g$.}
+		\Output{A $n_x \times n_y$ field $G$.}
+		\BlankLine
+		\For{$\KwAllPoints~i~\KwIn~G$}{
+		$G[i]\leftarrow0$\;
+		}
+		\For{$k\leftarrow 1$ \KwTo $n_x$}{
+			\For{$l\leftarrow 1$ \KwTo $n_y$}{
+				\For{$i\leftarrow 1$ \KwTo $n_x$}{
+					\For{$j\leftarrow 1$ \KwTo $n_y$}{
+						$G[k,l] \leftarrow G[k,l] + Q[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
+					}
+				}
+				$G[k,l] \leftarrow G[k,l]/(n_x.n_y)$\;
+			}
+		}
+
+	\caption{Gaussian convolution. Filters out features with structures of size less than the input
+	filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
+	\end{algorithm}
 
 
 
 	\begin{algorithm}[H]
 	\SetKwFunction{Zero}{Zero}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\SetKwData{Linked}{linked}
-	\SetKwData{Lc}{lc}
-	\SetKwData{Rc}{rc}
-	\SetKwData{Call}{c}
 	\SetKwData{Mtmp}{m}
 	\SetKwFunction{Max}{max}
 	\SetKwFunction{Min}{min}
 	\SetKw{continue}{continue}
 	\SetKw{KwAnd}{and}
+	\SetKw{KwIn}{in}
+	\SetKw{KwAll}{all}
+	\SetKw{KwAllPoints}{all points}
 	\Input{A $n_x \times n_y$ binary field $P$.}
 	\Output{A $n_x \times n_y$ field $Q$.}
 	\BlankLine
-	Let \Linked be a $(n_x.n_y) \times 4$ field\;
-	\Linked$\leftarrow -1$ at every point, $Q\leftarrow -1$ at every point\;
-	\Lc$\leftarrow 1$, \Rc$\leftarrow 0$\;
+	Let $L$ be a $4 \times (n_x.n_y)$ field\;
+	Let $A$ be a vector length $4$\;
+	\lFor{$\KwAllPoints~i~\KwIn~L$}{
+	$L[i]\leftarrow-1$
+	}
+	\lFor{$\KwAllPoints~i~\KwIn~Q$}{
+	$Q[i]\leftarrow-1$
+	}
+
+	$l_c\leftarrow 1$, $r_c\leftarrow 0$\;
 
 	\For{$i\leftarrow 2$ \KwTo $n_x-1$}{
 		\For{$j\leftarrow 2$ \KwTo $n_y-1$}{
-			\lIf {$P[i,j] = 0$}{skip this loop iteration}
-			\ForEach{\Call $\in(Q[i+1,j-1],Q[i,j-1],Q[i-1,j-1],Q[i-1,j])$}{
-				\If {\Call$\geq 0$}{
-					$Q[i,j]\leftarrow$\Call\;
-					\Linked\!$[$\Lc$,1]\leftarrow$\Call\;
+			\lIf {$P[i,j] = 0$}{\continue}
+			$A \leftarrow (Q[i+1,j-1],Q[i,j-1],Q[i-1,j-1],Q[i-1,j])$\;
+			\For{$c \leftarrow 1$ \KwTo $4$}{
+				\If {$A[c]\geq 0$}{
+					$Q[i,j]\leftarrow A[c]$\;
+					$L[c,l_c]\leftarrow A[c]$\;
 				}
 			}
-			\lIf{$Q[i,j] \geq 0$}{\Lc$\leftarrow$\Lc$+ 1$}
+			\lIf{$Q[i,j] \geq 0$}{$l_c\leftarrow lc+ 1$}
 			\Else{
-				Q[i,j]$\leftarrow$\Rc\;
-				\Rc$\leftarrow$\Rc$+ 1$\;
+				$Q[i,j]\leftarrow r_c $\;
+				$rc \leftarrow r_c+ 1$\;
 			}
 		}
 	}
-	\For{$i\leftarrow 1$ \KwTo $(n_x \times n_y)$}{
-		\lIf{\Max{All elements of \Linked from row $i$}$= -1$}{\continue}
-		\Mtmp $\leftarrow$ \Min{All elements of \Linked from row $i$ with value$\geq 0$}\;
+	\For{$r\leftarrow 1$ \KwTo $(n_x.n_y)$}{
+		\lIf{\Max{elements of $L$ in row $r$}$= -1$}{\continue}
+		$m\leftarrow$ \Min{elements of $L$ in row $r$ with value $\geq 0$}\;
 
-		\For{$j\leftarrow 1$ \KwTo $4$}{
-			\If{\Linked\!$[i,j] \neq\,$\Mtmp \KwAnd \Linked\!$[i,j] \geq 0$ }{
-				\For{$k\leftarrow 1$ \KwTo $n_x$}{
-					\For{$l\leftarrow 1$ \KwTo $n_y$}{
-						\lIf{$Q[k,l]  =$~\Linked\!$[i,j]$}{$Q[k,l] = $~\Mtmp}
-					}
+		\For{$c\leftarrow 1$ \KwTo $4$}{
+			\If{$L[c,r] \neq m$ \KwAnd $L[c,r] \geq 0$ }{
+				\For{$\KwAllPoints~i~\KwIn~Q$}{
+					\lIf{$Q[i]=L[c,r]$}{$Q[i] \leftarrow m$}
 				}
 			}
 		}
@@ -169,29 +204,6 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 
 \caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
 \end{algorithm}
-
-
-	\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
-		\begin{algorithm}[H]
-		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-		\Input{A $n_x \times n_y$ field $P$, a Gaussian filter width $g$.}
-		\Output{A $n_x \times n_y$ field $Q$.}
-		\BlankLine
-		$Q\leftarrow0$ at every point\;
-		\For{$k\leftarrow 1$ \KwTo $n_x$}{
-			\For{$l\leftarrow 1$ \KwTo $n_y$}{
-				\For{$i\leftarrow 1$ \KwTo $n_x$}{
-					\For{$j\leftarrow 1$ \KwTo $n_y$}{
-						$Q[k,l] \leftarrow Q[k,l] + P[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
-					}
-				}
-				$Q[k,l] \leftarrow Q[k,l]/(n_x \times n_y)$\;
-			}
-		}
-
-	\caption{Gaussian convolution. Filters out features with structures of size less than the input
-	filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
-	\end{algorithm}
 
 
 	\begin{algorithm}[H]

@@ -1,4 +1,4 @@
-\begin{thebibliography}{135}
+\begin{thebibliography}{139}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -39,6 +39,35 @@
   The Art of Scientific Computing}} (\bibinfo{publisher}{Cambridge University
   Press}, \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{1993}),
   \bibinfo{edition}{2nd} ed., ISBN \bibinfo{isbn}{0521437164}.
+
+\bibitem[{\citenamefont{Thijssen}(1999)}]{thijssen1999computational}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Thijssen}},
+  \emph{\bibinfo{title}{Computational Physics}} (\bibinfo{publisher}{Cambridge
+  University Press}, \bibinfo{year}{1999}), ISBN \bibinfo{isbn}{9780521575881},
+  \urlprefix\url{https://books.google.co.uk/books?id=flolqBpoJeEC}.
+
+\bibitem[{\citenamefont{Bao and Tang}(2003)}]{Bao2003230}
+\bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Bao}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Tang}},
+  \bibinfo{journal}{Journal of Computational Physics}
+  \textbf{\bibinfo{volume}{187}}, \bibinfo{pages}{230 } (\bibinfo{year}{2003}),
+  ISSN \bibinfo{issn}{0021-9991}.
+
+\bibitem[{\citenamefont{Edwards and Burnett}(1995)}]{Edwards95}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Edwards}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Burnett}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{51}},
+  \bibinfo{pages}{1382} (\bibinfo{year}{1995}),
+  \urlprefix\url{http://link.aps.org/doi/10.1103/PhysRevA.51.1382}.
+
+\bibitem[{\citenamefont{Chiofalo et~al.}(2000)\citenamefont{Chiofalo, Succi,
+  and Tosi}}]{PhysRevE.62.7438}
+\bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Chiofalo}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Succi}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.~P.} \bibnamefont{Tosi}},
+  \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{62}},
+  \bibinfo{pages}{7438} (\bibinfo{year}{2000}),
+  \urlprefix\url{http://link.aps.org/doi/10.1103/PhysRevE.62.7438}.
 
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.

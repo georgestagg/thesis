@@ -12,20 +12,26 @@
 \newlabel{eq:rk4}{{3.1}{10}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces RK4 algorithm for advancing a ODE/PDE in time. Should normalization of the be required it is included an optional part of this algorithm.\relax }}{11}}
 \newlabel{algo_rk4}{{1}{11}}
+\citation{thijssen1999computational}
+\citation{Bao2003230}
+\citation{Edwards95}
+\citation{NumericalRecipes}
+\citation{PhysRevE.62.7438}
 \newlabel{section:imagTime}{{3.1.2}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2} Obtaining the ground-state with imaginary time}{12}}
-\newlabel{section:numericalParams}{{3.1.3}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3} Numerical stability}{12}}
-\newlabel{section:vortexidentifying}{{3.2}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2} Identifying vortices}{13}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.\relax }}{13}}
-\newlabel{algo_calcvortexfield}{{2}{13}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.\relax }}{14}}
-\newlabel{algo_bwlabel}{{3}{14}}
-\newlabel{section:gaussianblur}{{3.2.1}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Image filters and the Gaussian kernel}{15}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Gaussian convolution. Filters out features with structures of size less than the input filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.\relax }}{15}}
-\newlabel{algo_gaussconv}{{4}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2} The imaginary time propagation method}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces An example of the use of the imaginary time propagation method for finding the condensate ground state for a condensate with interaction energy $\mathaccentV {hat}002{g}=500$ and $\mathaccentV {hat}002{\mu }=12.68$, with the Thomas-Fermi solution as the initial state. The density of the final ground state solution is shown (right) along with the energy of the solution as the method propagates through imaginary time (left).\relax }}{13}}
+\newlabel{section:numericalParams}{{3.1.3}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3} Numerical stability}{13}}
+\newlabel{section:vortexidentifying}{{3.2}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2} Identifying vortices}{14}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.\relax }}{14}}
+\newlabel{algo_calcvortexfield}{{2}{14}}
+\newlabel{section:gaussianblur}{{3.2.1}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Image filters and the Gaussian kernel}{14}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Gaussian convolution. Filters out features with structures of size less than the input filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.\relax }}{14}}
+\newlabel{algo_gaussconv}{{3}{14}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.\relax }}{15}}
+\newlabel{algo_bwlabel}{{4}{15}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Calculate vortex locations and polarity.\relax }}{16}}
 \newlabel{algo_calcvortexlocs}{{5}{16}}
 \newlabel{section:vortexclustering}{{3.3}{17}}
@@ -59,7 +65,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
+\setcounter{figure}{1}
 \setcounter{table}{0}
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}
