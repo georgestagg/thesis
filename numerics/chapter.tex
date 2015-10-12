@@ -64,6 +64,41 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 	In all of our relevant calculations the value of f is set as the right hand side of the homogeneous or trapped GPE. The main loop formulating the RK4 method may be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution.
 
 	\subsection{\label{section:imagTime} The imaginary time propagation method}
+	\begin{figure}
+	\centering
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.6\linewidth,
+        height=0.33\linewidth,
+        xlabel=$-t\omega/i$,
+        ylabel=$E/(\hbar\omega)$,
+        restrict x to domain=0:1,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+      	plot "numerics/figures/imag-time-prop-energy.txt" using 2:3 with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \hspace{0.04\linewidth}
+  \begin{tikzpicture}
+  \begin{axis}[
+    width=0.33\linewidth,
+    height=0.33\linewidth,
+    axis on top,
+    xmin=-9,
+    xmax=9,
+    xlabel={$x/l_r$},
+    ymin=-9,
+    ymax=9,
+    ylabel={$y/l_r$},
+    major tick length = 0.07cm]
+
+  \addplot graphics [xmin=-12.8,xmax=12.8,ymin=-12.8,ymax=12.8] {numerics/figures/imag-time-gs.png};
+  \end{axis}
+\end{tikzpicture}
+	\caption{An example of the use of the imaginary time propagation method for finding the condensate ground state for a condensate with interaction energy $\hat{g}=2000$ and $\hat{\mu}=25.27$, with the Thomas-Fermi solution as the initial state. The density of the final ground state solution is shown (right) along with the energy of the solution as the method propagates through imaginary time (left).}\label{fig_imagtimesolgs}
+\end{figure}
 	Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While in theory an expression for the ground-state can be found by considering the lowest-lying eigenvalue (along with its eigenfunction) of the appropriate Hamiltonian, complications arise in calculating the ground-state in the case of the GPE; the non-linearity of the system forces the true ground-state to form as a solution of many simultaneous linear eigenvalue problems.	This complex problem is therefore often solved numerically using so called eigensolvers.
 
 	There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
@@ -76,13 +111,9 @@ The eigenfunctions decay exponentially under propagation of the GPE in imaginary
 \begin{equation*}
 \Psi(\mathbf{r},\tau) \rightarrow \Psi_0(\mathbf{r})\exp\left(-\frac{E_0\tau}{\hbar}\right).
 \end{equation*}
-\begin{figure}
-	\centering
-	\includegraphics{numerics/figures/imag-time-prop-energy.pdf}
-	\includegraphics{numerics/figures/imag-time-gs.pdf}
-	\caption{An example of the use of the imaginary time propagation method for finding the condensate ground state for a condensate with interaction energy $\hat{g}=500$ and $\hat{\mu}=12.68$, with the Thomas-Fermi solution as the initial state. The density of the final ground state solution is shown (right) along with the energy of the solution as the method propagates through imaginary time (left).}
-\end{figure}
 The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial steady state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be `smoothed' by fixing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics as minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
+
+The energy can be used as a way to gauge the solution convergence. An example ground state solution is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. 
 
 	\subsection{\label{section:numericalParams} Numerical stability}
 	We now systematically study the numerical stability of common simulated systems. Our aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical solutions are converged and not overly sensitive to small changes computational parameters.

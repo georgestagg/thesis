@@ -53,9 +53,9 @@ TMP=$(shell cat stats/compiled)
 ifeq ($(LATEX), pdflatex)
 # Using pdflatex to compile.
 .tex.pdf:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
 	mv $*_pdf.pdf $*.pdf
 	echo "$(TMP) + 1" | bc > stats/compiled
 	pdfinfo thesis.pdf | grep "Pages" | awk '{printf $$2}' > stats/pages
@@ -66,22 +66,22 @@ ifeq ($(LATEX), pdflatex)
 endif
 
 .tex.dvi:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_dvi $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_dvi $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_dvi $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
 	mv $*_dvi.dvi $*.dvi
 
 ifeq ($(LATEX), latex)
 # Using latex to compile.
 .tex.bbl:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_dvi $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
 	mv $*_dvi.dvi $*.dvi
 	BSTINPUTS=./inputs:$(BSTINPUTS) bibtex $*_dvi
 	cp  $*_dvi.bbl  $*.bbl
 else
 # Using pdflatex to compile.
 .tex.bbl:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) --jobname $*_pdf $*
+	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
 	mv $*_pdf.pdf $*.pdf
 	BSTINPUTS=./inputs:$(BSTINPUTS) bibtex $*_pdf
 	cp  $*_pdf.bbl  $*.bbl
