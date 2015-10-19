@@ -1,4 +1,4 @@
-\begin{thebibliography}{140}
+\begin{thebibliography}{143}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -32,6 +32,56 @@
 \bibitem[{\citenamefont{Parker}(2004)}]{parkerthesis}
 \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Parker}}, Ph.D. thesis,
   \bibinfo{school}{The University of Durham} (\bibinfo{year}{2004}).
+
+\bibitem[{\citenamefont{Barenghi et~al.}(1981)\citenamefont{Barenghi, Donnelly,
+  Vinen, and eds.}}]{lifshitzpitaevskii81}
+\bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Donnelly}},
+  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Vinen}}, \bibnamefont{and}
+  \bibinfo{author}{\bibnamefont{eds.}}, \emph{\bibinfo{title}{Physical
+  Kinetics, Landau and Lifshitz Course of Theoretical Physics Vol. 10}}
+  (\bibinfo{publisher}{Pergamon Press}, \bibinfo{address}{Oxford},
+  \bibinfo{year}{1981}).
+
+\bibitem[{\citenamefont{Choi et~al.}(1998)\citenamefont{Choi, Morgan, and
+  Burnett}}]{choi_morgan_98}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Choi}},
+  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Morgan}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Burnett}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{57}},
+  \bibinfo{pages}{4057} (\bibinfo{year}{1998}).
+
+\bibitem[{\citenamefont{Tsubota et~al.}(2002)\citenamefont{Tsubota, Kasamatsu,
+  and Ueda}}]{tsubota_kasamatsu_02}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Kasamatsu}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Ueda}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{65}},
+  \bibinfo{pages}{023603} (\bibinfo{year}{2002}).
+
+\bibitem[{\citenamefont{Madarassy and Barenghi}(2008)}]{madarassy_barenghi_08}
+\bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Madarassy}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibinfo{journal}{Journal of Low Temperature Physics}
+  \textbf{\bibinfo{volume}{152}}, \bibinfo{pages}{122} (\bibinfo{year}{2008}).
+
+\bibitem[{\citenamefont{Penckwitt et~al.}(2002)\citenamefont{Penckwitt,
+  Ballagh, and Gardiner}}]{penckwitt_2002}
+\bibinfo{author}{\bibfnamefont{A.~A.} \bibnamefont{Penckwitt}},
+  \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Ballagh}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~W.}
+  \bibnamefont{Gardiner}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{260402}
+  (\bibinfo{year}{2002}).
+
+\bibitem[{\citenamefont{Gardiner et~al.}(1997)\citenamefont{Gardiner, Zoller,
+  Ballagh, and Davis}}]{gardiner97}
+\bibinfo{author}{\bibfnamefont{C.~W.} \bibnamefont{Gardiner}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Zoller}},
+  \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Ballagh}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Davis}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{79}},
+  \bibinfo{pages}{1793} (\bibinfo{year}{1997}).
 
 \bibitem[{\citenamefont{Press et~al.}(1993)\citenamefont{Press, Teukolsky,
   Vetterling, and Flannery}}]{NumericalRecipes}
@@ -589,28 +639,6 @@
 \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Shin}}, \bibinfo{note}{private
   communication}.
 
-\bibitem[{\citenamefont{Choi et~al.}(1998)\citenamefont{Choi, Morgan, and
-  Burnett}}]{choi_morgan_98}
-\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Choi}},
-  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Morgan}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Burnett}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{57}},
-  \bibinfo{pages}{4057} (\bibinfo{year}{1998}).
-
-\bibitem[{\citenamefont{Tsubota et~al.}(2002)\citenamefont{Tsubota, Kasamatsu,
-  and Ueda}}]{tsubota_kasamatsu_02}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}},
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Kasamatsu}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Ueda}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{65}},
-  \bibinfo{pages}{023603} (\bibinfo{year}{2002}).
-
-\bibitem[{\citenamefont{Madarassy and Barenghi}(2008)}]{madarassy_barenghi_08}
-\bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Madarassy}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
-  \bibinfo{journal}{Journal of Low Temperature Physics}
-  \textbf{\bibinfo{volume}{152}}, \bibinfo{pages}{122} (\bibinfo{year}{2008}).
-
 \bibitem[{\citenamefont{Allen et~al.}(2013)\citenamefont{Allen, Zaremba,
   Barenghi, and Proukakis}}]{allen_zaremba_13}
 \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Allen}},
@@ -769,15 +797,6 @@
   \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Griffin}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{88}},
   \bibinfo{pages}{070401} (\bibinfo{year}{2002}).
-
-\bibitem[{\citenamefont{Penckwitt et~al.}(2002)\citenamefont{Penckwitt,
-  Ballagh, and Gardiner}}]{penckwitt_2002}
-\bibinfo{author}{\bibfnamefont{A.~A.} \bibnamefont{Penckwitt}},
-  \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Ballagh}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~W.}
-  \bibnamefont{Gardiner}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{260402}
-  (\bibinfo{year}{2002}).
 
 \bibitem[{\citenamefont{Kasamatsu et~al.}(2003)\citenamefont{Kasamatsu,
   Tsubota, and Ueda}}]{kasamatsu_2003}
@@ -1217,5 +1236,10 @@
   \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Vignolo}},
   \bibinfo{journal}{Physics Reports} \textbf{\bibinfo{volume}{395}},
   \bibinfo{pages}{223 } (\bibinfo{year}{2004}).
+
+\bibitem[{\citenamefont{Bogoliubov}(1947)}]{bogo47}
+\bibinfo{author}{\bibfnamefont{N.~N.} \bibnamefont{Bogoliubov}},
+  \bibinfo{journal}{J. Phys. USSR} \textbf{\bibinfo{volume}{11}},
+  \bibinfo{pages}{23} (\bibinfo{year}{1947}).
 
 \end{thebibliography}

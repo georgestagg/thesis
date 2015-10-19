@@ -73,6 +73,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
         xlabel=$-t\omega/i$,
         ylabel=$E/(\hbar\omega)$,
         restrict x to domain=0:1,
+        colormap name=hsvcl,
         major tick length = 0.07cm
       ]
       \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
@@ -99,7 +100,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 \end{tikzpicture}
 	\caption{An example of the use of the imaginary time propagation method for finding the condensate ground state for a condensate with interaction energy $\hat{g}=2000$ and $\hat{\mu}=25.27$, with the Thomas-Fermi solution as the initial state. The density of the final ground state solution is shown (right) along with the energy of the solution as the method propagates through imaginary time (left).}\label{fig_imagtimesolgs}
 \end{figure}
-	Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While in theory an expression for the ground-state can be found by considering the lowest-lying eigenvalue (along with its eigenfunction) of the appropriate Hamiltonian, complications arise in calculating the ground-state in the case of the GPE; the non-linearity of the system forces the true ground-state to form as a solution of many simultaneous linear eigenvalue problems.	This complex problem is therefore often solved numerically using so called eigensolvers.
+	Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While often there exists analytic solutions for a condensate ground state, this problem is often solved numerically using so called eigensolvers. Numerically finding the ground state becomes practically necessary if a simulation requires complicated potential fields.
 
 	There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
 

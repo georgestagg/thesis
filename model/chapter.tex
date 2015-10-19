@@ -14,55 +14,240 @@ The result of this methodology is the Gross-Pitaevskii equation (GPE),
 \mathrm{i} \hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t),
 \label{eq:gpe}
 \end{equation}
-where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. In the homogeneous case $V_{\mathrm{trap}}({\bf r},t)=0$, otherwise a harmonic trapping potential is used. In the case of a 3D spherically symmetric condensate the harmonic trapping potential is defined as $V_{\mathrm{trap}}({\bf r},t)=m\omega{\bf r}/2$
+where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. In the homogeneous case $V_{\mathrm{trap}}({\bf r},t)=0$, otherwise a harmonic trapping potential is used. In the case of a 3D spherically symmetric condensate the harmonic trapping potential is defined as $V_{\mathrm{trap}}({\bf r},t)=m\omega{\bf r}/2$.
 
-Taking into account the fact that the GPE is only valid at $T=0$, it turns out the equation is surprisingly successful at quantitatively modelling ultra-cold gasses, even up to a temperature of $T=\frac{T_c}{2}$, where $T_c$ is the critical temperature for Bose-Einstein condensation. The GPE is also successful at qualitatively modelling BEC based effects in higher temperature superfluids, such as liquid helium II.
+The first two terms on the right hand side of the GPE are the energy of a single particle in a potential field $V$ and he third term describes the non-linear effects between the multiple particles in the system, with a strength usually parametrised by $g=4\pi N \hbar^2a/m$,
+where $m$ is the mass of a single particle, $a$ is the s-wave scattering length and and $N$ is the number of particles.
+Taking into account the fact that the GPE is only valid at $T=0$, it turns out the equation is surprisingly successful at quantitatively modelling ultra-cold gasses, even up to a temperature of $T=\frac{T_c}{2}$, where $T_c$ is the critical temperature for Bose-Einstein condensation. The GPE is also successful at qualitatively modelling BEC based effects in higher temperature superfluids, such as liquid helium II[CITE SOME WORK] and even in neutron starts [CITE SOME WORK].
 
 A detailed explanation of the mean-field formulation of the model and the full derivation of the GPE is shown in Section \ref{appsection:gpeqft}.
 
+\section{\label{section:gpedimless} Dimensionless Gross-Pitaevskii Equations}
+	Bose-Einstein condensates can be formed with almost any size or scale. An ultra-cold BECs topology or atom interaction strength can be fairly easily changed with magnetic/optical potentials and Feshbach resonances. Superfluid helium can have vortex core sizes of $\sim$1 or $\sim$100 angstroms, depending on the isotope of helium used. The cores of neutron stars are even theorised to be superfluid. For this reason, it is desirable to rescale the length scales used in the GPE so that any of the calculations performed can be easily reformulated into any length scale desired. We make this process easier by doing all calculations with dimensionless parameters. Another advantage of the dimensionless formulation is that the size of the values involved are all normalised on the scale of unity, reducing the chance of errors in numerical computation due to the floating point representation used by modern computer architectures.
+	We present two methods of making the GPE dimensionless, the specific scaling used is chosen by the needs of the simulation and is usually apparent (such as by whether a trapping potential is involved).
+
+	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
+		Consider a homogeneous system with repulsive iterations and with $V_{\mathrm{trap}} = 0$. In this case, $\Psi$ does not depend on ${\bf r}$, nor on $t$, and so we can set the time and spacial derivatives in the GPE to zero,
+		\begin{equation}
+		0 = \left(g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t).
+		\end{equation}
+		By rearranging, we can easily find the natural homogeneous density of the system: $\rho = |\Psi|^2 = \mu/g$. We then choose to rescale the wavefunction using this value, so that $\psi = \Psi/\sqrt{\rho}$.
+
+		By dimensional arguments (see Appendix \ref{section:healing} for details), the length scale of space is the healing length, $\xi = \hbar/\sqrt{mg\rho}$, and the length scale of time $\tau = \hbar/(g\rho)$. These units are often called the `natural units'. We define the rescaled dimensionless quantities as
+		\begin{equation}
+			\tilde{t} = \frac{t}{\tau}, ~~~ \tilde{r} = \frac{r}{\xi}, ~~~ \tilde{\varepsilon} = \frac{\varepsilon}{\mu},
+		\end{equation}
+		for time, length, and energy respectively, where a tilde denotes a dimensionless quantity. Substituting the dimensionless quantities into Equation \ref{eq:gpe} leads to the homogeneous GPE,
+		\begin{equation}\label{eq:dimgpehomg}
+		\mathrm{i}\frac{\partial\psi({\tilde{\bf r}},\tilde{t})}{\partial {\tilde{t}}} = \left( -\frac{1}{2}\tilde{\nabla}^2 + |\psi({\tilde{\bf r}},\tilde{t})|^2 + \tilde{V}_{\mathrm{obj}}({\tilde{\bf r}},\tilde{t}) - 1 \right) \psi({\tilde{\bf r}},\tilde{t}).
+		\end{equation}
+		In the interests of neatness the dimensionless signifier tilde will be omitted in future discussions of the homogeneous GPE. Quantities used with the wavefunction symbol $\psi$ are to be regarded as inherently dimensionless through the natural units.
+
+	\subsection{\label{section:gpedimlesstrap} Trapped GPE}
+		When considering a harmonically trapped condensate it is convenient to work with a wavefunction with density normalised to unity, that is,
+		\begin{equation}\label{eq:intwf}
+			\int |\phi|^2 \mathrm{d}^3{\bf r} = 1,
+		\end{equation}
+		We non-dimensionalise Equation \ref{eq:gpe} in terms of the length scales using the harmonic oscillator length, $l = \sqrt{\hbar/(m\omega)}$. This leads to the dimensionless rescalings,
+		\begin{equation}
+			\hat{t} = t\omega, ~~~ \hat{r} = \frac{r}{l}, ~~~ \hat{\varepsilon}= \frac{\varepsilon}{\hbar\omega},
+		\end{equation}
+		for time, length, and energy respectively, where a hat denotes a dimensionless quantity.
+		We find then that
+		\begin{equation}
+			\int |\Psi|^2 \mathrm{d}^3{\bf r} = N \Rightarrow \int |\Psi|^2 N^{-1} l^3\mathrm{d}^3\hat{\bf r} = 1,
+		\end{equation}
+		and so we rescale the wavefunction to satisfy Equation \ref{eq:intwf},
+		\begin{equation}
+			 |\phi|^2 = |\Psi|^2 N^{-1} l^3 \Rightarrow \phi = \Psi N^{-\frac{1}{2}} l^\frac{3}{2}.
+		\end{equation}
+	Substituting the new rescaled quantities into Equation \ref{eq:gpe} leads us to the trapped GPE,
+	\begin{equation}\label{eq:dimgpetrapped}
+		\mathrm{i}\frac{\partial\phi({\hat{\bf r}},\hat{t})}{\partial {\hat{t}}} = \left( -\frac{1}{2}\hat{\nabla}^2 + \hat{g}|\phi({\hat{\bf r}},\hat{t})|^2 + \hat{V}({\hat{\bf r}},\hat{t}) - \hat{\mu} \right) \phi({\hat{\bf r}},\hat{t}).
+	\end{equation}
+	where
+	\begin{equation}
+		 \hat{g} = \frac{gN}{\hbar \omega l^3}.
+	\end{equation}
+	In the interests of neatness the dimensionless signifier hat will be omitted in future discussions of the harmonically trapped GPE. Quantities used with the wavefunction symbol $\phi$ are to be regarded as inherently dimensionless through the harmonic oscillator units.
+
 \section{\label{section:quasi2dgpe} Quasi-Two-Dimensional Gross-Pitaevskii Equation}
-	In some cases it is useful to rewrite the trapping potential so that the trapping frequencies are defined independently for several dimensions. An extreme example of this is the highly oblate, sometimes called `pancake', condensate, in which the trapping potential is defined as
+	For some condensate geometries it is useful to be able simulate the condensate via a lower dimensional GPE. An example of this is the highly oblate, sometimes called `pancake', condensate, in which the trapping potential is defined as
 	\begin{equation}
 		V_{\mathrm{trap}}(x,y,z)=m\omega_\perp^2\frac{x^2+y^2}{2} + m\omega_z^2\frac{z^2}{2},
 	\end{equation}
-	with trapping frequencies $\omega_z >> \omega_\perp$ and under the condition $\hbar\omega_z >> \mu$, where $\mu$ is the 3D chemical potential. Tight $z$ confinement causes the dynamics to become essentially two dimensional (experimentally achieved in \cite{Gorlitz}) as the wavefuntion along $z$ becomes fixed into the independent harmonic oscillator ground state $\pi^{-1/4} l_z^{-1/2} \exp\left(-z^2/2l_z^2\right)$, where $l_z=\sqrt{\hbar/m \omega_z}$. A 2D GPE can then be used to model the system, with the modified interaction term $g_{2D} = g/( \sqrt{2\pi}l_z)$ \cite{parkerthesis}.  The 3D chemical potential $\mu$ is also modified (further details on the chemical potential can be found in Section \ref{section:mu}) and all other three-dimensional properties become two-dimensional.
+	with trapping frequencies $\omega_z >> \omega_\perp$ and under the condition $\hbar\omega_z >> \mu$, where $\mu$ is the 3D chemical potential. Tight $z$ confinement causes the dynamics to become essentially two dimensional (experimentally achieved in \cite{Gorlitz}) as the wavefuntion along $z$ becomes fixed into the independent harmonic oscillator ground state, so that
+	\begin{equation}
+		\Psi({\bf r},t) = \Psi_\perp(x,y,t) \Psi_z(z).
+	\end{equation}
+	An expression for $\Psi_z$ is found by assuming a Gaussian ground state under the condition that $\int |\Psi_z(z)|^2 \mathrm{d}z=1$.
+	\begin{equation}
+		\Psi_z(z) = \pi^{-1/4} l_z^{-1/2} \exp\left(-z^2/2l_z^2\right),
+	\end{equation}
+  where $l_z=\sqrt{\hbar/m \omega_z}$. This is known as the quasi-2D regime and when this form of $\Psi$ is substituted into Equation \ref{eq:gpe} it forms a 2D-GPE that can be used to model the system with reduced dimensionality, with the modified interaction term $g_{\mathrm{2D}} = g/( \sqrt{2\pi}l_z)$ \cite{parkerthesis}. The 3D chemical potential $\mu$ is also modified as an extra term is absorbed, $\mu_\mathrm{2d} = \mu - \hbar\omega_z/2$, and all other three-dimensional properties become two-dimensional.
+
+	A similar process can be performed with `sausage' or `cigar' quasi-1D geometries so that a 1D-GPE can be used with a modified $g_{\mathrm{1D}}$ interaction term, and $\mu_{\mathrm{1D}}$ chemical potential. As before all 3D properties become 1D, however as we will not consider experimentally accurate 1D cases in detail, the specifics are omitted from this thesis.
 
 
-\section{\label{section:gpedimless} Dimensionless Gross-Pitaevskii Equations}
-	Bose-Einstein condensates can be formed with almost any size or scale. An ultra-cold BECs topology or atom interaction strength can be fairly easily changed with magnetic/optical potentials and Feshbach resonances. Superfluid helium can have vortex core sizes of $\sim$1 or $\sim$100 angstroms, depending on the isotope of helium used. The cores of neutron stars are even theorised to be superfluid. For this reason, it is desirable to rescale the length scales used in the GPE so that any of the calculations performed can be easily reformulated into any length scale desired. We make this process easier by doing all calculations with dimensionless parameters. 
-	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
+\section{\label{section:gpestationary} Time-independent Gross-Pitaevskii Equation}
+ We find a stationary version of the GPE by first fixing the potential, $V({\bf r},t)$, so that it is constant in time, and then writing the wavefunction in the form $\Psi({\bf r},t) = \Psi_0({\bf r}) \exp (\mathrm{i}\mu t / \hbar)$, where $\Psi_0({\bf r})$ is the ground state. Equation \ref{eq:gpe} then becomes
+	\begin{equation}\label{eq:stationgpe}
+		\mu\Psi_0({\bf r}) = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi_0|^2({\bf r})  \right) \Psi_0({\bf r}),
+	\end{equation}
+	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard Schr\"odinger equation. This version of the GPE can be used to find stationary solutions of the system for a certain $\mu$ which characterises the energy of the ground state.
+	
+\section{\label{section:mu} The chemical potential}
+The chemical potential of the system, $\mu$, can be thought of as the energy required to remove a particle from a system with large $N$, or alternatively as a measure of the energy of a particle. The value of $\mu$ will vary for the specific species of bosons considered and provides a useful scale of energy.
 
-		When discussing a homogeneous system with repulsive iterations and no external or trapping potentials, $\Psi$ does not depend on $\mathrm{r}$ or $t$. We can easily find the homogeneous background density of the system: $g|\Psi|^2\Psi - \mu\Psi = 0 \Rightarrow |\Psi|^2 = \mu/g = \rho$. Let us begin by rescaling the wavefunction using this value, $\psi = \Psi/\sqrt{\rho}$.
+The chemical potential can be found in terms of energies of the system by direct integration of Equation \ref{eq:stationgpe},
+	\begin{equation}\label{eq:chempot}
+		\mu = \left ( E_{\mathrm{kin}} + E_{\mathrm{pot}} + 2E_{\mathrm{int}} \right ) / N,
+	\end{equation}
+	Where the quantities $E_{\mathrm{kin}}$, $E_{\mathrm{pot}}$ and $E_{\mathrm{int}}$ are defined in Appendix \ref{appsection:energy}.
 
-		By dimensional arguments, the natural units of space and time are $\xi = \hbar/\sqrt{mg\rho}$ and $\tau = \hbar/(g\rho)$. We now define dimensionless values $\tilde{t} = t/\tau$, $\tilde{\mathrm{r}} = \mathrm{r}/\xi$ and $\tilde{V} = V/\mu$, leading to the dimensionless homogeneous GPE,
-
-		\begin{equation}\label{eq:dimgpehomg}
-		\mathrm{i}\frac{\partial\psi({\bf \tilde{r}},\tilde{t})}{\partial {\tilde{t}}} = \left( -\frac{1}{2}\tilde{\nabla}^2 + |\psi({\bf \tilde{r}},\tilde{t})|^2 + \tilde{V}_{\mathrm{obj}}({\bf \tilde{r}},\tilde{t}) - 1 \right) \psi({\bf \tilde{r}},\tilde{t}).
-		\end{equation}
-		A full derivation can be found in Appendix [SOMETHING]. In the interests of neatness the dimensionless signifier $\tilde{~}$ will be omitted in future discussions of the homogeneous GPE. Instead, quantities used with the wavefunction symbol $\psi$ are to be regarded as made dimensionless in this way.
-
-
-	\subsection{\label{section:gpedimlesstrap} Trapped GPE}
-		When discussing the a trapped condensate we drop the dimensionless modifiers for each quantity and use the equation,
-		\begin{equation}\label{eq:dimgpetrapped}
-		\mathrm{i}\frac{\partial\phi({\bf r},t)}{\partial t} = \left( -\frac{1}{2}\nabla^2 + g|\phi({\bf r},t)|^2 + V({\bf r},t) - 1 \right) \phi({\bf r},t).
-		\end{equation}
-	In the interests of neatness the dimensionless signifier $\hat{~}$ will be omitted in future discussions of the homogeneous GPE. Instead, quantities used with the wavefunction symbol $\phi$ are to be regarded as made dimensionless in this way.
 
 \section{\label{section:dgpe} The Dissipative Gross-Pitaevskii Equation}
-	\subsection{\label{section:gamma} Phenomenological dissipation}
-	The GPE can be modified to provide a simple phenomenological model of a condensate's interaction with the thermal cloud. The phenomenological damping term, $\gamma$, is added to the right hand side of the GPE with the effect that the energy in the system no longer remains constant. The energy will instead vary over time to approach some constant value. This has the effect of damping out any excitations made to the condensate, and over time the wavefunction approaches the steady state. A microscopic justification for this model was provided by Penckwitt et al [CITE] and Gardiner at al [CITE]; by studying the growth of a condensate in the presence of a rotating thermal cloud an expression for $\gamma$ was found.
+
+	Equation \ref{eq:gpe} does not include any form of damping or dissipation. In fact, up to numerical accuracy, the GPE conserves both the particle number (N = $\int |\Psi|^2 \mathrm{d}\mathbf{r}$) and the total energy of the system. This is in direct opposition of physical reality, where due to the effects of finite-temperature all excitations in experiments are damped over time. The Dissipative Gross-Pitaevskii Equation (DGPE) attempts to introduce a simple-minded way of modelling finite-temperature damping by introducing a phenomenological dissipation into the GPE. The procedure was introduced by Pitaevskii \cite{lifshitzpitaevskii81} and refined by others \cite{choi_morgan_98,tsubota_kasamatsu_02,madarassy_barenghi_08}. The derivation of the DGPE presented here closely follows the arguments shown previously by these authors.
+
+	We would like to extend the GPE such that a damping process is introduced, so that dynamics approach an equilibrium state over time. Such an equilibrium state can be described by Equation \ref{eq:stationgpe}. The equation of motion for our wavefunction $\Psi$ is then written 
+		\begin{equation}\label{eq:disseqmotion}
+		i\hbar \frac{\partial \Psi}{\partial t} = \hat{L}\Psi,
+		\end{equation}
+	where $\hat{L}$ is a non-Hermitian operator (so that we have a relaxation process). At equilibrium the anti-Hermitian part of $\hat{L}$ must be zero, we force this by writing the anti-Hermitian part of $\hat{L}$ in the form,
+	\begin{equation*}\label{eq:dissantiherm}
+		i\Gamma\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+	\end{equation*}
+	which value will forced to zero at equilibrium by satisfaction of Equation \ref{eq:stationgpe}. Here gamma is a dimensionless value parametrising the relaxation time.
+
+	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write the entire operator $\hat{L}$ as
+	\begin{equation*}\label{eq:dissantiherm2}
+		\hat{L} = (1+i\Gamma)\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+	\end{equation*}
+	and the equation of motion becomes the DGPE,
+	\begin{equation}\label{eq:dissgpeA}
+		i\hbar \frac{\partial \Psi}{\partial t} = (1+i\Gamma)\left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+	\end{equation}
+	where $\Gamma<0$ for damping.
+
+	Equation \ref{eq:dissgpeA} describes the evolution of the condensate $\Psi$ towards equilibrium, an example of this is shown in Figure \ref{fig_excitationdecay}. The process can be understood by considering $\Psi$ to be made up of a ground state $\Psi_0$ and a coherent excitation $\delta$,
+	\begin{equation*}\label{eq:dissantiherm2}
+		\Psi = e^{-i \mu t}(\Psi_0 + \delta).
+	\end{equation*}
+	The value of $\delta$ will approach zero as the wavefunction is evolved via \ref{eq:dissgpeA}. The parameter $\Gamma$ will control the speed of the relaxation and the exact value will depend on various things. For instance the thermal component of the fluid will largely affect the damping time-scales and so $\Gamma$ will depend largely on temperature. A microscopic justification for the model is found in \cite{penckwitt_2002, gardiner97}; by studying the growth of a condensate in the presence of a rotating thermal cloud an expression for $\Gamma$ was found.
 		\begin{equation}\label{eq:dissgamma}
-		\gamma = \frac{4m\tilde{g}a^2kT}{\pi\hbar^2} \approx 0.01,
+		\Gamma = \frac{4mg_ca^2kT}{\pi\hbar^2},
 		\end{equation}
-	where $k$ is Boltzmann's constant and $\tilde{g} = 3$ is a factor used for correction. As $\gamma$ is proportional to temperature, in this thesis various values of $\gamma$ will be used as a qualitative probe of finite-temperature dynamics with only marginally more complex numerical methods. This leaves us with
-		\begin{equation}\label{eq:dissgpe}
-		(\mathrm{i}-\gamma) \hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t),
-		\end{equation}
+	%The GPE can be modified to provide a simple phenomenological model of a condensate's interaction with the thermal cloud. The phenomenological damping term, $\gamma$, is added to the right hand side of the GPE with the effect that the energy in the system no longer remains constant. The energy will instead vary over time to approach some constant value, depending on $\mu$.
+	where $k$ is Boltzmann's constant and $g_c = 3$ is a factor used for correction.
+\begin{figure}
+	\centering
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.48\linewidth,
+        height=0.3\linewidth,
+        xlabel=$-t\omega/\mathrm{i}$,
+        ylabel=$E/(\hbar\omega)$,
+        xmax=0.995,
+        axis y line*=left,
+        ymin=16.86,
+    		ymax=16.92,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [restrict x to domain=0:0.995,raw gnuplot,mark=none,color=black,thick]{
+      	plot "numerics/figures/excitation-decay-energy.txt" using 2:3 with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \hspace{-0.03\linewidth}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=0.48\linewidth,
+        height=0.3\linewidth,
+        xlabel=$t\omega\phantom{/i}$,
+        ylabel=,
+        axis y line*=right,
+        ytick=\empty,
+        xmin=-0.1,
+        ymin=16.86,
+    		ymax=16.92,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+      	plot "numerics/figures/excitation-decay-energy.txt" using 1:3 with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \\
+  \begin{tikzpicture}
+  \begin{axis}[
+    width=0.28\linewidth,
+    height=0.28\linewidth,
+    axis on top,
+    xmin=-9,
+    xmax=9,
+    xlabel={\phantom{$x/l_r$}},
+    ymin=-9,
+    ymax=9,
+    ylabel={$y/l_r$},
+    major tick length = 0.07cm]
+
+  \addplot graphics [xmin=-12.8,xmax=12.8,ymin=-12.8,ymax=12.8] {numerics/figures/excitationdecay0000.png};
+  \end{axis}
+\end{tikzpicture}
+\hspace{-0.05\linewidth}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.28\linewidth,
+    height=0.28\linewidth,
+    axis on top,
+    xmin=-9,
+    xmax=9,
+    xlabel={$x/l_r$},
+    ymin=-9,
+    ymax=9,
+    ylabel={\phantom{$y/l_r$}},
+    major tick length = 0.07cm]
+
+  \addplot graphics [xmin=-12.8,xmax=12.8,ymin=-12.8,ymax=12.8] {numerics/figures/excitationdecay0002.png};
+  \end{axis}
+\end{tikzpicture}
+\hspace{-0.05\linewidth}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.28\linewidth,
+    height=0.28\linewidth,
+    axis on top,
+    xmin=-9,
+    xmax=9,
+    xlabel={\phantom{$x/l_r$}},
+    ymin=-9,
+    ymax=9,
+    ylabel={\phantom{$y/l_r$}},
+    colorbar style={title={Phase},text width=0.5em,major tick length = 0.07cm},
+    major tick length = 0.07cm,
+    point meta min = -3.1415,
+    point meta max = 3.1415,
+    colorbar,colormap name=hsvcl
+    ]
+
+  \addplot graphics [xmin=-12.8,xmax=12.8,ymin=-12.8,ymax=12.8] {numerics/figures/excitationdecay1000.png};
+  \end{axis}
+\end{tikzpicture}
+	\caption{Simulated DGPE for a condensate with interaction energy $\hat{g}=2000$, $\hat{\mu}=25.27$ and $\gamma=0.01$. The total energy (upper) is shown during both imaginary and real time. At $\hat{t} = -\mathrm{i}$ an excitation is added to the condensate. The ground state is then re-approached through dissipation. Density and phase are shown (below) at time $\hat{t}=0$ (left), $\hat{t}=1$ (center), and $\hat{t}=40$ (right).}\label{fig_excitationdecay}
+\end{figure}
+
+	For an arbitrary wavefunction $\Psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy $\int |\Psi|^2 \mathrm{d}\mathbf{r} = N$ and different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the norm is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Section [SOMETHING]. The evolution shown in Figure \ref{fig_excitationdecay} demonstrates the method of carefully choosing a value of $\mu$.
+
+	Some authors \cite{tsubota_kasamatsu_02,madarassy_barenghi_08} write the DGPE in a similar but different way,
+	\begin{equation}\label{eq:dissgpeB}
+		(i-\gamma)\hbar \frac{\partial \Psi}{\partial t} = \left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+	\end{equation}
+	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while is is not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma<<1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours.
 
 \section{\label{section:movframe} Transforming the reference frame}
 	\subsection{\label{section:linearmovframe} Directional moving frame}
-	The GPE is transformed into the reference frame moving along $x$ via the addition of the Galilean term $ i\hbar v\frac{\partial}{\partial x} \Psi$ to the right-hand side of the GPE (\ref{eq:gpe1}), where $v$ is the frame velocity. 
+	The GPE is transformed into the reference frame moving along $x$ via the addition of the Galilean term $ i\hbar v\frac{\partial}{\partial x} \Psi$ to the right-hand side of the Equation \ref{eq:gpe1}, where $v$ is the frame velocity. 
 	\subsection{\label{section:rotatingframe} Rotating frame}
 	Recall in classical mechanics that the angular momentum is defined as a vector product of the position $\mathbf{r}$ and the momentum $\mathbf{p}$,
 	\begin{equation*}
@@ -87,7 +272,6 @@ p_x & p_y & p_z \end{array} \right|.
 	\mathrm{i}\hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu -i\hbar\Omega\left [ x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right ] \right ) \Psi({\bf r},t),
 	\end{equation}
 
-\section{\label{section:mu} The role of the chemical potential}
 \section{\label{section:hydrodynamic} Hydrodynamic interpretation}
 	Often it can be helpful to write the GPE, via the so called Madelung transformation, as a set of hydrodynamic equations. The transformation reinterprets the wavefunction $\Psi$ as a magnitude directly related to the fluid density and a phase which is directly related to the fluid velocity. We write the wavefunction in the form
 	\begin{equation}
@@ -107,13 +291,70 @@ p_x & p_y & p_z \end{array} \right|.
 	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:solutions} A selection of analytical solutions}
+	While complicated analytical solutions of the GPE are rare, there are a selection of solutions for simple cases that allow us to gain insight into the behaviour of a fluid governed by the GPE in more complicated scenarios.
 	\subsection{\label{section:wall} Density near a wall}
+	Consider a stationary ($\partial \Psi / \partial t = 0$) solution of the 1D-GPE with no trapping potential ($V(x,t)=0$) and boundary conditions $\Psi(0)=0$ (representing a hard wall boundary at $x=0$) and $\Psi(x)=\sqrt{\mu/g}$ as $x\rightarrow\infty$. The 1D-GPE becomes
+	\begin{equation}
+		-\frac{\hbar^2 }{2m}\frac{\partial^2}{\partial x^2}\Psi + g\Psi|\Psi|^2 - \mu\Psi = 0,
+	\end{equation}
+	which is solved by,
+	\begin{equation}
+		\Psi(x) = \sqrt{\frac{\mu}{g}}\tanh \left( \frac{x}{\xi} \right).
+	\end{equation}
+	This solution is shown in Figure \ref{fig_wallsoln}. We gain insight through this analytical solution for how a fluid governed by the GPE `heals' near areas of low density. There is clearly a natural minimum distance, related to $\xi$, over which the wavefunction can change from a density of zero to it's homogeneous value. This behaviour appears many times in the context of superfluid condensates, from solitons and solitary waves in low dimensional systems, to the fluid behaviour near impurities and vortex lines and tubes in fully 3D systems. 
+\begin{figure}
+	\centering
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.5\linewidth,
+        height=0.3\linewidth,
+        xlabel=$x/\xi$,
+        ylabel=$|\psi|^2$,
+        xmin=0,
+        xmax=10,
+        ymin=0,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+      	plot "numerics/figures/tanh-wall.dat" using 1:2 with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{A fluid governed by the GPE healing at a hard wall at $x=0$.}\label{fig_wallsoln}
+ \end{figure}
+
 	\subsection{\label{section:soliton} Soliton solutions}
-		\begin{equation}
-		\Psi(x) = \Psi_0 \tanh \left( \frac{x}{\sqrt{2}\xi} \right)
-		\label{eq:soliton}
-		\end{equation}
-	\subsection{\label{section:vortices} A note on vortex solutions}
+	\begin{figure}
+	\centering
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.5\linewidth,
+        height=0.3\linewidth,
+        xlabel=$x/\xi$,
+        ylabel=$|\psi|^2$,
+        xmin=-10,
+        xmax=10,
+        ymin=0,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+      	plot "numerics/figures/solitons.dat" using 1:2 with lines;
+      };
+      \addplot gnuplot [raw gnuplot,mark=none,color=blue,thick]{
+      	plot "numerics/figures/solitons.dat" using 1:3 with lines;
+      };
+      \addplot gnuplot [raw gnuplot,mark=none,color=red,thick]{
+      	plot "numerics/figures/solitons.dat" using 1:4 with lines;
+      };
+      \addplot gnuplot [raw gnuplot,mark=none,color=green,thick]{
+      	plot "numerics/figures/solitons.dat" using 1:5 with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Solitons}\label{fig_solitons}
+ \end{figure}
+
+	\subsection{\label{section:vortices} Vortex solutions}
 \section{\label{section:inital} Initial Conditions}
 	\subsection{\label{section:tftrap} Thomas Fermi profile of a trapped condensate}
 	Fixed in time $\Psi$ and $V$.

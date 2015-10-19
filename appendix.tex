@@ -152,7 +152,7 @@ By expanding out the commutator, using standard commutator identities along with
 i \hbar\frac{\partial}{\partial t}\hat{\upPsi}(\mathbf{r},t) &= \int [\hat{\upPsi}, \hat{\upPsi}^\dagger \hat{h}_0 \hat{\upPsi}]~d\mathbf{r}+ \frac{g}{2}\int[\hat{\upPsi}, \hat{\upPsi}^\dagger\hat{\upPsi}^\dagger\hat{\upPsi}\hat{\upPsi}]~d\mathbf{r}\\
 &
 \begin{split}
-=\int [\hat{\upPsi}, \hat{\upPsi}^\dagger]\hat{h}_0 \hat{\upPsi} &+ \hat{\upPsi}^\dagger[\hat{\upPsi},\hat{h}_0 \hat{\upPsi}]~d\mathbf{r}\\
+=\int [\hat{\upPsi}, &\hat{\upPsi}^\dagger]\hat{h}_0 \hat{\upPsi} + \hat{\upPsi}^\dagger[\hat{\upPsi},\hat{h}_0 \hat{\upPsi}]~d\mathbf{r}\\
 &+\frac{g}{2}\int[\hat{\upPsi},\hat{\upPsi}^\dagger]\hat{\upPsi}^\dagger\hat{\upPsi}\hat{\upPsi}+ \hat{\upPsi}^\dagger[\hat{\upPsi},\hat{\upPsi}^\dagger]\hat{\upPsi}\hat{\upPsi} + \hat{\upPsi}^\dagger\hat{\upPsi}^\dagger[\hat{\upPsi},\hat{\upPsi}\hat{\upPsi}] ~d\mathbf{r}\end{split}\\
 &= \hat{h}_0\hat{\upPsi}(\mathbf{r},t) + g\hat{\upPsi}^\dagger(\mathbf{r},t)\hat{\upPsi}(\mathbf{r},t)\hat{\upPsi}(\mathbf{r},t).
 \end{split}
@@ -164,7 +164,7 @@ We can continue to simplify the equation of motion by considering a mean-field a
 \end{equation*}
 where $\psi(\mathbf{r},t)$ is a field operator for the condensate and $\hat{\delta}(\mathbf{r},t)$ is a field operator for the non-condensed atoms, whether that be atoms in higher states, atoms residing in the thermal cloud, or atoms influenced by quantum mechanical fluctuations. 
 
-We now make the Bogoliubov approximation [bogo47], a somewhat violent symmetry breaking approximation in which the condensate field operator is replaced by a classical field, 
+We now make the Bogoliubov approximation \cite{bogo47}, a somewhat violent symmetry breaking approximation in which the condensate field operator is replaced by a classical field, 
 \begin{equation*}
 \hat{\psi}(\mathbf{r},t) = \psi(\mathbf{r},t) = \sqrt{N_0}\phi_0(\mathbf{r},t),
 \end{equation*}
@@ -186,7 +186,9 @@ Finally, note that as the particle number is no longer strictly conserved, calcu
 i \hbar\frac{\partial}{\partial t}\psi(\mathbf{r},t) = \left ( -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t) + g|\psi(\mathbf{r},t)|^2 - \mu \right ) \psi(\mathbf{r},t).
 \end{equation}
 
+\end{chapter}
 
+\begin{chapter}{Important Quantites\label{app:App3}}
 \section{\label{appsection:energy} Energy}
 \section{\label{appsection:force} Force}
 
@@ -198,6 +200,21 @@ T_{jk} = \rho v_j v_k + p\mathrm{\delta}_{jk} - \frac{\hbar^2}{4m^2}\rho \frac{\
 \begin{equation}
 F_k =\frac{\partial}{\partial t} \int_V J_k\,\mathrm{d}V = - \int_V \frac{\partial}{\partial x_j} T_{jk}\,\mathrm{d}V - \int_V \rho \frac{\partial}{\partial x_k} \left( \frac{V}{m} \right)\,\mathrm{d}V
 \label{eq:force}
+\end{equation}
+
+
+\section{\label{section:healing} Healing Length}
+The characteristic length scale of a GPE based system is the healing length, $\xi$. We can directly find a expression for $\xi$ by considering the minimum length needed for a large perturbation to return to the equilibrium value. Consider only the kinetic and interaction terms in Equation \ref{eq:gpe},
+\begin{equation}
+  \frac{\hbar^2}{2m}\nabla^2\Psi = g|\Psi({\bf r},t)|^2\Psi.
+\end{equation}
+Dimensionally we can balance these terms by replacing $\nabla^2\Psi$ with $2\Psi/\xi^2$, leading to
+\begin{equation}
+  \frac{\hbar^2}{m\xi^2} = g\rho,
+\end{equation}
+where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
+\begin{equation}
+  \xi = \frac{\hbar}{\sqrt{mg\rho}}.
 \end{equation}
 
 
