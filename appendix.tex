@@ -201,6 +201,23 @@ E = \int\!\varepsilon(\Psi)\;\mathrm{d}\mathbf{r}
 \label{eq:Efn}
 \end{equation}
 
+Alternatively, the energy of the system can be defined as a sum of the contributions from various types of energy in the system,
+\begin{equation}
+E = E_{\rm kin} + E_{\rm int} + E_{\mathrm{pot}},
+\label{eq:Esplit}
+\end{equation}
+so that,
+\begin{equation}
+E_{\rm kin} = \int\!\frac{\hbar}{2m}|\nabla\Psi|^2\;\mathrm{d}\mathbf{r},~E_{\rm int}=\int\!\frac{g}{2}|\Psi|^4\;\mathrm{d}\mathbf{r},~E_{\mathrm{pot}}=\int\!(V-\mu)|\Psi|^2\;\mathrm{d}\mathbf{r}.
+\label{eq:Esplitdef}
+\end{equation}
+The kinetic energy can be further decomposed into compressible and incompressible parts by considering the kinetic energy spectrum $\hat{E}_{\rm kin}$ \cite{Nore},
+\begin{equation}
+\hat{E}_{\rm kin}(k) = \hat{E}^i_{\rm kin}(k) + \hat{E}^c_{\rm kin}(k),
+\label{eq:Esplitdef}
+\end{equation}
+where $\hat{E}^i_{\rm kin}$ is the incompressible kinetic energy spectrum and $\hat{E}^c_{\rm kin}$ is the compressible kinetic energy spectrum.
+
 \section{\label{appsection:force} Force}
 
 \begin{equation}
@@ -230,7 +247,7 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 \end{chapter}
 
 \begin{chapter}{Algorithms\label{app:algorithms}}
-
+\section{\label{appsection:numericalalgos} Numerical Algortithms}
 \begin{algorithm}
     \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
     \Input{An initial field $\Psi$, a step size $h$, optional phase profile $\Theta$}
@@ -420,35 +437,34 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
     \SetKwFunction{Min}{min}
     \SetKw{continue}{continue}
     \SetKw{or}{or}
+    \SetKw{In}{in}
     \SetKw{and}{and}
     \SetKwData{Call}{C}
-    \Input{Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$. Number of vortices, $n_v$.}
+    \Input{Vortex locations and polarity. Number of vortices, $n_v$.}
     \Output{A group number for each vortex}
     \BlankLine
     $n_{\mathrm{rca}}\leftarrow0$\;
     \While{dipoles continue to be identified}{
       \For{$i\leftarrow 1$ \KwTo $n_v$}{
         \If {vortex $i$ is mutual nearest neighbours with some other vortex $j$}{
-        \If {$V_p[i] \neq V_p[i]$}{
+        \If {vortex $i$ is of opposite polarity to $j$}{
             Set both vortices as group -1\;
           }
         }
       }
     }
     \While{the vortex group configuration continues to change}{
-      \For{$i\leftarrow 1$ \KwTo $n_v$}{
-        \For{$j\leftarrow 1$ \KwTo $n_v$}{
-          \lIf {either vortex $i$ or $j$ is in group -1}{\continue}
-          \If {vortex $i$ and $j$ are closer than either is to a vortex of opposite polarity}{
-            \uIf {one of the two vortices $i$ and $j$ is in a group $n$}
-              {Set both vortices as group $n$\;}
-            \uElseIf {both vortices $i$ and $j$ are in groups $n$ and $m$}
-              {Set all vortices in groups $n$ and $m$ as group \Min{$n$,$m$}\;}
-            \Else{
-              $n_{\mathrm{rca}} \leftarrow n_{\mathrm{rca}} + 1$\;
-              Set both vortices as group $n_{\mathrm{rca}}$\;
-              }
-          }
+      \For{$(i,j)$ \In 1 \KwTo $n_v$}{
+        \lIf {either vortex $i$ or $j$ is in group -1}{\continue}
+        \If {vortex $i$ and $j$ are closer than either is to a vortex of opposite polarity}{
+          \uIf {one of the two vortices $i$ and $j$ is in a group $n$}
+            {Set both vortices as group $n$\;}
+          \uElseIf {both vortices $i$ and $j$ are in groups $n$ and $m$}
+            {Set all vortices in groups $n$ and $m$ as group \Min{$n$,$m$}\;}
+          \Else{
+            $n_{\mathrm{rca}} \leftarrow n_{\mathrm{rca}} + 1$\;
+            Set both vortices as group $n_{\mathrm{rca}}$\;
+            }
         }
       }
     }
@@ -488,5 +504,46 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 
   \caption{The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.}\label{algo_vortexkiller}
   \end{algorithm}
+\section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
+A technique to visualise both the wavefunction phase and density is used throughout this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
+\subsection{Plotting Algorithm}
+Initially, the phase plotting is performed as normal, a process involving a conversion of a set of values in the region $[-\pi,\pi)$ to an image (defined as a 2D grid of pixels of size $n\times m$). Examples include MATLAB's image/pcolor commands or gnuplot's splot command. It is recommended, but not required, that a periodic colourmap (such as MATLAB's `hsv') of equal lightness is used. The $n \times m$ pixels obtained from this procedure will most commonly be stored in the {\tt rgb} format, a triad of values $(r,g,b)$ corresponding to the values of the red, green and blue intensities of the pixel respectively. For a maximum intensity of $255$ (a common format for {\tt rgb} pixels), a pixel with value $(0,0,0)$ is black, and a pixel of $(255,255,255)$ is white.
 
+Each pixel must be instead represented in the {\tt hsl} format, a triad of values $(h,s,l)$ corresponding to the values of the hue, saturation and lightness of the pixel respectively. {\tt hsl} is most commonly represented such that $h \in [0,360)$ and $s,l \in [0,1]$. Any pixel of the form $(h,s,0)$ is black, and $(h,s,1)$ corresponds to white.
+
+For each pixel, the lightness is then modified, such that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to $(r,g,b)$ must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, which areas of high density will show hues corresponding to the fluid phase at that location.
+
+\subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
+Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in (0,1)$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise compute
+\begin{equation}
+s =
+    \begin{cases}
+      \frac{m-n}{2 - m - n} &\mbox{if } l \leq 0.5 \\
+      \frac{m-n}{m+n} &\mbox{if } l > 0.5.
+    \end{cases}
+\end{equation}
+Finally, find 
+\begin{equation}
+h =
+    \begin{cases}
+      60(\frac{g-b}{m-n}) &\mbox{if } m=r \\
+      60(\frac{b-r}{m-n}+2) &\mbox{if } m=g \\
+      60(\frac{r-g}{m-n}+4) &\mbox{if } m=b.
+    \end{cases}
+\end{equation}
+
+\subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
+Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. With this, one can find $x = c(1-|h' \mod 2 - 1|)$. Find
+\begin{equation}
+(r', g', b') =
+    \begin{cases}
+      (c, x, 0) &\mbox{if } 0 \leq h' < 1 \\
+      (x, c, 0) &\mbox{if } 1 \leq h' < 2 \\
+      (0, c, x) &\mbox{if } 2 \leq h' < 3 \\
+      (0, x, c) &\mbox{if } 3 \leq h' < 4 \\
+      (x, 0, c) &\mbox{if } 4 \leq h' < 5 \\
+      (c, 0, x) &\mbox{if } 5 \leq h'< 6,
+    \end{cases}
+\end{equation}
+and compute $m = l - c/2$ to finally find $(r,g,b) = (r'+m,g'+m,b'+m).$
 \end{chapter}

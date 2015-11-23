@@ -301,6 +301,11 @@ The chemical potential can be found in terms of energies of the system by direct
 
 \section{\label{section:cfield} Simulating finite temperature using the classical field method with a homogeneous condensate}
 
+A common method of simulating finite temperature systems is the so called classical field methods, also referred to as c-field methods. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the classical-field method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\Psi$ is reinterpreted.
+
+An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
+
+We emphasis that the requirements of large occupation numbers and weak interactions are essential. Without these requirements quantum modes exist that are coupled to the rest of the system and with occupation number of order unity, and the classical field description breaks down. All Bose gases discussed in this thesis will be of the dilute and weakly interacting form, so this caveat poses no future trouble. Further discussion and analysis of a strong non-equilibrium Bose gas and the classical-filed method can be found in \cite{PhysRevA.66.013603}.
 
 \section{\label{section:movframe} Transforming the reference frame}
 	\subsection{\label{section:linearmovframe} Moving frame along $x$}
@@ -658,12 +663,15 @@ Note the $v \propto 1/r$ dependence in the speed of the fluid around the vortex,
 	\end{equation}
 Similarly to the size of a vortex core, the healing length, or box size in homogeneous systems, the TF radius is an useful indicator of length scales when working with analytical descriptions of condensate behaviours in a trapped system.
 
-\subsection{\label{section:cfieldinit} Classical Field approximation with a homogeneous condensate}
+\subsection{\label{section:cfieldinitcond} Classical field initial condition}
+	In numerical simulation of a finite temperature Bose gas, we begin with a highly non-equilibrium state, so that the low-lying coherent modes of the system are all highly occupied. 
 	\begin{equation}
-	\psi({\bf r},t) = \sum_{\bf k} a_{\bf k} \exp (\mathrm{i}{\bf k}\cdot{\bf r}),
+	\psi_{\rm neq}({\bf r}) = \sum \limits_{\bf k}^{k<k_{\rm max}} a_{\bf k} \exp (\mathrm{i}{\bf k}\cdot{\bf r}),
 	\label{eq:cFieldIC}
 	\end{equation}
-	where the complex Fourier amplitudes $a_{\bf k}$ are related to the occupation numbers $n_{\bf k}$ through $\braket{a_{\bf k}^{\,}a_{\bf k'}^*} = n_{\bf k}\delta_{\bf kk'}$. The phase of the complex amplitudes $a_{\bf k}$ are distributed uniformly on $[0,2\pi]$ while $|a_{\bf k}|$ is distributed randomly with fixed mean equal to unity; it has been found that different distributions of $|a_{\bf k}|$ make no qualitative difference to the turbulent evolution[phys rev A 66 013603]. [TODO: write about choice of E and N here to get different condensate fractions]
+	where the complex Fourier amplitudes $a_{\bf k}$ are related to the occupation numbers $n_{\bf k}$ through $\braket{a_{\bf k}^{\,}a_{\bf k'}^*} = n_{\bf k}\delta_{\bf kk'}$. The phase of the complex amplitudes $a_{\bf k}$ are distributed uniformly on $[0,2\pi]$ while $|a_{\bf k}|$ is distributed randomly with fixed mean equal to unity; it has been found that different distributions of $|a_{\bf k}|$ make no qualitative difference to the turbulent evolution \cite{PhysRevA.66.013603}. A momentum cutoff, $k<k_{\rm max}$, is introduced to limit the momentum of the low lying modes, and in harmonic systems can be imposed as an energy-cutoff during evolution using the Projected-GPE \cite{PhysRevLett.87.160402}. However, in the case of homogeneous finite temperature simulations the momentum cut-off arises naturally as a consequence of the discretisation of the system; for a 3D finite temperature simulation in a periodic box with uniform grid spacing $\Delta$, $k_{\rm max}=\sqrt{3} \pi / \Delta$.
+
+	The numerical initial condition $\psi({\bf r},t_0)$ is then determined by renormalisation of $\psi_{\rm neq}({\bf r})$ to fix the number density, $N/V = \int_{\bf k}\!n_{\bf k}(t)~{\rm d}{\bf k}$ and kinetic energy density, $E_{\rm kin}/V = \int_{\bf k}\!k^2n_{\bf k}(t)~{\rm d}{\bf k}$. The choice of $N/V$ and $E_{\rm kin}/V$ uniquely determines the condensate fraction, $\rho_0/\rho$, and therefore the temperature for the equilibrium state of the Bose gas.
 
 \section{\label{section:potentials}Creating obstacles with repulsive potentials}
 In ultra-cold atomic gas experiments, perturbations to the gas can be achieved using laser beams. A red-detuned laser beam can create areas of attraction, and conversely, blue-detuned laser beams can create areas of repulsion. Should the blue-detuned laser beam be bright enough, a localised `hole' in the condensate can be formed where there are no atoms. Similarly, in superfluid helium experiments, there are examples where the fluid can feel the presence of a wall, wire, spheres or ion bubbles. These effects are replicated in the GPE model through the use of two and three-dimensional Gaussian or hard wall potentials.
@@ -719,13 +727,9 @@ Although macroscopically polished, the surface of these objects is
 rough on the length scale of the superfluid vortex core, which is of
 the order of $10^{-10}~\rm m$ in $^4$He
 and $10^{-8}~\rm m$ in $^3$He.  As an example, Fig.~\ref{fig_afmprofile}(a) is an atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence  \cite{Bradley2011}.  Note the appearance of an elongated scratch, typical of such wires.  No direct flow visualization is available on these microscopic length scales and, as such, 
-superflow in the presence of walls remains poorly understood. In principle, the superfluid boundary conditions should
-be straightforward.
-In the simplest case of a boundary at rest, the superfluid velocity
-component which is perpendicular to the boundary must be equal to
-zero at the boundary, while the tangential component can slip.
-In practice, nucleation of quantum vorticity complicates
-this idealized Eulerian picture. We can simulate the microscopic detail in GPE models through the use of a potential derived from the sample AFM height-map data. We define the external potential to be,
+superflow in the presence of walls remains poorly understood.
+
+We can simulate the microscopic detail in GPE models through the use of a potential derived from the sample AFM height-map data. We define the external potential to be,
 \begin{equation}
 V_{\mathrm{obj}}({\bf r}) =
 \begin{cases}
@@ -737,14 +741,14 @@ V_0 &\mbox{if } z < (h(\alpha x,\alpha y)-z_0)  \\
 where $V_0$ is its amplitude, $z_0$ is a shift in height and $\alpha$ is a scaling factor. Scaling $h(x,y)$ acts as a crude way of varying 
 the roughness of simulated boundaries. Finally, a Gaussian blur is applied so that $V(x,y,z)$ is smooth in $z$.
 
-%\subsection{\label{section:2dbitmappotential} Two-dimensional arbitrary bitmap}
-%\begin{equation}
-%V({\bf r})=
-%	\begin{cases} 
-%    V_0 & \mathrm{if}~ \text{the pixel at (x,y) is white}, \\
-%    0   & \mathrm{if}~ \text{the pixel at (x,y) is black},
-%  \end{cases}
-%\end{equation}
-%where $V_0$ is its amplitude.
+\subsection{\label{section:2dbitmappotential} Two-dimensional arbitrary bitmap}
+\begin{equation}
+V({\bf r})=
+	\begin{cases} 
+    V_0 & \mathrm{if}~ \text{the pixel at (x,y) is white}, \\
+    0   & \mathrm{if}~ \text{the pixel at (x,y) is black},
+  \end{cases}
+\end{equation}
+where $V_0$ is its amplitude.
 
 \end{chapter}
