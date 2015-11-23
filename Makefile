@@ -44,57 +44,24 @@ TMP=$(shell cat stats/compiled)
 .ps.ps.gz:
 	gzip -c $*.ps > $*.ps.gz
 
-.dvi.ps:
-	dvips -o $*.ps $*.dvi
-
-.ps.pdf:
-	ps2pdf $*.ps
-
-ifeq ($(LATEX), pdflatex)
-# Using pdflatex to compile.
 .tex.pdf:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
-	mv $*_pdf.pdf $*.pdf
+	$(LATEX) -shell-escape $* --enable-write18
+	$(LATEX) -shell-escape $* --enable-write18
 	echo "$(TMP) + 1" | bc > stats/compiled
 	pdfinfo thesis.pdf | grep "Pages" | awk '{printf $$2}' > stats/pages
 	pdftotext thesis.pdf - | LC_ALL=C  tr " " "\n" | grep -E "^[A-Za-z]+$$" | wc -l > stats/words
 	pdftotext thesis.pdf - | LC_ALL=C  grep -oE "Figure [0-9]+.[0-9]+" | sort | uniq | wc -l > stats/figures
 	git rev-list HEAD --count > stats/commits
 	git log -1 --pretty=%B > stats/lastmessage
-endif
 
-.tex.dvi:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
-	mv $*_dvi.dvi $*.dvi
-
-ifeq ($(LATEX), latex)
-# Using latex to compile.
-.tex.bbl:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_dvi $*
-	mv $*_dvi.dvi $*.dvi
-	BSTINPUTS=./inputs:$(BSTINPUTS) bibtex $*_dvi
-	cp  $*_dvi.bbl  $*.bbl
-else
 # Using pdflatex to compile.
 .tex.bbl:
-	TEXINPUTS=./inputs:$(TEXINPUTS) $(LATEX) -shell-escape --jobname $*_pdf $*
-	mv $*_pdf.pdf $*.pdf
-	BSTINPUTS=./inputs:$(BSTINPUTS) bibtex $*_pdf
-	cp  $*_pdf.bbl  $*.bbl
-endif
+	$(LATEX) -shell-escape $* --enable-write18
+	$(BSTINPUTS) bibtex $*
 
 #------------------------------------------------------------------------------
-ifeq ($(LATEX), latex)
-# Using latex to compile.
-default: ps
-else
 # Using pdflatex to compile.
 default: pdf
-endif
 
 all: $(OBJECT).dvi ps
 
@@ -117,30 +84,10 @@ tidy:
 	      *.bbl *.blg *.idx *.lot *.lof \
 	      $(OBJECT)_dvi.* $(OBJECT)_pdf.* */*.aux
 clean: tidy
-	rm -f $(OBJECT).dvi $(OBJECT).pdf $(OBJECT).ps
+	rm -f $(OBJECT).dvi $(OBJECT).pdf $(OBJECT)-figure*.pdf $(OBJECT).ps
 
 #---- DEPENDENCIES ------------------------------------------------------------
-
-ifeq ($(BIBTEX), true)
-  # With BibTeX
-  ifeq ($(LATEX), latex)
-    # Using latex to compile.
-    $(OBJECT).dvi: $(OBJECT).bbl $(OBJECT).tex $(SOURCES)
-  else
-    # Using pdflatex to compile.
-    $(OBJECT).pdf: $(OBJECT).bbl $(OBJECT).tex $(SOURCES)
-  endif
-else
-  # Without BibTeX
-  ifeq ($(LATEX), latex)
-    # Using latex to compile.
-    $(OBJECT).dvi: $(OBJECT).tex
-  else
-    # Using pdflatex to compile.
-    $(OBJECT).pdf: $(OBJECT).tex
-  endif
-endif
-
+$(OBJECT).pdf: $(OBJECT).bbl $(OBJECT).tex $(SOURCES)
 $(OBJECT).bbl: $(OBJECT).tex references.bib $(SOURCES)
 $(OBJECT).ps: $(OBJECT).dvi
 $(OBJECT).ps.gz: $(OBJECT).ps

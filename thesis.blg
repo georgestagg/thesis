@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: thesis_pdf.aux
+The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: ./bose_gasses/chapter.aux
 A level-1 auxiliary file: ./model/chapter.aux
 A level-1 auxiliary file: ./numerics/chapter.aux
@@ -16,45 +16,45 @@ Database file #1: references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 143 entries,
+You've used 147 entries,
             3411 wiz_defined-function locations,
-            1946 strings with 32460 characters,
-and the built_in function-call counts, 109221 in all, are:
-= -- 6003
-> -- 4075
-< -- 550
-+ -- 3408
-- -- 991
-* -- 15256
-:= -- 11406
-add.period$ -- 143
-call.type$ -- 143
-change.case$ -- 578
-chr.to.int$ -- 143
-cite$ -- 146
-duplicate$ -- 9715
-empty$ -- 9006
-format.name$ -- 2455
-if$ -- 20622
+            1959 strings with 32590 characters,
+and the built_in function-call counts, 111338 in all, are:
+= -- 6135
+> -- 4123
+< -- 560
++ -- 3442
+- -- 1003
+* -- 15510
+:= -- 11659
+add.period$ -- 147
+call.type$ -- 147
+change.case$ -- 594
+chr.to.int$ -- 147
+cite$ -- 150
+duplicate$ -- 9916
+empty$ -- 9196
+format.name$ -- 2491
+if$ -- 21025
 int.to.chr$ -- 7
-int.to.str$ -- 144
-missing$ -- 1496
-newline$ -- 444
-num.names$ -- 428
-pop$ -- 2521
+int.to.str$ -- 148
+missing$ -- 1527
+newline$ -- 456
+num.names$ -- 440
+pop$ -- 2582
 preamble$ -- 1
-purify$ -- 572
+purify$ -- 588
 quote$ -- 0
-skip$ -- 4152
+skip$ -- 4230
 stack$ -- 0
-substring$ -- 3620
-swap$ -- 7988
-text.length$ -- 500
+substring$ -- 3696
+swap$ -- 8133
+text.length$ -- 506
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 840
+type$ -- 864
 warning$ -- 1
-while$ -- 418
+while$ -- 429
 width$ -- 0
-write$ -- 1449
+write$ -- 1485
 (There was 1 warning)

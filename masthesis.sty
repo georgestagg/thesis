@@ -142,11 +142,20 @@
 \microtypecontext{spacing=nonfrench}
 \usepackage[T1]{fontenc}
 \usepackage{newpxtext}
+\SetTracking{encoding={*}, shape=sc}{0}
+\SetExtraKerning[unit=space]
+    {encoding={*}, family={pplx}, series={*}, size={footnotesize,small,normalsize,large}}
+    {\textendash={400,400}, % en-dash, add more space around it
+     "28={ ,150}, % left bracket, add space from right
+     "29={150, }, % right bracket, add space from left
+     \textquotedblleft={ ,150}, % left quotation mark, space from right
+     \textquotedblright={150, }} % right quotation mark, space from left
+
 \usepackage{braket}
 \linespread{1.2}
 \usepackage[bigdelims,vvarbb]{newpxmath}
 \usepackage{bm}
-\usepackage[lined,commentsnumbered]{algorithm2e}
+\usepackage[lined,commentsnumbered,boxruled]{algorithm2e}
 \usepackage{tabularx}
 \newcolumntype{x}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
@@ -158,17 +167,10 @@
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
 
+%\usepgfplotslibrary{external} 
+%\tikzexternalize
 
-\SetTracking{encoding={*}, shape=sc}{0}
-\SetExtraKerning[unit=space]
-    {encoding={*}, family={pplx}, series={*}, size={footnotesize,small,normalsize,large}}
-    {\textendash={400,400}, % en-dash, add more space around it
-     "28={ ,150}, % left bracket, add space from right
-     "29={150, }, % right bracket, add space from left
-     \textquotedblleft={ ,150}, % left quotation mark, space from right
-     \textquotedblright={150, }} % right quotation mark, space from left
-
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------
 % Fancy headers.  See the fancyhdr documentation of a full explanation of what
 % these are.  R=Right hand side of page, L=Left hand side of page
 \pagestyle{fancy}

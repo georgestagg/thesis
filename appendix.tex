@@ -188,8 +188,19 @@ i \hbar\frac{\partial}{\partial t}\psi(\mathbf{r},t) = \left ( -\frac{\hbar^2}{2
 
 \end{chapter}
 
-\begin{chapter}{Important Quantites\label{app:App3}}
+\begin{chapter}{Important Quantities\label{app:ImpQuantities}}
 \section{\label{appsection:energy} Energy}
+The energy functional of the GPE is written
+\begin{equation}
+\varepsilon(\Psi) = \frac{\hbar}{2m}|\nabla\Psi|^2 + \frac{g}{2}|\Psi|^4 + V|\Psi|^2 - \mu|\Psi|^2,
+\label{eq:Efn}
+\end{equation}
+where the first term is the kinetic energy, the second term is the energy arising from atom-atom interactions, and the final two terms are the energy associated with the external and chemical potentials. This functional can be integrated over space to find a value for the condensate energy,
+\begin{equation}
+E = \int\!\varepsilon(\Psi)\;\mathrm{d}\mathbf{r}
+\label{eq:Efn}
+\end{equation}
+
 \section{\label{appsection:force} Force}
 
 \begin{equation}
@@ -216,6 +227,266 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 \begin{equation}
   \xi = \frac{\hbar}{\sqrt{mg\rho}}.
 \end{equation}
+\end{chapter}
 
+\begin{chapter}{Algorithms\label{app:algorithms}}
+
+\begin{algorithm}
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \Input{An initial field $\Psi$, a step size $h$, optional phase profile $\Theta$}
+    \SetKw{KwIn}{in}
+    \SetKw{KwAll}{all}
+    \SetKw{KwAllPoints}{all points}
+    \BlankLine
+    $t = 0$\;
+    $dt = -ih$\;
+    \Repeat{a suitable ground state is found}{
+      Perform a single step of the RK4 Scheme\;
+      $t = t + dt$\;
+      $n\leftarrow \mathrm{norm}(\Psi)$\;
+      \For{$\KwAllPoints~i~\KwIn~\Psi$}{
+        $\Psi[i]\leftarrow \Psi[i]/\sqrt{n}$\;
+      }
+      \If{we want a phase profile imprinted into the ground state}{
+        \For{$\KwAllPoints~i~\KwIn~\Psi$}{
+          $\Psi[i]\leftarrow \Theta[i].|\Psi[i]|$\;
+        }
+      }
+    }
+    $dt = h$\;
+    \Repeat{satisfied}{
+      Perform a single step of the RK4 Scheme\;
+      $t = t + dt$\;
+
+      \If{real time normalization is enabled}{
+      $n\leftarrow \mathrm{norm}(\Psi)$\;
+      \For{$\KwAllPoints~i~\KwIn~\Psi$}{
+        $\Psi[i]\leftarrow \Psi[i]/\sqrt{n}$\;
+      }
+      
+
+      }
+    }
+  \caption{RK4 algorithm for advancing a ODE/PDE in time. Should normalization of the wavefunction be required it is included an optional part of this algorithm.}\label{algo_rk4}
+  \end{algorithm}
+
+  \begin{algorithm}[H]
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \Input{A $n_x \times n_y$ wavefunction $\theta$. A $n_x \times n_y$ potential field $V$. A line integral width $l$.}
+  \Output{A `vortex field' $Q$.}
+  \BlankLine
+  \For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
+    \For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
+      $Q[i,j]\leftarrow\oint_\Box \nabla\theta~ds$, where $\Box$ is a square loop of width $l$ centered on $(i,j)$\;
+    }
+    \If {$V[i,j]>1$}{$Q[i,j]\leftarrow0$\tcp*{Avoid detection of ghost vortices}} 
+  }
+
+
+\caption{Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.}\label{algo_calcvortexfield}
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \SetKw{KwIn}{in}
+    \SetKw{KwAll}{all}
+    \SetKw{KwAllPoints}{all points}
+    \Input{A $n_x \times n_y$ field $Q$, a Gaussian filter width $g$.}
+    \Output{A $n_x \times n_y$ field $G$.}
+    \BlankLine
+    $G[i]\leftarrow0$\;
+    \For{$k\leftarrow 1$ \KwTo $n_x$}{
+      \For{$l\leftarrow 1$ \KwTo $n_y$}{
+        \For{$i\leftarrow 1$ \KwTo $n_x$}{
+          \For{$j\leftarrow 1$ \KwTo $n_y$}{
+            $G[k,l] \leftarrow G[k,l] + Q[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
+          }
+        }
+        $G[k,l] \leftarrow G[k,l]/(n_x.n_y)$\;
+      }
+    }
+
+  \caption{Gaussian convolution. Filters out features with structures of size less than the input
+  filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
+  \end{algorithm}
+
+
+
+  \begin{algorithm}[H]
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \SetKwData{Mtmp}{m}
+  \SetKwFunction{Max}{max}
+  \SetKwFunction{Min}{min}
+  \SetKw{continue}{continue}
+  \SetKw{KwAnd}{and}
+  \SetKw{KwIn}{in}
+  \SetKw{KwAll}{all}
+  \SetKw{KwAllPoints}{all points}
+  \Input{A $n_x \times n_y$ binary field $P$.}
+  \Output{A $n_x \times n_y$ field $Q$.}
+  \BlankLine
+  Let $L$ be a $4 \times (n_x.n_y)$ field\;
+  Let $A$ be a vector length $4$\;
+  \lFor{$\KwAllPoints~i~\KwIn~L$}{
+  $L[i]\leftarrow-1$
+  }
+  \lFor{$\KwAllPoints~i~\KwIn~Q$}{
+  $Q[i]\leftarrow-1$
+  }
+
+  $l_c\leftarrow 1$, $r_c\leftarrow 0$\;
+
+  \For{$i\leftarrow 2$ \KwTo $n_x-1$}{
+    \For{$j\leftarrow 2$ \KwTo $n_y-1$}{
+      \lIf {$P[i,j] = 0$}{\continue}
+      $A \leftarrow (Q[i+1,j-1],Q[i,j-1],Q[i-1,j-1],Q[i-1,j])$\;
+      \For{$c \leftarrow 1$ \KwTo $4$}{
+        \If {$A[c]\geq 0$}{
+          $Q[i,j]\leftarrow A[c]$\;
+          $L[c,l_c]\leftarrow A[c]$\;
+        }
+      }
+      \lIf{$Q[i,j] \geq 0$}{$l_c\leftarrow lc+ 1$}
+      \Else{
+        $Q[i,j]\leftarrow r_c $\;
+        $rc \leftarrow r_c+ 1$\;
+      }
+    }
+  }
+  \For{$r\leftarrow 1$ \KwTo $(n_x.n_y)$}{
+    \lIf{\Max{elements of $L$ in row $r$}$= -1$}{\continue}
+    $m\leftarrow$ \Min{elements of $L$ in row $r$ with value $\geq 0$}\;
+
+    \For{$c\leftarrow 1$ \KwTo $4$}{
+      \If{$L[c,r] \neq m$ \KwAnd $L[c,r] \geq 0$ }{
+        \For{$\KwAllPoints~i~\KwIn~Q$}{
+          \lIf{$Q[i]=L[c,r]$}{$Q[i] \leftarrow m$}
+        }
+      }
+    }
+  }
+
+
+\caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
+\end{algorithm}
+
+
+  \begin{algorithm}[H]
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \SetKwData{Linked}{linked}
+  \SetKw{KwAnd}{and}
+  \SetKwFunction{Max}{max}
+  \SetKwFunction{Min}{min}
+  \SetKwData{Call}{C}
+  \Input{A $n_x \times n_y$ field $\theta$. A $n_x \times n_y$ field $P$. A threshold value $t$.}
+  \Output{Number of vortices found, $n_v$. Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$.}
+  \BlankLine
+  $Q\leftarrow$ Algorithm \ref{algo_gaussconv} $\leftarrow$ Algorithm \ref{algo_calcvortexfield} $\leftarrow(\theta,P)$ \;
+  $R\leftarrow0$ at every point, $S\leftarrow0$ at every point\;
+  $n_v\leftarrow 0$\;
+  \For{$i\leftarrow 1$ \KwTo $n_x$}{
+    \For{$j\leftarrow 1$ \KwTo $n_y$}{
+      \lIf {$Q[i,j]>t$}{$R[i,j] = 1$}
+      \lIf {$Q[i,j]<t$}{$S[i,j] = 1$}
+    }
+  }
+
+  \ForEach{$C\in(R,S)$}{
+    $D\leftarrow$ Algorithm \ref{algo_bwlabel} $\leftarrow C$\;
+    \For{$i\leftarrow 1$ \KwTo \Max($D$)}{
+      $V[1,n_v]\leftarrow$ mean row of the points where $D=i$\;
+      $V[2,n_v]\leftarrow$ mean column of the points where $D=i$\;
+      \lIf {$C=R$}{$V[3,n_v]\leftarrow 1$}
+      \lIf {$C=S$}{$V[3,n_v]\leftarrow -1$}
+      $n_v \leftarrow n_v + 1$\;
+    }
+  }
+
+  \caption{Calculate vortex locations and polarity.}\label{algo_calcvortexlocs}
+  \end{algorithm}
+
+
+
+  \begin{algorithm}[H]
+    \SetKwFunction{Zero}{Zero}
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \SetKwData{Linked}{linked}
+    \SetKw{KwAnd}{and}
+    \SetKwFunction{Max}{max}
+    \SetKwFunction{Min}{min}
+    \SetKw{continue}{continue}
+    \SetKw{or}{or}
+    \SetKw{and}{and}
+    \SetKwData{Call}{C}
+    \Input{Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$. Number of vortices, $n_v$.}
+    \Output{A group number for each vortex}
+    \BlankLine
+    $n_{\mathrm{rca}}\leftarrow0$\;
+    \While{dipoles continue to be identified}{
+      \For{$i\leftarrow 1$ \KwTo $n_v$}{
+        \If {vortex $i$ is mutual nearest neighbours with some other vortex $j$}{
+        \If {$V_p[i] \neq V_p[i]$}{
+            Set both vortices as group -1\;
+          }
+        }
+      }
+    }
+    \While{the vortex group configuration continues to change}{
+      \For{$i\leftarrow 1$ \KwTo $n_v$}{
+        \For{$j\leftarrow 1$ \KwTo $n_v$}{
+          \lIf {either vortex $i$ or $j$ is in group -1}{\continue}
+          \If {vortex $i$ and $j$ are closer than either is to a vortex of opposite polarity}{
+            \uIf {one of the two vortices $i$ and $j$ is in a group $n$}
+              {Set both vortices as group $n$\;}
+            \uElseIf {both vortices $i$ and $j$ are in groups $n$ and $m$}
+              {Set all vortices in groups $n$ and $m$ as group \Min{$n$,$m$}\;}
+            \Else{
+              $n_{\mathrm{rca}} \leftarrow n_{\mathrm{rca}} + 1$\;
+              Set both vortices as group $n_{\mathrm{rca}}$\;
+              }
+          }
+        }
+      }
+    }
+
+    \caption{The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex dipoles labelled with $-1$.}\label{algo_rca
+    }
+    \end{algorithm}
+
+
+    \begin{algorithm}[H]
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \SetKwData{Linked}{linked}
+  \SetKw{KwAnd}{and}
+  \SetKwFunction{Max}{max}
+  \SetKwFunction{Min}{min}
+  \SetKwFunction{Phase}{phase}
+  \SetKwData{Call}{C}
+  \Input{A $n_x \times n_y$ complex field $\psi$. A `safe' distance $d$. Vortex core radius $c$. }
+  \Output{A $n_x \times n_y$ complex field $\phi$.}
+  \BlankLine
+  $\phi \leftarrow \psi$\;
+  $(n_v,V_l,V_p)\leftarrow$ Algorithm \ref{algo_calcvortexlocs}~$\leftarrow\psi$\;
+
+  \For{$i\leftarrow 1$ \KwTo $n_v$}{
+    \If{$|V_l[i]| > d$}{
+      Imprint a vortex of polarity $V_p[i]$ at location $V_l[i]$ in $\phi$\;
+      \For{$j\leftarrow -c$ \KwTo $c$}{
+        \For{$k\leftarrow -c$ \KwTo $c$}{
+            $x \leftarrow V_l[1,i]+j$\;
+            $y \leftarrow V_l[2,i]+k$\;
+            \mbox{$\phi(x,y) \leftarrow \psi_{\inf}~\times$~\Phase{$\psi(x,y)$}\;}
+        }
+      }
+    }
+  }
+
+  \caption{The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.}\label{algo_vortexkiller}
+  \end{algorithm}
 
 \end{chapter}

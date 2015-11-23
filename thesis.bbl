@@ -1,4 +1,4 @@
-\begin{thebibliography}{143}
+\begin{thebibliography}{147}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -32,6 +32,43 @@
 \bibitem[{\citenamefont{Parker}(2004)}]{parkerthesis}
 \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Parker}}, Ph.D. thesis,
   \bibinfo{school}{The University of Durham} (\bibinfo{year}{2004}).
+
+\bibitem[{\citenamefont{Thijssen}(1999)}]{thijssen1999computational}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Thijssen}},
+  \emph{\bibinfo{title}{Computational Physics}} (\bibinfo{publisher}{Cambridge
+  University Press}, \bibinfo{year}{1999}), ISBN \bibinfo{isbn}{9780521575881}.
+
+\bibitem[{\citenamefont{Bao and Tang}(2003)}]{Bao2003230}
+\bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Bao}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Tang}},
+  \bibinfo{journal}{Journal of Computational Physics}
+  \textbf{\bibinfo{volume}{187}}, \bibinfo{pages}{230 } (\bibinfo{year}{2003}),
+  ISSN \bibinfo{issn}{0021-9991}.
+
+\bibitem[{\citenamefont{Edwards and Burnett}(1995)}]{Edwards95}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Edwards}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Burnett}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{51}},
+  \bibinfo{pages}{1382} (\bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{Press et~al.}(1993)\citenamefont{Press, Teukolsky,
+  Vetterling, and Flannery}}]{NumericalRecipes}
+\bibinfo{author}{\bibfnamefont{W.~H.} \bibnamefont{Press}},
+  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Teukolsky}},
+  \bibinfo{author}{\bibfnamefont{W.~T.} \bibnamefont{Vetterling}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{B.~P.}
+  \bibnamefont{Flannery}}, \emph{\bibinfo{title}{Numerical Recipes in FORTRAN;
+  The Art of Scientific Computing}} (\bibinfo{publisher}{Cambridge University
+  Press}, \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{1993}),
+  \bibinfo{edition}{2nd} ed., ISBN \bibinfo{isbn}{0521437164}.
+
+\bibitem[{\citenamefont{Chiofalo et~al.}(2000)\citenamefont{Chiofalo, Succi,
+  and Tosi}}]{PhysRevE.62.7438}
+\bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Chiofalo}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Succi}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.~P.} \bibnamefont{Tosi}},
+  \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{62}},
+  \bibinfo{pages}{7438} (\bibinfo{year}{2000}).
 
 \bibitem[{\citenamefont{Barenghi et~al.}(1981)\citenamefont{Barenghi, Donnelly,
   Vinen, and eds.}}]{lifshitzpitaevskii81}
@@ -83,45 +120,151 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{79}},
   \bibinfo{pages}{1793} (\bibinfo{year}{1997}).
 
-\bibitem[{\citenamefont{Press et~al.}(1993)\citenamefont{Press, Teukolsky,
-  Vetterling, and Flannery}}]{NumericalRecipes}
-\bibinfo{author}{\bibfnamefont{W.~H.} \bibnamefont{Press}},
-  \bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Teukolsky}},
-  \bibinfo{author}{\bibfnamefont{W.~T.} \bibnamefont{Vetterling}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{B.~P.}
-  \bibnamefont{Flannery}}, \emph{\bibinfo{title}{Numerical Recipes in FORTRAN;
-  The Art of Scientific Computing}} (\bibinfo{publisher}{Cambridge University
-  Press}, \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{1993}),
-  \bibinfo{edition}{2nd} ed., ISBN \bibinfo{isbn}{0521437164}.
+\bibitem[{\citenamefont{Zakharov and Shabat}(1972)}]{zakharov72}
+\bibinfo{author}{\bibfnamefont{V.~E.} \bibnamefont{Zakharov}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~B.} \bibnamefont{Shabat}},
+  \bibinfo{journal}{Sov. Phys. JETP} \textbf{\bibinfo{volume}{34}},
+  \bibinfo{pages}{62} (\bibinfo{year}{1972}).
 
-\bibitem[{\citenamefont{Thijssen}(1999)}]{thijssen1999computational}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Thijssen}},
-  \emph{\bibinfo{title}{Computational Physics}} (\bibinfo{publisher}{Cambridge
-  University Press}, \bibinfo{year}{1999}), ISBN \bibinfo{isbn}{9780521575881},
-  \urlprefix\url{https://books.google.co.uk/books?id=flolqBpoJeEC}.
+\bibitem[{\citenamefont{Zakharov and Shabat}(1973)}]{zakharov73}
+\bibinfo{author}{\bibfnamefont{V.~E.} \bibnamefont{Zakharov}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~B.} \bibnamefont{Shabat}},
+  \bibinfo{journal}{Sov. Phys. JETP} \textbf{\bibinfo{volume}{37}},
+  \bibinfo{pages}{823} (\bibinfo{year}{1973}).
 
-\bibitem[{\citenamefont{Bao and Tang}(2003)}]{Bao2003230}
-\bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Bao}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Tang}},
-  \bibinfo{journal}{Journal of Computational Physics}
-  \textbf{\bibinfo{volume}{187}}, \bibinfo{pages}{230 } (\bibinfo{year}{2003}),
-  ISSN \bibinfo{issn}{0021-9991}.
+\bibitem[{\citenamefont{Berloff}(2004)}]{berloff2004}
+\bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}},
+  \bibinfo{journal}{Journal of Physics A: Mathematical and General}
+  \textbf{\bibinfo{volume}{37}}, \bibinfo{pages}{1617} (\bibinfo{year}{2004}).
 
-\bibitem[{\citenamefont{Edwards and Burnett}(1995)}]{Edwards95}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Edwards}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Burnett}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{51}},
-  \bibinfo{pages}{1382} (\bibinfo{year}{1995}),
-  \urlprefix\url{http://link.aps.org/doi/10.1103/PhysRevA.51.1382}.
+\bibitem[{\citenamefont{Lawson}(2013)}]{Lawson}
+\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Lawson}}, Ph.D. thesis,
+  \bibinfo{school}{Lancaster University} (\bibinfo{year}{2013}).
 
-\bibitem[{\citenamefont{Chiofalo et~al.}(2000)\citenamefont{Chiofalo, Succi,
-  and Tosi}}]{PhysRevE.62.7438}
-\bibinfo{author}{\bibfnamefont{M.~L.} \bibnamefont{Chiofalo}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Succi}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.~P.} \bibnamefont{Tosi}},
-  \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{62}},
-  \bibinfo{pages}{7438} (\bibinfo{year}{2000}),
-  \urlprefix\url{http://link.aps.org/doi/10.1103/PhysRevE.62.7438}.
+\bibitem[{\citenamefont{Skrbek and Vinen}(2009)}]{VinenSkrbek2008}
+\bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Skrbek}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Vinen}}, in
+  \emph{\bibinfo{booktitle}{Quantum Turbulence}}, edited by
+  \bibinfo{editor}{\bibfnamefont{M.}~\bibnamefont{Tsubota}} \bibnamefont{and}
+  \bibinfo{editor}{\bibfnamefont{W.}~\bibnamefont{Halperin}}
+  (\bibinfo{publisher}{Elsevier}, \bibinfo{year}{2009}),
+  vol.~\bibinfo{volume}{16} of \emph{\bibinfo{series}{Progress in Low
+  Temperature Physics}}, pp. \bibinfo{pages}{195 -- 246}.
+
+\bibitem[{\citenamefont{Davis et~al.}(2000)\citenamefont{Davis, Hendry, and
+  McClintock}}]{Davis2000}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Davis}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Hendry}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{McClintock}},
+  \bibinfo{journal}{Physica B: Condensed Matter}
+  \textbf{\bibinfo{volume}{280}}, \bibinfo{pages}{43 } (\bibinfo{year}{2000}).
+
+\bibitem[{\citenamefont{Gu\'enault et~al.}(1986)\citenamefont{Gu\'enault,
+  Keith, Kennedy, Mussett, and Pickett}}]{Guenault1986}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gu\'enault}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Keith}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Kennedy}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Mussett}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Pickett}},
+  \bibinfo{journal}{Journal of Low Temperature Physics}
+  \textbf{\bibinfo{volume}{62}}, \bibinfo{pages}{511} (\bibinfo{year}{1986}),
+  ISSN \bibinfo{issn}{0022-2291}.
+
+\bibitem[{\citenamefont{Bradley et~al.}(2005)\citenamefont{Bradley, Clubb,
+  Fisher, Gu\'enault, Haley, Matthews, Pickett, Tsepelin, and Zaki}}]{brad05}
+\bibinfo{author}{\bibfnamefont{D.~I.} \bibnamefont{Bradley}},
+  \bibinfo{author}{\bibfnamefont{D.~O.} \bibnamefont{Clubb}},
+  \bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
+  \bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Gu\'enault}},
+  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Haley}},
+  \bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Matthews}},
+  \bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pickett}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Zaki}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{95}},
+  \bibinfo{pages}{035302} (\bibinfo{year}{2005}).
+
+\bibitem[{\citenamefont{Bradley et~al.}(2011)\citenamefont{Bradley,
+  \v{C}love\v{c}ko, Fear, Fisher, Gu\'enault, Haley, Lawson, Pickett, Schanen,
+  Tsepelin et~al.}}]{Bradley2011}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Bradley}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{\v{C}love\v{c}ko}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Fear}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fisher}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gu\'enault}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Haley}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Lawson}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Pickett}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Schanen}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Journal of Low Temperature Physics}
+  \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{114} (\bibinfo{year}{2011}).
+
+\bibitem[{\citenamefont{Fisher et~al.}(2001)\citenamefont{Fisher, Hale,
+  Gu\'enault, and Pickett}}]{Fisher2001}
+\bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
+  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Hale}},
+  \bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Gu\'enault}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{G.~R.}
+  \bibnamefont{Pickett}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{86}}, \bibinfo{pages}{244} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Goto et~al.}(2008)\citenamefont{Goto, Fujiyama, Yano,
+  Nago, Hashimoto, Obara, Ishikawa, Tsubota, and Hata}}]{goto08}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Goto}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fujiyama}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Yano}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Nago}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Hashimoto}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Obara}},
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Ishikawa}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Hata}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{100}},
+  \bibinfo{pages}{045301} (\bibinfo{year}{2008}).
+
+\bibitem[{\citenamefont{Blaauwgeers et~al.}(2007)\citenamefont{Blaauwgeers,
+  Blazkova, Človečko, Eltsov, de~Graaf, Hosio, Krusius, Schmoranzer, Schoepe,
+  Skrbek et~al.}}]{Blaauwgeers2007}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Blaauwgeers}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Blazkova}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Človečko}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Eltsov}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{de~Graaf}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Hosio}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Krusius}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Schmoranzer}},
+  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Schoepe}},
+  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Skrbek}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Journal of Low Temperature Physics}
+  \textbf{\bibinfo{volume}{146}}, \bibinfo{pages}{537} (\bibinfo{year}{2007}).
+
+\bibitem[{\citenamefont{Bradley et~al.}(2012)\citenamefont{Bradley, \ifmmode
+  \check{C}\else \v{C}\fi{}love\ifmmode~\check{c}\else \v{c}\fi{}ko, Fisher,
+  Garg, Guise, Haley, Kolosov, Pickett, Tsepelin, Schmoranzer
+  et~al.}}]{Bradley2012}
+\bibinfo{author}{\bibfnamefont{D.~I.} \bibnamefont{Bradley}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{\ifmmode \check{C}\else
+  \v{C}\fi{}love\ifmmode~\check{c}\else \v{c}\fi{}ko}},
+  \bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Garg}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Guise}},
+  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Haley}},
+  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Kolosov}},
+  \bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pickett}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Schmoranzer}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Phys. Rev. B}
+  \textbf{\bibinfo{volume}{85}}, \bibinfo{pages}{014501}
+  (\bibinfo{year}{2012}).
+
+\bibitem[{\citenamefont{J\"ager et~al.}(1995)\citenamefont{J\"ager, Schuderer,
+  and Schoepe}}]{Schoepe1995}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{J\"ager}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Schuderer}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Schoepe}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{74}},
+  \bibinfo{pages}{566} (\bibinfo{year}{1995}).
 
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
@@ -238,20 +381,6 @@
   \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}},
   \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{79}},
   \bibinfo{pages}{094513} (\bibinfo{year}{2009}).
-
-\bibitem[{\citenamefont{Goto et~al.}(2008)\citenamefont{Goto, Fujiyama, Yano,
-  Nago, Hashimoto, Obara, Ishikawa, Tsubota, and Hata}}]{goto08}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Goto}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fujiyama}},
-  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Yano}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Nago}},
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Hashimoto}},
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Obara}},
-  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Ishikawa}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Tsubota}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Hata}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{100}},
-  \bibinfo{pages}{045301} (\bibinfo{year}{2008}).
 
 \bibitem[{\citenamefont{Frisch et~al.}(1992)\citenamefont{Frisch, Pomeau, and
   Rica}}]{frisch92}
@@ -506,20 +635,6 @@
   \bibinfo{author}{\bibfnamefont{W.~F.} \bibnamefont{Vinen}},
   \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{79}},
   \bibinfo{pages}{054522} (\bibinfo{year}{2009}).
-
-\bibitem[{\citenamefont{Bradley et~al.}(2005)\citenamefont{Bradley, Clubb,
-  Fisher, Gu\'enault, Haley, Matthews, Pickett, Tsepelin, and Zaki}}]{brad05}
-\bibinfo{author}{\bibfnamefont{D.~I.} \bibnamefont{Bradley}},
-  \bibinfo{author}{\bibfnamefont{D.~O.} \bibnamefont{Clubb}},
-  \bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
-  \bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Gu\'enault}},
-  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Haley}},
-  \bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Matthews}},
-  \bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pickett}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Zaki}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{95}},
-  \bibinfo{pages}{035302} (\bibinfo{year}{2005}).
 
 \bibitem[{\citenamefont{Foster et~al.}(2010)\citenamefont{Foster, Blakie, and
   Davis}}]{fos10}
@@ -821,8 +936,7 @@
   \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Adams}},
   \bibinfo{journal}{Journal of Physics B: Atomic, Molecular and Optical
   Physics} \textbf{\bibinfo{volume}{36}}, \bibinfo{pages}{L143}
-  (\bibinfo{year}{2003}),
-  \urlprefix\url{http://stacks.iop.org/0953-4075/36/i=8/a=101}.
+  (\bibinfo{year}{2003}).
 
 \bibitem[{\citenamefont{Brewczyk et~al.}(2007)\citenamefont{Brewczyk, Gajda,
   and Rzażewski}}]{Pol_Rev}
@@ -1053,103 +1167,6 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.~S.} \bibnamefont{Hall}},
   \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{329}},
   \bibinfo{pages}{1182} (\bibinfo{year}{2010}).
-
-\bibitem[{\citenamefont{Skrbek and Vinen}(2009)}]{VinenSkrbek2008}
-\bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Skrbek}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Vinen}}, in
-  \emph{\bibinfo{booktitle}{Quantum Turbulence}}, edited by
-  \bibinfo{editor}{\bibfnamefont{M.}~\bibnamefont{Tsubota}} \bibnamefont{and}
-  \bibinfo{editor}{\bibfnamefont{W.}~\bibnamefont{Halperin}}
-  (\bibinfo{publisher}{Elsevier}, \bibinfo{year}{2009}),
-  vol.~\bibinfo{volume}{16} of \emph{\bibinfo{series}{Progress in Low
-  Temperature Physics}}, pp. \bibinfo{pages}{195 -- 246}.
-
-\bibitem[{\citenamefont{Davis et~al.}(2000)\citenamefont{Davis, Hendry, and
-  McClintock}}]{Davis2000}
-\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Davis}},
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Hendry}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{McClintock}},
-  \bibinfo{journal}{Physica B: Condensed Matter}
-  \textbf{\bibinfo{volume}{280}}, \bibinfo{pages}{43 } (\bibinfo{year}{2000}).
-
-\bibitem[{\citenamefont{Gu\'enault et~al.}(1986)\citenamefont{Gu\'enault,
-  Keith, Kennedy, Mussett, and Pickett}}]{Guenault1986}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gu\'enault}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Keith}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Kennedy}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Mussett}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Pickett}},
-  \bibinfo{journal}{Journal of Low Temperature Physics}
-  \textbf{\bibinfo{volume}{62}}, \bibinfo{pages}{511} (\bibinfo{year}{1986}),
-  ISSN \bibinfo{issn}{0022-2291}.
-
-\bibitem[{\citenamefont{Bradley et~al.}(2011)\citenamefont{Bradley,
-  \v{C}love\v{c}ko, Fear, Fisher, Gu\'enault, Haley, Lawson, Pickett, Schanen,
-  Tsepelin et~al.}}]{Bradley2011}
-\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Bradley}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{\v{C}love\v{c}ko}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Fear}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Fisher}},
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gu\'enault}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Haley}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Lawson}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Pickett}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Schanen}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}},
-  \bibnamefont{et~al.}, \bibinfo{journal}{Journal of Low Temperature Physics}
-  \textbf{\bibinfo{volume}{165}}, \bibinfo{pages}{114} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Fisher et~al.}(2001)\citenamefont{Fisher, Hale,
-  Gu\'enault, and Pickett}}]{Fisher2001}
-\bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
-  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Hale}},
-  \bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Gu\'enault}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{G.~R.}
-  \bibnamefont{Pickett}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{86}}, \bibinfo{pages}{244} (\bibinfo{year}{2001}).
-
-\bibitem[{\citenamefont{Blaauwgeers et~al.}(2007)\citenamefont{Blaauwgeers,
-  Blazkova, Človečko, Eltsov, de~Graaf, Hosio, Krusius, Schmoranzer, Schoepe,
-  Skrbek et~al.}}]{Blaauwgeers2007}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Blaauwgeers}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Blazkova}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Človečko}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Eltsov}},
-  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{de~Graaf}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Hosio}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Krusius}},
-  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Schmoranzer}},
-  \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Schoepe}},
-  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Skrbek}},
-  \bibnamefont{et~al.}, \bibinfo{journal}{Journal of Low Temperature Physics}
-  \textbf{\bibinfo{volume}{146}}, \bibinfo{pages}{537} (\bibinfo{year}{2007}).
-
-\bibitem[{\citenamefont{Bradley et~al.}(2012)\citenamefont{Bradley, \ifmmode
-  \check{C}\else \v{C}\fi{}love\ifmmode~\check{c}\else \v{c}\fi{}ko, Fisher,
-  Garg, Guise, Haley, Kolosov, Pickett, Tsepelin, Schmoranzer
-  et~al.}}]{Bradley2012}
-\bibinfo{author}{\bibfnamefont{D.~I.} \bibnamefont{Bradley}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{\ifmmode \check{C}\else
-  \v{C}\fi{}love\ifmmode~\check{c}\else \v{c}\fi{}ko}},
-  \bibinfo{author}{\bibfnamefont{S.~N.} \bibnamefont{Fisher}},
-  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Garg}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Guise}},
-  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Haley}},
-  \bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Kolosov}},
-  \bibinfo{author}{\bibfnamefont{G.~R.} \bibnamefont{Pickett}},
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Tsepelin}},
-  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Schmoranzer}},
-  \bibnamefont{et~al.}, \bibinfo{journal}{Phys. Rev. B}
-  \textbf{\bibinfo{volume}{85}}, \bibinfo{pages}{014501}
-  (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{J\"ager et~al.}(1995)\citenamefont{J\"ager, Schuderer,
-  and Schoepe}}]{Schoepe1995}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{J\"ager}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Schuderer}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Schoepe}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{74}},
-  \bibinfo{pages}{566} (\bibinfo{year}{1995}).
 
 \bibitem[{\citenamefont{Schwarz}(1988)}]{Schwarz}
 \bibinfo{author}{\bibfnamefont{K.~W.} \bibnamefont{Schwarz}},
