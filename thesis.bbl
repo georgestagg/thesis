@@ -1,4 +1,4 @@
-\begin{thebibliography}{149}
+\begin{thebibliography}{155}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -144,6 +144,37 @@
   \bibinfo{author}{\bibfnamefont{A.~B.} \bibnamefont{Shabat}},
   \bibinfo{journal}{Sov. Phys. JETP} \textbf{\bibinfo{volume}{37}},
   \bibinfo{pages}{823} (\bibinfo{year}{1973}).
+
+\bibitem[{\citenamefont{Anderson et~al.}(2001)\citenamefont{Anderson, Haljan,
+  Regal, Feder, Collins, Clark, and Cornell}}]{PhysRevLett.86.2926}
+\bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibinfo{author}{\bibfnamefont{P.~C.} \bibnamefont{Haljan}},
+  \bibinfo{author}{\bibfnamefont{C.~A.} \bibnamefont{Regal}},
+  \bibinfo{author}{\bibfnamefont{D.~L.} \bibnamefont{Feder}},
+  \bibinfo{author}{\bibfnamefont{L.~A.} \bibnamefont{Collins}},
+  \bibinfo{author}{\bibfnamefont{C.~W.} \bibnamefont{Clark}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.~A.} \bibnamefont{Cornell}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{86}},
+  \bibinfo{pages}{2926} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Dutton et~al.}(2001)\citenamefont{Dutton, Budde, Slowe,
+  and Hau}}]{Dutton27072001}
+\bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Dutton}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Budde}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Slowe}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{L.~V.} \bibnamefont{Hau}},
+  \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{293}},
+  \bibinfo{pages}{663} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Feder et~al.}(2000)\citenamefont{Feder, Pindzola,
+  Collins, Schneider, and Clark}}]{PhysRevA.62.053606}
+\bibinfo{author}{\bibfnamefont{D.~L.} \bibnamefont{Feder}},
+  \bibinfo{author}{\bibfnamefont{M.~S.} \bibnamefont{Pindzola}},
+  \bibinfo{author}{\bibfnamefont{L.~A.} \bibnamefont{Collins}},
+  \bibinfo{author}{\bibfnamefont{B.~I.} \bibnamefont{Schneider}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~W.} \bibnamefont{Clark}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{62}},
+  \bibinfo{pages}{053606} (\bibinfo{year}{2000}).
 
 \bibitem[{\citenamefont{Berloff}(2004)}]{berloff2004}
 \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}},
@@ -968,12 +999,12 @@
   Physics} \textbf{\bibinfo{volume}{40}}, \bibinfo{pages}{R1}
   (\bibinfo{year}{2007}).
 
-\bibitem[{\citenamefont{Proukakis and Jackson}(2008)}]{Proukakis}
+\bibitem[{\citenamefont{Proukakis and Jackson}(2008{\natexlab{a}})}]{Proukakis}
 \bibinfo{author}{\bibfnamefont{N.~P.} \bibnamefont{Proukakis}}
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jackson}},
   \bibinfo{journal}{Journal of Physics B: Atomic, Molecular and Optical
   Physics} \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{203002}
-  (\bibinfo{year}{2008}).
+  (\bibinfo{year}{2008}{\natexlab{a}}).
 
 \bibitem[{\citenamefont{Proukakis et~al.}(2013)\citenamefont{Proukakis,
   Gardiner, Davis, and Szymanska}}]{finite_temp_book}
@@ -1268,9 +1299,29 @@
   \bibinfo{journal}{Physics Reports} \textbf{\bibinfo{volume}{395}},
   \bibinfo{pages}{223 } (\bibinfo{year}{2004}).
 
+\bibitem[{\citenamefont{Proukakis and
+  Jackson}(2008{\natexlab{b}})}]{0953-4075-41-20-203002}
+\bibinfo{author}{\bibfnamefont{N.~P.} \bibnamefont{Proukakis}}
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jackson}},
+  \bibinfo{journal}{Journal of Physics B: Atomic, Molecular and Optical
+  Physics} \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{203002}
+  (\bibinfo{year}{2008}{\natexlab{b}}).
+
+\bibitem[{\citenamefont{Fetter and Walecka}(1971)}]{fetter1971quantum}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Fetter}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Walecka}},
+  \emph{\bibinfo{title}{Quantum theory of many-particle systems}},
+  International series in pure and applied physics
+  (\bibinfo{publisher}{McGraw-Hill}, \bibinfo{year}{1971}).
+
 \bibitem[{\citenamefont{Bogoliubov}(1947)}]{bogo47}
 \bibinfo{author}{\bibfnamefont{N.~N.} \bibnamefont{Bogoliubov}},
   \bibinfo{journal}{J. Phys. USSR} \textbf{\bibinfo{volume}{11}},
   \bibinfo{pages}{23} (\bibinfo{year}{1947}).
+
+\bibitem[{\citenamefont{Huang}(1987)}]{huang1987statistical}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Huang}},
+  \emph{\bibinfo{title}{Statistical mechanics}} (\bibinfo{publisher}{Wiley},
+  \bibinfo{year}{1987}), ISBN \bibinfo{isbn}{9780471815181}.
 
 \end{thebibliography}

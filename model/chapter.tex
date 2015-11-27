@@ -493,7 +493,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
   \caption{Density over time of a 1D fluid containing a soliton with speed $v=0.25c$, confirming the non-dispersal nature of the wavepacket.}\label{fig_solitonmove}
  \end{figure}
 
- Solitonic waves can exist in higher dimensional systems, but these are not solitons in the mathematical sense; the structures are unstable, and decay due to the snake instability [CITE]. Nevertheless, long living solitary waves can exist in real condensates, particularly in quasi-1D geometries [CITE]. 
+ Solitonic waves can exist in higher dimensional systems, but these are not solitons in the mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
 
 
 \subsection{\label{section:vortices} Quantised Vortices}
@@ -740,15 +740,5 @@ V_0 &\mbox{if } z < (h(\alpha x,\alpha y)-z_0)  \\
 \end{equation}
 where $V_0$ is its amplitude, $z_0$ is a shift in height and $\alpha$ is a scaling factor. Scaling $h(x,y)$ acts as a crude way of varying 
 the roughness of simulated boundaries. Finally, a Gaussian blur is applied so that $V(x,y,z)$ is smooth in $z$.
-
-\subsection{\label{section:2dbitmappotential} Two-dimensional arbitrary bitmap}
-\begin{equation}
-V({\bf r})=
-	\begin{cases} 
-    V_0 & \mathrm{if}~ \text{the pixel at (x,y) is white}, \\
-    0   & \mathrm{if}~ \text{the pixel at (x,y) is black},
-  \end{cases}
-\end{equation}
-where $V_0$ is its amplitude.
 
 \end{chapter}

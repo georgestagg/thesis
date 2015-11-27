@@ -84,7 +84,7 @@ tidy:
 	      *.bbl *.blg *.idx *.lot *.lof \
 	      $(OBJECT)_dvi.* $(OBJECT)_pdf.* */*.aux
 clean: tidy
-	rm -f $(OBJECT).dvi $(OBJECT).pdf $(OBJECT)-figure*.pdf $(OBJECT).ps
+	rm -f $(OBJECT).dvi $(OBJECT).pdf $(OBJECT)-figure*.pdf $(OBJECT)-figure*.dep $(OBJECT)-figure*.dpth $(OBJECT)-figure*.table $(OBJECT)-figure*.gnuplot $(OBJECT).ps
 
 #---- DEPENDENCIES ------------------------------------------------------------
 $(OBJECT).pdf: $(OBJECT).bbl $(OBJECT).tex $(SOURCES)
