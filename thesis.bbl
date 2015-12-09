@@ -1176,11 +1176,11 @@
   \bibinfo{pages}{245301} (\bibinfo{year}{2008}).
 
 \bibitem[{\citenamefont{Barenghi
-  et~al.}(2014{\natexlab{b}})\citenamefont{Barenghi, L’vov, and
+  et~al.}(2014{\natexlab{b}})\citenamefont{Barenghi, L'vov, and
   Roche}}]{Barenghi2014}
 \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
-  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{L’vov}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{P.-E.} \bibnamefont{Roche}},
+  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{L'vov}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.-E.} \bibnamefont{Roche}},
   \bibinfo{journal}{Proceedings of the National Academy of Sciences}
   \textbf{\bibinfo{volume}{111}}, \bibinfo{pages}{4683}
   (\bibinfo{year}{2014}{\natexlab{b}}).

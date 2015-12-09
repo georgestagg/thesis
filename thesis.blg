@@ -18,7 +18,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
 You've used 155 entries,
             3411 wiz_defined-function locations,
-            1998 strings with 33697 characters,
+            1998 strings with 33695 characters,
 and the built_in function-call counts, 117177 in all, are:
 = -- 6452
 > -- 4337
