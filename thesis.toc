@@ -22,18 +22,18 @@
 \contentsline {subsection}{\numberline {2.10.2} Rotating frame}{12}
 \contentsline {section}{\numberline {2.11} Hydrodynamic interpretation}{13}
 \contentsline {section}{\numberline {2.12} Quantised Circulation}{13}
-\contentsline {section}{\numberline {2.13} A selection of simple solutions}{13}
+\contentsline {section}{\numberline {2.13} A selection of simple solutions}{14}
 \contentsline {subsection}{\numberline {2.13.1} Density near a wall}{14}
 \contentsline {subsection}{\numberline {2.13.2} Soliton solutions}{14}
-\contentsline {subsection}{\numberline {2.13.3} Quantised Vortices}{15}
+\contentsline {subsection}{\numberline {2.13.3} Quantised Vortices}{16}
 \contentsline {section}{\numberline {2.14} Initial Conditions}{17}
 \contentsline {subsection}{\numberline {2.14.1} Homogeneous initial condition}{17}
 \contentsline {subsection}{\numberline {2.14.2} Thomas-Fermi profile of a trapped condensate}{18}
 \contentsline {subsection}{\numberline {2.14.3} Classical field initial condition}{19}
-\contentsline {section}{\numberline {2.15}Creating obstacles with repulsive potentials}{19}
+\contentsline {section}{\numberline {2.15}Creating obstacles with repulsive potentials}{20}
 \contentsline {subsection}{\numberline {2.15.1} Three-dimensional elliptical Gaussian}{20}
 \contentsline {subsection}{\numberline {2.15.2} Two and Three-dimensional cylindrical Gaussian}{20}
-\contentsline {subsection}{\numberline {2.15.3} Three-dimensional `realistic' rough-surface}{20}
+\contentsline {subsection}{\numberline {2.15.3} Three-dimensional `realistic' rough-surface}{21}
 \contentsline {part}{II\hspace {1em}Numerical Methods}{22}
 \contentsline {chapter}{\numberline {3}Numerical Algorithms}{23}
 \contentsline {section}{\numberline {3.1} Numerical procedures for 2D and 3D solutions}{23}
@@ -97,17 +97,17 @@
 \contentsline {subsection}{\numberline {8.5.3}Dependence on flow speed}{64}
 \contentsline {section}{\numberline {8.6} 3D boundary layer and velocity statistics}{65}
 \contentsline {chapter}{\numberline {A}Detailed Derivations}{66}
-\contentsline {section}{\numberline {A.1} Derivation of the forth order Runge-Kutta equation}{66}
-\contentsline {section}{\numberline {A.2} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{66}
-\contentsline {section}{\numberline {A.3} Derivation of the Gross-Pitaevskii Equation}{68}
-\contentsline {chapter}{\numberline {B}Important Quantities}{73}
-\contentsline {section}{\numberline {B.1} Energy}{73}
-\contentsline {section}{\numberline {B.2} Force}{74}
-\contentsline {section}{\numberline {B.3} Healing Length}{74}
-\contentsline {chapter}{\numberline {C}Algorithms}{75}
-\contentsline {section}{\numberline {C.1} Numerical Algortithms}{75}
-\contentsline {section}{\numberline {C.2} Density/Phase Visualisation Technique}{81}
-\contentsline {subsection}{\numberline {C.2.1}Plotting Algorithm}{82}
-\contentsline {subsection}{\numberline {C.2.2}Colour space conversion - {\tt rgb} to {\tt hsl}}{82}
-\contentsline {subsection}{\numberline {C.2.3}Colour space conversion - {\tt hsl} to {\tt rgb}}{83}
-\contentsline {chapter}{Bibliography}{84}
+\contentsline {section}{\numberline {A.1} Derivation of the Runge-Kutta scheme}{66}
+\contentsline {section}{\numberline {A.2} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{69}
+\contentsline {section}{\numberline {A.3} Derivation of the Gross-Pitaevskii Equation}{70}
+\contentsline {chapter}{\numberline {B}Important Quantities}{76}
+\contentsline {section}{\numberline {B.1} Energy}{76}
+\contentsline {section}{\numberline {B.2} Force}{77}
+\contentsline {section}{\numberline {B.3} Healing Length}{77}
+\contentsline {chapter}{\numberline {C}Algorithms}{78}
+\contentsline {section}{\numberline {C.1} Numerical Algortithms}{78}
+\contentsline {section}{\numberline {C.2} Density/Phase Visualisation Technique}{84}
+\contentsline {subsection}{\numberline {C.2.1}Plotting Algorithm}{85}
+\contentsline {subsection}{\numberline {C.2.2}Colour space conversion - {\tt rgb} to {\tt hsl}}{85}
+\contentsline {subsection}{\numberline {C.2.3}Colour space conversion - {\tt hsl} to {\tt rgb}}{86}
+\contentsline {chapter}{Bibliography}{87}

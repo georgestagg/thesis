@@ -14,14 +14,14 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 		k_2 &= hf(t_n+\frac{h}{2},\psi_n+\frac{k_1}{2}),\\
 		k_3 &= hf(t_n+\frac{h}{2},\psi_n+\frac{k_2}{2}),\\
 		k_4 &= hf(t_n+h,\psi_n+k_3),\\
-		\psi_{n+1} &= \psi_n + \frac{k_1}{6}+ \frac{k_2}{3}+ \frac{k_3}{3} + \frac{k_4}{6} + O(h^5),\\
+		\psi_{n+1} &= \psi_n + \frac{k_1}{6}+ \frac{k_2}{3}+ \frac{k_3}{3} + \frac{k_4}{6} + \mathcal{O}(h^5),\\
 		t_{n+1}  &= t_n + h.
 		\label{eq:rk4}
 \end{split}
 \end{equation}
 
 
-	A full derivation and proof of accuracy for the RK4 scheme is outlined in Appendix \ref{appsection:rk4deriv}.
+	A derivation of the Runge-Kutta scheme, along with outline proofs of accuracy and stabilty are shown in Appendix \ref{appsection:rk4deriv}.
 	In all of our relevant calculations the value of f is set as the right hand side of the homogeneous or trapped GPE. The main loop formulating the RK4 method may be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution.
 
 	\subsection{\label{section:numericalParams} Numerical stability and convergence}
