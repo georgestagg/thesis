@@ -110,9 +110,9 @@ The eigenfunctions decay exponentially under propagation of the GPE in imaginary
 \begin{equation*}
 \Psi(\mathbf{r},\tau) \rightarrow \Psi_0(\mathbf{r})\exp\left(-\frac{E_0\tau}{\hbar}\right).
 \end{equation*}
-The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be `smoothed' by fixing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics as minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
+The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many numerical steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be `smoothed' by fixing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics; minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
 
-The energy can be used as a way to gauge the solution convergence. An example ground state solution is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. 
+The energy can be used as a way to gauge the solution convergence. An example ground state solution is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. For $-t\omega/i > 0.6$ the computed ground state energy does not significantly change, a good indicator that the ground state has been found to sufficient accuracy.
 \begin{figure}
 	\centering
    \begin{tikzpicture}
@@ -291,7 +291,7 @@ The chemical potential can be found in terms of energies of the system by direct
 	\caption{Simulated DGPE for a condensate with interaction energy $\hat{g}=2000$, $\hat{\mu}=25.27$ and $\gamma=0.01$. The total energy (upper) is shown during both imaginary and real time. At $\hat{t} = -\mathrm{i}$ an excitation is added to the condensate. The ground state is then re-approached through dissipation. Density and phase are shown (below) at time $\hat{t}=0$ (left), $\hat{t}=1$ (center), and $\hat{t}=40$ (right).}\label{fig_excitationdecay}
 \end{figure}
 
-	For an arbitrary wavefunction $\Psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy $\int |\Psi|^2 \mathrm{d}\mathbf{r} = N$ and different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the norm is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Section [SOMETHING]. The evolution shown in Figure \ref{fig_excitationdecay} demonstrates the method of carefully choosing a value of $\mu$.
+	For an arbitrary wavefunction $\Psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy $\int |\Psi|^2 \mathrm{d}\mathbf{r} = N$ and be different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the particle number is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Section [SOMETHING]. The evolution shown in Figure \ref{fig_excitationdecay} demonstrates the method of carefully choosing a value of $\mu$.
 
 	Some authors \cite{tsubota_kasamatsu_02,madarassy_barenghi_08} write the DGPE in a similar but different way,
 	\begin{equation}\label{eq:dissgpeB}
@@ -303,7 +303,7 @@ The chemical potential can be found in terms of energies of the system by direct
 
 A common method of simulating finite temperature systems is the so called classical field methods, also referred to as c-field methods. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the classical-field method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\Psi$ is reinterpreted.
 
-An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
+An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and non-equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
 
 We emphasis that the requirements of large occupation numbers and weak interactions are essential. Without these requirements quantum modes exist that are coupled to the rest of the system and with occupation number of order unity, and the classical field description breaks down. All Bose gases discussed in this thesis will be of the dilute and weakly interacting form, so this caveat poses no future trouble. Further discussion and analysis of a strong non-equilibrium Bose gas and the classical-filed method can be found in \cite{PhysRevA.66.013603}.
 
@@ -317,12 +317,12 @@ We emphasis that the requirements of large occupation numbers and weak interacti
 	\end{equation*}
 	This term can be added to the right hand side of the GPE to modify it such that it is in the reference frame moving along $x$. For example, the GPE in the frame translating along the $x$ direction with velocity $v$ is written,
 	\begin{equation}\label{eq:linearframegpe}
-	\mathrm{i}\hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu -v\mathrm{i}\hbar\frac{\partial}{\partial x} \right ) \Psi({\bf r},t),
+	i\hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu -vi\hbar\frac{\partial}{\partial x} \right ) \Psi({\bf r},t),
 	\end{equation}
 
 
 	\subsection{\label{section:rotatingframe} Rotating frame}
-	Recall in classical mechanics that the angular momentum is defined as a vector product of the position $\mathbf{r}$ and the momentum $\mathbf{p}$,
+	The GPE is transformed into the rotating reference frame via the angular momentum operator. Recall that in classical mechanics that the angular momentum is defined as a vector product of the position $\mathbf{r}$ and the momentum $\mathbf{p}$,
 	\begin{equation*}
 		\mathbf{L} = \mathbf{r} \times \mathbf{p} = 
 		\left| \begin{array}{ccc}
@@ -364,7 +364,7 @@ p_x & p_y & p_z \end{array} \right|.
 	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:quantisedcirculation} Quantised Circulation}
-An interesting consequence of writing the the wavefunction, $\Psi$, as a density $R$ and a phase $\theta$ is the fact that to remain single-valued, the change of phase around any {\it closed} curve $C$ must be an integer of $2\pi$,
+An interesting consequence of considering that the wavefunction, $\Psi$, as a density $R$ and a phase $\theta$ is the fact that to remain single-valued, the change of phase around any {\it closed} curve $C$ must be an integer of $2\pi$,
 \begin{equation}
 	\oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l} = 2 \pi q,
 \end{equation}
@@ -375,7 +375,7 @@ where $q\in\mathbb{Z}$, as the phase is cyclic with range $(-\pi,\pi]$. Our loca
 In other words, due to the direct influence of quantum mechanical effects, the circulation of the fluid around a closed curve $C$ must be quantised in units of $\kappa = 2 \pi \hbar/m$, the so called `quantum of circulation'.
 
 \section{\label{section:solutions} A selection of simple solutions}
-	While complicated analytical solutions of the GPE are rare, there are a selection of solutions for simple cases that allow us to gain insight into the behaviour of a fluid governed by the GPE in more complicated scenarios.
+	Due to the nonlinearity of the GPE fully analytical solutions are rare. However, there are a selection of solutions available for simple cases that allow us to gain insight into the behaviour of a fluid governed by the GPE in more complicated scenarios.
 	\subsection{\label{section:wall} Density near a wall}
 	Consider a stationary ($\partial \Psi / \partial t = 0$) solution of the 1D-GPE with no trapping potential ($V(x,t)=0$) and boundary conditions $\Psi(0)=0$ (representing a hard wall boundary at $x=0$) and $\Psi(x)=\sqrt{\mu/g}$ as $x\rightarrow\infty$. The 1D-GPE becomes
 	\begin{equation}
@@ -385,8 +385,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
 	\begin{equation}
 		\Psi(x) = \sqrt{\frac{\mu}{g}}\tanh \left( \frac{x}{\xi} \right).
 	\end{equation}
-	This solution is shown in Figure \ref{fig_wallsoln}. We gain insight through this analytical solution for how a fluid governed by the GPE `heals' near areas of low density. There is clearly a natural minimum distance, related to $\xi$, over which the wavefunction can change from a density of zero to it's homogeneous value. This behaviour appears many times in the context of superfluid condensates, from solitons and solitary waves in low dimensional systems, to the fluid behaviour near impurities and vortex lines and tubes in fully 3D systems. 
-\begin{figure}
+	\begin{figure}[b]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -406,6 +405,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
   \end{tikzpicture}
   \caption{A fluid governed by the GPE healing at a hard wall at $x=0$.}\label{fig_wallsoln}
  \end{figure}
+	This solution is shown in Figure \ref{fig_wallsoln}. We gain insight through this analytical solution for how a fluid governed by the GPE `heals' near areas of low density. There is clearly a natural minimum distance, related to $\xi$, over which the wavefunction can change from a density of zero to it's homogeneous value. This behaviour appears many times in the context of superfluids, from solitons and solitary waves in low dimensional systems, to the fluid behaviour near impurities and vortex lines and tubes in fully 3D systems. 
 
 	\subsection{\label{section:soliton} Soliton solutions}
 	Due to its nonlinear nature, solutions of the GPE can support localised non-dispersive waves packets known as solitons. Two flavours of solitons can form in 1D, so called bright or dark solitons. Bright solitons form when interactions between particles are attractive ($g<0$), however, as no physically relevant simulations in this thesis occur in this range we do not focus on these solitons. Dark solitons form when the interaction term is repulsive ($g>0$) and physically consist of a dip in the density along with a phase slip of up to a value of $\pi$. When the density dips to zero, the phase slip is equal to $\pi$ and the velocity of the soliton is $v=0$. Dark solitons with $v>0$ have a density dip that does not quite reach zero and a smaller valued, smooth phase slip. The 1D dark soliton solutions, derived in the 70s \cite{zakharov72,zakharov73}, take the general form,
@@ -493,7 +493,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
   \caption{Density over time of a 1D fluid containing a soliton with speed $v=0.25c$, confirming the non-dispersal nature of the wavepacket.}\label{fig_solitonmove}
  \end{figure}
 
- Solitonic waves can exist in higher dimensional systems, but these are not solitons in the mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
+ Solitonic waves can exist in higher dimensional systems, but these are not solitons in the strict mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
 
 
 \subsection{\label{section:vortices} Quantised Vortices}

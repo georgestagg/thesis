@@ -1,4 +1,4 @@
-\begin{thebibliography}{155}
+\begin{thebibliography}{154}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -990,6 +990,13 @@
   Physics} \textbf{\bibinfo{volume}{36}}, \bibinfo{pages}{L143}
   (\bibinfo{year}{2003}).
 
+\bibitem[{\citenamefont{Pethick and Smith}(2002)}]{Pethick}
+\bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Pethick}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Smith}},
+  \emph{\bibinfo{title}{{B}ose-{E}instein Condensation in Dilute Gases}}
+  (\bibinfo{publisher}{Cambrige University Press},
+  \bibinfo{address}{Cambridge}, \bibinfo{year}{2002}).
+
 \bibitem[{\citenamefont{Brewczyk et~al.}(2007)\citenamefont{Brewczyk, Gajda,
   and Rzażewski}}]{Pol_Rev}
 \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Brewczyk}},
@@ -1138,17 +1145,6 @@
   \bibinfo{author}{\bibfnamefont{B.~V.} \bibnamefont{Svistunov}},
   \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{66}},
   \bibinfo{pages}{013603} (\bibinfo{year}{2002}{\natexlab{b}}).
-
-\bibitem[{\citenamefont{Berloff and Roberts}(2001)}]{berloff_2001}
-\bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.~H.} \bibnamefont{Roberts}},
-  \bibinfo{journal}{Journal of Physics A: Mathematical and General}
-  \textbf{\bibinfo{volume}{34}}, \bibinfo{pages}{10057} (\bibinfo{year}{2001}).
-
-\bibitem[{\citenamefont{Simula}(2011)}]{simula_2011}
-\bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{84}},
-  \bibinfo{pages}{021603} (\bibinfo{year}{2011}).
 
 \bibitem[{\citenamefont{Guo et~al.}(2014)\citenamefont{Guo, La~Mantia, Lathrop,
   and Van~Sciver}}]{Guo2014}
