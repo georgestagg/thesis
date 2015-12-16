@@ -16,24 +16,24 @@
 \contentsline {section}{\numberline {2.6} The imaginary time propagation method}{7}
 \contentsline {section}{\numberline {2.7} The chemical potential}{8}
 \contentsline {section}{\numberline {2.8} The Dissipative Gross-Pitaevskii Equation}{9}
-\contentsline {section}{\numberline {2.9} Simulating finite temperature using the classical field method with a homogeneous condensate}{11}
+\contentsline {section}{\numberline {2.9} Finite temperature homogeneous condensate using the classical field method}{11}
 \contentsline {section}{\numberline {2.10} Transforming the reference frame}{12}
 \contentsline {subsection}{\numberline {2.10.1} Moving frame along $x$}{12}
 \contentsline {subsection}{\numberline {2.10.2} Rotating frame}{12}
 \contentsline {section}{\numberline {2.11} Hydrodynamic interpretation}{13}
 \contentsline {section}{\numberline {2.12} Quantised Circulation}{13}
-\contentsline {section}{\numberline {2.13} A selection of simple solutions}{14}
+\contentsline {section}{\numberline {2.13} A selection of simple solutions}{13}
 \contentsline {subsection}{\numberline {2.13.1} Density near a wall}{14}
 \contentsline {subsection}{\numberline {2.13.2} Soliton solutions}{14}
-\contentsline {subsection}{\numberline {2.13.3} Quantised Vortices}{16}
+\contentsline {subsection}{\numberline {2.13.3} Quantised Vortices}{15}
 \contentsline {section}{\numberline {2.14} Initial Conditions}{17}
 \contentsline {subsection}{\numberline {2.14.1} Homogeneous initial condition}{17}
 \contentsline {subsection}{\numberline {2.14.2} Thomas-Fermi profile of a trapped condensate}{18}
 \contentsline {subsection}{\numberline {2.14.3} Classical field initial condition}{19}
-\contentsline {section}{\numberline {2.15}Creating obstacles with repulsive potentials}{20}
+\contentsline {section}{\numberline {2.15}Creating obstacles with repulsive potentials}{19}
 \contentsline {subsection}{\numberline {2.15.1} Three-dimensional elliptical Gaussian}{20}
 \contentsline {subsection}{\numberline {2.15.2} Two and Three-dimensional cylindrical Gaussian}{20}
-\contentsline {subsection}{\numberline {2.15.3} Three-dimensional `realistic' rough-surface}{21}
+\contentsline {subsection}{\numberline {2.15.3} Three-dimensional `realistic' rough-surface}{20}
 \contentsline {part}{II\hspace {1em}Numerical Methods}{22}
 \contentsline {chapter}{\numberline {3}Numerical Algorithms}{23}
 \contentsline {section}{\numberline {3.1} Numerical procedures for 2D and 3D solutions}{23}
