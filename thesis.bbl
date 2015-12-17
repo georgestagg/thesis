@@ -1,4 +1,4 @@
-\begin{thebibliography}{154}
+\begin{thebibliography}{159}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -921,6 +921,16 @@
   \bibinfo{journal}{Nature Physics} \textbf{\bibinfo{volume}{8}},
   \bibinfo{pages}{645 } (\bibinfo{year}{2012}).
 
+\bibitem[{\citenamefont{Reeves et~al.}(2015)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves_2015}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{114}}, \bibinfo{pages}{155302}
+  (\bibinfo{year}{2015}).
+
 \bibitem[{\citenamefont{Stagg et~al.}(2015)\citenamefont{Stagg, Allen,
   Barenghi, and Parker}}]{stagg_2015b}
 \bibinfo{author}{\bibfnamefont{G.~W.} \bibnamefont{Stagg}},
@@ -1012,6 +1022,15 @@
   \bibinfo{journal}{Journal of Physics B: Atomic, Molecular and Optical
   Physics} \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{203002}
   (\bibinfo{year}{2008}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Griffin et~al.}(2009)\citenamefont{Griffin, Nikuni, and
+  Zaremba}}]{griffin2009bose}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Griffin}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Nikuni}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Zaremba}},
+  \emph{\bibinfo{title}{Bose-Condensed Gases at Finite Temperatures}}
+  (\bibinfo{publisher}{Cambridge University Press}, \bibinfo{year}{2009}), ISBN
+  \bibinfo{isbn}{9780521837026}.
 
 \bibitem[{\citenamefont{Proukakis et~al.}(2013)\citenamefont{Proukakis,
   Gardiner, Davis, and Szymanska}}]{finite_temp_book}
@@ -1145,6 +1164,29 @@
   \bibinfo{author}{\bibfnamefont{B.~V.} \bibnamefont{Svistunov}},
   \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{66}},
   \bibinfo{pages}{013603} (\bibinfo{year}{2002}{\natexlab{b}}).
+
+\bibitem[{\citenamefont{Hough et~al.}(2001)\citenamefont{Hough, Donev, and
+  Zieve}}]{zieve2001}
+\bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Hough}},
+  \bibinfo{author}{\bibfnamefont{L.~A.~K.} \bibnamefont{Donev}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Zieve}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{65}},
+  \bibinfo{pages}{024511} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Gaunt et~al.}(2013)\citenamefont{Gaunt, Schmidutz,
+  Gotlibovych, Smith, and Hadzibabic}}]{gaunt_2013}
+\bibinfo{author}{\bibfnamefont{A.~L.} \bibnamefont{Gaunt}},
+  \bibinfo{author}{\bibfnamefont{T.~F.} \bibnamefont{Schmidutz}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Gotlibovych}},
+  \bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Smith}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Z.}~\bibnamefont{Hadzibabic}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{110}},
+  \bibinfo{pages}{200406} (\bibinfo{year}{2013}).
+
+\bibitem[{\citenamefont{{\it et al.}}(2015)}]{chomaz_2015}
+\bibinfo{author}{\bibfnamefont{L.~C.} \bibnamefont{{\it et al.}}},
+  \bibinfo{journal}{Nat. Comm.} \textbf{\bibinfo{volume}{6}},
+  \bibinfo{pages}{6162} (\bibinfo{year}{2015}).
 
 \bibitem[{\citenamefont{Guo et~al.}(2014)\citenamefont{Guo, La~Mantia, Lathrop,
   and Van~Sciver}}]{Guo2014}

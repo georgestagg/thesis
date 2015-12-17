@@ -148,7 +148,22 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 \section{\label{section:vortexremoval} Removing vortices with phase unwrapping}
 
 \section{\label{section:quasi-condensate} Quasi-Condensate Visualisation}
-	
+When in the context of the classical-field method of simulating a finite temperature Bose gas, the raw numerical wavefunction is too noisy to allow direct visualization of vortical structures, this can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}.   This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
+transforming the complex amplitudes via
+$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ represents the long-wavelength component of the classical field.
+
+The choice of $k_c$ is facilitated by the the bimodal distribution of occupation numbers in the wavefunction, a distribution which develops naturally through propagation of the GPE. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering. $k_c$ is chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas, as performed in \cite{PhysRevA.66.013603}. Figure \ref{fig:quasicondensatefilter} demonstrates the filtering technique in action.
+\begin{figure}
+\centering
+\includegraphics[width=0.4\linewidth]{numerics/figures/mess3d}%
+    \begin{minipage}[b]{0.2\linewidth}
+      \centering
+      \raisebox{3cm}{$\longrightarrow$}
+    \end{minipage}% 
+    \includegraphics[width=0.4\linewidth]{numerics/figures/clean3d}
+  \caption{(Left) Unfiltered wavefunction density, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
+  \end{figure}
+  	
 \section{\label{section:linelength} Evaluation of vortex line-length}
 For a given wavefunction, $\Psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \Psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.04\langle |\hat{\Psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\Psi}|^2 \rangle - |\hat{\Psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
 

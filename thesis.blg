@@ -12,61 +12,49 @@ A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated field_info (elt_size=8) to 10115 items from 5000.
 Database file #1: references.bib
-Warning--I didn't find a database entry for "saito_2010"
-Warning--I didn't find a database entry for "stagg_2014"
-Warning--I didn't find a database entry for "reeves_2015"
-Warning--I didn't find a database entry for "berloff_2000"
-Warning--I didn't find a database entry for "rica_2001"
-Warning--I didn't find a database entry for "pham_2004"
-Warning--I didn't find a database entry for "finite_temp_book2"
-Warning--I didn't find a database entry for "zieve2001"
-Warning--I didn't find a database entry for "gaunt_2013"
-Warning--I didn't find a database entry for "chomaz_2015"
-Warning--I didn't find a database entry for "data"
 Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 154 entries,
+You've used 159 entries,
             3411 wiz_defined-function locations,
-            2006 strings with 33700 characters,
-and the built_in function-call counts, 116579 in all, are:
-= -- 6406
-> -- 4330
-< -- 588
-+ -- 3616
-- -- 1053
-* -- 16265
-:= -- 12195
-add.period$ -- 154
-call.type$ -- 154
-change.case$ -- 622
-chr.to.int$ -- 152
-cite$ -- 157
-duplicate$ -- 10390
-empty$ -- 9636
-format.name$ -- 2618
-if$ -- 22003
+            2016 strings with 34222 characters,
+and the built_in function-call counts, 120236 in all, are:
+= -- 6606
+> -- 4461
+< -- 605
++ -- 3724
+- -- 1085
+* -- 16773
+:= -- 12583
+add.period$ -- 159
+call.type$ -- 159
+change.case$ -- 642
+chr.to.int$ -- 157
+cite$ -- 162
+duplicate$ -- 10716
+empty$ -- 9946
+format.name$ -- 2695
+if$ -- 22696
 int.to.chr$ -- 9
-int.to.str$ -- 155
-missing$ -- 1602
-newline$ -- 477
-num.names$ -- 461
-pop$ -- 2720
+int.to.str$ -- 160
+missing$ -- 1653
+newline$ -- 492
+num.names$ -- 476
+pop$ -- 2808
 preamble$ -- 1
-purify$ -- 616
+purify$ -- 636
 quote$ -- 0
-skip$ -- 4412
+skip$ -- 4549
 stack$ -- 0
-substring$ -- 3828
-swap$ -- 8526
-text.length$ -- 531
+substring$ -- 3953
+swap$ -- 8789
+text.length$ -- 547
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 900
+type$ -- 928
 warning$ -- 1
-while$ -- 447
+while$ -- 461
 width$ -- 0
-write$ -- 1554
-(There were 12 warnings)
+write$ -- 1604
+(There was 1 warning)
