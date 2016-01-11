@@ -25,20 +25,26 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 	In all of our relevant calculations the value of f is set as the right hand side of the homogeneous or trapped GPE. The main loop formulating the RK4 method may be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution. The following section outlines the methods we have implemented to ensure numerical solutions are converged.
 
 	\subsection{\label{section:numericalParams} Numerical stability and convergence}
-	We now investigate numerical parameters which affect the stability of simulated superfluid systems. Our direct aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical quantities are converged, that is, not overly sensitive to small changes in computational parameters and that quantities conserved by the equations of motion are indeed conserved in the computed numerical solutions.
+	We now investigate numerical parameters which affect the stability of simulated superfluid systems. Our direct aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical quantities are converged (so that they are not sensitive to small changes in computational parameters) and that quantities conserved by the equations of motion are indeed conserved in the computed numerical solutions.
 
-	We begin by estimating the required distance between our grid points, $\Delta$, in a homogeneous system by considering the width of the vortex core, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core (as in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$ when the background density is $\rho=1$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta = \xi/2$.
+	We begin by estimating $\Delta_x$, the required spacial grid spacing, by considering the width of the vortex core in a homogeneous system, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core (as in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$ when the background density is $\rho=1$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta_x = \xi/2$.
 
-	\begin{figure}
-	\centering
+	In the trapped case we can use the same idea. It is shown in Section \ref{section:healing} that $\xi = \hbar/\sqrt{mg}$ for $\rho=1$. We can then easily rearrange to find an expression for $\xi$ in the harmonic oscillator units of trapped condensates. We find that our approximate grid spacing to adequately resolve the vortex core is $\Delta_x = 0.5\xi = 0.5\omega \sqrt{\hbar/(\mu \omega)} l_r$. As an example, for a trapped condensate with interaction energy $\hat{g}=2000$, chemical potential $\hat{\mu}=25.27$ and trap frequency $\omega=8.75~{\rm Hz}$ we find that a value of $\Delta_x=0.1l_r$ should be adequate. 
+
+	Similar arguments (concerned with time rather than space), can be used to approximate a suitable time step $h$. We define a time period that we would like to be well resolved by considering by the smallest possible element moving at the fastest reasonable speed. If we define this period as $\Delta_x / 5~c$ and allocate to it 10 time steps, we find that $h = 0.5\xi/50~c = 0.01\tau$.
+
+  In addition to this process, for each set of simulation parameters it is recommended to confirm the suitability of the chosen $\Delta_x$ and $h$ by testing the convergence and conservation in the numerical methods. The total condensate energy and particle number are good measures for this as they should both be well conserved by the GPE with a dissipation of $\gamma=0$. An example of this process (confirming the suitability of a chosen $\Delta_x$) is shown in Figure \ref{fig_energ_norm_cons}: For a large $\Delta_x=0.4l_r$ both the condensate energy and norm fluctuate wildly. For $\Delta_x=0.1l_r$ the norm is extremely well conserved to within $2.10^{-5}\%$ and the energy is conserved within $5.10^{-3}\%$. The smallest tested value of $\Delta_x=0.05l_r$ finally confirms that the energy has converged. We conclude that for the chosen system parameters that $\Delta_x=0.1l_r$ (the value suggested by the above analysis) is numerically sufficient and there is little reason to use $\Delta_x<0.1l_r$.
+
+  \begin{figure}
+  \centering
    \begin{tikzpicture}
     \begin{axis}[y tick label style={
-		        /pgf/number format/.cd,
-		            fixed,
-		            fixed zerofill,
-		            precision=3,
-		        /tikz/.cd
-		    },
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=3,
+            /tikz/.cd
+        },
         width=0.98\linewidth,
         height=0.3\linewidth,
         xlabel={},
@@ -48,27 +54,27 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
         major tick length = 0.07cm
       ]
       \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.05" using 1:3 with lines;
+        plot "numerics/figures/energ-norm-cons.0.05" using 1:3 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=red,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.1" using 1:3 with lines;
+        plot "numerics/figures/energ-norm-cons.0.1" using 1:3 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=green,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.2" using 1:3 with lines;
+        plot "numerics/figures/energ-norm-cons.0.2" using 1:3 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=blue,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.4" using 1:3 with lines;
+        plot "numerics/figures/energ-norm-cons.0.4" using 1:3 with lines;
       };
     \end{axis}
   \end{tikzpicture}
   \begin{tikzpicture}
     \begin{axis}[y tick label style={
-		        /pgf/number format/.cd,
-		            fixed,
-		            fixed zerofill,
-		            precision=4,
-		        /tikz/.cd
-		    },
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=4,
+            /tikz/.cd
+        },
         width=0.98\linewidth,
         height=0.35\linewidth,
         name=mainplot,
@@ -80,54 +86,53 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
         major tick length = 0.07cm
       ]
       \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.05" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.05" using 1:4 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=red,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.1" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.1" using 1:4 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=green,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.2" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.2" using 1:4 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=blue,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.4" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.4" using 1:4 with lines;
       };
-      \node[anchor=west] (source) at (axis cs:9.7,1.00025){};
-      \node[anchor=west] (destination) at (axis cs:9.7,1.0000){};
+      \node[anchor=west] (source) at (axis cs:9.25,1.00027){};
+      \node[anchor=west] (destination) at (axis cs:9.25,1.0000){};
+      \node[anchor=west] (topl) at (axis cs:9.2,1.00005){};
+      \node[anchor=west] (botr) at (axis cs:9.8,0.99995){};
       \draw[->](source)--(destination);
+      \draw(topl) rectangle (botr);
     \end{axis}
     \begin{axis}[y tick label style={
-		        /pgf/number format/.cd,
-		            fixed,
-		            fixed zerofill,
-		            precision=6,
-		        /tikz/.cd
-		    },
-        width=0.4\linewidth,
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=6,
+            /tikz/.cd
+        },
+        width=0.35\linewidth,
         height=0.18\linewidth,
         at={(mainplot.north east)},anchor=north east,
         xlabel={},
         ylabel={},
-        xmin=9,
-        xmax=9.999,
+        xmin=9.15,
+        xmax=9.85,
         major tick length = 0.07cm
       ]
       \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.05" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.05" using 1:4 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=red,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.1" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.1" using 1:4 with lines;
       };
       \addplot gnuplot [raw gnuplot,mark=none,color=green,thick]{
-      	plot "numerics/figures/energ-norm-cons.0.2" using 1:4 with lines;
+        plot "numerics/figures/energ-norm-cons.0.2" using 1:4 with lines;
       };
     \end{axis}
   \end{tikzpicture}
-  \caption{Dimensionless energy, $\hat{E}$, and particle number, $\hat{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\hat{g}=2000$ and chemical potential $\hat{\mu}=25.27$. The numerical grid width varies with each line; (black) $\Delta = 0.05$, (red) $\Delta = 0.1$, (green) $\Delta = 0.2$ and (blue) $\Delta = 0.4$. (Inset) Zoomed view of the convergence of $\hat{N}$.}\label{fig_energ_norm_cons}
+  \caption{Dimensionless energy, $\hat{E}$, and particle number, $\hat{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\hat{g}=2000$ and chemical potential $\hat{\mu}=25.27$. The numerical grid width varies with each line; (black) $\Delta_x = 0.05$, (red) $\Delta_x = 0.1$, (green) $\Delta_x = 0.2$ and (blue) $\Delta_x = 0.4$. (Inset) Zoomed view of the convergence of $\hat{N}$.}\label{fig_energ_norm_cons}
  \end{figure}
-
-	In the trapped case we can use the same idea. It is shown in Section \ref{section:healing} that $\xi = \hbar/\sqrt{mg}$ for $\rho=1$. We can then easily rearrange to find an expression for $\xi$ in the harmonic oscillator units of trapped condensates. We find that our approximate grid spacing to adequately resolve the vortex core is $\Delta = 0.5\xi = 0.5\omega \sqrt{\hbar/(\mu \omega)} l_r$. As an example, for a trapped condensate with interaction energy $\hat{g}=2000$, chemical potential $\hat{\mu}=25.27$ and trap frequency $\omega=8.75~{\rm Hz}$ we find that a value of $\Delta=0.1l_r$ should be adequate. 
-
-	In addition to this process, for each set of simulation parameters it is recommended to confirm the suitability of the chosen $\Delta$ by testing the convergence and conservation in the numerical methods. The total condensate energy and particle number are good measures for this as they should both be well conserved by the GPE with a dissipation of $\gamma=0$. An example of this process is shown in Figure \ref{fig_energ_norm_cons}: For a large $\Delta=0.4l_r$ both the condensate energy and norm fluctuate wildly. For $\Delta=0.1l_r$ the norm is extremely well conserved to within $2.10^{-5}\%$ and the energy is conserved within $5.10^{-3}\%$. By observing the smallest tested values with $\Delta=0.05l_r$ we also confirm the the value for the total energy has converged. We conclude that for the chosen system parameters that $\Delta=0.1l_r$ (the value suggested by the above analysis) provides sufficient convergence and there is little reason to use $\Delta<0.1l_r$.
 
 \section{\label{section:vortexidentifying} Identifying vortices}
 
