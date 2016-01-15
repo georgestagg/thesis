@@ -12,34 +12,41 @@
 \newlabel{eq:rk4}{{3.1}{24}}
 \newlabel{section:numericalParams}{{3.1.2}{25}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2} Numerical stability and convergence}{25}}
-\citation{PhysRevA.66.013603}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Dimensionless energy, $\mathaccentV {hat}05E{E}$, and particle number, $\mathaccentV {hat}05E{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\mathaccentV {hat}05E{g}=2000$ and chemical potential $\mathaccentV {hat}05E{\mu }=25.27$. The numerical grid width varies with each line; (black) $\Delta _x = 0.05$, (red) $\Delta _x = 0.1$, (green) $\Delta _x = 0.2$ and (blue) $\Delta _x = 0.4$. (Inset) Zoomed view of the convergence of $\mathaccentV {hat}05E{N}$.\relax }}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Dimensionless energy, $\mathaccentV {hat}002{E}$, and particle number, $\mathaccentV {hat}002{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\mathaccentV {hat}002{g}=2000$ and chemical potential $\mathaccentV {hat}002{\mu }=25.27$. The numerical grid width varies with each line; (black) $\Delta _x = 0.05$, (red) $\Delta _x = 0.1$, (green) $\Delta _x = 0.2$ and (blue) $\Delta _x = 0.4$. (Inset) Zoomed view of the convergence of $\mathaccentV {hat}002{N}$.\relax }}{26}}
 \newlabel{fig_energ_norm_cons}{{3.1}{26}}
 \newlabel{section:vortexidentifying}{{3.2}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2} Identifying vortices}{26}}
-\newlabel{section:gaussianblur}{{3.2.1}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Image filters and the Gaussian kernel}{26}}
-\newlabel{section:vortexclustering}{{3.3}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3} Quantifying vortex clustering}{26}}
-\newlabel{section:reevesalgorithm}{{3.3.1}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1} Recursive Cluster Algorithm (RCA) }{26}}
-\newlabel{section:ripleysk}{{3.3.2}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2} Ripley's K function }{26}}
-\newlabel{eq:ripleysk}{{3.2}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of a set of curves $C_k$ for identifying a vortex (located at [12.5,12.5]). All $\Delta \theta (C_{k\neq 13})\approx 0$, and $\Delta \theta (C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.\relax }}{27}}
+\newlabel{section:vortexloc}{{3.2.1}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1} Basic vortex detection method}{27}}
+\newlabel{section:vortexloc}{{3.2.2}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2} Visualising vortex location with a vortex field}{27}}
 \citation{PhysRevA.66.013603}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces (Left) Unfiltered wavefunction density, $|\psi |^2$, from a classical-field simulation with condensate fraction $\rho _0/\rho =0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\mathaccentV {hat}05E{\psi }|^2$, clearly showing the vortical structures in the gas.\relax }}{27}}
-\newlabel{fig:quasicondensatefilter}{{3.2}{27}}
-\newlabel{section:vortextracking}{{3.4}{27}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4} Tracking vortex trajectories}{27}}
-\newlabel{section:vortexremoval}{{3.5}{27}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5} Removing vortices with phase unwrapping}{27}}
-\newlabel{section:quasi-condensate}{{3.6}{27}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6} Quasi-Condensate Visualisation}{27}}
-\newlabel{section:linelength}{{3.7}{28}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7} Evaluation of vortex line-length}{28}}
+\citation{PhysRevA.66.013603}
+\newlabel{section:gaussianblur}{{3.2.3}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3} Further improve accuracy with a Gaussian blur}{28}}
+\newlabel{section:ghostvortex}{{3.2.4}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4} Avoiding `ghost vortices'}{28}}
+\newlabel{section:vortexclustering}{{3.3}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3} Quantifying vortex clustering}{28}}
+\newlabel{section:reevesalgorithm}{{3.3.1}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1} Recursive Cluster Algorithm (RCA) }{28}}
+\newlabel{section:ripleysk}{{3.3.2}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2} Ripley's K function }{28}}
+\newlabel{eq:ripleysk}{{3.3}{28}}
+\newlabel{section:vortextracking}{{3.4}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4} Tracking vortex trajectories}{28}}
+\newlabel{section:vortexremoval}{{3.5}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5} Removing vortices with phase unwrapping}{28}}
+\newlabel{section:quasi-condensate}{{3.6}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6} Quasi-Condensate Visualisation}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces (Left) Unfiltered wavefunction density, $|\psi |^2$, from a classical-field simulation with condensate fraction $\rho _0/\rho =0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\mathaccentV {hat}002{\psi }|^2$, clearly showing the vortical structures in the gas.\relax }}{29}}
+\newlabel{fig:quasicondensatefilter}{{3.3}{29}}
+\newlabel{section:linelength}{{3.7}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7} Evaluation of vortex line-length}{29}}
 \@setckpt{./numerics/chapter}{
-\setcounter{page}{29}
-\setcounter{equation}{2}
+\setcounter{page}{31}
+\setcounter{equation}{3}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -53,7 +60,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{2}
+\setcounter{figure}{3}
 \setcounter{table}{0}
 \setcounter{NAT@ctr}{0}
 \setcounter{parentequation}{0}

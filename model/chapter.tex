@@ -110,10 +110,10 @@ The eigenfunctions decay exponentially under propagation of the GPE in imaginary
 \begin{equation*}
 \Psi(\mathbf{r},\tau) \rightarrow \Psi_0(\mathbf{r})\exp\left(-\frac{E_0\tau}{\hbar}\right).
 \end{equation*}
-The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many numerical steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be `smoothed' by fixing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics; minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
+The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many numerical steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be made more accurate with this method by imposing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics; minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
 
 The energy can be used as a way to gauge the solution convergence. An example ground state solution is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. For $-t\omega/i > 0.6$ the computed ground state energy does not significantly change, a good indicator that the ground state has been found to sufficient accuracy.
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -194,7 +194,7 @@ The chemical potential can be found in terms of energies of the system by direct
 		\end{equation}
 	%The GPE can be modified to provide a simple phenomenological model of a condensate's interaction with the thermal cloud. The phenomenological damping term, $\gamma$, is added to the right hand side of the GPE with the effect that the energy in the system no longer remains constant. The energy will instead vary over time to approach some constant value, depending on $\mu$.
 	where $k$ is Boltzmann's constant and $g_c = 3$ is a factor used for correction.
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -297,7 +297,7 @@ The chemical potential can be found in terms of energies of the system by direct
 	\begin{equation}\label{eq:dissgpeB}
 		(i-\gamma)\hbar \frac{\partial \Psi}{\partial t} = \left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
 	\end{equation}
-	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while is is not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma<<1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours.
+	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma<<1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours.
 
 \section{\label{section:cfield} Finite temperature homogeneous condensate using the classical field method}
 
@@ -305,7 +305,7 @@ A common method of simulating finite temperature systems is the so called classi
 
 An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and non-equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
 
-We emphasis that the requirements of large occupation numbers and weak interactions are essential. Without these requirements quantum modes exist that are coupled to the rest of the system and with occupation number of order unity, and the classical field description breaks down. All Bose gases discussed in this thesis will be of the dilute and weakly interacting form, so this caveat poses no future trouble. Further discussion and analysis of a strong non-equilibrium Bose gas and the classical-filed method can be found in \cite{PhysRevA.66.013603}.
+We emphasise that the requirements of large occupation numbers and weak interactions are essential. Without these requirements quantum modes exist that are coupled to the rest of the system and with occupation number of order unity, and the classical field description breaks down. All Bose gases discussed in this thesis will be of the dilute and weakly interacting form, so this caveat poses no future trouble. Further discussion and analysis of a highly non-equilibrium Bose gas and the classical-filed method can be found in \cite{PhysRevA.66.013603}.
 
 \section{\label{section:movframe} Transforming the reference frame}
 	\subsection{\label{section:linearmovframe} Moving frame along $x$}
@@ -334,7 +334,7 @@ p_x & p_y & p_z \end{array} \right|.
 	\begin{equation}\label{eq:angmomentumop}
 		\hat{L} = \hat{R} \times \hat{P}.
 	\end{equation}
-	The components of equation \ref{eq:angmomentumop} can also be written as differential operators,
+	Components of equation \ref{eq:angmomentumop} can also be written as differential operators,
 	\begin{equation}
 		\hat{L}_x = -i\hbar\left ( y \frac{\partial}{\partial z} - z \frac{\partial}{\partial y} \right ),~~~
 		\hat{L}_y = -i\hbar\left ( z \frac{\partial}{\partial x} - x \frac{\partial}{\partial z} \right ),~~~
@@ -342,13 +342,13 @@ p_x & p_y & p_z \end{array} \right|.
 	\end{equation}
  which can then be added to the right hand side of the GPE to modify it such that it is in the rotating reference frame. For example, the GPE in the frame rotating about the $z$ axis with angular momentum $\Omega$ is written,
 	\begin{equation}\label{eq:rotframegpe}
-	\mathrm{i}\hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu -\mathrm{i}\hbar\Omega\left [ x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right ] \right ) \Psi({\bf r},t),
+	i\hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu -i\hbar\Omega\left [ x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right ] \right ) \Psi({\bf r},t),
 	\end{equation}
 
 \section{\label{section:hydrodynamic} Hydrodynamic interpretation}
 	Often it can be helpful to write the GPE, via the so called Madelung transformation, as a set of hydrodynamic equations. The transformation reinterprets the wavefunction $\Psi$ as a magnitude directly related to the fluid density and a phase which is directly related to the fluid velocity. We write the wavefunction in the form
 	\begin{equation}
-		\Psi({\bf r},t) = R({\bf r},t)\exp (\mathrm{i}\theta({\bf r},t)),
+		\Psi({\bf r},t) = R({\bf r},t)\exp (i\theta({\bf r},t)),
 	\end{equation}
 	 and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$.
 	In vector form we obtain a continuity equation
@@ -364,15 +364,19 @@ p_x & p_y & p_z \end{array} \right|.
 	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:quantisedcirculation} Quantised Circulation}
-An interesting consequence of considering that the wavefunction, $\Psi$, as a density $R$ and a phase $\theta$ is the fact that to remain single-valued, the change of phase around any {\it closed} curve $C$ must be an integer of $2\pi$,
+An interesting consequence of considering the hydrodynamic interpretation is that the fluid circulation must be quantised. We can see this by first writing the integrated change of phase along any closed curve $C$,
 \begin{equation}
-	\oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l} = 2 \pi q,
+	\Delta\theta = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l},
 \end{equation}
-where $q\in\mathbb{Z}$, as the phase is cyclic with range $(-\pi,\pi]$. Our local velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ and so we can write
+where $\mathrm{d}\mathbf{l}$ is the line element. The wavefunction at the start and the end of the integration must be single valued, and so
 \begin{equation}
-	\oint_C \! \mathbf{v} \, \mathrm{d}\mathbf{l} = \frac{2 \pi \hbar}{m}q.
+	\exp (i\theta_0) = \exp (i\theta_0)\exp (i\Delta\theta).
 \end{equation}
-In other words, due to the direct influence of quantum mechanical effects, the circulation of the fluid around a closed curve $C$ must be quantised in units of $\kappa = 2 \pi \hbar/m$, the so called `quantum of circulation'.
+This is only satisfied when $\Delta\theta = 2\pi q$, with $q\in\mathbb{Z}$. Our local velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ and so we can write
+\begin{equation}
+	\Gamma = \oint_C \! \mathbf{v} \, \mathrm{d}\mathbf{l} = \frac{2 \pi \hbar}{m}q.
+\end{equation}
+Notice that we are now taking the line integral of the velocity; we have a formula for the circulation. We find the circulation must be quantised in units of $\kappa = 2 \pi \hbar/m$, the so called `quantum of circulation'. This is in stark contrast to classical fluids where the circulation can take any real value.
 
 \section{\label{section:solutions} A selection of simple solutions}
 	Due to the nonlinearity of the GPE fully analytical solutions are rare. However, there are a selection of solutions available for simple cases that allow us to gain insight into the behaviour of a fluid governed by the GPE in more complicated scenarios.
@@ -385,7 +389,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
 	\begin{equation}
 		\Psi(x) = \sqrt{\frac{\mu}{g}}\tanh \left( \frac{x}{\xi} \right).
 	\end{equation}
-	\begin{figure}[b]
+	\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -413,7 +417,7 @@ In other words, due to the direct influence of quantum mechanical effects, the c
 		\Psi(x,t) = \sqrt{\rho}\exp\left(-\frac{i\mu}{\hbar}t\right)\left\{ \sqrt{1-\frac{v^2}{c^2}} \tanh\left[ \sqrt{1-\frac{v^2}{c^2}}\frac{(x-vt)}{\xi} \right ] + \frac{iv}{c}  \right \} ,
 	\end{equation}
 	where $v$ is the velocity of the soliton and $c$ is the speed of sound. Examples of dark solitons are seen in Figures \ref{fig_solitons} and \ref{fig_solitonmove}.
-	\begin{figure}
+	\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -466,7 +470,9 @@ In other words, due to the direct influence of quantum mechanical effects, the c
   \end{tikzpicture}
   \caption{Density (left) and phase (right) of solitons in a 1D homogeneous system moving at speed $v = 0~c$ (solid),$v = 0.25~c$ (dashed), $v = 0.5~c$ (dotted) and $v = 0.75~c$ (dash-dotted).}\label{fig_solitons}
  \end{figure}
-\begin{figure}
+
+ Solitonic waves can exist in higher dimensional systems, but these are not solitons in the strict mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
+ \begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -493,8 +499,6 @@ In other words, due to the direct influence of quantum mechanical effects, the c
   \caption{Density over time of a 1D fluid containing a soliton with speed $v=0.25c$, confirming the non-dispersal nature of the wavepacket.}\label{fig_solitonmove}
  \end{figure}
 
- Solitonic waves can exist in higher dimensional systems, but these are not solitons in the strict mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
-
 
 \subsection{\label{section:vortices} Quantised Vortices}
 We have already seen in section \ref{section:quantisedcirculation} that rotation in a fluid governed by the GPE must be quantised. Both two and three-dimensional solutions of the GPE can support vortices and vortex lines as a carrier of quantised vorticity. They are defined by a singularity in the phase, along with a corresponding dip in density. This density dip masks the phase singularity, which is related to the fluid velocity, and so avoids solutions with infinite energy density.
@@ -505,7 +509,7 @@ The true 2D quantised vortex solution (or equivalently the solution in the plane
 	\end{equation}
 where $n\in\mathbb{Z}$ is the charge or winding number of the vortex. Vortex solutions can be found numerically using the imaginary time propagation method outlined in Section \ref{section:imagTime} and an example 2D solution with $n=1$ is shown in Figure \ref{fig_vortexdensphase}.
 
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
 	  \begin{axis}[
@@ -536,7 +540,7 @@ No analytic form exists for the shape of the vortex core, $f_v(r)$, and it must 
 	\end{equation}
 which captures the correct vortex core asymptotic behaviour for $r\rightarrow 0$ and $r\rightarrow\infty$ and is close to the true vortex solution everywhere. A comparison of the Pad\'e approximation and the true ($n=1$) vortex solution is shown in Figure \ref{fig_vortex} (a). Note that the density dip heals over a radius on the order of $5\xi$. While the density heals over a short area around the vortex, the presence of a vortex changes the phase in the entirety of the fluid; vortices are a truly a non-local phenomenon and multiple vortices can interact even when separated much further than the size of their density cores.
 
-\begin{figure}
+\begin{figure}[!ht]
 	\hspace{-0.13\linewidth}(a)\hspace{0.45\linewidth}(b)\hspace{0.03\linewidth}\\
 	\centering
    \begin{tikzpicture}

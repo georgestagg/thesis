@@ -135,9 +135,75 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
  \end{figure}
 
 \section{\label{section:vortexidentifying} Identifying vortices}
+Large potions of this thesis are dedicated to the study of 2D vortex dynamics. As such, accurate detection of the location and charge of densely packed quantised vortices is required, and so we have developed robust numerical methods for vortex identification. The basic idea is fairly simple, with arguments similar to those used in Section \ref{section:quantisedcirculation} to demonstrate the quantised nature of the circulation.
 
+The integrated change of phase along any closed curve $C$ is,
+\begin{equation}
+  \Delta\theta(C) = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l} = 2\pi q,
+\end{equation}
+where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, the fundamental theorem of calculus for line integrals[CITE] implies that $\Delta\theta(C) = 0$, providing that $C$ is continuous and does not encompass a phase singularity. This result is crucial, as it allows us to directly state that a vortex lies within $C$ if and only if $|\Delta\theta(C)| > 0 $.
 
-\subsection{\label{section:gaussianblur} Image filters and the Gaussian kernel}
+\subsection{\label{section:vortexloc} Basic vortex detection method}
+First define a set of curves $C_k$ with each curve lying on points of our numerical grid, so that a single $C_k$ encompasses only a small region of the fluid (ideally, $C_k$ should encompass a region at most the diameter of a vortex core). $\Delta\theta(C_k)$ is then approximated for each $k$ using numerical integration. If $\Delta\theta(C_k) = 0$ (to within numerical accuracy) then we say the region inside $C_k$ contains no vortices. Otherwise the sign of $\Delta\theta(C_k)$ tells us the polarity of the vortex.
+
+In principle the result also allows us to calculate the exact charge of a vortex in terms of the quantum of circulation. However, for accurate determination of vortex location, the curves $C_k$ must encompass a very small area. In some cases the numerical integration uses only on the order of $10$ grid points and so integration accuracy is low. Nevertheless, using only the sign of the $\Delta\theta(C_k)$ results in an accurate detection of vortex polarity and location and as multiply charged vortices are unstable (rapidly decaying into several singly charged vortices) there is no significant loss.
+\begin{figure}
+  \centering
+   \begin{tikzpicture}[
+        >={Straight Barb[left]},
+      myarrow/.style={
+        decoration={
+          markings,
+          mark=at position 0.5 with {\arrow{Straight Barb[left]}};
+          },
+        postaction=decorate  
+        }
+      ]
+      \begin{axis}[
+        xlabel={Numerical grid (x)},
+        ylabel={Numerical grid (y)},
+        xtick={0,10,20,30,40,50},
+        ytick={0,10,20,30,40,50},
+        x=1cm/10,
+        y=1cm/10,
+        xmin=0,
+        xmax=50,
+        ymin=0,
+        ymax=50,
+        colorbar style={title={Phase},text width=0.5em,major tick length = 0.07cm},
+        major tick length = 0.07cm,
+        point meta min = -3.1415,
+        point meta max = 3.1415,
+        colorbar,colormap name=hsvcl
+      ]
+      \addplot graphics [xmin=0,xmax=50,ymin=0,ymax=50] {numerics/figures/vortex1dp-hsv.png};
+    \end{axis}
+      \draw[step=1cm,gray,very thin] (0,0) grid (5,5);
+      \foreach \i in {1,...,5}{
+        \foreach \j in {1,...,5}{
+          \draw [myarrow,thick] (\i-0.05,5.95-\j)--(\i-0.95,5.95-\j);
+          \draw [myarrow,thick] (\i-0.95,5.95-\j)--(\i-0.95,5.05-\j);
+          \draw [myarrow,thick] (\i-0.95,5.05-\j)--(\i-0.05,5.05-\j);
+          \draw [myarrow,thick] (\i-0.05,5.05-\j)--(\i-0.05,5.95-\j);
+          {\pgfmathtruncatemacro{\label}{((\j-1)*5) + \i}
+          \node[] (c0) at (\i-0.5,5.5-\j) {$C_{\label}$};}
+        }
+      }
+  \end{tikzpicture}
+  \caption{Example of a set of curves $C_k$ for identifying a vortex (located at [12.5,12.5]). All $\Delta\theta(C_{k\neq13})\approx0$, and $\Delta\theta(C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.}
+ \end{figure}
+\subsection{\label{section:vortexloc} Visualising vortex location with a vortex field}
+The basic vortex identification method set out in \ref{section:vortexloc} is quick to implement and useful when there are few well separated vortices, but one can easily imagine a situation where the system fails. One such case would be two vortices both lying within a single $C_k$ curve; only a single vortex would be detected.
+
+The solution is not always as simple as reducing the size of $C_k$, there are often too little grid points to make this reasonable. Instead curves with a size remaining around the size of a vortex core are used, but for every grid point (taking into account boundary conditions) in the simulation the curve $C_{i,j}$ is defined surrounding and centred on the pixel [i,j]. A vortex field can then be visualised by viewing the 2D plot of $\Delta\theta(C_{i,j})$. Sub pixel accuracy can then be found by averaging the location of all points where $|\Delta\theta(C_{i,j})|>\Delta_t$, where $\Delta_t$ is some threshold value.
+%for i=1:50
+%for j=1:50
+%test(i,j)=atan2(j-25.5,i-23)-atan2(j-25.5,i-27);
+%end
+%end
+\subsection{\label{section:gaussianblur} Further improve accuracy with a Gaussian blur}
+\subsection{\label{section:ghostvortex} Avoiding `ghost vortices'}
+
 
 \section{\label{section:vortexclustering} Quantifying vortex clustering}
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
