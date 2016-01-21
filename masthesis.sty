@@ -136,6 +136,7 @@
 \usepackage[figuresright]{rotating}     % Rotate a figure
 \usepackage{setspace}                   % Spacing tools
 \usepackage{makeidx}
+\usepackage{hyperref}
 %Pretty font stuff
 \usepackage{xfrac}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
@@ -176,8 +177,9 @@
 % Fancy headers.  See the fancyhdr documentation of a full explanation of what
 % these are.  R=Right hand side of page, L=Left hand side of page
 \pagestyle{fancy}
-\fancyhead[R]{\slshape\nouppercase\leftmark}
-\fancyhead[L]{}
+\fancyhead[RE,LO]{}
+\fancyhead[RO]{\slshape\nouppercase\rightmark}
+\fancyhead[LE]{\slshape\nouppercase\leftmark}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------

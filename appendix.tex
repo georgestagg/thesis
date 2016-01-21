@@ -84,67 +84,6 @@ where
 \end{split}
 \end{equation*}
 
-
-\section{\label{appsection:madtrans} Derivation of the Hydrodynamic Equations via the Madelung Transformation}
-Inserting the Madelung transformation (Section \ref{section:hydrodynamic}) into the GPE and writing the result in tensor notation yields
-\begin{equation*}
-  \mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \theta}{\partial t} R \right)e^{\mathrm{i}\theta} =
-  -\frac{\hbar^2}{2m}e^{\mathrm{i}\theta}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j}+
-  \mathrm{i}\frac{\partial^2 \theta}{\partial x_j^2}R -  \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\theta} + VRe^{\mathrm{i}\theta}.
-\end{equation*}
-The real and imaginary parts of the GPE, once divided by $\exp (\mathrm{i}\theta)$, then take the form
-\begin{align}
-  -\hbar R \frac{\partial \theta}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) + gR^3 + VR, \label{eq:MTre}\\
-  \hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j \partial x_j} \right).
-  \label{eq:MTim}
-\end{align}
-Consider Equation (\ref{eq:MTim}) and note that $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$, allowing us to rewrite the equation in terms of $\rho$,
-\begin{align*}
-  \frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \theta}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j\partial x_j} \right)\\
-  &= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right)\\
-  &= -\frac{\partial \rho}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - \rho \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right).
-\end{align*}
-The terms containing the phase can then be directly replaced with the fluid velocity, $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right)$.
-\begin{align*}
-  \frac{\partial \rho}{\partial t} &= -\frac{\partial \rho}{\partial x_j} v_j - \rho \frac{\partial}{\partial x_j} v_j\\
-                   &= -\frac{\partial}{\partial x_j} \left( \rho v_j \right).
-\end{align*}
-Rewritten in vector form the result is a continuity equation,
-\begin{equation}
-  \frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0.
-\end{equation}
-Now consider Equation (\ref{eq:MTre}), written in the form
-\begin{equation*}
-\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \left( \frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} - \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) - \frac{gR^2}{m} - \frac{V}{m}.
-\end{equation*}
-Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} = \frac{1}{\sqrt{\rho}}\nabla^2\sqrt{\rho}$ and $\frac{\hbar^2}{2m^2} \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} = \frac{v^2}{2} $. It follows that Equation (\ref{eq:MTre}) can be written,
-
-\begin{align*}
-&\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
-&\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
-&\Rightarrow \rho\frac{\partial v_k}{\partial t} =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - \rho\frac{1}{m}\frac{\partial V}{\partial x_k}.
-\end{align*}
-
-By noticing that $p = \frac{1}{2}g \left ( \frac{\rho}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
-\begin{equation*}
-\rho\frac{\partial v_k}{\partial t} + \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
-\end{equation*}
-
-We now now use the following two results,
-\begin{align*}
-v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
-2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{\rho}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{\rho}\right) &= \frac{1}{\rho} \frac{\partial}{\partial x_j}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{\rho},
-\end{align*}
-
-and find,
-\begin{equation*}
-\rho\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - \rho \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
-\end{equation*}
-where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
-\begin{equation}
-\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
-\end{equation}
-
 \section{\label{appsection:gpeqft} Derivation of the Gross-Pitaevskii Equation}
 This section derives the GPE following the methodology outlined in \cite{0953-4075-41-20-203002}. We begin by revisiting the quantum field theory formalism used to describe a many body quantum system \cite{fetter1971quantum}. Such a system is described by an N-body wavefunction, $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$ which obeys the famous Schr\"odinger equation
 \begin{equation}
@@ -270,6 +209,66 @@ Finally, note that as the particle number is no longer strictly conserved, calcu
 i \hbar\frac{\partial}{\partial t}\psi(\mathbf{r},t) = \left ( -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t) + g|\psi(\mathbf{r},t)|^2 - \mu \right ) \psi(\mathbf{r},t).
 \end{equation}
 
+\section{\label{appsection:madtrans} Derivation of the Hydrodynamic Equations via the Madelung Transformation}
+Inserting the Madelung transformation (Section \ref{section:hydrodynamic}) into the GPE and writing the result in tensor notation yields
+\begin{equation*}
+  \mathrm{i}\hbar\left( \frac{\partial R}{\partial t} + \mathrm{i}\frac{\partial \theta}{\partial t} R \right)e^{\mathrm{i}\theta} =
+  -\frac{\hbar^2}{2m}e^{\mathrm{i}\theta}\left( \frac{\partial^2 R}{\partial x_j^2} + 2\mathrm{i}\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j}+
+  \mathrm{i}\frac{\partial^2 \theta}{\partial x_j^2}R -  \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} R  \right) + gR^3e^{\mathrm{i}\theta} + VRe^{\mathrm{i}\theta}.
+\end{equation*}
+The real and imaginary parts of the GPE, once divided by $\exp (\mathrm{i}\theta)$, then take the form
+\begin{align}
+  -\hbar R \frac{\partial \theta}{\partial t} &= -\frac{\hbar^2}{2m}\left( \frac{\partial^2 R}{\partial x_j \partial x_j} - R \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) + gR^3 + VR, \label{eq:MTre}\\
+  \hbar \frac{\partial R}{\partial t} &= -\frac{\hbar^2}{2m}\left( 2\frac{\partial \theta}{\partial x_j}\frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j \partial x_j} \right).
+  \label{eq:MTim}
+\end{align}
+Consider Equation (\ref{eq:MTim}) and note that $\rho = mR^2 \Rightarrow \frac{\partial \rho}{\partial t} = 2mR\frac{\partial R}{\partial t}$, allowing us to rewrite the equation in terms of $\rho$,
+\begin{align*}
+  \frac{\partial \rho}{\partial t} &= -\hbar R\left( 2 \frac{\partial \theta}{\partial x_j} \frac{\partial R}{\partial x_j} + R \frac{\partial^2 \theta}{\partial x_j\partial x_j} \right)\\
+  &= -2mR\frac{\partial R}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - mR^2 \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right)\\
+  &= -\frac{\partial \rho}{\partial x_j}\frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right) - \rho \frac{\partial^2}{\partial x_j \partial x_j}\left(\frac{\hbar}{m}\theta \right).
+\end{align*}
+The terms containing the phase can then be directly replaced with the fluid velocity, $v_j = \frac{\partial}{\partial x_j}\left( \frac{\hbar}{m} \theta \right)$.
+\begin{align*}
+  \frac{\partial \rho}{\partial t} &= -\frac{\partial \rho}{\partial x_j} v_j - \rho \frac{\partial}{\partial x_j} v_j\\
+                   &= -\frac{\partial}{\partial x_j} \left( \rho v_j \right).
+\end{align*}
+Rewritten in vector form the result is a continuity equation,
+\begin{equation}
+  \frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0.
+\end{equation}
+Now consider Equation (\ref{eq:MTre}), written in the form
+\begin{equation*}
+\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \left( \frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} - \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j}  \right) - \frac{gR^2}{m} - \frac{V}{m}.
+\end{equation*}
+Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \partial x_j} = \frac{1}{\sqrt{\rho}}\nabla^2\sqrt{\rho}$ and $\frac{\hbar^2}{2m^2} \frac{\partial \theta}{\partial x_j}\frac{\partial \theta}{\partial x_j} = \frac{v^2}{2} $. It follows that Equation (\ref{eq:MTre}) can be written,
+
+\begin{align*}
+&\frac{\hbar}{m} \frac{\partial \theta}{\partial t} = \frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} - \frac{v^2}{2} - \frac{gR^2}{m} - \frac{V}{m}\\
+&\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
+&\Rightarrow \rho\frac{\partial v_k}{\partial t} =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right)- \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - \rho\frac{1}{m}\frac{\partial V}{\partial x_k}.
+\end{align*}
+
+By noticing that $p = \frac{1}{2}g \left ( \frac{\rho}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
+\begin{equation*}
+\rho\frac{\partial v_k}{\partial t} + \rho\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =\rho \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{\rho}} \nabla^2\sqrt{\rho} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
+\end{equation*}
+
+We now now use the following two results,
+\begin{align*}
+v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
+2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{\rho}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{\rho}\right) &= \frac{1}{\rho} \frac{\partial}{\partial x_j}\rho \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{\rho},
+\end{align*}
+
+and find,
+\begin{equation*}
+\rho\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - \rho \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
+\end{equation*}
+where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
+\begin{equation}
+\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
+\end{equation}
+
 \end{chapter}
 
 \begin{chapter}{Important Quantities\label{app:ImpQuantities}}
@@ -336,7 +335,50 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 \end{chapter}
 
 \begin{chapter}{Algorithms\label{app:algorithms}}
-\section{\label{appsection:numericalalgos} Numerical Algortithms}
+\section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
+A technique to visualise both the wavefunction phase and density is used throughout this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
+\subsection{Plotting Algorithm}
+Initially, the phase plotting is performed as normal, a process involving a conversion of a set of values in the region $[-\pi,\pi)$ to an image (defined as a 2D grid of pixels of size $n\times m$). Examples include MATLAB's image/pcolor commands or gnuplot's splot command. It is recommended, but not required, that a periodic colourmap (such as MATLAB's `hsv') of equal lightness is used. The $n \times m$ pixels obtained from this procedure will most commonly be stored in the {\tt rgb} format, a triad of values $(r,g,b)$ corresponding to the values of the red, green and blue intensities of the pixel respectively. For a maximum intensity of $255$ (a common format for {\tt rgb} pixels), a pixel with value $(0,0,0)$ is black, and a pixel of $(255,255,255)$ is white.
+
+Each pixel must be instead represented in the {\tt hsl} format, a triad of values $(h,s,l)$ corresponding to the values of the hue, saturation and lightness of the pixel respectively. {\tt hsl} is most commonly represented such that $h \in [0,360)$ and $s,l \in [0,1]$. Any pixel of the form $(h,s,0)$ is black, and any pixel of the form $(h,s,1)$ is white.
+
+For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to $(r,g,b)$ must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, which areas of high density will show hues corresponding to the fluid phase at that location.
+
+\subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
+Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise compute
+\begin{equation}
+s =
+    \begin{cases}
+      \frac{m-n}{2 - m - n} &\mbox{if } l \leq 0.5 \\
+      \frac{m-n}{m+n} &\mbox{if } l > 0.5.
+    \end{cases}
+\end{equation}
+Finally, find 
+\begin{equation}
+h =
+    \begin{cases}
+      60(\frac{g-b}{m-n}) &\mbox{if } m=r \\
+      60(\frac{b-r}{m-n}+2) &\mbox{if } m=g \\
+      60(\frac{r-g}{m-n}+4) &\mbox{if } m=b.
+    \end{cases}
+\end{equation}
+
+\subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
+Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. With this, one can find $x = c(1-|h' \mod 2 - 1|)$. Find
+\begin{equation}
+(r', g', b') =
+    \begin{cases}
+      (c, x, 0) &\mbox{if } 0 \leq h' < 1 \\
+      (x, c, 0) &\mbox{if } 1 \leq h' < 2 \\
+      (0, c, x) &\mbox{if } 2 \leq h' < 3 \\
+      (0, x, c) &\mbox{if } 3 \leq h' < 4 \\
+      (x, 0, c) &\mbox{if } 4 \leq h' < 5 \\
+      (c, 0, x) &\mbox{if } 5 \leq h'< 6,
+    \end{cases}
+\end{equation}
+and compute $m = l - c/2$ to finally find $(r,g,b) = (r'+m,g'+m,b'+m).$
+
+\section{\label{appsection:numericalalgos} Other Numerical Algorithms}
 \begin{algorithm}
     \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
     \Input{An initial field $\Psi$, a step size $h$, optional phase profile $\Theta$}
@@ -344,8 +386,7 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
     \SetKw{KwAll}{all}
     \SetKw{KwAllPoints}{all points}
     \BlankLine
-    $t = 0$\;
-    $dt = -ih$\;
+    $t \leftarrow 0$, $dt \leftarrow -ih$\;
     \Repeat{a suitable ground state is found}{
       Perform a single step of the RK4 Scheme\;
       $t = t + dt$\;
@@ -364,36 +405,47 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
       Perform a single step of the RK4 Scheme\;
       $t = t + dt$\;
 
-      \If{real time normalization is enabled}{
+      \If{real time normalisation is enabled}{
       $n\leftarrow \mathrm{norm}(\Psi)$\;
       \For{$\KwAllPoints~i~\KwIn~\Psi$}{
         $\Psi[i]\leftarrow \Psi[i]/\sqrt{n}$\;
       }
-      
-
       }
     }
-  \caption{RK4 algorithm for advancing a ODE/PDE in time. Should normalization of the wavefunction be required it is included an optional part of this algorithm.}\label{algo_rk4}
-  \end{algorithm}
+  \caption{RK4 algorithm for advancing a ODE/PDE in time with optional re-normalisation.}\label{algo_rk4}
+\end{algorithm}
 
-  \begin{algorithm}[H]
+\begin{algorithm}
   \SetKwFunction{Zero}{Zero}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \Input{A $n_x \times n_y$ phase profile $\theta$. A line integral width $l$.}
+  \Output{A `vortex field' $Q$.}
+  \BlankLine
+  \For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
+    \For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
+      $Q[i,j]\leftarrow \oint_{C_{[i,j]}} \nabla\theta~ds$, where $C_{[i,j]}$ is a square loop of width $l$ centred on point $[i,j]$\;
+    }
+  }
+\caption{Vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise. This algorithm will detect ghost vortices.}\label{algo_calcvortexfield}
+\end{algorithm}
+
+\begin{algorithm}
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \SetKwFunction{Max}{max}
   \Input{A $n_x \times n_y$ density profile $R$, A $n_x \times n_y$ phase profile $\theta$. A line integral width $l$.}
   \Output{A `vortex field' $Q$.}
   \BlankLine
   \For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
     \For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
-      $Q[i,j]\leftarrow R[i,j] \times \oint_\Box \nabla\theta~ds$, where $\Box$ is a square loop of width $l$ centred on $(i,j)$\;
+      $S\leftarrow R(i,j)/$\Max{$R$}\;
+      $Q[i,j]\leftarrow S\times\oint_{C_{[i,j]}} \nabla\theta~ds$, where $C_{[i,j]}$ is a square loop of width $l$ centred on point $[i,j]$\;
     }
   }
-
-
-\caption{Initial vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise.}\label{algo_calcvortexfield}
+\caption{Improved vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise. This method ignores ghost vortices.}\label{algo_calcvortexfielddens}
 \end{algorithm}
 
-
-\begin{algorithm}[H]
+\begin{algorithm}
     \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
     \SetKw{KwIn}{in}
     \SetKw{KwAll}{all}
@@ -414,12 +466,10 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
     }
 
   \caption{Gaussian convolution. Filters out features with structures of size less than the input
-  filter width. The output is analagous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
-  \end{algorithm}
+  filter width. The output is analogous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
+\end{algorithm}
 
-
-
-  \begin{algorithm}[H]
+\begin{algorithm}
   \SetKwFunction{Zero}{Zero}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
   \SetKwData{Mtmp}{m}
@@ -473,13 +523,10 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
       }
     }
   }
-
-
 \caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
 \end{algorithm}
 
-
-  \begin{algorithm}[H]
+\begin{algorithm}
   \SetKwFunction{Zero}{Zero}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
   \SetKwData{Linked}{linked}
@@ -512,11 +559,9 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
   }
 
   \caption{Calculate vortex locations and polarity.}\label{algo_calcvortexlocs}
-  \end{algorithm}
+\end{algorithm}
 
-
-
-  \begin{algorithm}[H]
+\begin{algorithm}
     \SetKwFunction{Zero}{Zero}
     \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
     \SetKwData{Linked}{linked}
@@ -559,10 +604,9 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 
     \caption{The Recursive Cluster Algorithm. Decomposes a list of vortices into vortex dipoles or clusters. Vortices are labelled with a cluster number, with vortex dipoles labelled with $-1$.}\label{algo_rca
     }
-    \end{algorithm}
+\end{algorithm}
 
-
-    \begin{algorithm}[H]
+\begin{algorithm}
   \SetKwFunction{Zero}{Zero}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
   \SetKwData{Linked}{linked}
@@ -591,47 +635,6 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
   }
 
   \caption{The `vortex killer' algorithm. By accurately imprinting a vortex, this algorithm removes vortices from the input wavefunction non destructively.}\label{algo_vortexkiller}
-  \end{algorithm}
-\section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
-A technique to visualise both the wavefunction phase and density is used throughout this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
-\subsection{Plotting Algorithm}
-Initially, the phase plotting is performed as normal, a process involving a conversion of a set of values in the region $[-\pi,\pi)$ to an image (defined as a 2D grid of pixels of size $n\times m$). Examples include MATLAB's image/pcolor commands or gnuplot's splot command. It is recommended, but not required, that a periodic colourmap (such as MATLAB's `hsv') of equal lightness is used. The $n \times m$ pixels obtained from this procedure will most commonly be stored in the {\tt rgb} format, a triad of values $(r,g,b)$ corresponding to the values of the red, green and blue intensities of the pixel respectively. For a maximum intensity of $255$ (a common format for {\tt rgb} pixels), a pixel with value $(0,0,0)$ is black, and a pixel of $(255,255,255)$ is white.
+\end{algorithm}
 
-Each pixel must be instead represented in the {\tt hsl} format, a triad of values $(h,s,l)$ corresponding to the values of the hue, saturation and lightness of the pixel respectively. {\tt hsl} is most commonly represented such that $h \in [0,360)$ and $s,l \in [0,1]$. Any pixel of the form $(h,s,0)$ is black, and any pixel of the form $(h,s,1)$ is white.
-
-For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to $(r,g,b)$ must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, which areas of high density will show hues corresponding to the fluid phase at that location.
-
-\subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
-Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise compute
-\begin{equation}
-s =
-    \begin{cases}
-      \frac{m-n}{2 - m - n} &\mbox{if } l \leq 0.5 \\
-      \frac{m-n}{m+n} &\mbox{if } l > 0.5.
-    \end{cases}
-\end{equation}
-Finally, find 
-\begin{equation}
-h =
-    \begin{cases}
-      60(\frac{g-b}{m-n}) &\mbox{if } m=r \\
-      60(\frac{b-r}{m-n}+2) &\mbox{if } m=g \\
-      60(\frac{r-g}{m-n}+4) &\mbox{if } m=b.
-    \end{cases}
-\end{equation}
-
-\subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
-Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. With this, one can find $x = c(1-|h' \mod 2 - 1|)$. Find
-\begin{equation}
-(r', g', b') =
-    \begin{cases}
-      (c, x, 0) &\mbox{if } 0 \leq h' < 1 \\
-      (x, c, 0) &\mbox{if } 1 \leq h' < 2 \\
-      (0, c, x) &\mbox{if } 2 \leq h' < 3 \\
-      (0, x, c) &\mbox{if } 3 \leq h' < 4 \\
-      (x, 0, c) &\mbox{if } 4 \leq h' < 5 \\
-      (c, 0, x) &\mbox{if } 5 \leq h'< 6,
-    \end{cases}
-\end{equation}
-and compute $m = l - c/2$ to finally find $(r,g,b) = (r'+m,g'+m,b'+m).$
 \end{chapter}
