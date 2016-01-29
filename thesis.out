@@ -43,13 +43,13 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{ Visualising vortex location with a vortex field}{section.3.2}% 43
 \BOOKMARK [2][-]{subsection.3.2.3}{ Further improving accuracy with a Gaussian blur}{section.3.2}% 44
 \BOOKMARK [2][-]{subsection.3.2.4}{ Avoiding `ghost vortices'}{section.3.2}% 45
-\BOOKMARK [1][-]{section.3.3}{ Quantifying vortex clustering}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.3}{ Quantifying vortex clustering in 2D}{chapter.3}% 46
 \BOOKMARK [2][-]{subsection.3.3.1}{ Recursive Cluster Algorithm \(RCA\) }{section.3.3}% 47
 \BOOKMARK [2][-]{subsection.3.3.2}{ Ripley's K function }{section.3.3}% 48
 \BOOKMARK [1][-]{section.3.4}{ Tracking vortex trajectories}{chapter.3}% 49
 \BOOKMARK [1][-]{section.3.5}{ Removing vortices with phase unwrapping}{chapter.3}% 50
 \BOOKMARK [1][-]{section.3.6}{ Quasi-Condensate Visualisation}{chapter.3}% 51
-\BOOKMARK [1][-]{section.3.7}{ Evaluation of vortex line-length}{chapter.3}% 52
+\BOOKMARK [1][-]{section.3.7}{ Evaluation of vortex line-length in 3D}{chapter.3}% 52
 \BOOKMARK [-1][-]{part.2}{II Numerical Studies}{}% 53
 \BOOKMARK [0][-]{chapter.4}{Classical-like wakes behind elliptical obstacles in Bose-Einstein condensates}{part.2}% 54
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 55

@@ -135,18 +135,18 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
  \end{figure}
 
 \section{\label{section:vortexidentifying} Identifying vortices}
-Large potions of this thesis are dedicated to the study of 2D vortex dynamics. As such, accurate detection of the location and charge of densely packed quantised vortices is required, and so we have developed robust numerical methods for vortex identification. The basic idea is fairly simple, with arguments similar to those used in Section \ref{section:quantisedcirculation} to demonstrate the quantised nature of the circulation.
+Large potions of this thesis are dedicated to the study of 2D vortex dynamics. As such, accurate detection of the location and charge of densely packed quantised 2D vortices is required, and so we have developed robust numerical methods for vortex identification. The basic idea is fairly simple, with arguments similar to those used to demonstrate the quantised nature of the circulation.
 
-The integrated change of phase along any closed curve $C$ is,
+As shown in Section \ref{section:quantisedcirculation}, the integrated change of phase along any closed curve $C$ is,
 \begin{equation}
   \Delta\theta(C) = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l} = 2\pi q,
 \end{equation}
-where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, the fundamental theorem of calculus for line integrals[CITE] implies that $\Delta\theta(C) = 0$, providing that $C$ is continuous and does not encompass a phase singularity. This result is crucial, as it allows us to directly state that a vortex lies within $C$ if and only if $|\Delta\theta(C)| > 0 $.
+where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, the fundamental theorem of calculus for line integrals[CITE] implies that $\Delta\theta(C) = 0$, providing that $C$ is continuous and does not encompass a phase singularity. This result is crucial; it allows us to directly state that a vortex lies within $C$ if and only if $|\Delta\theta(C)| > 0 $.
 
 \subsection{\label{section:vortexloc} Basic vortex detection method}
-First define a set of curves $C_k$ with each curve lying on points of our numerical grid, so that a single $C_k$ encompasses only a small region of the fluid (ideally, $C_k$ should encompass a region at most the diameter of a vortex core). $\Delta\theta(C_k)$ is then approximated for each $k$ using 2nd order finite differences and numerical line integration (trapezium rule). If $\Delta\theta(C_k) = 0$ (to within numerical accuracy) then we say the region inside $C_k$ contains no vortices. Otherwise the sign of $\Delta\theta(C_k)$ tells us the polarity of the encompassed vortex.
+First define a set of curves $C_k$ with each curve lying on points of our numerical grid, so that a single $C_k$ encompasses only a small region of the fluid (ideally, $C_k$ should encompass a region at most the diameter of a vortex core). $\Delta\theta(C_k)$ is then approximated for each $k$ using numerical differentiation (2nd order finite differences) and numerical line integration (trapezium or Simpson rule). If $\Delta\theta(C_k) = 0$ to within numerical accuracy then we determine that the region inside $C_k$ contains no vortices. Otherwise the sign of $\Delta\theta(C_k)$ tells us the polarity of the encompassed vortex.
 
-In principle the result also allows us to calculate the exact charge of a vortex in terms of the quantum of circulation. However, for accurate determination of vortex location, the curves $C_k$ must encompass a very small area. In some cases the numerical integration uses only on the order of $10$ grid points and so accuracy is low. However, by using only the sign of the $\Delta\theta(C_k)$ the integration error does not matter and results in an accurate detection of vortex polarity and location. As multiply charged ($|q|>1$) vortices are unstable (rapidly decaying into several singly charged vortices) there is no significant loss of information in practise.
+In principle the result also allows us to calculate the exact charge of a vortex in terms of the quantum of circulation. However, for accurate determination of vortex location the curves $C_k$ must encompass a very small area, contain few grid points, and so accuracy is low. We use only the sign of the $\Delta\theta(C_k)$ so that the integration error makes minimal difference and results in an accurate detection of vortex polarity and location. As multiply charged ($|q|>1$) vortices are unstable (rapidly decaying into several singly charged vortices) there is no significant loss of information in practise.
 \begin{figure}
   \centering
    \begin{tikzpicture}[
@@ -188,12 +188,12 @@ In principle the result also allows us to calculate the exact charge of a vortex
         }
       }
   \end{tikzpicture}
-  \caption{Example of a set of curves $C_k$ for identifying a vortex located at (0,0). All $\Delta\theta(C_{k\neq13})\approx0$, and $\Delta\theta(C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.}
+  \caption{The phase for a homogeneous system with a vortex located at (0,0). Also shown is an example set of curves $C_k$ for vortex identification. All $\Delta\theta(C_{k\neq13})\approx0$, and $\Delta\theta(C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.}
  \end{figure}
 \subsection{\label{section:vortexloc} Visualising vortex location with a vortex field}
 The basic vortex identification method set out in Section \ref{section:vortexloc} is quick to implement and useful when there are few well separated vortices, but one can easily imagine a situation where the system fails. One such case would be two vortices both lying within a single $C_k$ curve; in the case of two similarly charged vortices only a single vortex would be detected or in the case of two oppositely charged vortices none at all!
 
-The solution is not always as simple as reducing the size of $C_k$, vortices can be densely packed and there are often too little grid points to make this reasonable. Instead, curves with a diameter around the size of a vortex core are again used, but for every grid point (taking into account boundary conditions) the curve $C_{[i,j]}$ is defined surrounding and centred on the grid point $[i,j]$. A vortex field can then be visualised by visualizing the 2D plot of $\Delta\theta(C_{[i,j]})$. Algorithm \ref{algo_calcvortexfield} describes the process in detail. As before, areas where $|\Delta\theta(C_{[i,j]})| > 0$ (to within numerical accuracy) signify the presence of a vortex. Figure \ref{fig:vortexfield} demonstrates a vortex field obtained from a homogeneous system with a negative vortex located at $(-\xi,0)$ and a positive vortex located at $(\xi,0)$. It can be easily seen where the two vortices are located in the wavefunction by direct observation of the vortex field.
+The solution is not always as simple as reducing the size of $C_k$, vortices can be densely packed and there are often too little grid points to make this reasonable. Instead, curves with a width around the diameter of a vortex core are again used, but for every grid point (taking into account boundary conditions) the curve $C_{[i,j]}$ is defined surrounding and centred on the grid point $[i,j]$. A vortex field can then be visualised by visualizing the 2D plot of $\Delta\theta(C_{[i,j]})$. Algorithm \ref{algo_calcvortexfield} describes the process in detail. As before, areas where $|\Delta\theta(C_{[i,j]})| > 0$ (to within numerical accuracy) signify the presence of a vortex. Figure \ref{fig:vortexfield} demonstrates a vortex field obtained from a homogeneous system with a negative vortex located at $(-\xi,0)$ and a positive vortex located at $(\xi,0)$. It can be easily seen where the two vortices are located in the wavefunction by direct observation of the 2D vortex field.
 \begin{figure}
   \centering
    \begin{tikzpicture}
@@ -218,15 +218,15 @@ The solution is not always as simple as reducing the size of $C_k$, vortices can
     \end{axis}
     
   \end{tikzpicture}
-  \caption{Vortex field for two oppositely charged vortices located at ($-\xi$,0) and ($\xi$,0). The positive (negative) vortex leads to a positive (negative) quantity in the vortex field. In addition, the output of the bwlabel algorithm is labelled.\label{fig:vortexfield}}
+  \caption{Vortex field for two oppositely charged vortices located at ($-\xi$,0) and ($\xi$,0) in a homogeneous system. The positive (negative) vortex leads to a positive (negative) quantity in the vortex field. In addition, the output of the bwlabel algorithm is labelled.\label{fig:vortexfield}}
  \end{figure}
 
-For every vortex detected by this algorithm, the corresponding area in the vortex field is composed of several adjoined points in the numerical grid. For correct vortex counting, these multiple points must be classified as a single vortex. The bwlabel algorithm described in Algorithm \ref{algo_bwlabel} is used to obtain the required classification. The algorithm takes the vortex field as input and assigns each connected component a label. An example output of bwlabel is shown in Figure \ref{fig:vortexfield}. To find the vortex location for a given label, we simply take the mean of all the $x$ and $y$ locations of points with the same label.
+For every vortex detected by this algorithm, the corresponding area in the vortex field is composed of several adjoined points in the numerical grid. For correct vortex counting, these multiple points must be classified as a single vortex. The bwlabel algorithm described in Algorithm \ref{algo_bwlabel} is used to obtain this required classification. The algorithm takes the vortex field as input and assigns each connected component a label. An example output of bwlabel is shown in Figure \ref{fig:vortexfield}. To find the vortex location for a given label, we simply take the mean of all the $x$ and $y$ locations of points with the same label.
 
 The algorithm described in this section leads to more accurate vortex counts when vortices are densely packed. As a bonus the accuracy of detected vortex location is improved; the final output is a combination of information from several curves $C_{[i,j]}$, and so in good conditions the result is often sub-pixel accurate (that is, the algorithm output is accurate even if the phase singularity corresponding to a vortex lies between grid points). 
 
 \subsection{\label{section:gaussianblur} Further improving accuracy with a Gaussian blur}
-When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices, potentials and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spacial waves from the vortex field using low-pass filtering. A common low-pass filter is the Gaussian blur, applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to Figure \ref{fig:vortexfield} is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
+When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spacial waves from the vortex field using low-pass filtering. A common low-pass filter is the Gaussian blur [CITE], applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to he vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
 \begin{figure}[!ht]
   \centering
    \begin{tikzpicture}
@@ -248,12 +248,12 @@ When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (contai
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {numerics/figures/v-av-pair-vortexfield-smoothed.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{Smoothed vortex field for two oppositely charged vortices located at ($-\xi$,0) and ($\xi$,0). The high frequency noisy artefacts are removed by the low-pass filtering.\label{fig:vortexfieldsmooth} }
+  \caption{Smoothed vortex field for two oppositely charged vortices located at ($-\xi$,0) and ($\xi$,0) in a homogeneous system. The high frequency noisy artefacts in the vortex field are removed by the low-pass filtering.\label{fig:vortexfieldsmooth} }
  \end{figure}
 
- A by-product of applying a low-pass filter to the vortex field is that sharp edges in structures are blurred and spread out. To identify vortex locations a threshold function is therefore used before performing the bwlabel algorithm, i.e vortices are identified when $|\Delta\theta(C_{[i,j]})| > \Delta_{\rm th}$, where $\Delta_{\rm th}>0$ is some threshold depending on the exact system used. $\Delta_{\rm th}$ can be tweaked to make the vortex detection more or less sensitive (for either detecting vortices more easily in messy systems, or to ignore spurious signals in the vortex field).
+ A by-product of applying a low-pass filter to the vortex field is that sharp edges in structures are blurred and spread out. To identify vortex locations a threshold function is therefore used before performing the bwlabel algorithm, i.e vortices are identified when $|\Delta\theta(C_{[i,j]})| > \Delta_{\rm th}$, where $\Delta_{\rm th}>0$ is some threshold. $\Delta_{\rm th}$ can be tweaked to make the vortex detection more or less sensitive (for either detecting vortices more easily in messy systems, or to ignore weak spurious signals in the vortex field) and in general will vary for each system.
 \subsection{\label{section:ghostvortex} Avoiding `ghost vortices'}
-A common problem when identifying vortex locations is the prevalence of invalid or uninteresting phase defects inside obstacles and when considering a trapped condensate. In areas where the density is zero the system phase becomes undefined, depending on how the simulation is implemented these areas may fill with numerical noise and cause many singularities to be detected. A similar phenomenon occurs in areas of near-zero density. Well-defined singularities in the phase form but with an ill-defined vortex core in the density. Examples of these vortices are shown in the low density regions of Figure \ref{fig:ghostvortex}; as these singularities carry negligible angular momentum and energy, they are of no interest and are termed `ghost vortices'\cite{tsubota_kasamatsu_02}.
+A common problem when detecting vortices is the prevalence of invalid or uninteresting phase defects inside obstacles or when considering trapped condensates. In areas where the density is exactly zero the system phase becomes undefined. Depending on how the simulation is implemented these areas may fill with small numerical noise and cause many singularities to be detected. A similar phenomenon occurs in areas of near-zero density; well-defined singularities in the phase form but with an ill-defined vortex core in the density \cite{tsubota_kasamatsu_02}. Examples of these vortices are shown in the low density regions of Figure \ref{fig:ghostvortex}. As these singularities carry negligible angular momentum and energy they are of no interest and are termed `ghost vortices'.
 \begin{figure}[!ht]
   \centering
    \begin{tikzpicture}
@@ -285,25 +285,26 @@ A common problem when identifying vortex locations is the prevalence of invalid 
         major tick length = 0.07cm,
         point meta min = -3.141592,
         point meta max = 3.141592,
-        colorbar,colormap/jet
+        colorbar,colormap name=hsvcl
       ]
       \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlatticephase.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{A trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. Ghost vortices can be seen in the phase as singularity where the corresponding density is near-zero.\label{fig:ghostvortex}}
+  \caption{A trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. Ghost vortices can be seen in the phase as singularities where the corresponding density is near-zero.\label{fig:ghostvortex}}
  \end{figure}
 
-A simple way to remove ghost vortices is to use a mask to hide vortices found in the unimportant phase regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or where $V_{\rm trap} + V_{\rm obj}>1$, masks still are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
+A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>1$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
 
-An alternate method presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density (as a fraction of its maximal value) at every point {\it before} performing Gaussian convolution. The result is that in low-density areas the vortex field becomes completely zero and are no longer identified. At the centre of vortex cores the vortex field also becomes zero. However, enough vortex information remains {\it around} vortex cores that after the Gaussian convolution vortices in high-density regions are still identified accurately. The threshold value $\Delta_{\rm th}$ now controls the sensitivity of the algorithm to vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail. Figure \ref{fig:filtervortexlattice} demonstrates the vortex field with and without multiplying by the density before the high-frequency filter. The ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
+An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density (as a fraction of its maximal value) at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
 \begin{figure}[!ht]
-  \centering
+\begin{center}
+\begin{minipage}{0.8\linewidth}%
    \begin{tikzpicture}
       \begin{axis}[
-        xlabel={$x/l_r$},
+        xlabel={},
         ylabel={$y/l_r$},
-        width=0.44\linewidth,
-        height=0.44\linewidth,
+        width=0.5\linewidth,
+        height=0.5\linewidth,
         xmin=-25,
         xmax=25,
         ymin=-25,
@@ -312,30 +313,63 @@ An alternate method presents itself when implementing Algorithm \ref{algo_calcvo
       ]
       \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlattice-vortexfield.png};
     \end{axis}
-  \end{tikzpicture}
+  \end{tikzpicture}%
   \begin{tikzpicture}
       \begin{axis}[
-        xlabel={$x/l_r$},
+        xlabel={},
         ylabel={},
-        width=0.44\linewidth,
-        height=0.44\linewidth,
+        width=0.5\linewidth,
+        height=0.5\linewidth,
         xmin=-25,
         xmax=25,
         ymin=-25,
         ymax=25,
-        colorbar style={title={Phase},text width=0.5em,major tick length = 0.07cm},
+        colorbar style={title={Vortex Field},text width=0.5em,major tick length = 0.07cm},
         major tick length = 0.07cm,
-        point meta min = -6,
-        point meta max = 6,
+        point meta min = -5.1,
+        point meta max = 5.1,
         colorbar,colormap/jet
       ]
       \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlattice-vortexfield-corrected.png};
     \end{axis}
-  \end{tikzpicture}
-  \caption{A trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. (a) The smoothed vortex field using Algorithm \ref{algo_calcvortexfield}, (b) the smoothed vortex field using Algorithm \ref{algo_calcvortexfielddens}. The ghost vortices seen in (a) are removed in (b).\label{fig:filtervortexlattice}}
+  \end{tikzpicture}\\\vspace{1cm}%
+  \begin{tikzpicture}
+      \begin{axis}[
+        xlabel={$x/l_r$},
+        ylabel={$y/l_r$},
+        width=0.5\linewidth,
+        height=0.5\linewidth,
+        xmin=-25,
+        xmax=25,
+        ymin=-25,
+        ymax=25,
+        major tick length = 0.07cm
+      ]
+      \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlatticedens-withGvortex.png};
+    \end{axis}
+  \end{tikzpicture}%
+  \begin{tikzpicture}
+      \begin{axis}[
+        xlabel={$x/l_r$},
+        ylabel={},
+        width=0.5\linewidth,
+        height=0.5\linewidth,
+        xmin=-25,
+        xmax=25,
+        ymin=-25,
+        ymax=25,
+        major tick length = 0.07cm
+      ]
+      \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlatticedens-withvortex.png};
+    \end{axis}
+  \end{tikzpicture}%
+\end{minipage}%
+\end{center}
+  \caption{Identifying vortices within a trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. (a) The smoothed vortex field using Algorithm \ref{algo_calcvortexfield}, (b) the smoothed vortex field using Algorithm \ref{algo_calcvortexfielddens}, (c) the system density with vortices identified using Algorithm \ref{algo_calcvortexfield}, and (d) the system density with vortices identified using Algorithm \ref{algo_calcvortexfielddens}. The ghost vortices seen in (a,c) are removed in (b,d).\label{fig:filtervortexlattice}}
  \end{figure}
 
-\section{\label{section:vortexclustering} Quantifying vortex clustering}
+\section{\label{section:vortexclustering} Quantifying vortex clustering in 2D}
+With the ability to detect vortex polarity and location, we can begin to better understand vortex distribution and statistics. 
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
 	
 
@@ -366,8 +400,8 @@ The choice of $k_c$ is facilitated by the the bimodal distribution of occupation
   \caption{(Left) Unfiltered wavefunction density, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
   \end{figure}
   	
-\section{\label{section:linelength} Evaluation of vortex line-length}
-For a given wavefunction, $\Psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \Psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.04\langle |\hat{\Psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\Psi}|^2 \rangle - |\hat{\Psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
+\section{\label{section:linelength} Evaluation of vortex line-length in 3D}
+For a given 3D wavefunction, $\Psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \Psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.04\langle |\hat{\Psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\Psi}|^2 \rangle - |\hat{\Psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
 
 The total line length is then deduced by dividing $V_t$ by the cross-sectional area of a vortex core, $A_t$ (in effect, the average cross-sectional area of the isosurface tubes). The measured values of $V_t$ and $A_t$ will depend on the chosen isosurface level but, providing the vortex tubes are well-separated, their ratio (and hence the evaluated line length) will remain constant.  For closely-positioned vortex tubes, the isosurface level can affect whether the tubes appear as two separate tubes, or start to merge, and so will lead to deviations in this ratio.  We have tested the effect of an alternative isosurface value.  For twice the original isosurface value, the difference in the calculated line length is negligible for systems with low vortex density.  For cases with the highest density of vortices, the difference remains less than $10\%$.
 

@@ -67,7 +67,7 @@
 %\makeindex
 
 \begin{document}
-
+  \pagenumbering{roman}
   \phdtitle{A Numerical Study of Vortices and Turbulence in Quantum Fluids} % Title.
            {George William Stagg}       % Author.
            {fig/shield}                 % Graphic for the title page.
@@ -75,11 +75,7 @@
 
   \thispagestyle{empty}
   \cleardoublepage
-
-  %\input{dedication}                    % Optional dedication.
-
   \input{acknowledge}                   % Acknowledgements.
-
   \newpage
   \thispagestyle{empty}
   \noindent The work featured in this thesis was carried out in the period of $2012$--$2016$. Some of the results over that time can also be found in the following publications:
@@ -95,9 +91,9 @@
   \end{itemize}
   \newpage
   \input{abstract}                      % Abstract.
-
-  \pagenumbering{roman}                 % Change the page numbering style for
-                                        % Table of Contents and Lists.
+  \clearpage
+  \thispagestyle{empty}
+  \cleardoublepage
   \microtypesetup{protrusion=false}
   \tableofcontents
 
