@@ -369,16 +369,121 @@ An alternative method to avoid identifying ghost vortices presents itself when i
  \end{figure}
 
 \section{\label{section:vortexclustering} Quantifying vortex clustering in 2D}
-With the ability to detect vortex polarity and location, we can begin to better understand vortex distribution and statistics. 
+With the ability to detect vortex polarity and locations in 2D, we can begin to better understand vortex distribution and statistics in simulations. In this section we describe the various methods of quantifying vortex distribution, both simple and complex.
+  \subsection{\label{section:vortexcounting} Vortex counting}
+  The simplest method of ascertaining vortex statistics is to simply count the number of vortices, $N_v$, in the entire system. A further obvious decomposition of this quantity is to count the number of positive and negative vortices separately, designated $N_+$ and $N_-$ respectively. With this information we can define an interesting property of a system's vortex distribution,
+  \begin{equation}
+    P_v = \frac{N_+ - N_-}{N_v},
+  \end{equation}
+  where $P_v$ is known as the polarity of the system. This quantity takes values in the range $[-1,1]$; when there are only positively (negatively) charged vortices in the system $P_v=1$ ($P_v=-1$), and when there are equal quantities of positive and negatively charged vortices $P_v=0$.
+  \subsection{\label{section:ripleysk} Ripley's $K$ and $L$ functions }
+  While counting vortices as in Section \ref{section:vortexcounting} is a great way to gain statistics of the distribution of vortices in terms of vortex charge, the quantities tell us nothing about how vortices are located in space. The problem of spatial descriptive statistics is an old one and measures of spatial dispersion or homogeneity have in the past been applied to several datasets consisting of point locations, very similar to the results of our vortex detection algorithms. Some of these applications include spacial distribution of trees \cite{duncan_1993,peterson_1995,stoyan_2000}, plants \cite{stamp_1990}, bird nests \cite{gaines_2000} and the spread of disease \cite{diggle_1991}.
+
+
+  One such measure of homogeneity is Ripley's $K$ Function \cite{dixon_2002}, defined theoretically in the following way,
+  \begin{equation}\label{eq:ripleysktheory}
+    K(s) = \lambda^{-1}E[\text{\# of points within distance $s$ of a randomly chosen point}],
+  \end{equation}
+  where $\lambda$ is the density (number per unit area) of points. $K(s)$ can be analytically evaluated when it is known that points are distributed according to a homogeneous Poisson process, i.e. randomly placed in space. In this case each point is independent from all the other points and the resulting equation for $K(s)$ is known as complete spacial randomness (CSR),
+  \begin{equation}\label{eq:ripleyskcsr}
+    K(s) = \pi s^2.
+  \end{equation}
+  The simplest use of Ripley's $K$ function is to approximate $K(s)$ from an observed set of points and test the result of CSR. Should the result be inconsistent with CSR, $K(s)$ can also tell us at what length scales the points deviate from spacial homogeneity.
+
+  For most of our simulations, $K(s)$ can be easily estimated by using observed vortex locations.
+  \begin{equation}\label{eq:ripleysk}
+    \hat{K}(s) = \frac{A}{N_v^2}\sum\limits_{i}\sum\limits_{j \ne i} I\left (d_{ij}<s\right ),
+  \end{equation}
+  where $d_{ij}$ is the distance between the $i$th and $j$th vortex, $A$ is the area of the region of interest, $N_v$ is the number of vortices, and I is the indicator function (1 if its argument is true, 0 otherwise). In homogeneous simulations $A$ could be as simple as the numerical box area, while with a trapped condensate calculating $A$ could involve measuring the bulk part of the condensate or calculating an area using the TF radius.
+
+  Equation \ref{eq:ripleysk} ignores so called {\it edge effects}. These effects arise when the search radius $s$ becomes large enough that the lack of points outside the region of interest begins to bias the estimator $\hat{K}(s)$. Ripley provides an edge-corrected estimator \ref{ripley_1976} which takes the form,
+  \begin{equation}\label{eq:ripleyskedge}
+    \hat{K}(s) = \frac{A}{N_v^2}\sum\limits_{i}\sum\limits_{j \ne i} w({\bf l}_i,{\bf l}_j)^{-1}I\left (d_{ij}<s\right ),
+  \end{equation}
+  where the weight function, $w({\bf l}_i,{\bf l}_j)$, provides edge correction. If the circle centred on  the point ${\bf l}_i$ and passing through the point ${\bf l}_j$ completely lies within the region of interest, then $w({\bf l}_i,{\bf l}_j)=1$, otherwise $w({\bf l}_i,{\bf l}_j)$ is equal to the proportion of the circumference of the circle that is inside the region of interest. The edge-corrected estimator provided by Equation \ref{eq:ripleyskedge} should be used when we are interested in large spacial scale homogeneity, i.e. when $s$ is large.
+
+  Visualising $\hat{K}(s)$ can be made easier by considering Ripley's $L$ function, with estimator,
+  \begin{equation}\label{eq:ripleysl}
+    \hat{L}(s) = \sqrt{\frac{\hat{K}(s)}{\pi}}.
+  \end{equation}
+  $L(s)$ has the useful property that the variance is approximately constant under CSR \cite{ripley_1979}, which can be used as a secondary check, and that $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allows us to immediately identify in what way, as well as at what scale, spacial homogeneity is broken in the dataset.
+\begin{figure}[!ht]
+  \begin{minipage}{0.5\linewidth}%
+  \begin{tikzpicture}[domain=-5:5]
+    \begin{axis}[xlabel={$x$}, ylabel={$y$},
+        xmin=-5,
+        xmax=5,
+        ymin=-5,
+        ymax=5,
+        major tick length = 0.07cm,
+        width=\linewidth,
+        height=\linewidth,
+        scatter/classes={ 0={mark=*,blue}},
+        mark size = 0.7
+        ]
+    \addplot[scatter, only marks, scatter src=\thisrow{class},
+          error bars/.cd, y dir=both, x dir=both, y explicit, x explicit]
+          table[x=x,y=y] {numerics/figures/ripleypoints.dat};
+    \end{axis}
+  \end{tikzpicture}%
+  \end{minipage}%
+  \begin{minipage}{0.5\linewidth}%
+  \begin{tikzpicture}
+    \begin{axis}[y tick label style={
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=0,
+            /tikz/.cd
+        },
+        width=\linewidth,
+        height=0.53\linewidth,
+        xlabel={s},
+        ylabel=$\hat{K}(s)$,
+        xmin=0,
+        xmax=4,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+        plot "numerics/figures/ripleyKpoints.dat" using 1:2 with lines;
+      };
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,dashed,thick]{
+        plot "numerics/figures/ripleyKpoints.dat" using 1:(3.141592*$1*$1) with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}\\%
+  \begin{tikzpicture}
+    \begin{axis}[y tick label style={
+            /pgf/number format/.cd,
+                fixed,
+                fixed zerofill,
+                precision=0,
+            /tikz/.cd
+        },
+        width=\linewidth,
+        height=0.53\linewidth,
+        xlabel={s},
+        ylabel=$\hat{L}(s)-s$,
+        xmin=0,
+        xmax=4,
+        major tick length = 0.07cm
+      ]
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,thick]{
+        plot "numerics/figures/ripleyKpoints.dat" using 1:(sqrt($2/3.1415926)-$1) with lines;
+      };
+      \addplot gnuplot [raw gnuplot,mark=none,color=black,dashed,thick]{
+        plot "numerics/figures/ripleyKpoints.dat" using 1:(0*$1*$1) with lines;
+      };
+    \end{axis}
+  \end{tikzpicture}%
+  \end{minipage}%
+  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spacial randomness. Here Equation \ref{eq:ripleyskedge} was used to estimate $K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
+ \end{figure}
+ 
+  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region on the scale of the cluster size, and a negative region on the scale of the box size, detecting (from the point data alone) exactly the dispersion pattern used to generate the points.
+
+  
 	\subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm (RCA) }
-	
-
-
-	\subsection{\label{section:ripleysk} Ripley's K function }
-		\begin{equation}\label{eq:ripleysk}
-		K(x) = \frac{A}{n^2}\sum\limits_{i \ne j} I\left (d_{ij}<x\right ),
-		\end{equation}
-		where $d_{ij}$ is the distance between the $i$th and $j$th points, $A$ is the area of the region containing every point, $n$ is the number of points, $x$ is the search radius, and I is the indicator function (1 if its argument is true, 0 otherwise). Should the points be distributed homogeneously in space, then $K(s)\approx\pi s^2$.
 \section{\label{section:vortextracking} Tracking vortex trajectories}
 
 \section{\label{section:vortexremoval} Removing vortices with phase unwrapping}

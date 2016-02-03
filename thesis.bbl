@@ -1,4 +1,4 @@
-\begin{thebibliography}{159}
+\begin{thebibliography}{167}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -317,6 +317,53 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{Schoepe}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{74}},
   \bibinfo{pages}{566} (\bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{Duncan}(1993)}]{duncan_1993}
+\bibinfo{author}{\bibfnamefont{R.~P.} \bibnamefont{Duncan}},
+  \bibinfo{journal}{Journal of Ecology} \textbf{\bibinfo{volume}{81}},
+  \bibinfo{pages}{403} (\bibinfo{year}{1993}).
+
+\bibitem[{\citenamefont{Peterson and Squiers}(1995)}]{peterson_1995}
+\bibinfo{author}{\bibfnamefont{C.~J.} \bibnamefont{Peterson}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.~R.} \bibnamefont{Squiers}},
+  \bibinfo{journal}{Journal of Ecology} \textbf{\bibinfo{volume}{83}},
+  \bibinfo{pages}{847} (\bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{Stoyan and Penttinen}(2000)}]{stoyan_2000}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Stoyan}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Penttinen}},
+  \bibinfo{journal}{Statistical Science} \textbf{\bibinfo{volume}{15}},
+  \bibinfo{pages}{61} (\bibinfo{year}{2000}).
+
+\bibitem[{\citenamefont{Stamp and Lucas}(1990)}]{stamp_1990}
+\bibinfo{author}{\bibfnamefont{N.~E.} \bibnamefont{Stamp}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Lucas}},
+  \bibinfo{journal}{Journal of Ecology} \textbf{\bibinfo{volume}{78}},
+  \bibinfo{pages}{589} (\bibinfo{year}{1990}).
+
+\bibitem[{\citenamefont{Gaines et~al.}(2000)\citenamefont{Gaines, Bryan, and
+  Dixon}}]{gaines_2000}
+\bibinfo{author}{\bibfnamefont{K.~F.} \bibnamefont{Gaines}},
+  \bibinfo{author}{\bibfnamefont{A.~L.} \bibnamefont{Bryan}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.~M.} \bibnamefont{Dixon}},
+  \bibinfo{journal}{Waterbirds} \textbf{\bibinfo{volume}{23}},
+  \bibinfo{pages}{64} (\bibinfo{year}{2000}).
+
+\bibitem[{\citenamefont{Diggle and Chetwynd}(1991)}]{diggle_1991}
+\bibinfo{author}{\bibfnamefont{P.~J.} \bibnamefont{Diggle}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~G.} \bibnamefont{Chetwynd}},
+  \bibinfo{journal}{Biometrics} \textbf{\bibinfo{volume}{47}},
+  \bibinfo{pages}{1155} (\bibinfo{year}{1991}).
+
+\bibitem[{\citenamefont{Dixon}(2002)}]{dixon_2002}
+\bibinfo{author}{\bibfnamefont{P.~M.} \bibnamefont{Dixon}},
+  \bibinfo{journal}{Encyclopaedia of Environments}
+  \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{1796} (\bibinfo{year}{2002}).
+
+\bibitem[{\citenamefont{Ripley}(1979)}]{ripley_1979}
+\bibinfo{author}{\bibfnamefont{B.~D.} \bibnamefont{Ripley}},
+  \bibinfo{journal}{Journal of the Royal Statistical Society}
+  \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{368} (\bibinfo{year}{1979}).
 
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
