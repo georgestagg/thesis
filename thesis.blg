@@ -11,50 +11,50 @@ A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10177 items from 5000.
+Reallocated field_info (elt_size=4) to 10208 items from 5000.
 Database file #1: references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 167 entries,
+You've used 168 entries,
             3411 wiz_defined-function locations,
-            2046 strings with 34661 characters,
-and the built_in function-call counts, 124942 in all, are:
-= -- 6898
-> -- 4575
-< -- 626
-+ -- 3804
-- -- 1113
-* -- 17378
-:= -- 13124
-add.period$ -- 167
-call.type$ -- 167
-change.case$ -- 674
-chr.to.int$ -- 165
-cite$ -- 170
-duplicate$ -- 11157
-empty$ -- 10365
-format.name$ -- 2777
-if$ -- 23600
+            2050 strings with 34715 characters,
+and the built_in function-call counts, 125440 in all, are:
+= -- 6930
+> -- 4582
+< -- 628
++ -- 3808
+- -- 1115
+* -- 17436
+:= -- 13187
+add.period$ -- 168
+call.type$ -- 168
+change.case$ -- 678
+chr.to.int$ -- 166
+cite$ -- 171
+duplicate$ -- 11205
+empty$ -- 10413
+format.name$ -- 2782
+if$ -- 23697
 int.to.chr$ -- 9
-int.to.str$ -- 168
-missing$ -- 1723
-newline$ -- 516
-num.names$ -- 500
-pop$ -- 2942
+int.to.str$ -- 169
+missing$ -- 1731
+newline$ -- 519
+num.names$ -- 503
+pop$ -- 2956
 preamble$ -- 1
-purify$ -- 668
+purify$ -- 672
 quote$ -- 0
-skip$ -- 4707
+skip$ -- 4724
 stack$ -- 0
-substring$ -- 4121
-swap$ -- 9120
-text.length$ -- 561
+substring$ -- 4142
+swap$ -- 9153
+text.length$ -- 562
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 976
+type$ -- 982
 warning$ -- 1
-while$ -- 485
+while$ -- 488
 width$ -- 0
-write$ -- 1684
+write$ -- 1694
 (There was 1 warning)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{167}
+\begin{thebibliography}{168}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -360,6 +360,11 @@
   \bibinfo{journal}{Encyclopaedia of Environments}
   \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{1796} (\bibinfo{year}{2002}).
 
+\bibitem[{\citenamefont{Ripley}(1976)}]{ripley_1976}
+\bibinfo{author}{\bibfnamefont{B.~D.} \bibnamefont{Ripley}},
+  \bibinfo{journal}{Journal of Applied Probability}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{255} (\bibinfo{year}{1976}).
+
 \bibitem[{\citenamefont{Ripley}(1979)}]{ripley_1979}
 \bibinfo{author}{\bibfnamefont{B.~D.} \bibnamefont{Ripley}},
   \bibinfo{journal}{Journal of the Royal Statistical Society}
@@ -535,7 +540,7 @@
 \bibitem[{\citenamefont{Huepe and Brachet}(2000)}]{huepe00}
 \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Huepe}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{M.~E.} \bibnamefont{Brachet}},
-  \bibinfo{journal}{Physica (Amsterdam)} \textbf{\bibinfo{volume}{140}},
+  \bibinfo{journal}{Physica D (Amsterdam)} \textbf{\bibinfo{volume}{140}},
   \bibinfo{pages}{126} (\bibinfo{year}{2000}).
 
 \bibitem[{\citenamefont{Stie\ss{}berger and Zwerger}(2000)}]{zwerger00}

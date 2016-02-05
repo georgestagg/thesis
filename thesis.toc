@@ -46,7 +46,7 @@
 \contentsline {section}{\numberline {3.3} Quantifying vortex clustering in 2D}{31}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1} Vortex counting}{31}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2} Ripley's $K$ and $L$ functions }{31}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3} Recursive Cluster Algorithm (RCA) }{33}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3} Recursive Cluster Algorithm }{33}{subsection.3.3.3}
 \contentsline {section}{\numberline {3.4} Tracking vortex trajectories}{33}{section.3.4}
 \contentsline {section}{\numberline {3.5} Removing vortices with phase unwrapping}{33}{section.3.5}
 \contentsline {section}{\numberline {3.6} Quasi-Condensate Visualisation}{33}{section.3.6}
