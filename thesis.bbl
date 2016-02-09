@@ -1,4 +1,4 @@
-\begin{thebibliography}{168}
+\begin{thebibliography}{169}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -370,6 +370,26 @@
   \bibinfo{journal}{Journal of the Royal Statistical Society}
   \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{368} (\bibinfo{year}{1979}).
 
+\bibitem[{\citenamefont{Reeves et~al.}(2013)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves_billam_13}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{110}}, \bibinfo{pages}{104501}
+  (\bibinfo{year}{2013}).
+
+\bibitem[{\citenamefont{Reeves et~al.}(2014)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{053631}
+  (\bibinfo{year}{2014}).
+
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
   Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{302}
@@ -690,16 +710,6 @@
   \bibnamefont{Proukakis}}, \bibinfo{journal}{Phys. Rev. A}
   \textbf{\bibinfo{volume}{86}}, \bibinfo{pages}{013635}
   (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Reeves et~al.}(2013)\citenamefont{Reeves, Billam,
-  Anderson, and Bradley}}]{reeves_billam_13}
-\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{110}}, \bibinfo{pages}{104501}
-  (\bibinfo{year}{2013}).
 
 \bibitem[{\citenamefont{Baggaley
   et~al.}(2012{\natexlab{b}})\citenamefont{Baggaley, Barenghi, Shukurov, and

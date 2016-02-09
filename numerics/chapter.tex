@@ -27,7 +27,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 	\subsection{\label{section:numericalParams} Numerical stability and convergence}
 	We now investigate numerical parameters which affect the stability of simulated superfluid systems. Our direct aim is to find a suitable discretisaton of space and time so that while simulations are timely, our numerical quantities are converged (so that they are not sensitive to small changes in computational parameters) and that quantities conserved by the equations of motion are indeed conserved in the computed numerical solutions.
 
-	We begin by estimating $\Delta_x$, the required spacial grid spacing, by considering the width of the vortex core in a homogeneous system, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core (as in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$ when the background density is $\rho=1$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta_x = \xi/2$.
+	We begin by estimating $\Delta_x$, the required spatial grid spacing, by considering the width of the vortex core in a homogeneous system, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core (as in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$ when the background density is $\rho=1$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta_x = \xi/2$.
 
 	In the trapped case we can use the same idea. It is shown in Section \ref{section:healing} that $\xi = \hbar/\sqrt{mg}$ for $\rho=1$. We can then easily rearrange to find an expression for $\xi$ in the harmonic oscillator units of trapped condensates. We find that our approximate grid spacing to adequately resolve the vortex core is $\Delta_x = 0.5\xi = 0.5\omega \sqrt{\hbar/(\mu \omega)} l_r$. As an example, for a trapped condensate with interaction energy $\hat{g}=2000$, chemical potential $\hat{\mu}=25.27$ and trap frequency $\omega=8.75~{\rm Hz}$ we find that a value of $\Delta_x=0.1l_r$ should be adequate. 
 
@@ -191,7 +191,7 @@ In principle the result also allows us to calculate the exact charge of a vortex
   \caption{The phase for a homogeneous system with a vortex located at (0,0). Also shown is an example set of curves $C_k$ for vortex identification. All $\Delta\theta(C_{k\neq13})\approx0$, and $\Delta\theta(C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.}
  \end{figure}
 \subsection{\label{section:vortexloc} Visualising vortex location with a vortex field}
-The basic vortex identification method set out in Section \ref{section:vortexloc} is quick to implement and useful when there are few well separated vortices, but one can easily imagine a situation where the system fails. One such case would be two vortices both lying within a single $C_k$ curve; in the case of two similarly charged vortices only a single vortex would be detected or in the case of two oppositely charged vortices none at all!
+The basic vortex identification method set out in Section \ref{section:vortexloc} is quick to implement and useful when there are few well separated vortices, but one can easily imagine a situation where the system fails. One such case would be two vortices both lying within a single $C_k$ curve; in the case of two similarly charged vortices only a single vortex would be detected or in the case of two oppositely charged vortices potentially none at all!
 
 The solution is not always as simple as reducing the size of $C_k$, vortices can be densely packed and there are often too little grid points to make this reasonable. Instead, curves with a width around the diameter of a vortex core are again used, but for every grid point (taking into account boundary conditions) the curve $C_{[i,j]}$ is defined surrounding and centred on the grid point $[i,j]$. A vortex field can then be visualised by visualizing the 2D plot of $\Delta\theta(C_{[i,j]})$. Algorithm \ref{algo_calcvortexfield} describes the process in detail. As before, areas where $|\Delta\theta(C_{[i,j]})| > 0$ (to within numerical accuracy) signify the presence of a vortex. Figure \ref{fig:vortexfield} demonstrates a vortex field obtained from a homogeneous system with a negative vortex located at $(-\xi,0)$ and a positive vortex located at $(\xi,0)$. It can be easily seen where the two vortices are located in the wavefunction by direct observation of the 2D vortex field.
 \begin{figure}
@@ -226,7 +226,7 @@ For every vortex detected by this algorithm, the corresponding area in the vorte
 The algorithm described in this section leads to more accurate vortex counts when vortices are densely packed. As a bonus the accuracy of detected vortex location is improved; the final output is a combination of information from several curves $C_{[i,j]}$, and so in good conditions the result is often sub-pixel accurate (that is, the algorithm output is accurate even if the phase singularity corresponding to a vortex lies between grid points). 
 
 \subsection{\label{section:gaussianblur} Further improving accuracy with a Gaussian blur}
-When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spacial waves from the vortex field using low-pass filtering. A common low-pass filter is the Gaussian blur [CITE], applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to he vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
+When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spatial waves from the vortex field using low-pass filtering. A common low-pass filter is the Gaussian blur [CITE], applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to he vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
 \begin{figure}[!ht]
   \centering
    \begin{tikzpicture}
@@ -377,18 +377,18 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
   \end{equation}
   where $P_v$ is known as the polarity of the system. This quantity takes values in the range $[-1,1]$; when there are only positively (negatively) charged vortices in the system $P_v=1$ ($P_v=-1$), and when there are equal quantities of positive and negatively charged vortices $P_v=0$.
   \subsection{\label{section:ripleysk} Ripley's $K$ and $L$ functions }
-  While counting vortices as in Section \ref{section:vortexcounting} is a great way to gain statistics of the distribution of vortices in terms of vortex charge, the quantities tell us nothing about how vortices are located in space. The problem of spatial descriptive statistics is an old one and measures of spatial dispersion or homogeneity have in the past been applied to several datasets consisting of point locations, very similar to the results of our vortex detection algorithms. Some of these applications include spacial distribution of trees \cite{duncan_1993,peterson_1995,stoyan_2000}, plants \cite{stamp_1990}, bird nests \cite{gaines_2000} and the spread of disease \cite{diggle_1991}.
+  While counting vortices as in Section \ref{section:vortexcounting} is a great way to gain statistics of the distribution of vortices in terms of vortex charge, the quantities tell us nothing about how vortices are located in space. The problem of spatial descriptive statistics is an old one and measures of spatial dispersion or homogeneity have in the past been applied to several datasets consisting of point locations, very similar to the results of our vortex detection algorithms. Some of these applications include spatial distribution of trees \cite{duncan_1993,peterson_1995,stoyan_2000}, plants \cite{stamp_1990}, bird nests \cite{gaines_2000} and the spread of disease \cite{diggle_1991}.
 
 
   One such measure of homogeneity is Ripley's $K$ Function \cite{dixon_2002}, defined theoretically in the following way,
   \begin{equation}\label{eq:ripleysktheory}
     K(s) = \lambda^{-1}E[\text{\# of points within distance $s$ of a randomly chosen point}],
   \end{equation}
-  where $\lambda$ is the density (number per unit area) of points. $K(s)$ can be analytically evaluated when it is known that points are distributed according to a homogeneous Poisson process, i.e. randomly placed in space. In this case each point is independent from all the other points and the resulting equation for $K(s)$ is known as complete spacial randomness (CSR),
+  where $\lambda$ is the density (number per unit area) of points. $K(s)$ can be analytically evaluated when it is known that points are distributed according to a homogeneous Poisson process, i.e. randomly placed in space. In this case each point is independent from all the other points and the resulting equation for $K(s)$ is known as complete spatial randomness (CSR),
   \begin{equation}\label{eq:ripleyskcsr}
     K(s) = \pi s^2.
   \end{equation}
-  The simplest use of Ripley's $K$ function is to approximate $K(s)$ from an observed set of points and test the result of CSR. Should the result be inconsistent with CSR, $K(s)$ can also tell us at what length scales the points deviate from spacial homogeneity.
+  The simplest use of Ripley's $K$ function is to approximate $K(s)$ from an observed set of points and test the result of CSR. Should the result be inconsistent with CSR, $K(s)$ can also tell us at what length scales the points deviate from spatial homogeneity.
 
   For most of our simulations, $K(s)$ can be easily estimated by using observed vortex locations.
   \begin{equation}\label{eq:ripleysk}
@@ -398,15 +398,15 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
 
   Equation \ref{eq:ripleysk} ignores so called {\it edge effects}. These effects arise when the search radius $s$ becomes large enough that the lack of points outside the region of interest begins to bias the estimator $\hat{K}(s)$. Ripley provides an edge-corrected estimator \cite{ripley_1976} which takes the form,
   \begin{equation}\label{eq:ripleyskedge}
-    \hat{K}(s) = \frac{A}{N_v^2}\sum\limits_{i}\sum\limits_{j \ne i} w({\bf l}_i,{\bf l}_j)^{-1}I\left (d_{ij}<s\right ),
+    \hat{K}(s) = \frac{A}{N_v^2}\sum\limits_{i}\sum\limits_{j \ne i} w({\bf r}_i,{\bf r}_j)^{-1}I\left (d_{ij}<s\right ),
   \end{equation}
-  where the weight function, $w({\bf l}_i,{\bf l}_j)$, provides edge correction. If the circle centred on  the point ${\bf l}_i$ and passing through the point ${\bf l}_j$ completely lies within the region of interest, then $w({\bf l}_i,{\bf l}_j)=1$, otherwise $w({\bf l}_i,{\bf l}_j)$ is equal to the proportion of the circumference of the circle that is inside the region of interest. The edge-corrected estimator provided by Equation \ref{eq:ripleyskedge} should be used when we are interested in large spacial scale homogeneity, i.e. when $s$ is large, as it is on this scale edge-effects can dominate.
+  where the weight function, $w({\bf r}_i,{\bf r}_j)$, provides edge correction. If the circle centred on  the point ${\bf r}_i$ and passing through the point ${\bf r}_j$ completely lies within the region of interest, then $w({\bf r}_i,{\bf r}_j)=1$, otherwise $w({\bf r}_i,{\bf r}_j)$ is equal to the proportion of the circumference of the circle that is inside the region of interest. The edge-corrected estimator provided by Equation \ref{eq:ripleyskedge} should be used when we are interested in large spatial scale homogeneity, i.e. when $s$ is large, as it is on this scale edge-effects can dominate.
 
   Visualising $\hat{K}(s)$ can be made easier by considering Ripley's $L$ function, with estimator,
   \begin{equation}\label{eq:ripleysl}
     \hat{L}(s) = \sqrt{\frac{\hat{K}(s)}{\pi}}.
   \end{equation}
-  $L(s)$ has the useful properties that under CSR the variance is approximately constant \cite{ripley_1979}, which can be used as a secondary check, and $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allows us to immediately identify in what way, as well as at what scale, spacial homogeneity is broken in the dataset.
+  $L(s)$ has the useful properties that under CSR the variance is approximately constant \cite{ripley_1979}, which can be used as a secondary check, and $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allows us to immediately identify in what way, as well as at what scale, spatial homogeneity is broken in the dataset.
 \begin{figure}[!ht]
   \begin{minipage}{0.5\linewidth}%
   \begin{tikzpicture}[domain=-5:5]
@@ -477,14 +477,49 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
     \end{axis}
   \end{tikzpicture}%
   \end{minipage}%
-  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spacial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
+  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spatial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
  \end{figure}
 
-  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spacial pattern used to generate the points.
+  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spatial pattern used to generate the points.
 
   
 \subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm }
-The limit of Ripley's curves is quickly reached when we want to describe statistics of both the charge and spacial features of a collection of vortices. The $K$ and $L$ curves operate solely on location and are not easily modified to capture the charge of a vortex. For detailed analysis of {\it charged} vortex clusters another algorithm must be used. The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeves et. al. [CITE,CITE2] and further described in Algorithm \ref{algo_rca}.
+The limit of Ripley's curves is quickly reached when we want to describe statistics of both the charge and spatial features of a collection of vortices. The $K$ and $L$ curves operate solely on location and are not easily modified to capture the charge of a vortex an so for detailed analysis of charged vortex clusters another algorithm must be used.
+
+The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeves {\it et. al.} \cite{reeves_billam_13, reeves}. The algorithm allows for detailed spatial-temporal statistics regarding like-signed vortex clustering. The algorithm works in a recusive manner, by removing dipole-like structures first, and then decomposing the remaining vortices into postive or negatively signed clusters. To perform the algorithm the following two rules are applied to a collection of vortices:
+\begin{itemize}
+\item {\it Opposite sign vortices that are mutual nearest-neighbors are removed from the algorithm's consideration.}
+\item {\it Same-sign vortices that are closer to each other than either is to an opposite-sign vortex are placed in the same cluster.}
+\end{itemize}
+The rules are applied repeatedly in order until no more vortices can be added to the dipole or cluster groups. Any remaining vortices are labelled as ``free vortices''. An implementation of the algorithm, compatibile with the ouput of the vortex detection algorithms in Section \ref{section:vortexidentifying}, is described in detail in Algorithm \ref{algo_rca}.A sample RCA decomposition of 200 randomly placed points with random polarity is demonstrated in Figure \ref{fig:rca}. It can be seen that the algorithm correctly picks out the chance clusters of like-signed points. 
+
+\begin{figure}[!ht]
+\centering
+  \begin{tikzpicture}[domain=-5:5]
+    \begin{axis}[xlabel={$x$}, ylabel={$y$},
+        axis on top,
+        xmin=-5.05,
+        xmax=5.05,
+        ymin=-5.05,
+        ymax=5.05,
+        major tick length = 0.07cm,
+        width=0.5\linewidth,
+        height=0.5\linewidth
+        ]
+    \addplot graphics [xmin=-5,xmax=5,ymin=-5,ymax=4.95] {numerics/figures/rca.pdf};
+    \end{axis}
+  \end{tikzpicture}%
+\caption{A sample RCA decompotion into clusters, free vortices and dipoles (green). Positive (negative) clusters and vortices are shown as blue triangles (red circles).}\label{fig:rca}
+\end{figure}
+
+With the decomposed points, one can begin to obtain the statistical properties of the clusters. The physical location of the cluster can be estimated using its `center of mass',
+\begin{equation}\label{eq:rcacom}
+  \mathbf{R}_C = \frac{1}{N_C}\sum\limits_{i\in C}{\rm r}_i,
+\end{equation}
+where $C$ is the a set of vortices in a particular cluster, $N_C$ is the number of vortices in the set $C$, and ${\rm r}_i$ is the vortex location. Additionally, the size of a particular cluster can be quantified using an expression for the approimate cluster radius,
+\begin{equation}\label{eq:rcacom}
+  R_C = \frac{1}{N_C}\sum\limits_{i\in C} \left |{\rm r}_i - {\bf R}_C \right |.
+\end{equation}
 
 
 \section{\label{section:vortextracking} Tracking vortex trajectories}
