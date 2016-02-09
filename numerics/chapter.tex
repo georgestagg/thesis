@@ -406,7 +406,7 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
   \begin{equation}\label{eq:ripleysl}
     \hat{L}(s) = \sqrt{\frac{\hat{K}(s)}{\pi}}.
   \end{equation}
-  $L(s)$ has the useful property that the variance is approximately constant under CSR \cite{ripley_1979}, which can be used as a secondary check, and that $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allows us to immediately identify in what way, as well as at what scale, spacial homogeneity is broken in the dataset.
+  $L(s)$ has the useful properties that under CSR the variance is approximately constant \cite{ripley_1979}, which can be used as a secondary check, and $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allows us to immediately identify in what way, as well as at what scale, spacial homogeneity is broken in the dataset.
 \begin{figure}[!ht]
   \begin{minipage}{0.5\linewidth}%
   \begin{tikzpicture}[domain=-5:5]
@@ -477,14 +477,14 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
     \end{axis}
   \end{tikzpicture}%
   \end{minipage}%
-  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spacial randomness. Here Equation \ref{eq:ripleyskedge} was used to estimate $K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
+  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spacial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
  \end{figure}
 
-  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region on the scale of the cluster size, and a negative region on the scale of the box size, detecting (from the point data alone) exactly the dispersion pattern used to generate the points.
+  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spacial pattern used to generate the points.
 
   
 \subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm }
-The power of Ripley's curves is quickly reached when we want to describe statistics of both the charge and spacial features of a collection of charged vortices. The $K$ and $L$ curves operate solely on location and would not be able to capture the charge of a vortex easily.  For detailed analysis of {\it charged} vortex clusters another algorithm must be used. The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeves et. al. [CITE,CITE2] and further described in Algorithm \ref{algo_rca}.
+The limit of Ripley's curves is quickly reached when we want to describe statistics of both the charge and spacial features of a collection of vortices. The $K$ and $L$ curves operate solely on location and are not easily modified to capture the charge of a vortex. For detailed analysis of {\it charged} vortex clusters another algorithm must be used. The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeves et. al. [CITE,CITE2] and further described in Algorithm \ref{algo_rca}.
 
 
 \section{\label{section:vortextracking} Tracking vortex trajectories}

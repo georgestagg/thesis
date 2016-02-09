@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {2.8} The Dissipative Gross-Pitaevskii Equation}{9}{section.2.8}
 \contentsline {section}{\numberline {2.9} Finite temperature homogeneous condensate using the classical field method}{11}{section.2.9}
 \contentsline {section}{\numberline {2.10} Transforming the reference frame}{12}{section.2.10}
-\contentsline {subsection}{\numberline {2.10.1} Moving frame along $x$}{12}{subsection.2.10.1}
+\contentsline {subsection}{\numberline {2.10.1} Linearly translating frame}{12}{subsection.2.10.1}
 \contentsline {subsection}{\numberline {2.10.2} Rotating frame}{12}{subsection.2.10.2}
 \contentsline {section}{\numberline {2.11} Hydrodynamic interpretation}{13}{section.2.11}
 \contentsline {section}{\numberline {2.12} Quantised Circulation}{13}{section.2.12}
