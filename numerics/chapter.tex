@@ -522,32 +522,50 @@ where $C$ is the a set of vortices in a particular cluster, $N_C$ is the number 
 \end{equation}
 
 \section{\label{section:vortextracking} Building vortex trajectories}
-Vortices can be tracked in space over several time points, leads to the building of vortex trajectories. The process of building trajectories from the location of many particles over time is known as particle linking. Note that although vortex location is known, their identity is unknown and so it is not obvious what vortex at one point in time corresponds to another at a different time.
+It is of interest to be able to track vortices over time, eventually leading to the building of vortex trajectories. The process of building trajectories from the location of many different points over time is known as particle linking. Note that in particle linking although the location of particles is known, their identity is unknown (that is, the particles are not labelled) and so it is not immediately obvious what particle at one point in time corresponds to another at different times and so methods for particle linking are therefore often built through minimisation algorithms. 
 
-The first step is to perform frame-to-frame particle linking. Trajectories are built by moving from one time point to the next and linking the vortex pairs that are closest together (taking into account euclidean distance and vortex charge), as these are most likely to be the same vortex. This is performed efficiently using the Hungarian algorithm [CITE], an algorithm that links many pairs of particles at two different time points by minimising the sum of all the pair distances.
+The first step in the particle linking method described here is to perform frame-to-frame particle linking. Links are built by moving from one time point to the next and pairing vortices that are close together (taking into account both euclidean distance and vortex charge), as these are likely to be the same vortex. This step is performed efficiently using the Hungarian algorithm \cite{hung}, an algorithm that is able to pairs together many particles at two different time points while minimising the sum of all the pair distances.
 
-As the simulation develops, the number of vortices will change and so trajectories will end early. A threshold value in the Hungarian algorithm controls when a track ends. If the distance between a pair of vortices exceeds the threshold, it is assumed they cannot possibly be the same vortex, they are not linked, and instead the trajectory is ended.
+As the simulation develops, the number of vortices will change and so trajectories will necessary end early or begin at later times. A threshold value, $\Delta_v$ used in conjunction with the Hungarian algorithm controls if a track ends. If the euclidean distance between a pair of vortices exceeds $\Delta_v$, it is assumed they cannot possibly be the same vortex, and they are not linked. The algorithm continues in fashion, linking pairs of vortices frame-to-frame until the end of the simulation is reached.
 
-Sometimes, due to numerical error or simulation dynamics, a vortex will not be detected at one or more time points before reappearing. The particle linking algorithm must take this into account as the second step. The second step is to iterate once more through the data and investigate the ends of the trajectories. If a track beginning is found close (once again taking into account euclidean distance and vortex charge) to a track end within a certain number of time points, a link is made to join the two trajectories. Once again a threshold value for distance between points and distance in time is employed. Should the tracks be too far apart in space or time, it is assumed they are {\it not} the same vortex and remain unlinked.
+Sometimes, due to numerical error or simulation dynamics, a vortex will not be detected for one or more time points before reappearing. The particle linking algorithm must take this into account, aiming to assign each vortex only a single trajectory. The second step in the method is to iterate once more through the data and investigate the ends of the trajectories. If a trajectory beginning is found close (once again taking into account euclidean distance and vortex charge) to the end of a previous trajectory within a certain number of time points, a link is made joining the two trajectories. Once again a threshold value compared to the distance between points in space and time. Should the trajectory ends be too far apart, it is assumed they are not the same vortex and remain unlinked. Figure \label{fig:vortextracks} demonstrates the building of vortex trajectories in a trapped condensate.
+
 \begin{figure}[!ht]
 \begin{center}
    \begin{tikzpicture}
       \begin{axis}[ylabel near ticks,xlabel near ticks,
         xlabel={$x/\xi$},
         ylabel={$y/\xi$},
-        width=0.8\linewidth,
-        height=0.4\linewidth,
+        width=0.45\linewidth,
+        height=0.45\linewidth,
         axis on top,
-        xmin=-40,
-        xmax=40,
+        xmin=-20,
+        xmax=20,
         ymin=-20,
         ymax=20,
         major tick length = 0.07cm
       ]
+      \addplot graphics [xmin=-20,xmax=20,ymin=-20,ymax=20] {numerics/figures/traj.pdf};
+    \end{axis}
+  \end{tikzpicture}%
+  \begin{tikzpicture}
+      \begin{axis}[ylabel near ticks,xlabel near ticks,
+        xlabel={$x/\xi$},
+        ylabel={$y/\xi$},
+        width=0.45\linewidth,
+        height=0.45\linewidth,
+        axis on top,
+        xmin=-20,
+        xmax=20,
+        ymin=-20,
+        ymax=20,
+        major tick length = 0.07cm
+      ]
+      \addplot graphics [xmin=-20,xmax=20,ymin=-20,ymax=20] {numerics/figures/traj1.pdf};
     \end{axis}
   \end{tikzpicture}%
   \end{center}
-  \caption{FIGURE TO BE ADDED}\label{fig:vortextracks}
+  \caption{An example of building vortex trajectories for a trapped condensate with interaction energy $\hat{g}=2000$ and $\hat{\mu}=25.27$ filled with vortices of both polarity. (Left) 353 vortex trajectories clearly showing the movement of vortices within the boundary of the condensate. (Right) The single longest vortex trajectory, over the time period $648.5~\omega^{-1}$.}\label{fig:vortextracks}
 \end{figure}
 
 

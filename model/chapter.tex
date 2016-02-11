@@ -2,32 +2,33 @@
 \section{\label{section:meanfield} Mean-field description}
 We aim to accurately model the dynamics of a closed system containing a dilute, weakly interacting Bose gas of $N$ atoms, at extremely low temperatures. One could model the entire system by constructing a N-body quantum wavefunction, which would follow the Schr\"odinger equation, but the complexity of this method makes it extremely unwieldy to model the large number of particles used in Bose-Einstein condensate (BEC) experiments.
 
-We instead model the system with a mean-field theory, in which there are essentially two main approximations. Firstly, justified by the dilute property of the gas, any binary interaction between particles is assumed to be a contact delta function,
+We instead model the system with a mean-field theory, described in Section \ref{section:gpe}, in which there are essentially two main approximations. First, justified by the dilute property of the gas, any binary interaction between particles is assumed to be a contact delta function of the form,
 \begin{equation*}
 V(\mathbf{r}-\mathbf{r}') = g \delta(\mathbf{r}-\mathbf{r}').
 \end{equation*}
-Interactions involving a higher number of particles are ignored. Secondly, we assume all particles in the condensate are macroscopically described by a single wavefunction, $\psi(\mathbf{r},t)$. As the particles all share the same phase and quantum state, $\psi(\mathbf{r},t)$ is a classical field. This second approximation also assumes that there are no particles contributing to thermal or quantum fluctuations beyond the classical field, and so is only strictly justified when the temperature, $T$, is exactly $0\mathrm{K}$.
+Interactions involving a higher number of particles are ignored. Secondly, we assume all particles in the condensate are macroscopically described by a single wavefunction, $\psi(\mathbf{r},t)$. As the particles all share the same phase and quantum state, $\psi(\mathbf{r},t)$ is a classical field. This second approximation also assumes that there are no particles contributing to thermal or quantum fluctuations beyond the classical field, and so is only justified in general when the temperature, $T$, is exactly $0\mathrm{K}$. Nevertheless, we go futher and describe some finite-temperature bassed effects in Sections \ref{section:dgpe}
+and \ref{section:cfield}.
 
 \section{\label{section:gpe} The Gross-Pitaevskii Equation}
-The result of this methodology is the Gross-Pitaevskii equation (GPE), 
+The result of the mean-field methodology is the Gross-Pitaevskii equation (GPE), 
 \begin{equation}
 \mathrm{i} \hbar \frac{\partial\Psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t),
 \label{eq:gpe}
 \end{equation}
 where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. In the homogeneous case $V_{\mathrm{trap}}({\bf r},t)=0$, otherwise a harmonic trapping potential is used. In the case of a 3D spherically symmetric condensate the harmonic trapping potential is defined as $V_{\mathrm{trap}}({\bf r},t)=m\omega{\bf r}/2$.
 
-The first two terms on the right hand side of the GPE are the energy of a single particle in a potential field $V$ and he third term describes the non-linear effects between the multiple particles in the system, with a strength usually parametrised by $g=4\pi N \hbar^2a/m$,
+The first two terms on the right hand side of the GPE are the energy of a single particle in a potential field, and the third term describes the non-linear effects between the multiple particles in the system, with a strength usually parametrised by $g=4\pi N \hbar^2a/m$,
 where $m$ is the mass of a single particle, $a$ is the s-wave scattering length and and $N$ is the number of particles.
-Taking into account the fact that the GPE is only valid at $T=0$, it turns out the equation is surprisingly successful at quantitatively modelling ultra-cold gasses, even up to a temperature of $T=\frac{T_c}{2}$, where $T_c$ is the critical temperature for Bose-Einstein condensation. The GPE is also successful at qualitatively modelling BEC based effects in higher temperature superfluids, such as liquid helium II[CITE SOME WORK] and even in neutron starts [CITE SOME WORK].
+Taking into account the fact that the GPE is only strictly valid at $T=0$, it turns out the equation is surprisingly successful at quantitatively modelling ultra-cold gasses, even up to a temperature of $T=\frac{T_c}{2}$, where $T_c$ is the critical temperature for Bose-Einstein condensation. The GPE is also successful at qualitatively modelling BEC based effects in higher temperature superfluids, such as liquid helium II[CITE] and even in neutron starts [CITE].
 
 A detailed explanation of the mean-field formulation of the model and the full derivation of the GPE is shown in Section \ref{appsection:gpeqft}.
 
 \section{\label{section:gpedimless} Dimensionless Gross-Pitaevskii Equations}
-	Bose-Einstein condensates can be formed with almost any size or scale. An ultra-cold BECs topology or atom interaction strength can be fairly easily changed with magnetic/optical potentials and Feshbach resonances. Superfluid helium can have vortex core sizes of $\sim$1 or $\sim$100 angstroms, depending on the isotope of helium used. The cores of neutron stars are even theorised to be superfluid. For this reason, it is desirable to rescale the length scales used in the GPE so that any of the calculations performed can be easily reformulated into any length scale desired. We make this process easier by doing all calculations with dimensionless parameters. Another advantage of the dimensionless formulation is that the size of the values involved are all normalised on the scale of unity, reducing the chance of errors in numerical computation due to the floating point representation used by modern computer architectures.
+	Bose-Einstein condensates can be formed with almost any size or scale. A trapped atomic cold gas BEC in particular can be experimentally realised with a wide range of topologies and atom interaction strength. A wide range of parameters can be fairly easily manipualated with magnetic or optical potentials and Feshbach resonances [CITE]. Superfluid helium can also form in various sizes, with vortex core radii of $\sim$1 or $\sim$100 angstroms, depending on the isotope of helium used. The cores of neutron stars are even theorised to be superfluid on a large scale. For this reason it is desirable to rescale the quantities used in the GPE so that any of the calculations performed can be easily reformulated into any length scale desired. We make this process easier by doing all calculations with dimensionless parameters. Another advantage of the dimensionless formulation is that the size of the values involved are all normalised on the scale of unity, reducing the chance of errors in numerical computation due to the floating point representation used by modern computer architectures.
 	We present two methods of making the GPE dimensionless, the specific scaling used is chosen by the needs of the simulation and is usually apparent (such as by whether a trapping potential is involved).
 
 	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
-		Consider a homogeneous system with repulsive iterations and with $V_{\mathrm{trap}} = 0$. In this case, $\Psi$ does not depend on ${\bf r}$, nor on $t$, and so we can set the time and spacial derivatives in the GPE to zero,
+		Consider a homogeneous system with repulsive iterations and where $V_{\mathrm{trap}} = 0$. In this case, $\Psi$ does not depend on ${\bf r}$ or $t$, and so we can set the time and spatial derivatives in the GPE to zero,
 		\begin{equation}
 		0 = \left(g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t).
 		\end{equation}
@@ -41,14 +42,13 @@ A detailed explanation of the mean-field formulation of the model and the full d
 		\begin{equation}\label{eq:dimgpehomg}
 		\mathrm{i}\frac{\partial\psi({\tilde{\bf r}},\tilde{t})}{\partial {\tilde{t}}} = \left( -\frac{1}{2}\tilde{\nabla}^2 + |\psi({\tilde{\bf r}},\tilde{t})|^2 + \tilde{V}_{\mathrm{obj}}({\tilde{\bf r}},\tilde{t}) - 1 \right) \psi({\tilde{\bf r}},\tilde{t}).
 		\end{equation}
-		In the interests of neatness the dimensionless signifier tilde will be omitted in future discussions of the homogeneous GPE. Quantities used with the wavefunction symbol $\psi$ are to be regarded as inherently dimensionless through the natural units.
 
 	\subsection{\label{section:gpedimlesstrap} Trapped GPE}
-		When considering a harmonically trapped condensate it is convenient to work with a wavefunction with density normalised to unity, that is,
+		When considering a harmonically trapped condensate it is convenient to work with a wavefunction with density normalised to unity,
 		\begin{equation}\label{eq:intwf}
-			\int |\phi|^2 \mathrm{d}^3{\bf r} = 1,
+			\int |\phi|^2 \mathrm{d}^3{\bf r} = 1.
 		\end{equation}
-		We non-dimensionalise Equation \ref{eq:gpe} in terms of the length scales using the harmonic oscillator length, $l = \sqrt{\hbar/(m\omega)}$. This leads to the dimensionless rescalings,
+		We make Equation \ref{eq:gpe} dimensionless using the harmonic oscillator length, $l = \sqrt{\hbar/(m\omega)}$, where $\omega$ is a trap frequency. This leads to the dimensionless rescalings,
 		\begin{equation}
 			\hat{t} = t\omega, ~~~ \hat{r} = \frac{r}{l}, ~~~ \hat{\varepsilon}= \frac{\varepsilon}{\hbar\omega},
 		\end{equation}
@@ -69,10 +69,9 @@ A detailed explanation of the mean-field formulation of the model and the full d
 	\begin{equation}
 		 \hat{g} = \frac{gN}{\hbar \omega l^3}.
 	\end{equation}
-	In the interests of neatness the dimensionless signifier hat will be omitted in future discussions of the harmonically trapped GPE. Quantities used with the wavefunction symbol $\phi$ are to be regarded as inherently dimensionless through the harmonic oscillator units.
 
 \section{\label{section:quasi2dgpe} Quasi-Two-Dimensional Gross-Pitaevskii Equation}
-	For some condensate geometries it is useful to be able simulate the condensate via a lower dimensional GPE. An example of this is the highly oblate, sometimes called `pancake', condensate, in which the trapping potential is defined as
+	For some condensate geometries it is useful to be able simulate the condensate via a lower dimensional GPE. An example of this is a highly oblate condensate, in which the trapping potential is defined as
 	\begin{equation}
 		V_{\mathrm{trap}}(x,y,z)=m\omega_\perp^2\frac{x^2+y^2}{2} + m\omega_z^2\frac{z^2}{2},
 	\end{equation}
@@ -86,15 +85,15 @@ A detailed explanation of the mean-field formulation of the model and the full d
 	\end{equation}
   where $l_z=\sqrt{\hbar/m \omega_z}$. This is known as the quasi-2D regime and when this form of $\Psi$ is substituted into Equation \ref{eq:gpe} it forms a 2D-GPE that can be used to model the system with reduced dimensionality, with the modified interaction term $g_{\mathrm{2D}} = g/( \sqrt{2\pi}l_z)$ \cite{parkerthesis}. The 3D chemical potential $\mu$ is also modified as an extra term is absorbed, $\mu_\mathrm{2d} = \mu - \hbar\omega_z/2$, and all other three-dimensional properties become two-dimensional.
 
-	A similar process can be performed with `sausage' or `cigar' quasi-1D geometries so that a 1D-GPE can be used with a modified $g_{\mathrm{1D}}$ interaction term, and $\mu_{\mathrm{1D}}$ chemical potential. As before all 3D properties become 1D, however as we will not consider experimentally accurate 1D cases in detail, the specifics are omitted from this thesis.
+	A similar process can be performed with `cigar' quasi-1D geometries so that a 1D-GPE can be used with a modified $g_{\mathrm{1D}}$ interaction term, and $\mu_{\mathrm{1D}}$ chemical potential. As before all 3D properties become 1D, however as we will not consider quasi-1D regimes in detail, the specifics are omitted from this thesis.
 
 
 \section{\label{section:gpestationary} Time-independent Gross-Pitaevskii Equation}
- We find a stationary version of the GPE by first fixing the potential, $V({\bf r},t)$, so that it is constant in time, and then writing the wavefunction in the form $\Psi({\bf r},t) = \Psi_0({\bf r}) \exp (\mathrm{i}\mu t / \hbar)$, where $\Psi_0({\bf r})$ is the ground state. Equation \ref{eq:gpe} then becomes
+ We find a stationary version of the GPE by first fixing the potential, $V({\bf r})$, so that it is constant in time, and then writing the wavefunction in the form $\Psi({\bf r},t) = \Psi_0({\bf r}) \exp (\mathrm{i}\mu t / \hbar)$, where $\Psi_0({\bf r})$ is the ground state. Equation \ref{eq:gpe} then becomes
 	\begin{equation}\label{eq:stationgpe}
 		\mu\Psi_0({\bf r}) = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi_0({\bf r})|^2  \right) \Psi_0({\bf r}),
 	\end{equation}
-	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard Schr\"odinger equation. This version of the GPE can be used to find stationary solutions of the system for a certain $\mu$ which characterises the energy of the ground state.
+	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard Schr\"odinger equation. This version of the GPE can be used to find stationary solutions of the system for a certain value of $\mu$, characterising the energy of the ground state.
 	
 \section{\label{section:imagTime} The imaginary time propagation method}
 
@@ -162,25 +161,25 @@ The chemical potential can be found in terms of energies of the system by direct
 
 \section{\label{section:dgpe} The Dissipative Gross-Pitaevskii Equation}
 
-	Equation \ref{eq:gpe} does not include any form of damping or dissipation. In fact, up to numerical accuracy, the GPE conserves both the particle number (N = $\int |\Psi|^2 \mathrm{d}\mathbf{r}$) and the total energy of the system. This is in direct opposition of physical reality, where due to the effects of finite-temperature all excitations in experiments are damped over time. The Dissipative Gross-Pitaevskii Equation (DGPE) attempts to introduce a simple-minded way of modelling finite-temperature damping by introducing a phenomenological dissipation into the GPE. The procedure was introduced by Pitaevskii \cite{lifshitzpitaevskii81} and refined by others \cite{choi_morgan_98,tsubota_kasamatsu_02,madarassy_barenghi_08}. The derivation of the DGPE presented here closely follows the arguments shown previously by these authors.
+	Equation \ref{eq:gpe} does not include any form of damping or dissipation. In fact, up to numerical accuracy, the GPE conserves both the particle number and the total energy of the system. This is in direct opposition of physical reality, where due to the effects of finite-temperature all excitations in experiments are damped over time. The Dissipative Gross-Pitaevskii Equation (DGPE) attempts to introduce a simple-minded way of modelling finite-temperature damping by introducing a phenomenological dissipation into the GPE. The procedure was introduced by Pitaevskii \cite{lifshitzpitaevskii81} and refined by others \cite{choi_morgan_98,tsubota_kasamatsu_02,madarassy_barenghi_08}. The derivation of the DGPE presented here closely follows the arguments shown previously by these authors.
 
 	We would like to extend the GPE such that a damping process is introduced, so that dynamics approach an equilibrium state over time. Such an equilibrium state can be described by Equation \ref{eq:stationgpe}. The equation of motion for our wavefunction $\Psi$ is then written 
 		\begin{equation}\label{eq:disseqmotion}
 		i\hbar \frac{\partial \Psi}{\partial t} = \hat{L}\Psi,
 		\end{equation}
-	where $\hat{L}$ is a non-Hermitian operator (so that we have a relaxation process). At equilibrium the anti-Hermitian part of $\hat{L}$ must be zero, we force this by writing the anti-Hermitian part of $\hat{L}$ in the form,
+	where $\hat{L}$ is a non-Hermitian operator (so that we have a relaxation process). At equilibrium the anti-Hermitian part of $\hat{L}\Psi$ must be zero, we force this by writing the anti-Hermitian part of $\hat{L}\Psi$ in the form,
 	\begin{equation*}\label{eq:dissantiherm}
-		i\Gamma\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+		i\Gamma\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2 - \mu \right) \Psi({\bf r}),
 	\end{equation*}
 	which value will forced to zero at equilibrium by satisfaction of Equation \ref{eq:stationgpe}. Here gamma is a dimensionless value parametrising the relaxation time.
 
-	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write the entire operator $\hat{L}$ as
+	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write $\hat{L}\Psi$ as
 	\begin{equation*}\label{eq:dissantiherm2}
-		\hat{L} = (1+i\Gamma)\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+		\hat{L}\Psi = (1+i\Gamma)\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2 - \mu \right) \Psi({\bf r}),
 	\end{equation*}
 	and the equation of motion becomes the DGPE,
 	\begin{equation}\label{eq:dissgpeA}
-		i\hbar \frac{\partial \Psi}{\partial t} = (1+i\Gamma)\left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\Psi|^2({\bf r}) - \mu \right) \Psi({\bf r}),
+		i\hbar \frac{\partial \Psi({\bf r})}{\partial t} = (1+i\Gamma)\left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2- \mu \right) \Psi({\bf r}),
 	\end{equation}
 	where $\Gamma<0$ for damping.
 
@@ -188,7 +187,7 @@ The chemical potential can be found in terms of energies of the system by direct
 	\begin{equation*}\label{eq:dissantiherm2}
 		\Psi = e^{-i \mu t}(\Psi_0 + \delta).
 	\end{equation*}
-	The value of $\delta$ will approach zero as the wavefunction is evolved via \ref{eq:dissgpeA}. The parameter $\Gamma$ will control the speed of the relaxation and the exact value will depend on various things. For instance the thermal component of the fluid will largely affect the damping time-scales and so $\Gamma$ will depend largely on temperature. A microscopic justification for the model is found in \cite{penckwitt_2002, gardiner97}; by studying the growth of a condensate in the presence of a rotating thermal cloud an expression for $\Gamma$ was found.
+	The value of $\delta$ will approach zero as the wavefunction is evolved via \ref{eq:dissgpeA}. The parameter $\Gamma$ will control the speed of the relaxation and the exact value will change depending on the system. For instance the thermal component of the fluid will largely affect the damping time-scales and so $\Gamma$ will depend largely on temperature. A microscopic justification for the model is found in \cite{penckwitt_2002, gardiner97}; by studying the growth of a condensate in the presence of a rotating thermal cloud an expression for $\Gamma$ was found.
 		\begin{equation}\label{eq:dissgamma}
 		\Gamma = \frac{4mg_ca^2kT}{\pi\hbar^2},
 		\end{equation}
@@ -288,7 +287,7 @@ The chemical potential can be found in terms of energies of the system by direct
   \addplot graphics [xmin=-12.8,xmax=12.8,ymin=-12.8,ymax=12.8] {numerics/figures/excitationdecay1000.png};
   \end{axis}
 \end{tikzpicture}
-	\caption{Simulated DGPE for a condensate with interaction energy $\hat{g}=2000$, $\hat{\mu}=25.27$ and $\gamma=0.01$. The total energy (upper) is shown during both imaginary and real time. At $\hat{t} = -\mathrm{i}$ an excitation is added to the condensate. The ground state is then re-approached through dissipation. Density and phase are shown (below) at time $\hat{t}=0$ (left), $\hat{t}=1$ (center), and $\hat{t}=40$ (right).}\label{fig_excitationdecay}
+	\caption{Simulated DGPE for a condensate with interaction energy $\hat{g}=2000$, $\hat{\mu}=25.27$ and $\gamma=0.01$. The total energy (upper) is shown during both imaginary and real time. At $\hat{t} = -\mathrm{i}$ an excitation is added to the condensate ($\phi\rightarrow \phi + \sin(\hat{x})\cos(\hat{y})$). The ground state is then re-approached through dissipation. Density and phase are shown (below) at time $\hat{t}=0$ (left), $\hat{t}=1$ (center), and $\hat{t}=40$ (right).}\label{fig_excitationdecay}
 \end{figure}
 
 	For an arbitrary wavefunction $\Psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy $\int |\Psi|^2 \mathrm{d}\mathbf{r} = N$ and be different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the particle number is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Section [SOMETHING]. The evolution shown in Figure \ref{fig_excitationdecay} demonstrates the method of carefully choosing a value of $\mu$.
@@ -301,7 +300,7 @@ The chemical potential can be found in terms of energies of the system by direct
 
 \section{\label{section:cfield} Finite temperature homogeneous condensate using the classical field method}
 
-A common method of simulating finite temperature systems is the so called classical field methods, also referred to as c-field methods. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the classical-field method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\Psi$ is reinterpreted.
+A common method of simulating finite temperature systems is the classical field methods, also referred to as c-field methods. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the classical-field method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\Psi$ is reinterpreted.
 
 An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and non-equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
 
@@ -364,15 +363,15 @@ p_x & p_y & p_z \end{array} \right|.
 	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:quantisedcirculation} Quantised Circulation}
-An interesting consequence of considering the hydrodynamic interpretation is that the fluid circulation must be quantised. We can see this by first writing the integrated change of phase along any closed curve $C$,
+An interesting feature of the GPE is that the fluid circulation must be quantised. We can see this by first writing the integrated change of phase along any closed curve $C$,
 \begin{equation}
 	\Delta\theta = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l},
 \end{equation}
 where $\mathrm{d}\mathbf{l}$ is the line element. The wavefunction at the start and the end of the integration must be single valued, and so
 \begin{equation}
-	\exp (i\theta_0) = \exp (i\theta_0)\exp (i\Delta\theta).
+	\exp (i\theta_0) = \exp (i\theta_0)\exp (i\Delta\theta),
 \end{equation}
-This is only satisfied when $\Delta\theta = 2\pi q$, with $q\in\mathbb{Z}$. Our local velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ and so we can write
+for some $\theta_0$. This is only satisfied when $\Delta\theta = 2\pi q$, with $q\in\mathbb{Z}$. Our local velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ and so we can write
 \begin{equation}
 	\Gamma = \oint_C \! \mathbf{v} \, \mathrm{d}\mathbf{l} = \frac{2 \pi \hbar}{m}q.
 \end{equation}
@@ -407,9 +406,9 @@ Notice that we are now taking the line integral of the velocity; we have a formu
       };
     \end{axis}
   \end{tikzpicture}
-  \caption{A fluid governed by the GPE healing at a hard wall at $x=0$.}\label{fig_wallsoln}
+  \caption{A fluid governed by the homogenous GPE healing at a hard wall at $x=0$.}\label{fig_wallsoln}
  \end{figure}
-	This solution is shown in Figure \ref{fig_wallsoln}. We gain insight through this analytical solution for how a fluid governed by the GPE `heals' near areas of low density. There is clearly a natural minimum distance, related to $\xi$, over which the wavefunction can change from a density of zero to it's homogeneous value. This behaviour appears many times in the context of superfluids, from solitons and solitary waves in low dimensional systems, to the fluid behaviour near impurities and vortex lines and tubes in fully 3D systems. 
+	This solution is shown in Figure \ref{fig_wallsoln}. We gain insight through this analytical solution for how a fluid governed by the GPE `heals' near areas of low density. There is clearly a natural minimum distance, related to $\xi$, over which the wavefunction can change from a density of zero to its homogeneous value. This behaviour appears many times in the context of superfluids, from solitons and solitary waves in low dimensional systems, to the fluid behaviour near impurities and vortex lines and tubes in fully 3D systems. 
 
 	\subsection{\label{section:soliton} Soliton solutions}
 	Due to its nonlinear nature, solutions of the GPE can support localised non-dispersive waves packets known as solitons. Two flavours of solitons can form in 1D, so called bright or dark solitons. Bright solitons form when interactions between particles are attractive ($g<0$), however, as no physically relevant simulations in this thesis occur in this range we do not focus on these solitons. Dark solitons form when the interaction term is repulsive ($g>0$) and physically consist of a dip in the density along with a phase slip of up to a value of $\pi$. When the density dips to zero, the phase slip is equal to $\pi$ and the velocity of the soliton is $v=0$. Dark solitons with $v>0$ have a density dip that does not quite reach zero and a smaller valued, smooth phase slip. The 1D dark soliton solutions, derived in the 70s \cite{zakharov72,zakharov73}, take the general form,
@@ -503,7 +502,7 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 \subsection{\label{section:vortices} Quantised Vortices}
 We have already seen in section \ref{section:quantisedcirculation} that rotation in a fluid governed by the GPE must be quantised. Both two and three-dimensional solutions of the GPE can support vortices and vortex lines as a carrier of quantised vorticity. They are defined by a singularity in the phase, along with a corresponding dip in density. This density dip masks the phase singularity, which is related to the fluid velocity, and so avoids solutions with infinite energy density.
 
-The true 2D quantised vortex solution (or equivalently the solution in the plane perpendicular to a straight line 3D vortex) is circularly symmetric and can be written in polar coordinates as
+The 2D quantised vortex core solution (or equivalently the solution in the plane perpendicular to a straight line 3D vortex) is circularly symmetric and can be written in polar coordinates as
 	\begin{equation}\label{eq_vortexsol}
 	\psi(\mathbf{r},\varphi) = f_v(r)\exp(n\mathrm{i}\varphi),
 	\end{equation}
@@ -585,9 +584,7 @@ As seen in Section \ref{section:hydrodynamic}, the velocity of the fluid can be 
 	\begin{equation}\label{eq_vortexvel}
 	\mathbf{v}(\mathbf{r},\varphi) = \frac{n \hbar}{mr} {\bm{\hat{\varphi}}}.
 	\end{equation}
-Note the $v \propto 1/r$ dependence in the speed of the fluid around the vortex, demonstrated in Figure \ref{fig_vortex} (b). Once vortices are around $20\xi$ apart the velocity field is almost nil and the interaction between them is small.
-
-
+Note the $v \propto 1/r$ dependence in the speed of the fluid around the vortex, demonstrated in Figure \ref{fig_vortex} (b). 
 
 \section{\label{section:inital} Initial Conditions}
 	When numerically solving the GPE, an initial condition must be chosen. Correct choice of initial condition is important for accurate simulation of dynamics. If a unstable initial condition is chosen far from the ground state solution, noise and other excitations such as solitary waves and vortices may be generated that interfere with any measurements and studies undertaken at later times in the numerical computation. A selection of appropriate non-violent initial conditions are outlined in this section. 
@@ -665,7 +662,7 @@ Note the $v \propto 1/r$ dependence in the speed of the fluid around the vortex,
 	\begin{equation}
 	R_{\mathrm{TF}} = \sqrt{\frac{2\mu}{m\omega_r^2}}.
 	\end{equation}
-Similarly to the size of a vortex core, the healing length, or box size in homogeneous systems, the TF radius is an useful indicator of length scales when working with analytical descriptions of condensate behaviours in a trapped system.
+The TF radius is an useful indicator of length scales when working with analytical descriptions of condensate behaviours in a trapped system.
 
 \subsection{\label{section:cfieldinitcond} Classical field initial condition}
 	In numerical simulation of a finite temperature Bose gas, we begin with a highly non-equilibrium state, so that the low-lying coherent modes of the system are all highly occupied. 
@@ -675,12 +672,12 @@ Similarly to the size of a vortex core, the healing length, or box size in homog
 	\end{equation}
 	where the complex Fourier amplitudes $a_{\bf k}$ are related to the occupation numbers $n_{\bf k}$ through $\braket{a_{\bf k}^{\,}a_{\bf k'}^*} = n_{\bf k}\delta_{\bf kk'}$. The phase of the complex amplitudes $a_{\bf k}$ are distributed uniformly on $[0,2\pi]$ while $|a_{\bf k}|$ is distributed randomly with fixed mean equal to unity; it has been found that different distributions of $|a_{\bf k}|$ make no qualitative difference to the turbulent evolution \cite{PhysRevA.66.013603}. A momentum cutoff, $k<k_{\rm max}$, is introduced to limit the momentum of the low lying modes, and in harmonic systems can be imposed as an energy-cutoff during evolution using the Projected-GPE \cite{PhysRevLett.87.160402}. However, in the case of homogeneous finite temperature simulations the momentum cut-off arises naturally as a consequence of the discretisation of the system; for a 3D finite temperature simulation in a periodic box with uniform grid spacing $\Delta$, $k_{\rm max}=\sqrt{3} \pi / \Delta$.
 
-	The numerical initial condition $\psi({\bf r},t_0)$ is then determined by renormalisation of $\psi_{\rm neq}({\bf r})$ to fix the number density, $N/V = \int_{\bf k}\!n_{\bf k}(t)~{\rm d}{\bf k}$ and kinetic energy density, $E_{\rm kin}/V = \int_{\bf k}\!k^2n_{\bf k}(t)~{\rm d}{\bf k}$. The choice of $N/V$ and $E_{\rm kin}/V$ uniquely determines the condensate fraction, $\rho_0/\rho$, and therefore the temperature for the equilibrium state of the Bose gas.
+	The numerical initial condition $\psi({\bf r},t_0)$ is then determined by renormalisation of $\psi_{\rm neq}({\bf r})$ to fix the number density, $N/V$ and kinetic energy density, $E_{\rm kin}/V$. The choice of $N/V$ and $E_{\rm kin}/V$ uniquely determines the condensate fraction, and therefore the temperature for the equilibrium state of the Bose gas.
 
 \section{\label{section:potentials}Creating obstacles with repulsive potentials}
-In ultra-cold atomic gas experiments, perturbations to the gas can be achieved using laser beams. A red-detuned laser beam can create areas of attraction, and conversely, blue-detuned laser beams can create areas of repulsion. Should the blue-detuned laser beam be bright enough, a localised `hole' in the condensate can be formed where there are no atoms. Similarly, in superfluid helium experiments, there are examples where the fluid can feel the presence of a wall, wire, spheres or ion bubbles. These effects are replicated in the GPE model through the use of two and three-dimensional Gaussian or hard wall potentials.
+In ultra-cold atomic gas experiments, perturbations to the gas can be achieved using laser beams. A red-detuned laser beam can create areas of attraction, and conversely, blue-detuned laser beams can create areas of repulsion. Should the blue-detuned laser beam be bright enough, a localised `hole' in the condensate can be formed where there are no atoms. Similarly, in superfluid helium experiments, there are examples where the fluid can feel the presence of a wall, wire, spheres or ion bubbles[CITE]. These effects are replicated in the GPE model through the use of two and three-dimensional Gaussian or hard wall potentials.
 \subsection{\label{section:3dobjpotential} Three-dimensional elliptical Gaussian}
-In our 3D simulations, we solve the 3D GPE of Equation (1), where the localized obstacle is modelled via a repulsive ellipsoidal Gaussian potential,
+In our 3D simulations the localized obstacle is modelled via a repulsive Gaussian potential,
 \begin{equation}
 V_{\mathrm{obj}}({\bf r})=V_0 \exp \left( -\frac{\varepsilon^2(x-x_0)^2}{d^2} -\frac{(y-y_0)^2}{d^2}-\frac{(z-z_0)^2}{d^2}\right),
 \label{eq:potential3D}
@@ -688,11 +685,11 @@ V_{\mathrm{obj}}({\bf r})=V_0 \exp \left( -\frac{\varepsilon^2(x-x_0)^2}{d^2} -\
 where  $V_0$ is its amplitude, $d$ its width in the $y$ and $z$ directions, and $(x_0,y_0,z_0)$ its coordinates. $\varepsilon$ parametrises the ellipticity of the obstacle, a value of $\varepsilon=1$ corresponds to a spherical obstacle, a higher value of $\varepsilon$ `squashes' the obstacle along $x$, forming a pancake shape.
 
 \subsection{\label{section:3dcylinderpotential} Two and Three-dimensional cylindrical Gaussian}
-A relatively simple experimentally realisable potential in quasi-2D and 3D quantum gas experiments is a hole (also referred to as a barrier or obstacle), generated by a blue-detuned laser beam. We model this potential as a Gaussian,
+In addition to spheres, we model cyllindrical potentials as a Gaussian,
 \begin{equation}
 V_{\mathrm{obj}}({\bf r})=V_0 \exp \left( -\frac{\varepsilon^2(x-x_0)^2}{d^2} -\frac{(y-y_0)^2}{d^2}\right),
 \end{equation}
-where  $V_0$ is its amplitude, $d$ its width in the $y$ directions, and $(x_0,y_0,z_0)$ its coordinates. $\varepsilon$ parametrises the ellipticity of the Gaussian (experimentally feasible with laser beam focusing or masking), so that a value of $\varepsilon=1$ corresponds to a circular shaped hole. In 3D the Gaussian hole is extended across the entire $z$ dimension forming a cylindrical shaped barrier.
+where  $V_0$ is its amplitude, $d$ its width in the $y$ direction, and $(x_0,y_0,z_0)$ its coordinates. $\varepsilon$ parametrises the ellipticity of the Gaussian (experimentally feasible with laser beam focusing or masking), so that a value of $\varepsilon=1$ corresponds to a circular shaped hole. In 3D the Gaussian hole is extended across the entire $z$ dimension forming a cylindrical shaped barrier.
 \subsection{\label{section:3dafmpotential} Three-dimensional `realistic' rough-surface}
 \begin{figure}
 	\centering
@@ -730,10 +727,9 @@ forks \cite{Blaauwgeers2007,Bradley2012} or spheres \cite{Schoepe1995}.
 Although macroscopically polished, the surface of these objects is
 rough on the length scale of the superfluid vortex core, which is of
 the order of $10^{-10}~\rm m$ in $^4$He
-and $10^{-8}~\rm m$ in $^3$He.  As an example, Fig.~\ref{fig_afmprofile}(a) is an atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence  \cite{Bradley2011}.  Note the appearance of an elongated scratch, typical of such wires.  No direct flow visualization is available on these microscopic length scales and, as such, 
-superflow in the presence of walls remains poorly understood.
+and $10^{-8}~\rm m$ in $^3$He.  As an example, Fig.~\ref{fig_afmprofile}(a) is an atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence  \cite{Bradley2011}.  Note the appearance of an elongated scratch, typical of such wires.
 
-We can simulate the microscopic detail in GPE models through the use of a potential derived from the sample AFM height-map data. We define the external potential to be,
+We can simulate the microscopic detail through the use of a potential derived from sample AFM height-map data. We define the external potential to be,
 \begin{equation}
 V_{\mathrm{obj}}({\bf r}) =
 \begin{cases}

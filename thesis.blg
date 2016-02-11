@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: ./bose_gasses/chapter.aux
@@ -10,51 +10,51 @@ A level-1 auxiliary file: ./nonequib/chapter.aux
 A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10239 items from 5000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated field_info (elt_size=8) to 10270 items from 5000.
 Database file #1: references.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 169 entries,
+You've used 170 entries,
             3411 wiz_defined-function locations,
-            2053 strings with 34813 characters,
-and the built_in function-call counts, 126269 in all, are:
-= -- 6975
-> -- 4615
-< -- 632
-+ -- 3836
-- -- 1123
-* -- 17553
-:= -- 13272
-add.period$ -- 169
-call.type$ -- 169
-change.case$ -- 682
-chr.to.int$ -- 167
-cite$ -- 172
-duplicate$ -- 11277
-empty$ -- 10480
-format.name$ -- 2801
-if$ -- 23854
+            2058 strings with 34876 characters,
+and the built_in function-call counts, 126811 in all, are:
+= -- 7011
+> -- 4622
+< -- 634
++ -- 3840
+- -- 1125
+* -- 17615
+:= -- 13339
+add.period$ -- 170
+call.type$ -- 170
+change.case$ -- 686
+chr.to.int$ -- 168
+cite$ -- 173
+duplicate$ -- 11325
+empty$ -- 10532
+format.name$ -- 2806
+if$ -- 23963
 int.to.chr$ -- 9
-int.to.str$ -- 170
-missing$ -- 1742
-newline$ -- 522
-num.names$ -- 506
-pop$ -- 2975
+int.to.str$ -- 171
+missing$ -- 1750
+newline$ -- 525
+num.names$ -- 509
+pop$ -- 2988
 preamble$ -- 1
-purify$ -- 676
+purify$ -- 680
 quote$ -- 0
-skip$ -- 4756
+skip$ -- 4778
 stack$ -- 0
-substring$ -- 4172
-swap$ -- 9213
-text.length$ -- 566
+substring$ -- 4205
+swap$ -- 9246
+text.length$ -- 567
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 988
+type$ -- 994
 warning$ -- 1
-while$ -- 491
+while$ -- 494
 width$ -- 0
-write$ -- 1704
+write$ -- 1714
 (There was 1 warning)
