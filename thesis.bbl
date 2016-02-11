@@ -390,6 +390,16 @@
   \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{053631}
   (\bibinfo{year}{2014}).
 
+\bibitem[{\citenamefont{Reeves et~al.}(2015)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves_2015}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{114}}, \bibinfo{pages}{155302}
+  (\bibinfo{year}{2015}).
+
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
   Phys. Soc. Jpn.} \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{302}
@@ -982,16 +992,6 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Dalibard}},
   \bibinfo{journal}{Nature Physics} \textbf{\bibinfo{volume}{8}},
   \bibinfo{pages}{645 } (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Reeves et~al.}(2015)\citenamefont{Reeves, Billam,
-  Anderson, and Bradley}}]{reeves_2015}
-\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{114}}, \bibinfo{pages}{155302}
-  (\bibinfo{year}{2015}).
 
 \bibitem[{\citenamefont{Stagg et~al.}(2015)\citenamefont{Stagg, Allen,
   Barenghi, and Parker}}]{stagg_2015b}

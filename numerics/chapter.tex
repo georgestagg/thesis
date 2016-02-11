@@ -295,7 +295,7 @@ A common problem when detecting vortices is the prevalence of invalid or uninter
 
 A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>1$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
 
-An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density (as a fraction of its maximal value) at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
+An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
 \begin{figure}[!ht]
 \begin{center}
 \begin{minipage}{0.8\linewidth}%
@@ -509,43 +509,122 @@ The rules are applied repeatedly in order until no more vortices can be added to
     \addplot graphics [xmin=-5,xmax=5,ymin=-5,ymax=4.95] {numerics/figures/rca.pdf};
     \end{axis}
   \end{tikzpicture}%
-\caption{A sample RCA decompotion into clusters, free vortices and dipoles (green). Positive (negative) clusters and vortices are shown as blue triangles (red circles).}\label{fig:rca}
+\caption{A sample RCA decomposition into clusters, free vortices and dipoles. Positive (negative) clusters and vortices are shown as blue triangles (red circles), dipoles are shown as green circles.}\label{fig:rca}
 \end{figure}
 
 With the decomposed points, one can begin to obtain the statistical properties of the clusters. The physical location of the cluster can be estimated using its `center of mass',
 \begin{equation}\label{eq:rcacom}
   \mathbf{R}_C = \frac{1}{N_C}\sum\limits_{i\in C}{\rm r}_i,
 \end{equation}
-where $C$ is the a set of vortices in a particular cluster, $N_C$ is the number of vortices in the set $C$, and ${\rm r}_i$ is the vortex location. Additionally, the size of a particular cluster can be quantified using an expression for the approimate cluster radius,
+where $C$ is the a set of vortices in a particular cluster, $N_C$ is the number of vortices in the set $C$, and ${\rm r}_i$ is the vortex location. Additionally, the size of a particular cluster can be quantified using an expression for the approximate cluster radius,
 \begin{equation}\label{eq:rcacom}
   R_C = \frac{1}{N_C}\sum\limits_{i\in C} \left |{\rm r}_i - {\bf R}_C \right |.
 \end{equation}
 
+\section{\label{section:vortextracking} Building vortex trajectories}
+Vortices can be tracked in space over several time points, leads to the building of vortex trajectories. The process of building trajectories from the location of many particles over time is known as particle linking. Note that although vortex location is known, their identity is unknown and so it is not obvious what vortex at one point in time corresponds to another at a different time.
 
-\section{\label{section:vortextracking} Tracking vortex trajectories}
+The first step is to perform frame-to-frame particle linking. Trajectories are built by moving from one time point to the next and linking the vortex pairs that are closest together (taking into account euclidean distance and vortex charge), as these are most likely to be the same vortex. This is performed efficiently using the Hungarian algorithm [CITE], an algorithm that links many pairs of particles at two different time points by minimising the sum of all the pair distances.
 
-\section{\label{section:vortexremoval} Removing vortices with phase unwrapping}
+As the simulation develops, the number of vortices will change and so trajectories will end early. A threshold value in the Hungarian algorithm controls when a track ends. If the distance between a pair of vortices exceeds the threshold, it is assumed they cannot possibly be the same vortex, they are not linked, and instead the trajectory is ended.
+
+Sometimes, due to numerical error or simulation dynamics, a vortex will not be detected at one or more time points before reappearing. The particle linking algorithm must take this into account as the second step. The second step is to iterate once more through the data and investigate the ends of the trajectories. If a track beginning is found close (once again taking into account euclidean distance and vortex charge) to a track end within a certain number of time points, a link is made to join the two trajectories. Once again a threshold value for distance between points and distance in time is employed. Should the tracks be too far apart in space or time, it is assumed they are {\it not} the same vortex and remain unlinked.
+\begin{figure}[!ht]
+\begin{center}
+   \begin{tikzpicture}
+      \begin{axis}[ylabel near ticks,xlabel near ticks,
+        xlabel={$x/\xi$},
+        ylabel={$y/\xi$},
+        width=0.8\linewidth,
+        height=0.4\linewidth,
+        axis on top,
+        xmin=-40,
+        xmax=40,
+        ymin=-20,
+        ymax=20,
+        major tick length = 0.07cm
+      ]
+    \end{axis}
+  \end{tikzpicture}%
+  \end{center}
+  \caption{FIGURE TO BE ADDED}\label{fig:vortextracks}
+\end{figure}
+
+
+\section{\label{section:vortexremoval} Removing vortices with phase unwinding}
+A problem with long-time numerical simulations is the effects of the finite boundaries on the results. In some cases large boxes or periodic boundary conditions are an adequate way of avoiding spurious results introduced by boundary effects. However, in some cases, vortices ``wrapping around'' the numerical domain is unfavourable as they may interfere with regions of interest and increasing the numerical grid can be infeasible due to computational constraints.
+
+A particularly problematic example of this kind of situation is encountered often in the latter sections of this thesis: a simulation working in the moving frame with vortices nucleated via a potential obstacle. This system is of particular note because vortices that have fallen downstream wrap around the domain and re-approach the potential obstacle, modifying the nucleation dynamics and the drag force felt by the obstacle.
+
+The ideal solution would be to implement so called {\it absorbing} boundary conditions. These boundaries allow waves and vortices to pass by, without any reflections, as if they had travelled through the boundary to infinity. An approximation for absorbing boundary conditions in a homogeneous GPE has been used to study flows patterns behind an obstacle \cite{reeves_2015}. Thin fringe areas are added near the outer edges of the numerical domain. A small dissipation $\gamma \approx 0.1$ is applied in this region, ramping up smoothly from $\gamma=0$ in the bulk to its maximal value in the fringe area. Inside the fringe region, waves and vortex pairs lose energy; the amplitude of waves decay and opposite-signed vortices move towards one-another so as to annihilate.
+\begin{figure}[!ht]
+\begin{center}
+   \begin{tikzpicture}
+      \begin{axis}[ylabel near ticks,xlabel near ticks,
+        xlabel={$x/\xi$},
+        ylabel={$y/\xi$},
+        width=0.4\linewidth,
+        height=0.4\linewidth,
+        axis on top,
+        xmin=-20,
+        xmax=20,
+        ymin=-20,
+        ymax=20,
+        major tick length = 0.07cm
+      ]
+      \addplot graphics [xmin=-20,xmax=20,ymin=-20,ymax=20] {numerics/figures/unwrapbefore.png};
+    \end{axis}
+  \end{tikzpicture}%
+  \begin{tikzpicture}
+      \begin{axis}[ylabel near ticks,xlabel near ticks,
+        xlabel={$x/\xi$},
+        ylabel={$y/\xi$},
+        width=0.4\linewidth,
+        height=0.4\linewidth,
+        axis on top,
+        xmin=-20,
+        xmax=20,
+        ymin=-20,
+        ymax=20,
+        colorbar style={title={Phase},text width=0.5em,major tick length = 0.07cm},
+        major tick length = 0.07cm,
+        point meta min = -3.141592,
+        point meta max = 3.141592,
+        colorbar,colormap name=hsvcl
+      ]
+      \addplot graphics [xmin=-20,xmax=20,ymin=-20,ymax=20] {numerics/figures/unwrapafter.png};
+    \end{axis}
+  \end{tikzpicture}%
+\end{center}
+  \caption{An example of the unwinding of a vortex. (Left) A homogeneous condensate containing 4 positively charged vortices located at $(\pm 5\xi,\pm 5\xi)$. (Right) The vortex at $(-5\xi,-5\xi)$ has been removed using Algorithm \ref{algo_vortexkiller}.}\label{fig:vortexunwind}
+\end{figure}
+
+To facilitate the process and allow the fringe region to remain as small as possible, vortices in the region are ``unwound'' using Algorithm \ref{algo_vortexkiller}. In practice this is performed by simply imprinting a vortex of opposite charge directly at a vortex's location (and so accurate vortex detection methods as described in Section \ref{section:vortexidentifying} are required). A demonstration of the vortex unwinding process is shown in Figure \ref{fig:vortexunwind}. The vortex located at $(-5\xi,-5\xi)$ is unwound and so its phase singularity is removed. Note that around the outer side of the domain the phase winds by $8\pi$ before the process, and only by $6\pi$ after, indicating a vortex has indeed been removed.
+
+Also demonstrated in Figure \ref{fig:vortexunwind} is the result of an additional routine. At the same time as unwinding the phase, the density profile of the vortex core is replaced with the value of the density at infinity. This reduces a vortex core (which then must decay as the singularity is removed) into a collection of smaller waves, which decay much quicker.
+
+The final result of these routines is that fluid wrapping around the numerical domain is clean (free of any vortices and waves), and the resulting in-flowing fluid does not affect any part of the simulation. This allows for simulations to be run for much longer in time, allowing for better measurement of quantities such as drag force or nucleation frequency.
 
 \section{\label{section:quasi-condensate} Quasi-Condensate Visualisation}
-When in the context of the classical-field method of simulating a finite temperature Bose gas, the raw numerical wavefunction is too noisy to allow direct visualization of vortical structures, this can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}.   This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
+When simulating a finite temperature Bose gas, the raw numerical wavefunction is too noisy to allow direct visualization of vortical structures. This can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}. This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
 transforming the complex amplitudes via
-$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ represents the long-wavelength component of the classical field.
-
-The choice of $k_c$ is facilitated by the the bimodal distribution of occupation numbers in the wavefunction, a distribution which develops naturally through propagation of the GPE. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering. $k_c$ is chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas, as performed in \cite{PhysRevA.66.013603}. Figure \ref{fig:quasicondensatefilter} demonstrates the filtering technique in action.
-\begin{figure}
+$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ then represents the long-wavelength component of the classical field.
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=0.4\linewidth]{numerics/figures/mess3d}%
+\includegraphics[width=0.35\linewidth]{numerics/figures/mess3d}%
     \begin{minipage}[b]{0.2\linewidth}
       \centering
       \raisebox{3cm}{$\longrightarrow$}
     \end{minipage}% 
-    \includegraphics[width=0.4\linewidth]{numerics/figures/clean3d}
+    \includegraphics[width=0.35\linewidth]{numerics/figures/clean3d}
   \caption{(Left) Unfiltered wavefunction density, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
   \end{figure}
+
+The choice of $k_c$ is facilitated by the the bimodal distribution of occupation numbers in the wavefunction, a distribution which develops naturally through propagation of the GPE. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering. $k_c$ is chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas. Figure \ref{fig:quasicondensatefilter} demonstrates the filtering technique in action.
+
   	
 \section{\label{section:linelength} Evaluation of vortex line-length in 3D}
 For a given 3D wavefunction, $\Psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \Psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.04\langle |\hat{\Psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\Psi}|^2 \rangle - |\hat{\Psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
 
-The total line length is then deduced by dividing $V_t$ by the cross-sectional area of a vortex core, $A_t$ (in effect, the average cross-sectional area of the isosurface tubes). The measured values of $V_t$ and $A_t$ will depend on the chosen isosurface level but, providing the vortex tubes are well-separated, their ratio (and hence the evaluated line length) will remain constant.  For closely-positioned vortex tubes, the isosurface level can affect whether the tubes appear as two separate tubes, or start to merge, and so will lead to deviations in this ratio.  We have tested the effect of an alternative isosurface value.  For twice the original isosurface value, the difference in the calculated line length is negligible for systems with low vortex density.  For cases with the highest density of vortices, the difference remains less than $10\%$.
-
+The total line length is then deduced by dividing $V_t$ by the cross-sectional area of a vortex core, $A_t$ (in effect, the average cross-sectional area of the isosurface tubes). The measured values of $V_t$ and $A_t$ will depend on the chosen isosurface level but, providing the vortex tubes are well-separated, their ratio (and hence the evaluated line length) will remain constant.  For closely-positioned vortex tubes, the isosurface level can affect whether the tubes appear as two separate tubes, or start to merge, and so will lead to deviations in this ratio.
 \end{chapter}
