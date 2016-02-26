@@ -1,7 +1,7 @@
 \begin{chapter}{\label{cha:wake}Classical-like wakes behind elliptical obstacles in Bose-Einstein condensates}
 
 \section{Introduction}
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centering
   \includegraphics[height=2.08cm,angle=180]{wake/3.png}
   \includegraphics[width=0.24\textwidth,angle=180]{wake/taneda41}
@@ -14,8 +14,7 @@ Recent experimental \cite{Tabeling,Salort},
 numerical \cite{Nore,Kobayashi,Laurie} 
 and theoretical studies \cite{Lvov}
 have highlighted similarities between turbulence in quantum
-fluids (e.g. superfluid helium and atomic Bose-Einstein condensates)
-and turbulence in ordinary (classical) fluids \cite{Frisch}.
+fluids and turbulence in ordinary (classical) fluids \cite{Frisch}.
 In particular, it is found that, in
 the idealized case of homogeneous isotropic conditions away from
 boundaries, the distribution of kinetic energy over the 
@@ -52,62 +51,102 @@ trajectories of tracer particles, whose
 relation with the flow is still the subject
 of investigations \cite{sergeev09}. Numerical simulations of three-dimensional (3D) superfluid flow around
 an oscillating sphere performed using the vortex filament model
-were not conclusive - 
-quantum vortices did not appear to organise themselves
+were not conclusive - quantum vortices did not appear to organise themselves
 into a visible classical--like wake near the obstacle \cite{Hanninen,Fujiyama,goto08}.
 
-The two-dimensional (2D) scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogs and disparities between classical and quantum fluids.  In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch and Pomeau \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle.  A more complete picture has been recently revealed by Sasaki {\it et al.} \cite{saito10}. Below a critical velocity (which depends on the strength \cite{jma00} and shape of the external potential), the fluid undergoes laminar flow around the obstacle.  Above this critical velocity vortices become nucleated and peel off from the moving obstacle. Two patterns are possible, depending on the size of the obstacle: vortex-antivortex pairs in either a symmetric \cite{frisch92} or asymmetric configuration (with the preference for the latter); or alternating pairs of like-signed vortices, forming a trail analogous to the Bern\'ard-von K\'arm\'an vortex street.  At higher velocities, vortex nucleation becomes highly irregular.  Recent studies of this 2D system have considered vortex emission and drag \cite{nore93,jma99,win00,huepe00}, the critical velocity \cite{zwerger00,crescimanno00,berloff2000,rica2001,pham2004}, the effect of inhomogeneous potentials \cite{win00,jackson98,fujimoto11}, the role on the obstacle parameters \cite{huepe00,aioi11}, and supersonic effects such as oblique dark solitons \cite{el06} and Cerenkov radiation \cite{carusotto06}.
+The two-dimensional (2D) scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogues and disparities between classical and quantum fluids.  In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch and Pomeau \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle.  A more complete picture has been recently revealed by Sasaki {\it et al.} \cite{saito10}. Below a critical velocity (which depends on the strength \cite{jma00} and shape of the external potential), the fluid undergoes laminar flow around the obstacle.  Above this critical velocity vortices become nucleated and peel off from the moving obstacle. Two patterns are possible, depending on the size of the obstacle: vortex-antivortex pairs in either a symmetric \cite{frisch92} or asymmetric configuration (with the preference for the latter); or alternating pairs of like-signed vortices, forming a trail analogous to the Bern\'ard-von K\'arm\'an vortex street.  At higher velocities, vortex nucleation becomes highly irregular.  Recent studies of this 2D system have considered vortex emission and drag \cite{nore93,jma99,win00,huepe00}, the critical velocity \cite{zwerger00,crescimanno00,berloff2000,rica2001,pham2004}, the effect of inhomogeneous potentials \cite{win00,jackson98,fujimoto11}, the role on the obstacle parameters \cite{huepe00,aioi11}, and supersonic effects such as oblique dark solitons \cite{el06} and Cerenkov radiation \cite{carusotto06}.
 
-In this work we present the first clear
-evidence of a classical wake in superfluid flow past an obstacle. Using
-the Gross-Pitaevskii equation (GPE) for a zero-temperature Bose-Einstein condensate and an elliptical obstacle, we 
-show that the interaction of  
-discrete vortex singularities downstream of the
-obstacle yields a flow pattern which indeed mimics classical vortex flow.
+In this chapter we present the first clear evidence of a classical--like wake in superfluid flow past an obstacle. Using
+the 2D Gross-Pitaevskii equation (GPE) for a zero-temperature Bose-Einstein condensate and an elliptical obstacle, we 
+show that the interaction of discrete vortex singularities downstream of the obstacle yields a flow pattern which mimics classical vortex flow.
 
 
 \section{Model}
 
-%We consider an atomic Bose-Einstein condensate (BEC) moving relative to a laser-induced obstacle (imposed through 
-%an external potential), as realized experimentally in 3D \cite{Raman,Onofrio,Inouye,Neely} and quasi-2D condensates \cite{Neely}.  This scenario closely resembles that of the classical wake-problem \cite{taneda41,taneda112}.  On a much larger scale, a similar 
-%3D configuration has been experimentally realized in liquid helium 
-%\cite{VanSciver1999,VanSciver2005}.
+We consider an atomic Bose-Einstein condensate (BEC) moving relative to a laser-induced obstacle (imposed through 
+an external potential), as realized experimentally in 3D \cite{Raman,Onofrio,Inouye,Neely} and quasi-2D condensates \cite{Neely}.  This scenario closely resembles that of the classical wake-problem \cite{taneda41,taneda112}.  On a much larger scale, a similar 
+3D configuration has been experimentally realized in liquid helium 
+\cite{VanSciver1999,VanSciver2005}.
 
-%The BEC, assumed to be weakly-interacting and at ultracold temperature, is parameterized by its mean-field wavefunction $\Psi({\bf r},t)$, which defines the fluid number density $n({\bf r}, t)=|\Psi|^2$.  The wavefunction satisfies the non-linear Schr{\"o}dinger equation, also known as the Gross-Pitaevskii equation \cite{Pethick}, where a cubic nonlinearity arises from the mean-field potential generated by the dominant {\it s}-wave (contact) atom-atom interactions. The equation is,  
-%\begin{equation}
-%i \hbar \frac{\partial\Psi}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\Psi|^2 - \mu \right) \Psi.
-%\label{eq:gpe1}
-%\end{equation} 
-%Here $g=4 \pi \hbar^2 a_{\rm s}/m$ is the interaction coefficient, with $a_{\rm s}$ being the atomic {\it s}-wave scattering length and $m$ the atomic mass, and $\mu$ is the chemical potential of the condensate.  The GPE is solved in the reference frame moving with the obstacle, at speed $v$ along $x$.  
-
-The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, i.e. a homogeneous system with uniform density $n_0$, apart from a localized repulsive potential, Gaussian in shape, which represents the obstacle.  A key feature of this work is that the obstacle is taken to be elliptical, of ellipticity $\epsilon$, with the short axis being parallel to the flow, $x$.    Such a potential, in its 2D form, can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
-
-
-We express length in terms of the healing length $\xi = \hbar/\sqrt{m n_0 g}$, speed in terms of the speed of sound $c=\sqrt{n_0 g/m}$, and time in terms of $(\xi/c)$.
-A detailed description of the model can be found in Appendix A.
+The BEC, assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE described in Section \ref{section:gpedimlesshomg} transformed into the moving frame as shown in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with a Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is taken to be elliptical, of ellipticity $\epsilon$, with the short axis being parallel to the flow, $x$. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
 
 \begin{figure}
-(a) \hspace{1.8cm} (i)  $t = 1000 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.8cm} (ii)   $t= 3500~ (\xi/c)$
+(a) \hspace{2.5cm} (i)  $t = 1000 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.8cm} (ii)   $t= 3500~ (\xi/c)$
 \\
-\vspace{-0.3cm}
-
-\label{fig:dens3}\includegraphics[width=0.5\textwidth]{wake/figure2ai}
-\label{fig:dens4}\includegraphics[width=0.5\textwidth]{wake/figure2aii}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 150,
+      xmax = 380,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2ai-dens};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 150,
+      xmax = 380,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2aii-dens};
+  \end{axis}
+\end{tikzpicture}
 
 \vspace{0.2cm}
-(b)\hspace{1.8cm} (i)  $t = 0-1500 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.2cm} (ii)   $t= 3500~ (\xi/c)$
+(b)\hspace{2.5cm} (i)  $t = 0-1500 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.2cm} (ii)   $t= 3500~ (\xi/c)$
 \\
 \vspace{0.3cm}
-  \includegraphics[width=0.5\textwidth]{wake/figure2bi}
-  \includegraphics[width=0.5\textwidth]{wake/figure2bii}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 150,
+      xmax = 380,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2bi-raw};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 150,
+      xmax = 380,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2bii-raw};
+  \end{axis}
+\end{tikzpicture}
   \caption{Snapshots showing the (a) density profile and (b) vortex trajectories during vortex shedding from an elliptical object ($\varepsilon = 3$) at (i) early times and (ii) later times.  The obstacle has speed $v=0.52c$ and size $d = 5\xi$. Red and blue lines represent vortices of oppositely quantized circulation. At early $t$, a symmetric wake similar to a classical fluid with low $Re$ forms. Symmetry breaks at $t\approx1500~(\xi/c)$ at which point vortex motion becomes disordered. In this case the initial condition is noise-free.}
   \label{fig:denstraj}
 \end{figure}
-\section{Results: Two-Dimensional Wakes}
-We begin by exploring quantum wakes in the 2D flow of a BEC past an obstacle, according to the 2D GPE with the elliptical potential defined in Equation  (\ref{eq:potential2D}).
+\section{Two-Dimensional Wakes}
 \subsection{Vortex emission from elliptical obstacles}
-
-
 For illustrative purposes we first consider an elliptical obstacle (size $d=5\xi$, ellipticity $\epsilon=3$) moving at speed $v=0.365c$.  This speed exceeds the critical velocity for the obstacle such that quantum vortices become nucleated and trail behind to form a wake [Figure \ref{fig:denstraj}(a)].  Sound waves, also generated by the obstacle, have little effect on the vortex dynamics. At early times [Figure \ref{fig:denstraj}(a)(i)], the vortex shedding occurs through the symmetric generation of vortex-antivortex pairs, leading to a collimated and symmetric wake behind the obstacle.  This is in qualitative agreement with observations for circular obstacles  \cite{frisch92,nore93,win00,huepe00}, although, for the same obstacle velocity and size, the elliptical obstacle induces a higher frequency of vortex emission and thus a denser wake.  We examine the role of ellipticity in more detail in Sections \ref{sec:crit_vel} and \ref{sec:ellipt}.  
 
 At later times [Figure \ref{fig:denstraj}(a)(ii)], the flow becomes asymmetric due to the known instability of symmetric wakes \cite{nore93}.  A striking pattern emerges whereby distinct clusters of co-rotating vortices (of the order of 5 vortices in each cluster) develop downstream of the obstacle.  Each cluster contains vortices of the same sign and adjacent clusters have alternating sign.  These clusters form a B\'enard--von K\'arm\'an vortex street downstream from the obstacle, confirming the intuition that a sufficiently large number of quanta of circulation reproduce classical physics.  Here, the ellipticity of the obstacle facilitates the formation of this street; the relatively high rate of vortex emission leads to a greater interaction between vortices in the wake which in turn promotes clustering.  In contrast, for a circular obstacle the symmetric wake evolves into a V-shaped wake of vortex-antivortex pairs \cite{saito10}; this because the vortex emisson rate and hence their subsequent interaction is insufficient to induce significant clustering.  

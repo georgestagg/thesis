@@ -55,7 +55,7 @@
 \BOOKMARK [0][-]{chapter.4}{Classical-like wakes behind elliptical obstacles in Bose-Einstein condensates}{part.2}% 55
 \BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 56
 \BOOKMARK [1][-]{section.4.2}{Model}{chapter.4}% 57
-\BOOKMARK [1][-]{section.4.3}{Results: Two-Dimensional Wakes}{chapter.4}% 58
+\BOOKMARK [1][-]{section.4.3}{Two-Dimensional Wakes}{chapter.4}% 58
 \BOOKMARK [2][-]{subsection.4.3.1}{Vortex emission from elliptical obstacles}{section.4.3}% 59
 \BOOKMARK [2][-]{subsection.4.3.2}{Formation of the B\351nard\205von K\341rm\341n vortex street}{section.4.3}% 60
 \BOOKMARK [2][-]{subsection.4.3.3}{Critical Velocity past an Elliptical Obstacle}{section.4.3}% 61
@@ -84,28 +84,25 @@
 \BOOKMARK [2][-]{subsection.6.4.2}{Vortex nucleation pattern}{section.6.4}% 84
 \BOOKMARK [1][-]{section.6.5}{Conclusions}{chapter.6}% 85
 \BOOKMARK [0][-]{chapter.7}{Simulating the surface of a ``Floppy Wire''}{part.2}% 86
-\BOOKMARK [1][-]{section.7.1}{ Superfluid wire experiments}{chapter.7}% 87
-\BOOKMARK [1][-]{section.7.2}{ The ``Floppy Wire'' AFM image}{chapter.7}% 88
-\BOOKMARK [1][-]{section.7.3}{ GPE with AFM surface}{chapter.7}% 89
-\BOOKMARK [1][-]{section.7.4}{ 2D clusters and backflow vortex generation}{chapter.7}% 90
-\BOOKMARK [1][-]{section.7.5}{Theoretical Model}{chapter.7}% 91
-\BOOKMARK [2][-]{subsection.7.5.1}{Typical Evolution}{section.7.5}% 92
-\BOOKMARK [2][-]{subsection.7.5.2}{Truncated surfaces}{section.7.5}% 93
-\BOOKMARK [2][-]{subsection.7.5.3}{Dependence on flow speed}{section.7.5}% 94
-\BOOKMARK [1][-]{section.7.6}{ 3D boundary layer and velocity statistics}{chapter.7}% 95
-\BOOKMARK [-1][-]{part.3}{III Appendix}{}% 96
-\BOOKMARK [0][-]{appendix.A}{Detailed Derivations}{part.3}% 97
-\BOOKMARK [1][-]{section.A.1}{ Derivation of the Runge-Kutta scheme}{appendix.A}% 98
-\BOOKMARK [1][-]{section.A.2}{ Derivation of the Gross-Pitaevskii Equation}{appendix.A}% 99
-\BOOKMARK [1][-]{section.A.3}{ Derivation of the Hydrodynamic Equations via the Madelung Transformation}{appendix.A}% 100
-\BOOKMARK [0][-]{appendix.B}{Important Quantities}{part.3}% 101
-\BOOKMARK [1][-]{section.B.1}{ Energy}{appendix.B}% 102
-\BOOKMARK [1][-]{section.B.2}{ Force}{appendix.B}% 103
-\BOOKMARK [1][-]{section.B.3}{ Healing Length}{appendix.B}% 104
-\BOOKMARK [0][-]{appendix.C}{Algorithms}{part.3}% 105
-\BOOKMARK [1][-]{section.C.1}{ Density/Phase Visualisation Technique}{appendix.C}% 106
-\BOOKMARK [2][-]{subsection.C.1.1}{Plotting Algorithm}{section.C.1}% 107
-\BOOKMARK [2][-]{subsection.C.1.2}{Colour space conversion - rgb to hsl}{section.C.1}% 108
-\BOOKMARK [2][-]{subsection.C.1.3}{Colour space conversion - hsl to rgb}{section.C.1}% 109
-\BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 110
-\BOOKMARK [0][-]{algocf.8}{Bibliography}{part.3}% 111
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 87
+\BOOKMARK [1][-]{section.7.2}{Method}{chapter.7}% 88
+\BOOKMARK [1][-]{section.7.3}{Three-dimensional results}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.4}{Two-dimensional results}{chapter.7}% 90
+\BOOKMARK [2][-]{subsection.7.4.1}{Truncated surfaces}{section.7.4}% 91
+\BOOKMARK [1][-]{section.7.5}{Conclusions}{chapter.7}% 92
+\BOOKMARK [-1][-]{part.3}{III Appendix}{}% 93
+\BOOKMARK [0][-]{appendix.A}{Detailed Derivations}{part.3}% 94
+\BOOKMARK [1][-]{section.A.1}{ Derivation of the Runge-Kutta scheme}{appendix.A}% 95
+\BOOKMARK [1][-]{section.A.2}{ Derivation of the Gross-Pitaevskii Equation}{appendix.A}% 96
+\BOOKMARK [1][-]{section.A.3}{ Derivation of the Hydrodynamic Equations via the Madelung Transformation}{appendix.A}% 97
+\BOOKMARK [0][-]{appendix.B}{Important Quantities}{part.3}% 98
+\BOOKMARK [1][-]{section.B.1}{ Energy}{appendix.B}% 99
+\BOOKMARK [1][-]{section.B.2}{ Force}{appendix.B}% 100
+\BOOKMARK [1][-]{section.B.3}{ Healing Length}{appendix.B}% 101
+\BOOKMARK [0][-]{appendix.C}{Algorithms}{part.3}% 102
+\BOOKMARK [1][-]{section.C.1}{ Density/Phase Visualisation Technique}{appendix.C}% 103
+\BOOKMARK [2][-]{subsection.C.1.1}{Plotting Algorithm}{section.C.1}% 104
+\BOOKMARK [2][-]{subsection.C.1.2}{Colour space conversion - rgb to hsl}{section.C.1}% 105
+\BOOKMARK [2][-]{subsection.C.1.3}{Colour space conversion - hsl to rgb}{section.C.1}% 106
+\BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 107
+\BOOKMARK [0][-]{algocf.8}{Bibliography}{part.3}% 108
