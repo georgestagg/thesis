@@ -70,11 +70,10 @@ an external potential), as realized experimentally in 3D \cite{Raman,Onofrio,Ino
 
 The BEC, assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE described in Section \ref{section:gpedimlesshomg} transformed into the moving frame as shown in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with a Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is taken to be elliptical, of ellipticity $\epsilon$, with the short axis being parallel to the flow, $x$. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
 
-\begin{figure}
-(a) \hspace{2.5cm} (i)  $t = 1000 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.8cm} (ii)   $t= 3500~ (\xi/c)$
-\\
+\begin{figure}[!ht]
+(a) \hspace{2.5cm} (i)  $t = 1000 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.8cm} (ii)   $t= 3500~ (\xi/c)$\\
 \begin{tikzpicture}
-  \begin{axis}[
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
       axis on top,
       width=0.5\linewidth,
       xlabel=$x/\xi$,
@@ -90,7 +89,7 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
   \end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}
-  \begin{axis}[
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
       axis on top,
       width=0.5\linewidth,
       xlabel=$x/\xi$,
@@ -104,14 +103,10 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
     ]
     \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2aii-dens};
   \end{axis}
-\end{tikzpicture}
-
-\vspace{0.2cm}
-(b)\hspace{2.5cm} (i)  $t = 0-1500 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.2cm} (ii)   $t= 3500~ (\xi/c)$
-\\
-\vspace{0.3cm}
+\end{tikzpicture}\\
+(b)\hspace{2.5cm} (i)  $t = 0-1500 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.2cm} (ii)   $t= 3500~ (\xi/c)$\\
 \begin{tikzpicture}
-  \begin{axis}[
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
       axis on top,
       width=0.5\linewidth,
       xlabel=$x/\xi$,
@@ -127,7 +122,7 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
   \end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}
-  \begin{axis}[
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
       axis on top,
       width=0.5\linewidth,
       xlabel=$x/\xi$,
@@ -153,14 +148,63 @@ At later times [Figure \ref{fig:denstraj}(a)(ii)], the flow becomes asymmetric d
 
 
 The vortex trajectories provide visualisation of the time-integrated nature of the wake  [Figure \ref{fig:denstraj}(b)].   At early times (i), we see that the vortex trajectories are symmetric, forming a flow pattern in striking analog to the classical wake at low $Re$.  The generic development of vortex trajectories is as follows.  Pairs of singly-quantized vortices of opposite sign peel off from the poles of the obstacle and interact with each other as vortex-antivortex pairs.  Each pair propagates in the positive $x$ direction with approximate velocity $\hbar/(md_p)$\cite{saito10}, where $d_p$ is the pair separation \cite{Donnelly};  the pair's velocity is less than the obstacle's velocity and it drifts behind the obstacle.  As the pair moves further away from the obstacle, its separation decreases and its velocity increases, such that it begins to catch the obstacle up.  Once the pair is sufficiently close to the obstacle, it again separates and slows down, then the cycle repeats.  As more vortices are nucleated, two distinct clusters of like-circulation form.  Nucleated pairs then travel around the outside of the existing cluster before contracting, speeding up and travelling through the middle of the clusters towards the obstacle.  The clusters grow until they reach a maximum size depending on the obstacle's size and speed.  Hereafter, nucleated vortex pairs travel around the outside of the two clusters and continue travelling downstream,  becoming lost from the main wake. 
-
-
-
  
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth]{wake/figure3}
-\caption{\label{fig:progress} Snapshots of vortex locations during the motion of an elliptical object ($d=5 \xi$ and $\varepsilon=3$) at speed $v=0.52c$ in the presence of small-amplitude noise at $t=0$.  The snapshots are at times (a) $t=450$, (b) $900$, (c) $1000$ and (d) $1100~(\xi/c)$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.  
+\begin{figure}[!ht]
+(a) \hspace{7.2cm} (b)\\
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.485\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-55,ymax=55,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-55,ymax=55] {wake/figure3a-raw};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.485\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-55,ymax=55,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-55,ymax=55] {wake/figure3b-raw};
+  \end{axis}
+\end{tikzpicture}\\
+(c)\hspace{7.2cm} (d)\\
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.485\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-55,ymax=55,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-55,ymax=55] {wake/figure3c-raw};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.485\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-55,ymax=55,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-55,ymax=55] {wake/figure3d-raw};
+  \end{axis}
+\end{tikzpicture}
+  \caption{\label{fig:progress} Snapshots of vortex locations during the motion of an elliptical object ($d=5 \xi$ and $\varepsilon=3$) at speed $v=0.52c$ in the presence of small-amplitude noise at $t=0$.  The snapshots are at times (a) $t=450$, (b) $900$, (c) $1000$ and (d) $1100~(\xi/c)$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.  
 The wake forms into clusters of like-circulation that continue to be produced, in analogy to the classical B\'enard--von K\'arm\'an vortex street from a cylinder.}
 \end{figure}
 \subsection{Formation of the B\'enard--von K\'arm\'an vortex street}
@@ -173,12 +217,6 @@ For clusters consisting of pairs of vortices, it has been shown that they can su
 
 \subsection{Critical Velocity past an Elliptical Obstacle}
 \label{sec:crit_vel}
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{wake/figure4} 
-\caption{\label{fig:velplots}Critical velocity against obstacle ellipticity $\varepsilon$, for $d=10\xi$.  Shown are the results from the numerical simulations (black bars), Equation (\ref{eq:crit1}) (dashed red line) and Equation (\ref{eq:crit2}) (solid blue line). Inset: Critical velocity (obtained numerically) versus the obstacle width $d$, for ellipticities $\varepsilon=1$ (red circles), $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares).
-}
-\end{figure}
 {\em Elliptical} obstacles facilitate the formation of semi-classical wakes because they reduce the critical velocity and enhance the vortex shedding frequency.  Figure \ref{fig:velplots}(a) shows the critical velocity for flow past the obstacle as a function of its ellipticity, taking the obstacle to have fixed width in the $y$-direction of $d=10\xi$.  We determine the critical velocity numerically by performing simulations with flow velocities increasing in steps of $0.01$ until vortices nucleate.  
 For a circular object, we find that the critical velocity is $v_{\rm c}=0.355 (\pm 0.005)c$, consistent with predictions in the Eulerian ($d \gg \xi$) limit \cite{berloff2000,rica2001,pham2004}.  As the ellipticity is increased (i.e. the obstacle becomes narrower in $x$), the critical velocity decreases.  The modification of the critical velocity is significant: if $\varepsilon=3$, $v_{\rm c}$ is more than $40\%$ smaller than that for a circular obstacle. 
 
@@ -195,13 +233,229 @@ While this result assumes constant density, a first order correction can be made
 \end{equation}
 This relation (solid blue line in Figure \ref{fig:velplots}) gives good agreement with the computed values of $v_{\rm c}$.  The deviation for $\varepsilon \sim 1$ has been noted elsewhere \cite{rica2001}, and can be remedied using higher order corrections.
 
-From studies on circular objects, it is known that $v_{\rm c}$ depends on the obstacle's shape at small diameters, where boundary layer effects are significant; $v_{\rm c}$ approaches the ``Eulerian" value only for large diameters $d \gg \xi$ \cite{huepe00,rica2001}.  The variation of $v_{\rm c}$ with the obstacle width $d$ is shown in Figure \ref{fig:velplots} (inset).  For $d=10\xi$, the critical velocity effectively reaches its asymptotic value, while at smaller widths, it is much larger.    
+From studies on circular objects, it is known that $v_{\rm c}$ depends on the obstacle's shape at small diameters, where boundary layer effects are significant; $v_{\rm c}$ approaches the ``Eulerian" value only for large diameters $d \gg \xi$ \cite{huepe00,rica2001}.  The variation of $v_{\rm c}$ with the obstacle width $d$ is shown in Figure \ref{fig:velplots} (inset).  For $d=10\xi$, the critical velocity effectively reaches its asymptotic value, while at smaller widths, it is much larger.   
+\begin{figure}[!ht]
+\hspace{0.7cm}(a)\hspace{7cm} (b)
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[samples=72,ylabel near ticks,xlabel near ticks,
+      width=0.5\linewidth,
+        xlabel=$\epsilon$,
+        ylabel=$v_c/c$,
+        xmin=0.9,
+        xmax=3.1,
+        ymin=0.16,
+        ymax=0.42,
+        major tick length = 0.07cm]
+    \addplot+[only marks, samples=30, error bars/y dir=both, error bars/y fixed=0.015,error bars/error bar style={thick}] file {wake/data/v_c_vs_epsilon.dat};
+    \addplot+[mark=none,color=red,thick,dashed] {1/(1+x)};
+    \addplot+[mark=none,color=black,thick] {((3/2)*(1+x)^2-(1/2))^(-1/2)};
+  \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.5\linewidth,
+        xtick pos=left,
+    ytick pos=left,
+        xlabel=$d$,
+        ylabel=$v_c/c$,
+        xmin=0,
+        xmax=11,
+        ymin=0.1,
+        ymax=0.71,
+        major tick length = 0.07cm
+      ]
+      \addplot+[only marks,mark options={red}] file {wake/data/v_c_vs_d_e1.dat};
+      \addplot+[only marks,mark=triangle*,mark options={green}] file {wake/data/v_c_vs_d_e2.dat};
+      \addplot+[only marks,mark=square*,mark options={blue}] file {wake/data/v_c_vs_d_e3.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{\label{fig:velplots}(a) Critical velocity against obstacle ellipticity $\varepsilon$, for $d=10\xi$.  Shown are the results from the numerical simulations (blue bars), Equation (\ref{eq:crit1}) (dashed red line) and Equation (\ref{eq:crit2}) (solid black line). (b) Critical velocity (obtained numerically) versus the obstacle width $d$, for ellipticity $\varepsilon=1$ (red circles), $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares).
+}
+\end{figure} 
 
 \subsection{Role of Obstacle Size and Ellipticity on the Wake}
 \label{sec:ellipt}
 \begin{figure}
-\includegraphics[width=\textwidth]{wake/figure5}
-\caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=1$ and $d=5\xi$, (b) $\varepsilon=2$ and $d=5\xi$, and (c) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel=$y/\xi$,
+      yticklabels={,,-20,0,20},
+      xticklabels={,,},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ] 
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
+  \end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel=$y/\xi$,
+      yticklabels={,,-20,0,20},
+      xticklabels={,,},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ai-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aii-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aiii-raw};
+  \end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel=$y/\xi$,
+      xticklabels={,,},
+      yticklabels={,,-20,0,20},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bi-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bii-raw};
+  \end{axis}
+\end{tikzpicture}\hspace{0.016\linewidth}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      xticklabels={,,},
+      width=0.37\linewidth,
+      xlabel={},
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5biii-raw};
+  \end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      width=0.37\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      yticklabels={,,-20,0,20},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ci-raw};
+  \end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      width=0.37\linewidth,
+      xlabel=$x/\xi$,
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5cii-raw};
+  \end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+  \begin{axis}[
+      axis on top,
+      yticklabels={,,},
+      width=0.37\linewidth,
+      xlabel=$x/\xi$,
+      ylabel={},
+      unit vector ratio=1 1 1,
+      xmin=170,xmax=405,ymin=-40,ymax=40,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ciii-raw};
+  \end{axis}
+\end{tikzpicture}\\
+  \caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=0.5$ and $d=5\xi$, (b) $\varepsilon=1$ and $d=5\xi$, (c) $\varepsilon=2$ and $d=5\xi$, and (d) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
 \end{figure}
 During the initial symmetric phase of vortex nucleation, the wakes generated by the obstacle have the same qualitative structure shown in Figure \ref{fig:denstraj}(b) (i).  However, once the wake becomes asymmetric, the nature of the clusters that form are highly dependent on the velocity and shape of the obstacle. Figure \ref{fig:3x3grid} shows wakes generated for various obstacle parameters, all captured at the same time $t=2000~(\xi/c)$. We find that any increase of size, ellipticity or velocity of the obstacle increases the number of vortices in the wake's clusters.
 
