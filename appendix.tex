@@ -1,6 +1,6 @@
 \begin{chapter}{Detailed Derivations\label{app:App2}}
 \section{\label{appsection:rk4deriv} Derivation of the Runge-Kutta scheme}
-Presented here is the derivation of the explicit second order Runge-Kutta scheme. The ideas and methods easily extend to the forth order scheme used in this thesis, but in the interests of brevity the entire proof will be given to second order, with the relevant forth order extensions clearly noted.
+Presented here is the derivation of the explicit second-order Runge-Kutta scheme. The ideas and methods easily extend to the forth-order scheme used in this thesis, but in the interests of brevity the entire proof will be given to second order, with the relevant forth order extensions clearly noted.
 Let an initial value problem be specified as
 \begin{align*}
   \psi'(t) &= f(\psi(t),t),\hspace{0.25in}\psi(t_0) = \psi_0,
@@ -16,7 +16,7 @@ We now decide to approximate the (difficult to calculate) integral $\int_{t_n}^{
 \begin{equation*}
 \psi(t_{n+1}) \approx \psi(t_n) + h\sum\limits_{i=1}^N \omega_i f(t_n+h\nu_i,\psi(t_n+h\nu_i)),
 \end{equation*}
-where $N$ is the order of the numerical scheme, $\omega_i$ are weights and $\nu_i$ are locations in time positioned between $t_n$ and $t_{n+1}$ inclusive. In this second-order derivation we take $N=2$, a forth order scheme would alternatively require $N=4$.
+where $N$ is the order of the numerical scheme, $\omega_i$ are weights and $\nu_i$ are locations in time positioned between $t_n$ and $t_{n+1}$ inclusive. In this second-order derivation we take $N=2$, a forth-order scheme would alternatively require $N=4$.
 
 We take the first temporal point to be $\nu_1=0$, so that the first term in the sum is
 \begin{equation*}
@@ -36,7 +36,7 @@ Consider the Taylor expansion,
 \begin{equation*}
 \psi(t+h) = \psi(t) + h\psi'(t) + \frac{h^2}{2}\psi''(t) + \cdots,
 \end{equation*}
-where for the full forth order derivation, further higher order terms are also considered. We substitute this expansion into the left hand side of Equation \ref{eq:rka1}, which leads to
+where for the full forth-order derivation, further higher order terms are also considered. We substitute this expansion into the left hand side of Equation \ref{eq:rka1}, which leads to
 \begin{equation}
 \psi(t_n) + h\psi'(t_n) + \frac{h^2}{2!}\psi''(t_n) + \mathcal{O}(h^3) \approx \psi(t_n) + \omega_1k_1 + \omega_2k_2.
 \end{equation}\label{eq:rka2}
@@ -50,27 +50,27 @@ by the definition of $\psi'(t)$ and the total derivative, and where the argument
 hf + \frac{h^2}{2}\left(\frac{\partial f}{\partial t} + f\frac{\partial f}{\partial \psi}\right) + \mathcal{O}(h^3) = \omega_1hf + \omega_2hf(t_n+\nu_2h,\psi(t)+\nu_2k_1).
 \end{equation}\label{eq:rka3}
 
-Now consider the the Taylor expansion,
+Now consider the Taylor expansion,
 \begin{equation*}
 f(t+h,\psi+g) = f(t,\psi) + h\frac{\partial f(t,\psi)}{\partial t} +g\frac{\partial f(t,\psi)}{\partial \psi} + \cdots,
 \end{equation*}
-where for the full forth order derivation, further higher order terms are also considered. We substitute this expansion into equation \ref{eq:rka3}, including terms up to the required order, and find
+where for the full forth-order derivation, further higher-order terms are also considered. We substitute this expansion into Equation \ref{eq:rka3}, including terms up to the required order, and find
 \begin{equation}
 hf + \frac{h^2}{2!}\left(\frac{\partial f}{\partial t} + f\frac{\partial f}{\partial \psi}\right) + \mathcal{O}(h^3) = \omega_1hf + \omega_2\left( hf + \nu_2h^2 \frac{\partial f}{\partial t} + \nu_2h^2f\frac{\partial f}{\partial \psi} \right)+ \mathcal{O}(h^3).
 \end{equation}\label{eq:rka4}
-By equating terms on both the right hand side and left hand side of Equation \ref{eq:rka4}, we find that for the second order Runge-Kutta scheme the following equivalences are required for consistency,
+By equating terms on both the right hand side and left hand side of Equation \ref{eq:rka4}, we find that for the second-order Runge-Kutta scheme the following equivalences are required for consistency,
 \begin{align*}
 \omega_1 + \omega_2 = 1,\\
 \nu_2\omega_2 = \frac{1}{2}.
 \end{align*}
-For the forth order scheme, more but similar equivalences are required for consistency. The canonical choice for the second order Runge-Kutta methods is
+For the forth-order scheme, more but similar equivalences are required for consistency. The canonical choice for the second-order Runge-Kutta methods is
 $\nu_2=1$ and $\omega_1 = \omega_2 = 1/2$. The scheme can then be directly written down,
 \begin{equation}
 \psi(t_{n+1}) = \psi(t_n) + \frac{k_1}{2} + \frac{k_2}{2} + \mathcal{O}(h^3),
 \end{equation}
 where $k_1 = hf(t_n,\psi(t_n))$ and $k_2 = hf(t_n+h,\psi(t)+k_1)$.
 
-When this proof outline is followed with $N=4$, the forth order Runge-Kutta scheme can be found,
+When this proof outline is followed with $N=4$, the forth-order Runge-Kutta scheme can be found,
 \begin{equation}
     \psi(t_{n+1}) = \psi(t_n) + \frac{k_1}{6}+ \frac{k_2}{3}+ \frac{k_3}{3} + \frac{k_4}{6} + \mathcal{O}(h^5),
 \end{equation}
@@ -85,31 +85,31 @@ where
 \end{equation*}
 
 \section{\label{appsection:gpeqft} Derivation of the Gross-Pitaevskii Equation}
-This section derives the GPE following the methodology outlined in \cite{0953-4075-41-20-203002}. We begin by revisiting the quantum field theory formalism used to describe a many body quantum system \cite{fetter1971quantum}. Such a system is described by an N-body wavefunction, $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$ which obeys the famous Schr\"odinger equation
+This section derives the GPE following the methodology outlined in \cite{0953-4075-41-20-203002}. We begin by revisiting the quantum field theory formalism used to describe a many-body quantum system \cite{fetter1971quantum}. Such a system is described by an $N$-body wavefunction, $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$ which obeys the famous Schr\"odinger equation
 \begin{equation}
 i \hbar\frac{\partial}{\partial t}\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) = \hat{H}\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t),
 \label{eq:gpeqftscho}
 \end{equation}
-where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Consider a closed system containing a dilute, weakly interacting Bose gas of N atoms. Such a system would be described by $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$, with a Hamiltonian of the form 
+where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Consider a closed system containing a dilute, weakly interacting Bose gas of $N$ atoms. Such a system would be described by $\tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t)$, with a Hamiltonian of the form 
 \begin{equation}
 \hat{H} = \sum_{k=1}^N\hat{h}_0(\mathbf{r}_k,t) + \frac{1}{2}\sum_{k,l=1}^N \hat{V}(\mathbf{r}_k,\mathbf{r}_l).
 \label{eq:gpeqfthamil}
 \end{equation}
-Here $\hat{h}_0(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary; and so the second term arises from collisions between 2 atoms. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
+Here $\hat{h}_0(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary, and so the second term arises from collisions between 2 atoms. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
 
-We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states are infinite, our system contains a fixed number of bosons, $N$, implying that there are at most N states occupied.
+We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states are infinite, our system contains a fixed number of bosons, $N$, implying that there are at most $N$ states occupied.
 
 The wavefunction is mapped into the `occupation number' basis via
 \begin{equation*}
 \tilde{\upPsi}(\mathbf{r}_1...\mathbf{r}_N,t) \rightarrow \ket{\tilde{\upPsi}(t)}=\sum_{n_1...n_\infty} c(n_1...n_\infty,t)\ket{n_1...n_\infty},
 \end{equation*}
-with appropriately chosen complex coefficients, $c(n_1...n_\infty,t)$. The values $c$ must follow the particle statistics rules (e.g. for Bosons much be symmetric under swapping of quantum numbers) and be normalised so that the probabilities correctly sum to one. We find that for our bosons,
+with appropriately chosen complex coefficients, $c(n_1...n_\infty,t)$. The values $c$ must follow the particle statistics rules (e.g. for bosons, must be symmetric under swapping of quantum numbers) and be normalised so that the probabilities correctly sum to one. We find that for our bosons,
 
 \begin{equation*}
 \int|\tilde{\upPsi}|^2~d\mathbf{r}=1 \Rightarrow \sum_{n_1...n_\infty}|c(n_1...n_\infty,t)|^2\frac{N!}{n_1!...n_\infty!} = 1.
 \end{equation*}
 
-In this formulation, note that the state vectors $\ket{n_1...n_\infty}$ are time-independent, and the evolution of the system is entirely encoded in the values of $c(n_1...n_\infty,t)$. As part of the overall picture, we also must describe the movement of bosons between different states or energy levels. It is convenient to visualise this as the simultaneous destruction of a particle in state $j$ and creation of a particle in state $i$, described mathematically using the single particle annihilation and creation operators[Shiff49].
+In this formulation, note that the state vectors $\ket{n_1...n_\infty}$ are time-independent, and the evolution of the system is entirely encoded in the values of $c(n_1...n_\infty,t)$. As part of the overall picture, we also must describe the movement of bosons between different states or energy levels. It is convenient to visualise this as the simultaneous destruction of a particle in state $j$ and creation of a particle in state $i$, described mathematically using the single particle annihilation and creation operators \cite{schiff1968},
 \begin{align*}
 &\hat{a}_j\ket{n_1...n_i...n_j...n_\infty} = \sqrt{n_j}\ket{n_1...n_i...n_j-1...n_\infty},\\
 &\hat{a}^\dagger_i\ket{n_1...n_i...n_j...n_\infty} = \sqrt{n_i+1}\ket{n_1...n_i+1...n_j...n_\infty},
@@ -135,7 +135,7 @@ where
 &\bra{ik}\hat{V}\ket{jl} = \frac{1}{2}\left [ (ik|\hat{V}|jl) + (ik|\hat{V}|lj) \right ],\\
 &(ik|\hat{V}|jl) = \iint \phi_i^*(\mathbf{r})\phi_k^*(\mathbf{r}')\hat{V}(\mathbf{r}-\mathbf{r}')\phi_l(\mathbf{r}')\phi_j(\mathbf{r})~d\mathbf{r}'d\mathbf{r}.
 \end{align*}
-For further convenience we introduce the so called Bose field operators
+For further convenience we introduce the so-called Bose field operators
 \begin{align*}
 &\hat{\upPsi}(\mathbf{r},t) = \sum_i \hat{a}_i(t)\phi_i(\mathbf{r},t),\\
 &\hat{\upPsi}^\dagger(\mathbf{r},t) = \sum_i \hat{a}^\dagger_i(t)\phi_i(\mathbf{r},t),
@@ -149,13 +149,13 @@ Using these operators, the Hamiltonian in Equation \ref{eq:gpeqftsechamil} can b
 \begin{equation}
 \begin{split}
 \hat{H} &= \int \hat{\upPsi}^\dagger(\mathbf{r},t)\,\hat{h}_0 \hat{\upPsi}(\mathbf{r},t)~d\mathbf{r}\\
-&+\frac{1}{2}\iint \hat{\upPsi}^\dagger(\mathbf{r},t)\hat{\upPsi}^\dagger(\mathbf{r}',t)V(\mathbf{r}-\mathbf{r}')\hat{\upPsi}(\mathbf{r}',t)\hat{\upPsi}(\mathbf{r},t)~d\mathbf{r}'d\mathbf{r}.
+&+\frac{1}{2}\iint \hat{\upPsi}^\dagger(\mathbf{r},t)\hat{\upPsi}^\dagger(\mathbf{r}',t)V(\mathbf{r}-\mathbf{r}')\hat{\upPsi}(\mathbf{r}',t)\hat{\upPsi}(\mathbf{r},t)~d\mathbf{r}'d\mathbf{r},
 \label{eq:gpeqftbfohamil}
 \end{split}
 \end{equation}
-where, as before, $\hat{h}_0(\mathbf{r}_k,t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ and $V(\mathbf{r}-\mathbf{r}')$ is the two body interaction potential.
+where, as before, $\hat{h}_0(\mathbf{r}_k,t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ and $V(\mathbf{r}-\mathbf{r}')$ is the two-body interaction potential.
 
-We now add to our approximations a frequent simplification of the interaction potential and consider all interactions as totally elastic contact collisions. The strength of this interaction is usually taken to be $g=4\pi\hbar^2a/m$, where $a$ is the s-wave scattering length, measured for a particular atom in the lab. Our two body interaction potential then becomes,
+We now add to our approximations a frequent simplification of the interaction potential and consider all interactions as totally elastic contact collisions. The strength of this interaction is usually taken to be $g=4\pi\hbar^2a/m$, where $a$ is the s-wave scattering length, measured for a particular atom in the lab. Our two-body interaction potential then becomes,
 \begin{equation*}
 V(\mathbf{r}-\mathbf{r}') = g \delta(\mathbf{r}-\mathbf{r}'),
 \end{equation*}
@@ -202,7 +202,7 @@ i \hbar\frac{\partial}{\partial t}\psi(\mathbf{r},t) &= \hat{h}_0\psi(\mathbf{r}
 &= \left ( -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t) + g|\psi(\mathbf{r},t)|^2 \right ) \psi(\mathbf{r},t),
 \end{split}
 \end{equation*}
-the the so called Gross-Pitaevskii equation (GPE), also known as the non-linear\;Schr\"odinger equation.
+the so-called Gross-Pitaevskii equation (GPE), also known as the non-linear\;Schr\"odinger equation (NLSE).
 
 Finally, note that as the particle number is no longer strictly conserved, calculations should be performed within the grand canonical ensemble \cite{huang1987statistical}. This approach leads to the modified Hamiltonian $\hat{H} \rightarrow \hat{H} -\mu\hat{N}$, where $\mu$ is the chemical potential and $\hat{N}$ is the total number operator. The above derivations can be easily repeated with the modified Hamiltonian to obtain a physically equivalent version of the GPE with a chemical potential term,
 \begin{equation}
@@ -275,7 +275,7 @@ where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j
 \section{\label{appsection:energy} Energy}
 The energy functional of the GPE is written
 \begin{equation}
-\varepsilon(\Psi) = \frac{\hbar}{2m}|\nabla\Psi|^2 + \frac{g}{2}|\Psi|^4 + V|\Psi|^2 - \mu|\Psi|^2,
+\varepsilon(\Psi) = \frac{\hbar}{2m}|\nabla\Psi|^2 + \frac{g}{2}|\Psi|^4 + V|\Psi|^2,
 \label{eq:Efn}
 \end{equation}
 where the first term is the kinetic energy, the second term is the energy arising from atom-atom interactions, and the final two terms are the energy associated with the external and chemical potentials. This functional can be integrated over space to find a value for the condensate energy,
@@ -290,7 +290,7 @@ E = E_{\rm kin} + E_{\rm int} + E_{\mathrm{pot}},
 \end{equation}
 so that,
 \begin{equation}
-E_{\rm kin} = \int\!\frac{\hbar}{2m}|\nabla\Psi|^2\;\mathrm{d}\mathbf{r},~E_{\rm int}=\int\!\frac{g}{2}|\Psi|^4\;\mathrm{d}\mathbf{r},~E_{\mathrm{pot}}=\int\!(V-\mu)|\Psi|^2\;\mathrm{d}\mathbf{r},
+E_{\rm kin} = \int\!\frac{\hbar^2}{2m}|\nabla\Psi|^2\;\mathrm{d}\mathbf{r},~E_{\rm int}=\int\!\frac{g}{2}|\Psi|^4\;\mathrm{d}\mathbf{r},~E_{\mathrm{pot}}=\int\!V|\Psi|^2\;\mathrm{d}\mathbf{r},
 \label{eq:Esplitdef}
 \end{equation}
 the kinetic, interaction and potential energies respectively. The kinetic energy can be further decomposed into compressible and incompressible parts by considering the kinetic energy spectrum $\hat{E}_{\rm kin}$ \cite{Nore},
@@ -301,7 +301,7 @@ the kinetic, interaction and potential energies respectively. The kinetic energy
 where $\hat{E}^i_{\rm kin}$ is the incompressible kinetic energy spectrum and $\hat{E}^c_{\rm kin}$ is the compressible kinetic energy spectrum.
 
 \section{\label{appsection:force} Force}
-A useful quantity to know for the study of superflow around a gaussian obstalce is the force exerted by the fluid on the obstacle, also known as the drag force. Let 
+A useful quantity to know for the study of superflow around a Gaussian obstacle is the force exerted by the fluid on the obstacle, also known as the drag force. Let 
 \begin{align*}
 J_k &= \rho v_k,\\
 p &= \frac{g}{2}\left(\frac{\rho}{m}\right)^2,\\
@@ -334,7 +334,7 @@ where $\rho = |\Psi({\bf r},t)|^2$. Rearranging for $\xi$,
 \end{equation}
 \end{chapter}
 
-\begin{chapter}{Algorithms\label{app:algorithms}}
+\begin{chapter}{\label{app:algorithms}Algorithms}
 \section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
 A technique to visualise both the wavefunction phase and density is used throughout this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
 \subsection{Plotting Algorithm}
@@ -345,15 +345,14 @@ Each pixel must be instead represented in the {\tt hsl} format, a triad of value
 For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to $(r,g,b)$ must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, which areas of high density will show hues corresponding to the fluid phase at that location.
 
 \subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
-Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise compute
+Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. The brightness of the pixel is described by $l$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. The hue of the pixel is described by $h$ and the strength of that hue is given by $s$. These quantities depend on the previously calculated $m$ and $n$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise,
 \begin{equation}
 s =
     \begin{cases}
       \frac{m-n}{2 - m - n} &\mbox{if } l \leq 0.5 \\
-      \frac{m-n}{m+n} &\mbox{if } l > 0.5.
+      \frac{m-n}{m+n} &\mbox{if } l > 0.5,
     \end{cases}
 \end{equation}
-Finally, find 
 \begin{equation}
 h =
     \begin{cases}
@@ -362,9 +361,10 @@ h =
       60(\frac{r-g}{m-n}+4) &\mbox{if } m=b.
     \end{cases}
 \end{equation}
+$(h,s,l)$ then describes the required pixel in {\tt hsl} format.
 
 \subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
-Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. With this, one can find $x = c(1-|h' \mod 2 - 1|)$. Find
+Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. Using these quantities, calculate $x = c(1-|h' \mod 2 - 1|)$. To obtain values for $r'$, $g'$ and $b'$, substitute $c$ and $x$ into
 \begin{equation}
 (r', g', b') =
     \begin{cases}
@@ -373,12 +373,36 @@ Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$
       (0, c, x) &\mbox{if } 2 \leq h' < 3 \\
       (0, x, c) &\mbox{if } 3 \leq h' < 4 \\
       (x, 0, c) &\mbox{if } 4 \leq h' < 5 \\
-      (c, 0, x) &\mbox{if } 5 \leq h'< 6,
+      (c, 0, x) &\mbox{if } 5 \leq h'< 6.
     \end{cases}
 \end{equation}
-and compute $m = l - c/2$ to finally find $(r,g,b) = (r'+m,g'+m,b'+m).$
+Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,g,b)$ is then the required pixel described in {\tt rgb} format.
 
 \section{\label{appsection:numericalalgos} Other Numerical Algorithms}
+\begin{algorithm}
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \Input{Threshold value $\Delta$, step size $c$, interaction strength $g$, initial chemical potential $\mu_0$}
+    \Output{Chemical potential $\mu$}
+    \SetKw{KwIn}{in}
+    \SetKw{KwAll}{all}
+    \SetKw{KwAllPoints}{all points}
+    \BlankLine
+    \Repeat{$\mathrm{abs}(\mu_1 -\mu_0) < \Delta$}{
+    	$\mu_1 = \mu_0$\;
+    	$\Psi\leftarrow$ Numerically find the ground state for $g$ and $\mu_0$ using imaginary time propagation\;
+    	$n_0\leftarrow \mathrm{norm}(\Psi)$\;
+    	$\Psi\leftarrow$ Propagate in real time with dissipation $\gamma = 0.1$\;
+    	$n_1\leftarrow \mathrm{norm}(\Psi)$\;
+    	\If{$n_1 > n_0$}{
+				$\mu_0 = \mu_0 - c\times\mathrm{abs}(n_1 > n_0)$\;
+			}
+			\If{$n_1 < n_0$}{
+				$\mu_0 = \mu_0 + c\times\mathrm{abs}(n_1 > n_0)$\;
+			}
+    }
+    $\mu\leftarrow\mu_0$\;
+  \caption{An optimisation algorithm to find a chemical potential, $\mu$ (to within $\pm\Delta$), so that the equilibrium state approached by the DGPE has the correct atom number. $c$ is a small constant, used to allow for a trade-off between convergence and running time (similar to gradient decent methods).}\label{algo_mu}
+\end{algorithm}
 \begin{algorithm}
     \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
     \Input{An initial field $\Psi$, a step size $h$, optional phase profile $\Theta$}

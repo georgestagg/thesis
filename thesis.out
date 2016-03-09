@@ -7,34 +7,34 @@
 \BOOKMARK [1][-]{section.1.5}{Quantum turbulence}{chapter.1}% 7
 \BOOKMARK [0][-]{chapter.2}{Theoretical Modelling of BECs}{part.1}% 8
 \BOOKMARK [1][-]{section.2.1}{ Mean-field description}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{ The Gross-Pitaevskii Equation}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{ Dimensionless Gross-Pitaevskii Equations}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.3.1}{ Homogeneous GPE}{section.2.3}% 12
-\BOOKMARK [2][-]{subsection.2.3.2}{ Trapped GPE}{section.2.3}% 13
-\BOOKMARK [1][-]{section.2.4}{ Quasi-Two-Dimensional Gross-Pitaevskii Equation}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.5}{ Time-independent Gross-Pitaevskii Equation}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.6}{ The imaginary time propagation method}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.7}{ The chemical potential}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.8}{ The Dissipative Gross-Pitaevskii Equation}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.9}{ Finite temperature homogeneous condensate using the classical field method}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.2}{ The Gross-Pitaevskii equation}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{ The chemical potential}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{ Time-independent Gross-Pitaevskii equation}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{ Quasi-two-dimensional Gross-Pitaevskii equation}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.6}{ Hydrodynamic interpretation}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.7}{ Quantised circulation}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.8}{ Dimensionless Gross-Pitaevskii equations}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.8.1}{ Homogeneous GPE}{section.2.8}% 17
+\BOOKMARK [2][-]{subsection.2.8.2}{ Trapped GPE}{section.2.8}% 18
+\BOOKMARK [1][-]{section.2.9}{ The imaginary time propagation method}{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.10}{ Transforming the reference frame}{chapter.2}% 20
-\BOOKMARK [2][-]{subsection.2.10.1}{ Linearly translating frame}{section.2.10}% 21
+\BOOKMARK [2][-]{subsection.2.10.1}{ Linearly translating frame to simulate flow}{section.2.10}% 21
 \BOOKMARK [2][-]{subsection.2.10.2}{ Rotating frame}{section.2.10}% 22
-\BOOKMARK [1][-]{section.2.11}{ Hydrodynamic interpretation}{chapter.2}% 23
-\BOOKMARK [1][-]{section.2.12}{ Quantised Circulation}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.11}{ The dissipative Gross-Pitaevskii equation}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.12}{ Finite temperature homogeneous condensate using the classical field method}{chapter.2}% 24
 \BOOKMARK [1][-]{section.2.13}{ A selection of simple solutions}{chapter.2}% 25
 \BOOKMARK [2][-]{subsection.2.13.1}{ Density near a wall}{section.2.13}% 26
 \BOOKMARK [2][-]{subsection.2.13.2}{ Soliton solutions}{section.2.13}% 27
-\BOOKMARK [2][-]{subsection.2.13.3}{ Quantised Vortices}{section.2.13}% 28
-\BOOKMARK [1][-]{section.2.14}{ Initial Conditions}{chapter.2}% 29
+\BOOKMARK [2][-]{subsection.2.13.3}{ Quantised vortices}{section.2.13}% 28
+\BOOKMARK [1][-]{section.2.14}{ Initial conditions}{chapter.2}% 29
 \BOOKMARK [2][-]{subsection.2.14.1}{ Homogeneous initial condition}{section.2.14}% 30
 \BOOKMARK [2][-]{subsection.2.14.2}{ Thomas-Fermi profile of a trapped condensate}{section.2.14}% 31
 \BOOKMARK [2][-]{subsection.2.14.3}{ Classical field initial condition}{section.2.14}% 32
-\BOOKMARK [1][-]{section.2.15}{Creating obstacles with repulsive potentials}{chapter.2}% 33
+\BOOKMARK [1][-]{section.2.15}{Modelling obstacles and surfaces}{chapter.2}% 33
 \BOOKMARK [2][-]{subsection.2.15.1}{ Three-dimensional elliptical Gaussian}{section.2.15}% 34
-\BOOKMARK [2][-]{subsection.2.15.2}{ Two and Three-dimensional cylindrical Gaussian}{section.2.15}% 35
+\BOOKMARK [2][-]{subsection.2.15.2}{ Two and three-dimensional cylindrical Gaussian}{section.2.15}% 35
 \BOOKMARK [2][-]{subsection.2.15.3}{ Three-dimensional `realistic' rough-surface}{section.2.15}% 36
-\BOOKMARK [0][-]{chapter.3}{Numerical Theory and Procedures}{part.1}% 37
+\BOOKMARK [0][-]{chapter.3}{Numerical Methods and Procedures}{part.1}% 37
 \BOOKMARK [1][-]{section.3.1}{ Numerical procedures for 2D and 3D solutions}{chapter.3}% 38
 \BOOKMARK [2][-]{subsection.3.1.1}{ Fourth order Runge-Kutta scheme}{section.3.1}% 39
 \BOOKMARK [2][-]{subsection.3.1.2}{ Numerical stability and convergence}{section.3.1}% 40
@@ -105,4 +105,4 @@
 \BOOKMARK [2][-]{subsection.C.1.2}{Colour space conversion - rgb to hsl}{section.C.1}% 105
 \BOOKMARK [2][-]{subsection.C.1.3}{Colour space conversion - hsl to rgb}{section.C.1}% 106
 \BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 107
-\BOOKMARK [0][-]{algocf.8}{Bibliography}{part.3}% 108
+\BOOKMARK [0][-]{algocf.9}{Bibliography}{part.3}% 108

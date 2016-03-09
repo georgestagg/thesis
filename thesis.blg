@@ -11,15 +11,15 @@ A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10456 items from 5000.
+Reallocated field_info (elt_size=4) to 10766 items from 5000.
 Database file #1: references.bib
+Warning--I didn't find a database entry for "Bradley2005"
+Warning--I didn't find a database entry for "Tabeling1998"
+Warning--I didn't find a database entry for "Salort2010"
 Warning--I didn't find a database entry for "Barenghi-PNAS"
 Warning--I didn't find a database entry for "Bradley2011-NatPhys"
 Warning--I didn't find a database entry for "Zmeev2015a"
 Warning--I didn't find a database entry for "Boue2013"
-Warning--I didn't find a database entry for "Bradley2005"
-Warning--I didn't find a database entry for "Tabeling1998"
-Warning--I didn't find a database entry for "Salort2010"
 Warning--I didn't find a database entry for "Zmeev2015b"
 Warning--I didn't find a database entry for "Duda2015"
 Warning--I didn't find a database entry for "Lathrop"
@@ -36,45 +36,45 @@ Warning--I didn't find a database entry for "supp"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 156 entries,
+You've used 166 entries,
             3411 wiz_defined-function locations,
-            2013 strings with 32933 characters,
-and the built_in function-call counts, 116204 in all, are:
-= -- 6415
-> -- 4256
-< -- 581
-+ -- 3540
-- -- 1036
-* -- 16132
-:= -- 12230
-add.period$ -- 156
-call.type$ -- 156
-change.case$ -- 630
-chr.to.int$ -- 155
-cite$ -- 159
-duplicate$ -- 10369
-empty$ -- 9644
-format.name$ -- 2580
-if$ -- 21950
+            2073 strings with 34945 characters,
+and the built_in function-call counts, 125917 in all, are:
+= -- 6886
+> -- 4702
+< -- 644
++ -- 3935
+- -- 1145
+* -- 17565
+:= -- 13156
+add.period$ -- 166
+call.type$ -- 166
+change.case$ -- 669
+chr.to.int$ -- 165
+cite$ -- 169
+duplicate$ -- 11230
+empty$ -- 10414
+format.name$ -- 2838
+if$ -- 23757
 int.to.chr$ -- 8
-int.to.str$ -- 157
-missing$ -- 1604
-newline$ -- 483
-num.names$ -- 466
-pop$ -- 2744
+int.to.str$ -- 167
+missing$ -- 1735
+newline$ -- 513
+num.names$ -- 497
+pop$ -- 2971
 preamble$ -- 1
-purify$ -- 624
+purify$ -- 664
 quote$ -- 0
-skip$ -- 4388
+skip$ -- 4740
 stack$ -- 0
-substring$ -- 3837
-swap$ -- 8452
-text.length$ -- 519
+substring$ -- 4093
+swap$ -- 9221
+text.length$ -- 579
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 910
+type$ -- 966
 warning$ -- 1
-while$ -- 450
+while$ -- 481
 width$ -- 0
-write$ -- 1571
+write$ -- 1673
 (There were 21 warnings)
