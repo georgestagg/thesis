@@ -21,12 +21,8 @@ boundaries, the distribution of kinetic energy over the
 length scales obeys the celebrated Kolmogorov scaling of 
 classical turbulence \cite{barenghi}. This similarity is remarkable,
 because a superfluid has zero viscosity and vorticity is not a continuous
-field but is concentrated in discrete vortex filaments of fixed 
-circulation $\kappa$ proportional to Planck's constant. 
-In the more realistic
-presence of boundaries (such as an obstacle or confining channel
-walls), superfluid hydrodynamics
-is less understood, despite the large number of experiments in such scenarios. 
+field. In the more realistic presence of boundaries such as an obstacle or confining channel
+walls, superfluid hydrodynamics is less understood, despite the large number of experiments in such scenarios. 
 
 In a classical viscous fluid \cite{Frisch}, the prototype problem with
 a boundary is the flow 
@@ -54,12 +50,83 @@ an oscillating sphere performed using the vortex filament model
 were not conclusive - quantum vortices did not appear to organise themselves
 into a visible classical--like wake near the obstacle \cite{Hanninen,Fujiyama,goto08}.
 
-The two-dimensional (2D) scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogues and disparities between classical and quantum fluids.  In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch and Pomeau \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle.  A more complete picture has been recently revealed by Sasaki {\it et al.} \cite{saito10}. Below a critical velocity (which depends on the strength \cite{jma00} and shape of the external potential), the fluid undergoes laminar flow around the obstacle.  Above this critical velocity vortices become nucleated and peel off from the moving obstacle. Two patterns are possible, depending on the size of the obstacle: vortex-antivortex pairs in either a symmetric \cite{frisch92} or asymmetric configuration (with the preference for the latter); or alternating pairs of like-signed vortices, forming a trail analogous to the Bern\'ard-von K\'arm\'an vortex street.  At higher velocities, vortex nucleation becomes highly irregular.  Recent studies of this 2D system have considered vortex emission and drag \cite{nore93,jma99,win00,huepe00}, the critical velocity \cite{zwerger00,crescimanno00,berloff2000,rica2001,pham2004}, the effect of inhomogeneous potentials \cite{win00,jackson98,fujimoto11}, the role on the obstacle parameters \cite{huepe00,aioi11}, and supersonic effects such as oblique dark solitons \cite{el06} and Cerenkov radiation \cite{carusotto06}.
+The two-dimensional (2D) scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogues and disparities between classical and quantum fluids.  %In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch and Pomeau \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle.  A more complete picture has been recently revealed by Sasaki {\it et al.} \cite{saito10}. Below a critical velocity (which depends on the strength \cite{jma00} and shape of the external potential), the fluid undergoes laminar flow around the obstacle.  Above this critical velocity vortices become nucleated and peel off from the moving obstacle. Two patterns are possible, depending on the size of the obstacle: vortex-antivortex pairs in either a symmetric \cite{frisch92} or asymmetric configuration (with the preference for the latter); or alternating pairs of like-signed vortices, forming a trail analogous to the Bern\'ard-von K\'arm\'an vortex street.  At higher velocities, vortex nucleation becomes highly irregular.  
+In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch {\it et al.} \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle. Whereas Frisch {\it et al.} considered a ``hard'' cylinder, it is more natural in the context of atomic condensates to employ a ``soft'' Gaussian potential. In practice this changes the quantitative, but not the qualitative, behaviour.  Sasaki {\it et al.} \cite{saito10} recently provided an extensive picture of 2D superflow past such a Gaussian obstacle.   The flow regimes are depicted in Fig. \ref{fig:denstraj}, based on simulations of the 2D GPE using similar parameters to \cite{saito10}.   At low flow velocity (a), the fluid undergoes smooth laminar flow around the obstacle.  The streamlines of this flow are symmetric about $x=0$, as in perfect potential flow.  At a critical flow velocity, the local fluid velocity (which is highest at the poles of the obstacle) exceeds the speed of sound, breaking Landau's criterion.  Vortex pairs of opposite sign are nucleated periodically and drift downstream, forming a collimated wake of vortex pairs which are widely separated from each other (b).  For higher velocities (c), alternating pairs of like-signed vortices are nucleated.  At higher velocities, vortex nucleation becomes highly irregular (d), forming a chaotic downstream distribution of vortices and sound (density) waves.  These quantum fluid flow patterns bear some analogy to the classical flow patterns of Figure \ref{fig:taneda-imgs}, particularly for the laminar flow and chaotic regimes.  The alternating like-signed vortices form a somewhat primitive analogue of the B\'enard--von K\'arm\'an vortex street, while the vortex-antivortex pairs have no obvious classical analogue.  
+\begin{figure}[!ht]
+(a) \hspace{7.2cm}(b)\\
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 190,
+      xmax = 410,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=190,xmax=410,ymin=-45,ymax=45] {wake/quiver3};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 190,
+      xmax = 410,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=190,xmax=410,ymin=-45,ymax=45] {wake/pairs_circle2};
+  \end{axis}
+\end{tikzpicture}\\
+(c) \hspace{7.2cm}(d)\\
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 190,
+      xmax = 410,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=190,xmax=410,ymin=-45,ymax=45] {wake/likesign_circle2};
+  \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+      axis on top,
+      width=0.5\linewidth,
+      xlabel=$x/\xi$,
+      ylabel=$y/\xi$,
+      unit vector ratio=1 1 1,
+      xmin = 190,
+      xmax = 410,
+      ymin = -45,
+      ymax = 45,
+      major tick length = 0.07cm,
+    ]
+    \addplot graphics [xmin=190,xmax=410,ymin=-45,ymax=45] {wake/noise_circle2};
+  \end{axis}
+\end{tikzpicture}\\
+  \caption{\label{fig:denstraj} Condensate density during flow (in the positive $x$-direction) past a circular obstacle ($d = 5\xi$) at various flow speeds. For reference the critical velocity here is $v_c \approx 0.36c$.  (a) Laminar flow at a sub-critical flow speed ($v=0.3c$).  The fluid velocity vector field and two streamlines illustrate the flow pattern. (b) Nucleation of vortex-antivortex pairs ($v=0.365c$).  (c) Nucleation of like-signed vortex pairs ($v=0.37c$). (d)  Chaotic vortex nucleation and generation of strong sound waves, forming a turbulent wake ($v=0.9c$).}
+\end{figure}
 
-In this chapter we present the first clear evidence of a classical--like wake in superfluid flow past an obstacle. Using
-the 2D Gross-Pitaevskii equation (GPE) for a zero-temperature Bose-Einstein condensate and an elliptical obstacle, we 
-show that the interaction of discrete vortex singularities downstream of the obstacle yields a flow pattern which mimics classical vortex flow.
 
+
+Recent studies of this 2D system have considered vortex emission and drag \cite{nore93,jma99,win00,huepe00}, the critical velocity \cite{zwerger00,crescimanno00,berloff2000,rica2001,pham2004}, the effect of inhomogeneous potentials \cite{win00,jackson98,fujimoto11}, the role on the obstacle parameters \cite{huepe00,aioi11}, and supersonic effects such as oblique dark solitons \cite{el06} and Cerenkov radiation \cite{carusotto06}.
+
+In this chapter we discuss the rich variety of quantum wake regimes, often in close analogue to the classical counterparts, which can be obtained via the simple modification of the obstacle to an {\it elliptical} shape. We explore these dynamics in a homogeneous system, which serves to demonstrate the salient behaviour of superfluid flow past an elliptical obstacle, away from boundaries and trap-induced density inhomogeneities which also influence the vortex dynamics.
 
 \section{Model}
 
@@ -68,7 +135,9 @@ an external potential), as realized experimentally in 3D \cite{Raman,Onofrio,Ino
 3D configuration has been experimentally realized in liquid helium 
 \cite{VanSciver1999,VanSciver2005}.
 
-The BEC, assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE described in Section \ref{section:gpedimlesshomg} transformed into the moving frame as shown in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with a Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is taken to be elliptical, of ellipticity $\epsilon$, with the short axis being parallel to the flow, $x$. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
+The BEC, assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE described in Section \ref{section:gpedimlesshomg}, transformed into the moving frame as shown in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with a Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is taken to be elliptical, of ellipticity $\epsilon$, with the short axis being parallel to the flow, $x$. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
+
+The 3D (2D) system is simulated using the 4th-order Runge-Kutta method (Section \ref{section:RK4}) under periodic boundary conditions on a $400 \times 150 \times 150$ ($2048 \times 512$) grid with uniform spacing $\Delta=0.4\xi$. The computational box is sufficiently large that the boundary conditions do not play a role in vortex shedding.  The initial condition is the stationary state of the GPE (including obstacle potential) with $v=0$ as determined by the imaginary time convergence method (Section \ref{section:imagTime}). Setting $V_0=100~\mu$ throughout, the external potential closely approximates an impenetrable obstacle. A small amount of noise is added to the initial condition to break symmetry: a random number between $-0.0005$ and $0.0005$ is added to both the real and imaginary parts of the initial wavefunction. To minimize initial generation of waves, $v$ is ramped up in time along a hyperbolic tangent curve, from $v=0$ at $t=0$ to its terminal value at around $t\approx100~(\xi/c)$.
 
 \begin{figure}[!ht]
 (a) \hspace{2.5cm} (i)  $t = 1000 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.8cm} (ii)   $t= 3500~ (\xi/c)$\\
@@ -85,7 +154,7 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
       ymax = 45,
       major tick length = 0.07cm,
     ]
-    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2ai-dens};
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2ai-dens2};
   \end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -101,7 +170,7 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
       ymax = 45,
       major tick length = 0.07cm,
     ]
-    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2aii-dens};
+    \addplot graphics [xmin=150,xmax=380,ymin=-45,ymax=45] {wake/figure2aii-dens2};
   \end{axis}
 \end{tikzpicture}\\
 (b)\hspace{2.5cm} (i)  $t = 0-1500 ~(\xi/c)$ \hspace{2.4cm} \hspace{1.2cm} (ii)   $t= 3500~ (\xi/c)$\\
@@ -144,7 +213,7 @@ The BEC, assumed to be weakly-interacting and at ultracold temperature, is model
 \subsection{Vortex emission from elliptical obstacles}
 For illustrative purposes we first consider an elliptical obstacle (size $d=5\xi$, ellipticity $\epsilon=3$) moving at speed $v=0.365c$.  This speed exceeds the critical velocity for the obstacle such that quantum vortices become nucleated and trail behind to form a wake [Figure \ref{fig:denstraj}(a)].  Sound waves, also generated by the obstacle, have little effect on the vortex dynamics. At early times [Figure \ref{fig:denstraj}(a)(i)], the vortex shedding occurs through the symmetric generation of vortex-antivortex pairs, leading to a collimated and symmetric wake behind the obstacle.  This is in qualitative agreement with observations for circular obstacles  \cite{frisch92,nore93,win00,huepe00}, although, for the same obstacle velocity and size, the elliptical obstacle induces a higher frequency of vortex emission and thus a denser wake.  We examine the role of ellipticity in more detail in Sections \ref{sec:crit_vel} and \ref{sec:ellipt}.  
 
-At later times [Figure \ref{fig:denstraj}(a)(ii)], the flow becomes asymmetric due to the known instability of symmetric wakes \cite{nore93}.  A striking pattern emerges whereby distinct clusters of co-rotating vortices (of the order of 5 vortices in each cluster) develop downstream of the obstacle.  Each cluster contains vortices of the same sign and adjacent clusters have alternating sign.  These clusters form a B\'enard--von K\'arm\'an vortex street downstream from the obstacle, confirming the intuition that a sufficiently large number of quanta of circulation reproduce classical physics.  Here, the ellipticity of the obstacle facilitates the formation of this street; the relatively high rate of vortex emission leads to a greater interaction between vortices in the wake which in turn promotes clustering.  In contrast, for a circular obstacle the symmetric wake evolves into a V-shaped wake of vortex-antivortex pairs \cite{saito10}; this because the vortex emisson rate and hence their subsequent interaction is insufficient to induce significant clustering.  
+At later times [Figure \ref{fig:denstraj}(a)(ii)], the flow becomes asymmetric due to the known instability of symmetric wakes \cite{nore93}.  A striking pattern emerges whereby distinct clusters of co-rotating vortices (of the order of 5 vortices in each cluster) develop downstream of the obstacle.  Each cluster contains vortices of the same sign and adjacent clusters have alternating sign.  These clusters form a B\'enard--von K\'arm\'an vortex street downstream from the obstacle, confirming the intuition that a sufficiently large number of quanta of circulation reproduce classical physics.  Here, the ellipticity of the obstacle facilitates the formation of this street; the relatively high rate of vortex emission leads to a greater interaction between vortices in the wake which in turn promotes clustering.  In contrast, for a circular obstacle the symmetric wake evolves into a V-shaped wake of vortex-antivortex pairs \cite{saito10}; this because the vortex emission rate and hence their subsequent interaction is insufficient to induce significant clustering.  
 
 
 The vortex trajectories provide visualisation of the time-integrated nature of the wake  [Figure \ref{fig:denstraj}(b)].   At early times (i), we see that the vortex trajectories are symmetric, forming a flow pattern in striking analog to the classical wake at low $Re$.  The generic development of vortex trajectories is as follows.  Pairs of singly-quantized vortices of opposite sign peel off from the poles of the obstacle and interact with each other as vortex-antivortex pairs.  Each pair propagates in the positive $x$ direction with approximate velocity $\hbar/(md_p)$\cite{saito10}, where $d_p$ is the pair separation \cite{Donnelly};  the pair's velocity is less than the obstacle's velocity and it drifts behind the obstacle.  As the pair moves further away from the obstacle, its separation decreases and its velocity increases, such that it begins to catch the obstacle up.  Once the pair is sufficiently close to the obstacle, it again separates and slows down, then the cycle repeats.  As more vortices are nucleated, two distinct clusters of like-circulation form.  Nucleated pairs then travel around the outside of the existing cluster before contracting, speeding up and travelling through the middle of the clusters towards the obstacle.  The clusters grow until they reach a maximum size depending on the obstacle's size and speed.  Hereafter, nucleated vortex pairs travel around the outside of the two clusters and continue travelling downstream,  becoming lost from the main wake. 
@@ -220,18 +289,34 @@ For clusters consisting of pairs of vortices, it has been shown that they can su
 {\em Elliptical} obstacles facilitate the formation of semi-classical wakes because they reduce the critical velocity and enhance the vortex shedding frequency.  Figure \ref{fig:velplots}(a) shows the critical velocity for flow past the obstacle as a function of its ellipticity, taking the obstacle to have fixed width in the $y$-direction of $d=10\xi$.  We determine the critical velocity numerically by performing simulations with flow velocities increasing in steps of $0.01$ until vortices nucleate.  
 For a circular object, we find that the critical velocity is $v_{\rm c}=0.355 (\pm 0.005)c$, consistent with predictions in the Eulerian ($d \gg \xi$) limit \cite{berloff2000,rica2001,pham2004}.  As the ellipticity is increased (i.e. the obstacle becomes narrower in $x$), the critical velocity decreases.  The modification of the critical velocity is significant: if $\varepsilon=3$, $v_{\rm c}$ is more than $40\%$ smaller than that for a circular obstacle. 
 
-The rough dependence of $v_{\rm c}$ on $\varepsilon$ can be derived as follows.   According to Landau's criterion \cite{NozieresPines},  superfluidity breaks down when the fluid velocity exceeds the critical velocity $v_{\rm Lan}=\min \left[E(p)/p\right]$, where $p$ is the momentum of elementary excitations and $E(p)$ their energy.   The weakly-interacting Bose gas has the dispersion relation $E(p)=[ngp^2/m + p^4/(4m^2)]^{1/2}$, hence $v_{\rm Lan}=c$.  If an obstacle moves through the fluid with speed $v$, the local fluid velocity at the poles exceeds $v$. Approximating the BEC as an inviscid Euler fluid undergoing potential flow about the object, then the maximum local velocity is $v_{\rm max}=(1+\varepsilon)v$ and the Landau critical velocity is (dashed red line in Figure \ref{fig:velplots}(a)),
+The rough dependence of $v_{\rm c}$ on $\varepsilon$ can be derived as follows.   According to Landau's criterion \cite{NozieresPines},  superfluidity breaks down when the fluid velocity exceeds the critical velocity $v_{\rm Lan}=\min \left[E(p)/p\right]$, where $p$ is the momentum of elementary excitations and $E(p)$ their energy.   The weakly-interacting Bose gas has the dispersion relation $E(p)=[ngp^2/m + p^4/(4m^2)]^{1/2}$, hence $v_{\rm Lan}=c$.  If an obstacle moves through the fluid with speed $v$, the local fluid velocity at the poles exceeds $v$.
+
+By approximating the BEC as an inviscid Euler fluid, we can calculate the local velocity around the obstacle using the complex variable framework of potential flow. The maximum local velocity is then found to be at the poles with $v_{\rm max}=(1+\varepsilon)v$ \cite{Schlichting42}, and the Landau critical velocity is (dashed red line in Figure \ref{fig:velplots}(a)),
 \begin{equation}
 \frac{v_{c1}}{c} = \frac{1}{1+\varepsilon}.
 \label{eq:crit1}
 \end{equation}
 
-While this result assumes constant density, a first order correction can be made by using Bernoulli's theorem to model the reduction in local density near the obstacle (due to the enhanced local fluid velocity) which in turn reduces the local speed of sound $c(x,y)=\sqrt{n(x,y)g/m}$ \cite{win01}.  This then leads to the modified result,
+%While this result assumes constant density, a first order correction can be made by using Bernoulli's theorem to model the reduction in local density near the obstacle (due to the enhanced local fluid velocity) which in turn reduces the local speed of sound $c(x,y)=\sqrt{n(x,y)g/m}$ \cite{win01}.  This then leads to the modified result,
+While true for incompressible potential flow, the GPE describes a compressible fluid, so the local density (and therefore speed of sound), $n(\bf r) = |\psi|^2$, in regions of high velocity is reduced according to Bernoilli's equation (ignoring the quantum pressure) \cite{win01},
+\begin{equation}
+1+\frac{v^2}{2} = n(u)+\frac{u^2}{2},
+\label{eq:bern}
+\end{equation}
+where $u(\bf r)$ is the local velocity. We substitute the maximum local velocity, $v_{\rm max}=(1+\varepsilon)v$, into Equation \ref{eq:bern} to find the local density at that point,
+\begin{equation*}
+n(v_{\rm max}) = 1+\frac{1}{2}[1-(1+\epsilon)^2]v^2.
+\end{equation*}
+The local speed of sound is $c_{\rm local}=\sqrt{n}$ and so at the point of maximal velocity,
+\begin{equation*}
+c_{\rm local} = \sqrt{1+\frac{1}{2}[1-(1+\epsilon)^2]v^2}.
+\end{equation*}
+We use the resulting local speed of sound and the Landau criterion to find a corrected critical velocity for the break down of superfluidity, 
 \begin{equation}
 \frac{v_{c2}}{c} = \left [\frac{3}{2}(1+\varepsilon)^2 - \frac{1}{2}\right]^{-\frac{1}{2}}.
 \label{eq:crit2}
 \end{equation}
-This relation (solid blue line in Figure \ref{fig:velplots}) gives good agreement with the computed values of $v_{\rm c}$.  The deviation for $\varepsilon \sim 1$ has been noted elsewhere \cite{rica2001}, and can be remedied using higher order corrections.
+This relation (solid blue line in Figure \ref{fig:velplots}) gives good agreement with the computed values of $v_{\rm c}$.  The deviation for $\varepsilon \sim 1$ has been noted elsewhere \cite{rica2001}, and can be remedied using higher order corrections taking into account the quantum pressure term.
 
 From studies on circular objects, it is known that $v_{\rm c}$ depends on the obstacle's shape at small diameters, where boundary layer effects are significant; $v_{\rm c}$ approaches the ``Eulerian" value only for large diameters $d \gg \xi$ \cite{huepe00,rica2001}.  The variation of $v_{\rm c}$ with the obstacle width $d$ is shown in Figure \ref{fig:velplots} (inset).  For $d=10\xi$, the critical velocity effectively reaches its asymptotic value, while at smaller widths, it is much larger.   
 \begin{figure}[!ht]
@@ -278,184 +363,105 @@ From studies on circular objects, it is known that $v_{\rm c}$ depends on the ob
 \subsection{Role of Obstacle Size and Ellipticity on the Wake}
 \label{sec:ellipt}
 \begin{figure}
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel=$y/\xi$,
-      yticklabels={,,-20,0,20},
-      xticklabels={,,},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ] 
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
-  \end{axis}
-\end{tikzpicture}\\
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel=$y/\xi$,
-      yticklabels={,,-20,0,20},
-      xticklabels={,,},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ai-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aii-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aiii-raw};
-  \end{axis}
-\end{tikzpicture}\\
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel=$y/\xi$,
-      xticklabels={,,},
-      yticklabels={,,-20,0,20},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bi-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bii-raw};
-  \end{axis}
-\end{tikzpicture}\hspace{0.016\linewidth}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      xticklabels={,,},
-      width=0.37\linewidth,
-      xlabel={},
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5biii-raw};
-  \end{axis}
-\end{tikzpicture}\\
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      width=0.37\linewidth,
-      xlabel=$x/\xi$,
-      ylabel=$y/\xi$,
-      yticklabels={,,-20,0,20},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ci-raw};
-  \end{axis}
+\begin{center}
+\begin{minipage}{0.33\linewidth}%
+\vspace{-0.3cm}(a)~(i)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel=$y/\xi$,yticklabels={,,-20,0,20},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm] 
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zi-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}(b)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel=$y/\xi$,yticklabels={,,-20,0,20},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zzi-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}(c)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel=$y/\xi$,yticklabels={,,-20,0,20},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ai-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}(d)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel=$y/\xi$,yticklabels={,,-20,0,20},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bi-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}(e)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel=$x/\xi$,ylabel=$y/\xi$,yticklabels={,,-20,0,20},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ci-raw};
+\end{axis}%
 \end{tikzpicture}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      width=0.37\linewidth,
-      xlabel=$x/\xi$,
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5cii-raw};
-  \end{axis}
+\end{minipage}%
+\begin{minipage}{0.33\linewidth}%
+\vspace{-0.3cm}(ii)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm] 
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zzii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5bii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={$x/\xi$},ylabel={},yticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5cii-raw};
+\end{axis}%
 \end{tikzpicture}%
-\begin{tikzpicture}
-  \begin{axis}[
-      axis on top,
-      yticklabels={,,},
-      width=0.37\linewidth,
-      xlabel=$x/\xi$,
-      ylabel={},
-      unit vector ratio=1 1 1,
-      xmin=170,xmax=405,ymin=-40,ymax=40,
-      major tick length = 0.07cm,
-    ]
-    \addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ciii-raw};
-  \end{axis}
-\end{tikzpicture}\\
-  \caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=0.5$ and $d=5\xi$, (b) $\varepsilon=1$ and $d=5\xi$, (c) $\varepsilon=2$ and $d=5\xi$, and (d) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
+\end{minipage}\hspace{-0.06\linewidth}%
+\begin{minipage}{0.33\linewidth}%
+\vspace{-0.3cm}(iii)\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm] 
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ziii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5zziii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5aiii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={},ylabel={},yticklabels={,,},xticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5biii-raw};
+\end{axis}%
+\end{tikzpicture}\\%
+\vspace{-0.3cm}\phantom{(a)}\\\vspace{-0.3cm}%
+\begin{tikzpicture}%
+\begin{axis}[axis on top,width=\linewidth,xlabel={$x/\xi$},ylabel={},yticklabels={,,},unit vector ratio=1 1 1,xmin=170,xmax=405,ymin=-40,ymax=40,major tick length = 0.07cm]
+\addplot graphics [xmin=170,xmax=405,ymin=-40,ymax=40] {wake/figure5ciii-raw};
+\end{axis}
+\end{tikzpicture}%
+\end{minipage}%
+\end{center}
+\caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=0.5$ and $d=5\xi$, (a) $\varepsilon=0.75$ and $d=5\xi$, (c) $\varepsilon=1$ and $d=5\xi$, (d) $\varepsilon=2$ and $d=5\xi$, and (e) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
 \end{figure}
 During the initial symmetric phase of vortex nucleation, the wakes generated by the obstacle have the same qualitative structure shown in Figure \ref{fig:denstraj}(b) (i).  However, once the wake becomes asymmetric, the nature of the clusters that form are highly dependent on the velocity and shape of the obstacle. Figure \ref{fig:3x3grid} shows wakes generated for various obstacle parameters, all captured at the same time $t=2000~(\xi/c)$. We find that any increase of size, ellipticity or velocity of the obstacle increases the number of vortices in the wake's clusters.
 
@@ -463,11 +469,32 @@ During the initial symmetric phase of vortex nucleation, the wakes generated by 
 The shedding frequency of vortices increases with the velocity of the flow \cite{jma99}. For an elliptical obstacle, the combination of a reduced critical velocity and increased local velocity around the obstacle has the effect of increasing the shedding frequency with $\varepsilon$ and $d$. The overall result is that, when increasing any of $v$, $\varepsilon$ or $d$, more vortices are nucleated in a given time period, causing the cluster size to increase. This increase in cluster size is investigated in the next section.
 
 \subsection{Vortex Clustering}
-We have shown that the B\'enard--von K\'arm\'an vortex street forms through the clustering of like-signed vortices. Methods of quantifying the clustering of vortices in quantum fluids have been explored in the literature \cite{white12,reeves_billam_13,bagg12}. Here we utilize the algorithm of Reeves \emph{et. al.} \cite{reeves_billam_13} to identify clusters.
+We have shown that the B\'enard--von K\'arm\'an vortex street forms through the clustering of like-signed vortices. Methods of quantifying the clustering of vortices in quantum fluids have been explored in the literature \cite{white12,reeves_billam_13,bagg12}.
+
+[RIPLEY CURVES TO SEE SIZE OF CLUSTERS]
+
+We now utilize the algorithm of Reeves \emph{et. al.} \cite{reeves_billam_13} to identify the number of vortices in clusters.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{wake/figure6}
+\begin{tikzpicture}
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+      width=0.5\linewidth,
+      xtick pos=left,
+      ytick pos=left,
+      xlabel=$v/c$,
+      ylabel=$\bar{N}$,
+      xmin=0.28,
+      xmax=0.52,
+      ymin=1.8,
+      ymax=6.2,
+      major tick length = 0.07cm
+    ]
+    \addplot+[only marks,mark options={red}] file {wake/data/n_vs_v_e1.dat};
+    \addplot+[only marks,mark=triangle*,mark options={green}] file {wake/data/n_vs_v_e2.dat};
+    \addplot+[only marks,mark=square*,mark options={blue}] file {wake/data/n_vs_v_e3.dat};
+  \end{axis}
+\end{tikzpicture}
 \caption{\label{fig:Svslocal2} Average number of vortices in the clusters as a function of the obstacle velocity $v$.  Shown are cases with $\varepsilon=1$ (red squares),  $\varepsilon=2$ (green circles) and $\varepsilon=3$ (blue triangles).  All cases feature $d=5\xi$.}
 \end{figure}
 
@@ -496,17 +523,13 @@ We break the cylindrical symmetry of the system by tilting the obstacle by a sma
 
 
 
-
 However, in the $xz$ plane (Figure \ref{fig:3d4} (c)), symmetry is broken. Due to the relatively high frequency of vortex nucleation and relatively low flow speed, like signed vortices cluster together as they are ejected by the obstacle, much like the 2D solutions seen in earlier sections.  Downstream the tangle may shift both across or out of the plane. In 2D, although this manifests as a shift in location of the vortex clusters, the clusters largely remain rather than forming dipoles. 
 
 \section{Conclusion}
 We have shown that the motion of an obstacle in a Bose-Einstein condensate produces classical-like wakes consisting of quantum vortices of the same polarity.  This is consistently observed in both two- and three-dimensional scenarios.  The key ingredient to produce classical-like wakes - that vortices are generated at a sufficiently high rate that they undergo strong interactions with their neighbours  (rather than being swept away) - is that the obstacle is elliptical, which reduces the critical velocity for vortex nucleation.  Symmetric wakes resemble those observed in classical flow at low $\Rey$.  These are unstable, forming time-dependent asymmetric structures similar to the B\'enard--von K\'arm\'an vortex street of classical fluid dynamics. Vortex singularities
 in the inviscid superfluid thus mimic classical vortex patterns typical of viscous flows.  The effects which we describe (dependence of the critical velocity and cluster size on the obstacle's size, velocity and ellipticity) can be experimentally studied in atomic Bose-Einstein condensates using moving laser-induced potentials. They are also relevant to the motion of objects (such as vibrating wires, grids and forks) in superfluid helium, as the obstacle's ellipticity plays a role which is analogous to rough boundaries \cite{blaz08,brad05}. 
-\\
-\section{Model of 2D and 3D BEC with Gaussian Potentials}
 
-The 3D (2D) system is simulated using the 4th-order Runge-Kutta method under periodic boundary conditions on a $400 \times 150 \times 150$ ($2048 \times 512$)  grid with uniform spacing $\Delta=0.4\xi$.  The obstacle is positioned upstream in the box to enable a long simulation time before vortices recycle through the periodic box.  We have verified that our simulations are well-converged, that is, increasing the grid resolution has negligible effect on the results.
-The computational box is sufficiently large that the boundary conditions do not play a role in vortex shedding.  The initial condition is the stationary state of the GPE (including obstacle potential) with $v=0$ (as determined by the imaginary time convergence method). Setting $V_0=100~\mu$ throughout, the external potential closely approximates an impenetrable obstacle. Unless stated otherwise, a small amount of noise is added to the initial condition to break symmetry: a random number between $-0.0005$ and $0.0005$ is added to both the real and imaginary parts of the initial wavefunction. 
 
-To minimize initial generation of waves, $v$ is ramped up in time along a hyperbolic tangent curve, from $v=0$ at $t=0$ to its terminal value at around $t\approx100~(\xi/c)$. During the evolution, the vortices are located (and their circulation evaluated) using an algorithm based on those of references \cite{fos10} and \cite{white12}.
+\subsection{Further Work}
+The work in this chapter has been built upon and extended by [CITE], wherein et. al performed many 2D simulations using cylindrical Gaussian beams, applying the vortex unwinding algorithm along with a high speed GPU+CUDA numerical simulation code to allow for great numerical efficiency. The large number of simulations through the parameter space allowed the group of [CITE] to identify a quantum Reynolds number, based on the size of the repulsive beam.
 \end{chapter}
