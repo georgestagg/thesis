@@ -55,14 +55,34 @@ We choose a small value $\gamma = 0.0003$ so as to model the experiment in its v
 
  With this dissipation the data for $N_v$ becomes reduced, bringing it closely in line with the experimental data. Experimental limitations in resolving and counting vortices may also contribute to the over-estimate of $N_v$ from the GPE.
 
+
+\begin{figure}[!ht]
+\begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.5\linewidth,
+        xtick pos=left,
+    	ytick pos=left,
+        xlabel=$v~(mm/s)$,
+        ylabel=$N_v$,
+        xmin=0.2,
+        xmax=1.6,
+        ymin=0,
+        ymax=100,
+        major tick length = 0.07cm
+      ]
+      \addplot+[only marks,mark options={red}] file {shin/nv_v_lowtemp.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{figure} 
+
+
+
 \begin{figure}
-\begin{minipage}{0.5\textwidth}
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig1}
-\end{minipage} \hfill
-\begin{minipage}{0.5\textwidth}
 \caption{\label{fig:N_vV} (Color online) Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red circles), with dissipation $\gamma = 0.0003$ (blue squares) and experimental results extracted from Fig.~1 of~\citep{kwon_moon_14} (black crosses). Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the center of the BEC is $v_c\approx 4.6$ mm/s.  }
-\end{minipage} \hfill
 \end{figure}
 
 \subsection{Stages of the Condensate Evolution}
@@ -145,13 +165,9 @@ It is important to remark that, without detecting the sign of the vortex circula
 could not reach these conclusions.
 
 \begin{figure}
-\begin{minipage}{0.5\textwidth}
-\caption{\label{fig:N_vTime} Growth of vortex number (in a single realization) at early times for a translational speed of $v=1.4$mm/s. Shown are the results with no dissipation (red dashed line) and with dissipation $\gamma=0.0003$ (blue solid line).}
-\end{minipage} \hfill
-\begin{minipage}{0.5\textwidth}
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig3}
-\end{minipage} \hfill
+\caption{\label{fig:N_vTime} Growth of vortex number (in a single realization) at early times for a translational speed of $v=1.4$mm/s. Shown are the results with no dissipation (red dashed line) and with dissipation $\gamma=0.0003$ (blue solid line).}
 \end{figure}
 \subsubsection{Vortex Decay}
 It is clear from Fig. \ref{fig:densSnapshots} that, following the removal 
@@ -164,13 +180,9 @@ this is the time taken for accelerating condensate to exceed the speed of
 sound at the poles of the object.
 \ngp{At first $N_v$ grows steeply, as vortices (around 40-60) are rapidly driven into the system. Subsequently, $N_v$ grows more slowly; vortices continue to be nucleated from the obstacle but vortices undergo annihilation or move into low density regions where they are not detected.  The fluctuations in $N_v$ are amplified, particularly at early times, by the shape oscillations of the condensate, which carry vortices in and out of the detection radius. As the obstacle is removed at $t\approx 0.4$s, the surrounding condensate fills the low density area. Vortices (including some outside of the detection radius) move inwards with the flow, causing $N_v$ to peak. }
 \begin{figure}
-\begin{minipage}{0.6\textwidth}
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig4}
-\end{minipage} \hfill
-\begin{minipage}{0.4\textwidth}
 \caption{\label{fig:N_vLong} Vortex decay in the absence of dissipation (a, c) and with dissipation $\gamma=0.0003$ (b, d) for a translational speed of $v=1.4$mm/s.  The upper figures show the decay of the total vortex number $N_v(t)$, with the contribution of drifting and annihilation depicted by the shaded regions.  The lower figures show the drift number $N_d(t)$ and annihilation number $N_a(t)$, plus their respective fits.}
-\end{minipage} \hfill
 \end{figure}
 
 \ngp{ Following removal of the obstacle, the vortex number $N_v$ decays with time.  This is shown in Fig.~\ref{fig:N_vLong}(a) and (b) for the absence and presence of dissipation, respectively. }  Kwon {\etal}~\citep{kwon_moon_14} argued that there are two mechanisms 
@@ -188,17 +200,13 @@ these two decay processes.  \ngp{From our simulations we are able to independent
 We decompose the number of vortices according to $N_v(t) = N_{v0} - N_d(t) - N_a(t)$, where $N_{v0}$ is the initial number of vortices (when the obstacle is removed), $N_d(t)$ is the cumulative number of vortices which have drifted out of the condensate and $N_a(t)$ is the cumulative number which have undergone pair annihilation. % and $N_c$ is the number which remain within the system (which is finite in the absence of dissipation).
 The contribution of both vortex drifting and annihilation to the overall decay of $N_v$ is depicted by the coloured regions in Fig.~\ref{fig:N_vLong}(a) and (b).  In the absence of dissipation  the vortex decay is dominated by annihilation.  Indeed, apart from at early times (where internal condensate dynamics carry vortices out to high radii), no vortices drift out.  In contrast, in the presence of dissipation, vortices continue to drift out over time, consistent with dissipative dynamics of single vortices \citep{allen_zaremba_13}.}
 
-\noindent\begin{minipage}{1\textwidth}
-\begin{minipage}{0.45\textwidth}
+Our decomposition of $N_v$ enables us to independently fit the drift and annihilation decay processes (as two coupled ODEs for $N_d$ and $N_a$, equivalent to Eq. (\ref{eqn:N_v_decay})), with the results shown in Fig. \ref{fig:N_vLong}(c) and (d).  In the absence of dissipation, we find $\Gamma_{2} = 0.0040$ (It is not appropriate to discuss $\Gamma_1$ since $N_d(t)$ is not of a decaying form). While the experimental observations \cite{kwon_moon_14} suggest $\Gamma_2$ is proportional to $T^2$ and thus approaches 0 as $T\rightarrow0$, our results demonstrate a finite $\Gamma_2$ in this limit.  In the presence of dissipation we obtain $\Gamma_{1} = 0.093$ and $\Gamma_{2} = 0.0041$, which are comparable to the coldest experiments of Kwon \etal
+
+\begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig5}
-\end{minipage} \hfill
-\begin{minipage}{0.5\textwidth}
-Our decomposition of $N_v$ enables us to independently fit the drift and annihilation decay processes (as two coupled ODEs for $N_d$ and $N_a$, equivalent to Eq. (\ref{eqn:N_v_decay})), with the results shown in Fig. \ref{fig:N_vLong}(c) and (d).  In the absence of dissipation, we find $\Gamma_{2} = 0.0040$ (It is not appropriate to discuss $\Gamma_1$ since $N_d(t)$ is not of a decaying form). While the experimental observations \cite{kwon_moon_14} suggest $\Gamma_2$ is proportional to $T^2$ and thus approaches 0 as $T\rightarrow0$, our results demonstrate a finite $\Gamma_2$ in this limit.  In the presence of dissipation we obtain $\Gamma_{1} = 0.093$ and $\Gamma_{2} = 0.0041$, which are comparable to the coldest experiments of Kwon \etal
-\end{minipage}
-\captionof{figure}{\label{fig:cresentPlots} Density (left) and phase (right) just before (a), immediately following (b) and a later time after (c) a vortex-antivortex annihilation event.  The field of view is  $[23.5\mu$m]$^2$, centered on the vortex pair/sound pulse (highlighted by a circle in the phase).}
-\end{minipage}
-
+\caption{\label{fig:cresentPlots} Density (left) and phase (right) just before (a), immediately following (b) and a later time after (c) a vortex-antivortex annihilation event.  The field of view is  $[23.5\mu$m]$^2$, centered on the vortex pair/sound pulse (highlighted by a circle in the phase).}
+\end{figure}
 
 \subsection{Crescent-Shaped Density Structures}
 In the experiment, Kwon {\etal}observed the occasional appearance of crescent-shaped waves of 
@@ -233,7 +241,6 @@ of these observed structures.  In this direction, an approach has recently been 
 
 
 \begin{figure}
-\medskip
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig6.png}
 \caption{\label{fig:ellipse} (Color online) Snapshots of the condensate density for a translational of speed $v=0.8$mm/s past an elliptical obstacle (ellipticity $\epsilon=3$). The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Compared to the corresponding snapshots in Figure 2, the elliptical obstacle generates as many final vortices but at a lower translational speed and with reduced condensate disruption.
