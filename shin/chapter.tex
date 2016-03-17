@@ -60,30 +60,31 @@ We choose a small value $\gamma = 0.0003$ so as to model the experiment in its v
 \begin{center}
   \begin{tikzpicture}
   \begin{axis}[ylabel near ticks,xlabel near ticks,
-        width=0.5\linewidth,
+        width=0.6\linewidth,
         xtick pos=left,
     	ytick pos=left,
         xlabel=$v~(mm/s)$,
         ylabel=$N_v$,
         xmin=0.2,
-        xmax=1.6,
+        xmax=1.8,
         ymin=0,
         ymax=100,
-        major tick length = 0.07cm
+        major tick length = 0.07cm,
+        samples=300
       ]
-      \addplot+[only marks,mark options={red}] file {shin/nv_v_lowtemp.dat};
+      %\addplot+[only marks, error bars/y dir=both, error bars/y fixed=3,error bars/error bar style={thick}] file {shin/nv_v_lowtemp.dat};
+      %\addplot+[only marks, error bars/y dir=both, error bars/y fixed=3,error bars/error bar style={thick},color=red,mark=square*,every mark/.append style={solid, fill=red}] file {shin/nv_v_hightemp.dat};
+      \addplot+[only marks] file {shin/nv_v_lowtemp.dat};
+      \addplot+[only marks,color=red,mark=square*,every mark/.append style={solid, fill=red}] file {shin/nv_v_hightemp.dat};
+      \addplot+[only marks,color=black,mark size = 2, mark=diamond*,every mark/.append style={solid, fill=black}] file {shin/nv_v_exp.dat};
+      \addplot+[mark=none,color=red,thick] {(85.2084 / (1 + exp(-8.4940*x + 5.6354))-4.6183)};
+      \addplot+[mark=none,color=blue,thick] {(61.2430 / (1 + exp(-14.7576*x + 10.4699))-0.7081)};
+      \addplot+[mark=none,color=black,thick] {(64.6833 / (1 + exp(-7.8208*x + 5.5874))-2.1150)};
     \end{axis}
 \end{tikzpicture}
 \end{center}
+\caption{\label{fig:N_vV} (Color online) Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red circles), with dissipation $\gamma = 0.0003$ (blue squares) and experimental results extracted from Fig.~1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $v_c\approx 4.6$ mm/s.  }
 \end{figure} 
-
-
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\linewidth]{shin/fig1}
-\caption{\label{fig:N_vV} (Color online) Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red circles), with dissipation $\gamma = 0.0003$ (blue squares) and experimental results extracted from Fig.~1 of~\citep{kwon_moon_14} (black crosses). Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the center of the BEC is $v_c\approx 4.6$ mm/s.  }
-\end{figure}
 
 \subsection{Stages of the Condensate Evolution}
 
@@ -131,9 +132,26 @@ vortices nucleate into the system. It must be stressed that,
 up to these early times ($t=191$ms), the vortex distribution remains symmetric 
 about the $x$ axis.  \ngp{Without the dissipation term in the GPE, the sloshing mode initially decays while the obstacle is present but then persists with constant amplitude once the obstacle is removed.  If dissipation is included then the sloshing mode continues to decay.} %To counteract this continuous sloshing, our vortex detection subroutine searches around the centre of mass (rather than the center of the trap) in all calculations of $N_v$.}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{shin/fig2}
+\begin{figure}[!ht]
+\begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.6\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel=$Time (s)$,
+        ylabel=$N_v$,
+        xmin=0,
+        xmax=0.5,
+        ymin=0,
+        ymax=90,
+        major tick length = 0.07cm
+      ]
+      \addplot+[mark=none,color=blue,thick] file {shin/nv_t_lowtemp.dat};
+      \addplot+[mark=none,color=red,thick,dashed] file {shin/nv_t_hightemp.dat};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
 \caption{\label{fig:densSnapshots} (Color online) Snapshots of the condensate density, for a translational speed $v=1.4$mm/s and in the presence of dissipation ($\gamma=0.0003$). The obstacle is completely removed at $0.43$s. The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Vortices with positive (negative) circulation are highlighted by red circles (blue triangles).
 }
 \end{figure}
