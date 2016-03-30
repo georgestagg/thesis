@@ -137,13 +137,13 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
   
 
 \section{\label{section:vortexidentifying} Identifying vortices}
-Large potions of this thesis are dedicated to the study of 2D vortex dynamics. As such, accurate detection of the location and charge of densely packed quantised 2D vortices is required, and so we have developed robust numerical methods for vortex identification. The basic idea is fairly simple, with arguments similar to those used to demonstrate the quantised nature of the circulation.
+Large potions of this thesis are dedicated to the study of 2D vortex dynamics. As such, accurate detection of the location and charge of densely packed quantised 2D vortices is required, and so we have developed robust numerical methods for vortex identification. Methods for detecting quantum vortices by analysis of the phase are seen throughout the literature \cite{Simula,saito10,white12,reeves_billam_13,reeves,white_anderson_14,PhysRevLett.113.165302,reeves_2015}. The basic idea is fairly simple, with arguments similar to those used to demonstrate the quantised nature of the circulation.
 
 As shown in Section \ref{section:quantisedcirculation}, the integrated change of phase along any closed curve $C$ is,
 \begin{equation}
   \Delta\theta(C) = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l} = 2\pi q,
 \end{equation}
-where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, the fundamental theorem of calculus for line integrals[CITE] implies that $\Delta\theta(C) = 0$, providing that $C$ is continuous and does not encompass a phase singularity. This result is crucial; it allows us to directly state that a vortex lies within $C$ if and only if $|\Delta\theta(C)| > 0 $.
+where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, the fundamental theorem of calculus for line integrals \cite{larson2013multivariable} implies that $\Delta\theta(C) = 0$, providing that $C$ is continuous and does not encompass a phase singularity. This result is crucial; it allows us to directly state that a vortex lies within $C$ if and only if $|\Delta\theta(C)| > 0 $.
 
 \subsection{\label{section:vortexloc} Basic vortex detection method}
 First define a set of curves $C_k$ with each curve lying on points of our numerical grid, so that a single $C_k$ encompasses only a small region of the fluid (ideally, $C_k$ should encompass a region at most the diameter of a vortex core). $\Delta\theta(C_k)$ is then approximated for each $k$ using numerical differentiation (2nd order finite differences) and numerical line integration (trapezium or Simpson rule). If $\Delta\theta(C_k) = 0$ to within numerical accuracy then we determine that the region inside $C_k$ contains no vortices. Otherwise the sign of $\Delta\theta(C_k)$ tells us the polarity of the encompassed vortex.
@@ -378,11 +378,11 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
     P_v = \frac{N_+ - N_-}{N_v},
   \end{equation}
   where $P_v$ is known as the polarity of the system. This quantity takes values in the range $[-1,1]$; when there are only positively (negatively) charged vortices in the system $P_v=1$ ($P_v=-1$), and when there are equal quantities of positive and negatively charged vortices $P_v=0$.
-  \subsection{\label{section:ripleysk} Ripley's $K$ and $L$ functions }
+  \subsection{\label{section:ripleysk} Ripley's $K$ and Besag's $L$ functions }
   While counting vortices as in Section \ref{section:vortexcounting} is a great way to gain statistics of the distribution of vortices in terms of vortex charge, the quantities tell us nothing about how vortices are located in space. The problem of spatial descriptive statistics is an old one and measures of spatial dispersion or homogeneity have in the past been applied to several datasets consisting of point locations, very similar to the results of our vortex detection algorithms. Some of these applications include spatial distribution of trees \cite{duncan_1993,peterson_1995,stoyan_2000}, plants \cite{stamp_1990}, bird nests \cite{gaines_2000} and the spread of disease \cite{diggle_1991}.
 
 
-  One such measure of homogeneity is Ripley's $K$ Function \cite{dixon_2002}, defined theoretically in the following way,
+  One such measure of homogeneity that has been previously applied to quantum vortices \cite{bagg12} is Ripley's $K$ Function \cite{dixon_2002}, defined theoretically in the following way,
   \begin{equation}\label{eq:ripleysktheory}
     K(s) = \lambda^{-1}E[\text{\# of points within distance $s$ of a randomly chosen point}],
   \end{equation}
@@ -404,7 +404,7 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
   \end{equation}
   where the weight function, $w({\bf r}_i,{\bf r}_j)$, provides edge correction. If the circle centred on  the point ${\bf r}_i$ and passing through the point ${\bf r}_j$ completely lies within the region of interest, then $w({\bf r}_i,{\bf r}_j)=1$, otherwise $w({\bf r}_i,{\bf r}_j)$ is equal to the proportion of the circumference of the circle that is inside the region of interest. The edge-corrected estimator provided by Equation \ref{eq:ripleyskedge} should be used when we are interested in large spatial scale homogeneity, i.e. when $s$ is large, as it is on this scale edge-effects can dominate.
 
-  Visualising $\hat{K}(s)$ can be made easier by considering Ripley's $L$ function, with estimator,
+  Visualising $\hat{K}(s)$ can be made easier by considering Besag's $L$ function, with estimator,
   \begin{equation}\label{eq:ripleysl}
     \hat{L}(s) = \sqrt{\frac{\hat{K}(s)}{\pi}}.
   \end{equation}
@@ -479,14 +479,14 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
     \end{axis}
   \end{tikzpicture}%
   \end{minipage}%
-  \caption{Sample points (left) used for estimating Ripley's $K$ and $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spatial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
+  \caption{Sample points (left) used for estimating Ripley's $K$ and Besag's $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spatial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s > 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
  \end{figure}
 
-  The power of Ripley's curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spatial pattern used to generate the points.
+  The power of the $K$ and $L$ curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spatial pattern used to generate the points.
 
   
 \subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm }
-The limit of Ripley's curves is quickly reached when we want to describe statistics of both the charge and spatial features of a collection of vortices. The $K$ and $L$ curves operate solely on location and are not easily modified to capture the charge of a vortex an so for detailed analysis of charged vortex clusters another algorithm must be used.
+The limit of the $K$ and $L$ curves is quickly reached when we want to describe statistics of both the charge and spatial features of a collection of vortices. The $K$ and $L$ curves operate solely on location and are not easily modified to capture the charge of a vortex an so for detailed analysis of charged vortex clusters another algorithm must be used.
 
 The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeves {\it et. al.} \cite{reeves_billam_13, reeves}. The algorithm allows for detailed spatial-temporal statistics regarding like-signed vortex clustering. The algorithm works in a recursive manner, by removing dipole-like structures first, and then decomposing the remaining vortices into positive or negatively signed clusters. To perform the algorithm the following two rules are applied to a collection of vortices:
 \begin{itemize}

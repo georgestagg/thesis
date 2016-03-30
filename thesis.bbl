@@ -1,4 +1,4 @@
-\begin{thebibliography}{166}
+\begin{thebibliography}{168}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -426,6 +426,82 @@
 \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Lawson}}, Ph.D. thesis,
   \bibinfo{school}{Lancaster University} (\bibinfo{year}{2013}).
 
+\bibitem[{\citenamefont{Simula and Blakie}(2006)}]{Simula}
+\bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.~B.} \bibnamefont{Blakie}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{96}},
+  \bibinfo{pages}{020404} (\bibinfo{year}{2006}).
+
+\bibitem[{\citenamefont{Sasaki et~al.}(2010)\citenamefont{Sasaki, Suzuki, and
+  Saito}}]{saito10}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Sasaki}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Suzuki}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Saito}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{104}},
+  \bibinfo{pages}{150404} (\bibinfo{year}{2010}).
+
+\bibitem[{\citenamefont{White et~al.}(2012)\citenamefont{White, Barenghi, and
+  Proukakis}}]{white12}
+\bibinfo{author}{\bibfnamefont{A.~C.} \bibnamefont{White}},
+  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~P.}
+  \bibnamefont{Proukakis}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{86}}, \bibinfo{pages}{013635}
+  (\bibinfo{year}{2012}).
+
+\bibitem[{\citenamefont{Reeves et~al.}(2013)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves_billam_13}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{110}}, \bibinfo{pages}{104501}
+  (\bibinfo{year}{2013}).
+
+\bibitem[{\citenamefont{Reeves et~al.}(2014)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{053631}
+  (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{White et~al.}(2014)\citenamefont{White, Anderson, and
+  Bagnato}}]{white_anderson_14}
+\bibinfo{author}{\bibfnamefont{A.~C.} \bibnamefont{White}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{V.~S.}
+  \bibnamefont{Bagnato}}, \bibinfo{journal}{Proceedings of the National Academy
+  of Sciences} \textbf{\bibinfo{volume}{111}}, \bibinfo{pages}{4719}
+  (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Simula et~al.}(2014)\citenamefont{Simula, Davis, and
+  Helmerson}}]{PhysRevLett.113.165302}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Simula}},
+  \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Davis}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Helmerson}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{113}},
+  \bibinfo{pages}{165302} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Reeves et~al.}(2015)\citenamefont{Reeves, Billam,
+  Anderson, and Bradley}}]{reeves_2015}
+\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
+  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
+  \textbf{\bibinfo{volume}{114}}, \bibinfo{pages}{155302}
+  (\bibinfo{year}{2015}).
+
+\bibitem[{\citenamefont{Larson and Edwards}(2013)}]{larson2013multivariable}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Larson}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Edwards}},
+  \emph{\bibinfo{title}{Multivariable Calculus}} (\bibinfo{publisher}{Cengage
+  Learning}, \bibinfo{year}{2013}), ISBN \bibinfo{isbn}{9781285060293}.
+
 \bibitem[{\citenamefont{Shapiro and Stockman}(2001)}]{shapiro2001computer}
 \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Shapiro}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Stockman}},
@@ -469,6 +545,16 @@
   \bibinfo{journal}{Biometrics} \textbf{\bibinfo{volume}{47}},
   \bibinfo{pages}{1155} (\bibinfo{year}{1991}).
 
+\bibitem[{\citenamefont{Baggaley
+  et~al.}(2012{\natexlab{a}})\citenamefont{Baggaley, Barenghi, Shukurov, and
+  Sergeev}}]{bagg12}
+\bibinfo{author}{\bibfnamefont{A.~W.} \bibnamefont{Baggaley}},
+  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Shukurov}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.~A.} \bibnamefont{Sergeev}},
+  \bibinfo{journal}{EPL (Europhysics Letters)} \textbf{\bibinfo{volume}{98}},
+  \bibinfo{pages}{26002} (\bibinfo{year}{2012}{\natexlab{a}}).
+
 \bibitem[{\citenamefont{Dixon}(2002)}]{dixon_2002}
 \bibinfo{author}{\bibfnamefont{P.~M.} \bibnamefont{Dixon}},
   \bibinfo{journal}{Encyclopaedia of Environments}
@@ -484,40 +570,10 @@
   \bibinfo{journal}{Journal of the Royal Statistical Society}
   \textbf{\bibinfo{volume}{41}}, \bibinfo{pages}{368} (\bibinfo{year}{1979}).
 
-\bibitem[{\citenamefont{Reeves et~al.}(2013)\citenamefont{Reeves, Billam,
-  Anderson, and Bradley}}]{reeves_billam_13}
-\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{110}}, \bibinfo{pages}{104501}
-  (\bibinfo{year}{2013}).
-
-\bibitem[{\citenamefont{Reeves et~al.}(2014)\citenamefont{Reeves, Billam,
-  Anderson, and Bradley}}]{reeves}
-\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. A}
-  \textbf{\bibinfo{volume}{89}}, \bibinfo{pages}{053631}
-  (\bibinfo{year}{2014}).
-
 \bibitem[{\citenamefont{Kuhn}(1955)}]{hung}
 \bibinfo{author}{\bibfnamefont{H.~W.} \bibnamefont{Kuhn}},
   \bibinfo{journal}{Naval Research Logistics Quarterly}
   \textbf{\bibinfo{volume}{2}}, \bibinfo{pages}{83} (\bibinfo{year}{1955}).
-
-\bibitem[{\citenamefont{Reeves et~al.}(2015)\citenamefont{Reeves, Billam,
-  Anderson, and Bradley}}]{reeves_2015}
-\bibinfo{author}{\bibfnamefont{M.~T.} \bibnamefont{Reeves}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Billam}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{Bradley}}, \bibinfo{journal}{Phys. Rev. Lett.}
-  \textbf{\bibinfo{volume}{114}}, \bibinfo{pages}{155302}
-  (\bibinfo{year}{2015}).
 
 \bibitem[{\citenamefont{Taneda}(1956)}]{taneda41}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Taneda}}, \bibinfo{journal}{J.
@@ -573,13 +629,13 @@
   \bibinfo{pages}{065302} (\bibinfo{year}{2005}).
 
 \bibitem[{\citenamefont{Baggaley
-  et~al.}(2012{\natexlab{a}})\citenamefont{Baggaley, Laurie, and
+  et~al.}(2012{\natexlab{b}})\citenamefont{Baggaley, Laurie, and
   Barenghi}}]{Laurie}
 \bibinfo{author}{\bibfnamefont{A.~W.} \bibnamefont{Baggaley}},
   \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Laurie}}, \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{109}},
-  \bibinfo{pages}{205304} (\bibinfo{year}{2012}{\natexlab{a}}).
+  \bibinfo{pages}{205304} (\bibinfo{year}{2012}{\natexlab{b}}).
 
 \bibitem[{Lvo(2004)}]{Lvov}
 \bibinfo{journal}{JETP Letters} \textbf{\bibinfo{volume}{80}},
@@ -649,22 +705,6 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{100}},
   \bibinfo{pages}{045301} (\bibinfo{year}{2008}).
 
-\bibitem[{\citenamefont{Frisch et~al.}(1992)\citenamefont{Frisch, Pomeau, and
-  Rica}}]{frisch92}
-\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Frisch}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Pomeau}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Rica}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{69}},
-  \bibinfo{pages}{1644} (\bibinfo{year}{1992}).
-
-\bibitem[{\citenamefont{Sasaki et~al.}(2010)\citenamefont{Sasaki, Suzuki, and
-  Saito}}]{saito10}
-\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Sasaki}},
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Suzuki}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Saito}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{104}},
-  \bibinfo{pages}{150404} (\bibinfo{year}{2010}).
-
 \bibitem[{\citenamefont{Nore et~al.}(1993)\citenamefont{Nore, Brachet, and
   Fauve}}]{nore93}
 \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Nore}},
@@ -681,6 +721,14 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Adams}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{82}},
   \bibinfo{pages}{5186} (\bibinfo{year}{1999}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Jackson et~al.}(2000)\citenamefont{Jackson, McCann, and
+  Adams}}]{jma00}
+\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jackson}},
+  \bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{McCann}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Adams}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{61}},
+  \bibinfo{pages}{051603} (\bibinfo{year}{2000}).
 
 \bibitem[{\citenamefont{Winiecki et~al.}(2000)\citenamefont{Winiecki, Jackson,
   McCann, and Adams}}]{win00}
@@ -810,6 +858,33 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{87}},
   \bibinfo{pages}{080402} (\bibinfo{year}{2001}).
 
+\bibitem[{\citenamefont{Kwon et~al.}(2014)\citenamefont{Kwon, Moon, Choi, Seo,
+  and Shin}}]{kwon_moon_14}
+\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
+  \bibinfo{author}{\bibfnamefont{J.-y.} \bibnamefont{Choi}},
+  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.-i.} \bibnamefont{Shin}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{90}},
+  \bibinfo{pages}{063627} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Kwon et~al.}(2015{\natexlab{a}})\citenamefont{Kwon,
+  Moon, Seo, and Shin}}]{kwon_2015a}
+\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
+  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Shin}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{91}},
+  \bibinfo{pages}{053615} (\bibinfo{year}{2015}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Frisch et~al.}(1992)\citenamefont{Frisch, Pomeau, and
+  Rica}}]{frisch92}
+\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Frisch}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Pomeau}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Rica}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{69}},
+  \bibinfo{pages}{1644} (\bibinfo{year}{1992}).
+
 \bibitem[{\citenamefont{Donnelly}(1991)}]{Donnelly}
 \bibinfo{author}{\bibfnamefont{R.~J.} \bibnamefont{Donnelly}},
   \emph{\bibinfo{title}{Quantized Vortices in {H}elium II}}
@@ -832,25 +907,6 @@
 \bibitem[{\citenamefont{Winiecki}(2001)}]{win01}
 \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Winiecki}}, Ph.D. thesis,
   \bibinfo{school}{The University of Durham} (\bibinfo{year}{2001}).
-
-\bibitem[{\citenamefont{White et~al.}(2012)\citenamefont{White, Barenghi, and
-  Proukakis}}]{white12}
-\bibinfo{author}{\bibfnamefont{A.~C.} \bibnamefont{White}},
-  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~P.}
-  \bibnamefont{Proukakis}}, \bibinfo{journal}{Phys. Rev. A}
-  \textbf{\bibinfo{volume}{86}}, \bibinfo{pages}{013635}
-  (\bibinfo{year}{2012}).
-
-\bibitem[{\citenamefont{Baggaley
-  et~al.}(2012{\natexlab{b}})\citenamefont{Baggaley, Barenghi, Shukurov, and
-  Sergeev}}]{bagg12}
-\bibinfo{author}{\bibfnamefont{A.~W.} \bibnamefont{Baggaley}},
-  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Shukurov}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{Y.~A.} \bibnamefont{Sergeev}},
-  \bibinfo{journal}{EPL (Europhysics Letters)} \textbf{\bibinfo{volume}{98}},
-  \bibinfo{pages}{26002} (\bibinfo{year}{2012}{\natexlab{b}}).
 
 \bibitem[{\citenamefont{Winiecki
   et~al.}(1999{\natexlab{b}})\citenamefont{Winiecki, McCann, and
@@ -894,15 +950,6 @@
   \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Zaki}},
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{95}},
   \bibinfo{pages}{035302} (\bibinfo{year}{2005}).
-
-\bibitem[{\citenamefont{White et~al.}(2014)\citenamefont{White, Anderson, and
-  Bagnato}}]{white_anderson_14}
-\bibinfo{author}{\bibfnamefont{A.~C.} \bibnamefont{White}},
-  \bibinfo{author}{\bibfnamefont{B.~P.} \bibnamefont{Anderson}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{V.~S.}
-  \bibnamefont{Bagnato}}, \bibinfo{journal}{Proceedings of the National Academy
-  of Sciences} \textbf{\bibinfo{volume}{111}}, \bibinfo{pages}{4719}
-  (\bibinfo{year}{2014}).
 
 \bibitem[{\citenamefont{Barenghi et~al.}(2014)\citenamefont{Barenghi, Skrbek,
   and Sreenivasan}}]{barenghi_skrbek_14}
@@ -968,16 +1015,6 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{111}},
   \bibinfo{pages}{235301} (\bibinfo{year}{2013}).
 
-\bibitem[{\citenamefont{Kwon et~al.}(2014)\citenamefont{Kwon, Moon, Choi, Seo,
-  and Shin}}]{kwon_moon_14}
-\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
-  \bibinfo{author}{\bibfnamefont{J.-y.} \bibnamefont{Choi}},
-  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{Y.-i.} \bibnamefont{Shin}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{90}},
-  \bibinfo{pages}{063627} (\bibinfo{year}{2014}).
-
 \bibitem[{\citenamefont{Mateo and Delgado}(2006)}]{delgado}
 \bibinfo{author}{\bibfnamefont{A.~M.} \bibnamefont{Mateo}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{Delgado}},
@@ -1024,14 +1061,6 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Spirn}},
   \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{89}},
   \bibinfo{pages}{043613} (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Jackson et~al.}(2000)\citenamefont{Jackson, McCann, and
-  Adams}}]{jma00}
-\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Jackson}},
-  \bibinfo{author}{\bibfnamefont{J.~F.} \bibnamefont{McCann}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Adams}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{61}},
-  \bibinfo{pages}{051603} (\bibinfo{year}{2000}).
 
 \bibitem[{\citenamefont{Stagg et~al.}(2014)\citenamefont{Stagg, Parker, and
   Barenghi}}]{stagg_parker_14}
@@ -1094,15 +1123,6 @@
   \bibnamefont{Simula}}, \bibinfo{journal}{Phys. Rev. Lett.}
   \textbf{\bibinfo{volume}{113}}, \bibinfo{pages}{165303}
   (\bibinfo{year}{2014}).
-
-\bibitem[{\citenamefont{Kwon et~al.}(2015{\natexlab{a}})\citenamefont{Kwon,
-  Moon, Seo, and Shin}}]{kwon_2015a}
-\bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
-  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Moon}},
-  \bibinfo{author}{\bibfnamefont{S.~W.} \bibnamefont{Seo}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Shin}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{91}},
-  \bibinfo{pages}{053615} (\bibinfo{year}{2015}{\natexlab{a}}).
 
 \bibitem[{\citenamefont{Kwon et~al.}(2015{\natexlab{b}})\citenamefont{Kwon,
   Seo, and Shin}}]{kwon_2015b}
@@ -1317,12 +1337,6 @@
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{M.~J.} \bibnamefont{Davis}},
   \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{84}},
   \bibinfo{pages}{023608} (\bibinfo{year}{2011}).
-
-\bibitem[{\citenamefont{Simula and Blakie}(2006)}]{Simula}
-\bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.~B.} \bibnamefont{Blakie}},
-  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{96}},
-  \bibinfo{pages}{020404} (\bibinfo{year}{2006}).
 
 \bibitem[{\citenamefont{Berloff and Youd}(2007)}]{berloff_2007}
 \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}} \bibnamefont{and}

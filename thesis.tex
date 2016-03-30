@@ -15,7 +15,7 @@
 %------------------------------------------------------------------------------
 % Set the class and font size.  The article class does not allow chapters, so
 % you'll want to avoid that.  I used 11pt for final submission.
-\documentclass[11pt]{report}
+\documentclass[11pt,openright]{report}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
@@ -60,6 +60,17 @@
 % packages there, or below the following line.
 \usepackage{masthesis}
 
+%blank page before chapter start
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\vspace{\fill}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
 % One-and-a-half or double-line spacing.  I used 1.5 for final submission.
 \onehalfspacing
 %\doublespacing
@@ -70,7 +81,7 @@
   \pagenumbering{roman}
   \phdtitle{A Numerical Study of Vortices and Turbulence in Quantum Fluids} % Title.
            {George William Stagg}       % Author.
-           {fig/shield}                 % Graphic for the title page.
+           {fig/logo}                 % Graphic for the title page.
            {June $2016$}                % Date.
 
   \thispagestyle{empty}
