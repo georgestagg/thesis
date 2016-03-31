@@ -1,4 +1,4 @@
-\begin{thebibliography}{168}
+\begin{thebibliography}{170}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -1123,6 +1123,28 @@
   \bibnamefont{Simula}}, \bibinfo{journal}{Phys. Rev. Lett.}
   \textbf{\bibinfo{volume}{113}}, \bibinfo{pages}{165303}
   (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Cidrim et~al.}(2016)\citenamefont{Cidrim, dos Santos,
+  Galantucci, Bagnato, and Barenghi}}]{Cidrim15}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Cidrim}},
+  \bibinfo{author}{\bibfnamefont{F.~E.~A.} \bibnamefont{dos Santos}},
+  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Galantucci}},
+  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{Bagnato}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~F.}
+  \bibnamefont{Barenghi}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{93}}, \bibinfo{pages}{033651}
+  (\bibinfo{year}{2016}).
+
+\bibitem[{\citenamefont{Groszek et~al.}(2015)\citenamefont{Groszek, Simula,
+  Paganin, and Helmerson}}]{Groszek15}
+\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Groszek}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}},
+  \bibinfo{author}{\bibfnamefont{D.~M.} \bibnamefont{Paganin}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Helmerson}},
+  \emph{\bibinfo{title}{Onsager vortex formation in bose-einstein condensates
+  in two-dimensional power-law traps}} (\bibinfo{year}{2015}),
+  \eprint{arXiv:1511.06552}.
 
 \bibitem[{\citenamefont{Kwon et~al.}(2015{\natexlab{b}})\citenamefont{Kwon,
   Seo, and Shin}}]{kwon_2015b}

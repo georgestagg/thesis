@@ -74,7 +74,7 @@ with $V_0=15 \mu$ and $d=11.31\mu$m.  The initial ground-state BEC is obtained b
     \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{\label{fig:N_vV} (Color online) Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red circles), with dissipation $\gamma = 0.0003$ (blue squares) and experimental results extracted from Fig.~1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $v_c\approx 4.6$ mm/s.  }
+\caption{\label{fig:N_vV} Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red circles), with dissipation $\gamma = 0.0003$ (blue squares) and experimental results extracted from Fig.~1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $v_c\approx 4.6$ mm/s.  }
 \end{figure} 
 Following removal of the obstacle, we determine the number of vortices in the system $N_v$ using the methods described in Section \ref{section:vortexidentifying}.  
 We limit our search to $75$ percent of the Thomas-Fermi radius \ngp{(centred on the centre-of-mass to account for sloshing motion)}; by avoiding the low density periphery we avoid artefacts from ghost vortices and match closely what is performed experimentally (since vortices close to the edge are not detected due to low signal-to-noise~\citep{shin_private}). 
@@ -97,7 +97,7 @@ speed $v=1.4$mm/s.
 \begin{figure}
 \centering
 \includegraphics[width=0.95\linewidth]{shin/fig2_4x2}
-\caption{\label{fig:densSnapshots} (Color online) Snapshots of the condensate density, for a translational speed $v=1.4$mm/s and in the presence of dissipation ($\gamma=0.0003$). The obstacle is completely removed at $0.43$s. The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Vortices with positive (negative) circulation are highlighted by red circles (blue triangles).
+\caption{\label{fig:densSnapshots} Snapshots of the condensate density, for a translational speed $v=1.4$mm/s and in the presence of dissipation ($\gamma=0.0003$). The obstacle is completely removed at $0.43$s. The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Vortices with positive (negative) circulation are highlighted by red circles (blue triangles).
 }
 \end{figure}
 
@@ -105,7 +105,7 @@ Figure \ref{fig:densSnapshots} shows the condensate density at various times. At
 
 \subsection{Vortex Nucleation and Wake Formation}
 
-To initiate the dynamics, the harmonic trap is translated to the left.  This is performed sufficiently rapidly that the condensate does not adiabatically follow the trap minimum, but rather begins a sloshing motion in the trap; the centre-of-mass of the BEC oscillates at the trap frequency and the BEC undergoes a quadrupolar shape oscillation. As the BEC sloshes first to the left, its speed increases.  When the local fluid velocity exceeds the speed of sound, vortices nucleate \cite{frisch92} at the poles of the obstacle
+To initiate the dynamics, the harmonic t1rap is translated to the left.  This is performed sufficiently rapidly that the condensate does not adiabatically follow the trap minimum, but rather begins a sloshing motion in the trap; the centre-of-mass of the BEC oscillates at the trap frequency and the BEC undergoes a quadrupolar shape oscillation. As the BEC sloshes first to the left, its speed increases.  When the local fluid velocity exceeds the speed of sound, vortices nucleate \cite{frisch92} at the poles of the obstacle
 (where the local fluid velocity is the greatest) 
 and are washed downstream (to the left).  
 As seen in Chapter \ref{cha:wake}, the pattern of vortices nucleated by a moving obstacle 
@@ -236,8 +236,8 @@ At first $N_v$ grows steeply, as vortices (around 40-60) are rapidly driven into
       \addplot [thick,color=red,mark=none,draw=none,fill=red!60]coordinates {(100, 100) (100, 0) (0, 0) (0, 100)};
       \addplot[mark=none,draw=none,thick,fill=cyan!70] file {shin/nv_t_a_split.dat}\closedcycle;
       \addplot[mark=none,color=black,thick,fill=white] file {shin/nv_t_a_lower.dat}\closedcycle;
-      \node[anchor=west] at (axis cs:  1.25,  77) {Drift};
-      \node[anchor=west] at (axis cs:  1.25,  55) {Annihilation};
+      \node[anchor=west] at (axis cs:  1.25,  77) {\sf Drift};
+      \node[anchor=west] at (axis cs:  1.25,  55) {\sf Annihilation};
     \end{axis}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -257,8 +257,8 @@ At first $N_v$ grows steeply, as vortices (around 40-60) are rapidly driven into
       \addplot [thick,color=red,mark=none,draw=none,fill=red!60]coordinates {(100, 100) (100, 0) (0, 0) (0, 100)};
       \addplot[mark=none,draw=none,thick,fill=cyan!70] file {shin/nv_t_b_split.dat}\closedcycle;
       \addplot[mark=none,color=black,thick,fill=white] file {shin/nv_t_b_lower.dat}\closedcycle;
-      \node[anchor=west] at (axis cs:  2,  58) {Drift};
-      \node[anchor=west] at (axis cs:  2,  40) {Annihilation};
+      \node[anchor=west] at (axis cs:  2,  58) {\sf Drift};
+      \node[anchor=west] at (axis cs:  2,  40) {\sf Annihilation};
     \end{axis}
 \end{tikzpicture}\\%
 \begin{tikzpicture}
@@ -345,10 +345,11 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
 %\caption{\label{fig:cresentPlots} Density (left) and phase (right) just before (a), immediately following (b) and a later time after (c) a vortex-antivortex annihilation event.  The field of view is  $[23.5\mu$m]$^2$, centered on the vortex pair/sound pulse (highlighted by a circle in the phase).}
 %\end{figure}
 \begin{figure}
-  \begin{tikzpicture}
+\hspace*{0.07\linewidth}(a)\hspace{0.23\linewidth}(b)\hspace{0.23\linewidth}(c)\\
+\hspace*{0.05\linewidth}\begin{tikzpicture}
   \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -362,12 +363,16 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       minor tick length = 0.00cm
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_d1.png};
+      \node at (axis cs:  -1,  4) {{\sf A}};
+      \node at (axis cs:  2,  2) {{\sf B}};
+      \node at (axis cs:  3,  -2) {{\sf C}};
+      \node[anchor=south east] at (axis cs:  10,  -10) {{\sf 483 ms}};
     \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.5cm}
 \begin{tikzpicture}
 \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -381,12 +386,14 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       minor tick length = 0.00cm
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_d2.png};
+      \node at (axis cs:  1,  3) {{\sf S}};
+      \node[anchor=south east] at (axis cs:  10,  -10) {{\sf 487 ms}};
     \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.5cm}
 \begin{tikzpicture}
 \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -400,12 +407,14 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       minor tick length = 0.00cm
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_d3.png};
+      \node at (axis cs:  3,  2) {{\sf S}};
+      \node[anchor=south east] at (axis cs:  10,  -10) {{\sf 491 ms}};
     \end{axis}
-\end{tikzpicture}\\
-  \begin{tikzpicture}
+\end{tikzpicture}\vspace{-1.1cm}\\
+\hspace*{0.05\linewidth}\begin{tikzpicture}
   \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -419,12 +428,13 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       minor tick length = 0.00cm
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_p1_c1.png};
+      \draw[black,ultra thick,dashed] (axis cs: 0.2,1) circle (1.7);
     \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.5cm}
 \begin{tikzpicture}
 \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -438,12 +448,13 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       minor tick length = 0.00cm
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_p2_c1.png};
+      \draw[black,ultra thick,dashed] (axis cs: -1,1) circle (1.7);
     \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}\hspace{-0.5cm}
 \begin{tikzpicture}
 \begin{axis}[ylabel near ticks,xlabel near ticks,
-      width=0.28\linewidth,
-      height=0.28\linewidth,
+      width=0.35\linewidth,
+      height=0.35\linewidth,
       axis on top,
       xmin=-10,
       xmax=10,
@@ -461,9 +472,10 @@ With the inclusion of a dissipation of $\gamma=0.0003$ we obtain $\Gamma_{1} = 0
       colorbar,colormap name=hsvcl
       ]
       \addplot graphics [xmin=-10,xmax=10,ymin=-10,ymax=10] {shin/fig5_p3_c1.png};
+      \draw[black,ultra thick,dashed] (axis cs: 0.5,1.5) circle (1.7);
     \end{axis}
-\end{tikzpicture}\\
-\caption{\label{fig:cresentPlots} Density (left) and phase (right) just before (a), immediately following (b) and a later time after (c) a vortex-antivortex annihilation event.  The field of view is  $[23.5\mu$m]$^2$, centered on the vortex pair/sound pulse (highlighted by a circle in the phase).}
+\end{tikzpicture}
+\caption{\label{fig:cresentPlots} Density (upper) and phase (lower) just before (a), immediately following (b) and a later time after (c) a vortex-antivortex annihilation event.  The field of view is  $[23.5\mu$m]$^2$, surrounding the vortex pair/sound pulse (highlighted by a circle in the phase).}
 \end{figure}
 
 
@@ -477,7 +489,7 @@ induce an intense, localised, rarefaction
 sound pulse~\cite{leadbeater,zuccher}.  
 Figure~\ref{fig:cresentPlots} shows snapshots of the condensate density 
 and phase during a reconnection event. Vortices show up as localized dips 
-in the density (left column) and $2 \pi$-defects in the phase (right column). 
+in the density (upper row) and $2 \pi$-defects in the phase (lower row). 
 Figure~\ref{fig:cresentPlots} (a) shows a vortex (A) and antivortex (B) 
 close to each other, and a third vortex (C) in the vicinity.
 Note that the individual vortices are not spatially resolvable 
@@ -496,13 +508,15 @@ is thus crucial to distinguish the nature
 of these observed structures.  In this direction, an approach has recently been proposed for the experimental detection of quantized vortices and their circulation in a 2D BEC \cite{powis}.}
 
 \section{Vortex Generation via an Elliptical Obstacle}
-\ngp{It is evident from the snapshots in Figure 2 that the initial translation of the condensate past the obstacle generates not just vortices but also shape excitations, sound waves (low-amplitude density waves), and high-amplitude density waves.  These additional excitations will heat the condensate and modify the subsequent turbulent dynamics in a highly nonlinear and complicated manner.  While reducing the translational speed reduces this disruption, this also reduces the number of vortices.  A less disruptive and more efficient (higher rate of vortex nucleation) means to generate vortices may be provided by employing a laser-induced obstacle with {\it elliptical}, rather than circular, cross-section (attainable through cylindrical beam focusing).  Repeating our simulations with such an elliptical obstacle $V_{\rm{obs}}(x,y) = V_0 \exp{[-{\epsilon^2 x^2 + y^2}/{d^2}]}$ with arbitrary ellipticity $\epsilon=3$ (the short/long axis being parallel/perpendicular to the flow) confirms the same qualitative behaviour as for homogeneous systems \citep{stagg_parker_14}: the ellipticity acts to reduce the critical superfluid velocity and, for a given flow speed, increase the rate of vortex nucleation. To illustrate the merits of the elliptical obstacle, in Fig. 6 we depict snapshots of the condensate dynamics for ellipticity $\epsilon=3$ and a translational speed of $v=0.8$mm/s. Despite a lower translational speed, the number of vortices generated by the time the obstacle is removed is almost identical to the circular example of Fig. 3.  As a consequence of the reduced translational speed, the condensate disruption is visibly reduced. It is also worth noting that the elliptical obstacle promotes the formation of clusters of like-signed vortices (see intermediate time), and thus may facilitate future exploration of coherent vortex structures.}
+It is evident from the snapshots in Figure 2 that the initial translation of the condensate past the obstacle generates not just vortices but also shape excitations, sound waves (low-amplitude density waves), and high-amplitude density waves.  These additional excitations will heat the condensate and modify the subsequent turbulent dynamics in a highly nonlinear and complicated manner.  While reducing the translational speed reduces this disruption, this also reduces the number of vortices.  A less disruptive and more efficient (higher rate of vortex nucleation) means to generate vortices may be provided by employing a laser-induced obstacle of a form similar to that used in Chapter \ref{cha:wake}, with an {\it elliptical} rather than circular cross-section (experimentally attainable through cylindrical beam focusing).
+
+Repeating our simulations with such an elliptical obstacle, governed by Equation (\ref{eq:potentialcylinder}), with arbitrary ellipticity $\epsilon=3$ (the short/long axis being parallel/perpendicular to the flow) confirms the same qualitative behaviour as in Chapter \ref{cha:wake} for homogeneous systems \citep{stagg_parker_14}: the ellipticity acts to reduce the critical superfluid velocity and, for a given flow speed, increase the rate of vortex nucleation. To illustrate the merits of the elliptical obstacle, in Figure \ref{fig:ellipse} we depict snapshots of the condensate dynamics for ellipticity $\epsilon=3$ and a translational speed of $v=0.8$mm/s. Despite a lower translational speed, the number of vortices generated by the time the obstacle is removed is almost identical to the circular example of Figure \ref{fig:N_vTime}.  As a consequence of the reduced translational speed, the condensate disruption is visibly reduced. It is also worth noting that the elliptical obstacle promotes the formation of clusters of like-signed vortices (see intermediate time), and thus may facilitate future exploration of coherent vortex structures.
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{shin/fig6.png}
-\caption{\label{fig:ellipse} (Color online) Snapshots of the condensate density for a translational of speed $v=0.8$mm/s past an elliptical obstacle (ellipticity $\epsilon=3$). The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Compared to the corresponding snapshots in Figure 2, the elliptical obstacle generates as many final vortices but at a lower translational speed and with reduced condensate disruption.
+\caption{\label{fig:ellipse} Snapshots of the condensate density for a translational of speed $v=0.8$mm/s past an elliptical obstacle (ellipticity $\epsilon=3$). The field of view in each subfigure is of size $[170\mu$m$]^2$ and shifted along the $x$-axis so as to best display the condensate.  Compared to the corresponding snapshots in Figure 2, the elliptical obstacle generates as many final vortices but at a lower translational speed and with reduced condensate disruption.
 }
 \end{figure}
 \section{Conclusions}
@@ -510,14 +524,20 @@ In conclusion, we have shown that the recent experimental creation and decay of 
 translation of the obstacle, a quasi-classical wake of vortices 
 forms behind it, before symmetry breaking causes disorganisation 
 of the vortices.  After the obstacle is removed, 
-the vortices decay in a manner which is both qualitatively and 
-quantitatively consistent with the two mechanisms proposed by 
+the vortices decay in a manner which is consistent with the two mechanisms proposed by 
 Kwon \etalcc, i.e. loss of vortices at the condensate edge due to thermal dissipation and vortex-antivortex 
 annihilation events within the condensate. 
 We confirm the occasional appearance of 
 crescent-shaped density features, resulting either from the proximity 
 of vortex cores or from a sound pulse which follows a 
 vortex-antivortex reconnection.  Finally, we propose that a moving {\it elliptical} obstacle may provide a cleaner and more efficient means to generate two-dimensional quantum turbulence.
-\subsection{Future work}
-To be added.
+\subsection{Further work}
+We have shown that the rate equation proposed by Kwon \etal \citep{kwon_moon_14}, Equation (\ref{eqn:N_v_decay}), can be used to characterise the decay of vortices via two mechanisms: a rate of decay due to drifting, and a rate of decay due to annihilation. However, to obtain physically realistic fits, we were forced to enforce the meaning of the two decay terms as part of the fitting mechanism, a process which is not ideal.% It is perhaps to be expected that such a simple rate equation would not capture the full spectrum of rich behaviour available to the GPE. It would be beneficial, however, to attempt to deeper understand the vortex-antivortex annihilation process and produce a higher quality universal decay law. 
+
+Several authors \cite{Cidrim15,Groszek15} have investigated the decay of 2D quantum turbulence, providing arguments and evidence to support modified rate equations that provide a better fit to simulated BEC experiments. Recently, Cidrim \etal \cite{Cidrim15} proposed a scheme for generating two-dimensional quantum turbulence with the novelty of controlling the {\it polarisation} of the resulting turbulence, by the addition of small localised repulsive potentials. In similarity to the results detailed in this chapter, fitting to Equation (\ref{eqn:N_v_decay}) without enforcing the meaning of the terms provided physically unrealistic decay rates. By proposing a simple argument that takes into account the polarised nature of the turbulence and early time steeper-than-quadratic effects, Cidrim \etal provided the following phenomenological model of vortex decay,
+\begin{align}
+  \frac{{\rm d}N_+}{{\rm d}t} &= -\Gamma_1(N_+)^{3/2} -\Gamma_2(N_+N_-)^2,\\
+  \frac{{\rm d}N_-}{{\rm d}t} &= -\Gamma_1(N_-)^{3/2} -\Gamma_2(N_+N_-)^2,
+\end{align}
+where $N_+$/$N_-$ are vortices of positive/negative circulation. Fitting to this model gave physically realistic values for both decay rates in all of their simulated cases. Similarly, Groszek \etal independently provided evidence \cite{Groszek15} that vortex annihilation events are in fact a four-body loss mechanism, leading to a decay of the form ${{\rm d}N_v}/{{\rm d}t}\sim -N_v^4$, supporting the findings of Cidrim \etal
 \end{chapter}
