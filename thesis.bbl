@@ -1,4 +1,4 @@
-\begin{thebibliography}{170}
+\begin{thebibliography}{171}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -404,6 +404,29 @@
   \textbf{\bibinfo{volume}{85}}, \bibinfo{pages}{014501}
   (\bibinfo{year}{2012}).
 
+\bibitem[{\citenamefont{Maurer and Tabeling}(1998)}]{Tabeling}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Maurer}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Tabeling}},
+  \bibinfo{journal}{EPL (Europhysics Letters)} \textbf{\bibinfo{volume}{43}},
+  \bibinfo{pages}{29} (\bibinfo{year}{1998}).
+
+\bibitem[{\citenamefont{Salort et~al.}(2010)\citenamefont{Salort, Baudet,
+  Castaing, Chabaud, Daviaud, Didelot, Diribarne, Dubrulle, Gagne, Gauthier
+  et~al.}}]{Salort}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Salort}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Baudet}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Castaing}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Chabaud}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Daviaud}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Didelot}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Diribarne}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Dubrulle}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Gagne}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Gauthier}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Physics of Fluids}
+  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{125102}
+  (\bibinfo{year}{2010}).
+
 \bibitem[{\citenamefont{J\"ager et~al.}(1995)\citenamefont{J\"ager, Schuderer,
   and Schoepe}}]{Schoepe1995}
 \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{J\"ager}},
@@ -590,29 +613,6 @@
   \emph{\bibinfo{title}{An Album of Fluid Motion}}
   (\bibinfo{publisher}{Parabolic Press}, \bibinfo{address}{Stanford, CA},
   \bibinfo{year}{1982}).
-
-\bibitem[{\citenamefont{Maurer and Tabeling}(1998)}]{Tabeling}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Maurer}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Tabeling}},
-  \bibinfo{journal}{EPL (Europhysics Letters)} \textbf{\bibinfo{volume}{43}},
-  \bibinfo{pages}{29} (\bibinfo{year}{1998}).
-
-\bibitem[{\citenamefont{Salort et~al.}(2010)\citenamefont{Salort, Baudet,
-  Castaing, Chabaud, Daviaud, Didelot, Diribarne, Dubrulle, Gagne, Gauthier
-  et~al.}}]{Salort}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Salort}},
-  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Baudet}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Castaing}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Chabaud}},
-  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Daviaud}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Didelot}},
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Diribarne}},
-  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Dubrulle}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Gagne}},
-  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Gauthier}},
-  \bibnamefont{et~al.}, \bibinfo{journal}{Physics of Fluids}
-  \textbf{\bibinfo{volume}{22}}, \bibinfo{pages}{125102}
-  (\bibinfo{year}{2010}).
 
 \bibitem[{\citenamefont{Nore et~al.}(1997)\citenamefont{Nore, Abid, and
   Brachet}}]{Nore}
@@ -1071,6 +1071,38 @@
   Molecular and Optical Physics} \textbf{\bibinfo{volume}{47}},
   \bibinfo{pages}{095304} (\bibinfo{year}{2014}).
 
+\bibitem[{\citenamefont{Stagg et~al.}(2015{\natexlab{a}})\citenamefont{Stagg,
+  Allen, Parker, and Barenghi}}]{stagg_allen_14}
+\bibinfo{author}{\bibfnamefont{G.~W.} \bibnamefont{Stagg}},
+  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Allen}},
+  \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Parker}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~F.}
+  \bibnamefont{Barenghi}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{91}}, \bibinfo{pages}{013612}
+  (\bibinfo{year}{2015}{\natexlab{a}}).
+
+\bibitem[{\citenamefont{Cidrim et~al.}(2016)\citenamefont{Cidrim, dos Santos,
+  Galantucci, Bagnato, and Barenghi}}]{Cidrim15}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Cidrim}},
+  \bibinfo{author}{\bibfnamefont{F.~E.~A.} \bibnamefont{dos Santos}},
+  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Galantucci}},
+  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{Bagnato}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~F.}
+  \bibnamefont{Barenghi}}, \bibinfo{journal}{Phys. Rev. A}
+  \textbf{\bibinfo{volume}{93}}, \bibinfo{pages}{033651}
+  (\bibinfo{year}{2016}).
+
+\bibitem[{\citenamefont{Groszek et~al.}(2015)\citenamefont{Groszek, Simula,
+  Paganin, and Helmerson}}]{Groszek15}
+\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Groszek}},
+  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}},
+  \bibinfo{author}{\bibfnamefont{D.~M.} \bibnamefont{Paganin}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Helmerson}},
+  \emph{\bibinfo{title}{Onsager vortex formation in bose-einstein condensates
+  in two-dimensional power-law traps}} (\bibinfo{year}{2015}),
+  \eprint{arXiv:1511.06552}.
+
 \bibitem[{\citenamefont{Nazarenko and Onorato}(2007)}]{nazarenko_onorato_07}
 \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Nazarenko}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Onorato}},
@@ -1124,28 +1156,6 @@
   \textbf{\bibinfo{volume}{113}}, \bibinfo{pages}{165303}
   (\bibinfo{year}{2014}).
 
-\bibitem[{\citenamefont{Cidrim et~al.}(2016)\citenamefont{Cidrim, dos Santos,
-  Galantucci, Bagnato, and Barenghi}}]{Cidrim15}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Cidrim}},
-  \bibinfo{author}{\bibfnamefont{F.~E.~A.} \bibnamefont{dos Santos}},
-  \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Galantucci}},
-  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{Bagnato}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~F.}
-  \bibnamefont{Barenghi}}, \bibinfo{journal}{Phys. Rev. A}
-  \textbf{\bibinfo{volume}{93}}, \bibinfo{pages}{033651}
-  (\bibinfo{year}{2016}).
-
-\bibitem[{\citenamefont{Groszek et~al.}(2015)\citenamefont{Groszek, Simula,
-  Paganin, and Helmerson}}]{Groszek15}
-\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Groszek}},
-  \bibinfo{author}{\bibfnamefont{T.~P.} \bibnamefont{Simula}},
-  \bibinfo{author}{\bibfnamefont{D.~M.} \bibnamefont{Paganin}},
-  \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Helmerson}},
-  \emph{\bibinfo{title}{Onsager vortex formation in bose-einstein condensates
-  in two-dimensional power-law traps}} (\bibinfo{year}{2015}),
-  \eprint{arXiv:1511.06552}.
-
 \bibitem[{\citenamefont{Kwon et~al.}(2015{\natexlab{b}})\citenamefont{Kwon,
   Seo, and Shin}}]{kwon_2015b}
 \bibinfo{author}{\bibfnamefont{W.~J.} \bibnamefont{Kwon}},
@@ -1167,15 +1177,15 @@
   \bibinfo{journal}{Nature Physics} \textbf{\bibinfo{volume}{8}},
   \bibinfo{pages}{645 } (\bibinfo{year}{2012}).
 
-\bibitem[{\citenamefont{Stagg et~al.}(2015)\citenamefont{Stagg, Allen,
-  Barenghi, and Parker}}]{stagg_2015b}
+\bibitem[{\citenamefont{Stagg et~al.}(2015{\natexlab{b}})\citenamefont{Stagg,
+  Allen, Barenghi, and Parker}}]{stagg_2015b}
 \bibinfo{author}{\bibfnamefont{G.~W.} \bibnamefont{Stagg}},
   \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Allen}},
   \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
   \bibnamefont{and} \bibinfo{author}{\bibfnamefont{N.~G.}
   \bibnamefont{Parker}}, \bibinfo{journal}{Journal of Physics: Conference
   Series} \textbf{\bibinfo{volume}{594}}, \bibinfo{pages}{012044}
-  (\bibinfo{year}{2015}).
+  (\bibinfo{year}{2015}{\natexlab{b}}).
 
 \bibitem[{\citenamefont{Winiecki and Adams}(2000)}]{winiecki_2000}
 \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Winiecki}} \bibnamefont{and}

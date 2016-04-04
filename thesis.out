@@ -66,47 +66,48 @@
 \BOOKMARK [2][-]{subsection.4.4.1}{Symmetric Wakes}{section.4.4}% 66
 \BOOKMARK [2][-]{subsection.4.4.2}{Asymmetric Wakes}{section.4.4}% 67
 \BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 68
-\BOOKMARK [2][-]{subsection.4.5.1}{Further Work}{section.4.5}% 69
-\BOOKMARK [0][-]{chapter.5}{Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{part.2}% 70
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 71
-\BOOKMARK [1][-]{section.5.2}{Model}{chapter.5}% 72
-\BOOKMARK [1][-]{section.5.3}{Number of Vortices Generated}{chapter.5}% 73
-\BOOKMARK [1][-]{section.5.4}{Stages of the Condensate Evolution}{chapter.5}% 74
-\BOOKMARK [2][-]{subsection.5.4.1}{Vortex Nucleation and Wake Formation}{section.5.4}% 75
-\BOOKMARK [2][-]{subsection.5.4.2}{Vortex Randomization}{section.5.4}% 76
-\BOOKMARK [2][-]{subsection.5.4.3}{Vortex Decay}{section.5.4}% 77
-\BOOKMARK [1][-]{section.5.5}{Crescent-Shaped Density Structures}{chapter.5}% 78
-\BOOKMARK [1][-]{section.5.6}{Vortex Generation via an Elliptical Obstacle}{chapter.5}% 79
-\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 80
-\BOOKMARK [2][-]{subsection.5.7.1}{Further work}{section.5.7}% 81
-\BOOKMARK [0][-]{chapter.6}{Critical velocity at finite temperature}{part.2}% 82
-\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 83
-\BOOKMARK [1][-]{section.6.2}{Classical Field Method}{chapter.6}% 84
-\BOOKMARK [1][-]{section.6.3}{Equilibration dynamics and decay of the vortex tangle}{chapter.6}% 85
-\BOOKMARK [1][-]{section.6.4}{Moving obstacle at finite-temperature}{chapter.6}% 86
-\BOOKMARK [2][-]{subsection.6.4.1}{Critical velocity for vortex nucleation}{section.6.4}% 87
-\BOOKMARK [2][-]{subsection.6.4.2}{Vortex nucleation pattern}{section.6.4}% 88
-\BOOKMARK [1][-]{section.6.5}{Conclusions}{chapter.6}% 89
-\BOOKMARK [0][-]{chapter.7}{Simulating the surface of a ``Floppy Wire''}{part.2}% 90
-\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 91
-\BOOKMARK [1][-]{section.7.2}{Method}{chapter.7}% 92
-\BOOKMARK [1][-]{section.7.3}{Three-dimensional results}{chapter.7}% 93
-\BOOKMARK [1][-]{section.7.4}{Two-dimensional results}{chapter.7}% 94
-\BOOKMARK [2][-]{subsection.7.4.1}{Truncated surfaces}{section.7.4}% 95
-\BOOKMARK [1][-]{section.7.5}{Conclusions}{chapter.7}% 96
-\BOOKMARK [-1][-]{part.3}{III Appendix}{}% 97
-\BOOKMARK [0][-]{appendix.A}{Detailed Derivations}{part.3}% 98
-\BOOKMARK [1][-]{section.A.1}{ Derivation of the Runge-Kutta scheme}{appendix.A}% 99
-\BOOKMARK [1][-]{section.A.2}{ Derivation of the Gross-Pitaevskii Equation}{appendix.A}% 100
-\BOOKMARK [1][-]{section.A.3}{ Derivation of the Hydrodynamic Equations via the Madelung Transformation}{appendix.A}% 101
-\BOOKMARK [0][-]{appendix.B}{Important Quantities}{part.3}% 102
-\BOOKMARK [1][-]{section.B.1}{ Energy}{appendix.B}% 103
-\BOOKMARK [1][-]{section.B.2}{ Force}{appendix.B}% 104
-\BOOKMARK [1][-]{section.B.3}{ Healing Length}{appendix.B}% 105
-\BOOKMARK [0][-]{appendix.C}{Algorithms}{part.3}% 106
-\BOOKMARK [1][-]{section.C.1}{ Density/Phase Visualisation Technique}{appendix.C}% 107
-\BOOKMARK [2][-]{subsection.C.1.1}{Plotting Algorithm}{section.C.1}% 108
-\BOOKMARK [2][-]{subsection.C.1.2}{Colour space conversion - rgb to hsl}{section.C.1}% 109
-\BOOKMARK [2][-]{subsection.C.1.3}{Colour space conversion - hsl to rgb}{section.C.1}% 110
-\BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 111
-\BOOKMARK [0][-]{algocf.9}{Bibliography}{part.3}% 112
+\BOOKMARK [1][-]{section.4.6}{Further Work}{chapter.4}% 69
+\BOOKMARK [2][-]{subsection.4.6.1}{A `quantum' Reynolds number}{section.4.6}% 70
+\BOOKMARK [2][-]{subsection.4.6.2}{Other analogues}{section.4.6}% 71
+\BOOKMARK [0][-]{chapter.5}{Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{part.2}% 72
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 73
+\BOOKMARK [1][-]{section.5.2}{Model}{chapter.5}% 74
+\BOOKMARK [1][-]{section.5.3}{Number of Vortices Generated}{chapter.5}% 75
+\BOOKMARK [1][-]{section.5.4}{Stages of the Condensate Evolution}{chapter.5}% 76
+\BOOKMARK [2][-]{subsection.5.4.1}{Vortex Nucleation and Wake Formation}{section.5.4}% 77
+\BOOKMARK [2][-]{subsection.5.4.2}{Vortex Randomization}{section.5.4}% 78
+\BOOKMARK [2][-]{subsection.5.4.3}{Vortex Decay}{section.5.4}% 79
+\BOOKMARK [1][-]{section.5.5}{Crescent-Shaped Density Structures}{chapter.5}% 80
+\BOOKMARK [1][-]{section.5.6}{Vortex Generation via an Elliptical Obstacle}{chapter.5}% 81
+\BOOKMARK [1][-]{section.5.7}{Conclusions}{chapter.5}% 82
+\BOOKMARK [0][-]{chapter.6}{Critical velocity at finite temperature}{part.2}% 83
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 84
+\BOOKMARK [1][-]{section.6.2}{Classical Field Method}{chapter.6}% 85
+\BOOKMARK [1][-]{section.6.3}{Equilibration dynamics and decay of the vortex tangle}{chapter.6}% 86
+\BOOKMARK [1][-]{section.6.4}{Moving obstacle at finite-temperature}{chapter.6}% 87
+\BOOKMARK [2][-]{subsection.6.4.1}{Critical velocity for vortex nucleation}{section.6.4}% 88
+\BOOKMARK [2][-]{subsection.6.4.2}{Vortex nucleation pattern}{section.6.4}% 89
+\BOOKMARK [1][-]{section.6.5}{Conclusions}{chapter.6}% 90
+\BOOKMARK [0][-]{chapter.7}{Simulating the surface of a ``Floppy Wire''}{part.2}% 91
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 92
+\BOOKMARK [1][-]{section.7.2}{Method}{chapter.7}% 93
+\BOOKMARK [1][-]{section.7.3}{Three-dimensional results}{chapter.7}% 94
+\BOOKMARK [1][-]{section.7.4}{Two-dimensional results}{chapter.7}% 95
+\BOOKMARK [2][-]{subsection.7.4.1}{Truncated surfaces}{section.7.4}% 96
+\BOOKMARK [1][-]{section.7.5}{Conclusions}{chapter.7}% 97
+\BOOKMARK [-1][-]{part.3}{III Appendix}{}% 98
+\BOOKMARK [0][-]{appendix.A}{Detailed Derivations}{part.3}% 99
+\BOOKMARK [1][-]{section.A.1}{ Derivation of the Runge-Kutta scheme}{appendix.A}% 100
+\BOOKMARK [1][-]{section.A.2}{ Derivation of the Gross-Pitaevskii Equation}{appendix.A}% 101
+\BOOKMARK [1][-]{section.A.3}{ Derivation of the Hydrodynamic Equations via the Madelung Transformation}{appendix.A}% 102
+\BOOKMARK [0][-]{appendix.B}{Important Quantities}{part.3}% 103
+\BOOKMARK [1][-]{section.B.1}{ Energy}{appendix.B}% 104
+\BOOKMARK [1][-]{section.B.2}{ Force}{appendix.B}% 105
+\BOOKMARK [1][-]{section.B.3}{ Healing Length}{appendix.B}% 106
+\BOOKMARK [0][-]{appendix.C}{Algorithms}{part.3}% 107
+\BOOKMARK [1][-]{section.C.1}{ Density/Phase Visualisation Technique}{appendix.C}% 108
+\BOOKMARK [2][-]{subsection.C.1.1}{Plotting Algorithm}{section.C.1}% 109
+\BOOKMARK [2][-]{subsection.C.1.2}{Colour space conversion - rgb to hsl}{section.C.1}% 110
+\BOOKMARK [2][-]{subsection.C.1.3}{Colour space conversion - hsl to rgb}{section.C.1}% 111
+\BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 112
+\BOOKMARK [0][-]{algocf.9}{Bibliography}{part.3}% 113

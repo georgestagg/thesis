@@ -22,10 +22,10 @@
 \contentsline {subsection}{\numberline {2.10.2} Rotating frame}{13}{subsection.2.10.2}
 \contentsline {section}{\numberline {2.11} The dissipative Gross-Pitaevskii equation}{13}{section.2.11}
 \contentsline {section}{\numberline {2.12} Finite temperature homogeneous condensate using the classical field method}{16}{section.2.12}
-\contentsline {section}{\numberline {2.13} A selection of simple solutions}{16}{section.2.13}
+\contentsline {section}{\numberline {2.13} A selection of simple solutions}{17}{section.2.13}
 \contentsline {subsection}{\numberline {2.13.1} Density near a wall}{17}{subsection.2.13.1}
 \contentsline {subsection}{\numberline {2.13.2} Soliton solutions}{17}{subsection.2.13.2}
-\contentsline {subsection}{\numberline {2.13.3} Quantised vortices}{18}{subsection.2.13.3}
+\contentsline {subsection}{\numberline {2.13.3} Quantised vortices}{19}{subsection.2.13.3}
 \contentsline {section}{\numberline {2.14} Initial conditions}{20}{section.2.14}
 \contentsline {subsection}{\numberline {2.14.1} Homogeneous initial condition}{20}{subsection.2.14.1}
 \contentsline {subsection}{\numberline {2.14.2} Thomas-Fermi profile of a trapped condensate}{21}{subsection.2.14.2}
@@ -66,9 +66,9 @@
 \contentsline {subsection}{\numberline {4.4.1}Symmetric Wakes}{56}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Asymmetric Wakes}{57}{subsection.4.4.2}
 \contentsline {section}{\numberline {4.5}Conclusion}{58}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Further Work}{58}{subsection.4.5.1}
-\contentsline {subsubsection}{A `quantum' Reynolds number}{58}{section*.32}
-\contentsline {subsubsection}{Other analogues}{59}{section*.33}
+\contentsline {section}{\numberline {4.6}Further Work}{58}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}A `quantum' Reynolds number}{58}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Other analogues}{59}{subsection.4.6.2}
 \contentsline {chapter}{\numberline {5}Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{61}{section.5.1}
 \contentsline {section}{\numberline {5.2}Model}{62}{section.5.2}
@@ -77,10 +77,11 @@
 \contentsline {subsection}{\numberline {5.4.1}Vortex Nucleation and Wake Formation}{64}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Vortex Randomization}{66}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Vortex Decay}{67}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}Crescent-Shaped Density Structures}{70}{section.5.5}
-\contentsline {section}{\numberline {5.6}Vortex Generation via an Elliptical Obstacle}{71}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusions}{72}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Further work}{72}{subsection.5.7.1}
+\contentsline {subsubsection}{Kwon's decay model}{68}{section*.38}
+\contentsline {subsubsection}{Modified decay model}{70}{section*.39}
+\contentsline {section}{\numberline {5.5}Crescent-Shaped Density Structures}{72}{section.5.5}
+\contentsline {section}{\numberline {5.6}Vortex Generation via an Elliptical Obstacle}{72}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusions}{73}{section.5.7}
 \contentsline {chapter}{\numberline {6}Critical velocity at finite temperature}{75}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction}{75}{section.6.1}
 \contentsline {section}{\numberline {6.2}Classical Field Method}{76}{section.6.2}

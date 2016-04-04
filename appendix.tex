@@ -348,7 +348,7 @@ Initially, the phase plotting is performed as normal, a process involving a conv
 
 Each pixel must be instead represented in the {\tt hsl} format, a triad of values $(h,s,l)$ corresponding to the values of the hue, saturation and lightness of the pixel respectively. {\tt hsl} is most commonly represented such that $h \in [0,360)$ and $s,l \in [0,1]$. Any pixel of the form $(h,s,0)$ is black, and any pixel of the form $(h,s,1)$ is white.
 
-For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to $(r,g,b)$ must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, which areas of high density will show hues corresponding to the fluid phase at that location.
+For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\Psi(x,y)|^2/\max(|\Psi|^2)$. Once complete, conversion back to {\tt rgb} format must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, while areas of high density will show hues corresponding to the fluid phase at that location.
 
 \subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
 Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. The brightness of the pixel is described by $l$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. The hue of the pixel is described by $h$ and the strength of that hue is given by $s$. These quantities depend on the previously calculated $m$ and $n$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise,
@@ -367,7 +367,7 @@ h =
       60(\frac{r-g}{m-n}+4) &\mbox{if } m=b.
     \end{cases}
 \end{equation}
-$(h,s,l)$ then describes the required pixel in {\tt hsl} format.
+The resulting triad $(h,s,l)$ then describes the required pixel in {\tt hsl} format.
 
 \subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
 Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. Using these quantities, calculate $x = c(1-|h' \mod 2 - 1|)$. To obtain values for $r'$, $g'$ and $b'$, substitute $c$ and $x$ into
@@ -382,7 +382,7 @@ Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$
       (c, 0, x) &\mbox{if } 5 \leq h'< 6.
     \end{cases}
 \end{equation}
-Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,g,b)$ is then the required pixel described in {\tt rgb} format.
+Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. The resulting triad $(r,g,b)$ is then the required pixel described in {\tt rgb} format.
 
 \section{\label{appsection:numericalalgos} Other Numerical Algorithms}
 \begin{algorithm}
@@ -391,6 +391,7 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
     \Output{Chemical potential $\mu$}
     \SetKw{KwIn}{in}
     \SetKw{KwAll}{all}
+    \SetKwFunction{Abs}{abs}
     \SetKw{KwAllPoints}{all points}
     \BlankLine
     \Repeat{$\mathrm{abs}(\mu_1 -\mu_0) < \Delta$}{
@@ -400,10 +401,10 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
     	$\Psi\leftarrow$ Propagate in real time with dissipation $\gamma = 0.1$\;
     	$n_1\leftarrow \mathrm{norm}(\Psi)$\;
     	\If{$n_1 > n_0$}{
-				$\mu_0 = \mu_0 - c\times\mathrm{abs}(n_1 > n_0)$\;
+				$\mu_0 = \mu_0 - c\times$\Abs{$n_1 - n_0$}\;
 			}
 			\If{$n_1 < n_0$}{
-				$\mu_0 = \mu_0 + c\times\mathrm{abs}(n_1 > n_0)$\;
+				$\mu_0 = \mu_0 + c\times$\Abs{$n_1 - n_0$}\;
 			}
     }
     $\mu\leftarrow\mu_0$\;
@@ -483,7 +484,6 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
     \Input{A $n_x \times n_y$ field $Q$, a Gaussian filter width $g$.}
     \Output{A $n_x \times n_y$ field $G$.}
     \BlankLine
-    $G[i]\leftarrow0$\;
     \For{$k\leftarrow 1$ \KwTo $n_x$}{
       \For{$l\leftarrow 1$ \KwTo $n_y$}{
         \For{$i\leftarrow 1$ \KwTo $n_x$}{
@@ -515,11 +515,11 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
   \BlankLine
   Let $L$ be a $4 \times (n_x.n_y)$ field\;
   Let $A$ be a vector length $4$\;
-  \lFor{$\KwAllPoints~i~\KwIn~L$}{
-  $L[i]\leftarrow-1$
+  \lFor{$\KwAllPoints~i,j~\KwIn~L$}{
+  $L[i,j]\leftarrow-1$
   }
-  \lFor{$\KwAllPoints~i~\KwIn~Q$}{
-  $Q[i]\leftarrow-1$
+  \lFor{$\KwAllPoints~i,j~\KwIn~Q$}{
+  $Q[i,j]\leftarrow-1$
   }
 
   $l_c\leftarrow 1$, $r_c\leftarrow 0$\;
@@ -561,6 +561,8 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
   \SetKwData{Linked}{linked}
   \SetKw{KwAnd}{and}
+  \SetKw{KwAllPoints}{all points}
+    \SetKw{KwIn}{in}
   \SetKwFunction{Max}{max}
   \SetKwFunction{Min}{min}
   \SetKwData{Call}{C}
@@ -568,7 +570,12 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
   \Output{Number of vortices found, $n_v$. Vortex location, a $2 \times n_v $ field $V_l$. Vortex polarity, a vector $V_p$ of length $n_v$.}
   \BlankLine
   $Q\leftarrow$ Algorithm \ref{algo_gaussconv} $\leftarrow$ Algorithm \ref{algo_calcvortexfield} $\leftarrow(\theta,P)$ \;
-  $R\leftarrow0$ at every point, $S\leftarrow0$ at every point\;
+  \lFor{$\KwAllPoints~i,j~\KwIn~R$}{
+  $R[i,j]\leftarrow 0$
+  }
+  \lFor{$\KwAllPoints~i,j~\KwIn~S$}{
+  $S[i,j]\leftarrow 0$
+  }
   $n_v\leftarrow 0$\;
   \For{$i\leftarrow 1$ \KwTo $n_x$}{
     \For{$j\leftarrow 1$ \KwTo $n_y$}{
@@ -617,7 +624,8 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
       }
     }
     \While{the vortex group configuration continues to change}{
-      \For{$(i,j)$ \In 1 \KwTo $n_v$}{
+      \For{$i\leftarrow 1$ \KwTo $n_v$}{
+      \For{$j\leftarrow 1$ \KwTo $n_v$}{
         \lIf {either vortex $i$ or $j$ is in group -1}{\continue}
         \If {vortex $i$ and $j$ are closer than either is to a vortex of opposite polarity}{
           \uIf {one of the two vortices $i$ and $j$ is in a group $n$}
@@ -629,6 +637,7 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. $(r,
             Set both vortices as group $n_{\mathrm{rca}}$\;
             }
         }
+      }
       }
     }
 

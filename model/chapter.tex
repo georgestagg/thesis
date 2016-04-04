@@ -2,11 +2,11 @@
 \section{\label{section:meanfield} Mean-field description}
 We aim to accurately model the dynamics of a closed system containing a dilute, weakly interacting Bose gas of $N$ atoms, at extremely low temperature. One could model the entire system by constructing a N-body quantum wavefunction, which would follow the Schr\"odinger equation, but the complexity of this method makes it extremely unwieldy to model the large number of particles used in Bose-Einstein condensate (BEC) experiments.
 
-We instead model the system with a mean-field theory, described in Section \ref{section:gpe}, in which there are essentially two main approximations. First, justified by the dilute property of the gas, any binary interaction between particles is assumed to be a contact interaction following a delta function of the form
+We instead model the system with a mean-field theory, described in Section \ref{section:gpe}, in which there are essentially two main approximations. First, justified by the dilute property of the gas, any binary interaction between particles at $\mathbf{r}$ and $\mathbf{r}'$ is assumed to be a contact interaction following a delta function of the form
 \begin{equation*}
 V(\mathbf{r}-\mathbf{r}') = g \delta(\mathbf{r}-\mathbf{r}'),
 \end{equation*}
-where $g$ is an interaction coefficient. Interactions involving a higher number of particles are ignored. Secondly, we assume all particles in the condensate are macroscopically described by a single wavefunction, $\psi(\mathbf{r},t)$. As the particles all share the same phase and quantum state, $\psi(\mathbf{r},t)$ is a classical field. This second approximation also assumes that there are no particles contributing to thermal or quantum fluctuations beyond the classical field, and so is only justified in general in the limit of zero temperature. Nevertheless, we go further and describe some finite-temperature based effects in Sections \ref{section:dgpe}
+where $g$ is an interaction coefficient. Interactions involving a higher number of particles are ignored. Secondly, we assume that all particles in the condensate are macroscopically described by a single wavefunction, $\Psi(\mathbf{r},t)$, where $\mathbf{r}$ is position and $t$ is time. As the particles all share the same phase and quantum state, $\Psi(\mathbf{r},t)$ is a classical field. This second approximation also assumes that there are no particles contributing to thermal or quantum fluctuations beyond the classical field, and so is only justified in general in the limit of zero temperature. Nevertheless, we go further and describe some finite-temperature based effects in Sections \ref{section:dgpe}
 and \ref{section:cfield}.
 
 \section{\label{section:gpe} The Gross-Pitaevskii equation}
@@ -47,7 +47,7 @@ A detailed explanation of the mean-field formulation of the model and the full d
 \section{\label{section:quasi2dgpe} Quasi-two-dimensional Gross-Pitaevskii equation}
 	For some condensate geometries it is useful to be able simulate the condensate via a lower dimensional GPE. An example of this is a highly oblate condensate, in which the trapping potential is defined as
 	\begin{equation}
-		V_{\mathrm{trap}}(x,y,z)=m\omega_\perp^2\frac{x^2+y^2}{2} + m\omega_z^2\frac{z^2}{2},
+		V_{\mathrm{trap}}(x,y,z)=m\omega_\perp^2\frac{\left ( x^2+y^2 \right )}{2} + m\omega_z^2\frac{z^2}{2},
 	\end{equation}
 	with trapping frequencies $\omega_z \gg \omega_\perp$ and under the condition $\hbar\omega_z \gg \mu$, where $\mu$ is the 3D chemical potential. Tight $z$ confinement causes the dynamics to become essentially two dimensional (experimentally achieved in \cite{Gorlitz}) as the wavefunction along $z$ becomes fixed into the time-independent harmonic oscillator ground state, $\Psi_z(z)$, so that
 	\begin{equation}
@@ -66,10 +66,10 @@ A detailed explanation of the mean-field formulation of the model and the full d
 	\begin{equation}
 		\Psi({\bf r},t) = R({\bf r},t)\exp (i\theta({\bf r},t)),
 	\end{equation}
-	 and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$.
+	 and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \hbar\nabla\theta/m $.
 	In vector form we obtain a continuity equation
 	\begin{equation}
-	  \frac{\partial \rho}{\partial t} + \nabla(\rho{\bf v}) = 0,
+	  \frac{\partial \rho}{\partial t} + \nabla\cdot(\rho{\bf v}) = 0,
 	  \label{eq:MTcont}
 	\end{equation}
 	and an equation similar to the Euler equation for an inviscid fluid,
@@ -84,13 +84,13 @@ An interesting feature of the GPE is that the fluid circulation must be quantise
 \begin{equation}
 	\Delta\theta = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l},
 \end{equation}
-where $\mathrm{d}\mathbf{l}$ is the line element. The wavefunction at the start and the end of the integration must be single valued, and so
+where $\mathrm{d}\mathbf{l}$ is the line element along $C$. The wavefunction at the start and the end of the integration must be single valued, so
 \begin{equation}
 	\exp (i\theta_0) = \exp (i\theta_0)\exp (i\Delta\theta),
 \end{equation}
-for some $\theta_0$. This is only satisfied when $\Delta\theta = 2\pi q$, with $q\in\mathbb{Z}$. Our local velocity is $\mathbf{v} = \frac{\hbar}{m}\nabla\theta$ and so we can write
+for some $\theta_0$. This is only satisfied when $\Delta\theta = 2\pi q$, with $q\in\mathbb{Z}$. Our local velocity is $\mathbf{v} = \hbar\nabla\theta/m $ and so we can write
 \begin{equation}
-	\Gamma = \oint_C \! \mathbf{v} \, \mathrm{d}\mathbf{l} = \frac{2 \pi \hbar}{m}q.
+	\Gamma = \oint_C \! \mathbf{v} \cdot \mathrm{d}\mathbf{l} = \frac{2 \pi \hbar}{m}q.
 \end{equation}
 Notice that we are now taking the line integral of the velocity; we have a formula for the circulation. We find the circulation must be quantised in units of $\kappa = 2 \pi \hbar/m$, the so called `quantum of circulation'. This is in stark contrast to classical fluids where the circulation can take any real value.
 
@@ -109,7 +109,7 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 		\begin{equation}
 		0 = \left(g|\Psi({\bf r},t)|^2 - \mu \right) \Psi({\bf r},t).
 		\end{equation}
-		By rearranging, we can easily find the natural homogeneous density of the system: $\rho = |\Psi|^2 = \mu/g$. We then choose to rescale the wavefunction using this value, so that $\psi = \Psi/\sqrt{\rho}$.
+		By rearranging, we can easily find the natural homogeneous density of the system: $\rho = |\Psi|^2 = \mu/g$. We then choose to rescale the wavefunction using this value, so that $\psi = \Psi/\sqrt{\rho}$. We will use $\psi$ to denote a homogeneous system wavefunction scaled in this way.
 
 		By dimensional arguments (see Appendix \ref{section:healing} for details), the length scale of space is the healing length, $\xi = \hbar/\sqrt{mg\rho}$, and the length scale of time $\tau = \hbar/(g\rho)$. These units are often called the `natural units'. We define the rescaled dimensionless quantities as
 		\begin{equation}
@@ -119,24 +119,28 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 		\begin{equation}\label{eq:dimgpehomg}
 		\mathrm{i}\frac{\partial\psi({\tilde{\bf r}},\tilde{t})}{\partial {\tilde{t}}} = \left( -\frac{1}{2}\tilde{\nabla}^2 + |\psi({\tilde{\bf r}},\tilde{t})|^2 + \tilde{V}_{\mathrm{obj}}({\tilde{\bf r}},\tilde{t}) - 1 \right) \psi({\tilde{\bf r}},\tilde{t}).
 		\end{equation}
+		The resulting normalisation condition for $\psi$ becomes
+		\begin{equation}\label{eq:intwfhomg}
+			\int \! |\psi|^2 \, \mathrm{d}^3{\bf r} = 1.
+		\end{equation}
 
 	\subsection{\label{section:gpedimlesstrap} Trapped GPE}
-		When considering a harmonically trapped condensate it is convenient to work with a wavefunction normalised such that
+		When considering a harmonically trapped condensate it is convenient to work with a wavefunction scaled so that the normalisation condition is similar to Equation (\ref{eq:intwfhomg}). We denote the scaled wavefunction for a harmonically trapped condensate $\phi$ and write
 		\begin{equation}\label{eq:intwf}
 			\int \! |\phi|^2 \, \mathrm{d}^3{\bf r} = 1.
 		\end{equation}
-		We make Equation \ref{eq:gpe} dimensionless using the harmonic oscillator length, $l = \sqrt{\hbar/(m\omega)}$, where $\omega$ is a trap frequency. This leads to the dimensionless rescalings,
+		We introduce the harmonic oscillator length, $l_r = \sqrt{\hbar/(m\omega)}$, where $\omega$ is a trap frequency. This leads to the dimensionless rescalings,
 		\begin{equation}
-			\hat{t} = t\omega, ~~~ \hat{r} = \frac{r}{l}, ~~~ \hat{\varepsilon}= \frac{\varepsilon}{\hbar\omega},
+			\hat{t} = t\omega, ~~~ \hat{r} = \frac{r}{l_r}, ~~~ \hat{\varepsilon}= \frac{\varepsilon}{\hbar\omega},
 		\end{equation}
 		for time, length, and energy respectively, where a hat denotes a dimensionless quantity.
 		We find then that
 		\begin{equation}
-			\int \! |\Psi|^2 \, \mathrm{d}^3{\bf r} = N \Rightarrow \int \! |\Psi|^2 N^{-1} l^3 \, \mathrm{d}^3\hat{\bf r} = 1,
+			\int \! |\Psi|^2 \, \mathrm{d}^3{\bf r} = N \Rightarrow \int \! |\Psi|^2 N^{-1} l_r^3 \, \mathrm{d}^3\hat{\bf r} = 1,
 		\end{equation}
 		and so we rescale the wavefunction to satisfy Equation \ref{eq:intwf},
 		\begin{equation}
-			 |\phi|^2 = |\Psi|^2 N^{-1} l^3 \Rightarrow \phi = \Psi N^{-\frac{1}{2}} l^\frac{3}{2}.
+			 |\phi|^2 = |\Psi|^2 N^{-1} l_r^3 \Rightarrow \phi = \Psi N^{-\frac{1}{2}} l_r^\frac{3}{2}.
 		\end{equation}
 	Substituting the new rescaled quantities into Equation \ref{eq:gpe} leads us to the trapped GPE,
 	\begin{equation}\label{eq:dimgpetrapped}
@@ -144,7 +148,7 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 	\end{equation}
 	where
 	\begin{equation}
-		 \hat{g} = \frac{gN}{\hbar \omega l^3}.
+		 \hat{g} = \frac{gN}{\hbar \omega l_r^3}.
 	\end{equation}
 \section{\label{section:imagTime} The imaginary time propagation method}
 
@@ -152,7 +156,7 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 
 	There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
 
-	The imaginary time method revolves around moving from real to imaginary time using a Wick rotation $\tau = -it$. The substitution transforms the GPE into a form similar to a diffusion equation. As a result, a local equilibrium can be found by propagating $\tau$. This can be understood by considering a trial solution (as similar to the true ground-state as possible) as a collection of eigenfunctions $\Psi_n$ corresponding to eigenvalues $E_n$,
+	The imaginary time method revolves around moving from real to imaginary time using the substitution $\tau = -it$. This transforms the GPE into a form similar to a diffusion equation. As a result, a local equilibrium can be found by propagating $\tau$. This can be understood by considering a trial solution (as similar to the true ground-state as possible) as a collection of eigenfunctions $\Psi_n$ corresponding to eigenvalues $E_n$,
 \begin{equation*}
 \Psi(\mathbf{r},\tau) = \sum_n \Psi_n(\mathbf{r})\exp\left(-\frac{E_n\tau}{\hbar}\right).
 \end{equation*}
@@ -204,7 +208,7 @@ The energy can be used as a way to gauge the solution convergence. An example gr
 	\subsection{\label{section:linearmovframe} Linearly translating frame to simulate flow}
 	The GPE is transformed into the translating reference frame via the linear momentum operator. In quantum mechanics the momentum operator is defined in position space as $\hat{P} = -i\hbar\nabla$. In most cases we wish to translate the frame in order to simulate a flow and so the operator is rewritten so that the momentum is along a single axis (usually the $x$ axis),
 	\begin{equation*}
-	\hat{Q} = -i\hbar\frac{\partial}{\partial x}.
+	\hat{P}_x = -i\hbar\frac{\partial}{\partial x}.
 	\end{equation*}
 	This term can be added to the right hand side of the GPE to modify it such that it is in the reference frame moving along $x$. For example, the GPE in the frame translating along the $x$ direction with velocity $v$ is written,
 	\begin{equation}\label{eq:linearframegpe}
@@ -242,17 +246,17 @@ p_x & p_y & p_z \end{array} \right|.
 
 	We would like to extend the GPE such that a damping process is introduced, so that dynamics approach an equilibrium state over time. Such an equilibrium state can be described by Equation \ref{eq:stationgpe}. The equation of motion for our wavefunction $\Psi$ is then written 
 		\begin{equation}\label{eq:disseqmotion}
-		i\hbar \frac{\partial \Psi}{\partial t} = \hat{L}\Psi,
+		i\hbar \frac{\partial \Psi}{\partial t} = \hat{Q}\Psi,
 		\end{equation}
-	where $\hat{L}$ is a non-Hermitian operator (so that we have a relaxation process). At equilibrium the anti-Hermitian part of $\hat{L}\Psi$ must be zero. We force this by writing the anti-Hermitian part of $\hat{L}\Psi$ in the form,
+	where $\hat{Q}$ is a non-Hermitian operator (so that we have a relaxation process). At equilibrium the anti-Hermitian part of $\hat{Q}\Psi$ must be zero. We force this by writing the anti-Hermitian part of $\hat{Q}\Psi$ in the form,
 	\begin{equation*}\label{eq:dissantiherm}
 		i\Gamma\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2 - \mu \right) \Psi({\bf r}),
 	\end{equation*}
 	which will forced to zero at equilibrium by satisfaction of Equation \ref{eq:stationgpe}. Here $\Gamma$ is a dimensionless value parametrising the relaxation.
 
-	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write $\hat{L}\Psi$ as
+	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write $\hat{Q}\Psi$ as
 	\begin{equation*}\label{eq:dissantiherm2}
-		\hat{L}\Psi = (1+i\Gamma)\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2 - \mu \right) \Psi({\bf r}),
+		\hat{Q}\Psi = (1+i\Gamma)\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\Psi({\bf r})|^2 - \mu \right) \Psi({\bf r}),
 	\end{equation*}
 	and the equation of motion becomes the DGPE,
 	\begin{equation}\label{eq:dissgpeA}
@@ -680,7 +684,7 @@ The TF radius is an useful indicator of length scales when working with analytic
 	The numerical initial condition $\psi({\bf r},t_0)$ is then determined by renormalisation of $\psi_{\rm neq}({\bf r})$ to fix the number density, $N/V$ and kinetic energy density, $E_{\rm kin}/V$. The choice of $N/V$ and $E_{\rm kin}/V$ uniquely determines the condensate fraction, and therefore the temperature for the equilibrium state of the Bose gas.
 
 \section{\label{section:potentials}Modelling obstacles and surfaces}
-In atomic BEC experiments, adding obstacles can be achieved by using laser beams. A red-detuned laser beam can create areas of attraction, and conversely, blue-detuned laser beams can create areas of repulsion. Should a blue-detuned laser beam be bright enough, a localised `hole' in the condensate forms. Similarly, in superfluid helium experiments, there are examples where the fluid can feel the presence of obstacles, including grids \cite{Davis2000}, wires \cite{Guenault1986,Bradley2005,Bradley2011,Fisher2001}, forks \cite{Blaauwgeers2007,Bradley2012}, propellers \cite{Tabeling1998,Salort2010}, spheres \cite{Schoepe1995} and other objects \cite{VinenSkrbek2008}.
+In atomic BEC experiments, adding obstacles can be achieved by using laser beams. A red-detuned laser beam can create areas of attraction, and conversely, blue-detuned laser beams can create areas of repulsion. Should a blue-detuned laser beam be bright enough, a localised `hole' in the condensate forms. Similarly, in superfluid helium experiments, there are examples where the fluid can feel the presence of obstacles, including grids \cite{Davis2000}, wires \cite{Guenault1986,Bradley2005,Bradley2011,Fisher2001}, forks \cite{Blaauwgeers2007,Bradley2012}, propellers \cite{Tabeling,Salort}, spheres \cite{Schoepe1995} and other objects \cite{VinenSkrbek2008}.
 
 These effects are replicated in the GPE model through the use of two and three-dimensional potentials. In atomic BEC simulations the profile of the potential matches that of the intensity of the laser beam, typically a cylindrical beam with a Gaussian profile. In superfluid helium simulations, smooth or hard wall potentials are used with an amplitude large compared to the chemical potential.
 \subsection{\label{section:3dobjpotential} Three-dimensional elliptical Gaussian}
