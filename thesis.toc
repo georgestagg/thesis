@@ -65,7 +65,7 @@
 \contentsline {section}{\numberline {4.4}Three-Dimensional Wakes}{56}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Symmetric Wakes}{56}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Asymmetric Wakes}{57}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Conclusion}{58}{section.4.5}
+\contentsline {section}{\numberline {4.5}Conclusions}{58}{section.4.5}
 \contentsline {section}{\numberline {4.6}Further Work}{58}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}A `quantum' Reynolds number}{58}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}Other analogues}{59}{subsection.4.6.2}
@@ -81,10 +81,10 @@
 \contentsline {subsubsection}{Modified decay model}{70}{section*.39}
 \contentsline {section}{\numberline {5.5}Crescent-Shaped Density Structures}{72}{section.5.5}
 \contentsline {section}{\numberline {5.6}Vortex Generation via an Elliptical Obstacle}{72}{section.5.6}
-\contentsline {section}{\numberline {5.7}Conclusions}{73}{section.5.7}
+\contentsline {section}{\numberline {5.7}Conclusions}{74}{section.5.7}
 \contentsline {chapter}{\numberline {6}Critical velocity at finite temperature}{75}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction}{75}{section.6.1}
-\contentsline {section}{\numberline {6.2}Classical Field Method}{76}{section.6.2}
+\contentsline {section}{\numberline {6.2}Classical Field Method}{77}{section.6.2}
 \contentsline {section}{\numberline {6.3}Equilibration dynamics and decay of the vortex tangle}{79}{section.6.3}
 \contentsline {section}{\numberline {6.4}Moving obstacle at finite-temperature}{80}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Critical velocity for vortex nucleation}{80}{subsection.6.4.1}

@@ -357,14 +357,14 @@ We have shown that the rate equation proposed by Kwon \etal \citep{kwon_moon_14}
 Post publication \cite{stagg_allen_14} of the results in this chapter, several authors \cite{Cidrim15,Groszek15} independently investigated vortex interactions in the context of quantum turbulence, providing arguments and evidence to support modified rate equations for the decay of vortex number in atomic BEC experiments. Recently, Cidrim \etal \cite{Cidrim15} proposed a scheme for generating two-dimensional quantum turbulence with the novelty of controlling the {\it polarisation} of the resulting turbulence by the addition of small localised repulsive potentials. Similarly to our findings in Section \ref{kwon_fitting}, fitting to Equation (\ref{eqn:N_v_decay}) without enforcing the meaning of the terms provided physically unrealistic decay rates. Cidrim \etal proposed a simple argument that takes into account the polarised nature of the turbulence and early-time steeper-than-quadratic effects, providing the following phenomenological model of vortex decay,
 \begin{align}
 \begin{split}
-  \frac{{\rm d}N_+}{{\rm d}t} &= -\Gamma_1 N_+^{~3/2} -\Gamma_2(N_+N_-)^{2},\\
-  \frac{{\rm d}N_-}{{\rm d}t} &= -\Gamma_1 N_-^{~3/2} -\Gamma_2(N_+N_-)^{2},
+  \frac{{\rm d}N_+}{{\rm d}t} &= -\Gamma_3 N_+^{~3/2} -\Gamma_4(N_+N_-)^{2},\\
+  \frac{{\rm d}N_-}{{\rm d}t} &= -\Gamma_3 N_-^{~3/2} -\Gamma_4(N_+N_-)^{2},
 \end{split}
 \label{eq:dnpdt_dnmdt}
 \end{align}
 where $N_+$/$N_-$ are the number of vortices of positive/negative circulation, so that $N_v = N_+ + N_-$. Fitting to this model gave physically realistic values for both decay rates in all of their simulated cases. For the unpolarised turbulence that we investigate, Equation (\ref{eq:dnpdt_dnmdt}) can be equivalently written as
 \begin{equation}
-  \frac{{\rm d}N_v}{{\rm d}t} = -\Gamma_1 N_v^{~3/2} -\frac{\Gamma_2}{8}N_v^{~4}.
+  \frac{{\rm d}N_v}{{\rm d}t} = -\Gamma_3 N_v^{~3/2} -\frac{\Gamma_4}{8}N_v^{~4}.
   \label{eqn:N_v_cidrim}
 \end{equation}
 Groszek \etal independently provided evidence \cite{Groszek15} that vortex annihilation events are in fact a four-body loss mechanism, leading to an annihilation decay rate of the form ${{\rm d}N_v}/{{\rm d}t}\sim -N_v^4$, supporting the findings of Cidrim \etal
@@ -395,15 +395,15 @@ Groszek \etal independently provided evidence \cite{Groszek15} that vortex annih
 \caption{\label{fig:fitting_comp} Comparison of the three vortex decay models introduced in this chapter. Shown is the decay of vortex number for out GPE simulation with dissipation $\gamma=0.0003$ and a translational speed of $v=1.4$mm/s. (black solid line). Also shown is fits to the data using Kwon's rate equation (blue dashed line), Kwon's rate equation while enforcing the meaning of the decay rates (red dashed line) and Cidrim's equation (green dashed line).}
 \end{figure}
 
-As a further test of Cidrim's modified decay law we have fitted $\Gamma_1$ and $\Gamma_2$ to our simulation with dissipation $\gamma=0.0003$ and trap speed $v=1.4$mm/s. A comparison of the resulting values of $\Gamma_1$ and $\Gamma_2$ is shown in Table \ref{tbl:fitting_comp}, and the fits are visually compared in Figure \ref{fig:fitting_comp}. Kwon's equation [Equation (\ref{eqn:N_v_decay})] provides a good qualitative fit to the decay rate overall, but physical processes cannot be inferred from the resulting values of the decay rates $\Gamma_1$ and $\Gamma_2$. Enforcing the meaning of the terms in Kwon's equation by fitting $N_d(t)$ and $N_a(t)$ independently [Equation (\ref{eqn:N_v_couple})] performs the least favourably overall, but provides physically realistic decay rates. Finally, Cidrim's equation [Equation (\ref{eqn:N_v_cidrim})] qualitatively fits {\it at least} as well as Kwon's equation, while having the advantage of physically realistic values for the decay rates and the ability to handle non-zero turbulence polarity. We note that our resulting values for $\Gamma_1$ and $\Gamma_2$ when fitted to Cidrim's equation compare well to values obtained by Cidrim \etal when fitting to decaying 2D turbulence with zero polarisation and $N_v(0) \sim 150$. These results suggest that of the fitting methods described, Cidrim's Equation is the best performing phenomenological model of vortex decay.
+As a further test of Cidrim's modified decay law we have fitted $\Gamma_3$ and $\Gamma_4$ to our simulation with dissipation $\gamma=0.0003$ and trap speed $v=1.4$mm/s. A comparison of the resulting decay rates is shown in Table \ref{tbl:fitting_comp}, and the fits are visually compared in Figure \ref{fig:fitting_comp}. Kwon's equation [Equation (\ref{eqn:N_v_decay})] provides a good qualitative fit to the decay rate overall, but physical processes cannot be inferred from the resulting values of the decay rates $\Gamma_1$ and $\Gamma_2$. Enforcing the meaning of the terms in Kwon's equation by fitting $N_d(t)$ and $N_a(t)$ independently [Equation (\ref{eqn:N_v_couple})] performs the least favourably overall, but provides physically realistic decay rates. Finally, Cidrim's equation [Equation (\ref{eqn:N_v_cidrim})] qualitatively fits {\it at least} as well as Kwon's equation, while having the advantage of physically realistic values for the decay rates and the ability to handle non-zero turbulence polarity. We note that our resulting values for $\Gamma_3$ and $\Gamma_4$ when fitted to Cidrim's equation compare well to values obtained by Cidrim \etal when fitting to decaying 2D turbulence with zero polarisation and $N_v(0) \sim 150$. These results suggest that of the fitting methods described, Cidrim's Equation is the best performing phenomenological model of vortex decay.
 
 \begin{table}
 \centering
 \begin{tabular}{r|ccc}
 {\it Decay rate} & {\it Kwon's equation} & {\it Decomposed Kwon's equation} & {\it Cidrim's equation} \\
 \hline 
-\rule{0pt}{3ex} Drift: $\Gamma_1$         & $-1.8\times 10^{-1}$ & $12.3 \times 10^{-2}$ & $2.0 \times 10^{-2}$ \\
-\rule{0pt}{3ex} Annihilation: $\Gamma_2$  & $ 1.4\times 10^{-2}$ &  $5.3 \times 10^{-3}$ & $3.3 \times 10^{-6}$ \\
+\rule{0pt}{3ex} Drift        & $\Gamma_1 = -1.8\times 10^{-1}$ & $\Gamma_1 = 12.3 \times 10^{-2}$ & $\Gamma_3 = 2.0 \times 10^{-2}$ \\
+\rule{0pt}{3ex} Annihilation & $\Gamma_2 = 1.4\times 10^{-2}$ &  $\Gamma_2 = 5.3 \times 10^{-3}$  & $\Gamma_4 = 3.3 \times 10^{-6}$ \\
 \end{tabular}
 \caption{\label{tbl:fitting_comp} Comparison of the resulting decay rates when fitting Kwon's equation [Equation (\ref{eqn:N_v_decay})], decomposed Kwon's equation [Equation (\ref{eqn:N_v_couple})] and Cidrim's equation [Equation (\ref{eqn:N_v_cidrim})] to the decay of vortex number for our GPE simulation with dissipation $\gamma=0.0003$ and a translational speed of $v=1.4$mm/s.}
 \end{table}
@@ -594,9 +594,11 @@ forms behind it, before symmetry breaking causes disorganisation
 of the vortices.  After the obstacle is removed, 
 the vortices decay in a manner which is consistent with the two mechanisms proposed by 
 Kwon \etalcc, i.e. loss of vortices at the condensate edge due to thermal dissipation and vortex-antivortex 
-annihilation events within the condensate. 
-We confirm the occasional appearance of 
-crescent-shaped density features, resulting either from the proximity 
-of vortex cores or from a sound pulse which follows a 
-vortex-antivortex reconnection.  Finally, we propose that a moving {\it elliptical} obstacle may provide a cleaner and more efficient means to generate two-dimensional quantum turbulence.
+annihilation events within the condensate.
+
+We fit the vortex decay the rate equations proposed by Kwon \etal and Cidrim \etal In the case of Kwon's equation we enforce the meaning of the decay rates to find values comparable to the coldest experiments of Kwon \etal In the case of fitting to Cidrim's modified equation, we find rates comparable to the simulations of Cidrim \etal without the need to enforce meaning. We conclude that Cidrim's equation fits to the data most favourably, while providing physically realistic values for the decay rates.
+
+We confirm the occasional appearance of crescent-shaped density features, resulting either from the proximity 
+of vortex cores or from a sound pulse which follows a vortex-antivortex reconnection.  Finally, we propose that a moving {\it elliptical} obstacle may provide a cleaner and more efficient means to generate two-dimensional quantum turbulence.
+
 \end{chapter}
