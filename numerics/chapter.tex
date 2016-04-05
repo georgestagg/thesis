@@ -29,7 +29,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 
 	We begin by estimating $\Delta_x$, the required spatial grid spacing, by considering the width of the vortex core in a homogeneous system, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core solution of Equation \ref{section:gpedimlesshomg} (demonstrated in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta_x = \xi/2$.
 
-	In the harmonically trapped case we can use the same idea. It is shown in Section \ref{section:healing} that $\xi = \hbar/\sqrt{mg\rho}$. Due to the trap, the healing length will vary over space. $\xi$ will reach its minimum in the centre of the condensate, where the density is approximately homogeneous with $\rho=\mu/g$. We can then substitute and rearrange to find an expression for $\xi$ in the centre of the trap. We find that the approximate grid spacing to adequately resolve the vortex core (at its smallest) is $\Delta_x = 0.5\xi = 0.5\omega \sqrt{\hbar/(\mu \omega)} l_r$. As an example, for a trapped condensate with interaction energy $\hat{g}=2000$, chemical potential $\hat{\mu}=25.27$ and trap frequency $\omega=8.75~{\rm Hz}$ we find that a value of $\Delta_x=0.1l_r$ should be adequate.
+	In the harmonically trapped case we can use the same idea. It is shown in Section \ref{section:healing} that $\xi = \hbar/\sqrt{mg\rho}$. Due to the trap, the healing length will vary over space. $\xi$ will reach its minimum in the centre of the condensate, where the density is approximately homogeneous with $\rho=\mu/g$. We can then substitute and rearrange to find an expression for $\xi$ in the centre of the trap. We find that the approximate grid spacing to adequately resolve the vortex core (at its smallest) is $\Delta_x = 0.5\xi = 0.5\omega \sqrt{\hbar/(\mu \omega)} l_r$. As an example, for a trapped condensate with interaction energy $\tilde{g}=2000$, chemical potential $\tilde{\mu}=25.27$ and trap frequency $\omega=8.75~{\rm Hz}$ we find that a value of $\Delta_x=0.1l_r$ should be adequate.
 
 	Similar arguments (concerned with time rather than space) can be used to approximate a suitable time step $h$. We define a time period that we would like to be well resolved by considering by the smallest possible element moving at the fastest reasonable speed. If we define this period as $\Delta_x / 5~c$ and allocate to it 10 time steps, we find that $h = 0.5\xi/50~c = 0.01\tau$ in natural units ($h=0.0004~\omega^{-1}$ in trapped units).
 
@@ -46,7 +46,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
         width=0.98\linewidth,
         height=0.3\linewidth,
         xlabel={},
-        ylabel=$\hat{E}\left ( \hat{t} \right )$,
+        ylabel=$\tilde{E}\left ( t \right )$,
         xmin=0,
         xmax=10,
         major tick length = 0.07cm
@@ -76,8 +76,8 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
         width=0.98\linewidth,
         height=0.35\linewidth,
         name=mainplot,
-        xlabel=$\hat{t}$,
-        ylabel=$\hat{N}\left ( \hat{t} \right )$,
+        xlabel=$t\omega$,
+        ylabel=$\tilde{N}\left ( t \right )$,
         xmin=0,
         xmax=10,
         ymax=1.0008,
@@ -129,7 +129,7 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
       };
     \end{axis}
   \end{tikzpicture}
-  \caption{Dimensionless energy, $\hat{E}$, and particle number, $\hat{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\hat{g}=2000$ and chemical potential $\hat{\mu}=25.27$. The numerical grid width varies with each line; $\Delta_x = 0.05$ (black), $\Delta_x = 0.1$ (red), $\Delta_x = 0.2$ (green) and $\Delta_x = 0.4$ (blue). (Inset) Zoomed view of the $\hat{N}$.}\label{fig_energ_norm_cons}
+  \caption{Dimensionless energy, $\tilde{E}$, and particle number, $\tilde{N}$, throughout numerical propagation of a trapped condensate containing a singly quantised vortex in its center, with interaction energy $\tilde{g}=2000$ and chemical potential $\tilde{\mu}=25.27$. The numerical grid width varies with each line; $\Delta_x = 0.05$ (black), $\Delta_x = 0.1$ (red), $\Delta_x = 0.2$ (green) and $\Delta_x = 0.4$ (blue). (Inset) Zoomed view of $\tilde{N}$.}\label{fig_energ_norm_cons}
  \end{figure}
 
   In addition to this process, for each set of simulation parameters it is recommended to confirm the suitability of the chosen $\Delta_x$ and $h$ by testing the convergence and conservation in the numerical methods. The total condensate energy and particle number are good measures for this as they should both be well conserved by the GPE with a dissipation of $\gamma=0$. An example of this process (confirming the suitability of a chosen $\Delta_x$) is shown in Figure \ref{fig_energ_norm_cons}. For a large $\Delta_x=0.4l_r$ both the condensate energy and norm fluctuate wildly. For $\Delta_x=0.1l_r$ the norm is extremely well conserved to within $2\times 10^{-5}\%$ and the energy is conserved within $5\times 10^{-3}\%$. The smallest tested value of $\Delta_x=0.05l_r$ finally confirms that the energy has converged. We conclude that for the chosen system parameters that $\Delta_x=0.1l_r$ (the value suggested by the above analysis) is numerically sufficient and there is little reason to use $\Delta_x<0.1l_r$.
@@ -292,7 +292,7 @@ A common problem when detecting vortices is the prevalence of invalid or uninter
       \addplot graphics [xmin=-25,xmax=25,ymin=-25,ymax=25] {numerics/figures/vortexlatticephase.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{A trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. Ghost vortices can be seen in the phase as singularities where the corresponding density is near-zero.\label{fig:ghostvortex}}
+  \caption{A trapped rotating condensate with $\Omega=0.7$, $\tilde{g}=2000$ and $\tilde{\mu}=25.27$. Ghost vortices can be seen in the phase as singularities where the corresponding density is near-zero.\label{fig:ghostvortex}}
  \end{figure}
 
 A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>1$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
@@ -367,7 +367,7 @@ An alternative method to avoid identifying ghost vortices presents itself when i
   \end{tikzpicture}%
 \end{minipage}%
 \end{center}
-  \caption{Identifying vortices within a trapped rotating condensate with $\Omega=0.7$, $\hat{g}=2000$ and $\hat{\mu}=25.27$. (a) The smoothed vortex field using Algorithm \ref{algo_calcvortexfield}, (b) the smoothed vortex field using Algorithm \ref{algo_calcvortexfielddens}, (c) the system density with vortices identified using Algorithm \ref{algo_calcvortexfield}, and (d) the system density with vortices identified using Algorithm \ref{algo_calcvortexfielddens}. The ghost vortices seen in (a,c) are removed in (b,d).\label{fig:filtervortexlattice}}
+  \caption{Identifying vortices within a trapped rotating condensate with $\Omega=0.7$, $\tilde{g}=2000$ and $\tilde{\mu}=25.27$. (a) The smoothed vortex field using Algorithm \ref{algo_calcvortexfield}, (b) the smoothed vortex field using Algorithm \ref{algo_calcvortexfielddens}, (c) the system density with vortices identified using Algorithm \ref{algo_calcvortexfield}, and (d) the system density with vortices identified using Algorithm \ref{algo_calcvortexfielddens}. The ghost vortices seen in (a,c) are removed in (b,d).\label{fig:filtervortexlattice}}
  \end{figure}
 
 \section{\label{section:vortexclustering} Quantifying vortex clustering in 2D}
@@ -566,7 +566,7 @@ Sometimes, due to numerical error or simulation dynamics, a vortex will not be d
     \end{axis}
   \end{tikzpicture}%
   \end{center}
-  \caption{An example of building vortex trajectories for a trapped condensate with interaction energy $\hat{g}=2000$ and $\hat{\mu}=25.27$ filled with vortices of both polarity. (Left) 353 vortex trajectories clearly showing the movement of vortices within the boundary of the condensate. (Right) The single longest vortex trajectory, over the time period $648.5~\omega^{-1}$.\label{fig:vortextracks}}
+  \caption{An example of building vortex trajectories for a trapped condensate with interaction energy $\tilde{g}=2000$ and $\tilde{\mu}=25.27$ filled with vortices of both polarity. (Left) 353 vortex trajectories clearly showing the movement of vortices within the boundary of the condensate. (Right) The single longest vortex trajectory, over the time period $648.5~\omega^{-1}$.\label{fig:vortextracks}}
 \end{figure}
 
 
@@ -636,14 +636,14 @@ $\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ the
       \raisebox{3cm}{$\longrightarrow$}
     \end{minipage}% 
     \includegraphics[width=0.35\linewidth]{numerics/figures/clean3d}
-  \caption{(Left) Unfiltered wavefunction density, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
+  \caption{(Left) Unfiltered wavefunction density isosurface, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density isosurface, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
   \end{figure}
 
 The choice of $k_c$ is facilitated by the the bimodal distribution of occupation numbers in the wavefunction, a distribution which develops naturally through propagation of the GPE. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering. $k_c$ is chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas. Figure \ref{fig:quasicondensatefilter} demonstrates the filtering technique in action.
 
   	
 \section{\label{section:linelength} Evaluation of vortex line-length in 3D}
-For a given 3D wavefunction, $\Psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \Psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.04\langle |\hat{\Psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\Psi}|^2 \rangle - |\hat{\Psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
+For a given 3D wavefunction, $\psi$, featuring a vortex distribution, the vortex volume $V_t$ (the total volume associated with the vortex cores) is evaluated by numerical integration of the inside of the vortex isosurface tubes obtained from the filtered density $|\hat \psi|^2$, with an integration region of the whole numerical box.  Note that the isosurface level should be low enough to pick out vortex cores only (and not, e.g. fluctuations and waves), while large enough to contain sufficient grid points to allow a reasonable numerical evaluation of volume. In this work we use the isosurface level $0.05\langle |\hat{\psi}|^2 \rangle$ (chosen so as to produce filtered vortex cores that are similar in radius to the true vortex core).  The volume calculation can be written $V_t = \int \Theta(0.04\langle |\hat{\psi}|^2 \rangle - |\hat{\psi}({\bf r})|^2)~{\rm d}V$, where $\Theta$ is the Heaviside step function. In practice the calculation of the vortex core volume can be efficiently performed by assigning a value of unity/zero to grid points located within/outside the isosurface tubes and directly integrating the result using the trapezium or Simpson's rule.
 
 The total line length is then deduced by dividing $V_t$ by the cross-sectional area of a vortex core, $A_t$ (in effect, the average cross-sectional area of the isosurface tubes). The measured values of $V_t$ and $A_t$ will depend on the chosen isosurface level but, providing the vortex tubes are well-separated, their ratio (and hence the evaluated line length) will remain constant.  For closely-positioned vortex tubes, the isosurface level can affect whether the tubes appear as two separate tubes, or start to merge, and so will lead to deviations in this ratio.
 

@@ -59,7 +59,7 @@ an external potential), as realized experimentally in 3D \cite{Raman,Onofrio,Ino
 3D configuration has been experimentally realized in liquid helium 
 \cite{VanSciver1999,VanSciver2005}.
 
-The BEC, assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE as described in Section \ref{section:gpedimlesshomg}, transformed into the moving frame as in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with the Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is modified so that it has ellipticity $\epsilon$, modifying the obstacle along the $x$ axis, parallel to the flow. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely,kwon_moon_14,kwon_2015a}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
+The BEC, parametrised by the wavefunction $\psi(\mathbf{r},t)$ and assumed to be weakly-interacting and at ultracold temperature, is modelled through the GPE as described in Section \ref{section:gpedimlesshomg}, transformed into the moving frame as in Section \ref{section:linearmovframe}. The external potential acting on the system $V({\bf r}, t)$ is taken to be zero everywhere, apart from a localized repulsive potential which represents the obstacle with the Gaussian shape described in Section \ref{section:3dcylinderpotential}. A key feature of this work is that the obstacle is modified so that it has ellipticity $\epsilon$, modifying the obstacle along the $x$ axis, parallel to the flow. Such a potential can be generated via the repulsive optical dipole force from an incident blue-detuned laser beam which is moved relative to the condensate either by deflection of the beam \cite{Raman,Onofrio,Inouye} or motion of the condensate itself when offset in a harmonic trap \cite{Neely,kwon_moon_14,kwon_2015a}.  While laser-induced obstacles generated to date have had a circular profile, elliptical modification of the Gaussian potential can be achieved via cylindrical focussing of the laser beam.   
 
 The 2D (3D) system is simulated using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} under periodic boundary conditions on a $2048 \times 512$ ($400 \times 150 \times 150$) grid with uniform spacing $\Delta_x=0.4\xi$. The computational box is sufficiently large that the boundary conditions do not play a role in vortex shedding.  The initial condition is the stationary state of the GPE (including obstacle potential) with $v=0$ as determined by the imaginary time convergence method described in Section \ref{section:imagTime}. Setting $V_0=100\,\mu$ throughout, the external potential closely approximates an impenetrable obstacle. A small amount of noise is added to the initial condition to break symmetry: a random number between $-0.0005$ and $0.0005$ is added to both the real and imaginary parts of the initial wavefunction. To minimize initial generation of waves, $v$ is ramped up in time along a hyperbolic tangent curve, from $v=0$ at $t=0$ to its terminal value at $t\approx200~(\xi/c)$.
 
@@ -288,7 +288,7 @@ For clusters consisting of pairs of vortices, it has been shown that they can su
 \begin{tikzpicture}
   \begin{axis}[samples=72,ylabel near ticks,xlabel near ticks,
       width=0.45\linewidth,
-        xlabel=$\varepsilon\phantom{d}$,
+        xlabel=$\varepsilon\phantom{d/\xi}$,
         ylabel=$v_c/c$,
         xmin=0.9,
         xmax=3.1,
@@ -305,7 +305,7 @@ For clusters consisting of pairs of vortices, it has been shown that they can su
         width=0.45\linewidth,
         xtick pos=left,
     ytick pos=left,
-        xlabel=$d\phantom{\varepsilon}$,
+        xlabel=$d/\xi\phantom{\varepsilon}$,
         ylabel=$v_c/c$,
         xmin=0,
         xmax=11,

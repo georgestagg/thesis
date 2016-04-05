@@ -25,9 +25,9 @@
 \contentsline {section}{\numberline {2.13} A selection of simple solutions}{17}{section.2.13}
 \contentsline {subsection}{\numberline {2.13.1} Density near a wall}{17}{subsection.2.13.1}
 \contentsline {subsection}{\numberline {2.13.2} Soliton solutions}{17}{subsection.2.13.2}
-\contentsline {subsection}{\numberline {2.13.3} Quantised vortices}{19}{subsection.2.13.3}
+\contentsline {subsection}{\numberline {2.13.3} Quantised vortices}{18}{subsection.2.13.3}
 \contentsline {section}{\numberline {2.14} Initial conditions}{20}{section.2.14}
-\contentsline {subsection}{\numberline {2.14.1} Homogeneous initial condition}{20}{subsection.2.14.1}
+\contentsline {subsection}{\numberline {2.14.1} Homogeneous initial condition}{21}{subsection.2.14.1}
 \contentsline {subsection}{\numberline {2.14.2} Thomas-Fermi profile of a trapped condensate}{21}{subsection.2.14.2}
 \contentsline {subsection}{\numberline {2.14.3} Classical field initial condition}{22}{subsection.2.14.3}
 \contentsline {section}{\numberline {2.15}Modelling obstacles and surfaces}{23}{section.2.15}
