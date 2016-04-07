@@ -66,8 +66,8 @@
 \contentsline {subsection}{\numberline {4.4.1}Symmetric Wakes}{56}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Asymmetric Wakes}{57}{subsection.4.4.2}
 \contentsline {section}{\numberline {4.5}Conclusions}{58}{section.4.5}
-\contentsline {section}{\numberline {4.6}Further Work}{58}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}A `quantum' Reynolds number}{58}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.6}Further Work}{59}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}A `quantum' Reynolds number}{59}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}Other analogues}{59}{subsection.4.6.2}
 \contentsline {chapter}{\numberline {5}Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction}{61}{section.5.1}
@@ -98,7 +98,7 @@
 \contentsline {section}{\numberline {7.3}Three-dimensional results}{93}{section.7.3}
 \contentsline {section}{\numberline {7.4}Two-dimensional results}{94}{section.7.4}
 \contentsline {subsection}{\numberline {7.4.1}Truncated surfaces}{96}{subsection.7.4.1}
-\contentsline {section}{\numberline {7.5}Conclusions}{96}{section.7.5}
+\contentsline {section}{\numberline {7.5}Conclusions}{97}{section.7.5}
 \contentsline {part}{III\hspace {1em}Appendix}{99}{part.3}
 \contentsline {chapter}{\numberline {A}Detailed Derivations}{101}{appendix.A}
 \contentsline {section}{\numberline {A.1} Derivation of the Runge-Kutta scheme}{101}{section.A.1}

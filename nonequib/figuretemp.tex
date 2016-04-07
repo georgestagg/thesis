@@ -1,0 +1,70 @@
+\documentclass[aps,pra,twocolumn,showpacs,10pt,amsmath,footinbib]{revtex4-1}
+\bibliographystyle{apsrev4-1}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{braket}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\newcommand{\pa}{\partial}
+\newcommand{\total}{\mathrm{d}}	
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\begin{document}
+
+\title{Turbulence of a quenched Bose gas}
+
+\author{G. W. Stagg}
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+test
+
+\begin{figure}
+\begin{tikzpicture}
+	\begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
+        width=\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel=$k \xi$,
+        ylabel=$\hat{E}^i_{\rm kin}$,
+        xmin=0.03,
+        xmax=10,
+        ymin=5e-5,
+        ymax=5e0,
+        major tick length = 0.07cm,
+		xmode=log,
+		ymode=log ]
+		  \addplot+[only marks,mark options={scale=0.5}] file {kk_vs_Eikin-CF02-t300.dat};
+		  \addplot+[violet,only marks,mark options={scale=0.5}] file {kk_vs_Eikin-CF05-t300.dat};
+		  \addplot+[mark=diamond*,red,only marks,mark options={scale=0.7}] file {kk_vs_Eikin-CF075-t300.dat};
+		  \addplot+[mark=none,gray!60,dashed] coordinates {(6.28, 1e-5) (6.28, 10)};
+		  \addplot+[mark=none,gray!60,dashed] coordinates {(0.043, 1e-5) (0.043, 10)};
+		  \addplot+[mark=none,gray!60,dashed] coordinates {(0.198, 1e-5) (0.198, 10)};
+		  \addplot+[mark=none,gray!60,ultra thick,dashed,domain=1.3:3.6] {(3e-2)*x^(-3)};
+		  \node at (axis cs: 3,0.004) {$k^{-3}$};
+		\end{axis}
+		\begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=\linewidth,
+        xlabel={},
+        ylabel={},
+        xmin=0.03,
+        xmax=10,
+        ymin=5e-5,
+        ymax=1e0,
+        major tick length = 0.07cm,
+		xmode=log,
+		ymode=log,
+		axis y line*=none,
+        axis x line*=top,
+        ytick={0},
+        yticklabels={,,},
+        xtick={0.043,0.198,6.28},
+        xticklabels={$k_\ell$, $k_d$, $k_\xi$} ]
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\end{document}
