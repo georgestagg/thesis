@@ -45,7 +45,7 @@ root of the condensate fraction. Above
 the critical velocity, vortex nucleation occurs either through
 pairs of vortex lines, collections of vortex rings, or direct formation of a vortex tangle, and we indicate the occurrence of these structures in the parameter space of condensate fraction and flow speed.
 
-  \section{Classical Field Method}
+  \section{Classical field method}
 \label{sec:theory}
 
 We consider a weakly-interacting Bose gas with $N$ atoms of mass $m$ in a periodic box of volume $\ell^3$.  We approximate binary atom interactions by a contact pseudo-potential $V_{\mathrm{int}}({\bf r}-{\bf r'})= g \delta({\bf r}-{\bf r'})$, where $g$ is a coefficient which characterises the atomic interactions and $\delta$ is the Dirac delta function \cite{Pethick}. The approximations would lead us naturally to model the Bose gas in the zero-temperature limit, using the mean-field model described in Sections \ref{section:meanfield} and \ref{section:gpe}. Instead, however, in this chapter we will also include the thermal fraction inherent in the gas at {\it finite} temperature. In order to theoretically model thermal excitations, one must progress beyond the mean-field approximation.
@@ -56,38 +56,12 @@ PhysRevA.66.013603,Davis2,PhysRevLett.95.263901,Pol_Rev}.
 
 Section \ref{section:cfield} provides a detailed description of the classical field model for a homogeneous Bose gas. We parametrise the gas by the classical field $\psi({\bf r},t)$. Whereas the standard mean-field GPE conventionally describes the condensate only, in the classical field model $\psi({\bf r},t)$ instead describes the entire multi-mode `classical' gas \cite{Proukakis,Blakie}.  The classical field method has been used to model beyond-mean-field phenomena, including thermal equilibration dynamics~\cite{PhysRevA.66.013603,PhysRevLett.95.263901,pattinson_2014,nazarenko_2014}, condensate fractions \cite{Davis}, critical temperatures \cite{Davis2006}, correlation functions \cite{Wright2011}, spontaneous production of vortex-antivortex pairs in quasi-2D gases \cite{Simula}, thermal dissipation of vortices \cite{berloff_2007},  and related effects in binary condensates \cite{Berloff_2006,Salman20091482,pattinson_2014}.
 
-The evolution of $\psi({\bf r},t)$ is governed by the GPE [Equation (\ref{eq:gpe})] where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t)$ is an externally applied potential in the form of a cylindrical obstacle given by Equation (\ref{eq:potentialcylinder}). The density distribution of atoms is $|\psi({\bf r},t)|^2$.
+The evolution of $\psi({\bf r},t)$ is governed by the GPE [Equation (\ref{eq:gpe})]. The density distribution of atoms is then $|\psi({\bf r},t)|^2$.
 The GPE conserves the total number of particles $N$, given by Equation (\ref{eq:normalisewf}), and the total energy $E$, given by Equation (\ref{eq:Efn}). In this chapter we express all quantities in terms of the natural units of the homogeneous Bose gas defined in Section \ref{section:gpedimlesshomg}:  density in terms of a uniform value $\rho$, length in terms of the healing length $\xi=\hbar/\sqrt{m g \rho}$, speed in terms of the speed of sound $c=\sqrt{\rho g/m}$, energy in terms of the chemical potential of the homogeneous condensate $\mu=\rho g$, and time in terms of $\tau=\hbar / g \rho$.
 
-We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ is $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium initial condition defined in Section \ref{section:cfieldinitcond}.  The final temperature and condensate fraction of our simulations is varied through a rescaling of $\Psi$, so as to fix the quantities $N$ and $E$.
+We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ is $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium initial condition defined in Section \ref{section:cfieldinitcond}.  The final temperature and condensate fraction of our simulations is varied through a rescaling of $\psi$, so as to fix the quantities $N$ and $E$.
 
-The GPE is evolved numerically, in the absence of any potential ($V_{\mathrm{obj}} = 0$), using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} on a $192^3$ periodic grid with time step $\Delta t =0.01 \tau$ and isotropic grid spacing $\Delta =0.75\xi$. The spatial discretisation of our numerical grid implies that high momenta are not described in our simulations. In effect, an ultraviolet cutoff is introduced, $n_{\mathbf{k}}(t)=0$ for $k>k_{\rm{max}}$, where $k=|{\bf k}|$ and the maximum described wave vector amplitude is $k_{\rm{max}} = \sqrt{3} \pi / \Delta$. 
-
-The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence.  Then the distribution evolves to a bimodal form.
-The high-$k$ part of the distribution is associated with the
-thermal excitations and low mode occupations.
-The low-$k$ part of the field is the quasi-condensate,
-characterised by macroscopic mode populations and superfluid ordering.
-
-From the bimodal distribution, a wavenumber $k_c$ can be chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas, as performed in \cite{PhysRevA.66.013603}.  Here we take $k_c \approx 10~(2\pi / \ell)$, although our qualitative results are insensitive to the precise definition of $k_{\rm c}$.  The condensate density, $\rho_0$, is then calculated as the density within the quasi-condensate, i.e. a coarse-grained averaging over the quasi-condensate modes.  This is then used to define the condensate fraction, $\rho_0/\rho$.
-
-While the raw wavefunction is too noisy to allow direct visualization of vortical structures, this can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}.   This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
-transforming the complex amplitudes via
-$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\Psi}$ represents the long-wavelength component of the classical field.
-
-The quasi-condensate features a tangle of quantized vortices which relaxes over very long times, and the final equilibrium state is free of vortices.  Its physical properties, e.g. temperature and condensate fraction, are uniquely determined by the number of particles $N$ and the kinetic energy $E_{\rm kin}=\int (\hbar^2/2m)|\nabla \psi|^2~{\rm d}V$ of the system~\cite{PhysRevLett.95.263901}.  The equilibrium state of the non-condensed particles follows the Rayleigh-Jeans distribution, modified by the nonlinear interaction with the condensed particles \cite{PhysRevLett.95.263901}.  It is interesting to note that the equilibrium condensate fraction is insensitive to the number of modes, providing that the number of modes is, or exceeds, $16^3$ modes.  This suggests that this number of modes is sufficient to model the thermodynamic limit of the system. For comparison, we employ $192^3$ modes.
-
-Here we parametrise the system in terms of its particle density $\rho = N/\ell^3$ and average energy density $\langle E \rangle/\ell^3$.
-The temperature is evaluated from the condensate fraction using the following empirical relationship established by Youd {\it et al.} \cite{berloff_2007}:
-\begin{equation}
-  \frac{T}{T_\lambda} = 1 - (1 - \alpha\sqrt{\rho})\frac{\rho_0}{\rho} - \alpha\sqrt{\rho}\,\left(\frac{\rho_0}{\rho}\right)^2,
-  \label{eq:temp}
-\end{equation}
-where $T_{\lambda}$ is the critical temperature for condensation
-and $\alpha=0.2275$ is a fitting parameter.
-Table \ref{tbl:cond_frac} lists the parameters chosen in our simulations
-and the resulting condensate fractions and temperatures
-of the ensuing equilibrated classical field states.
+The GPE is evolved numerically, in the absence of any potential ($V = 0$), using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} on a $192^3$ periodic grid with time step $\Delta t =0.01 \tau$ and isotropic grid spacing $\Delta =0.75\xi$. The spatial discretisation of our numerical grid implies that high momenta are not described in our simulations. In effect, an ultraviolet cutoff is introduced, $n_{\mathbf{k}}(t)=0$ for $k>k_{\rm{max}}$, where $k=|{\bf k}|$ and the maximum described wave vector amplitude is $k_{\rm{max}} = \sqrt{3} \pi / \Delta$. 
 
 \begin{table}
 \centering
@@ -101,32 +75,88 @@ $\langle E \rangle/\ell^3~(\mu \xi^{-3})$  & 2.57 & 2.13 & 1.75 & 1.33 & 0.53 & 
 \rule{0pt}{3ex}$\rho_0/\rho$        & 0.02 & 0.22 & 0.36 & 0.48 & 0.77 & 0.91 \\
 $T/T_\lambda$        & 0.98 & 0.81 & 0.68 & 0.56 & 0.26 & 0.10
 \end{tabular}
-\caption{Condensate fraction and temperature of the equilibrium classical field state for our chosen initial conditions.}
+\caption{Condensate fraction and temperature of the classical field equilibrium state for our chosen initial conditions.}
 \label{tbl:cond_frac}
 \end{table}
 
-\section{Equilibration dynamics and decay of the vortex tangle}
-\label{sec:tangle}
+\subsection{The quasi-condensate}
+The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence.  Then the distribution evolves to a bimodal form.
+The high-$k$ part of the distribution is associated with the
+thermal excitations and low mode occupations.
+The low-$k$ part of the field is the quasi-condensate,
+characterised by macroscopic mode populations and superfluid ordering.
 
-The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence.  The distribution evolves to a bimodal form. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering.  The quasi-condensate is formed featuring a tangle of quantized vortices.  Over very long times, this tangle relaxes.  The final equilibrium state, including its final condensate fraction and temperature, is free of superfluid vortices and uniquely determined by the number of particles $N$ and the kinetic energy $E_{\rm kin}$ of the system~\cite{PhysRevLett.95.263901}.  
+From the bimodal distribution, a wavenumber $k_c$ can be chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas, as performed in \cite{PhysRevA.66.013603}.  Here we take $k_c \approx 10~(2\pi / \ell)$, although our qualitative results are insensitive to the precise definition of $k_{\rm c}$.  The condensate density, $\rho_0$, is then calculated as the density within the quasi-condensate, i.e. a coarse-grained averaging over the quasi-condensate modes.  This is then used to define the condensate fraction, $\rho_0/\rho$. Note that while the GPE dynamics conserves $N$ and $E$ for the entire gas, the quasi-condensate is defined by a cutoff in k-space and so the quasi-condensate particle number and energy is not fixed. Energy and particles are free to transfer between the quasi-condensate and the thermal part of the gas as the gas equilibrates
 
-Figure \ref{fig:thermal} shows the typical evolution of the quasi-condensate during the equilibration dynamics through iso-surface plots of the quasi-condensate density $|\hat{\psi}|^2$.  The iso-surface density value ($0.05\braket{|\hat{\psi}|^2}$) is sufficiently low that only vortex cores are evident.   The initially-formed dense vortex tangle relaxes over time.  It remains random and isotropic throughout.  Typically, the tangle relaxes to leave one or more vortex rings, which also relax, eventually leading to a vortex-free state.   This is deemed the ``equilibrated" state.    
-
-We can further analyse the vortex relaxation through the evolution of the vortex line-length density, $L$.  It is convenient to evaluate the total vortex line length in terms of the total length of the isosurface tubes.  We assume that each tube has uniform circular cross-sectional area $A_{\rm t}$, measured by inspection of a given vortex line.  Note that the assumption of uniform cross-section will be valid for the majority of vortex line length, but will deviate slightly where two vortices approach each other.  The total tube length (viz. vortex line length) is then $V_{\rm t}/A_{\rm t}$, where $V_{\rm t}$ is the total tube volume.  
-
-The characteristic time of the evolution of the vortex tangle is $R^2/\ln{(R/a_0)}$, depending on the typical inter-vortex spacing, $R$, and the core size $a_0$~\cite{berloff_2002}. As the tangle dissipates the inter-vortex spacing increases, and so although most vortices dissipate at early times, for relatively large boxes, it can take a very long time for every single vortex to dissipate and the condensate to reach the equilibrium state. A sample of evolutions of the vortex volume during equilibration is shown in Figure \ref{fig:ll_t}. The tangle decay rate lies in reasonable agreement with the decay of a vortex tangle in a `random' Vinen state, with $L(t)\sim t^{-1}$.
+While the raw wavefunction is too noisy to allow direct visualization of vortical structures, this can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}.   This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
+transforming the complex amplitudes via
+$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ represents the long-wavelength component of the classical field.
 
 
+\subsection{Approximate temperature of the gas}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[samples=350,ylabel near ticks,xlabel near ticks,
+      width=0.45\linewidth,
+        xlabel=$T/T_\lambda$,
+        ylabel=$\rho_0/\rho$,
+        xmin=0,
+        xmax=1.05,
+        ymin=0,
+        ymax=1.05,
+        major tick length = 0.07cm]
+    \addplot+[mark=none,color=black,thick] {1 - (1 - 0.2275*sqrt(0.5))*x - 0.2275*sqrt(0.5)*x^2};
+    \addplot+[mark=none,color=black,dashed,thick] {(1 - x)^(2/3)};
+  \end{axis}
+\end{tikzpicture}%
+\end{center}
+\caption{\label{fig:cfvst}The condensate fraction and temperature relation for a weakly-interacting Bose gas for our simulation parameters (black solid line) and for an ideal non-interacting Bose gas (black dashed line).}
+\end{figure} 
 
+The quasi-condensate features a tangle of quantized vortices which relaxes over very long times, and the final equilibrium state is free of vortices.  Its physical properties, e.g. temperature and condensate fraction, are uniquely determined by $N$ and the kinetic energy (as defined in \ref{eq:Esplitdef}) of the system~\cite{PhysRevLett.95.263901}.  The equilibrium state of the non-condensed particles follows the Rayleigh-Jeans distribution, modified by the nonlinear interaction with the condensed particles \cite{PhysRevLett.95.263901}.  It is interesting to note that the equilibrium condensate fraction is insensitive to the number of modes, providing that the number of modes is, or exceeds, $16^3$ modes.  This suggests that this number of modes is sufficient to model the thermodynamic limit of the system. For comparison, we employ $192^3$ modes.
+
+The theory of statistical mechanics for an ideal non-interacting Bose gas leads to a simple prediction for how the condensate fraction of the gas grows as temperature decreases \cite{Pethick},
+\begin{equation}
+N_0 = N \left [ 1-\left ( \frac{T}{T_\lambda} \right )^\beta \right ],
+\end{equation}
+where $N_0$ is the number of condensed particles, $T_{\lambda}$ is the critical temperature for condensation and $\beta$ is a parameter that depends on the geometry of the system. For particles in a 3D box, $\beta=3/2$ \cite{Pethick}. By inverting this relation we could approximate the temperature of our equilibrated Bose gas.
+
+However, Youd {\it et al.} \cite{berloff_2007} recently provided the following improved empirical relationship for a weakly-interacting Bose gas in a 3D box:
+\begin{equation}
+  \frac{T}{T_\lambda} = 1 - (1 - \alpha\sqrt{\rho})\frac{\rho_0}{\rho} - \alpha\sqrt{\rho}\,\left(\frac{\rho_0}{\rho}\right)^2,
+  \label{eq:temp}
+\end{equation}
+where $\alpha=0.2275$ is a fitting parameter. We use Youd's relation throughout this chapter to evaluate the temperature of the gas using the condensate fraction at equilibrium. Table \ref{tbl:cond_frac} lists the parameters chosen in our simulations and the resulting condensate fractions and approximate temperatures of the ensuing classical field state. For comparison, the weakly-interacting Bose gas relation is compared to the ideal non-interacting Bose gas relation for our simulation parameters in Figure \ref{fig:cfvst}.
+
+\section{Decay of the vortex tangle} \label{sec:tangle}
+We visualize the slow equilibration process through iso-surface plots of the filtered quasi-condensate density $|\hat{\psi}|^2$. As the condensate density evolves over the course of the simulation, vortices are visualised using evolving iso-surface levels of $|\hat{\psi}|^2 = 0.05\braket{|\hat{\psi}|^2}$. This level was chosen so that the resulting vortex structures are shown with approximately constant cross-sectional radius similar to the radius of a true vortex core. The initially-formed dense vortex tangle remains random and isotropic throughout the decay to one or more vortex rings, which eventually also decay, leading to a vortex-free state (the ``equilibrated" state).
+
+As the gas evolves from the highly non-equilibrium state, the quasi-condensate form marked by a significant growth of the condensate fraction on short time scales. After $t \sim 300$ the condensate fraction reaches a steady state and the quasi-condensate has self-organised to form a dense vortex tangle which begins to decay.
+
+Insight into the relaxation of the vortex tangle is obtained by monitoring
+the vortex line-length density $L$ (length of vortex line per
+unit volume), which is estimated from
+the total volume of the isosurface tubes.
+We assume that each tube has uniform circular cross-sectional
+area $A_{\rm t}$. Note that the assumption of uniform cross-section is
+valid for the majority of vortex line length, but deviates
+slightly where two vortices approach each other.
+The total vortex line-length is then $V_{\rm t}/A_{\rm t}$, where $V_{\rm t}$ is the total vortex tube volume.
+
+The decay of the vortex line density,  shown in Figure \ref{fig:ll_t}, is in reasonable agreement with the predicted curve $L(t) \sim t^{-1}$ typical of a `random' Vinen state, when the gas is at its warmest (condensate fraction at its smallest).
+The cooler simulations show a deviation from $L(t) \sim t^{-1}$, this suggests a shift of the power law to longer dissipation times as the gas goes to the zero temperature limit.
+
+We gain understanding of the length scales involved in the kinetic energy by studying the kinetic energy spectrum, $\hat{E}_{\rm kin}(k)$, defined in Section \ref{appsection:energy}. The kinetic energy spectra for our simulations are shown in Figure \ref{fig:ll_t}. In all cases the kinetic energy spectrum of the vortex tangle does not show a definitive $-5/3$ power law. The spectrum is instead dominated by the $-3$ power law of a single vortex line with no evidence of a build up of kinetic energy at large scales, indicating a lack of one of the most famous signatures of Kolmogorov turbulence. 
 
 \begin{figure}
   \centering
-    \raisebox{1.4in}{a)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t000}
-    \raisebox{1.4in}{b)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t200}
-    \raisebox{1.4in}{c)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t400}\\
-    \raisebox{1.4in}{d)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t800}
-    \raisebox{1.4in}{e)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t1600}
-    \raisebox{1.4in}{f)}~\includegraphics[width=0.25\linewidth]{nonequib/figures/IC/CF05-IC-t4000}
+    \raisebox{1.4in}{a)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t000}
+    \raisebox{1.4in}{b)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t200}
+    \raisebox{1.4in}{c)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t400}\\
+    \raisebox{1.4in}{d)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t800}
+    \raisebox{1.4in}{e)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t1600}
+    \raisebox{1.4in}{f)}~\includegraphics[width=0.3\linewidth]{nonequib/figures/IC/CF05-IC-t4000}
     \caption{(Color online) Evolution of the quasi-condensate vortex tangle during the equilibration dynamics at times (a) $t/\tau=0$, (b) $500$, (c) $1000$, (d) $2000$, (e) $4000$, and (f) $10\,000$.  Shown are isosurfaces of the quasi-condensate density $|\hat{\psi}|^2 = 0.05\braket{|\hat{\psi}|^2}$. At later times all vortices disappear.  Note that vortices cannot be visualized directly from the raw $\psi$ due to the significant thermal fluctuations.
 %Here $\rho_0 = 0.5$,
 }
@@ -137,30 +167,83 @@ The characteristic time of the evolution of the vortex tangle is $R^2/\ln{(R/a_0
 \begin{figure}
   \centering
     \includegraphics[width=0.45\linewidth]{nonequib/figures/ll_t_2}
-    \caption{(Color online) 
-Decay of the vortex line-length density during the equilibration dynamics, for various values of final condensate fraction:  $\rho_0/\rho = 0.2$ (blue circles), $\rho_0/\rho = 0.5$ (brown triangles) and $\rho_0/\rho = 0.9$ (green squares)
+    \caption{Decay of the vortex line-length density during the equilibration dynamics, for various values of final condensate fraction:  $\rho_0/\rho = 0.2$ (blue circles), $\rho_0/\rho = 0.5$ (brown triangles) and $\rho_0/\rho = 0.9$ (green squares)
 }
     \label{fig:ll_t}
 \end{figure}
 
-
-
-
 \section{Moving obstacle at finite-temperature\label{sec:obstacle}}
 
 \subsection{Critical velocity for vortex nucleation}
+Having obtained the equilibrated finite-temperature states of the Bose gas, we now move on to consider a laser-induced obstacle moving through the gas.  The obstacle, uniform in $z$, is translated in the $x$-direction at speed $v$.  Our simulations are conducted moving with the obstacle, transformed into the moving frame as in Section \ref{section:linearmovframe}. The obstacle is imposed through a time-independent cylindrical Gaussian potential, as described in Section \ref{section:3dcylinderpotential},
+\begin{equation*}
+  V({\bf r}) = V_0 \exp\left ( -\frac{x^2+y^2}{d^2}\right ),
+\end{equation*}
+where $d$ and $V_0$ parametrise the width and amplitude of the potential. The amplitude is linearly increased from $V_0 = 0$ at first introduction to its maximal value $V_0=5\mu$ over a period of $200\tau$.   The frame speed is increased adiabatically to the required value according to the temporal profile $v \tanh(\hat{t}/200 \tau)$, where $\hat{t}$ denotes the time from introduction of the obstacle.
+
+Simulations are repeated (from identical initial conditions) with increasing terminal speeds (in steps of $0.057c$) until vortices are detected.  Vortex detection is by visual inspection of the filtered density, up to a maximum simulation time $\hat{t}=500\tau$ (which is long enough to ensure that the obstacle is fully introduced and at terminal speed, but otherwise arbitrary). This procedure defines the critical velocity $v_c$.  There is a systematic uncertainty in our measurement of $v_c$, arising from the discrete terminal speeds employed.  Note that we have repeated this process for multiple randomized initial conditions, and find no change in our measurement of $v_c$; that is, the systematic uncertainty due to using discretised speeds is larger than the statistical uncertainty arising from different random initial conditions.
 
 \begin{figure}
-\centering
-  \includegraphics[width=0.45\linewidth]{nonequib/figures/vc-n0}
-  \caption{\label{fig:vc-n0}(Color online) Critical velocity $v_{\rm c}$ for the moving Gaussian-shaped obstacle (uniform in $z$) as a function of condensate fraction $\rho_0/\rho$ and temperature $T/T_\lambda$, for obstacle widths $d=2\xi$ (blue circles) and $d=5\xi$ (red squares). The dotted lines show the analytic model $v_{\rm c}=\beta \sqrt{\rho_0/\rho}$ with fitted coefficients $\beta=0.46$ and $0.35$. (Inset) The critical velocity approaches an asymptotic value as the obstacle size is increased. Included is a fit of the form $v_{\rm c}=\alpha/d+\gamma$ with $\alpha=0.26~(\xi^2/\tau)$ and $\gamma=0.18 c$.  Errors bars represent the systematic uncertainty in $v_c$ due to the discretized values of $v$ considered.}
+\hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
+\begin{center}
+  \begin{tikzpicture}
+  \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
+        width=0.45\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel=$\rho_0/\rho$,
+        ylabel=$v_c/c$,
+        xmin=0,
+        xmax=1.1,
+        ymin=0,
+        ymax=0.55,
+        major tick length = 0.07cm
+      ]
+      \addplot+[only marks,mark options={blue},error bars/error bar style={blue},  error bars/.cd,y dir=both,y explicit] table[x=cf,y=2xi,y error=2err] {nonequib/cf_vs_vc.dat};
+      \addplot+[only marks,mark=square*,mark options={red},error bars/error bar style={red},  error bars/.cd,y dir=both,y explicit] table[x=cf,y=5xi,y error=5err] {nonequib/cf_vs_vc.dat};
+      \addplot+[mark=none,color=black!50,thick,dashed] [domain=0:1.5] {0.46*sqrt(x)};
+      \addplot+[mark=none,color=black!50,thick,dashed] [domain=0:1.5] {0.35*sqrt(x)};
+    \end{axis}
+    \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.45\linewidth,
+        xlabel=$T/T_\lambda$,
+        ylabel={},
+        xmin=0,
+        xmax=1.1,
+        ymin=0,
+        ymax=1,
+        major tick length = 0.07cm,
+        axis y line*=right,
+        axis x line*=top,
+        yticklabels={,,},
+        ytick={0},
+        xtick={0,0.23,0.44,0.64,0.82,1},
+        xticklabels={$1$, $0.8$, $0.6$, $0.4$, $0.2$,$0$}
+        ]
+    \end{axis}
+  \end{tikzpicture}%
+  \begin{tikzpicture}%
+  \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
+        width=0.45\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel=$d/\xi$,
+        ylabel=$v_c/c$,
+        xmin=0,
+        xmax=23,
+        ymin=0.17,
+        ymax=0.35,
+        major tick length = 0.07cm
+      ]
+      \addplot+[only marks,mark options={blue},error bars/error bar style={blue},  error bars/.cd,y dir=both,y explicit] table[x=d,y=vc,y error=err] {nonequib/d_vs_vc.dat};
+      \addplot+[mark=none,color=black!50,thick,dashed] [domain=0:30] {0.26/x+0.18};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+  \caption{\label{fig:vc-n0}(a) Critical velocity $v_{\rm c}$ for the moving Gaussian-shaped obstacle (uniform in $z$) as a function of condensate fraction $\rho_0/\rho$ and temperature $T/T_\lambda$, for obstacle widths $d=2\xi$ (blue circles) and $d=5\xi$ (red squares). The dotted lines show the analytic model $v_{\rm c}=\beta \sqrt{\rho_0/\rho}$ with fitted coefficients $\beta=0.46c$ and $0.35c$. (b) The critical velocity approaches an asymptotic value as the obstacle size is increased. Included is a fit of the form $v_{\rm c}=\alpha/d+\gamma$ with $\alpha=0.26~(\xi^2/\tau)$ and $\gamma=0.18 c$.  Errors bars represent the systematic uncertainty in $v_c$ due to the discretised values of $v$ considered.}
 \end{figure}
 
-Having obtained the equilibrated finite-temperature states of the Bose gas, we now move on to consider a laser-induced obstacle moving through the gas.  The obstacle, uniform in $z$, is translated in the $x$-direction at speed $v$.  Our simulations are conducted in the frame moving with the obstacle, modelled by the inclusion of a Galilean shift term $i \hbar v \partial_x \psi$ to the right-hand side of the GPE.  In this frame the obstacle is imposed through the time-independent potential $V_{\mathrm{obj}}{(\bf r})=V_0 \exp\left[{-(x^2+y^2)/d^2 }\right]$, where $d$ and $V_0$ parameterize the width and amplitude of the potential.  The amplitude is linearly increased from $V_0 = 0$ at first introduction to its maximal value $V_0=5\mu$ over a period of $200\tau$.   The frame speed is increased adiabatically to the required value according to the temporal profile $v \tanh(\hat{t}/200 \tau)$, where $\hat{t}$ denotes the time from introduction of the obstacle.
-
-Simulations are repeated (from identical initial conditions) with increasing terminal speeds (in steps of $0.057c$) until vortices are detected.  Vortex detection is by visual inspection of the filtered density, up to a maximum simulation time $\hat{t}=500\tau$ (which is long enough to ensure that the obstacle is fully introduced and at terminal speed, but otherwise arbitrary). This procedure defines the critical velocity $v_c$.  There is a systematic uncertainty in our measurement of $v_c$, arising from the discrete terminal speeds employed.  Note that we have repeated this process for multiple randomized initial conditions, and find no change in our measurement of $v_c$; that is, the systematic uncertainty due to using discretized speeds is larger than the statistical uncertainty arising from different random initial conditions.
-
-Figure \ref{fig:vc-n0} shows the variation of $v_c$ with both condensate fraction $\rho_0/\rho$ (lower abscissa) and temperature $T/T_\lambda$ (upper abscissa), for two example obstacles widths.  The critical velocity has a maximum value at zero temperature (unit condensate fraction), and decreases nonlinearly as temperature increases (condensate fraction decreases), reaching zero at the critical point for condensation.
+Figure \ref{fig:vc-n0} (a) shows the variation of $v_c$ with both condensate fraction $\rho_0/\rho$ (lower abscissa) and temperature $T/T_\lambda$ (upper abscissa), for two example obstacles widths.  The critical velocity has a maximum value at zero temperature (unit condensate fraction), and decreases nonlinearly as temperature increases (condensate fraction decreases), reaching zero at the critical point for condensation.
 
 At zero temperature, the critical velocity is of the order of the condensate speed of sound $c=\sqrt{\rho g/m}$, with a general form $v_{\rm c}(T=0)=\beta c$,
 where $\beta$ is a parameter which depends solely on the shape of the
@@ -177,17 +260,42 @@ In other words, for a given obstacle, the critical velocity is a fixed
 fraction of the speed of sound based on the {\it condensate} density
 rather than the total particle density \cite{leadbeater_2003}.
 
-The inset of Figure \ref{fig:vc-n0} shows the variation of $v_{\rm c}$ with the obstacle width $d$ at finite temperature, for the example of $T/T_\lambda =0.56$.   The qualitative behaviour is consistent with that seen at zero temperature \cite{huepe00,rica2001,stagg_parker_14}: for small $d$ the critical velocity is sensitive to $d$ (due to the prominence of boundary layer effects) but as $d$ increases $v_c$ decreases towards a limiting values (the Eulerian limit).  However, the critical velocities are systematically reduced compared to the zero temperature case due to the reduced condensate speed of sound at finite temperature.
+Figure \ref{fig:vc-n0} (b) shows the variation of $v_{\rm c}$ with the obstacle width $d$ at finite temperature, for the example of $T/T_\lambda =0.56$.   The qualitative behaviour is consistent with that seen at zero temperature \cite{huepe00,rica2001,stagg_parker_14}: for small $d$ the critical velocity is sensitive to $d$ (due to the prominence of boundary layer effects) but as $d$ increases $v_c$ decreases towards a limiting values (the Eulerian limit).  However, the critical velocities are systematically reduced compared to the zero temperature case due to the reduced condensate speed of sound at finite temperature.
 
 
 \subsection{Vortex nucleation pattern}
+Finally we examine the manner in which vortices are nucleated from the obstacle.  At zero temperature, one expects the nucleation of straight anti-parallel vortex lines from the obstacle, either released in unison or staggered in time \cite{frisch92,saito10,stagg_parker_14}, which move downstream relative to the obstacle.  At finite temperature, we observe three general regimes of vortex nucleation, with representative examples shown in Figure  \ref{fig:vort-lines}:
 
+\begin{figure}
+    %\includegraphics[width=0.9\linewidth]{nonequib/figures/vort}
+    \centering
+    \begin{tikzpicture}
+      \node[anchor=south west] at (0,0) (image1) {\includegraphics[width=0.9\linewidth]{nonequib/figures/vort}};
+      \begin{scope}[x={(image1.south east)},y={(image1.north west)}]
+      \node at (0.1,0.96) {i)};
+      \node at (0.27,0.96) {ii)};
+      \node at (0.46,0.96) {iii)};
+      \node at (0.65,0.96) {iv)};
 
-Finally we examine the manner in which vortices are nucleated from the obstacle.  At zero temperature, one expects the nucleation of straight anti-parallel vortex lines from the obstacle, either released in unison or staggered in time \cite{frisch92,saito10,stagg_parker_14}, which move downstream relative to the obstacle.  At finite temperature, we observe three general regimes of vortex nucleation, with representative examples shown in Fig.  \ref{fig:vort-lines}:
+      \node at (0.1,0.66) {i)};
+      \node at (0.27,0.66) {ii)};
+      \node at (0.46,0.66) {iii)};
+      \node at (0.65,0.66) {iv)};
 
+      \node at (0.1,0.33) {i)};
+      \node at (0.27,0.33) {ii)};
+      \node at (0.56,0.33) {iii)};
+
+      \node at (0.05,0.93) {a)};
+      \node at (0.05,0.63) {b)};
+      \node at (0.05,0.3) {c)};
+      \end{scope}
+    \end{tikzpicture}
+    \caption{\label{fig:vort-lines} Snapshots of the typical vortex nucleation from the moving Gaussian-shaped obstacle with $d=5\xi$ (gray) in the finite temperature Bose gas. The three cases (a-c) are representative of the behaviour across the whole parameter space. Shown are  isosurfaces of the quasi-condensate density ($|\hat{\psi}|^2 = 0.05\braket{|\hat{\psi}|^2}$).  (a) Vortices are shed as pairs of anti-parallel vortex lines.  Here the system parameters are $\rho_0/\rho = 0.22$ and $v=0.17c$, and the snapshots correspond to times (i) $\hat{t}/\tau=210$, (ii) $460$, (iii) $585$ and (iv) $710$.  (b) Vortex rings are nucleated from the obstacle.  The system parameters are $\rho_0/\rho = 0.91$ and $v=0.42c$, and the times are (i) $\hat{t}/\tau=500$, (ii) $700$, (iii) $875$ and (iv) $950$. (c) A vortex tangle forms behind the obstacle. The system parameters are $\rho_0/\rho = 0.35$ and $v=0.59c$, and the times are (i) $\hat{t}/\tau=250$, (ii) $375$ and (iii) $500$. }
+\end{figure}
 
 \begin{description}
-\item[Vortex lines] A pair of ``wiggly'' vortex lines is produced  [Fig.  \ref{fig:vort-lines}(a)].  The wiggles are driven by the thermal fluctuations, which cause the vortex elements to be nucleated at slightly different times along the obstacle; this is visible at intermediate times (snapshots (iii) and (iv)).   These elements ultimately merge together along the axis of the obstacle to form a wiggly vortex/anti-vortex line. Similar vortex configurations
+\item[Vortex lines] A pair of ``wiggly'' vortex lines is produced  [Figure  \ref{fig:vort-lines}(a)].  The wiggles are driven by the thermal fluctuations, which cause the vortex elements to be nucleated at slightly different times along the obstacle; this is visible at intermediate times (snapshots (iii) and (iv)).   These elements ultimately merge together along the axis of the obstacle to form a wiggly vortex/anti-vortex line. Similar vortex configurations
 in the form of lines which are partially attached to a thin wire 
 were also observed in liquid helium \cite{zieve2001}. 
 \item[Vortex rings]  Here vortices predominately form vortex
@@ -197,13 +305,6 @@ adjacent loops to form rings. Due to the way the vortex rings form initially alo
 \item[Vortex tangle]  Strong
 interaction between successively nucleated vortices leads to the formation of a complex tangle of vortex lines behind the obstacle [Figure \ref{fig:vort-lines}(c)].
 \end{description}
-
-
-\begin{figure}
-  \centering
-    \includegraphics[width=0.6\linewidth]{nonequib/figures/vort}
-    \caption{\label{fig:vort-lines}(Color online) Snapshots of the typical vortex nucleation from the moving Gaussian-shaped obstacle with $d=5\xi$ (gray) in the finite temperature Bose gas. The three cases (a-c) are representative of the behaviour across the whole parameter space shown in Fig. \ref{fig:vort-vals}. Shown are  isosurfaces of the quasi-condensate density ($|\hat{\psi}|^2 = 0.05\braket{|\hat{\psi}|^2}$).  (a) Vortices are shed as pairs of anti-parallel vortex lines.  Here the system parameters are $\rho_0/\rho = 0.22$ and $v=0.17c$, and the snapshots correspond to times (i) $\hat{t}/\tau=210$, (ii) $460$, (iii) $585$ and (iv) $710$.  (b) Vortex rings are nucleated from the obstacle.  The system parameters are $\rho_0/\rho = 0.91$ and $v=0.42c$, and the times are (i) $\hat{t}/\tau=500$, (ii) $700$, (iii) $875$ and (iv) $950$. (c) A vortex tangle forms behind the obstacle. The system parameters are $\rho_0/\rho = 0.35$ and $v=0.59c$, and the times are (i) $\hat{t}/\tau=250$, (ii) $375$ and (iii) $500$. }
-\end{figure}
 
 While the vortex line regime is analogous to the zero temperature case, no analogue occurs for the ring and tangle regimes.   We note that even a small amount of thermal fluctuations is enough to vastly change the form of vortex nucleation, such as the vortex rings produced in Figure \ref{fig:vort-lines}(c) for a condensate fraction of $0.91$.
 
@@ -215,7 +316,53 @@ We further characterise the vortex distribution by its polarisation through the 
 
 \begin{figure}
   \centering
-    \includegraphics[width=0.6\linewidth]{nonequib/figures/vv-interp}
+  \begin{tikzpicture}
+    \begin{axis}[ylabel near ticks,xlabel near ticks,
+        axis on top,
+        width=0.5\linewidth,
+        height=0.475\linewidth,
+        xlabel=$\rho_0/\rho$,
+        ylabel=$v/c$,
+        xmin = 0,
+        xmax = 1,
+        ymin = 0,
+        ymax = 0.7,
+        axis y line*=left,
+        axis x line*=bottom,
+        major tick length = 0.07cm,
+        colorbar style={ylabel={$L/\xi^2$},ylabel style={rotate=-90},text width=0.5em,major tick length = 0.07cm},
+        major tick length = 0.07cm,
+        point meta min = 0,
+        point meta max = 0.00059,
+        colorbar,colormap={}{ gray(0cm)=(1); gray(1cm)=(0);}
+      ]
+      \addplot graphics [xmin=0,xmax=1,ymin=0,ymax=0.7] {nonequib/figures/vv-interp-bg};
+      \addplot+[only marks,mark={*},mark options={red,scale=1.2}] plot coordinates{(0.22,0.18)};
+      \addplot+[only marks,mark={square*},mark options={blue,scale=1.2}] plot coordinates{(0.91,0.44)};
+      \addplot+[only marks,mark={diamond*},mark options={green,scale=1.2}] plot coordinates{(0.35,0.61)};
+      \node[text=white] at (axis cs:0.2,0.55) {\footnotesize Vortex Tangle};
+      \node at (axis cs:0.5,0.35) {\footnotesize Vortex Lines/Rings};
+      \node at (axis cs:0.8,0.1) {\footnotesize No Vortices};
+    \end{axis}
+    \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.5\linewidth,
+        height=0.475\linewidth,
+        xlabel=$T/T_\lambda$,
+        ylabel={},
+        xmin=0,
+        xmax=1.0,
+        ymin=0,
+        ymax=0.7,
+        major tick length = 0.07cm,
+        axis y line*=right,
+        axis x line*=top,
+        ytick={0},
+        yticklabels={,,},
+        xtick={0,0.23,0.44,0.64,0.82,1},
+        xticklabels={$1$, $0.8$, $0.6$, $0.4$, $0.2$,$0$}
+        ]
+    \end{axis}
+  \end{tikzpicture}
     \caption{\label{fig:vort-vals} Vortex line density $L$ (at an observation time $\hat{t}=500\tau$)  as a function of flow speed and condensate fraction, with the qualitative regimes of vortex nucleation indicated.  The markers correspond to the three representative cases shown in Figure \ref{fig:vort-lines}(a) [red circle], (b) [blue square] and (c) [green diamond].  This line length density data, obtained from 36 simulations, has been interpolated.  The obstacle has size $d=5\xi$.}
 \end{figure}
 

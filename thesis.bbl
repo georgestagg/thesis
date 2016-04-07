@@ -1,4 +1,4 @@
-\begin{thebibliography}{171}
+\begin{thebibliography}{170}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -256,12 +256,11 @@
   \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{79}},
   \bibinfo{pages}{1793} (\bibinfo{year}{1997}).
 
-\bibitem[{\citenamefont{Berloff and
-  Svistunov}(2002{\natexlab{a}})}]{PhysRevA.66.013603}
+\bibitem[{\citenamefont{Berloff and Svistunov}(2002)}]{PhysRevA.66.013603}
 \bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{B.~V.} \bibnamefont{Svistunov}},
   \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{66}},
-  \bibinfo{pages}{013603} (\bibinfo{year}{2002}{\natexlab{a}}).
+  \bibinfo{pages}{013603} (\bibinfo{year}{2002}).
 
 \bibitem[{\citenamefont{Carruthers and Dy}(1966)}]{PhysRev.147.214}
 \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Carruthers}} \bibnamefont{and}
@@ -1390,13 +1389,6 @@
   \textbf{\bibinfo{volume}{238}}, \bibinfo{pages}{1482 }
   (\bibinfo{year}{2009}), \bibinfo{note}{nonlinear Phenomena in Degenerate
   Quantum Gases}.
-
-\bibitem[{\citenamefont{Berloff and
-  Svistunov}(2002{\natexlab{b}})}]{berloff_2002}
-\bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Berloff}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{B.~V.} \bibnamefont{Svistunov}},
-  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{66}},
-  \bibinfo{pages}{013603} (\bibinfo{year}{2002}{\natexlab{b}}).
 
 \bibitem[{\citenamefont{Hough et~al.}(2001)\citenamefont{Hough, Donev, and
   Zieve}}]{zieve2001}

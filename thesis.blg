@@ -11,7 +11,7 @@ A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10921 items from 5000.
+Reallocated field_info (elt_size=4) to 10890 items from 5000.
 Database file #1: references.bib
 Warning--I didn't find a database entry for "Bradley2005"
 Warning--I didn't find a database entry for "Barenghi-PNAS"
@@ -36,45 +36,45 @@ Warning--I didn't find a database entry for "supp"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty author in Lvov
-You've used 171 entries,
+You've used 170 entries,
             3411 wiz_defined-function locations,
-            2101 strings with 35804 characters,
-and the built_in function-call counts, 129550 in all, are:
-= -- 7082
-> -- 4843
-< -- 663
-+ -- 4052
-- -- 1179
-* -- 18084
-:= -- 13535
-add.period$ -- 171
-call.type$ -- 171
-change.case$ -- 690
+            2100 strings with 35792 characters,
+and the built_in function-call counts, 128887 in all, are:
+= -- 7040
+> -- 4826
+< -- 660
++ -- 4039
+- -- 1175
+* -- 17994
+:= -- 13463
+add.period$ -- 170
+call.type$ -- 170
+change.case$ -- 686
 chr.to.int$ -- 169
-cite$ -- 174
-duplicate$ -- 11557
-empty$ -- 10714
-format.name$ -- 2925
-if$ -- 24434
-int.to.chr$ -- 9
-int.to.str$ -- 172
-missing$ -- 1784
-newline$ -- 528
-num.names$ -- 512
-pop$ -- 3063
+cite$ -- 173
+duplicate$ -- 11499
+empty$ -- 10657
+format.name$ -- 2912
+if$ -- 24305
+int.to.chr$ -- 8
+int.to.str$ -- 171
+missing$ -- 1775
+newline$ -- 525
+num.names$ -- 509
+pop$ -- 3048
 preamble$ -- 1
-purify$ -- 684
+purify$ -- 680
 quote$ -- 0
-skip$ -- 4866
+skip$ -- 4842
 stack$ -- 0
-substring$ -- 4190
-swap$ -- 9490
-text.length$ -- 596
+substring$ -- 4160
+swap$ -- 9443
+text.length$ -- 594
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 994
+type$ -- 988
 warning$ -- 1
-while$ -- 494
+while$ -- 491
 width$ -- 0
-write$ -- 1723
+write$ -- 1713
 (There were 21 warnings)
