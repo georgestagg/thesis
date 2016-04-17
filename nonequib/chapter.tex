@@ -126,7 +126,7 @@ The quasi-condensate wavefunction is used to visualise the condensed part of the
 \caption{\label{fig:cfvst}The condensate fraction and temperature relation for a weakly-interacting Bose gas for our simulation parameters (black solid line) and for an ideal non-interacting Bose gas (black dashed line).}
 \end{figure} 
 
-The theory of statistical mechanics for an ideal {\it non-interacting} Bose gas leads to a simple prediction for how the condensate fraction of the gas grows as temperature decreases \cite{Pethick},
+As we first saw in Section \ref{section:becinintro}, using the statistical mechanics of bosons it can be shown that for a {\it non-interacting} ideal gas of bosons there exists a simple prediction for how the condensate fraction of the gas grows as temperature decreases \cite{Pethick},
 \begin{equation}
 N_0 = N \left [ 1-\left ( \frac{T}{T_\lambda} \right )^\beta \right ],
 \end{equation}
@@ -274,19 +274,38 @@ $0.77$ & $-0.81$ & $(-0.89, -0.72)$\\
 
 The decay of the vortex line density is shown in Figure \ref{fig:ll_t}. When the condensate fraction at the simulated value of $\rho_0/\rho = 0.22$, the decay of $L$ is in good agreement with the predicted ultra-quantum decay of $L(t) \propto t^{-1}$. Our cooler simulations show a deviation from the $t^{-1}$ decay law, suggesting a shift to longer vortex tangle decay times as the gas is simulated closer to the zero temperature limit. The decays are quantitatively compared to the predicted power law in Table \ref{tbl:fits}, showing a power law best fit and $95\%$ confidence interval.
 
-The velocity correlation function, $f(r)$, is defined for a fixed point in time as
+The velocity correlation function, $f(r)$, is defined at a fixed point in time as
 \begin{equation}
 f(r) = \frac{\langle v_x({\bf r})v_x({\bf r} +  r\hat{\bf e}_x) \rangle}{\langle v_x({\bf r})^2 \rangle}
 \end{equation}
-where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$ and is shown in Figure \ref{fig:IS_t} (Inset) for the three simulated parameter sets at a time of $t/\tau = 300$. The integral scale, defined as
+where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. The value of $f(r)$ smoothly drops to approximately at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
+
+The integral scale provides a convenient measure of the distance over which velocities are correlated by producing a scalar value from the velocity correlation function. It is defined as
 \begin{equation}
 I = \int\limits_0^\infty\! f(r)\, \mathrm{d}r,
 \end{equation}
-provides a convenient measure of the distance over which velocities are correlated and is shown in Figure \ref{fig:IS_t} evolving during evolution. The value of $I$ increases over time in the demonstrated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ remains significantly less than $\ell$.
-
+and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex tangle evolution. Three lines corresponding to different temperatures are shown, with each line an average of 5 simulations. The value of $I$ increases as the vortex tangle decays in all of the simulated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ grows, but remains significantly less than $\ell$, demonstrating that as the vortex tangle evolves over time, there is no evidence of vortex lines ``bundling up'' to create a large scale flow.
 
 \begin{figure}
 \centering
+\begin{tikzpicture}
+  \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
+        width=0.45\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel={\footnotesize $r/\xi$},
+        ylabel={\footnotesize $f$},
+        xmin=0,
+        xmax=20,
+        ymin=-0.1,
+        ymax=1.1,
+        major tick length = 0.1cm,
+        minor tick length = 0.07cm]
+      \addplot+[red,mark=none,ultra thick] file {nonequib/f_vs_r_CF02.dat};
+      \addplot+[green,mark=none,ultra thick,dashed] file {nonequib/f_vs_r_CF05.dat};
+      \addplot+[blue,mark=none,ultra thick,dash pattern=on 4pt off 1pt on 1pt off 1pt] file {nonequib/f_vs_r_CF075.dat};
+    \end{axis}
+  \end{tikzpicture}
 \begin{tikzpicture}
     \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
     width=0.45\linewidth,
@@ -306,26 +325,11 @@ provides a convenient measure of the distance over which velocities are correlat
       %\addplot+[black,thick,mark=none,dashed] table[x expr=\thisrow{t}, y expr=1/sqrt(\thisrow{l})] {l_vs_t_CF075.dat};
     \end{axis}
   \end{tikzpicture}
-  \begin{tikzpicture}
-  \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
-        width=0.45\linewidth,
-        xtick pos=left,
-        ytick pos=left,
-        xlabel={\footnotesize $r/\xi$},
-        ylabel={\footnotesize $f$},
-        xmin=0,
-        xmax=20,
-        ymin=-0.1,
-        ymax=1.1,
-        major tick length = 0.1cm,
-        minor tick length = 0.07cm]
-      \addplot+[red,mark=none,ultra thick] file {nonequib/f_vs_r_CF02.dat};
-      \addplot+[green,mark=none,ultra thick,dashed] file {nonequib/f_vs_r_CF05.dat};
-      \addplot+[blue,mark=none,ultra thick,dash pattern=on 4pt off 1pt on 1pt off 1pt] file {nonequib/f_vs_r_CF075.dat};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{\label{fig:IS_t}(Color online) The integral scale as the quasi-condensate vortex tangle decays, for $\rho/\rho_0=0.22$ (red circles), $\rho/\rho_0=0.48$ (greensqaures), and $\rho/\rho_0=0.77$ (blue diamonds). Also shown is the estimated inter-vortex distance $\ell = 1/\sqrt{L}$ for the case with $\rho/\rho_0=0.77$ (dashed line). (Inset) A snapshot of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states for $\rho/\rho_0=0.22$ (red solid line), $\rho/\rho_0=0.48$ (green dashed line), and $\rho/\rho_0=0.77$ (blue dot-dashed line).}
+  \caption{\label{fig:IS_t}(Color online) The integral scale as the quasi-condensate vortex tangle decays, for $\rho/\rho_0=0.22$ (red circles), $\rho/\rho_0=0.48$ (green sqaures), and $\rho/\rho_0=0.77$ (blue diamonds). Also shown is the estimated inter-vortex distance $\ell = 1/\sqrt{L}$ for the case with $\rho/\rho_0=0.77$ (dashed line). (Inset) A snapshot of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states for $\rho/\rho_0=0.22$ (red solid line), $\rho/\rho_0=0.48$ (green dashed line), and $\rho/\rho_0=0.77$ (blue dot-dashed line).}
 \end{figure}
+
+The results of the velocity correlation and integral scale measurements confirm the conclusions of the kinetic energy spectrum measurements, there is no evidence of energy at scales larger than the inter-vortex spacing at any point during vortex decay, at all simulated temperatures. This is perhaps not such a surprising result, the initial vortex tangle is seeded and forms from random fluctuations in the phase of the 3D wavefunction, favouring the random nature of quasi-classical turbulence.
+
 
 \section{Moving obstacle at finite-temperature\label{sec:obstacle}}
 \subsection{Critical velocity for vortex nucleation}
