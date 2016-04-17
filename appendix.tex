@@ -344,15 +344,15 @@ where $\rho = |\psi({\bf r},t)|^2$. Rearranging for $\xi$,
 
 \begin{chapter}{\label{app:algorithms}Algorithms}
 \section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
-A technique to visualise both the wavefunction phase and density is used throughout this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
-\subsection{Plotting Algorithm}
+A technique to visualise both the wavefunction phase and density is sometimes used this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
+\subsubsection{Plotting Algorithm}
 Initially, the phase plotting is performed as normal, a process involving a conversion of a set of values in the region $[-\pi,\pi)$ to an image (defined as a 2D grid of pixels of size $n\times m$). Examples include MATLAB's image/pcolor commands or gnuplot's splot command. It is recommended, but not required, that a periodic colourmap (such as MATLAB's `hsv') of equal lightness is used. The $n \times m$ pixels obtained from this procedure will most commonly be stored in the {\tt rgb} format, a triad of values $(r,g,b)$ corresponding to the values of the red, green and blue intensities of the pixel respectively. For a maximum intensity of $255$ (a common format for {\tt rgb} pixels), a pixel with value $(0,0,0)$ is black, and a pixel of $(255,255,255)$ is white.
 
 Each pixel must be instead represented in the {\tt hsl} format, a triad of values $(h,s,l)$ corresponding to the values of the hue, saturation and lightness of the pixel respectively. {\tt hsl} is most commonly represented such that $h \in [0,360)$ and $s,l \in [0,1]$. Any pixel of the form $(h,s,0)$ is black, and any pixel of the form $(h,s,1)$ is white.
 
 For each pixel, the lightness is then modified so that for a pixel at location $(x,y)$, $l = |\psi(x,y)|^2/\max(|\psi|^2)$. Once complete, conversion back to {\tt rgb} format must presumably be performed, before finally re-plotting in one's software of choice. Areas of low density will appear in black, while areas of high density will show hues corresponding to the fluid phase at that location.
 
-\subsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
+\subsubsection{Colour space conversion - {\tt rgb} to {\tt hsl}}
 Given an {\tt rgb} format pixel $(r,g,b)$, rescale so that $r,g,b \in [0,1]$. The brightness of the pixel is described by $l$. Compute $m = \max(r,g,b)$, $n = \min(r,g,b)$ and set $l = (m+n)/2$. The hue of the pixel is described by $h$ and the strength of that hue is given by $s$. These quantities depend on the previously calculated $m$ and $n$. If $m=n$ then the pixel is achromatic and $h=s=0$, otherwise,
 \begin{equation}
 s =
@@ -371,7 +371,7 @@ h =
 \end{equation}
 The resulting triad $(h,s,l)$ then describes the required pixel in {\tt hsl} format.
 
-\subsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
+\subsubsection{Colour space conversion - {\tt hsl} to {\tt rgb}}
 Given a {\tt hsl} format pixel $(h,s,l)$, compute $c = (1 - | 2l - 1|) \times s$ and $h' = h/60$. Using these quantities, calculate $x = c(1-|h' \mod 2 - 1|)$. To obtain values for $r'$, $g'$ and $b'$, substitute $c$ and $x$ into
 \begin{equation}
 (r', g', b') =
