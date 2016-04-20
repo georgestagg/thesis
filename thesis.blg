@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: ./intro/chapter.aux
@@ -10,8 +10,8 @@ A level-1 auxiliary file: ./nonequib/chapter.aux
 A level-1 auxiliary file: ./afm/chapter.aux
 A level-1 auxiliary file: appendix.aux
 The style file: apsrev.bst
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated field_info (elt_size=8) to 10890 items from 5000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 12750 items from 5000.
 Database file #1: references.bib
 Warning--I didn't find a database entry for "Bradley2005"
 Warning--I didn't find a database entry for "Barenghi-PNAS"
@@ -33,48 +33,49 @@ Warning--I didn't find a database entry for "RobertsBerloff-GPE"
 Warning--I didn't find a database entry for "Schwarz1988"
 Warning--I didn't find a database entry for "Goto2008"
 Warning--I didn't find a database entry for "supp"
-Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty author and editor in nobel01
 Warning--empty author in Lvov
-You've used 170 entries,
+You've used 230 entries,
             3411 wiz_defined-function locations,
-            2100 strings with 35786 characters,
-and the built_in function-call counts, 128887 in all, are:
-= -- 7040
-> -- 4826
-< -- 660
-+ -- 4039
-- -- 1175
-* -- 17994
-:= -- 13463
-add.period$ -- 170
-call.type$ -- 170
-change.case$ -- 686
-chr.to.int$ -- 169
-cite$ -- 173
-duplicate$ -- 11499
-empty$ -- 10657
-format.name$ -- 2912
-if$ -- 24305
-int.to.chr$ -- 8
-int.to.str$ -- 171
-missing$ -- 1775
-newline$ -- 525
-num.names$ -- 509
-pop$ -- 3048
+            2415 strings with 45071 characters,
+and the built_in function-call counts, 175321 in all, are:
+= -- 9500
+> -- 6657
+< -- 914
++ -- 5616
+- -- 1627
+* -- 24450
+:= -- 18297
+add.period$ -- 230
+call.type$ -- 230
+change.case$ -- 926
+chr.to.int$ -- 228
+cite$ -- 236
+duplicate$ -- 15664
+empty$ -- 14479
+format.name$ -- 3977
+if$ -- 33030
+int.to.chr$ -- 9
+int.to.str$ -- 231
+missing$ -- 2417
+newline$ -- 705
+num.names$ -- 686
+pop$ -- 4154
 preamble$ -- 1
-purify$ -- 680
+purify$ -- 920
 quote$ -- 0
-skip$ -- 4842
+skip$ -- 6577
 stack$ -- 0
-substring$ -- 4160
-swap$ -- 9443
-text.length$ -- 594
+substring$ -- 5545
+swap$ -- 12875
+text.length$ -- 822
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 988
-warning$ -- 1
-while$ -- 491
+type$ -- 1338
+warning$ -- 2
+while$ -- 665
 width$ -- 0
-write$ -- 1713
-(There were 21 warnings)
+write$ -- 2313
+(There were 22 warnings)
