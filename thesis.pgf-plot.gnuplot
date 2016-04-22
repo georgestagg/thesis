@@ -1,2 +1,2 @@
 set table "thesis.pgf-plot.table"; set format "%.5f"
-set format "%.7e";; plot "numerics/figures/ripleyKpoints.dat" using 1:(0*$1*$1) with lines; 
+set format "%.7e";; plot "numerics/figures/energ-norm-cons.0.2" using 1:3 with lines; 
