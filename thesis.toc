@@ -1,0 +1,29 @@
+\contentsline {chapter}{\numberline {1}Quasi-classical turbulence and the critical velocity in finite temperature Bose gas}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Classical field method}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Formation of the turbulent vortex tangle}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Defining the quasi-condensate}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Approximate temperature of the gas}{6}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Energy scales of the vortex tangle}{7}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Relaxation of the vortex tangle}{8}{section.1.4}
+\contentsline {section}{\numberline {1.5}Moving obstacle at finite-temperature}{11}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Critical velocity for vortex nucleation}{11}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Vortex nucleation pattern}{12}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}Conclusions}{16}{section.1.6}
+\contentsline {section}{\numberline {1.7}Further Work}{16}{section.1.7}
+\contentsline {part}{I\hspace {1em}Appendix}{17}{part.1}
+\contentsline {chapter}{\numberline {A}Detailed Derivations}{18}{appendix.A}
+\contentsline {section}{\numberline {A.1} Derivation of the Runge-Kutta scheme}{18}{section.A.1}
+\contentsline {section}{\numberline {A.2} Derivation of the Gross-Pitaevskii Equation}{21}{section.A.2}
+\contentsline {section}{\numberline {A.3} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{25}{section.A.3}
+\contentsline {chapter}{\numberline {B}Important Quantities}{28}{appendix.B}
+\contentsline {section}{\numberline {B.1} Energy}{28}{section.B.1}
+\contentsline {section}{\numberline {B.2} Force}{29}{section.B.2}
+\contentsline {section}{\numberline {B.3} Healing Length}{29}{section.B.3}
+\contentsline {chapter}{\numberline {C}Algorithms}{31}{appendix.C}
+\contentsline {section}{\numberline {C.1} Density/Phase Visualisation Technique}{31}{section.C.1}
+\contentsline {subsubsection}{Plotting Algorithm}{31}{section*.12}
+\contentsline {subsubsection}{Colour space conversion - {\tt rgb} to {\tt hsl}}{32}{section*.13}
+\contentsline {subsubsection}{Colour space conversion - {\tt hsl} to {\tt rgb}}{32}{section*.14}
+\contentsline {section}{\numberline {C.2} Other Numerical Algorithms}{33}{section.C.2}
+\contentsline {chapter}{Bibliography}{40}{algocf.9}

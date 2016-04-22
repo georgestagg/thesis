@@ -1,51 +1,26 @@
-\BOOKMARK [-1][-]{part.1}{I Introduction and Theory}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Introduction}{part.1}% 2
-\BOOKMARK [1][-]{section.1.1}{Bose-Einstein condensation}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Superfluid helium}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.2.1}{Dispersion relation and excitations}{section.1.2}% 5
-\BOOKMARK [1][-]{section.1.3}{Dilute weakly-interacting atomic gases}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.3.1}{Experimental realisation}{section.1.3}% 7
-\BOOKMARK [2][-]{subsection.1.3.2}{Scattering length and interactions}{section.1.3}% 8
-\BOOKMARK [1][-]{section.1.4}{Macroscopic nonlinear excitations: vortices and solitons}{chapter.1}% 9
-\BOOKMARK [2][-]{subsection.1.4.1}{Vortices}{section.1.4}% 10
-\BOOKMARK [2][-]{subsection.1.4.2}{Solitons}{section.1.4}% 11
-\BOOKMARK [1][-]{section.1.5}{Quantum turbulence}{chapter.1}% 12
-\BOOKMARK [2][-]{subsection.1.5.1}{Turbulence in helium II}{section.1.5}% 13
-\BOOKMARK [2][-]{subsection.1.5.2}{Turbulence in BECs}{section.1.5}% 14
-\BOOKMARK [0][-]{chapter.2}{Theoretical Modelling of Bose-Einstein Condensates}{part.1}% 15
-\BOOKMARK [1][-]{section.2.1}{ Mean-field description}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.2}{ The Gross-Pitaevskii equation}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.3}{ The chemical potential}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.4}{ Time-independent Gross-Pitaevskii equation}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.5}{ Quasi-two-dimensional Gross-Pitaevskii equation}{chapter.2}% 20
-\BOOKMARK [1][-]{section.2.6}{ Hydrodynamic interpretation}{chapter.2}% 21
-\BOOKMARK [1][-]{section.2.7}{ Quantised circulation}{chapter.2}% 22
-\BOOKMARK [1][-]{section.2.8}{ Dimensionless Gross-Pitaevskii equations}{chapter.2}% 23
-\BOOKMARK [2][-]{subsection.2.8.1}{ Homogeneous GPE}{section.2.8}% 24
-\BOOKMARK [2][-]{subsection.2.8.2}{ Trapped GPE}{section.2.8}% 25
-\BOOKMARK [1][-]{section.2.9}{ The imaginary time propagation method}{chapter.2}% 26
-\BOOKMARK [1][-]{section.2.10}{ Transforming the reference frame}{chapter.2}% 27
-\BOOKMARK [2][-]{subsection.2.10.1}{ Linearly translating frame to simulate flow}{section.2.10}% 28
-\BOOKMARK [2][-]{subsection.2.10.2}{ Rotating frame}{section.2.10}% 29
-\BOOKMARK [1][-]{section.2.11}{ The dissipative Gross-Pitaevskii equation}{chapter.2}% 30
-\BOOKMARK [1][-]{section.2.12}{ Finite temperature homogeneous condensate using the classical field method}{chapter.2}% 31
-\BOOKMARK [1][-]{section.2.13}{ A selection of simple solutions}{chapter.2}% 32
-\BOOKMARK [2][-]{subsection.2.13.1}{ Density near a wall}{section.2.13}% 33
-\BOOKMARK [2][-]{subsection.2.13.2}{ Soliton solutions}{section.2.13}% 34
-\BOOKMARK [2][-]{subsection.2.13.3}{ Quantised vortices}{section.2.13}% 35
-\BOOKMARK [1][-]{section.2.14}{ Initial conditions}{chapter.2}% 36
-\BOOKMARK [2][-]{subsection.2.14.1}{ Homogeneous initial condition}{section.2.14}% 37
-\BOOKMARK [2][-]{subsection.2.14.2}{ Thomas-Fermi profile of a trapped condensate}{section.2.14}% 38
-\BOOKMARK [2][-]{subsection.2.14.3}{ Classical field initial condition}{section.2.14}% 39
-\BOOKMARK [1][-]{section.2.15}{Modelling obstacles and surfaces}{chapter.2}% 40
-\BOOKMARK [2][-]{subsection.2.15.1}{ Three-dimensional elliptical Gaussian}{section.2.15}% 41
-\BOOKMARK [2][-]{subsection.2.15.2}{ Two and three-dimensional cylindrical Gaussian}{section.2.15}% 42
-\BOOKMARK [2][-]{subsection.2.15.3}{ Three-dimensional `realistic' rough-surface}{section.2.15}% 43
-\BOOKMARK [0][-]{chapter.3}{Numerical Methods and Procedures}{part.1}% 44
-\BOOKMARK [1][-]{section.3.1}{ Numerical procedures for 2D and 3D solutions}{chapter.3}% 45
-\BOOKMARK [2][-]{subsection.3.1.1}{ Fourth order Runge-Kutta scheme}{section.3.1}% 46
-\BOOKMARK [2][-]{subsection.3.1.2}{ Numerical stability and convergence}{section.3.1}% 47
-\BOOKMARK [1][-]{section.3.2}{ Identifying vortices}{chapter.3}% 48
-\BOOKMARK [2][-]{subsection.3.2.1}{ Basic vortex detection method}{section.3.2}% 49
-\BOOKMARK [2][-]{subsection.3.2.2}{ Visualising vortex location with a vortex field}{section.3.2}% 50
-\BOOKMARK [2][-]{subsection.3.2.3}{ Furt
+\BOOKMARK [0][-]{chapter.1}{Quasi-classical turbulence and the critical velocity in finite temperature Bose gas}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Classical field method}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Formation of the turbulent vortex tangle}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.3.1}{Defining the quasi-condensate}{section.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.3.2}{Approximate temperature of the gas}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.3}{Energy scales of the vortex tangle}{section.1.3}% 7
+\BOOKMARK [1][-]{section.1.4}{Relaxation of the vortex tangle}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.5}{Moving obstacle at finite-temperature}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.5.1}{Critical velocity for vortex nucleation}{section.1.5}% 10
+\BOOKMARK [2][-]{subsection.1.5.2}{Vortex nucleation pattern}{section.1.5}% 11
+\BOOKMARK [1][-]{section.1.6}{Conclusions}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.7}{Further Work}{chapter.1}% 13
+\BOOKMARK [-1][-]{part.1}{I Appendix}{}% 14
+\BOOKMARK [0][-]{appendix.A}{Detailed Derivations}{part.1}% 15
+\BOOKMARK [1][-]{section.A.1}{ Derivation of the Runge-Kutta scheme}{appendix.A}% 16
+\BOOKMARK [1][-]{section.A.2}{ Derivation of the Gross-Pitaevskii Equation}{appendix.A}% 17
+\BOOKMARK [1][-]{section.A.3}{ Derivation of the Hydrodynamic Equations via the Madelung Transformation}{appendix.A}% 18
+\BOOKMARK [0][-]{appendix.B}{Important Quantities}{part.1}% 19
+\BOOKMARK [1][-]{section.B.1}{ Energy}{appendix.B}% 20
+\BOOKMARK [1][-]{section.B.2}{ Force}{appendix.B}% 21
+\BOOKMARK [1][-]{section.B.3}{ Healing Length}{appendix.B}% 22
+\BOOKMARK [0][-]{appendix.C}{Algorithms}{part.1}% 23
+\BOOKMARK [1][-]{section.C.1}{ Density/Phase Visualisation Technique}{appendix.C}% 24
+\BOOKMARK [1][-]{section.C.2}{ Other Numerical Algorithms}{appendix.C}% 25
+\BOOKMARK [0][-]{algocf.9}{Bibliography}{part.1}% 26
