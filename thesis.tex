@@ -25,10 +25,10 @@
 % 30mm margin on the binding edge.
 %
 % One-sided.
-\usepackage[a4paper,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+%\usepackage[a4paper,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
 %
 % Two-sided.
-%\usepackage[a4paper,twoside,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+\usepackage[a4paper,twoside,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
 %
 % Centred.
 %\usepackage[a4paper,left=30mm,right=30mm,top=40mm,bottom=35mm]{geometry}
@@ -121,15 +121,15 @@
 
   \pagenumbering{arabic}                % Reset the page numbering style.
 
-  %\part{Introduction and Theory}
-  %\include{./intro/chapter}
-  %\include{./model/chapter}
-  %\include{./numerics/chapter}
-  %\part{Numerical Studies}
-  %\include{./wake/chapter}
-  %\include{./shin/chapter}
+  \part{Introduction and Theory}
+  \include{./intro/chapter}
+  \include{./model/chapter}
+  \include{./numerics/chapter}
+  \part{Numerical Studies}
+  \include{./wake/chapter}
+  \include{./shin/chapter}
   \include{./nonequib/chapter}
-  %\include{./afm/chapter}
+  \include{./afm/chapter}
 
   \part{Appendix}
   \appendix

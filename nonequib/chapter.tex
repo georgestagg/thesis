@@ -1,4 +1,4 @@
-\begin{chapter}{\label{cha:nonequib}Quasi-classical turbulence and the critical velocity in finite temperature Bose gas}
+\begin{chapter}{\label{cha:nonequib}Turbulence and the critical velocity in a finite temperature Bose gas}
 \section{Introduction}
 A defining feature of superfluids is the absence of excitations when the flow (relative to some obstacle or boundary) is slower than a critical velocity; above this velocity, the flow becomes dissipative.  This can be understood in terms of the Landau criterion, which predicts excitations when the local fluid velocity exceeds $v_{\rm Lan} = \textrm{min} [E(p)/p]$, where $p$ is the momentum of elementary excitations and $E(p)$ their energy \cite{NozieresPines}. In weakly-interacting atomic Bose-Einstein condensates (BEC), and for infinitesimally small perturbations, one obtains $v_{\rm L} = c$, the speed of sound.
 
@@ -44,7 +44,7 @@ root of the condensate fraction. Above
 the critical velocity, vortex nucleation occurs either through
 pairs of vortex lines, collections of vortex rings, or direct formation of a vortex tangle, and we indicate the occurrence of these structures in the parameter space of condensate fraction and flow speed.
 
-  \section{Classical field method}
+\section{Classical field method}
 \label{sec:theory}
 
 We consider a weakly-interacting Bose gas with $N$ atoms of mass $m$ in a periodic box of volume $D^3$.  We approximate binary atom interactions by a contact pseudo-potential $V_{\mathrm{int}}({\bf r}-{\bf r'})= g \delta({\bf r}-{\bf r'})$, where $g$ is a coefficient which characterises the atomic interactions and $\delta$ is the Dirac delta function \cite{Pethick}. The approximations would lead us naturally to model the Bose gas in the zero-temperature limit, using the mean-field model described in Sections \ref{section:meanfield} and \ref{section:gpe}. Instead, however, in this chapter we will also include the thermal fraction inherent in the gas at {\it finite} temperature. In order to theoretically model the thermal excitations, one must progress beyond the mean-field approximation.
@@ -211,7 +211,7 @@ We calculate the incompressible energy spectrum of the quasi-condensate at vario
 \section{Relaxation of the vortex tangle}
 As the condensate evolves over the course of the simulation, the initially-formed dense vortex tangle remains random and isotropic throughout the decay to one or more vortex rings, which eventually also decay, leading to a vortex-free state (the ``equilibrated" state). A example of such a decay is shown in Figure \ref{fig:thermal}.
 
-Insight into the nature of the quasi-condensate turbulence can be obtained by investigating the relaxation of the vortex tangle, obtained by monitoring the vortex line-density $L$. We estimate the vortex line-length from the total volume of the isosurface tubes, $V_{\rm t}$. We assume that each vortex tube has uniform constant circular cross-sectional area $A_{\rm t}$; the total vortex line-length is then $V_{\rm t}/A_{\rm t}$. Note that this approximation is only strictly valid for vortices well separated in space and for steady condensate fraction (so that the healing length of the quasi-condensate is constant). We nevertheless find that the estimate is accurate enough for our analysis.
+Insight into the nature of the quasi-condensate turbulence can be obtained by investigating the relaxation of the vortex tangle, obtained by monitoring the vortex line-density $L$. We estimate the vortex line-length from the total volume of the isosurface tubes, $V_{\rm t}$. We assume that each vortex tube has uniform constant circular cross-sectional area $A_{\rm t}$; the total vortex line-length is then $V_{\rm t}/A_{\rm t}$. Note that this approximation is only strictly valid for vortices well separated in space and for steady condensate fraction (so that the healing length of the quasi-condensate is constant). While a more sophisticated algorithm for calculating and tracking vortex line length to a high level of accuracy has recently been described \cite{Kerr14,Villois16}, we find that the estimate we employ here is accurate enough for our analysis.
 
 \begin{figure}
 \centering
