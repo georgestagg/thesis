@@ -66,6 +66,75 @@ The nucleation vortex loops pass downstream (to the left of the mountains), fill
 }
 \label{fig1}
 \end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\makebox[\textwidth]{
+	\begin{minipage}{1.1\textwidth}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=0.33\linewidth,
+        xlabel={\phantom{$x/\xi$}},
+        ylabel=$y/\xi$,
+        xmin=-180,
+		xmax=180,
+		ymin=-180,
+		ymax=180,
+        major tick length = 0.07cm,
+       	axis on top,
+	    major tick length = 0.07cm,
+	    unit vector ratio=1 1 1,
+      ]
+      \addplot graphics [xmin=-180,xmax=180,ymin=-180,ymax=180] {afm/vels1.png};
+    \end{axis}
+  \end{tikzpicture}
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.33\linewidth,
+        xlabel={$x/\xi$},
+        ylabel={},
+        xmin=-180,
+		xmax=180,
+		ymin=-180,
+		ymax=180,
+        major tick length = 0.07cm,
+       	axis on top,
+	    major tick length = 0.07cm,
+	    unit vector ratio=1 1 1,
+      ]
+      \addplot graphics [xmin=-180,xmax=180,ymin=-180,ymax=180] {afm/vels2.png};
+    \end{axis}
+  \end{tikzpicture}
+   \begin{tikzpicture}
+    \begin{axis}[
+        width=0.33\linewidth,
+        xlabel={\phantom{$x/\xi$}},
+        ylabel={},
+        xmin=-180,
+		xmax=180,
+		ymin=-180,
+		ymax=180,
+        major tick length = 0.07cm,
+       	axis on top,
+       	colorbar style={title={$v/c$},text width=0.5em,major tick length = 0.07cm},
+	    major tick length = 0.07cm,
+	    point meta min = 0,
+	    point meta max = 1.6,
+	    unit vector ratio=1 1 1,
+	    colorbar,colormap name=invmathot
+      ]
+      \addplot graphics [xmin=-180,xmax=180,ymin=-180,ymax=180] {afm/vels3.png};
+    \end{axis}
+  \end{tikzpicture}\\
+  \hspace*{0.02\linewidth}\includegraphics[width=0.3\linewidth]{./afm/afm-sub-2102}
+  \includegraphics[width=0.3\linewidth]{./afm/afm-sub-3101}
+  \includegraphics[width=0.3\linewidth]{./afm/afm-sub-10101}
+  \end{minipage}
+  }
+  \caption{}
+ \end{figure}
+
+
 \section{Method}
 To shed light on the microscopic behaviour of superflow near a rough
 boundary, we work with the three-dimensional profile of a real surface, shown in Fig.~\ref{fig1}(a).  This corresponds to a one square micron region of the surface of a thin NbTi wire used to generate quantum turbulence at Lancaster University, as profiled via atomic force microscopy (AFM) \cite{Lawson}.  The surface is rough, with a height up to around 10 nm, and features sharp grooves and steep ridges, likely to have arisen during the etching phase of the wire preparation.    We assume that such a `mountain'  landscape is typical of the wires and similar objects used across other superfluid turbulence experiments.  We model the flow of
