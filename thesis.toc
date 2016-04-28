@@ -7,10 +7,10 @@
 \contentsline {subsubsection}{Secondary clusters}{8}{section*.7}
 \contentsline {subsubsection}{Truncated surfaces}{9}{section*.9}
 \contentsline {subsection}{\numberline {1.3.1}Two-dimensional boundary layer}{10}{subsection.1.3.1}
-\contentsline {section}{\numberline {1.4}Three-dimensional results}{10}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Vortex nucleation}{11}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.4}Three-dimensional results}{11}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Vortex nucleation}{12}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Three-dimensional boundary layer}{12}{subsection.1.4.2}
-\contentsline {section}{\numberline {1.5}Conclusions}{13}{section.1.5}
+\contentsline {section}{\numberline {1.5}Conclusions}{12}{section.1.5}
 \contentsline {chapter}{\numberline {2}Conclusions}{15}{chapter.2}
 \contentsline {part}{II\hspace {1em}Appendix}{17}{part.2}
-\contentsline {chapter}{Bibliography}{19}{section*.13}
+\contentsline {chapter}{Bibliography}{19}{section*.14}
