@@ -56,7 +56,7 @@ held by pinning sites at the surface, is aligned in the streamwise direction \ci
 
 \section{Method\label{section:methodafm}}
 To shed light on the microscopic behaviour of superflow near a rough
-boundary, we work with the three-dimensional profile of a real surface, shown in Figure \ref{fig:afmreal}.  This corresponds to a one square micron region of the surface of a thin NbTi wire used to generate quantum turbulence at Lancaster University, as profiled via atomic force microscopy (AFM) \cite{Lawson}.  The surface is rough, with a height up to around 13 nm, and features sharp grooves and steep ridges, likely to have arisen during the etching phase of the wire preparation.    We assume that such a `mountain'  landscape is typical of the wires and similar objects used across other superfluid turbulence experiments. 
+boundary, we work with the three-dimensional profile of a real surface, shown in Figure \ref{fig:afmreal}.  This corresponds to a one square micron region of the surface of a thin NbTi wire used to generate quantum turbulence at Lancaster University, as profiled via atomic force microscopy (AFM) \cite{Lawson}.  The surface is rough, with a height up to around 13 nm, and features sharp grooves and steep ridges, likely to have arisen during the etching phase of the wire preparation. We assume that such feature are typical of the wires and similar objects used across other superfluid turbulence experiments. 
 
 \begin{figure}
   \centering
@@ -140,7 +140,9 @@ While the GPE provides only a qualitative model of the strongly-interacting supe
   \caption{\label{fig:afmsmooth}AFM image of a section of the NbTi wire rough surface, smoothed by a Gaussian blur standard deviation 6 nm so as to remove discontinuities in the surface profile. The profile used in our 2D simulations is marked by a dashed line.}
 \end{figure}
 
-Our results are based on intensive simulations of the GPE over the entire AFM surface, resolved down to a sub-core scale of $\Delta=0.4\xi$. In $^4$He the vortex core size is $a_0 \approx 10^{-10}~\rm m$ \cite{Rayfield1964}, such that the above AFM image has true core dimensions $(10^4 \times 10^4 \times 100) a_0^3$.  It is not computationally feasible to model the corresponding range of scales directly within the GPE; as such we map the AFM image onto the largest practical healing length volume of $(400 \times 400 \times 100) \xi^3$.  This is simulated in a box of size $(400 \times 400 \times 200) \xi^3$ (the numerical domain being twice as high as the highest mountain in the third dimension), on a $1000\times 1000\times 500$ spatial grid, which is periodic in $x$ and $y$.  We smooth the original AFM data with a Gaussian blur (standard deviation 6 nm), so as to remove discontinuities in the surface profile, as shown in Figure \ref{fig:afmsmooth}. The rough surface is then incorporated into the GPE by setting a potential barrier $V=5\mu$ below the surface, heavily prohibiting density there; above the surface the density recovers to the bulk value $n_0$ (where $V=0$) over a length scale of the order of $\xi$. Time evolution is performed with the 4th order Runge-Kutta scheme described in Section \ref{section:RK4} with time step $\Delta t=0.01 \tau $, and performed across 256 (2.6 GHz) cores of a high-performance {computer} cluster. Our simulations of in 3D model the entire rough surface by using the entire AFM data as a 3D potential. However, in the interests of effective exporation of the parameter space, we also perform some reduced simulations in two dimensions. Here we simulate only a single row of the AFM data (marked in Figure \ref{fig:afmsmooth} and shown in detail in Figure \ref{fig:surfprofile}) using the 2D GPE, ignoring the $y$ dimension. The selected row was chosen so as to contain a two-dimensional analogue of the `mountain' structures exhibited along the surface of the source wire.
+Our results are based on intensive simulations of the GPE over the entire AFM surface, resolved down to a sub-core scale of $\Delta=0.4\xi$. In $^4$He the vortex core size is $a_0 \approx 10^{-10}~\rm m$ \cite{Rayfield1964}, such that the above AFM image has true core dimensions $(10^4 \times 10^4 \times 100) a_0^3$.  It is not computationally feasible to model the corresponding range of scales directly within the GPE; as such we map the AFM image onto the largest practical healing length volume of $(400 \times 400 \times 100) \xi^3$.  This is simulated in a box of size $(400 \times 400 \times 200) \xi^3$ (the numerical domain being twice as high as the highest point of the data in the third dimension), on a $1000\times 1000\times 500$ spatial grid, which is periodic in $x$ and $y$.  We smooth the original AFM data with a Gaussian blur (standard deviation 6 nm), so as to remove discontinuities in the surface profile, as shown in Figure \ref{fig:afmsmooth}. The rough surface is then incorporated into the GPE by setting a potential barrier $V=5\mu$ below the surface, heavily prohibiting density there; above the surface the density recovers to the bulk value $n_0$ (where $V=0$) over a length scale of the order of $\xi$. Section \ref{section:3dafmpotential} describes the form of $V$ in detail. Additionally, in all our simulations the zero level of the $z$ dimension is arbitrarily shifted so that the minimum height of the two or three-dimensional surface profile is fixed at $z=0$, so as to optimise use of the computational box. Time evolution is performed with the 4th order Runge-Kutta scheme described in Section \ref{section:RK4} with time step $\Delta t=0.01 \tau $, and performed across 256 (2.6 GHz) cores of a high-performance {computer} cluster.
+
+Our simulations of in 3D model the entire rough surface by using the entire AFM data as a 3D potential. However, in the interests of effective exploration of the parameter space, we also perform some reduced simulations in two dimensions. Here we simulate only a single row of the AFM data (marked in Figure \ref{fig:afmsmooth} and shown in detail in Figure \ref{fig:surfprofile}) using the 2D GPE, ignoring the $y$ dimension. The selected row was chosen so as to contain a two-dimensional analogue of the steep ridge structures exhibited along the wire's surface.
 
 We first obtain the stationary solution of the GPE in the presence of
 the rough boundary, with bulk density $\rho$.  The GPE is then transformed into a frame moving at speed $u$ in the $x$-direction (corresponding to the imposed flow) by the addition of a Galilean boost term $ i \hbar u \partial \Psi/\partial x$ to the right-hand side of the GPE, as described in Section \ref{section:linearmovframe}.  The flow speed {is}  ramped up smoothly from zero to the final value of $u=0.6\,c$; this final value is such that the critical velocity for nucleation is comfortably exceeded. 
@@ -165,48 +167,260 @@ the rough boundary, with bulk density $\rho$.  The GPE is then transformed into 
       \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=60] {afm/afmside.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{\label{fig:surfprofile} The 2D rough surface profile we employ in our two-dimensional simulations. The surface is taken from the full AFM data so as to capture one of the `mountain' features present on the surface. The data is mapped onto our simulation coordinates as described in Section \ref{section:methodafm} and the exact mapping is shown here on the figure axes.}
+  \caption{\label{fig:surfprofile} The 2D rough surface profile that we employ in our two-dimensional simulations. The surface is taken from the full AFM data so as to capture one of the `mountain' features present on the surface. The data is mapped onto our simulation coordinates as described in Section \ref{section:methodafm} and the exact mapping is shown here on the figure axes.}
 \end{figure}
 
-We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring in this system; the elliptical-like nature of the `mountain' in the profile of the rough surface causes the critical velocity to be significantly reduced.
+We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v_c\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring for the peak of the elliptical-like feature extruding from the surface. The location acts as a nucleation site due to the high curvature which induces a high local fluid velocity, and so landau's criterion is broken here before anywhere else in the system. We will call such structures in the surface of the wire that induce this property `mountains'.
 
-We focus on an arbitrary super-critical flow speed of $v=0.35c$, with Fig. \ref{fig:prog} depicting the evolution of the system.  For clarity we show both the condensate density (upper plots) and vortex locations/circulation (lower plots).  At early times, a series of positive-circulation vortices (red) peel off from the peak of the large mountain. Vortices are nucleated here, and not elsewhere, due to the high curvature in the surface at this peak, which induces a relatively high local fluid velocity.  As they are carried downstream the vortices stay in close proximity and co-rotate about one another; this leads to the vortices combining into a larger-scale cluster of positive circulation.  This cluster travels downstream just above the surface.
+\subsubsection{Early-time vortex nucleation}
+At early times the resulting flow depends on the velocity of the imposed fluid flow. Below the critical velocity, the fluid undergoes smooth potential flow around the surface. The streamlines of this flow are steady over the entire simulation time scale and vary smoothly spatially around the surface with streamlines far away from the surface unaffected by the roughness, as demonstrated in Figure \ref{fig:earlyvsv}(a). At velocities above the the critical velocity, a series of vortices nucleate from the peak of the highest mountain. We call this the primary nucleation site. The circulation of the vortices produced in the wake of the mountain will depend on the direction of the imposed flow. In our simulations the flow is in the negative $x$ direction and so the produced vortices have positive circulation.
 
-\subsection{Secondary clusters}
-Close to the surface, the cluster introduces a large relative fluid flow in the positive-$x$ direction.  This interrupts the nucleation of vortices from the mountain top and also induces the secondary generation of vortices (blue) from smaller-scale surface prominences.  These secondary vortices are of negative circulation and also form a vortex cluster. As this cluster grows, it leads to a cessation of secondary vortex production, and so again the primary vortices become nucleated from the mountain peak.  This process repeats.
-
-The total number of vortices $N_v$ increases with time (Fig. \ref{fig:nvort}(a), solid line); initially this increase is rapid but over time it slows down as the number of vortices within the finite-sized box begins to saturate.  Initially this is almost entirely composed of positively-signed vortices (dashed line), apart from a small amount of spurious negative-sign vortices (dotted line).  At $t\approx 700 \tau$ the number of positive-sign vortices increases sharply; this represents the formation of secondary vortices. 
+The strength of the imposed flow affects the vortex nucleation frequency, so that for larger flow velocities more vortices are produced in a given time period. For velocities just higher than the critical velocity, vortices nucleate from the mountain at low enough frequency that the fall downstream and do not interact significantly. For high velocities, however, many vortices nucleate in close proximity and interact strongly with one another. Vortex co-rotation is induced and this leads to the vortices combining into a larger-scale cluster of positive circulation. Figure \ref{fig:earlyvsv} shows the early post-nucleation configuration for different imposed flow speeds. 
 
 \begin{figure}
-\centering
-\includegraphics[width=0.45\linewidth]{./afm/figures/nvpn3bw}
-\includegraphics[width=0.45\linewidth]{./afm/figures/nv_v}
-\caption{\label{fig:nvort} (a) Number of vortices produced during $v=0.35c$ flow past the surface.  Shown are the numbers of total vortices $N_v$ (solid line), positive vortices (dashed line) and negative vortices (dotted line). (b) Final number of vortices $N_v$ as a function of the flow velocity $v$ for the 2d simulations.  Each data point represents the average of 20 measurements of $N_v$ in the vicinity of $t=3000\tau$.}
-\end{figure} 
-
-It is important to note that the generation of secondary clusters requires the surface to be rough downstream of the mountain.  If the surface is perfectly smooth downstream of the mountain, the positive-signed vortices persist.  
-
-Note also that it is possible for tertiary vortices/clusters of positive-sign; these arise when the secondary cluster induces a sufficiently high flow speed in the negative-$x$ direction to generate vortices from the local surface roughness.
-\begin{figure}
-\includegraphics[width=0.35\linewidth]{./afm/figures/prog-35-500}\hspace{-0.6cm}
-\includegraphics[width=0.35\linewidth]{./afm/figures/prog-35-1580}\hspace{-0.6cm}
-\includegraphics[width=0.35\linewidth]{./afm/figures/prog-35-2100}
-\caption{\label{fig:prog} Evolution of 2D flow past the rough surface for a flow speed of $v=0.35c$.  Depicted are snapshots of density and vortex locations at times (from left to right) $t=500$, $1580$, and $2100~\tau$.  Red (blue) circles represent vortices of positive (negative) circulation.  }%Cluster forms, is interupped by secondary cluster and detaches. New cluster forms. }
+  \centering
+  \makebox[\textwidth]{%
+  \begin{minipage}{1.1\textwidth}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={$y/\xi$},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/stream};
+    %\addplot+[mark=none,blue,style=solid] file {afm/streams2.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams3.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams4.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams5.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams6.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams7.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams8.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams9.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams10.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams11.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams12.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams13.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams14.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams15.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams16.dat};
+   % %\addplot+[mark=none,black,style=solid] file {afm/streams17.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams18.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams19.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams20.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams21.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams22.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams23.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams24.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams25.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams26.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams27.dat};
+   \addplot+[mark=none,black,style=solid] file {afm/streams28.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams29.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams30.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams31.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams32.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams33.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams34.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams35.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams36.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams37.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams38.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams39.dat};
+    \addplot+[mark=none,black,style=solid] file {afm/streams40.dat};
+    %\addplot+[mark=none,black,style=solid] file {afm/streams41.dat};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-500};
+    \end{axis}%
+    \end{tikzpicture}%
+  \end{minipage}%
+  }
+\caption{\label{fig:earlyvsv} Early time evolution of 2D flow past the rough surface for flow speeds (from left to right) of $u=0.15\,c$,$u=0.??c$,$u=0.35\,c$. Depicted are snapshots of density and vortex locations at time $t=500$. Red (blue) circles represent vortices of positive (negative) circulation. Streamlines of the system velocity are also shown in the leftmost image.}
 \end{figure}
 
-\subsection{Truncated surfaces}
-It is evident above that the vortex generation is dominated by the large single prominence in the surface, with the smaller prominences having only a secondary effect.  To further analysis this we next study how the flow is affected by truncation of the surface height, $z=h(x,y)$, to a percentage $\beta$ of the maximum height $h_0$, i.e. $h(x,y) \rightarrow h(x,y) H(z/h_0=\beta)$, where $H(z)$ is the Heaviside step function ($\beta=100\%$ corresponds to no truncation, $\beta=0$ corresponds to complete truncation).
-
-Figure \ref{fig:trunc} shows a snapshot (at fixed time) for various levels of truncation $\beta$, with all cases having the same flow speed $v=0.35c$.  It is evident that the height of the mountain plays a critical role.  Already, when the mountain is capped at $70\%$, the number of vortices produced by that time is vastly reduced.  The vortices are generated at a sufficiently low frequency that only small clusters form; secondary vortices are still formed but in a much lower quantity.  For $\beta=50\%$ even fewer vortices are produced, and for this case no clustering takes place and in turn no secondary vortices are formed.  For $\beta=40\%$ no vortices are generated at all. 
+\subsubsection{Secondary clusters}
+For the case where vortices combine into a large-scale cluster circulation, an interesting effect occurs. Close to the surface, the combined velocity field of the cluster induces to a large relative fluid flow in the opposite direction to the imposed flow.  This induces a secondary generation of vortices from smaller-scale surface prominences. We refer to the smaller prominences as secondary nucleation sites.  The secondary vortices are of opposite circulation to the cluster that induced them (in our case, negative circulation) and also form a new vortex cluster. As this cluster grows, the velocity field that caused the effect is cancelled out, leading to a cessation of secondary vortex production. Figure \ref{fig:prog} demonstrates the production of a secondary cluster of negative circulation vortices in a simulation with $u=0.35\,c$. Note also that it is possible to generate tertiary vortices/clusters; these arise when the secondary cluster induces a sufficiently high flow speed in the original flow direction to generate further vortices from the local surface roughness. It is important to note that the generation of secondary clusters requires the surface to be rough downstream of the mountain; if the surface is perfectly smooth downstream, there are no secondary nucleation points available to generate new vortices.
 \begin{figure}
-\includegraphics[width=0.35\linewidth]{./afm/figures/6th-35-2440}\hspace{-0.6cm}
-\includegraphics[width=0.35\linewidth]{./afm/figures/8th-35-2440}\hspace{-0.6cm}
-\includegraphics[width=0.35\linewidth]{./afm/figures/10th-35-2440}
-\caption{\label{fig:trunc} Same-time snapshots for various levels of surface truncation: (i) $\beta=70\%$, (ii) $\beta=50\%$ and (iiii) $\beta=40\%$, where $\beta$ represents the truncation height relative to the highest point in the surface. Depicted are snapshots of density and vortex locations. For comparison, the untruncated surface ($\beta=100\%$) is depicted in Fig. \ref{fig:prog}.  The flow speed is $v=0.35c$ and the time is $t=2440\tau$.}
+  \centering
+  \makebox[\textwidth]{%
+  \begin{minipage}{1.1\textwidth}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={$y/\xi$},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-500};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-1580};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-2100};
+    \end{axis}%
+    \end{tikzpicture}%
+  \end{minipage}%
+  }
+\caption{\label{fig:prog} Evolution of 2D flow past the rough surface for a flow speed of $u=0.35c$.  Depicted are snapshots of density and vortex locations at times (from left to right) $t=500$, $1580$, and $2100~\tau$.  Red (blue) circles represent vortices of positive (negative) circulation.}
 \end{figure}
+
+\subsubsection{Truncated surfaces}
+\begin{figure}[b]
+  \centering
+  \makebox[\textwidth]{%
+  \begin{minipage}{1.1\textwidth}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={$y/\xi$},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/6th-35-2440.png};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/8th-35-2440.png};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.35\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={},
+      yticklabels={,,},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=200,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/10th-35-2440.png};
+    \end{axis}%
+    \end{tikzpicture}%
+  \end{minipage}%
+  }
+\caption{\label{fig:trunc} Same-time snapshots for various levels of surface truncation: (i) $\beta=70\%$, (ii) $\beta=50\%$ and (iiii) $\beta=40\%$, where $\beta$ represents the truncation height relative to the highest point in the surface. For comparison, the untruncated surface ($\beta=100\%$) is depicted in Figure \ref{fig:surfprofile}. Snapshots of density and vortex locations are shown where markers of red (blue) represent vortices of positive (negative) circulation. The flow speed is $u=0.35c$ and the time is $t=2440\tau$.}
+\end{figure}
+It is evident by the snapshots shown in Figure \ref{fig:earlyvsv} that the vortex generation is dominated by the large single mountain in the surface. In fact, it can be reasoned that even if the induced flow $u$ has a high enough velocity that the smaller provinces also act as primary vortex nucleation sites, (as well as secondary nucleation sites via the process have already described), the largest features will always lead to the largest local velocity and highest vortex nucleation frequency, and so will always be the main producer of vorticity.
+
+To further analyse how the height of the mountains affects fluid flow in the vicinity of a surface, we next study how the situation changes with truncation of the mountain height, to a percentage $\beta$ of the maximum height $h_0$, i.e. $h(x,y) \rightarrow h(x,y) H(z/h_0=\beta)$, where $H(z)$ is the Heaviside step function ($\beta=100\%$ corresponds to no truncation, $\beta=0$ corresponds to complete truncation).
+
+Figure \ref{fig:trunc} shows a snapshot (at fixed time) for various levels of truncation $\beta$, with all cases having the same flow speed $u=0.35c$.  We are immediately able to see that the height of the mountain plays a critical role in both the critical velocity and vortex nucleation frequency, as expected.  Even when the mountain is capped as little as to $70\%$ of its maximal height, the number of vortices produced is vastly reduced.  The vortices are generated at a sufficient frequency that secondary vortices are still formed, but in a much lower quantity.  For $\beta=50\%$ even fewer vortices are produced, and for this case no clustering takes place and in turn no secondary vortices are formed.  For $\beta=40\%$ no vortices are generated at all; the critical velocity has been increased so that $v_c>u$.
+ 
+\subsection{Two-dimensional boundary layer}
+Consider Figures \ref{fig:trunc}, \ref{fig:prog} and \ref{fig:earlyvsv}. Notice that in all depicted cases the average height of the vortices is of the order of the highest mountain in the surface of the wire. We find for many cases throughout the parameter space that the vortices, whether as single points or as clusters, self organise in the vicinity of the surface, forming a primitive two-dimensional boundary layer with thickness on the scale of the height of the maximum point of the surface. Note that the effect is not universal, for higher velocities the vortex distribution fills the computational box. For lower velocities the vortices are distributed in agreement with a boundary layer, but with reduced density of vortices. Both of these situations are depicted in Figure [CITE](a-b).
+
+We now attempt measure the prevalence of a boundary layer by studying the vortex distribution in the steady state. We define whether a boundary layer has formed in the following way: if the average vortex height from the surface is less than the height of the tallest mountain, we say the vortices have formed a boundary layer. If the average vortex height from the surface is larger than the height of the tallest mountain, or the vortex number does not reach steady state, we say a boundary layer has not formed. We perform simulations for a variety of truncation heights and flow velocities with results shown in Figure [CITE](c).
+
+
+%The total number of vortices $N_v$ increases with time (Figure \ref{fig:nvort}; initially this increase is rapid but over time it slows down as the number of vortices within the finite-sized box begins to saturate.
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.45\linewidth]{./afm/figures/nvpn3bw}
+%\includegraphics[width=0.45\linewidth]{./afm/figures/nv_v}
+%\caption{\label{fig:nvort} (a) Number of vortices produced during $v=0.35c$ flow past the surface.  Shown are the numbers of total %vortices $N_v$ (solid line), positive vortices (dashed line) and negative vortices (dotted line). (b) Final number of vortices $N_v$ as a %function of the flow velocity $v$ for the 2d simulations.  Each data point represents the average of 20 measurements of $N_v$ in the %vicinity of $t=3000\tau$.}
+%\end{figure} 
+
  
 \section{Three-dimensional results}
-\begin{figure}[!ht]
+{In the vicinity of the surface the local fluid speed} is enhanced considerably by the {surface's} roughness, 
+with the maximum values occurring near the tallest mountain [Fig. 1 (b)].   Up to a critical imposed speed, the flow remains laminar and free of vortices.  For increased imposed flow velocity, the critical velocity is first exceeded at the highest mountain, leading to nucleation of a vortex line [Fig. 1 (e)], and then by other high mountains on the surface.  The critical velocity for vortex nucleation across this surface occurs for an imposed flow $v_c\approx 0.2 c$; this is considerably smaller than, say a hemispherical bump for which $v_c \approx 0.5 c$ \cite{winiecki},  indicating the significant role of the surface roughness in enhancing the breakdown of laminar flow.  
+
+\begin{figure}
   \centering
   \makebox[\textwidth]{
   \begin{minipage}{1.1\textwidth}
@@ -270,14 +484,12 @@ Figure \ref{fig:trunc} shows a snapshot (at fixed time) for various levels of tr
   \includegraphics[width=0.3\linewidth]{./afm/afm-sub-10101}
   \end{minipage}
   }
-  \caption{(Upper) Magnitude of the fluid speed, $v=|{\bf v}|$, shown in the $xy$-plane and computed just above the surface (where the
+  \caption{(Upper) Magnitude of the local fluid speed, $v=|{\bf v}|$, shown in the $xy$-plane and computed just above the surface (where the
 density drops to $0.1 n_0$), at three times.  (Lower) Zoomed-up density isosurface plots showing the surface (yellow) and vortices (red) in the vicinity of the two tallest mountains (view taken along $y$ over the $x$-range $15 \xi \leq x \leq 125 \xi$) at the same times.  Just prior to vortex nucleation [(left) $t=20 \tau$], the largest fluid speed arises in the vicinity of the highest mountains.  When the fluid speed becomes supercritical at the highest mountains [(middle)$t=30 \tau$], vortex lines becomes nucleated.  At later times [(right)$t=100 \tau$], vortices continue to be shed predominantly by the highest mountains, where the fluid speed continues to be highest.  
 The nucleation vortex loops pass downstream (to the left of the mountains), filling a turbulent layer up to the height of the highest mountain.  This causes a marked downstream spreading of high fluid speed. }
  \end{figure} 
-{In the vicinity of the surface the local fluid speed}, $v=|{\bf v}|$, 
-is enhanced considerably by the {surface's} roughness, 
-with the maximum values occurring near the tallest mountain [Fig. 1 (b)].   Up to a critical imposed speed, the flow remains laminar and free of vortices.  For increased imposed flow velocity, the critical velocity is first exceeded at the highest mountain, leading to nucleation of a vortex line [Fig. 1 (e)], and then by other high mountains on the surface.  The critical velocity for vortex nucleation across this surface occurs for an imposed flow $u_c\approx 0.2 c$; this is considerably smaller than, say a hemispherical bump for which $u_c \approx 0.5 c$ \cite{winiecki},  indicating the significant role of the surface roughness in enhancing the breakdown of laminar flow.  
 
+\subsection{Vortex nucleation}
 Nucleated vortices either peel off the boundary, or, more frequently, slide
 down the slopes of the mountains (carried by the imposed flow) in the form of partially attached vortex loops.
 Such loops then interact with other vortices, becoming more distorted, and forming a tangle of vortices downstream of the mountains [Fig. 1(g)].  This tangle of vortices is continuously fed by further vortices nucleated from the mountains.  The spreading of the velocity plots in Figs.~\ref{fig1} (b, c) reveals
@@ -291,6 +503,7 @@ Indeed, Fig.~1(g) shows the formation of a long curved
 vortex which becomes twisted generating more vorticity  by spooling smaller vortex loops, 
 as in the vortex-mill mechanism envisaged by Schwarz \cite{Schwarz-mill}.
 
+\subsection{Three-dimensional boundary layer}
 As the number of vortices increases, a complex,
 turbulent region consisting of superfluid vortex loops and rings is 
 formed [Fig.~2 (a,b)].  This is strongly localised to the vicinity of the surface, up to approximately the height of the highest mountain. Reconnections due to twisting of vortex lines or interaction of neighbouring lines form a continuous ejection of vortex rings which spread into the bulk, visible in
