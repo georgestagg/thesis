@@ -1,4 +1,4 @@
-\begin{chapter}{\label{cha:afm}Simulating the surface of a ``Floppy Wire''}
+\begin{chapter}{\label{cha:afm}Simulating the rough surface of a ``Floppy Wire''}
 \section{Introduction}
 At sufficiently low temperatures, liquid helium has two striking
 properties.  Firstly, it flows without viscosity.  Secondly,
@@ -173,7 +173,9 @@ the rough boundary, with bulk density $\rho$.  The GPE is then transformed into 
 We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v_c\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring for the peak of the elliptical-like feature extruding from the surface. The location acts as a nucleation site due to the high curvature which induces a high local fluid velocity, and so landau's criterion is broken here before anywhere else in the system. We will call such structures in the surface of the wire that induce this property `mountains'.
 
 \subsubsection{Early-time vortex nucleation}
-At early times the resulting flow depends on the velocity of the imposed fluid flow. Below the critical velocity, the fluid undergoes smooth potential flow around the surface. The streamlines of this flow are steady over the entire simulation time scale and vary smoothly spatially around the surface with streamlines far away from the surface unaffected by the roughness, as demonstrated in Figure \ref{fig:earlyvsv}(a). At velocities above the the critical velocity, a series of vortices nucleate from the peak of the highest mountain. We call this the primary nucleation site. The circulation of the vortices produced in the wake of the mountain will depend on the direction of the imposed flow. In our simulations the flow is in the negative $x$ direction and so the produced vortices have positive circulation.
+At early times the resulting flow depends on the velocity of the imposed fluid flow. Below the critical velocity, the fluid undergoes smooth potential flow around the surface. The instantaneous streamlines of this flow, demonstrated in Figure \ref{fig:earlyvsv}(a), vary smoothly around the surface with streamlines far away from the surface straight and unaffected by the roughness, and streamlines near the surface showing high curvature.
+
+At velocities above the the critical velocity, a series of vortices nucleate from the peak of the highest mountain. We call this the primary nucleation site. The circulation of the vortices produced in the wake of the mountain will depend on the direction of the imposed flow. In our simulations the flow is in the negative $x$ direction and so the produced vortices have positive circulation.
 
 The strength of the imposed flow affects the vortex nucleation frequency, so that for larger flow velocities more vortices are produced in a given time period. This is confirmed for the case of this surface, and modified surfaces, by measurement of $N_v$ at different flow velocites, shown in Table \ref{tbl:nv_bl}. For velocities just higher than the critical velocity, vortices nucleate from the mountain at low enough frequency that the fall downstream and do not interact significantly. For high velocities, however, many vortices nucleate in close proximity and interact strongly with one another. Vortex co-rotation is induced and this leads to the vortices combining into a larger-scale cluster of positive circulation. Figure \ref{fig:earlyvsv} shows the early post-nucleation configuration for different imposed flow speeds. 
 
@@ -181,6 +183,7 @@ The strength of the imposed flow affects the vortex nucleation frequency, so tha
   \centering
   \makebox[\textwidth]{%
   \begin{minipage}{1.1\textwidth}%
+  \hspace{0.5cm}(a) \hspace{5cm}(b) \hspace{4.75cm}(c)\\
     \begin{tikzpicture}%
     \begin{axis}[
       width=0.35\linewidth,
@@ -273,7 +276,7 @@ The strength of the imposed flow affects the vortex nucleation frequency, so tha
     \end{tikzpicture}%
   \end{minipage}%
   }
-\caption{\label{fig:earlyvsv} Early time evolution of 2D flow past the rough surface for flow speeds (from left to right) of $u=0.10\,c$,$u=0.15\,c$,$u=0.35\,c$. Depicted are snapshots of density and vortex locations at time $t=500$. Red (blue) circles represent vortices of positive (negative) circulation. Streamlines of the system velocity are also shown in the leftmost image.}
+\caption{\label{fig:earlyvsv} Early time evolution of 2D flow past the rough surface for flow speeds (from left to right) of $u=0.10\,c$,$u=0.15\,c$,$u=0.35\,c$. Depicted are snapshots of density and vortex locations at time $t=500$. Red (blue) symbols represent vortices of positive (negative) circulation. Streamlines of the system velocity are also shown in the leftmost image.}
 \end{figure}
 
 \subsubsection{Secondary clusters}
@@ -282,6 +285,7 @@ For the case where vortices combine into a large-scale cluster circulation, an i
   \centering
   \makebox[\textwidth]{%
   \begin{minipage}{1.1\textwidth}%
+    \hspace{0.5cm}(a) \hspace{5cm}(b) \hspace{4.75cm}(c)\\
     \begin{tikzpicture}%
     \begin{axis}[
       width=0.35\linewidth,
@@ -312,7 +316,7 @@ For the case where vortices combine into a large-scale cluster circulation, an i
       major tick length = 0.07cm,
       axis on top
     ]
-    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-1580};
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/prog-35-1580};
     \end{axis}%
     \end{tikzpicture}%
     \begin{tikzpicture}%
@@ -334,40 +338,81 @@ For the case where vortices combine into a large-scale cluster circulation, an i
     \end{tikzpicture}%
   \end{minipage}%
   }
-\caption{\label{fig:prog} Evolution of 2D flow past the rough surface for a flow speed of $u=0.35c$.  Depicted are snapshots of density and vortex locations at times (from left to right) $t=500$, $1580$, and $2100~\tau$.  Red (blue) circles represent vortices of positive (negative) circulation.}
+\caption{\label{fig:prog} Evolution of 2D flow past the rough surface for a flow speed of $u=0.35c$.  Depicted are snapshots of density and vortex locations at times (from left to right) $t=500$, $1580$, and $2100~\tau$.  Red (blue) symbols represent vortices of positive (negative) circulation.}
 \end{figure}
 
-\subsubsection{Truncated surfaces}
 \begin{figure}[b]
   \centering
+  \begin{tikzpicture}%
+  \begin{axis}[
+    width=0.7\linewidth,
+    xlabel={$x/\xi$},
+    ylabel={$y/\xi$},
+    xmin=-150,
+    xmax=50,
+    ymin=0,
+    ymax=70,
+    unit vector ratio=1 1 1,
+    major tick length = 0.07cm,
+    axis on top
+  ]
+  \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/prog-35-1580-4};
+  \end{axis}%
+  \end{tikzpicture}%
+\caption{\label{ref:zoomedcluster}Snapshot of condensate density and vortex locations at time $t=1580\,\tau$ and $v=0.35\,c$, demonstrating secondary and tertiary vortex nucleation.  Red (blue) symbols represent vortices of positive (negative) circulation. The direction of vortex cluster circulation is labelled with arrows, and the secondary and tertiary nucleation sites are labelled in green. }
+\end{figure}
+
+
+\subsubsection{Truncated surfaces}
+\begin{figure}
+  \centering
+  (a) \hspace{7.2cm}(b)\\
   \makebox[\textwidth]{%
   \begin{minipage}{1.1\textwidth}%
     \begin{tikzpicture}%
     \begin{axis}[
-      width=0.35\linewidth,
+      width=0.47\linewidth,
       xlabel={$x/\xi$},
       ylabel={$y/\xi$},
+      ytick={0,40,80},
       xmin=-200,
       xmax=200,
       ymin=0,
-      ymax=200,
+      ymax=100,
+      unit vector ratio=1 1 1,
+      major tick length = 0.07cm,
+      axis on top
+    ]
+    \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/prog-35-2440.png};
+    \end{axis}%
+    \end{tikzpicture}%
+    \begin{tikzpicture}%
+    \begin{axis}[
+      width=0.47\linewidth,
+      xlabel={$x/\xi$},
+      ylabel={$y/\xi$},
+      ytick={0,40,80},
+      xmin=-200,
+      xmax=200,
+      ymin=0,
+      ymax=100,
       unit vector ratio=1 1 1,
       major tick length = 0.07cm,
       axis on top
     ]
     \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {afm/figures/6th-35-2440.png};
     \end{axis}%
-    \end{tikzpicture}%
+    \end{tikzpicture}\\%
     \begin{tikzpicture}%
     \begin{axis}[
-      width=0.35\linewidth,
+      width=0.47\linewidth,
       xlabel={$x/\xi$},
-      ylabel={},
-      yticklabels={,,},
+      ylabel={$y/\xi$},
+      ytick={0,40,80},
       xmin=-200,
       xmax=200,
       ymin=0,
-      ymax=200,
+      ymax=100,
       unit vector ratio=1 1 1,
       major tick length = 0.07cm,
       axis on top
@@ -377,14 +422,14 @@ For the case where vortices combine into a large-scale cluster circulation, an i
     \end{tikzpicture}%
     \begin{tikzpicture}%
     \begin{axis}[
-      width=0.35\linewidth,
+      width=0.47\linewidth,
       xlabel={$x/\xi$},
-      ylabel={},
-      yticklabels={,,},
+      ylabel={$y/\xi$},
+      ytick={0,40,80},
       xmin=-200,
       xmax=200,
       ymin=0,
-      ymax=200,
+      ymax=100,
       unit vector ratio=1 1 1,
       major tick length = 0.07cm,
       axis on top
@@ -394,7 +439,7 @@ For the case where vortices combine into a large-scale cluster circulation, an i
     \end{tikzpicture}%
   \end{minipage}%
   }
-\caption{\label{fig:trunc} Same-time snapshots for various levels of surface truncation: (i) $\beta=70\%$, (ii) $\beta=50\%$ and (iiii) $\beta=40\%$, where $\beta$ represents the truncation height relative to the highest point in the surface. For comparison, the untruncated surface ($\beta=100\%$) is depicted in Figure \ref{fig:surfprofile}. Snapshots of density and vortex locations are shown where markers of red (blue) represent vortices of positive (negative) circulation. The flow speed is $u=0.35c$ and the time is $t=2440\tau$.}
+\caption{\label{fig:trunc} Same-time snapshots for various levels of surface truncation: (a) $\beta=100\%$, (b) $\beta=70\%$, (c) $\beta=50\%$ and (d) $\beta=40\%$, where $\beta$ represents the truncation height relative to the highest point in the surface. For comparison, the untruncated surface ($\beta=100\%$) is depicted in Figure \ref{fig:surfprofile}. Snapshots of density and vortex locations are shown where markers of red (blue) represent vortices of positive (negative) circulation. The flow speed is $u=0.35c$ and the time is $t=2440\tau$.}
 \end{figure}
 It is evident by the snapshots shown in Figure \ref{fig:earlyvsv} that the vortex generation is dominated by the large single mountain in the surface. In fact, it can be reasoned that even if the induced flow $u$ has a high enough velocity that the smaller provinces also act as primary vortex nucleation sites, (as well as secondary nucleation sites via the process have already described), the largest features will always lead to the largest local velocity and highest vortex nucleation frequency, and so will always be the main producer of vorticity.
 
@@ -406,21 +451,21 @@ Figure \ref{fig:trunc} shows a snapshot (at fixed time) for various levels of tr
 \begin{table}
 \centering
 \begin{tabular}{cr|cccccc}
-  %Some & \cellcolor{blue!25}coloured & contents \\
+  %Some & \cellcolor{blue!50}coloured & contents \\
    & & \multicolumn{6}{c}{$u$}\\
    & & 0.15 & 0.25 & 0.35 & 0.45 & 0.55 & 0.65 \\
    \hline
-  \multirow{4}{*}{$\beta$} & 100\% & \cellcolor{blue!25}3 & \cellcolor{blue!25}19 & \cellcolor{blue!25}42 & \cellcolor{red!25}69 & \cellcolor{red!25}120 & \cellcolor{red!25}176 \\
-   &70\%& \cellcolor{blue!25}0 & \cellcolor{blue!25}4 &  \cellcolor{blue!25}21 & \cellcolor{red!25}54 & \cellcolor{red!25}85 & \cellcolor{red!25}107 \\
-   &50\%& \cellcolor{blue!25}0 & \cellcolor{blue!25}0 &  \cellcolor{blue!25}13 & \cellcolor{blue!25}32 & \cellcolor{red!25}60 & \cellcolor{red!25}94 \\
-   &40\%& \cellcolor{blue!25}0 & \cellcolor{blue!25}0 &   \cellcolor{blue!25}0 & ?? & ?? & ?? \\
+  \multirow{4}{*}{$\beta$} & 100\% & \cellcolor{blue!50}3 & \cellcolor{blue!50}19 & \cellcolor{blue!50}42 & \cellcolor{red!50}69 & \cellcolor{red!50}120 & \cellcolor{red!50}176 \\
+   &70\%& 0 & \cellcolor{blue!50}4 &  \cellcolor{blue!50}21 & \cellcolor{red!50}54 & \cellcolor{red!50}85 & \cellcolor{red!50}107 \\
+   &50\%& 0 & 0 &  \cellcolor{blue!50}13 & \cellcolor{blue!50}32 & \cellcolor{red!50}60 & \cellcolor{red!50}94 \\
+   &40\%& 0 & 0 &   0 & \cellcolor{blue!50}?? & ?? & ?? \\
 \end{tabular}
-\caption{\label{tbl:nv_bl}Number of vortices, $N_v$, measured in the fluid at $t=3000\tau$ over the 2D parameter space. A blue (red) shading marks the existance (lack of) a boundary layer in the resulting system.}
+\caption{\label{tbl:nv_bl}Number of vortices, $N_v$, measured in the fluid at $t=3000\tau$ over the 2D parameter space. A blue (red) shading labels the existence (lack of) a boundary layer in the resulting system.}
 \end{table}
 
-Consider Figures \ref{fig:prog},\ref{fig:trunc} and \ref{fig:earlyvsv}. Notice that in all depicted cases the average height of the vortices is of the order of the highest mountain in the surface of the wire. We find for many cases throughout the parameter space that the vortices, whether as single points or as clusters, self organise in the vicinity of the surface, forming a primitive two-dimensional boundary layer with thickness on the scale of the height of the maximum point of the surface. Note that the effect is not universal, for higher velocities the vortex distribution fills the computational box. For lower velocities the vortices are distributed in agreement with a boundary layer, but with reduced density of vortices [Figure \ref{fig:prog}(b)].
+Consider Figures \ref{fig:earlyvsv}, \ref{fig:prog} and \ref{fig:trunc}. Notice that in all depicted cases the average height of the vortices is of the order of the highest mountain in the surface of the wire. We find for many cases throughout the parameter space that the vortices, whether as single points or as clusters, self organise in the vicinity of the surface, forming a primitive two-dimensional boundary layer with thickness on the scale of the height of the maximum point of the surface. Note that the effect is not universal, for higher velocities the vortex distribution fills the computational box. For lower velocities the vortices are distributed in agreement with a boundary layer, but with reduced density of vortices [Figure \ref{fig:earlyvsv}(b)].
 
-We now quantify the prevalence of the boundary layer throughtout the parameter space of this system by studying the vortex distribution in the steady state. We define whether a boundary layer has formed in the following way. At $t=3000\tau$ (our maximum simulation time) we measure the system. If the average vortex height from the surface is less than the height of the tallest mountain, we say the vortices have formed a boundary layer. If the average vortex height is larger than the height of the tallest mountain, we say a boundary layer has not formed. We perform simulations for a variety of truncation heights and flow velocities with results shown in Table \ref{tbl:nv_bl}.
+We now quantify the prevalence of the boundary layer throughout the parameter space of this system by studying the vortex distribution in the steady state. We define whether a boundary layer has formed in the following way. At $t=3000\tau$ (our maximum simulation time) we measure the system. If the average vortex height from the surface is less than the height of the tallest mountain, we say the vortices have formed a boundary layer. If the average vortex height is larger than the height of the tallest mountain, we say a boundary layer has not formed. We perform simulations for a variety of truncation heights and flow velocities with results shown in Table \ref{tbl:nv_bl}.
 
 %The total number of vortices $N_v$ increases with time (Figure \ref{fig:nvort}; initially this increase is rapid but over time it slows down as the number of vortices within the finite-sized box begins to saturate.
 %\begin{figure}
@@ -432,7 +477,7 @@ We now quantify the prevalence of the boundary layer throughtout the parameter s
 
  
 \section{Three-dimensional results}
-We now focus on the three-dimensional case, through intesive simulation of few parameter sets. As in the two-dimensional case, in the vicinity of the surface the local fluid speed is enhanced considerably by the {surface's} roughness, with the maximum values occurring near the tallest mountain [Figure \ref{fig:velsandvorts} (a-c)]. Up to a critical imposed speed, the flow remains laminar and free of vortices.  For increased imposed flow velocity, the critical velocity is first exceeded at the highest mountain, leading to nucleation of a vortex line [Figure \ref{fig:velsandvorts} (d)]., and then by other high mountains on the surface.  The critical velocity for vortex nucleation across this surface occurs for an imposed flow $v_c\approx 0.2 c$; this is considerably smaller than, say a hemispherical bump for which $v_c \approx 0.5 c$ \cite{winiecki},  indicating the significant role of the surface roughness in enhancing the breakdown of laminar flow, simiarly to the two-dimensional case.
+We now focus on the three-dimensional case, through intesive simulation of few parameter sets. As in the two-dimensional case, in the vicinity of the surface the local fluid speed is enhanced considerably by the {surface's} roughness, with the maximum values occurring near the tallest mountain [Figure \ref{fig:velsandvorts} (a-c)]. Up to a critical imposed speed, the flow remains laminar and free of vortices.  For increased imposed flow velocity, the critical velocity is first exceeded at the highest mountain, leading to nucleation of a vortex line [Figure \ref{fig:velsandvorts} (d)]., and then by other high mountains on the surface.  The critical velocity for vortex nucleation across this surface occurs for an imposed flow $v_c\approx 0.2 c$; this is considerably smaller than, say a hemispherical bump for which $v_c \approx 0.5 c$ \cite{win01},  indicating the significant role of the surface roughness in enhancing the breakdown of laminar flow, similarly to the two-dimensional case.
 
 \begin{figure}
   \centering
@@ -499,7 +544,7 @@ We now focus on the three-dimensional case, through intesive simulation of few p
   \end{minipage}
   }
   \caption{\label{fig:velsandvorts}(Upper) Magnitude of the local fluid speed, $v=|{\bf v}|$, shown in the $xy$-plane and computed just above the surface (where the
-density drops to $0.1 \rho$), at three times.  (Lower) Zoomed-up density isosurface plots of density $n({\bf r},t)$ (plotted at 25\%  of the bulk density), showing the surface (yellow) and vortices (red) in the vicinity of the two tallest mountains (view taken along $y$ over the $x$-range $15 \xi \leq x \leq 125 \xi$) at the same times.  %Just prior to vortex nucleation [(left) $t=20 \tau$], the largest fluid speed arises in the vicinity of the highest mountains.  When the fluid speed becomes supercritical at the highest mountains [(middle)$t=30 \tau$], vortex lines becomes nucleated.  At later times [(right)$t=100 \tau$], vortices continue to be shed predominantly by the highest mountains, where the fluid speed continues to be highest.  
+density drops to $n=0.1 \rho$), at three times.  (Lower) Zoomed-up density isosurface plots of density $n({\bf r},t)$ (plotted at 25\%  of the bulk density), showing the surface (yellow) and vortices (red) in the vicinity of the two tallest mountains (view taken along $y$ over the $x$-range $15 \xi \leq x \leq 125 \xi$) at the same times.  %Just prior to vortex nucleation [(left) $t=20 \tau$], the largest fluid speed arises in the vicinity of the highest mountains.  When the fluid speed becomes supercritical at the highest mountains [(middle)$t=30 \tau$], vortex lines becomes nucleated.  At later times [(right)$t=100 \tau$], vortices continue to be shed predominantly by the highest mountains, where the fluid speed continues to be highest.  
 %The nucleation vortex loops pass downstream (to the left of the mountains), filling a turbulent layer up to the height of the highest mountain.  This causes a marked downstream spreading of high fluid speed. }
 }
  \end{figure} 
@@ -507,22 +552,29 @@ density drops to $0.1 \rho$), at three times.  (Lower) Zoomed-up density isosurf
 \subsection{Vortex nucleation}
 Nucleated vortices either peel off the boundary, or, more frequently, slide
 down the slopes of the mountains (carried by the imposed flow) in the form of partially attached vortex loops.
-Such loops then interact with other vortices, becoming more distorted, and forming a tangle of vortices downstream of the mountains [Fig. 1(g)].  This tangle of vortices is continuously fed by further vortices nucleated from the mountains.  The spreading of the velocity plots in Figs.~\ref{fig1} (b, c) reveals
+Such loops then interact with other vortices, becoming more distorted, and forming a tangle of vortices downstream of the mountains [Figure \ref{fig:velsandvorts}(f)].  This tangle of vortices is continuously fed by further vortices nucleated from the mountains.  The spreading of the velocity plots in Figures~\ref{fig:velsandvorts}(b, c) reveals
 the formation of clusters of vortices on the leeward side of the mountains, which eventually saturate a
 turbulent layer.  Vortex lines occasionally undergo vortex reconnections, or twist, detach and fly off as small 
-vortex rings. At later times and higher imposed flow velocities, the critical velocity is exceeded across greater areas of the surface.  However, even after considerable vortex nucleation, the highest mountains continue to dominate the vortex nucleation - here the fluid velocity is always the highest [Fig. 1(f)] and vortex shedding occurs at the fastest rate. This confirms that, with our choice of parameters,
+vortex rings. At later times and higher imposed flow velocities, the critical velocity is exceeded across greater areas of the surface.  However, even after considerable vortex nucleation, the highest mountains continue to dominate the vortex nucleation - here the fluid velocity is always the highest [Figure \ref{fig:velsandvorts} (c)] and vortex shedding occurs at the fastest rate. This confirms that, with our choice of parameters,
 the vortex tangle which develops can be interpreted as generated either
 intrinsically or extrinsically: in both cases vortices nucleate 
 at the highest mountains before filling the layer below.
-Indeed, Fig.~1(g) shows the formation of a long curved
+Indeed, [Figure \ref{fig:velsandvorts} (f)] shows the formation of a long curved
 vortex which becomes twisted generating more vorticity  by spooling smaller vortex loops, 
-as in the vortex-mill mechanism envisaged by Schwarz \cite{Schwarz-mill}.
+as in the vortex-mill mechanism envisaged by Schwarz \cite{PhysRevLett.64.1130}.
 
 \subsection{Three-dimensional boundary layer}
 As the number of vortices increases, a complex,
 turbulent region consisting of superfluid vortex loops and rings is 
-formed [Fig.~2 (a,b)].  This is strongly localised to the vicinity of the surface, up to approximately the height of the highest mountain. Reconnections due to twisting of vortex lines or interaction of neighbouring lines form a continuous ejection of vortex rings which spread into the bulk, visible in
-the upper part of Fig.~2(a, b). The vortex length in the vicinity of the boundary, which has so far been increasing, approximately saturates in value. {A supplementary movie \cite{supp} shows the full evolution of the turbulent layer.}   For slower, but still super-critical, imposed flows the turbulent layer still forms with the same height, albeit with reduced density of vortices.
+formed [Figure \ref{fig2} (a)].  This is strongly localised to the vicinity of the surface, up to approximately the height of the highest mountain. Reconnections due to twisting of vortex lines or interaction of neighbouring lines form a continuous ejection of vortex rings which spread into the bulk, visible in
+the upper part of Figure \ref{fig2} (a, b). The vortex length in the vicinity of the boundary, which has so far been increasing, approximately saturates in value. For slower, but still super-critical, imposed flows the turbulent layer still forms with the same height, albeit with reduced density of vortices.
+
+The turbulent
+layer is not isotropic: on the average, vortex lines are 
+flattened parallel to plane of the surface
+(the areas covered by vortex cores on
+the lines of sight along the $x$ and $y$ directions are only 62 and 60$\%$ 
+respectively of the same area along the $z$ direction).
 
 \begin{figure}
 \centering
@@ -536,13 +588,15 @@ of small vortex rings above it.}
 \label{fig2}
 \end{figure} 
 
+\section{Conclusions}
+The experimental implications of `superfluid boundary layers` on macroscopic
+observables need to be investigated.  Our results should
+particularly stimulate experiments in $^3$He-B, where, due to relative
+large healing length, it is possible to study flows with controlled 
+surface height roughness. 
 
-The turbulent
-layer is not isotropic: on the average, vortex lines are 
-flattened parallel to plane of the surface
-(the areas covered by vortex cores on
-the lines of sight along the $x$ and $y$ directions are only 62 and 60$\%$ 
-respectively of the same area along the $z$ direction).  
+\end{chapter}
+
 
 %\section{\label{section:sfwire} Superfluid wire experiments}
 %Developments in flow visualization at very low temperatures
@@ -600,22 +654,4 @@ respectively of the same area along the $z$ direction).
 %to gain physical insight into the flow of a superfluid over
 %rough surfaces typical of experiments.
 
-%Our numerical approach is to first obtain the stationary solution for the static fluid $(v=0)$, achieved via imaginary time propagation of the GPE \cite{Minguzzi2004}.  From this initial condition the GPE is then propagated in real time, with the fluid speed $v$ ramped up smoothly from zero up to its required value.  
-
-\section{Conclusions}
-In conclusion, our results suggest that the walls of channels which
-confine the flow of superfluid liquid helium and the surfaces of moving
-objects (wires, grids, propellers, spheres) which are used
-to generate superfluid turbulence in current experiments
-may be covered by a thin `superfluid boundary layer' consisting of 
-vortex loops and rings.  This is a surprising effect, because
-in fluid dynamics boundary layers usually arise from viscous forces, 
-which in superfluid liquid helium near the temperature of
-absolute zero are completely absent.  These findings further illustrate the deep analogies between classical and quantum fluids.
-The experimental implications of `superfluid boundary layers` on macroscopic
-observables need to be investigated.  Our results should
-particularly stimulate experiments in $^3$He-B, where, due to relative
-large healing length, it is possible to study flows with controlled 
-surface height roughness. 
-
-\end{chapter}
+%Our numerical approach is to first obtain the stationary solution for the static fluid $(v=0)$, achieved via imaginary time propagation of the GPE \cite{Minguzzi2004}.  From this initial condition the GPE is then propagated in real time, with the fluid speed $v$ ramped up smoothly from zero up to its required value.
