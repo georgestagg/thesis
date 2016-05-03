@@ -145,7 +145,7 @@ Our results are based on intensive simulations of the GPE over the entire AFM su
 Our simulations of in 3D model the entire rough surface by using the entire AFM data as a 3D potential. However, in the interests of effective exploration of the parameter space, we also perform some reduced simulations in two dimensions. Here we simulate only a single row of the AFM data (marked in Figure \ref{fig:afmsmooth} and shown in detail in Figure \ref{fig:surfprofile}) using the 2D GPE, ignoring the $y$ dimension. The selected row was chosen so as to contain a two-dimensional analogue of the steep ridge structures exhibited along the wire's surface.
 
 We first obtain the stationary solution of the GPE in the presence of
-the rough boundary, with bulk density $\rho$.  The GPE is then transformed into a frame moving at speed $u$ in the $x$-direction (corresponding to the imposed flow) by the addition of a Galilean boost term $ i \hbar u \partial \Psi/\partial x$ to the right-hand side of the GPE, as described in Section \ref{section:linearmovframe}.  The flow speed {is}  ramped up smoothly from zero to the final value of $u=0.6\,c$; this final value is such that the critical velocity for nucleation is comfortably exceeded. 
+the rough boundary, with bulk density $\rho$.  The GPE is then transformed into a frame moving at speed $u$ in the negative $x$-direction (corresponding to the imposed flow) by the addition of a Galilean boost term $ i \hbar u \partial \Psi/\partial x$ to the right-hand side of the GPE, as described in Section \ref{section:linearmovframe}.  The flow speed is ramped up smoothly from zero to the final value of $u=0.2\,c$ in one simulation, and $u=0.6\,c$ in another; these final values are such that the critical velocity for nucleation is exceeded. 
 
 \section{Two-dimensional results}
 \begin{figure}
@@ -167,7 +167,7 @@ the rough boundary, with bulk density $\rho$.  The GPE is then transformed into 
       \addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=60] {afm/afmside.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{\label{fig:surfprofile} The 2D rough surface profile that we employ in our two-dimensional simulations. The surface is taken from the full AFM data so as to capture one of the `mountain' features present on the surface. The data is mapped onto our simulation coordinates as described in Section \ref{section:methodafm} and the exact mapping is shown here on the figure axes.}
+  \caption{\label{fig:surfprofile} The 2D rough surface profile that we employ in our two-dimensional simulations. The surface is taken from the full AFM data so as to capture one of the `mountain' features present on the surface. The data is mapped onto our computational coordinate system as described in Section \ref{section:methodafm} and the exact mapping is shown here.}
 \end{figure}
 
 We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v_c\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring for the peak of the elliptical-like feature extruding from the surface. The location acts as a nucleation site due to the high curvature which induces a high local fluid velocity, and so landau's criterion is broken here before anywhere else in the system. We will call such structures in the surface of the wire that induce this property `mountains'.
@@ -575,20 +575,43 @@ approximately the height of the highest mountains and the region
 of small vortex rings above it.}
 \label{fig2}
 \end{figure}
-For our simulation with imposed flow speed $u=0.6\,c$, asthe number of vortices increases, the complex turbulent region of vortex loops and rings remains strongly localised to the vicinity of the surface, up to approximately the height of the highest mountain. The localised region of vortex lines can be seen to form a distinct layer in the lower half of Figure \ref{fig2} (a). In addition to this boundary layer, reconnections due to the interaction of neighbouring lines forms a continuous ejection of vortex rings which spread into the bulk, visible in
+We focus on our 3D simulation with an imposed flow speed of $u=0.6\,c$. For this combination of surface and flow speed, as the number of vortices increases the complex turbulent region of vortex loops and rings remains strongly localised to the vicinity of the surface, up to approximately the height of the highest mountain. The localised region of vortex lines can be seen to form a distinct layer, visible in the lower half of Figure \ref{fig2} (a). In addition to the boundary layer, reconnections due to the interaction of neighbouring vortex lines causes a continuous ejection of vortex rings which spread into the bulk, visible in
 the upper part of Figure \ref{fig2} (a-b).
 
-As the vortex layer forms, the vortex line-length in the vicinity of the boundary increases with time at a much faster rate than in the bulk. However, once the layer has covered the entire computational surface, the vortex line-length within the boundary layer approximately saturates. Vortex rings are continued to be ejected from the layer, and so the vortex line length in the bulk continues to slowly grow. For slower, but still super-critical, imposed flows the turbulent layer still forms with the same height, albeit with reduced density of vortices, generalising the results of our 2D simulations in which a boundary layer forms.
+As the layer forms, the vortex line-length in the vicinity of the boundary increases with time at a much faster rate than in the bulk. However, once the layer has covered the entire computational surface, the vortex line-length within the boundary layer approximately saturates. Vortex rings are continued to be ejected from the layer, and so the vortex line length in the bulk continues to slowly grow. For the slower, but still super-critical, imposed flow with speed $u=0.2\,c$ the turbulent layer still forms with the same height, albeit with reduced density of vortices, generalising the behaviour of the boundary layers that formed in our 2D simulations.
 
-The turbulent layer and ejected vortex rings are not isotropic: on the average, vortex lines are flattened parallel to plane of the surface and ejected vortex rings lie in the $xy$ plane (so as to travel vertically away from the layer).
+The turbulent layer and ejected vortex rings are not isotropic: on average, vortex lines are flattened parallel to plane of the surface and the ejected vortex rings lie more in the $xy$ plane (so that they travel vertically away from the layer).
+
+\subsubsection{Vortex line-length density}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.6\linewidth,
+        height=0.4\linewidth,
+        xlabel={$t/\tau$},
+        ylabel={$L_{0}$ \& $L_{1}$},
+        xmin=0,
+        xmax=1300,
+        ymin=0,
+        xtick pos=left,
+        ytick pos=left,
+        major tick length = 0.07cm,
+        axis on top
+      ]
+      \addplot[mark=*,thick,blue,line join=round] table[x=t,y=top]{afm/vv_t.dat};
+      \addplot[mark=square*,thick,red,line join=round] table[x=t,y=bot]{afm/vv_t.dat};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{\label{fig:vortlinedensdt}Vortex line-density below ($L_0$, red squares) and above ($L_1$, blue circles) the height of $z=100\xi$, approximately the height of the tallest mountain, for a 3D simulation with imposed flow speed of $u=0.6\,c$.} 
+  \end{figure}
+We monitor vortex line-density below and above the height of the highest mountain $L_0$ and $L_1$ respectively. By measuring line-density in this way we are able to ascertain two things. Firstly, we will be able to measure if the boundary layer's vortex density over time, so as to say when the layer has saturated. Secondly, we can compare values in the region of the surface and away from the surface, as a measure of the strength of the boundary layer. We split the computational box in half, for $z<100\xi$ and $z \geq 100\xi$. We then estimate the vortex line-length using the vortex cross sectional area, $A$ and the volume of the isosurface tubes in each half of the computational box, obtaining vortex line-length $V_0(t)/A$ and $V_1(t)/A$. Finally these two quantities are used to compute the vortex line-densities throughout the simulation, shown in Figure \ref{fig:vortlinedensdt}.
+
+We find that both $L_0$ and $L_1$ grow over time as vortex lines are nucleated into the superfluid. $L_0$ saturates at a value around $1.2\times 10^{-4}$ at $t \approx 800$, confirming the growth of vortex line-density up to saturation in the lower region of the computational box. On the other hand, $L_1$ grows much slower than $L_0$ and shows significantly less vortex line-density throughout the simulation, and does not saturate but instead exhibits a steady growth of vortex line-length throughout, even after $L_0$ has saturated at $t \approx 800$.
+
+These measurements show a transient period of vortex line-density growth at early times which saturates into a boundary layer in the lower half of the computational box, corresponding to the region in the vicinity of the rough surface prominences. In addition, we have quantified a continuous process of vortex ring formation and emission into the upper half of the computational box, corresponding to the bulk of the superfluid. This process is further investigated in Section \ref{sec:vortexmill}.
 
 \subsubsection{Velocity profile}
-We further explore the turbulent boundary layer by measuring the local velocity as a function of distance, so as to obtain a velocity profile. We defined the quantity 
-\begin{equation}
-  v_{\rm xy}(z) = \langle v(x,y,z) \rangle_{\rm xy},
-\end{equation}
-where $\langle . \rangle_{\rm xy}$ denotes averaging in the $xy$ plane.
-
 \begin{figure}
   \centering
   \begin{tikzpicture}
@@ -627,19 +650,35 @@ where $\langle . \rangle_{\rm xy}$ denotes averaging in the $xy$ plane.
       \addplot[mark=none,ultra thick,blue,line join=round] file {afm/vels_z.dat};
     \end{axis}
   \end{tikzpicture}
-  \caption{Velocity profile (lower abscissa) near the surface of the wire, averaged over $10$ points in time, at $1130<t/\tau<1220$. For comparison, a 2D sample of the 3D surface ($y=0.1\,\mu$m, demonstrating one of the tallest surface features) is shown in grey (upper abscissa).} 
+  \caption{Typical local flow speed (lower abscissa) at various heights above the surface of the wire, averaged over $10$ points in time, at $1130<t/\tau<1220$. For comparison, a 2D sample of the 3D surface ($y=0.1\,\mu$m, demonstrating one of the tallest surface features) is shown in grey (upper abscissa).} 
   \end{figure}
+We further explore the turbulent boundary layer by measuring the local velocity as a function of distance, so as to obtain a velocity profile. We measure the quantity 
+\begin{equation}
+  v_{\rm xy}(z) = \langle v(x,y,z) \rangle_{\rm xy},
+\end{equation}
+where $\langle v(x,y,z) \rangle_{\rm xy}$ denotes averaging of the fluid velocity in the $xy$ plane and $v=|\bf {v}$|. We measure $v_{\rm xy}(z)$ at 10 snapshots for times $1130<t/\tau<1220$, so that the vortex line-length in the vicinity of the surface is saturated. The resulting quantity $v_{\rm xy}(z)$ is a measurement of the typical local speed of the fluid flow at the height of $z$.
 
-\subsection{Vortex generation through the vortex mill mechanism}
-Vortex lines occasionally undergo vortex reconnections, or twist, detach and fly off as small 
-vortex rings. At later times (due to the modified velocity field by nucleated vortices) and for higher imposed flow velocities, the critical velocity is exceeded across greater areas of the surface. However, even after the generation of a considerable vortex tangle, the highest mountains continue to dominate vortex nucleation; here the fluid velocity is always the highest and vortex shedding occurs at the fastest rate. This confirms that, with our choice of parameters, the vortex tangle which develops can be interpreted as generated either
-intrinsically or extrinsically: in both cases vortices nucleate 
-at the highest mountains before filling the layer below.
-Indeed, [Figure \ref{fig:velsandvorts} (f)] shows the formation of a long curved
-vortex which becomes twisted generating more vorticity  by spooling smaller vortex loops, 
-as in the vortex-mill mechanism envisaged by Schwarz \cite{PhysRevLett.64.1130}.
+We find that for the simulation with $u=0.6\,c$, the fluid velocity far away from the surface is unaffected by the rough surface. The typical local velocity is equal to the imposed flow velocity. The speed of the flow is $v_{\rm xy}(z)\approx0.6$ for all $z \lesssim 100\xi$, the approximate height of the highest prominence. In the region $40 \lesssim z \lesssim 100\xi$ the overall effect of the vortices in that region is to counteract the imposed flow velocity. The overall effect is that the typical flow speed is slower the closer to the surface it is measured, in analogy to a viscous boundary layer in classical fluids. In the region $0 \lesssim z \lesssim 40\xi$ most of the computational volume is now below the surface, and so only the fluid in the valleys of the surface is computed as part of the average. In this region the typical speed of the flow rapidly drops to almost zero.
+
+\subsection{\label{sec:vortexmill}Vortex ring generation through the vortex mill mechanism}
+At early times, nucleated vortex lines can form aligned along the flow direction, twisted due to the bundling of vortex lines nucleated at high-frequency. An example of this structure can be seen in the background of Figure \ref{fig:velsandvorts} (f). The twisted vortex lines generate more vorticity feeding into the boundary layer tangle, by spooling small vortex loops though the vortex-mill mechanism envisaged by Schwarz \cite{PhysRevLett.64.1130}. This confirms that, for the AFM surface and an imposed flow of $u=0.6\,c$, the vortex tangle which develops can be interpreted as generated either intrinsically or extrinsically: in both cases vortices nucleate at the highest mountains before filling the layer below.
+
+At later times (due to the modified velocity field by the saturated boundary layer) and for higher imposed flow velocities, the critical velocity is exceeded across greater areas of the surface. However, even after the generation of a considerable vortex tangle, the highest mountains continue to dominate vortex nucleation; here the fluid velocity is always the highest and vortex shedding occurs at the fastest rate. Despite this, we have already seen that the vortex line-density in the lower half of the computational box (corresponding to the fluid in the vicinity of the surface roughness) remains saturated. To maintain equilibrium, vortex line-length is constantly ejected from the boundary layer by the process of twisting, vortex reconnections, and the formation of vortex rings that detach and fly in the positive $z$ direction. An example of this process is seen in Figure ... ,demonstrating a further vortex mill mechanism, where vortex line-length is injected into the bulk of the superfluid in the form of escaping rings.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.25\linewidth]{./afm/mill1}%
+\includegraphics[width=0.25\linewidth]{./afm/mill2}%
+\includegraphics[width=0.25\linewidth]{./afm/mill3}%
+\includegraphics[width=0.25\linewidth]{./afm/mill4}%
+\caption{Instantaneous isosurfaces of density $n({\bf r},t)$ 
+(plotted at 25\%  of the bulk density) showing the surface (yellow) and vortices (red) for the flow ($u=0.6\,c$) in the saturated turbulent regime reached at long times ($t/\tau=730,740,750,770$). Demonstrated in blue is an escaping vortex ring (originating in the tangle and formed due to the vortex mill mechanism) that travels in the positive $x$ direction, into the bulk of the fluid.}
+\label{fig:escapering}
+\end{figure}
+
 
 \section{Conclusions}
+
 The experimental implications of `superfluid boundary layers` on macroscopic
 observables need to be investigated.  Our results should
 particularly stimulate experiments in $^3$He-B, where, due to relative
