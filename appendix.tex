@@ -465,45 +465,6 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. The 
 \begin{algorithm}
   \SetKwFunction{Zero}{Zero}
   \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-  \SetKwFunction{Max}{max}
-  \Input{A $n_x \times n_y$ density profile $R$, A $n_x \times n_y$ phase profile $\theta$. A line integral width $l$.}
-  \Output{A `vortex field' $Q$.}
-  \BlankLine
-  \For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
-    \For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
-      $S\leftarrow R(i,j)/$\Max{$R$}\;
-      $Q[i,j]\leftarrow S\times\oint_{C_{[i,j]}} \nabla\theta~ds$, where $C_{[i,j]}$ is a square loop of width $l$ centred on point $[i,j]$\;
-    }
-  }
-\caption{Improved vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise. This method ignores ghost vortices.}\label{algo_calcvortexfielddens}
-\end{algorithm}
-
-\begin{algorithm}
-    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-    \SetKw{KwIn}{in}
-    \SetKw{KwAll}{all}
-    \SetKw{KwAllPoints}{all points}
-    \Input{A $n_x \times n_y$ field $Q$, a Gaussian filter width $g$.}
-    \Output{A $n_x \times n_y$ field $G$.}
-    \BlankLine
-    \For{$k\leftarrow 1$ \KwTo $n_x$}{
-      \For{$l\leftarrow 1$ \KwTo $n_y$}{
-        \For{$i\leftarrow 1$ \KwTo $n_x$}{
-          \For{$j\leftarrow 1$ \KwTo $n_y$}{
-            $G[k,l] \leftarrow G[k,l] + Q[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
-          }
-        }
-        $G[k,l] \leftarrow G[k,l]/(n_x.n_y)$\;
-      }
-    }
-
-  \caption{Gaussian convolution. Filters out features with structures of size less than the input
-  filter width. The output is analogous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
-\end{algorithm}
-
-\begin{algorithm}
-  \SetKwFunction{Zero}{Zero}
-  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
   \SetKwData{Mtmp}{m}
   \SetKwFunction{Max}{max}
   \SetKwFunction{Min}{min}
@@ -556,6 +517,45 @@ Compute $m = l - c/2$ and substitute $m$ into $(r,g,b) = (r'+m,g'+m,b'+m)$. The 
     }
   }
 \caption{The B/W Label algorithm. Outputs a field with the same non-zero regions of the input binary field, but with each connected region labeled with a unique value.}\label{algo_bwlabel}
+\end{algorithm}
+
+\begin{algorithm}
+    \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+    \SetKw{KwIn}{in}
+    \SetKw{KwAll}{all}
+    \SetKw{KwAllPoints}{all points}
+    \Input{A $n_x \times n_y$ field $Q$, a Gaussian filter width $g$.}
+    \Output{A $n_x \times n_y$ field $G$.}
+    \BlankLine
+    \For{$k\leftarrow 1$ \KwTo $n_x$}{
+      \For{$l\leftarrow 1$ \KwTo $n_y$}{
+        \For{$i\leftarrow 1$ \KwTo $n_x$}{
+          \For{$j\leftarrow 1$ \KwTo $n_y$}{
+            $G[k,l] \leftarrow G[k,l] + Q[i,j]\times\exp\left (-[(k-i)^2+(l-j)^2]/g^2 \right )$\;
+          }
+        }
+        $G[k,l] \leftarrow G[k,l]/(n_x.n_y)$\;
+      }
+    }
+
+  \caption{Gaussian convolution. Filters out features with structures of size less than the input
+  filter width. The output is analogous to a `blurring' of the input field. This allows high frequency noise to be removed.}\label{algo_gaussconv}
+\end{algorithm}
+
+\begin{algorithm}
+  \SetKwFunction{Zero}{Zero}
+  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+  \SetKwFunction{Max}{max}
+  \Input{A $n_x \times n_y$ density profile $R$, A $n_x \times n_y$ phase profile $\theta$. A line integral width $l$.}
+  \Output{A `vortex field' $Q$.}
+  \BlankLine
+  \For{$i\leftarrow 1+l/2$ \KwTo $n_x-l/2$}{
+    \For{$i\leftarrow 1+l/2$ \KwTo $n_y-l/2$}{
+      $S\leftarrow R(i,j)/$\Max{$R$}\;
+      $Q[i,j]\leftarrow S\times\oint_{C_{[i,j]}} \nabla\theta~ds$, where $C_{[i,j]}$ is a square loop of width $l$ centred on point $[i,j]$\;
+    }
+  }
+\caption{Improved vortex detection. Outputs a field with positive values near a vortex with circulation 1, negative values near a vortex with circulation -1 and zero valued otherwise. This method ignores ghost vortices.}\label{algo_calcvortexfielddens}
 \end{algorithm}
 
 \begin{algorithm}

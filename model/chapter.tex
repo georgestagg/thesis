@@ -705,28 +705,26 @@ where  $V_0$ is its amplitude, $d$ its width in the $y$ direction, and $(x_0,y_0
 \subsection{\label{section:3dafmpotential} Three-dimensional `realistic' rough-surface}
 \begin{figure}
 	\centering
-   \begin{tikzpicture}
-    \begin{axis}[view={0}{90},
+  \begin{tikzpicture}
+    \begin{axis}[
         width=0.5\linewidth,
-        height=0.5\linewidth,
-        xlabel=$x~(\mu m)$,
-        ylabel=$y~(\mu m)$,
-        xmin = 0,
-        xmax = 1,
-        ymin = 0,
-        ymax = 1,
+        xlabel={$x$ ($\mu$m)},
+        ylabel={$y$ ($\mu$m)},
+        xmin=-0.5,
+        xmax=0.5,
+        ymin=-0.5,
+        ymax=0.5,
         major tick length = 0.07cm,
-        colorbar style={title={$z~(nm)$},text width=0.5em,major tick length = 0.07cm},
-		    major tick length = 0.07cm,
-		    point meta min = 1.5,
-		    point meta max = 5.5,
-		    colorbar,colormap={pm3d}{rgb=(0,0,0);
-                              rgb=(0.5,0.125,1);
-                              rgb=(0.707,0.125,0);
-                              rgb=(0.866,0.422,0);
-                              rgb=(1,1,0)}
+        axis on top,
+        unit vector ratio=1 1 1,
+        axis on top,
+        colorbar style={title={\makebox[\linewidth]{z (nm)}},text width=0.5em,major tick length = 0.07cm},
+        major tick length = 0.07cm,
+        point meta min = 0,
+        point meta max = 16,
+        colorbar,colormap/jet
       ]
-      \addplot graphics [xmin=0,xmax=1,ymin=0,ymax=1] {numerics/figures/afm_surf.png};
+      \addplot graphics [xmin=-0.5,xmax=0.5,ymin=-0.5,ymax=0.5] {afm/afm2.png};
     \end{axis}
   \end{tikzpicture}
   \caption{An atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence. This data was kindly provided by C. R. Lawson \cite{Lawson}.}\label{fig_afmprofile}
