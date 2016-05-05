@@ -1,4 +1,4 @@
-\begin{chapter}{\label{cha:afm}Simulating the rough surface of a ``Floppy Wire''}
+\begin{chapter}{\label{cha:afm}Flow past a rough surface}
 \section{Introduction}
 At sufficiently low temperatures, liquid helium has two striking
 properties.  Firstly, it flows without viscosity, and secondly,
@@ -169,7 +169,7 @@ the rough boundary, with bulk density $\rho$.  The GPE is then transformed into 
   \caption{\label{fig:surfprofile} The 2D rough surface profile that we employ in our two-dimensional simulations. The surface is taken from the full AFM data so as to capture one of the `mountain' features present on the surface. The data is mapped onto our computational coordinate system as described in Section \ref{section:methodafm} and the exact mapping is shown here.}
 \end{figure}
 
-We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v_c\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring for the sharp feature protruding from the rough surface. The location acts as a nucleation site due to the high curvature, which induces a high local fluid velocity, and so landau's criterion is broken here before anywhere else in the system. We will refer to such structures that induce this property as `mountains'.
+We begin by focusing on our two-dimensional simulations. For the surface depicted in Figure \ref{fig:surfprofile}, we find the critical velocity for vortex nucleation to be $v_c=(0.125\pm0.025)\,c$. This is significantly less than the critical velocity for a circular obstacle (which has a critical velocity of $v_c\approx 0.38\,c$ \cite{frisch92,nore93,win00,huepe00}). This result shows that the effect described throughout Chapter \ref{cha:wake} is also occurring for the sharp feature protruding from the rough surface. The location acts as a nucleation site due to the high curvature, which induces a high local fluid velocity, and so Landau's criterion is broken here before anywhere else in the system. We will refer to such structures that induce this property as `mountains'.
 
 \subsection{Vortex nucleation}
 \subsubsection{Early-time vortex nucleation}
@@ -640,7 +640,7 @@ We further explore the turbulent boundary layer by measuring the local velocity 
 \begin{equation}
   v_{\rm xy}(z) = \langle v_{\rm loc}({\bf r}) \rangle_{\rm xy},
 \end{equation}
-where $\langle v_{\rm loc}({\bf r}) \rangle_{\rm xy}$ denotes averaging of the local fluid speed in the $xy$ plane. We measure $v_{\rm xy}(z)$ for all $z$ using an average of 10 snapshots at times $1130<t/\tau<1220$ (so that we measure the turbulent saturated regime). The resulting quantity $v_{\rm xy}(z)$ is a measurement of the typical local speed of the fluid flow at the height of $z$. We for our simulation with $v=0.6\,c$, we find three regions in the profile of $v_{\rm xy}(z)$.
+where $\langle v_{\rm loc}({\bf r}) \rangle_{\rm xy}$ denotes averaging of the local fluid speed in the $xy$ plane. We measure $v_{\rm xy}(z)$ for all $z$ using an average of 10 snapshots at times $1130<t/\tau<1220$ (so that we measure the turbulent saturated regime). The resulting quantity $v_{\rm xy}(z)$ is a measurement of the typical local speed of the fluid flow at the height of $z$. For our simulation with $v=0.6\,c$, we find three regions in the profile of $v_{\rm xy}(z)$.
 
 In the region $100\xi \lesssim z \lesssim 200\xi$, the local flow speed is $v_{\rm xy}(z)\approx0.6$, showing that the fluid velocity is unaffected by the rough surface at heights of more than the height of the tallest mountain.
 

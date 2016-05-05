@@ -28,6 +28,7 @@ tidy:
 	rm -f *.aux *.toc *.log *.out  *.bbl *.blg *.idx *.lot *.lof $(OBJECT)_dvi.* $(OBJECT)_pdf.* */*.aux
 clean: tidy
 	rm -f $(OBJECT).dvi $(OBJECT).pdf $(OBJECT)-figure*.pdf $(OBJECT)-figure*.dep $(OBJECT)-figure*.dpth $(OBJECT)-figure*.table $(OBJECT)-figure*.gnuplot $(OBJECT).ps
-
+compress:
+	 gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -sOutputFile=$(OBJECT)-compress.pdf $(OBJECT).pdf
 $(OBJECT).pdf: $(OBJECT).bbl $(OBJECT).tex $(SOURCES)
 $(OBJECT).bbl: $(OBJECT).tex references.bib $(SOURCES)

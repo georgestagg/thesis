@@ -105,7 +105,7 @@
 \contentsline {subsection}{\numberline {6.5.1}Critical velocity for vortex nucleation}{92}{subsection.6.5.1}
 \contentsline {subsection}{\numberline {6.5.2}Vortex nucleation pattern}{94}{subsection.6.5.2}
 \contentsline {section}{\numberline {6.6}Conclusions}{97}{section.6.6}
-\contentsline {chapter}{\numberline {7}Simulating the rough surface of a ``Floppy Wire''}{99}{chapter.7}
+\contentsline {chapter}{\numberline {7}Flow past a rough surface}{99}{chapter.7}
 \contentsline {section}{\numberline {7.1}Introduction}{99}{section.7.1}
 \contentsline {section}{\numberline {7.2}Method}{100}{section.7.2}
 \contentsline {section}{\numberline {7.3}Two-dimensional results}{103}{section.7.3}
@@ -129,21 +129,21 @@
 \contentsline {subsubsection}{Simulating the rough surface of a ``Floppy Wire''}{117}{section*.82}
 \contentsline {section}{\numberline {8.2}Future work}{117}{section.8.2}
 \contentsline {subsubsection}{Other quantum analogues of classical-like wakes}{117}{section*.83}
-\contentsline {subsubsection}{Finite temperature trapped Bose gas}{118}{section*.85}
+\contentsline {subsubsection}{Finite temperature trapped Bose gas}{117}{section*.85}
 \contentsline {subsubsection}{Exploring the superfluid boundary layer}{118}{section*.86}
-\contentsline {part}{III\hspace {1em}Appendix}{120}{part.3}
-\contentsline {chapter}{\numberline {A}Detailed Derivations}{121}{appendix.A}
-\contentsline {section}{\numberline {A.1} Derivation of the Runge-Kutta scheme}{121}{section.A.1}
-\contentsline {section}{\numberline {A.2} Derivation of the Gross-Pitaevskii Equation}{124}{section.A.2}
-\contentsline {section}{\numberline {A.3} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{128}{section.A.3}
-\contentsline {chapter}{\numberline {B}Important Quantities}{131}{appendix.B}
-\contentsline {section}{\numberline {B.1} Energy}{131}{section.B.1}
-\contentsline {section}{\numberline {B.2} Force}{132}{section.B.2}
-\contentsline {section}{\numberline {B.3} Healing Length}{132}{section.B.3}
-\contentsline {chapter}{\numberline {C}Algorithms}{134}{appendix.C}
-\contentsline {section}{\numberline {C.1} Density/Phase Visualisation Technique}{134}{section.C.1}
-\contentsline {subsubsection}{Plotting Algorithm}{134}{section*.87}
-\contentsline {subsubsection}{Colour space conversion - {\tt rgb} to {\tt hsl}}{135}{section*.88}
-\contentsline {subsubsection}{Colour space conversion - {\tt hsl} to {\tt rgb}}{135}{section*.89}
-\contentsline {section}{\numberline {C.2} Other Numerical Algorithms}{136}{section.C.2}
-\contentsline {chapter}{Bibliography}{143}{algocf.9}
+\contentsline {part}{III\hspace {1em}Appendix}{119}{part.3}
+\contentsline {chapter}{\numberline {A}Detailed Derivations}{120}{appendix.A}
+\contentsline {section}{\numberline {A.1} Derivation of the Runge-Kutta scheme}{120}{section.A.1}
+\contentsline {section}{\numberline {A.2} Derivation of the Gross-Pitaevskii Equation}{123}{section.A.2}
+\contentsline {section}{\numberline {A.3} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{127}{section.A.3}
+\contentsline {chapter}{\numberline {B}Important Quantities}{130}{appendix.B}
+\contentsline {section}{\numberline {B.1} Energy}{130}{section.B.1}
+\contentsline {section}{\numberline {B.2} Force}{131}{section.B.2}
+\contentsline {section}{\numberline {B.3} Healing Length}{131}{section.B.3}
+\contentsline {chapter}{\numberline {C}Algorithms}{133}{appendix.C}
+\contentsline {section}{\numberline {C.1} Density/Phase Visualisation Technique}{133}{section.C.1}
+\contentsline {subsubsection}{Plotting Algorithm}{133}{section*.87}
+\contentsline {subsubsection}{Colour space conversion - {\tt rgb} to {\tt hsl}}{134}{section*.88}
+\contentsline {subsubsection}{Colour space conversion - {\tt hsl} to {\tt rgb}}{134}{section*.89}
+\contentsline {section}{\numberline {C.2} Other Numerical Algorithms}{135}{section.C.2}
+\contentsline {chapter}{Bibliography}{142}{algocf.9}
