@@ -70,16 +70,16 @@ $T/T_\lambda$        & 0.98 & 0.81 & 0.68 & 0.56 & 0.26 & 0.10
 
 \section{Formation of the turbulent vortex tangle}
 \subsection{Defining the quasi-condensate}
-The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence. The process is demonstrated by Figure \ref{fig:occupation} (a). Then the distribution evolves to a bimodal form.
+The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence. The process is demonstrated in Figure \ref{fig:occupation}. Then the distribution evolves to a bimodal form.
 The high-$k$ part of the distribution is associated with the
-thermal excitations and low mode occupations. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, demonstrated in Figure \ref{fig:thermal}, which relaxes over very long times.
+thermal excitations and low mode occupations. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
 
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
 \begin{center}
 \begin{tikzpicture}
     \begin{axis}[ylabel near ticks,xlabel near ticks,
-        width=0.49\linewidth,
+        width=0.45\linewidth,
         xlabel=$k \xi$,
         ylabel={$n_k$},
         xmin=0.025,
@@ -100,10 +100,10 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
       \addplot+[mark=triangle*,blue,mark options={scale=0.75}] file {nonequib/occFk1000_vs_kk.dat};
       \addplot+[mark=none,black!60,thick,dashed] coordinates {(0.434, 1e-5) (0.434, 1e9)};
     \end{axis}
-  \end{tikzpicture}
+  \end{tikzpicture}\hspace{0.09\linewidth}
 	\begin{tikzpicture}
 	    \begin{axis}[ylabel near ticks,xlabel near ticks,
-	        width=0.49\linewidth,
+	        width=0.45\linewidth,
 	        xlabel=$k \xi$,
 	        ylabel={$F_k$},
 	        xmin=0,
@@ -114,16 +114,16 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
 		      xtick pos=left,
 		      ytick pos=left
 			    ]
-	      \addplot+[mark=*,red,mark options={scale=0.5}] file {nonequib/cFk0_vs_kk.dat};
-	      \addplot+[mark=square*,orange,mark options={scale=0.5}] file {nonequib/cFk25_vs_kk.dat};
-	      \addplot+[mark=diamond*,magenta,mark options={scale=0.85}] file {nonequib/cFk75_vs_kk.dat};
-	      \addplot+[mark=pentagon*,green,mark options={scale=0.75}] file {nonequib/cFk200_vs_kk.dat};
-	      \addplot+[mark=triangle*,blue,mark options={scale=0.75}] file {nonequib/cFk1000_vs_kk.dat};
+	      \addplot+[mark=*,red,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk0_vs_kk.dat};
+	      \addplot+[mark=square*,orange,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk25_vs_kk.dat};
+	      \addplot+[mark=diamond*,magenta,mark options={scale=0.85},mark repeat=10,mark phase=1] file {nonequib/cFk75_vs_kk.dat};
+	      \addplot+[mark=pentagon*,green,mark options={scale=0.75},mark repeat=10,mark phase=1] file {nonequib/cFk200_vs_kk.dat};
+	      \addplot+[mark=triangle*,blue,mark options={scale=0.75},mark repeat=10,mark phase=2] file {nonequib/cFk1000_vs_kk.dat};
 	      \addplot+[mark=none,black!60,thick,dashed] coordinates {(0.434, -1) (0.434, 1e7)};
 	    \end{axis}
 	  \end{tikzpicture}
 	  \end{center}
-  \caption{\label{fig:occupation} (a) Occupation numbers, $n_k$, of the Bose gas as it decays to equilibrium at times (red) $t/\tau=0$, (orange) $25$, (green) $200$, and (blue) $1000$. Here the final condensate fraction at equilibrium is $\rho_0/\rho = 0.48$. (b) Integral distribution of the particles, $F_k = \sum_{k'<k} n_{\bf k'}$, at the same times. In both figures $k_c$ is labelled by a grey dashed line.}
+  \caption{\label{fig:occupation} (a) Occupation numbers, $n_k$, of the Bose gas as it decays to equilibrium at times (red circles) $t/\tau=0$, (orange squares) $25$, (magenta diamonds) $200$, (green pentagons) $200$, and (blue triangles) $1000$. Here the final condensate fraction at equilibrium is $\rho_0/\rho = 0.48$. (b) Integral distribution of the particles, $F_k = \sum_{k'<k} n_{\bf k'}$, at the same times. In both figures $k_c = 10~(2\pi/D)$ is labelled by a grey dashed line.}
 \end{figure}
 
 
@@ -253,12 +253,6 @@ The kinetic energy can be further decomposed into compressible and incompressibl
 We calculate the incompressible energy spectrum of the quasi-condensate at various temperatures, sampled at time $t/\tau=300$ so as to characterise the vortex tangle before significant decay, while providing enough time for the quasi-condensate to form. The resulting spectra are shown in Figure \ref{fig:spectra}. The majority of each spectrum demonstrates a $\sim k^{-3}$ scaling, corresponding to the vortex core on the scale of $k_\ell<k<k_\xi$. For quasi-classical turbulence, we would expect a build up of kinetic energy at scales larger than the inter-vortex distance, $k_D<k<k_\ell$, demonstrating the famous Kolmogorov $k^{-5/3}$ power law scaling. In our simulations the incompressible kinetic energy spectrum does {\it not} show a definitive $k^{-5/3}$ scaling. The spectra instead show a marked lack of energy build up at scales $k_D<k<k_\ell$. In contrast to quasi-classical turbulence, ultra-quantum turbulence predicts a $k^{-1}$ scaling at scales $k_D<k<k_\ell$. A guide line proportional to this power law is shown Figure \ref{fig:spectra}.
 
 \section{Relaxation of the vortex tangle}
-As the condensate evolves over the course of the simulation, the initially-formed dense vortex tangle remains random and isotropic throughout the decay to one or more vortex rings, which eventually also decay, leading to a vortex-free state (the ``equilibrated" state). A example of such a decay is shown in Figure \ref{fig:thermal}.
-
-Insight into the nature of the quasi-condensate turbulence can be obtained by investigating the relaxation of the vortex tangle, obtained by monitoring the vortex line-density $L$. We estimate the vortex line-length from the total volume of the isosurface tubes, $V_{\rm t}$. We assume that each vortex tube has uniform constant circular cross-sectional area $A_{\rm t}$; the total vortex line-length is then $V_{\rm t}/A_{\rm t}$.
-
-Note that this approximation is only strictly valid for vortices well separated in space and for steady condensate fraction (so that the healing length of the quasi-condensate is constant). A more sophisticated and robust algorithm for calculating and tracking vortex line length has recently been described \cite{Kerr14,Villois16}, however the computational requirements are higher. We find that the computationally efficient estimate we employ here is accurate enough for our analysis due to the fact that it is only at very early times where the condensate fraction changes significantly [Figure \ref{fig:ll_t}(b)], and our vortices are indeed well separated for the majority of the decay [Figure \ref{fig:thermal}(b-f)].
-
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
 \begin{center}
@@ -305,6 +299,11 @@ Note that this approximation is only strictly valid for vortices well separated 
 \end{center}
 \caption{\label{fig:ll_t} (a) Vortex line density over time for $\rho/\rho_0=0.22$ (red circles), $\rho/\rho_0=0.48$ (green sqaures), and $\rho/\rho_0=0.77$ (blue diamonds). Each line is an average of 5 simulations. A line proportional to $t^{-1}$, characteristic of the decay of a ultra-quantum turbulence, is shown (dashed black line) as reference. (b) Condensate fraction over time for equilibrium states with $\rho/\rho_0=0.22$ (red solid line), $\rho/\rho_0=0.48$ (green dashed line), and $\rho/\rho_0=0.77$ (blue dot-dashed line). }
 \end{figure}
+As the condensate evolves over the course of the simulation, the initially-formed dense vortex tangle remains random and isotropic throughout the decay to one or more vortex rings, which eventually also decay, leading to a vortex-free state (the ``equilibrated" state). A example of such a decay is shown in Figure \ref{fig:thermal}.
+
+Insight into the nature of the quasi-condensate turbulence can be obtained by investigating the relaxation of the vortex tangle, obtained by monitoring the vortex line-density $L$. We estimate the vortex line-length from the total volume of the isosurface tubes, $V_{\rm t}$. We assume that each vortex tube has uniform constant circular cross-sectional area $A_{\rm t}$; the total vortex line-length is then $V_{\rm t}/A_{\rm t}$.
+
+Note that this approximation is only strictly valid for vortices well separated in space and for steady condensate fraction (so that the healing length of the quasi-condensate is constant). A more sophisticated and robust algorithm for calculating and tracking vortex line length has recently been described \cite{Kerr14,Villois16}, however the computational requirements are higher. We find that the computationally efficient estimate we employ here is accurate enough for our analysis due to the fact that it is only at very early times where the condensate fraction changes significantly [Figure \ref{fig:ll_t}(b)], and our vortices are indeed well separated for the majority of the decay [Figure \ref{fig:thermal}(b-f)].
 
 \begin{table}
 \centering
@@ -326,7 +325,7 @@ The velocity correlation function, $f(r)$, is defined at a fixed point in time a
 \begin{equation}
 f(r) = \frac{\langle v_x({\bf r})v_x({\bf r} +  r\hat{\bf e}_x) \rangle}{\langle v_x({\bf r})^2 \rangle}
 \end{equation}
-where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. The value of $f(r)$ smoothly drops to approximately at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
+where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. While we have used the $x$ direction in the definition of $f(r)$, due to the isotropic nature of the turbulence using the $y$ or $z$ direction leads to similar results. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. The value of $f(r)$ smoothly drops to approximately at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
 
 The integral scale provides a convenient measure of the distance over which velocities are correlated by producing a scalar value from the velocity correlation function. It is defined as
 \begin{equation}
