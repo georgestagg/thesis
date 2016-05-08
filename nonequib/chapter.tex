@@ -48,10 +48,6 @@ Section \ref{section:cfield} provides a detailed description of the classical fi
 The evolution of $\psi({\bf r},t)$ is governed by Equation (\ref{eq:gpe}), the GPE. The density distribution of atoms is then $n({\bf r},t)=|\psi({\bf r},t)|^2$.
 The GPE conserves the total number of particles $N$, given by Equation (\ref{eq:normalisewf}), and the total energy $E$, given by Equation (\ref{eq:Efn}). In this chapter we express all quantities in terms of the natural units of the homogeneous Bose gas defined in Section \ref{section:gpedimlesshomg}:  density in terms of a uniform value $\rho = N/D^3$, length in terms of the healing length $\xi=\hbar/\sqrt{m g \rho}$, speed in terms of the speed of sound $c=\sqrt{\rho g/m}$, energy in terms of the chemical potential of the homogeneous condensate $\mu=\rho g$, and time in terms of $\tau=\hbar / g \rho$.
 
-We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ is $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium state defined in Section \ref{section:cfieldinitcond}.  The temperature of the gas is varied through a rescaling of the initial condition $\psi(\mathbf{r},0)$ so as to fix the number density, $N/D^3$, and energy density, $\langle H \rangle/D^3$. The choice of number density and energy density uniquely determines the condensate fraction $\rho_0/\rho$, and therefore the temperature $T/T_\lambda$, for the equilibrium state of the Bose gas. Table \ref{tbl:cond_frac} lists the parameters used in our simulations and the resulting condensate fractions.
-
-The GPE is evolved numerically, in the absence of any potential ($V = 0$), using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} on a $192^3$ periodic grid with time step $\Delta t =0.01 \tau$ and isotropic grid spacing $\Delta =0.75\xi$. The spatial discretisation of our numerical grid implies that high momenta are not described in our simulations. In effect, an ultraviolet cutoff is introduced, $n_{\mathbf{k}}(t)=0$ for $k>k_{\rm{max}}$, where $k=|{\bf k}|$ and the maximum described wave vector amplitude is $k_{\rm{max}} = \sqrt{3} \pi / \Delta$. 
-
 \begin{table}
 \centering
 \begin{tabular}{rcccccc}
@@ -68,18 +64,22 @@ $T/T_\lambda$        & 0.98 & 0.81 & 0.68 & 0.56 & 0.26 & 0.10
 \label{tbl:cond_frac}
 \end{table}
 
+We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ is $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium state defined in Section \ref{section:cfieldinitcond}.  The temperature of the gas is varied through a rescaling of the initial condition $\psi(\mathbf{r},0)$ so as to fix the number density, $N/D^3$, and energy density, $\langle H \rangle/D^3$. The choice of number density and energy density uniquely determines the condensate fraction $\rho_0/\rho$, and therefore the temperature $T/T_\lambda$, for the equilibrium state of the Bose gas. Table \ref{tbl:cond_frac} lists the parameters used in our simulations and the resulting condensate fractions.
+
+The GPE is evolved numerically, in the absence of any potential ($V = 0$), using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} on a $192^3$ periodic grid with time step $\Delta t =0.01 \tau$ and isotropic grid spacing $\Delta =0.75\xi$. The spatial discretisation of our numerical grid implies that high momenta are not described in our simulations. In effect, an ultraviolet cutoff is introduced, $n_{\mathbf{k}}(t)=0$ for $k>k_{\rm{max}}$, where $k=|{\bf k}|$ and the maximum described wave vector amplitude is $k_{\rm{max}} = \sqrt{3} \pi / \Delta$. 
+
 \section{Formation of the turbulent vortex tangle}
 \subsection{Defining the quasi-condensate}
-The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes, which initially evolves in a state of weak turbulence. The process is demonstrated in Figure \ref{fig:occupation}. Then the distribution evolves to a bimodal form.
+The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes [demonstrated in Figure \ref{fig:occupation}(a)], which initially evolves in a state of weak turbulence. Then the distribution evolves to a bimodal form.
 The high-$k$ part of the distribution is associated with the
 thermal excitations and low mode occupations. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
 
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}%
     \begin{axis}[ylabel near ticks,xlabel near ticks,
-        width=0.45\linewidth,
+        width=0.47\linewidth,
         xlabel=$k \xi$,
         ylabel={$n_k$},
         xmin=0.025,
@@ -99,11 +99,11 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
       \addplot+[mark=pentagon*,green,mark options={scale=0.75}] file {nonequib/occFk200_vs_kk.dat};
       \addplot+[mark=triangle*,blue,mark options={scale=0.75}] file {nonequib/occFk1000_vs_kk.dat};
       \addplot+[mark=none,black!60,thick,dashed] coordinates {(0.434, 1e-5) (0.434, 1e9)};
-    \end{axis}
-  \end{tikzpicture}\hspace{0.09\linewidth}
-	\begin{tikzpicture}
+    \end{axis}%
+  \end{tikzpicture}\hspace{0.06\linewidth}%
+	\begin{tikzpicture}%
 	    \begin{axis}[ylabel near ticks,xlabel near ticks,
-	        width=0.45\linewidth,
+	        width=0.47\linewidth,
 	        xlabel=$k \xi$,
 	        ylabel={$F_k$},
 	        xmin=0,
@@ -115,14 +115,14 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
 		      ytick pos=left
 			    ]
 	      \addplot+[mark=*,red,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk0_vs_kk.dat};
-	      \addplot+[mark=square*,orange,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk25_vs_kk.dat};
-	      \addplot+[mark=diamond*,magenta,mark options={scale=0.85},mark repeat=10,mark phase=1] file {nonequib/cFk75_vs_kk.dat};
-	      \addplot+[mark=pentagon*,green,mark options={scale=0.75},mark repeat=10,mark phase=1] file {nonequib/cFk200_vs_kk.dat};
-	      \addplot+[mark=triangle*,blue,mark options={scale=0.75},mark repeat=10,mark phase=2] file {nonequib/cFk1000_vs_kk.dat};
+	      \addplot+[mark=square*,orange,mark options={scale=0.5},mark repeat=8,mark phase=1] file {nonequib/cFk25_vs_kk.dat};
+	      \addplot+[mark=diamond*,magenta,mark options={scale=0.85},mark repeat=8,mark phase=1] file {nonequib/cFk75_vs_kk.dat};
+	      \addplot+[mark=pentagon*,green,mark options={scale=0.75},mark repeat=8,mark phase=1] file {nonequib/cFk200_vs_kk.dat};
+	      \addplot+[mark=triangle*,blue,mark options={scale=0.75},mark repeat=8,mark phase=2] file {nonequib/cFk1000_vs_kk.dat};
 	      \addplot+[mark=none,black!60,thick,dashed] coordinates {(0.434, -1) (0.434, 1e7)};
-	    \end{axis}
-	  \end{tikzpicture}
-	  \end{center}
+	    \end{axis}%
+	  \end{tikzpicture}%
+	  \end{center}%
   \caption{\label{fig:occupation} (a) Occupation numbers, $n_k$, of the Bose gas as it decays to equilibrium at times (red circles) $t/\tau=0$, (orange squares) $25$, (magenta diamonds) $200$, (green pentagons) $200$, and (blue triangles) $1000$. Here the final condensate fraction at equilibrium is $\rho_0/\rho = 0.48$. (b) Integral distribution of the particles, $F_k = \sum_{k'<k} n_{\bf k'}$, at the same times. In both figures $k_c = 10~(2\pi/D)$ is labelled by a grey dashed line.}
 \end{figure}
 
@@ -536,7 +536,7 @@ Just above the critical velocity, where the vortex line-length density is relati
         axis y line*=left,
         axis x line*=bottom,
         major tick length = 0.07cm,
-        colorbar style={ylabel={$L/\xi^2$},ylabel style={rotate=-90},text width=0.5em,major tick length = 0.07cm},
+        colorbar style={ylabel={$L\xi^2$},ylabel style={rotate=-90},text width=0.5em,major tick length = 0.07cm},
         major tick length = 0.07cm,
         point meta min = 0,
         point meta max = 0.00059,
