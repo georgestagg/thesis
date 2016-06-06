@@ -25,10 +25,10 @@
 % 30mm margin on the binding edge.
 %
 % One-sided.
-\usepackage[a4paper,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+%\usepackage[a4paper,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
 %
 % Two-sided.
-%\usepackage[a4paper,twoside,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
+\usepackage[a4paper,twoside,left=35mm,right=25mm,top=40mm,bottom=35mm]{geometry}
 %
 % Centred.
 %\usepackage[a4paper,left=30mm,right=30mm,top=40mm,bottom=35mm]{geometry}
@@ -60,17 +60,6 @@
 % packages there, or below the following line.
 \usepackage{masthesis}
 
-%blank page before chapter start
-\makeatletter
-\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-\hbox{}
-\vspace*{\fill}
-\vspace{\fill}
-\thispagestyle{empty}
-\newpage
-\if@twocolumn\hbox{}\newpage\fi\fi\fi}
-\makeatother
-
 % One-and-a-half or double-line spacing.  I used 1.5 for final submission.
 \onehalfspacing
 %\doublespacing
@@ -83,39 +72,25 @@
            {George William Stagg}       % Author.
            {fig/logo}                 % Graphic for the title page.
            {June $2016$}                % Date.
-
-  \thispagestyle{empty}
   \cleardoublepage
   \input{acknowledge}                   % Acknowledgements.
-  \newpage
   \input{abstract}                      % Abstract.
-  \clearpage
-  \thispagestyle{empty}
-  \cleardoublepage
   \microtypesetup{protrusion=false}
   \tableofcontents
-
-  %\listoffigures
-
-  %\listoftables
   \microtypesetup{protrusion=true}
-
-  \clearpage                            % End the current page making sure all
-  \thispagestyle{empty}                 % tables/figures are printed.
-  \cleardoublepage                      % Necessary for correct page numbering.
-
+  \cleardoublepage
   \pagenumbering{arabic}                % Reset the page numbering style.
 
   \part{Introduction and Theory}
   \include{./intro/chapter}
   \include{./model/chapter}
-  \include{./numerics/chapter}
-  \part{Numerical Studies}
-  \include{./wake/chapter}
-  \include{./shin/chapter}
-  \include{./nonequib/chapter}
-  \include{./afm/chapter}
-  \include{./conclusions/chapter}
+ % \include{./numerics/chapter}
+ % \part{Numerical Studies}
+ % \include{./wake/chapter}
+  %\include{./shin/chapter}
+  %\include{./nonequib/chapter}
+  %\include{./afm/chapter}
+  %\include{./conclusions/chapter}
 
   \part{Appendix}
   \appendix

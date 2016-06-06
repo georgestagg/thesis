@@ -15,10 +15,10 @@ The result of the mean-field methodology is the Gross-Pitaevskii equation (GPE),
 i \hbar \frac{\partial\psi({\bf r},t)}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V({\bf r},t) + g|\psi({\bf r},t)|^2 - \mu \right) \psi({\bf r},t),
 \label{eq:gpe}
 \end{equation}
-where $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$. In the homogeneous case $V_{\mathrm{trap}}({\bf r},t)=0$, otherwise a harmonic trapping potential is used. In the case of a 3D spherically symmetric condensate the harmonic trapping potential is defined as $V_{\mathrm{trap}}({\bf r},t)=m\omega{\bf r}^2/2$.
+where $m$ is the mass of a single particle, $\mu$ is the chemical potential, and $V({\bf r},t) = V_{\mathrm{obj}}({\bf r},t) + V_{\mathrm{trap}}({\bf r},t)$ is an external potential. In the case of no obstacles or surfaces the obstacle potential is $V_{\mathrm{obj}}({\bf r},t)=0$, otherwise $V_{\mathrm{obj}}({\bf r},t)$ is defined using Gaussian or step functions, as shown in Section \ref{section:potentials}. In the homogeneous case the trapping potential is $V_{\mathrm{trap}}({\bf r},t)=0$, otherwise harmonic trapping is used, such as $V_{\mathrm{trap}}({\bf r},t)=m\omega{\bf r}^2/2$ for a 3D spherically symmetric trap.
 
 The GPE takes the form of a non-linear time-dependent Schr\"odinger equation, where the first two terms on the right hand side are the energy of a single particle in a potential field, and the third non-linear term describes the interactions between the multiple particles in the system, with a strength usually parametrised by $g=4\pi\hbar^2a/m$,
-where $m$ is the mass of a single particle and $a$ is the s-wave scattering length. The wavefunction of the system is normalised so that the integrated density is equal to the number of atoms $N$,
+where $a_s$ is the s-wave scattering length. The wavefunction of the system is normalised so that the integrated density is equal to the number of atoms $N$,
 \begin{equation}
 \int\!|\psi|^2\,{\rm d}^3{\bf r} = N.
 \label{eq:normalisewf}
@@ -28,6 +28,13 @@ Taking into account the fact that the GPE is only strictly valid at $T=0$, it tu
 
 A detailed explanation of the mean-field formulation of the model and the full derivation of the GPE is shown in Section \ref{appsection:gpeqft}.
 
+\section{\label{section:gpestationary} Time-independent Gross-Pitaevskii equation}
+ We find a stationary version of the GPE by first fixing the potential, $V({\bf r})$, so that it is constant in time, and then writing the wavefunction in the form $\psi({\bf r},t) = \psi_0({\bf r})$, where $\psi_0({\bf r})$ is a stationary state. Equation \ref{eq:gpe} then becomes
+	\begin{equation}\label{eq:stationgpe}
+		\mu\psi_0({\bf r}) = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\psi_0({\bf r})|^2  \right) \psi_0({\bf r}),
+	\end{equation}
+	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard time-independent Schr\"odinger equation, with the chemical potential $\mu$ reducing to the energy per particle. This version of the GPE can be used to find stationary solutions of the system, with the value of $\mu$ characterising the energy of the ground state.
+
 \section{\label{section:mu} The chemical potential}
  The chemical potential of the system, $\mu$, can be thought of as the energy required to remove a particle from a system with large $N$, or alternatively as a measure of the energy of a particle. The value of $\mu$ will vary for the specific species of bosons considered and provides a useful scale of energy.
  
@@ -36,13 +43,6 @@ A detailed explanation of the mean-field formulation of the model and the full d
  		\mu = \left ( E_{\mathrm{kin}} + E_{\mathrm{pot}} + 2E_{\mathrm{int}} \right ) / N,
  	\end{equation}
  	where the quantities $E_{\mathrm{kin}}$, $E_{\mathrm{pot}}$ and $E_{\mathrm{int}}$ are defined in Appendix \ref{appsection:energy}.
-
-\section{\label{section:gpestationary} Time-independent Gross-Pitaevskii equation}
- We find a stationary version of the GPE by first fixing the potential, $V({\bf r})$, so that it is constant in time, and then writing the wavefunction in the form $\psi({\bf r},t) = \psi_0({\bf r}) \exp (-i\mu t / \hbar)$, where $\psi_0({\bf r})$ is a stationary state. Equation \ref{eq:gpe} then becomes
-	\begin{equation}\label{eq:stationgpe}
-		\mu\psi_0({\bf r}) = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\psi_0({\bf r})|^2  \right) \psi_0({\bf r}),
-	\end{equation}
-	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard time-independent Schr\"odinger equation, with the chemical potential $\mu$ reducing to the energy per particle. This version of the GPE can be used to find stationary solutions of the system, with the value of $\mu$ characterising the energy of the ground state.
 
 \section{\label{section:quasi2dgpe} Quasi-two-dimensional Gross-Pitaevskii equation}
 	For some condensate geometries it is useful to be able simulate the condensate via a lower dimensional GPE. An example of this is a highly oblate condensate, in which the trapping potential is defined as
@@ -105,7 +105,7 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 	We present two methods of making the GPE dimensionless, the specific scaling used is chosen by the needs of the simulation and is usually apparent (such as by whether a trapping potential is involved).
 
 	\subsection{\label{section:gpedimlesshomg} Homogeneous GPE}
-		Consider an infinite and homogeneous system with repulsive iterations and where $V_{\mathrm{trap}} = 0$. In this system's ground state, $\psi$ does not depend on ${\bf r}$ or $t$, and so we can set the time and spatial derivatives in the GPE to zero,
+		Consider an infinite and homogeneous system with repulsive interactions and where $V_{\mathrm{trap}} = 0$. In this system's ground state, $\psi$ does not depend on ${\bf r}$ or $t$, and so we can set the time and spatial derivatives in the GPE to zero,
 		\begin{equation}
 		0 = \left(g|\psi({\bf r},t)|^2 - \mu \right) \psi({\bf r},t).
 		\end{equation}
@@ -151,19 +151,16 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 		 \tilde{g} = \frac{gN}{\hbar \omega l_r^3}.
 	\end{equation}
 \section{\label{section:imagTime} The imaginary time propagation method}
+Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While often there exists analytic solutions for a condensate ground state, this problem is often solved numerically using so called eigensolvers. Numerically finding the ground state becomes practically necessary if a simulation requires complicated potential fields.
 
-	Many numerical explorations of quantum systems, particularly those associated with magnetic or optical trapping,  involve calculating the ground-state as either the final result or as a stepping stone for further calculations. While often there exists analytic solutions for a condensate ground state, this problem is often solved numerically using so called eigensolvers. Numerically finding the ground state becomes practically necessary if a simulation requires complicated potential fields.
+There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
 
-	There are several methods available for implementing a numerical eigensolver: inverse iteration and Lanczos methods \cite{thijssen1999computational}, systematic variational techniques \cite{Bao2003230}, boundary eigenvalue methods \cite{Edwards95}, conjugate gradient techniques \cite{NumericalRecipes} and imaginary time propagation \cite{PhysRevE.62.7438}. We choose to use the last of these methods due to its relative simplicity at the expense of computational time.
-
-	The imaginary time method revolves around moving from real to imaginary time using the substitution $t_i = -it$. This transforms the GPE into a form similar to a diffusion equation. As a result, a local equilibrium can be found by propagating $t_i$. This can be understood by considering a trial solution (as similar to the true ground-state as possible) as a collection of eigenfunctions $\psi_n$ corresponding to eigenvalues $E_n$,
+The imaginary time method revolves around moving from real to imaginary time using the substitution $t_i = -it$. This transforms the GPE into a form similar to a diffusion equation. As a result, a local equilibrium can be found by propagating in time. This can be understood by considering a solution of the form $\psi(\mathbf{r},t) = \sum_n \psi_n(\mathbf{r})\exp(-i E_n t/\hbar)$, where $\psi(\mathbf{r},t)$ is a superposition of eigenfunctions $\psi_n(\mathbf{r})$ with eigenvalues $E_n$. Under propagation of the GPE in imaginary time, the wavefunction exponentially decays,
 \begin{equation*}
-\psi(\mathbf{r},t_i) = \sum_n \psi_n(\mathbf{r})\exp\left(-\frac{E_nt_i}{\hbar}\right).
+\psi(\mathbf{r},t_i) = \sum_n \psi_n(\mathbf{r})\exp\left(\frac{-E_n t}{\hbar}\right).
 \end{equation*}
-The eigenfunctions decay exponentially under propagation of the GPE in imaginary time. In particular, the decay rate is directly related to the size of the eigenvalues $E_n$, so that eigenfunctions relating to higher eigenvalues decay the fastest. The final ingredient is to inhibit the overall decay of the wavefunction by renormalising during propagation. After a sufficient transient time the contributions from the higher eigenvalues become negligible, forcing the wavefunction to tend towards the lowest energy eigenfunction,
-\begin{equation*}
-\psi(\mathbf{r},t_i) \rightarrow \psi_0(\mathbf{r})\exp\left(-\frac{E_0t_i}{\hbar}\right).
-\end{equation*}
+In particular, the decay rate is directly related to the size of the eigenvalues $E_n$, so that the contributions from higher energy eigenfunctions decay the fastest. The final ingredient is to inhibit the overall decay of the wavefunction by renormalising during propagation. After a sufficient transient time the contributions from higher energy eigenfunctions become negligible, forcing the wavefunction to tend towards the ground state.
+
 The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many numerical steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be made more accurate with this method by imposing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics; minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
 
 The energy can be used as a way to gauge the solution convergence. An example ground state solution for a 2D condensate in a harmonic trap is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. For $t_i > 0.6/\omega$ the computed ground state energy does not significantly change, a good indicator that the ground state has been found to sufficient accuracy.
@@ -252,7 +249,7 @@ p_x & p_y & p_z \end{array} \right|.
 	\begin{equation*}\label{eq:dissantiherm}
 		i\Gamma\left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\psi({\bf r})|^2 - \mu \right) \psi({\bf r}),
 	\end{equation*}
-	which will forced to zero at equilibrium by satisfaction of Equation \ref{eq:stationgpe}. Here $\Gamma$ is a dimensionless value parametrising the relaxation.
+	which will be forced to zero at equilibrium by satisfaction of Equation \ref{eq:stationgpe}. Here $\Gamma$ is a dimensionless value parametrising the relaxation.
 
 	Another property we require is that when $\Gamma=0$ the $T=0$ behaviour of the GPE is recovered. This forces us to write $\hat{Q}\psi$ as
 	\begin{equation*}\label{eq:dissantiherm2}
@@ -264,7 +261,7 @@ p_x & p_y & p_z \end{array} \right|.
 	\end{equation}
 	where $\Gamma<0$ for damping.
 
-	Equation \ref{eq:dissgpeA} describes the evolution of an exited condensate $\psi$ towards equilibrium. An example of this is shown in Figure \ref{fig_excitationdecay}. The process can be understood by considering $\psi$ to be made up of a ground state $\psi_0$ and a coherent excitation $\delta$,
+	Equation \ref{eq:dissgpeA} describes the evolution of an exited condensate $\psi$ towards equilibrium. The process can be understood by considering $\psi$ to be made up of a ground state $\psi_0$ and a coherent excitation $\delta$,
 	\begin{equation*}\label{eq:dissantiherm2}
 		\psi = e^{-i \mu t}(\psi_0 + \delta).
 	\end{equation*}
@@ -274,7 +271,16 @@ p_x & p_y & p_z \end{array} \right|.
 		\end{equation}
 	%The GPE can be modified to provide a simple phenomenological model of a condensate's interaction with the thermal cloud. The phenomenological damping term, $\gamma$, is added to the right hand side of the GPE with the effect that the energy in the system no longer remains constant. The energy will instead vary over time to approach some constant value, depending on $\mu$.
 	where $k_{\rm B}$ is Boltzmann's constant and $g_c = 3$ is a factor used for correction.
-\begin{figure}[!ht]
+
+	For an arbitrary wavefunction $\psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy the normalisation condition, Equation \ref{eq:normalisewf}). The resulting equilibrium state may be different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the particle number is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Algorithm \ref{algo_mu}.
+
+	Some authors \cite{tsubota_kasamatsu_02,madarassy_barenghi_08} write the DGPE in a similar but different way,
+	\begin{equation}\label{eq:dissgpeB}
+		(i-\gamma)\hbar \frac{\partial \psi}{\partial t} = \left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\psi|^2({\bf r}) - \mu \right) \psi({\bf r}),
+	\end{equation}
+	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma \ll 1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours. An example evolution using Equation \ref{eq:dissgpeB} is shown in Figure \ref{fig_excitationdecay}, also demonstrating the method of carefully choosing a value of $\mu$ using Algorithm \ref{algo_mu}, so that the equilibrium state approached using the DGPE matches the true ground state.
+
+	\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -371,17 +377,9 @@ p_x & p_y & p_z \end{array} \right|.
 	\caption{Simulated DGPE for a condensate with interaction energy $\tilde{g}=2000$, $\tilde{\mu}=25.27$ and $\gamma=0.01$. The total energy (upper) is shown during both imaginary and real time. At $t = 0$ an excitation is added to the condensate [$\tilde{\psi}\rightarrow \tilde{\psi} + \sin(x/l_r)\cos(y/l_r)$]. The ground state is then re-approached through dissipation. Density and phase are shown (below) at time $t=0$ (left), $t=1/\omega$ (center), and $t=40/\omega$ (right).}\label{fig_excitationdecay}
 \end{figure}
 
-	For an arbitrary wavefunction $\psi$ (that is preferably close to a true solution of the GPE), evolution will indeed approach an equilibrium state. However it is important to note that since now the equation of motion is non-Hermitian, the evolution does not conserve total energy or total atom number. For a fixed chemical potential $\mu$ and interaction strength $g$, the final equilibrium state may no longer satisfy the normalisation condition, Equation \label{eq:normalisewf}). The resulting equilibrium state may be different from the ground state as found by imaginary time propagation or other eigensolvers. It is therefore necessary to force consistency by either renormalising the wavefunction every time step so that the particle number is constant, or by carefully choosing the value of the chemical potential so that the equilibrium state approached using the DGPE matches the true ground state with correct atom number. The latter of these two methods is perhaps preferred as it is less artificial in nature, and so a numerical technique for finding the `correct' $\mu$ for a given value of $g$ is presented in Algorithm \ref{algo_mu}. The evolution shown in Figure \ref{fig_excitationdecay} demonstrates the method of carefully choosing a value of $\mu$.
-
-	Some authors \cite{tsubota_kasamatsu_02,madarassy_barenghi_08} write the DGPE in a similar but different way,
-	\begin{equation}\label{eq:dissgpeB}
-		(i-\gamma)\hbar \frac{\partial \psi}{\partial t} = \left( -\frac{\hbar^2 }{2m}\nabla^2 + V({\bf r}) + g|\psi|^2({\bf r}) - \mu \right) \psi({\bf r}),
-	\end{equation}
-	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma \ll 1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours.
-
 \section{\label{section:cfield} Finite temperature homogeneous condensate using the classical field method}
 
-A common method of simulating finite temperature Bose gases is the classical field methods, also referred to as c-field methods. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the classical-field method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\psi$ is reinterpreted.
+A common method of simulating finite temperature Bose gases is the classical-field method, also referred to as c-field method. The classical-field method used in this thesis is investigated and laid out in \cite{PhysRevA.66.013603}. The advantage of the method is that the numerics are no more complicated than simulations of the zero-temperature GPE, instead the meaning of the field $\psi$ is reinterpreted.
 
 An analysis of the kinetics of a weakly interacting bosonic field was undertaken in \cite{PhysRev.147.214} and it was demonstrated that under the assumption that the occupation numbers are large, the system evolves as an ensemble of classical fields with corresponding classical-action. In the case of a highly disordered and weakly interacting Bose gas, the state can be viewed as a mixture of coherent modes, each of which evolves (to leading order) along the classical trajectory described by Equation \ref{eq:gpe}. The initial condition for numerical simulations of this system must reflect the highly occupied and non-equilibration nature of the Bose gas, and is described in Section \ref{section:cfieldinitcond}.
 
@@ -425,7 +423,7 @@ We emphasise that the requirements of large occupation numbers and weak interact
 	\begin{equation}
 		\psi(x,t) = \sqrt{\rho}\exp\left(-\frac{i\mu}{\hbar}t\right)\left\{ \sqrt{1-\frac{v^2}{c^2}} \tanh\left[ \sqrt{1-\frac{v^2}{c^2}}\frac{(x-vt)}{\xi} \right ] + \frac{iv}{c}  \right \} ,
 	\end{equation}
-	where $v$ is the velocity of the soliton and $c$ is the speed of sound. Examples of dark solitons are seen in Figures \ref{fig_solitons} and \ref{fig_solitonmove}.
+	where $v$ is the velocity of the soliton and $c=\sqrt{\rho g/m}$ is the speed of sound. Examples of dark solitons are seen in Figures \ref{fig_solitons} and \ref{fig_solitonmove}.
 	\begin{figure}[!ht]
 	\centering
    \begin{tikzpicture}
@@ -514,7 +512,7 @@ We have already seen in section \ref{section:quantisedcirculation} that rotation
 
 The 2D quantised vortex core solution (or equivalently the solution in the plane perpendicular to a straight line 3D vortex) is circularly symmetric and can be written in polar coordinates as
 	\begin{equation}\label{eq_vortexsol}
-	\psi(r,\varphi) = f_v(r)\exp(n\mathrm{i}\varphi),
+	\psi(r,\varphi) = f_v(r)\sqrt{\rho}\exp(n\mathrm{i}\varphi),
 	\end{equation}
 where $n\in\mathbb{Z}$ is the charge or winding number of the vortex. Vortex solutions can be found numerically using the imaginary time propagation method outlined in Section \ref{section:imagTime} and an example 2D solution with $n=1$ is shown in Figure \ref{fig_vortexdensphase}.
 
@@ -543,11 +541,11 @@ where $n\in\mathbb{Z}$ is the charge or winding number of the vortex. Vortex sol
   \caption{Density and phase of a vortex at $(x,y) = (0,0)$ with $n=1$, found numerically with the GPE in imaginary time. Note how the density dip at the vortex centre masks the phase singularity from the fluid. }\label{fig_vortexdensphase}
  \end{figure}
 
-No analytic form exists for the shape of the vortex core, $f_v(r)$, and it must be approximated or calculated numerically. A useful approximation for the shape of the core when $n=1$ is the Pad\'e approximation outlined in \cite{berloff2004},
+No analytic form exists for the shape of the vortex core, $f_v(r)$, and it must be approximated or calculated numerically. A useful approximation for the shape of the core when $n=1$ is the Pad\'e approximation,
 	\begin{equation}
-		f_v(r) = \sqrt{\frac{0.6874(r/\xi)^2 + 0.1144(r/\xi)^4}{1+0.6666(r/\xi)^2+0.1144(r/\xi)^4}},
+		f_v(r) = \sqrt{\frac{0.6874(r/\xi)^2 + 0.1144(r/\xi)^4}{1+0.6666(r/\xi)^2+0.1144(r/\xi)^4}}.
 	\end{equation}
-which captures the correct vortex core asymptotic behaviour for $r\rightarrow 0$ and $r\rightarrow\infty$ and is close to the true vortex solution everywhere. A comparison of the Pad\'e approximation and the true ($n=1$) vortex solution is shown in Figure \ref{fig_vortex} (a). Note that the density dip heals over a radius on the order of $5\xi$. While the density heals over a short area around the vortex, the presence of a vortex changes the phase in the entirety of the fluid; vortices are a truly non-local phenomenon and multiple vortices can interact even when separated much further than the size of their density cores.
+which takes the values $f_v(0) = 0$ and $f_v(r) = 1$ as $r\rightarrow\infty$, and is close to the true vortex core shape everywhere \cite{berloff2004}. A comparison of the Pad\'e approximation and the true ($n=1$) vortex solution is shown in Figure \ref{fig_vortex} (a). Note that the density dip heals over a radius on the order of $5\xi$. While the density heals over a short area around the vortex, the presence of a vortex changes the phase in the entirety of the fluid; vortices are a truly non-local phenomenon and multiple vortices can interact even when separated much further than the size of their density cores.
 
 \begin{figure}[!ht]
 	\hspace{-0.13\linewidth}(a)\hspace{0.45\linewidth}(b)\hspace{0.03\linewidth}\\
@@ -597,7 +595,7 @@ As seen in Section \ref{section:hydrodynamic}, the velocity of the fluid can be 
 where ${\bm{\hat{\varphi}}}$ is the azimuthal unit vector. Note the $v \propto 1/r$ dependence in the speed of the fluid around the vortex, demonstrated in Figure \ref{fig_vortex} (b). 
 
 \section{\label{section:inital} Initial conditions}
-	When numerically solving the GPE, an initial condition must be chosen. Correct choice of initial condition is important for accurate simulation of dynamics. If a unstable initial condition is chosen far from the ground state solution, noise and other excitations such as solitary waves and vortices may be generated that interfere with any measurements and studies undertaken at later times in the numerical computation. A selection of appropriate non-violent initial conditions are outlined in this section. 
+	When numerically solving the GPE, an initial condition must be chosen. Correct choice of initial condition is important for accurate simulation of dynamics. If an unstable initial condition is chosen far from the ground state solution, noise and other excitations such as solitary waves and vortices may be generated that interfere with any measurements and studies undertaken at later times in the numerical computation. A selection of appropriate non-violent initial conditions are outlined in this section. 
 	\subsection{\label{section:homoinit} Homogeneous initial condition}
 	When the potential term $V=0$, the condensate ground state becomes homogeneous with density $\rho=\mu/g$. In this case, a stationary solution of the GPE is as simple as setting the ground state density everywhere,
 	\begin{equation}
@@ -671,7 +669,7 @@ where ${\bm{\hat{\varphi}}}$ is the azimuthal unit vector. Note the $v \propto 1
 	\begin{equation}
 	R_{\mathrm{TF}} = \sqrt{\frac{2\mu}{m\omega_r^2}}.
 	\end{equation}
-The TF radius is an useful indicator of length scales when working with analytical descriptions of condensate behaviours in a trapped system.
+The TF radius is a useful indicator of length scales when working with analytical descriptions of condensate behaviours in a trapped system.
 
 \subsection{\label{section:cfieldinitcond} Classical field initial condition}
 	In numerical simulation of a finite temperature Bose gas, we begin with a highly non-equilibrium state, so that the low-lying coherent modes of the system are all highly occupied. The corresponding initial condition is
