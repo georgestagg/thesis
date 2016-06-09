@@ -31,7 +31,7 @@ A detailed explanation of the mean-field formulation of the model and the full d
 \section{\label{section:gpestationary} Time-independent Gross-Pitaevskii equation}
  We find a stationary version of the GPE by first fixing the potential, $V({\bf r})$, so that it is constant in time, and then writing the wavefunction in the form $\psi({\bf r},t) = \psi_0({\bf r})$, where $\psi_0({\bf r})$ is a stationary state. Equation \ref{eq:gpe} then becomes
 	\begin{equation}\label{eq:stationgpe}
-		\mu\psi_0({\bf r}) = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\psi_0({\bf r})|^2  \right) \psi_0({\bf r}),
+		0 = \left( -\frac{\hbar^2}{2m}\nabla^2 + V({\bf r}) + g|\psi_0({\bf r})|^2 - \mu\right) \psi_0({\bf r}),
 	\end{equation}
 	the time-independent GPE. In the absence of interactions, $g=0$, this reduces to the standard time-independent Schr\"odinger equation, with the chemical potential $\mu$ reducing to the energy per particle. This version of the GPE can be used to find stationary solutions of the system, with the value of $\mu$ characterising the energy of the ground state.
 
@@ -66,23 +66,23 @@ A detailed explanation of the mean-field formulation of the model and the full d
 	\begin{equation}
 		\psi({\bf r},t) = R({\bf r},t)\exp (i\theta({\bf r},t)),
 	\end{equation}
-	 and identify the fluid density as $\rho=mR^2$ and the velocity as $\mathbf{v} = \hbar\nabla\theta/m $.
+	 and identify the fluid density as $n=mR^2$ and the velocity as $\mathbf{v} = \hbar\nabla\theta/m $.
 	In vector form we obtain a continuity equation
 	\begin{equation}
-	  \frac{\partial \rho}{\partial t} + \nabla\cdot(\rho{\bf v}) = 0,
+	  \frac{\partial n}{\partial t} + \nabla\cdot(n{\bf v}) = 0,
 	  \label{eq:MTcont}
 	\end{equation}
 	and an equation similar to the Euler equation for an inviscid fluid,
 	\begin{equation}
-	\rho\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - \rho \nabla \left(\frac{V}{m}\right).
+	n\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - n \nabla \left(\frac{V}{m}\right).
 	\end{equation}
-	where $P_{jk} = -\frac{\hbar^2}{4m^2}\rho\frac{\partial^2\ln{\rho}}{\partial x_j \partial x_k}$ is known as the quantum pressure.
+	where $P_{jk} = -\frac{\hbar^2}{4m^2}n\frac{\partial^2\ln{n}}{\partial x_j \partial x_k}$ is known as the quantum pressure.
 	A detailed derivation of this result can be found in Appendix \ref{appsection:madtrans}.
 
 \section{\label{section:quantisedcirculation} Quantised circulation}
 An interesting feature of the GPE is that the fluid circulation must be quantised. We can see this by first writing the integrated change of phase along any closed curve $C$,
 \begin{equation}
-	\Delta\theta = \oint_C \! \nabla \theta  \, \mathrm{d}\mathbf{l},
+	\Delta\theta = \oint_C \! \nabla \theta  \cdot \mathrm{d}\mathbf{l},
 \end{equation}
 where $\mathrm{d}\mathbf{l}$ is the line element along $C$. The wavefunction at the start and the end of the integration must be single valued, so
 \begin{equation}
@@ -109,9 +109,9 @@ Notice that we are now taking the line integral of the velocity; we have a formu
 		\begin{equation}
 		0 = \left(g|\psi({\bf r},t)|^2 - \mu \right) \psi({\bf r},t).
 		\end{equation}
-		By rearranging, we can easily find the natural homogeneous density of the system: $\rho = |\psi|^2 = \mu/g$. We then choose to rescale the wavefunction using this value, so that $\bar{\psi} = \psi/\sqrt{\rho}$.
+		By rearranging, we can easily find the natural homogeneous density of the system: $n({\bf r}) = |\psi({\bf r})|^2 = \mu/g$. We then choose to rescale the wavefunction using this value, so that $\bar{\psi} = \psi/\sqrt{\rho}$, where $\rho = \mu/g$.
 
-		By dimensional arguments (see Appendix \ref{section:healing} for details), the length scale of space is the healing length, $\xi = \hbar/\sqrt{mg\rho}$, and the length scale of time $\tau = \hbar/(g\rho)$. These units are often called the `natural units'. We define the rescaled dimensionless quantities as
+		By dimensional arguments (see Appendix \ref{section:healing} for details), the length scale of space is the healing length $\xi = \hbar/\sqrt{mg\rho}$ and the length scale of time is $\tau = \hbar/(g\rho)$, where we have used $n({\bf r}) = \rho$ as the homogeneous uniform density. The scale of velocity in the system is the speed of sound, $c=\sqrt{\rho g/m}$ (see Appendix \ref{section:speed_of_sound} for details). These units are often called the `natural units'. We define the rescaled dimensionless quantities as
 		\begin{equation}
 			\bar{t} = \frac{t}{\tau}, ~~~ \bar{r} = \frac{r}{\xi}, ~~~ \bar{\varepsilon} = \frac{\varepsilon}{\mu},
 		\end{equation}
@@ -213,7 +213,7 @@ The energy can be used as a way to gauge the solution convergence. An example gr
 	\end{equation}
 
 	\subsection{\label{section:rotatingframe} Rotating frame}
-	The GPE is transformed into the rotating reference frame via the angular momentum operator. Recall that in classical mechanics that the angular momentum is defined as a vector product of the position $\mathbf{r}$ and the momentum $\mathbf{p}$,
+	The GPE is transformed into the rotating reference frame via the angular momentum operator. Recall that in classical mechanics the angular momentum is defined as a vector product of the position $\mathbf{r}$ and the momentum $\mathbf{p}$,
 	\begin{equation*}
 		\mathbf{L} = \mathbf{r} \times \mathbf{p} = 
 		\left| \begin{array}{ccc}
@@ -725,10 +725,10 @@ where  $V_0$ is its amplitude, $d$ its width in the $y$ direction, and $(x_0,y_0
       \addplot graphics [xmin=-0.5,xmax=0.5,ymin=-0.5,ymax=0.5] {afm/afm2.png};
     \end{axis}
   \end{tikzpicture}
-  \caption{An atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence. This data was kindly provided by C. R. Lawson \cite{Lawson}.}\label{fig_afmprofile}
+  \caption{An atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence (data provided by R. P. Haley and C. Lawson \cite{Lawson}).}\label{fig_afmprofile}
  \end{figure}
 
-In many superfluid helium experiments \cite{VinenSkrbek2008} turbulence is generated by moving obstacles, the surface of which are rough on the length scale of the superfluid vortex core, which is of
+In many superfluid helium experiments \cite{VinenSkrbek2008} turbulence is generated by moving obstacles, the surfaces of which are rough on the length scale of the superfluid vortex core, which is of
 the order of $10^{-10}~\rm m$ in $^4$He
 and $10^{-8}~\rm m$ in $^3$He.  As an example, Figure \ref{fig_afmprofile} is an atomic force microscope (AFM) image showing the microscopic detail on the surface of a  single--core NbTi `floppy' wire used for generating superfluid turbulence  \cite{Bradley2011}.  Note the appearance of an elongated scratch, believed to be typical of such wires.
 

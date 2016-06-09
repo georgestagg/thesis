@@ -21,11 +21,11 @@ thermal dissipation, modelled through a phenomenological dissipation term.  Nota
 \section{Model}
 In the experiment, a $^{23}$Na condensate with $N=1.8\times 10^6$ atoms was confined within a highly-oblate cylindrically symmetric harmonic trap $V_{\mathrm{trap}}(x,y,z)=\frac{1}{2}m[\omega_r^2 (x^2+y^2) +\omega_z^2 z^2 ]$, with axial frequency $\omega_z=2 \pi \times 350$ Hz and radial frequency $\omega_r=2\pi \times 15$ Hz (corresponding to an aspect ratio parameter $\omega_z/\omega_r \approx 23$) and where $m$ denotes the atomic mass.  
 A 2D mean-field description is strictly valid when 
-the condition $N a l_z^3/l_r^3 \ll 1$ is satisfied, 
+the condition $N a l_z^3/l_r^4 \ll 1$ is satisfied, 
 where $l_z=\sqrt{\hbar/m \omega_z}$ and $l_r=\sqrt{\hbar/m\omega_r}$ 
 are the axial and radial harmonic oscillator lengths and $a$ is 
 the {\it s}-wave scattering length \cite{delgado,parker2008}.  
-For this experiment, $N a l_z^3/l_r^3=8.3$, i.e. the system remains 
+For this experiment, $N a l_z^3/l_r^4=8.3$, i.e. the system remains 
 3D in nature.   Nonetheless, the dynamics of the vortices is essentially 2D 
 due to the suppression of Kelvin waves in 
 the $z$-direction~\citep{jackson_proukakis_09}.  
@@ -35,7 +35,7 @@ It is worth noting that in the $xy$ plane the condensate
 closely approximates a Thomas-Fermi (inverted parabola) density 
 profile with radius $R_{\rm TF}\approx70 \mu m$.
 
-We parametrise the condensate by the 2D wavefunction $\psi({\bf r},t)$; the condensate density distribution follows as $n({\bf r},t)=|\psi({\bf r},t)|^2$.  The wavefunction satisfies the GPE, Equation (\ref{eq:gpe}), as described in Section \ref{section:gpe}. For computational efficiency, the numerical simulations are performed using dimensionless quantities as described in Section \ref{section:gpedimlesstrap}. Quantities are made dimensionless by writing them in terms of the harmonic oscillator units: length in terms of the radial harmonic oscillator length $l_r$, energy in terms of $\hbar\omega_r$, and time in terms of inverse radial trapping frequency $\omega_r^{-1}$. However, to remain relevant to the experimental work of Shin \etal, in this chapter we report all quantities in their full dimensional form.
+We parametrise the condensate by the 2D wavefunction $\psi({\bf r},t)$; the condensate density distribution follows as $n({\bf r},t)=|\psi({\bf r},t)|^2$.  The wavefunction satisfies the GPE, Equation (\ref{eq:gpe}), as described in Section \ref{section:gpe}. For computational efficiency, the numerical simulations are performed using dimensionless quantities as described in Section \ref{section:gpedimlesstrap}. Quantities are made dimensionless by writing them in terms of the harmonic oscillator units: length in terms of the radial harmonic oscillator length $l_r$, energy in terms of $\hbar\omega_r$, and time in terms of inverse radial trapping frequency $\omega_r^{-1}$. However, to remain relevant to the experimental work of Kwon {\it et al.}, in this chapter we report all quantities in their full dimensional form.
 
 We solve the GPE on a $1024 \times 1024$ grid, with grid spacing $0.27\mu$m in both $x$ and $y$, using the fourth-order Runge-Kutta method described in Section \ref{section:RK4}. We have verified that reducing the grid spacing has no effect on our results. The vortex core size is characterized by the healing length $\xi=\hbar/\sqrt{m n g}$; at the condensate centre this has the value $\xi \approx 0.6 \mu$m.
 
@@ -73,7 +73,7 @@ with $V_0=15 \mu$ and $d=11.31\mu$m.  The initial ground-state BEC is obtained b
     \end{axis}
 \end{tikzpicture}
 \end{center}
-\caption{\label{fig:N_vV} Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red squares), with dissipation $\gamma = 0.0003$ (blue circles) and experimental results extracted from Figure 1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as dashed lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $v_c\approx 4.6$ mm/s.  }
+\caption{\label{fig:N_vV} Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red squares), with dissipation $\gamma = 0.0003$ (blue circles) and experimental results extracted from Figure 1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $v_c\approx 4.6$ mm/s.  }
 \end{figure} 
 Following removal of the obstacle, we determine the number of vortices in the system $N_v$ using the methods described in Section \ref{section:vortexidentifying}.  
 We limit our search to $75$ percent of the Thomas-Fermi radius \ngp{(centred on the centre-of-mass to account for sloshing motion)}; by avoiding the low density periphery we avoid artefacts from ghost vortices and match closely what is performed experimentally (since vortices close to the edge are not detected due to low signal-to-noise~\citep{shin_private}). 
@@ -313,7 +313,7 @@ At first $N_v$ grows steeply, as vortices (around 40-60) are rapidly driven into
     \end{axis}
 \end{tikzpicture}%
 \end{center}
-\caption{\label{fig:N_vLong} Vortex decay in the absence of dissipation (a, c) and with dissipation $\gamma=0.0003$ (b, d) for a translational speed of $v=1.4$mm/s.  The upper figures show the decay of the total vortex number $N_v(t)$, with the contribution of drifting and annihilation depicted by the shaded regions.  The lower figures show the drift number $N_d(t)$ and annihilation number $N_a(t)$, plus their respective fits.}
+\caption{\label{fig:N_vLong} Vortex decay in the absence of dissipation (a, c) and with dissipation $\gamma=0.0003$ (b, d) for a translational speed of $v=1.4$mm/s.  The upper figures show the decay of the total vortex number $N_v(t)$, with the contribution of drifting and annihilation depicted by the shaded regions.  The lower figures show the drift number $N_d(t)$ (blue solid lines) and annihilation number $N_a(t)$ (red solid lines), plus their respective fits (dashed lines).}
 \end{figure}
 
 \subsubsection{Kwon's decay model}\label{kwon_fitting}
@@ -576,9 +576,9 @@ of these observed structures.  In this direction, an approach has recently been 
 \end{figure}
 
 \section{Vortex Generation via an Elliptical Obstacle}
-It is evident from the snapshots in Figure 2 that the initial translation of the condensate past the obstacle generates not just vortices but also shape excitations, sound waves (low-amplitude density waves), and high-amplitude density waves.  These additional excitations will heat the condensate and modify the subsequent turbulent dynamics in a highly nonlinear and complicated manner.  While reducing the translational speed reduces this disruption, this also reduces the number of vortices.  A less disruptive and more efficient (higher rate of vortex nucleation) means to generate vortices may be provided by employing a laser-induced obstacle of a form similar to that used in Chapter \ref{cha:wake}, with an {\it elliptical} rather than circular cross-section (experimentally attainable through cylindrical beam focusing).
+It is evident from the snapshots in Figure \ref{fig:densSnapshots} that the initial translation of the condensate past the obstacle generates not just vortices but also shape excitations, sound waves (low-amplitude density waves), and high-amplitude density waves.  These additional excitations will heat the condensate and modify the subsequent turbulent dynamics in a highly nonlinear and complicated manner.  While reducing the translational speed reduces this disruption, this also reduces the number of vortices.  A less disruptive and more efficient (higher rate of vortex nucleation) means to generate vortices may be provided by employing a laser-induced obstacle of a form similar to that used in Chapter \ref{cha:wake}, with an {\it elliptical} rather than circular cross-section (experimentally attainable through cylindrical beam focusing).
 
-Repeating our simulations with such an elliptical obstacle, governed by Equation (\ref{eq:potentialcylinder}), with arbitrary ellipticity $\varepsilon=3$ (the short/long axis being parallel/perpendicular to the flow) confirms the same qualitative behaviour as in Chapter \ref{cha:wake} for homogeneous systems \citep{stagg_parker_14}: the ellipticity acts to reduce the critical superfluid velocity and, for a given flow speed, increase the rate of vortex nucleation. To illustrate the merits of the elliptical obstacle, in Figure \ref{fig:ellipse} we depict snapshots of the condensate dynamics for ellipticity $\varepsilon=3$ and a translational speed of $v=0.8$mm/s. Despite a lower translational speed, the number of vortices generated by the time the obstacle is removed is almost identical to the circular example of Figure \ref{fig:N_vTime}.  As a consequence of the reduced translational speed, the condensate disruption is visibly reduced. It is also worth noting that the elliptical obstacle promotes the formation of clusters of like-signed vortices (see intermediate time), and thus may facilitate future exploration of coherent vortex structures.
+Repeating our simulations with such an elliptical obstacle, whose shape is defined by Equation (\ref{eq:potentialcylinder}), with arbitrary ellipticity $\varepsilon=3$ (the short/long axis being parallel/perpendicular to the flow) confirms the same qualitative behaviour as in Chapter \ref{cha:wake} for homogeneous systems \citep{stagg_parker_14}: the ellipticity acts to reduce the critical superfluid velocity and, for a given flow speed, increase the rate of vortex nucleation. To illustrate the merits of the elliptical obstacle, in Figure \ref{fig:ellipse} we depict snapshots of the condensate dynamics for ellipticity $\varepsilon=3$ and a translational speed of $v=0.8$mm/s. Despite a lower translational speed, the number of vortices generated by the time the obstacle is removed is almost identical to the circular example of Figure \ref{fig:N_vTime}.  As a consequence of the reduced translational speed, the condensate disruption is visibly reduced. It is also worth noting that the elliptical obstacle promotes the formation of clusters of like-signed vortices (see intermediate time), and thus may facilitate future exploration of coherent vortex structures.
 
 
 \begin{figure}

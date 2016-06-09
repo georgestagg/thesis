@@ -65,7 +65,7 @@ The 2D (3D) system is simulated using the fourth-order Runge-Kutta method descri
 
 \section{Two-Dimensional Wakes}
 \subsection{Vortex emission from circular obstacles}\label{subsec:circular}
-The 2D scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogues and disparities between classical and quantum fluids. In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch {\it et al.} \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle. Although Frisch {\it et al.} considered a ``hard'' cylinder, it is also natural to employ a ``soft'' Gaussian potential (usually used in the context of atomic condensates). In practice this changes the quantitative, but not the qualitative, behaviour.  Sasaki {\it et al.} \cite{saito10} recently provided an extensive picture of 2D superflow past such a Gaussian obstacle.   The flow regimes are depicted in Figure \ref{fig:denstypes}, based on simulations of the 2D GPE using similar parameters to \cite{saito10}.   At low flow velocity (a), the fluid undergoes smooth laminar flow around the obstacle.  The streamlines of this flow are symmetric about $x=0$, as in perfect potential flow.  At a critical flow velocity, the local fluid velocity (which is highest at the poles of the obstacle) exceeds the speed of sound, breaking Landau's criterion.  Vortex pairs of opposite sign are nucleated periodically and drift downstream, forming a collimated wake of vortex pairs which are widely separated from each other (b).  For higher velocities (c), alternating pairs of like-signed vortices are nucleated.  At even higher velocities, vortex nucleation becomes highly irregular (d), forming a chaotic downstream distribution of vortices and sound (density) waves.  These quantum fluid flow patterns bear some analogy to the classical flow patterns of Figure \ref{fig:taneda-imgs}, particularly for the laminar flow and chaotic regimes.  The alternating like-signed vortices form a somewhat primitive analogue of the B\'enard--von K\'arm\'an vortex street, while the vortex-antivortex pairs have no obvious classical analogue.  
+The 2D scenario of an obstacle moving through a superfluid offers a simplified platform to consolidate analogues and disparities between classical and quantum fluids. In their pioneering simulations of the 2D nonlinear Schr\"odinger equation, Frisch {\it et al.} \cite{frisch92} observed the formation of vortex pairs in the flow past a circular obstacle. Although Frisch {\it et al.} considered a ``hard'' cylinder, it is also natural to employ a ``soft'' Gaussian potential (usually used in the context of atomic condensates). In practice this changes the quantitative, but not the qualitative, behaviour.  Sasaki {\it et al.} \cite{saito10} recently provided an extensive picture of 2D superflow past such a Gaussian obstacle.   The flow regimes are depicted in Figure \ref{fig:denstypes}, based on simulations of the 2D GPE using similar parameters to \cite{saito10}.   At low flow velocity (a), the fluid undergoes smooth laminar flow around the obstacle.  The streamlines of this flow are symmetric about $x=0$, as in perfect potential flow.  At a critical flow velocity, the local fluid velocity (which is highest at the poles of the obstacle) exceeds the speed of sound, $c$, breaking Landau's criterion.  Vortex pairs of opposite sign are nucleated periodically and drift downstream, forming a collimated wake of vortex pairs which are widely separated from each other (b).  For higher velocities (c), alternating pairs of like-signed vortices are nucleated.  At even higher velocities, vortex nucleation becomes highly irregular (d), forming a chaotic downstream distribution of vortices and sound (density) waves.  These quantum fluid flow patterns bear some analogy to the classical flow patterns of Figure \ref{fig:taneda-imgs}, particularly for the laminar flow and chaotic regimes.  The alternating like-signed vortices form a somewhat primitive analogue of the B\'enard--von K\'arm\'an vortex street, while the vortex-antivortex pairs have no obvious classical analogue.  
 
 \begin{figure}
 (a) \hspace{7.2cm}(b)\\
@@ -134,7 +134,7 @@ The 2D scenario of an obstacle moving through a superfluid offers a simplified p
     \addplot graphics [xmin=190,xmax=410,ymin=-45,ymax=45] {wake/noise_circle2};
   \end{axis}
 \end{tikzpicture}\\
-  \caption{\label{fig:denstypes} Condensate density during flow past a circular obstacle ($d = 5\xi$) at various flow speeds. For reference the critical velocity here is $v_c \approx 0.36~c$.  (a) Laminar flow at a sub-critical flow speed ($v=0.3~c$).  The fluid velocity vector field and two streamlines illustrate the flow pattern. (b) Nucleation of vortex-antivortex pairs ($v=0.365~c$).  (c) Nucleation of like-signed vortex pairs ($v=0.37~c$). (d)  Chaotic vortex nucleation and generation of strong sound waves, forming a turbulent wake ($v=0.9~c$).}
+  \caption{\label{fig:denstypes} Condensate density during flow past a circular obstacle ($d = 5\xi$) at various flow speeds. For reference the critical velocity here is $v_c \approx 0.36~c$, where $c$ is the speed of sound.  (a) Laminar flow at a sub-critical flow speed ($v=0.3~c$).  The fluid velocity vector field and two streamlines illustrate the flow pattern. (b) Nucleation of vortex-antivortex pairs ($v=0.365~c$).  (c) Nucleation of like-signed vortex pairs ($v=0.37~c$). (d)  Chaotic vortex nucleation and generation of strong sound waves, forming a turbulent wake ($v=0.9~c$).}
 \end{figure}
 
 \subsection{Vortex emission from elliptical obstacles}
@@ -213,7 +213,7 @@ At later times [Figure \ref{fig:denstraj}(a)(ii)], the flow becomes asymmetric d
   \label{fig:denstraj}
 \end{figure}
 
-The vortex trajectories shown in Figure \ref{fig:denstraj}(b) provide visualisation of the time-integrated nature of the wake.   At early times (i), we see that the vortex trajectories are symmetric, forming a flow pattern in striking analogue to the classical wake at low $Re$.  The generic development of vortex trajectories is as follows.  Pairs of singly-quantized vortices of opposite sign peel off from the poles of the obstacle and interact with each other as vortex-antivortex pairs.  Each pair propagates in the positive $x$ direction with approximate velocity $\hbar/(md_p)$ \cite{saito10}, where $d_p$ is the pair separation \cite{Donnelly};  the pair's velocity is less than the obstacle's velocity and so it drifts behind the obstacle.  As the pair moves further away from the obstacle, its separation decreases and its velocity increases, such that it begins to catch the obstacle up.  Once the pair is sufficiently close to the obstacle, it again separates and slows down, then the cycle repeats.  As more vortices are nucleated, two distinct clusters of like-circulation form.  Nucleated pairs then travel around the outside of the existing cluster before contracting, speeding up and travelling through the middle of the clusters towards the obstacle.  The clusters grow until they reach a maximum size depending on the obstacle's size and speed.  Hereafter, nucleated vortex pairs travel around the outside of the two clusters and continue travelling downstream,  becoming lost from the main wake. 
+The vortex trajectories shown in Figure \ref{fig:denstraj}(b) provide visualisation of the time-integrated nature of the wake.   At early times (i), we see that the vortex trajectories are symmetric, forming a flow pattern in striking analogy to the classical wake at low $Re$.  The generic development of vortex trajectories is as follows.  Pairs of singly-quantized vortices of opposite sign peel off from the poles of the obstacle and interact with each other as vortex-antivortex pairs.  Each pair propagates in the positive $x$ direction with approximate velocity $\hbar/(md_p)$ \cite{saito10}, where $d_p$ is the pair separation \cite{Donnelly};  the pair's velocity is less than the obstacle's velocity and so it drifts behind the obstacle.  As the pair moves further away from the obstacle, its separation decreases and its velocity increases, such that it begins to catch the obstacle up.  Once the pair is sufficiently close to the obstacle, it again separates and slows down, then the cycle repeats.  As more vortices are nucleated, two distinct clusters of like-circulation form.  Nucleated pairs then travel around the outside of the existing cluster before contracting, speeding up and travelling through the middle of the clusters towards the obstacle.  The clusters grow until they reach a maximum size depending on the obstacle's size and speed.  Hereafter, nucleated vortex pairs travel around the outside of the two clusters and continue travelling downstream,  becoming lost from the main wake. 
  
 \subsection{Formation of the B\'enard--von K\'arm\'an vortex street}
 \begin{figure}
@@ -277,88 +277,7 @@ The wake forms into clusters of like-circulation that continue to be produced, i
 Once the symmetry of the wake is broken, vortices no longer separate into two distinct clusters of like-circulation. Existing vortices and newly-nucleated vortices mix together behind the obstacle. %However it is apparent in Figure \ref{fig:denstraj}(b)(ii) that, on average, positive vortices drift to $y>0$ while negative vortices prefer to drift to $y<0$.
 To accelerate the formation of the asymmetric wake, we subsequently seed the initial condition with noise.  Figure \ref{fig:progress} shows the vortex locations at various stages of the evolution. The initial symmetry of the wake [Figure \ref{fig:progress}(a)] breaks at $t \approx 450 (\xi/c)$, with the wake splitting into several clusters. The velocity field around the obstacle is affected: it depends on time and the distance of the nearest cluster of vortices. The obstacle no longer simultaneously produces vortex-antivortex pairs, but now generates a series of like-signed vortices.  Since like-signed vortices are known to co-rotate, these vortices group into clusters which slowly rotate.  This cluster affects the velocity field once more, causing a cluster of opposite signed vortices to be produced. This process then repeats such that clusters of like signed vortices are then produced behind the obstacle, much like vorticity in the classical vortex street behind a cylinder.  While some positive clusters contain negative vortices and vice versa, the overall pattern is still a time-dependent B\'enard--von K\'arm\'an vortex street.
 
-For clusters consisting of pairs of vortices, it has been shown that they can survive downstream for a very long time \cite{saito10}.  However, for regimes with larger numbers of vortices in each cluster, the chaotic nature of vortex motion can cause originally tightly packed and circular clusters to easily stretch over large areas, form strange shapes, or even split into smaller clusters. Examples of this can be seen later in Figure \ref{fig:3x3grid}.
-
-
-\subsection{Critical Velocity past an Elliptical Obstacle}
-\label{sec:crit_vel}
-\begin{figure}
-\hspace{1.2cm}(a)\hspace{7cm} (b)
-\begin{center}
-\begin{tikzpicture}
-  \begin{axis}[samples=72,ylabel near ticks,xlabel near ticks,
-      width=0.45\linewidth,
-        xlabel=$\varepsilon\phantom{d/\xi}$,
-        ylabel=$v_c/c$,
-        xmin=0.9,
-        xmax=3.1,
-        ymin=0.1,
-        ymax=0.61,
-        major tick length = 0.07cm]
-    \addplot+[only marks, samples=30, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick},mark options={blue,scale=0.8}] file {wake/data/v_c_vs_epsilon.dat};
-    \addplot+[mark=none,color=red,thick,dashed] {1/(1+x)};
-    \addplot+[mark=none,color=black,thick] {((3/2)*(1+x)^2-(1/2))^(-1/2)};
-  \end{axis}
-  \end{tikzpicture}%
-  \begin{tikzpicture}
-  \begin{axis}[ylabel near ticks,xlabel near ticks,
-        width=0.45\linewidth,
-        xtick pos=left,
-    ytick pos=left,
-        xlabel=$d/\xi\phantom{\varepsilon}$,
-        ylabel=$v_c/c$,
-        xmin=0,
-        xmax=11,
-        ymin=0.1,
-        ymax=0.61,
-        major tick length = 0.07cm
-      ]
-      \addplot+[only marks,mark options={red,scale=0.8}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,red}] file {wake/data/v_c_vs_d_e1.dat};
-      \addplot+[only marks,mark=triangle*,mark options={green}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,green}] file {wake/data/v_c_vs_d_e2.dat};
-      \addplot+[only marks,mark=square*,mark options={blue,scale=0.75}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,blue}] file {wake/data/v_c_vs_d_e3.dat};
-    \end{axis}
-\end{tikzpicture}%
-\end{center}
-\caption{\label{fig:velplots}(a) Critical velocity against obstacle ellipticity $\varepsilon$, for $d=10\xi$.  Shown are the results the numerical simulations (blue bars), Equation (\ref{eq:crit1}) (dashed red line) and Equation (\ref{eq:crit2}) (solid black line). (b) Critical velocity (obtained numerically) versus the obstacle width $d$, for ellipticity $\varepsilon=1$ (red circles), $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares).
-}
-\end{figure} 
-We now investigate in what ways the ellipticity of the obstacle affects the critical velocity for vortex nucleation and nucleation frequency.  Figure \ref{fig:velplots}(a) shows the critical velocity for flow past the obstacle as a function of its ellipticity, taking the obstacle to have fixed width in the $y$-direction of $d=10\xi$.  We determine the critical velocity numerically by performing simulations with flow velocities increasing in steps of $\Delta_v=0.01\,c$ until vortices nucleate.  
-For a circular object, we find that the critical velocity is $v_{\rm c}=0.355\pm 0.005~c$, consistent with predictions in the Eulerian ($d \gg \xi$) limit \cite{berloff2000,rica2001,pham2004}.  As the ellipticity is increased (i.e. the obstacle becomes narrower in $x$), the critical velocity decreases.  The modification of the critical velocity is significant: if $\varepsilon=3$, $v_{\rm c}$ is more than $40\%$ smaller than that for a circular obstacle. 
-
-The rough dependence of $v_{\rm c}$ on $\varepsilon$ can be derived as follows.   According to Landau's criterion \cite{NozieresPines},  superfluidity breaks down when the fluid velocity exceeds the critical velocity $v_{\rm Lan}=\min \left[E(p)/p\right]$, where $p$ is the momentum of elementary excitations and $E(p)$ their energy.   The weakly-interacting Bose gas has the dispersion relation $E(p)=[ngp^2/m + p^4/(4m^2)]^{1/2}$, hence $v_{\rm Lan}=c$.
-
-If an obstacle moves through the fluid with speed $v$, the local fluid velocity is enhanced near the obstacle so that the maximum local velocity, $v_{\rm max}$, exceeds $v$. By approximating the BEC as an inviscid Euler fluid, the local velocity around the obstacle can be calculated using the complex variable framework of potential flow. The maximum local velocity is found to be at the poles with $v_{\rm max}=(1+\varepsilon)v$ \cite{Schlichting42}, and the estimated Landau critical velocity becomes,
-\begin{equation}
-\frac{v_{c1}}{c} = \frac{1}{1+\varepsilon}.
-\label{eq:crit1}
-\end{equation}
-This estimate is shown as dashed red line in Figure \ref{fig:velplots}(a), capturing the general shape of the relationship, but not the exact values for $v_{\rm c}$.
-%While this result assumes constant density, a first order correction can be made by using Bernoulli's theorem to model the reduction in local density near the obstacle (due to the enhanced local fluid velocity) which in turn reduces the local speed of sound $c(x,y)=\sqrt{n(x,y)g/m}$ \cite{win01}.  This then leads to the modified result,
-
-Equation (\ref{eq:crit1}) is derived for incompressible potential flow, however, the GPE describes a compressible fluid and so the local density, $n(\bf r) = |\psi|^2$, in regions of high velocity is reduced. Ignoring the quantum pressure, the density (and therefore speed of sound) is reduced according to Bernoilli's equation \cite{win01},
-\begin{equation}
-1+\frac{v^2}{2} = n(v_{\rm loc})+\frac{v_{\rm loc}^2}{2},
-\label{eq:bern}
-\end{equation}
-where $v_{\rm loc}(\bf r)$ is the local velocity. We substitute the maximum local velocity, $v_{\rm max}=(1+\varepsilon)v$, into Equation (\ref{eq:bern}) to find the local density at that point,
-\begin{equation*}
-n(v_{\rm max}) = 1+\frac{1}{2}[1-(1+\varepsilon)^2]v^2.
-\end{equation*}
-The local speed of sound is $c_{\rm local}=\sqrt{n}$ and so at the point of maximal velocity,
-\begin{equation*}
-c_{\rm local} = \sqrt{1+\frac{1}{2}[1-(1+\varepsilon)^2]v^2}.
-\end{equation*}
-We use the resulting local speed of sound and the Landau criterion to find a corrected estimate of the critical velocity for the break down of superfluidity, 
-\begin{equation}
-\frac{v_{c2}}{c} = \left [\frac{3}{2}(1+\varepsilon)^2 - \frac{1}{2}\right]^{-\frac{1}{2}}.
-\label{eq:crit2}
-\end{equation}
-This relation [solid black line in Figure \ref{fig:velplots}(a)] gives good agreement with the computed values of $v_{\rm c}$.  The deviation for $\varepsilon \sim 1$ has been noted elsewhere \cite{rica2001}, and can be remedied using higher order corrections taking into account the quantum pressure term.
-
-From studies on circular objects, it is known that $v_{\rm c}$ depends on the obstacle's shape at small diameters, where boundary layer effects are significant; $v_{\rm c}$ approaches the ``Eulerian" value only for large diameters $d \gg \xi$ \cite{huepe00,rica2001}.  The variation of $v_{\rm c}$ with the obstacle width $d$ is shown in Figure \ref{fig:velplots} (b).  For $d=10\xi$, the critical velocity effectively reaches its asymptotic value, while at smaller widths, it is much larger.   
-
-\subsection{Role of Obstacle Size and Ellipticity on the Wake}
-\label{sec:ellipt}
+For clusters consisting of pairs of vortices, it has been shown that they can survive downstream for a very long time \cite{saito10}.  However, for regimes with larger numbers of vortices in each cluster, the chaotic nature of vortex motion can cause originally tightly packed and circular clusters to easily stretch over large areas, form strange shapes, or even split into smaller clusters. Examples of this can be seen in Figure \ref{fig:3x3grid}.
 \begin{figure}
 \makebox[\textwidth]{
 \begin{minipage}{0.4\linewidth}%
@@ -458,9 +377,88 @@ From studies on circular objects, it is known that $v_{\rm c}$ depends on the ob
 \end{tikzpicture}%
 \end{minipage}%
 }
-\caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=0.5$ and $d=5\xi$, (a) $\varepsilon=0.75$ and $d=5\xi$, (c) $\varepsilon=1$ and $d=5\xi$, (d) $\varepsilon=2$ and $d=5\xi$, and (e) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
+\caption{\label{fig:3x3grid}Snapshots of the vortex positions for various obstacle parameters, at $t=2000~(\xi/c)$. Shown are obstacles corresponding to (a) $\varepsilon=0.5$ and $d=5\xi$, (b) $\varepsilon=0.75$ and $d=5\xi$, (c) $\varepsilon=1$ and $d=5\xi$, (d) $\varepsilon=2$ and $d=5\xi$, and (e) $\varepsilon=2$ and $d=10\xi$, at the velocities (i) $v=0.32c$, (ii) $v=0.40c$, and (iii) $v=0.48c$.  Red/blue circles represent vortices with quanta of circulation $+1/-1$.}
 \end{figure}
-During the initial symmetric phase of vortex nucleation, the wakes generated by the obstacle have the same qualitative structure shown in Figure \ref{fig:denstraj}(b) (i).  However, once the wake becomes asymmetric, the nature of the clusters that form are highly dependent on the velocity and shape of the obstacle. Figure \ref{fig:3x3grid} shows wakes generated for various obstacle parameters, all captured at the same time $t=2000~(\xi/c)$. As predicted in the previous section, for an increased $\varepsilon$, the critical velocity for vortex nucleation is reduced. Conversely, reducing $\varepsilon<1$ causes the critical velocity to increase to the point of no vortices being produced for any of the tested velocities. By visual inspection of the clusters that form in Figure \ref{fig:3x3grid}, it can be seen that that any increase of size, ellipticity or velocity of the obstacle increases the number of vortices in the wake's clusters. We further explore this clustering behaviour and explain its roots in Section \ref{sec:clusteringwake}.
+
+\subsection{Critical Velocity past an Elliptical Obstacle}
+\label{sec:crit_vel}
+\begin{figure}
+\hspace{1.2cm}(a)\hspace{7cm} (b)
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[samples=72,ylabel near ticks,xlabel near ticks,
+      width=0.45\linewidth,
+        xlabel=$\varepsilon\phantom{d/\xi}$,
+        ylabel=$v_c/c$,
+        xmin=0.9,
+        xmax=3.1,
+        ymin=0.1,
+        ymax=0.61,
+        major tick length = 0.07cm]
+    \addplot+[only marks, samples=30, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick},mark options={blue,scale=0.8}] file {wake/data/v_c_vs_epsilon.dat};
+    \addplot+[mark=none,color=red,thick,dashed] {1/(1+x)};
+    \addplot+[mark=none,color=black,thick] {((3/2)*(1+x)^2-(1/2))^(-1/2)};
+  \end{axis}
+  \end{tikzpicture}%
+  \begin{tikzpicture}
+  \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.45\linewidth,
+        xtick pos=left,
+    ytick pos=left,
+        xlabel=$d/\xi\phantom{\varepsilon}$,
+        ylabel=$v_c/c$,
+        xmin=0,
+        xmax=11,
+        ymin=0.1,
+        ymax=0.61,
+        major tick length = 0.07cm
+      ]
+      \addplot+[only marks,mark options={red,scale=0.8}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,red}] file {wake/data/v_c_vs_d_e1.dat};
+      \addplot+[only marks,mark=triangle*,mark options={green}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,green}] file {wake/data/v_c_vs_d_e2.dat};
+      \addplot+[only marks,mark=square*,mark options={blue,scale=0.75}, error bars/y dir=both, error bars/y fixed=0.012,error bars/error bar style={thick,blue}] file {wake/data/v_c_vs_d_e3.dat};
+    \end{axis}
+\end{tikzpicture}%
+\end{center}
+\caption{\label{fig:velplots}(a) Critical velocity against obstacle ellipticity $\varepsilon$, for $d=10\xi$.  Shown are the results of the numerical simulations (blue bars), Equation (\ref{eq:crit1}) (dashed red line) and Equation (\ref{eq:crit2}) (solid black line). (b) Critical velocity (obtained numerically) versus the obstacle width $d$, for ellipticity $\varepsilon=1$ (red circles), $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares).
+}
+\end{figure} 
+We now investigate in what ways the ellipticity of the obstacle affects the critical velocity for vortex nucleation and nucleation frequency.  Figure \ref{fig:velplots}(a) shows the critical velocity for flow past the obstacle as a function of its ellipticity, taking the obstacle to have fixed width in the $y$-direction of $d=10\xi$.  We determine the critical velocity numerically by performing simulations with flow velocities increasing in steps of $\Delta_v=0.01\,c$ until vortices nucleate.  
+For a circular object, we find that the critical velocity is $v_{\rm c}=0.355\pm 0.005~c$, consistent with predictions in the Eulerian ($d \gg \xi$) limit \cite{berloff2000,rica2001,pham2004}.  As the ellipticity is increased (i.e. the obstacle becomes narrower in $x$), the critical velocity decreases.  The modification of the critical velocity is significant: if $\varepsilon=3$, $v_{\rm c}$ is more than $40\%$ smaller than that for a circular obstacle. 
+
+The rough dependence of $v_{\rm c}$ on $\varepsilon$ can be derived as follows.   According to Landau's criterion \cite{NozieresPines},  superfluidity breaks down when the fluid velocity exceeds the critical velocity $v_{\rm Lan}=\min \left[E(p_e)/p_e\right]$, where $p_e$ is the momentum of elementary excitations and $E(p_e)$ their energy.   The weakly-interacting Bose gas has the dispersion relation $E(p_e)=[ngp_e^2/m + p_e^4/(4m^2)]^{1/2}$, and so the Landau critical velocity is the local speed of sound, $v_{\rm Lan} = c_{\rm local}$, where $c_{\rm local} = \sqrt{ng/m}$. In a homogeneous system, however, the density is uniform and the Landau critical velocity becomes $v_{\rm Lan}=c$, where $c = \sqrt{\rho g/m}$.
+
+If an obstacle moves through the fluid with speed $v$, the local fluid velocity is enhanced near the obstacle so that the maximum local velocity, $v_{\rm max}$, exceeds $v$. By approximating the BEC as an inviscid Euler fluid, the local velocity around the obstacle can be calculated using the complex variable framework of potential flow. The maximum local velocity is found to be at the poles with $v_{\rm max}=(1+\varepsilon)v$ \cite{Schlichting42}, and the estimated Landau critical velocity, which we denote $v_{c1}$, is written,
+\begin{equation}
+\frac{v_{c1}}{c} = \frac{1}{1+\varepsilon}.
+\label{eq:crit1}
+\end{equation}
+This estimate is shown as dashed red line in Figure \ref{fig:velplots}(a), capturing the general shape of the relationship, but not the exact values for $v_{\rm c}$.
+%While this result assumes constant density, a first order correction can be made by using Bernoulli's theorem to model the reduction in local density near the obstacle (due to the enhanced local fluid velocity) which in turn reduces the local speed of sound $c(x,y)=\sqrt{n(x,y)g/m}$ \cite{win01}.  This then leads to the modified result,
+
+Equation (\ref{eq:crit1}) is derived for incompressible potential flow, however, the GPE describes a compressible fluid and so the local density, $n(\bf r) = |\psi|^2$, in regions of high velocity is reduced. Ignoring the quantum pressure, the density (and therefore speed of sound) is reduced according to Bernoilli's equation \cite{win01},
+\begin{equation}
+1+\frac{v^2}{2c^2} = \frac{n(v_{\rm loc})}{\rho}+\frac{v_{\rm loc}^2}{2c^2},
+\label{eq:bern}
+\end{equation}
+where $v_{\rm loc}(\bf r)$ is the local velocity. We substitute the maximum local velocity, $v_{\rm max}=(1+\varepsilon)v$, into Equation (\ref{eq:bern}) to find the local density at that point,
+\begin{equation*}
+\frac{n(v_{\rm max})}{\rho} = 1+\frac{v^2}{2c^2}[1-(1+\varepsilon)^2].
+\end{equation*}
+The local speed of sound is $c_{\rm local}=c\sqrt{n/\rho}$ and so at the point of maximal velocity,
+\begin{equation*}
+c_{\rm local} = c\sqrt{1+\frac{v^2}{2c^2}\left[1-(1+\varepsilon)^2\right]}.
+\end{equation*}
+We use the resulting local speed of sound and the Landau criterion to find a corrected estimate of the critical velocity, which we denote $v_{c2}$, for the break down of superfluidity, 
+\begin{equation}
+\frac{v_{c2}}{c} = \left [\frac{3}{2}(1+\varepsilon)^2 - \frac{1}{2}\right]^{-\frac{1}{2}}.
+\label{eq:crit2}
+\end{equation}
+This relation [solid black line in Figure \ref{fig:velplots}(a)] gives good agreement with the computed values of $v_{\rm c}$.  The deviation for $\varepsilon \sim 1$ has been noted elsewhere \cite{rica2001}, and can be remedied using higher order corrections taking into account the quantum pressure term.
+
+From studies on circular objects, it is known that $v_{\rm c}$ depends on the obstacle's shape at small diameters, where boundary effects are significant; $v_{\rm c}$ approaches the ``Eulerian" value only for large diameters $d \gg \xi$ \cite{huepe00,rica2001}.  The variation of $v_{\rm c}$ with the obstacle width $d$ is shown in Figure \ref{fig:velplots} (b).  For $d=10\xi$, the critical velocity effectively reaches its asymptotic value, while at smaller widths, it is much larger.   
+
+\subsection{Role of Obstacle Size and Ellipticity on the Wake}\label{sec:ellipt}
+During the initial symmetric phase of vortex nucleation, the wakes generated by the obstacle have the same qualitative structure shown in Figure \ref{fig:denstraj}(b) (i).  However, once the wake becomes asymmetric, the nature of the clusters that form are highly dependent on the velocity and shape of the obstacle. Figure \ref{fig:3x3grid} shows wakes generated for various obstacle parameters, all captured at the same time $t=2000~(\xi/c)$. As predicted in the previous section, for an increased $\varepsilon$, the critical velocity for vortex nucleation is reduced. Conversely, reducing $\varepsilon<1$ causes the critical velocity to increase to the point of no vortices being produced for any of the tested velocities. By visual inspection of the clusters that form in Figure \ref{fig:3x3grid}, it can be seen that any increase of size, ellipticity or velocity of the obstacle increases the number of vortices in the wake's clusters. We further explore this clustering behaviour and explain its roots in Section \ref{sec:clusteringwake}.
 
 \subsection{Vortex Clustering}\label{sec:clusteringwake}
 We have shown that the B\'enard--von K\'arm\'an vortex street forms through the clustering of like-signed vortices. Methods of quantifying the clustering of vortices in quantum fluids have been explored in the literature \cite{white12,reeves_billam_13,bagg12} and are described in detail in Section \ref{section:vortexclustering}.
@@ -469,7 +467,7 @@ We begin by quantifying the effect of ellipticity on vortex clustering using Rip
 \begin{equation}
   L_\varepsilon(s) = \langle \hat{L}(\varepsilon,s) - s \rangle,
 \end{equation}
-is calculated. Here $s$ characterises the radius of the clustering and $\hat{L}(\varepsilon,s)$ is the estimate of Besag's $L$ curve given by Equation (\ref{eq:ripleysl}), measured at the time $t=2500~(\xi/c)$ for the three ellipticities $\varepsilon=1, 2, 3$. The average is performed for each value of $\varepsilon$, over 5 simulations with external flow velocities $v = 0.4,0.425,0.450,0.475,0.5~c$. When $L_\varepsilon(s)>0$, it is interpreted as evidence of clustering on the scale of $s$ for ellipticity $\varepsilon$. Conversely when $L_\varepsilon(s)<0$, it is interpreted as evidence of a sparsity of vortices (as compared to randomly placed points in space) on the scale of $s$ for ellipticity $\varepsilon$. The resulting curves are shown in Figure \ref{fig:ripleyLwake}.
+is calculated. Here $s$ characterises the radius of the clustering and $\hat{L}(\varepsilon,s)$ is the estimate of Besag's $L$ curve given by Equation (\ref{eq:ripleysl}), measured at the time $t=2500~(\xi/c)$ for the three ellipticities $\varepsilon=1, 2, 3$. The averaging is performed for each value of $\varepsilon$, over 5 simulations with external flow velocities $v = 0.4,0.425,0.450,0.475,0.5~c$. When $L_\varepsilon(s)>0$, it is interpreted as evidence of clustering on the scale of $s$ for ellipticity $\varepsilon$. Conversely when $L_\varepsilon(s)<0$, it is interpreted as evidence of a sparsity of vortices (as compared to randomly placed points in space) on the scale of $s$ for ellipticity $\varepsilon$. The resulting curves are shown in Figure \ref{fig:ripleyLwake}.
 
 \begin{figure}
 \begin{center}
@@ -495,7 +493,7 @@ is calculated. Here $s$ characterises the radius of the clustering and $\hat{L}(
 \caption{\label{fig:ripleyLwake} The clustering measurement $L_\varepsilon(s)$ for the three ellipticities $\varepsilon=1$ (red dashed line), $\varepsilon=2$ (green dot-dashed line), and $\varepsilon=3$ (blue solid line) (with obstacle size $d=5\xi$) averaged over 5 simulations for each $\varepsilon$ with external flow velocities $v = 0.4,0.425,0.450,0.475,0.5~c$.}
 \end{figure}
 
-All three curves show pronounced evidence of clustering at scales of $5\xi\lesssim s\lesssim 150\xi$ with a peak at around $50\xi$, which is indeed the typical size of the largest clusters visible in Figure \ref{fig:ripleyLwake}. Lack of clustering is evident at $s\lesssim 5\xi$, this is to be expected: multiply charged vortices are unstable, preferring to decay into several vortices distinct in space, and so clustering is not expected on scales smaller than the radius of a vortex core (approximately $5\xi$). The lack of clustering at scales of $s \gtrsim 150\xi$ can be explained by the lack of vortices far from the obstacle in the $\pm y$ directions. As $\varepsilon$ increases, the peak value of $L_\varepsilon(s)$ also increases, showing evidence that an increase of ellipticity causes an increase of the spacial clustering of vortices in the fluid.
+All three curves show pronounced evidence of clustering at scales of $5\xi\lesssim s\lesssim 150\xi$ with a peak at around $50\xi$, which is indeed the typical size of the largest clusters visible in Figure \ref{fig:ripleyLwake}. Lack of clustering is evident at $s\lesssim 5\xi$, this is to be expected: multiply charged vortices are unstable, preferring to decay into several vortices distinct in space, and so clustering is not expected on scales smaller than the radius of a vortex core (approximately $5\xi$). The lack of clustering at scales of $s \gtrsim 150\xi$ can be explained by the lack of vortices far from the obstacle in the $\pm y$ directions. As $\varepsilon$ increases, the peak value of $L_\varepsilon(s)$ also increases, showing evidence that an increase of ellipticity causes an increase of the spatial clustering of vortices in the fluid.
 
 The $L_\varepsilon(s)$ measurement of clustering is entirely based on the $K$ and $L$ functions. These functions quantify the average spatial statistics of vortex clustering, but do not tell us the number of vortices present in clusters. We now utilize the more sophisticated Recursive Cluster Algorithm (RCA) of Reeves \emph{et. al.} \cite{reeves_billam_13} (described in Section \ref{section:reevesalgorithm}) to identify the number of vortices contained in clusters for different ellipticities and velocities. The use of RCA allows us to investigate how both velocity and ellipticity each affect vortex clustering. We record the number of clusters $N_c$ and the number of vortices in each cluster $N_i$, where $i$ is the cluster index. Then we determine the average number of vortices in the clusters, $\langle N \rangle = (1/N_c) \sum_{i=1}^{i=N_c} N_i$ as a function of obstacle velocity $v$ for three ellipticities $\varepsilon=1, 2$ and $3$, at times $t=500,510,\ldots,2500~(\xi/c)$. The results, plotted in Figure \ref{fig:Svslocal2}, show that increasing $v$ (above the critical velocity) causes $\langle N \rangle$ to increase and that, at fixed $v$, $\langle N \rangle$ increases with $\varepsilon$. 
 
@@ -525,7 +523,7 @@ The $L_\varepsilon(s)$ measurement of clustering is entirely based on the $K$ an
     \addplot+[mark=none,color=blue,dashed] {29.8248*x-6.4902};
   \end{axis}
 \end{tikzpicture}
-\caption{\label{fig:Svslocal2} Average number of vortices in the clusters as a function of the obstacle velocity $v$.  Shown are cases with $\varepsilon=1$ (red squares),  $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares) with $d=5\xi$. Also shown is are linear fits to the data for each value of $\varepsilon$.}
+\caption{\label{fig:Svslocal2} Average number of vortices in the clusters as a function of the obstacle velocity $v$.  Shown are cases with $\varepsilon=1$ (red squares),  $\varepsilon=2$ (green triangles) and $\varepsilon=3$ (blue squares) with $d=5\xi$. Also shown are linear fits to the data for each value of $\varepsilon$.}
 \end{figure}
 
 The behaviour of the quantities explored in this section, and therefore the reason that elliptical obstacles are efficient at producing classical-like wakes, can be explained by considering the shedding frequency of vortices. It is known that the shedding frequency increases with the velocity of the flow \cite{jma99} and for an elliptical obstacle, the combination of a reduced critical velocity and increased local velocity around the obstacle has the effect of increasing the shedding frequency with $\varepsilon$ and $d$. The overall result is that, when increasing any of $v$, $\varepsilon$ or $d$, vortex shedding frequency is increased and so more vortices are nucleated in a given time period, causing the cluster size to increase (explaining the behaviour of $L_\varepsilon$, $\langle N\rangle$, and the vortex clustering variation in Figure \ref{fig:3x3grid}). By further simulation at large obstacle velocity ($v\gtrsim0.6$), we also find that for all values of $\varepsilon$, the large velocity causes vortices to nucleate non-periodically, inducing an irregular flow without a visible B\'enard--von K\'arm\'an vortex street configuration, in agreement with previous simulations with circular obstacles of smaller diameter \cite{saito10}.
@@ -669,7 +667,7 @@ For a spherical ($\varepsilon=1$) object with $d=5\xi$, we find that the critica
 \caption{\label{fig:3d4} Asymmetric wake in 3D at $t=340~(\xi/c)$ for an elliptical obstacle ($d=5\xi$ and $\varepsilon=5$) moving at $v=0.6\,c$. (a) Isosurface plot of low density, over a range $[-60,100]$ in $x$ and $[-25,25]$ in $y$ and $z$. (b) Vortex locations in the $xy$ plane.  (c) Vortex locations in the $xz$ plane.  In (b) and (c) red/blue denotes vortex lines with quanta of circulation $+1/-1$.}
 \end{figure}
 
-We break the cylindrical symmetry of the system by tilting the obstacle by a small angle in the $xz$ plane.  The vortex rings, illustrated in Figure \ref{fig:3d4}, now eject and evolve asymmetrically; Kelvin waves and reconnections occur, forming an apparently disordered tangle of vortices behind the obstacle.  Due to the manner in which symmetry is broken, the wake remains approximately symmetric in the $xy$ plane, as evident in Figure \ref{fig:3d4} (b).  However, unlike in Figure \ref{fig:3d4}, the vortices do not self organise into two clusters of alternate circulation. This is due to the vortex rings interacting, reconnecting and shifting out of the plane (which manifests in 2D as two alternate-sign vortices approaching one another).
+We break the cylindrical symmetry of the system by tilting the obstacle by a small angle in the $xz$ plane.  The vortex rings, illustrated in Figure \ref{fig:3d4}, now eject and evolve asymmetrically; Kelvin waves and reconnections occur, forming an apparently disordered tangle of vortices behind the obstacle.  Due to the manner in which symmetry is broken, the wake remains approximately symmetric in the $xy$ plane, as evident in Figure \ref{fig:3d4} (b).  However, unlike in Figure \ref{fig:3d1}, the vortices do not self organise into two clusters of alternate circulation. This is due to the vortex rings interacting, reconnecting and shifting out of the plane (which manifests in 2D as two alternate-sign vortices approaching one another).
 
 
 
