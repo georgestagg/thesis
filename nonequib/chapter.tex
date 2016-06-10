@@ -46,15 +46,15 @@ PhysRevA.66.013603,Davis2,PhysRevLett.95.263901,Pol_Rev}.
 Section \ref{section:cfield} provides a detailed description of the classical field model for a homogeneous Bose gas. We parametrise the gas by the classical field $\psi({\bf r},t)$. Whereas the standard mean-field wavefunction describes the condensate only, in the classical field model $\psi({\bf r},t)$ instead describes the entire multi-mode `classical' gas \cite{Proukakis,Blakie}.  The classical field method has been used to model beyond-mean-field phenomena, including thermal equilibration dynamics~\cite{PhysRevA.66.013603,PhysRevLett.95.263901,pattinson_2014,nazarenko_2014}, condensate fractions \cite{Davis}, critical temperatures \cite{Davis2006}, correlation functions \cite{Wright2011}, spontaneous production of vortex-antivortex pairs in quasi-2D gases \cite{Simula}, thermal dissipation of vortices \cite{berloff_2007},  and related effects in binary condensates \cite{Berloff_2006,Salman20091482,pattinson_2014}.
 
 The evolution of $\psi({\bf r},t)$ is governed by Equation (\ref{eq:gpe}), the GPE. The density distribution of atoms is then $n({\bf r},t)=|\psi({\bf r},t)|^2$.
-The GPE conserves the total number of particles $N$, given by Equation (\ref{eq:normalisewf}), and the total energy $E$, given by Equation (\ref{eq:Efn}). In this chapter we express all quantities in terms of the natural units of the homogeneous Bose gas defined in Section \ref{section:gpedimlesshomg}:  density in terms of a uniform value $\rho = N/D^3$, length in terms of the healing length $\xi=\hbar/\sqrt{m g \rho}$, speed in terms of the speed of sound $c=\sqrt{\rho g/m}$, energy in terms of the chemical potential of the homogeneous condensate $\mu=\rho g$, and time in terms of $\tau=\hbar / g \rho$.
+The GPE conserves the total number of particles $N$, given by Equation (\ref{eq:normalisewf}), and the total energy $E$, given in Appendix B by Equation (\ref{eq:Efn}). In this chapter we express all quantities in terms of the natural units of the homogeneous Bose gas defined in Section \ref{section:gpedimlesshomg}:  density in terms of a uniform value $\rho = N/D^3$, length in terms of the homogeneous healing length $\xi=\hbar/\sqrt{m g \rho}$, speed in terms of the speed of sound $c=\sqrt{\rho g/m}$, energy in terms of the chemical potential of the homogeneous condensate $\mu=\rho g$, and time in terms of $\tau=\hbar / g \rho$.
 
 \begin{table}
 \centering
 \begin{tabular}{rcccccc}
 \multicolumn{7}{c}{\it Initial conditions} \\
 \hline
-\rule{0pt}{3ex}$N/\ell^3~(\xi^{-3})$           & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
-$\langle E \rangle/\ell^3~(\mu \xi^{-3})$  & 2.57 & 2.13 & 1.75 & 1.33 & 0.53 & 0.23 \\
+\rule{0pt}{3ex}$N/D^3~(\xi^{-3})$           & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
+$E/D^3~(\mu \xi^{-3})$  & 2.57 & 2.13 & 1.75 & 1.33 & 0.53 & 0.23 \\
 \multicolumn{7}{c}{\it Equilibrium state} \\
 \hline
 \rule{0pt}{3ex}$\rho_0/\rho$        & 0.02 & 0.22 & 0.36 & 0.48 & 0.77 & 0.91 \\
@@ -64,7 +64,7 @@ $T/T_\lambda$        & 0.98 & 0.81 & 0.68 & 0.56 & 0.26 & 0.10
 \label{tbl:cond_frac}
 \end{table}
 
-We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ is $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium state defined in Section \ref{section:cfieldinitcond}.  The temperature of the gas is varied through a rescaling of the initial condition $\psi(\mathbf{r},0)$ so as to fix the number density, $N/D^3$, and energy density, $\langle H \rangle/D^3$. The choice of number density and energy density uniquely determines the condensate fraction $\rho_0/\rho$, and therefore the temperature $T/T_\lambda$, for the equilibrium state of the Bose gas. Table \ref{tbl:cond_frac} lists the parameters used in our simulations and the resulting condensate fractions.
+We label the modes of the system through the wavevector ${\bf k}$ and the occupation of mode ${\bf k}$ as $n_{\mathbf{k}}=|a_{\mathbf{k}}|^2$. To allow for occupation across all classical modes of the system, the initial condition is the highly non-equilibrium state defined in Section \ref{section:cfieldinitcond}.  The temperature of the gas is varied through a rescaling of the initial condition $\psi(\mathbf{r},0)$ so as to fix the number density, $N/D^3$, and energy density, $E/D^3$. The choice of number density and energy density uniquely determines the condensate fraction $\rho_0/\rho$, and therefore the temperature $T/T_\lambda$, for the equilibrium state of the Bose gas. Table \ref{tbl:cond_frac} lists the parameters used in our simulations and the resulting condensate fractions.
 
 The GPE is evolved numerically, in the absence of any potential ($V = 0$), using the fourth-order Runge-Kutta method described in Section \ref{section:RK4} on a $192^3$ periodic grid with time step $\Delta t =0.01 \tau$ and isotropic grid spacing $\Delta =0.75\xi$. The spatial discretisation of our numerical grid implies that high momenta are not described in our simulations. In effect, an ultraviolet cutoff is introduced, $n_{\mathbf{k}}(t)=0$ for $k>k_{\rm{max}}$, where $k=|{\bf k}|$ and the maximum described wave vector amplitude is $k_{\rm{max}} = \sqrt{3} \pi / \Delta$. 
 
@@ -130,7 +130,7 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
 
 From the bimodal distribution [visible in Figure \ref{fig:occupation} (b)], a wavenumber $k_c$ can be chosen as the boundary in $k$-space between the condensate part and the thermal part of the gas.  Here we take $k_c = 10~(2\pi/D)$, although our qualitative results are insensitive to the precise definition of $k_{\rm c}$. 
 
-The raw wavefunction, $\psi$, is too noisy to allow direct visualisation of the resulting superfluid vortex tangle. This is overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}. High-frequency modes are filtered from the classical field wavefunction by transforming the complex amplitudes via $\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. This filtering technique is demonstrated in Section \ref{section:quasi-condensate} and is analogous to spatial course-grained averaging, so that $\hat{\psi}$ contains the long-wavelength component of the classical field only.  The condensate fraction, $\rho_0/\rho$, is defined as the proportion of the entire gas within the quasi-condensate. Note that while GPE dynamics conserves $N$ for the entire gas, the quasi-condensate particle number is free to vary. As occupation of the low-$k$ modes grows and the quasi-condensate forms, $\rho_0/\rho$ grows significantly, but stabilises near its equilibrium value before the vortex tangle decays significantly. 
+The raw wavefunction, $\psi$, is too noisy to allow direct visualisation of the resulting superfluid vortex tangle. This is overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}. High-frequency modes are filtered from the classical field wavefunction by transforming the complex amplitudes via $\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. This filtering technique is demonstrated in Section \ref{section:quasi-condensate} and is analogous to spatial course-grained averaging, so that $\hat{\psi}$ contains the long-wavelength component of the classical field only.  The condensate fraction, $\rho_0/\rho$, is defined as the proportion of the entire gas within the quasi-condensate, where $\rho_0 = 1/D^3 \! \int |\hat\psi|^2\,{\rm d}{\bf r}$. Note that while GPE dynamics conserves $N$ for the entire gas, the quasi-condensate particle number is free to vary. As occupation of the low-$k$ modes grows and the quasi-condensate forms, $\rho_0/\rho$ grows significantly, but stabilises near its equilibrium value before the vortex tangle decays significantly. 
 
 \begin{figure}
   \centering
@@ -176,7 +176,7 @@ N_0 = N \left [ 1-\left ( \frac{T}{T_\lambda} \right )^\beta \right ],
 \end{equation}
 where $N_0$ is the number of condensed particles, $T_{\lambda}$ is the critical temperature for condensation and $\beta$ is a parameter that depends on the geometry of the system. For particles in a 3 dimensional box, $\beta=3/2$ \cite{Pethick}. By inverting this relation we could obtain a simple minded approximation for the temperature of our equilibrated Bose gas, ignoring interactions.
 
-However, Youd {\it et al.} \cite{berloff_2007} recently provided the following empirical relationship for a {\it weakly-interacting} Bose gas in a 3 dimensional box:
+However, Berloff {\it et al.} \cite{berloff_2007} recently provided the following empirical relationship for a {\it weakly-interacting} Bose gas in a 3 dimensional box:
 \begin{equation}
   \frac{T}{T_\lambda} = 1 - (1 - \alpha\sqrt{\rho})\frac{\rho_0}{\rho} - \alpha\sqrt{\rho}\,\left(\frac{\rho_0}{\rho}\right)^2,
   \label{eq:temp}
@@ -237,11 +237,11 @@ where $\alpha=0.2275$ is a fitting parameter. We will use this relation througho
       \node at (axis cs: 0.25,5.5) {$k^{-1}$};
     \end{axis}
   \end{tikzpicture}
-  \caption{\label{fig:spectra}Incompressible kinetic energy spectrum for the quasi-condensate tangles with $\rho_0/\rho=0.22$ (red circles), $\rho_0/\rho=0.48$ (green squares), and $\rho_0/\rho=0.77$ (blue diamonds) at time $t/\tau=300$. Dashed lines show the length scale of the healing length, $k_\xi$, the length scale of inter-vortex spacing $k_\ell$, the length scale of the periodic box $k_D$. Guide lines proportional to $k^{-3}$ and $k^{-1}$ are also shown. }
+  \caption{\label{fig:spectra}Incompressible kinetic energy spectrum for the quasi-condensate tangles with $\rho_0/\rho=0.22$ (red circles), $\rho_0/\rho=0.48$ (green squares), and $\rho_0/\rho=0.77$ (blue diamonds) at time $t/\tau=300$. Dashed lines show the scale of the healing length, $k_\xi$, the length scale of inter-vortex spacing $k_\ell$, and the length scale of the periodic box $k_D$. Guide lines proportional to $k^{-3}$ and $k^{-1}$ are also shown. }
 \end{figure}
 One method to characterise the turbulence of the vortex tangle formed in the quasi-condensate is by studying how the kinetic energy of the vortices is distributed over length scales. There are three length scales of particular interest: the length scale associated with the computational box, the length scale associated with the superfluid healing length, and the length scale associated with the inter-vortex spacing, $\ell$. The corresponding wavenumbers are $k_D=2\pi/D$, $k_\xi = 2\pi/\xi$, and $k_\ell = 2\pi/\ell$. The inter-vortex spacing can be approximated by $1/\sqrt{L}$, a relation derived through dimensional arguments where $L$ is the vortex line-density (length of vortex line per unit volume). These length scales provide the perspective required to interpret the distribution of energy.
 
-The kinetic energy of the quasi-condensate is defined as $E_{\rm kin} = \frac{\hbar^2}{2m}|\nabla \hat\psi|^2$.
+The kinetic energy of the quasi-condensate is defined as $E_{\rm kin} = \int\!\frac{\hbar^2}{2m}|\nabla\hat\psi|^2\,\mathrm{d}\mathbf{r}$.
  Using Parseval's theorem, the corresponding kinetic energy spectrum, $\hat{E}_{\rm kin}(k)$, can be written in terms of the angle-average of $\left |\mathcal{F}(\sqrt{E_{\rm kin}})\right |^2$ \cite{Nore},
 where $\mathcal{F}$ denotes the Fourier transform, so that,
 \begin{equation}
@@ -250,7 +250,7 @@ where $\mathcal{F}$ denotes the Fourier transform, so that,
 \end{equation}
 The kinetic energy can be further decomposed into compressible and incompressible parts, $E_{\rm kin} = E^i_{\rm kin} + E^c_{\rm kin}$, by using the decomposition \cite{Nore} $\sqrt{n}v_j = (\sqrt{n}v_j)^c + (\sqrt{n}v_j)^i$, with $\nabla(\sqrt{n}v_j)^i=0$, where $n$ is the fluid density and $\mathbf{v}$ is the fluid velocity. The incompressible kinetic energy spectrum is then denoted $\hat{E}^i_{\rm kin}(k)$, defined similarly to $\hat{E}_{\rm kin}(k)$.
 
-We calculate the incompressible energy spectrum of the quasi-condensate at various temperatures, sampled at time $t/\tau=300$ so as to characterise the vortex tangle before significant decay, while providing enough time for the quasi-condensate to form. The resulting spectra are shown in Figure \ref{fig:spectra}. The majority of each spectrum demonstrates a $\sim k^{-3}$ scaling, corresponding to the vortex core on the scale of $k_\ell<k<k_\xi$. For quasi-classical turbulence, we would expect a build up of kinetic energy at scales larger than the inter-vortex distance, $k_D<k<k_\ell$, demonstrating the famous Kolmogorov $k^{-5/3}$ power law scaling. In our simulations the incompressible kinetic energy spectrum does {\it not} show a definitive $k^{-5/3}$ scaling. The spectra instead show a marked lack of energy build up at scales $k_D<k<k_\ell$. In contrast to quasi-classical turbulence, ultra-quantum turbulence predicts a $k^{-1}$ scaling at scales $k_D<k<k_\ell$. A guide line proportional to this power law is shown Figure \ref{fig:spectra}.
+We calculate the incompressible energy spectrum of the quasi-condensate at various temperatures, sampled at time $t/\tau=300$ so as to characterise the vortex tangle before significant decay, while providing enough time for the quasi-condensate to form. The resulting spectra are shown in Figure \ref{fig:spectra}. Most of each spectrum demonstrates a $\sim k^{-3}$ scaling, corresponding to the vortex core on the scale of $k_\ell<k<k_\xi$. For quasi-classical turbulence, we would expect a build up of kinetic energy at scales larger than the inter-vortex distance, $k_D<k<k_\ell$, demonstrating the famous Kolmogorov $k^{-5/3}$ power law scaling. In our simulations the incompressible kinetic energy spectrum does {\it not} show a definitive $k^{-5/3}$ scaling. The spectra instead show a marked lack of energy build up at scales $k_D<k<k_\ell$. In contrast to quasi-classical turbulence, ultra-quantum turbulence predicts a $k^{-1}$ scaling at scales $k_D<k<k_\ell$. A guide line proportional to this power law is shown Figure \ref{fig:spectra}.
 
 \section{Relaxation of the vortex tangle}
 \begin{figure}
@@ -319,13 +319,13 @@ $0.77$ & $-0.81$ & $(-0.89, -0.72)$\\
 \label{tbl:fits}
 \end{table}
 
-The decay of the vortex line density is shown in Figure \ref{fig:ll_t}. When the condensate fraction at the simulated value of $\rho_0/\rho = 0.22$, the decay of $L$ is in good agreement with the predicted ultra-quantum decay of $L(t) \propto t^{-1}$. Our cooler simulations show a deviation from the $t^{-1}$ decay law, suggesting a shift to longer vortex tangle decay times as the gas is simulated closer to the zero temperature limit. The decays are quantitatively compared to the predicted power law in Table \ref{tbl:fits}, showing a power law best fit and $95\%$ confidence interval.
+The decay of the vortex line density is shown in Figure \ref{fig:ll_t}. When the condensate fraction at the simulated value of $\rho_0/\rho = 0.22$, the decay of $L$ is in good agreement with the predicted ultra-quantum decay of $L(t) \propto t^{-1}$ \cite{WalmsleyGolov2008}. Our lowest temperature simulations show a deviation from the $t^{-1}$ decay law, suggesting a shift to longer vortex tangle decay times as the gas is simulated closer to the zero temperature limit. The decays are quantitatively compared to the predicted power law in Table \ref{tbl:fits}, showing a power law best fit and $95\%$ confidence interval.
 
 The velocity correlation function, $f(r)$, is defined at a fixed point in time as
 \begin{equation}
 f(r) = \frac{\langle v_x({\bf r})v_x({\bf r} +  r\hat{\bf e}_x) \rangle}{\langle v_x({\bf r})^2 \rangle}
 \end{equation}
-where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. While we have used the $x$ direction in the definition of $f(r)$, due to the isotropic nature of the turbulence using the $y$ or $z$ direction leads to similar results. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. The value of $f(r)$ smoothly drops to approximately at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
+where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. While we have used the $x$ direction in the definition of $f(r)$, due to the isotropic nature of the turbulence using the $y$ or $z$ direction leads to similar results. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. The value of $f(r)$ smoothly drops to approximately $0$ at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
 
 The integral scale provides a convenient measure of the distance over which velocities are correlated by producing a scalar value from the velocity correlation function. It is defined as
 \begin{equation}
@@ -364,17 +364,17 @@ and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex t
         ylabel={$I/\xi$},
         xlabel={$t/\tau$},
         xmin=0,
-        xmax=5000,
+        xmax=4500,
         ymin=0,
-        ymax=65]
-      \addplot+[green,mark=square*,thick,mark options={fill=green,scale=0.7}] file {nonequib/IS_vs_t_CF05.dat};
+        ymax=150]
       \addplot+[red,mark=*,thick,mark options={fill=red}] file {nonequib/IS_vs_t_CF02.dat};
+      \addplot+[green,mark=square*,thick,mark options={fill=green,scale=0.7}] file {nonequib/IS_vs_t_CF05.dat};
       \addplot+[blue,mark=diamond*,thick,mark options={fill=blue}] file {nonequib/IS_vs_t_CF075.dat};
-      %\addplot+[black,thick,mark=none,dashed] table[x expr=\thisrow{t}, y expr=1/sqrt(\thisrow{l})] {l_vs_t_CF075.dat};
+      \addplot+[black,thick,mark=none,dashed] table[x expr=\thisrow{t}, y expr=1/sqrt(\thisrow{l})] {nonequib/l_vs_t_CF02.dat};
     \end{axis}
   \end{tikzpicture}
   \end{center}
-  \caption{\label{fig:IS_t}(a) Snapshots of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states with $\rho/\rho_0=0.22$ (red solid line), $\rho/\rho_0=0.48$ (green dashed line), and $\rho/\rho_0=0.77$ (blue dot-dashed line). (b) The integral scale as the quasi-condensate vortex tangle decays, for equilibrium states with $\rho/\rho_0=0.22$ (red circles), $\rho/\rho_0=0.48$ (green squares), and $\rho/\rho_0=0.77$ (blue diamonds).}
+  \caption{\label{fig:IS_t}(a) Snapshots of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states with $\rho/\rho_0=0.22$ (red solid line), $\rho/\rho_0=0.48$ (green dashed line), and $\rho/\rho_0=0.77$ (blue dot-dashed line). (b) The integral scale as the quasi-condensate vortex tangle decays, for equilibrium states with $\rho/\rho_0=0.22$ (red circles), $\rho/\rho_0=0.48$ (green squares), and $\rho/\rho_0=0.77$ (blue diamonds). Also shown is the estimated inter-vortex spacing $\ell = 1/\sqrt{L(t)}$ for $\rho/\rho_0=0.22$ (dashed line).}
 \end{figure}
 
 The results of the velocity correlation and integral scale measurements confirm the conclusions of the kinetic energy spectrum measurements, that is, there is no evidence of energy at scales larger than the inter-vortex spacing at any point during vortex decay, at all simulated temperatures. This is perhaps not such a surprising result, the initial vortex tangle is seeded and forms from random fluctuations in the phase of the 3D wavefunction, favouring the random nature of quasi-classical turbulence.
@@ -467,7 +467,7 @@ In other words, for a given obstacle, the critical velocity is a fixed
 fraction of the speed of sound based on the {\it condensate} density
 rather than the total particle density \cite{leadbeater_2003}.
 
-Figure \ref{fig:vc-n0} (b) shows the variation of $v_{\rm c}$ with the obstacle width $d$ at finite temperature, for the example of $T/T_\lambda =0.56$.   The qualitative behaviour is consistent with that seen in Chapter \ref{cha:wake} at zero temperature \cite{huepe00,rica2001,stagg_parker_14}: for small $d$ the critical velocity is sensitive to $d$ (due to the prominence of boundary layer effects) but as $d$ increases $v_c$ decreases towards a limiting values (the Eulerian limit).  However, the critical velocities are systematically reduced compared to the zero temperature case due to the reduced condensate speed of sound at finite temperature.
+Figure \ref{fig:vc-n0} (b) shows the variation of $v_{\rm c}$ with the obstacle width $d$ at finite temperature, for the example of $T/T_\lambda =0.56$.   The qualitative behaviour is consistent with that seen in Chapter \ref{cha:wake} at zero temperature \cite{huepe00,rica2001,stagg_parker_14}: for small $d$ the critical velocity is sensitive to $d$ (due to the prominence of boundary effects) but as $d$ increases $v_c$ decreases towards a limiting value (the Eulerian limit).  However, the critical velocities are systematically reduced compared to the zero temperature case due to the reduced condensate speed of sound at finite temperature.
 
 
 \subsection{Vortex nucleation pattern}

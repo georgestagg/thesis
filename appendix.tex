@@ -22,9 +22,9 @@ We take the first temporal point to be $\nu_1=0$, so that the first term in the 
 \begin{equation*}
 k_1 = hf(t_n,\psi(t_n)).
 \end{equation*}
-We can then easily calculate the value of $k_1$. A single step in Euler's method tells us that $\psi(t_n+h\nu_2) \approx h\nu_2f(t_n,\psi(t_n))$ and so we write $k_2$ in a form containing $k_1$,
+We can then easily calculate the value of $k_1$. A single step in Euler's method tells us that $\psi(t_n+h\nu_2) \approx \psi(t_n) + h\nu_2f(t_n,\psi(t_n))$ and so we write $k_2$ in a form containing $k_1$,
 \begin{equation*}
-k_2 = hf(t_n+h\nu_2,\psi(t_n+h\nu_2)) \approx hf(t_n+\nu_2h,\psi(t)+\nu_2k_1).
+k_2 = hf(t_n+h\nu_2,\psi(t_n+h\nu_2)) \approx hf(t_n+\nu_2h,\psi(t_n)+\nu_2k_1).
 \end{equation*}
 For a forth order scheme we would then introduce $k_3$ and $k_4$, following the same methods of writing $k_i$ in previous terms up to $k_{i-1}$. To second order, the quadrature formula becomes
 \begin{equation}
@@ -68,7 +68,7 @@ $\nu_2=1$ and $\omega_1 = \omega_2 = 1/2$. The scheme can then be directly writt
 \begin{equation}
 \psi(t_{n+1}) = \psi(t_n) + \frac{k_1}{2} + \frac{k_2}{2} + \mathcal{O}(h^3),
 \end{equation}
-where $k_1 = hf(t_n,\psi(t_n))$ and $k_2 = hf(t_n+h,\psi(t)+k_1)$.
+where $k_1 = hf(t_n,\psi(t_n))$ and $k_2 = hf(t_n+h,\psi(t_n)+k_1)$.
 
 When this proof outline is followed with $N=4$, the forth-order Runge-Kutta scheme can be found,
 \begin{equation}
@@ -97,7 +97,7 @@ where $\mathbf{r}_i$ describes the coordinates of the $i$th body. Consider a clo
 \end{equation}
 Here $\hat{h}_0(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ is a contribution arising from the effects of a single particle in an external potential. We assume in the dilute gas all interactions are binary, and so the second term arises from collisions between 2 atoms. The factor of $\frac{1}{2}$ ensures the effects are only counted once over the entire sum.
 
-We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states are infinite, our system contains a fixed number of bosons, $N$, implying that there are at most $N$ states occupied.
+We now reformulate this system in a different representation, using the so called `occupation number' orthonormal basis $\ket{n_1...n_\infty}$. This basis arises from the observation that multiple particles sharing an energetically accessible state are indistinguishable. Instead we consider only the number of particles in each state $i$ and denote this $n_i$. Such states often correspond to states with fixed energy $\varepsilon_i$. While the number of states is infinite, our system contains a fixed number of bosons, $N$, implying that there are at most $N$ states occupied.
 
 The wavefunction is mapped into the `occupation number' basis via
 \begin{equation*}
@@ -133,12 +133,12 @@ where
 \begin{align*}
 &\bra{i}\hat{h}_0\ket{j} = \int \phi_i^*(\mathbf{r})\hat{h}_0\phi_j(\mathbf{r})~d\mathbf{r},\\
 &\bra{ik}\hat{V}\ket{jl} = \frac{1}{2}\left [ (ik|\hat{V}|jl) + (ik|\hat{V}|lj) \right ],\\
-&(ik|\hat{V}|jl) = \iint \phi_i^*(\mathbf{r})\phi_k^*(\mathbf{r}')\hat{V}(\mathbf{r}-\mathbf{r}')\phi_l(\mathbf{r}')\phi_j(\mathbf{r})~d\mathbf{r}'d\mathbf{r}.
+&(ik|\hat{V}|jl) = \iint \phi_i^*(\mathbf{r})\phi_k^*(\mathbf{r}')\hat{V}(\mathbf{r}-\mathbf{r}')\phi_l(\mathbf{r}')\phi_j(\mathbf{r})~d\mathbf{r}'d\mathbf{r},
 \end{align*}
-For further convenience we introduce the so-called Bose field operators
+and $\phi_i({\bf r})$ are the single-particle eigenstates: solutions of the Schr\"odinger equation without the interaction term. For further convenience we introduce the so-called Bose field operators
 \begin{align*}
-&\hat{\upPsi}(\mathbf{r},t) = \sum_i \hat{a}_i(t)\phi_i(\mathbf{r},t),\\
-&\hat{\upPsi}^\dagger(\mathbf{r},t) = \sum_i \hat{a}^\dagger_i(t)\phi_i(\mathbf{r},t),
+&\hat{\upPsi}(\mathbf{r},t) = \sum_i \hat{a}_i(t)\phi_i(\mathbf{r}),\\
+&\hat{\upPsi}^\dagger(\mathbf{r},t) = \sum_i \hat{a}^\dagger_i(t)\phi^*_i(\mathbf{r}),
 \end{align*}
 which can be thought of as operators that represent the addition or removal of a particle at time $t$ and location $\mathbf{r}$. As with the annihilation and creation operators, the Bose field operators also satisfy the commutation relations,
 \begin{equation}
@@ -153,9 +153,9 @@ Using these operators, the Hamiltonian in Equation \ref{eq:gpeqftsechamil} can b
 \label{eq:gpeqftbfohamil}
 \end{split}
 \end{equation}
-where, as before, $\hat{h}_0(\mathbf{r}_k,t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ and $V(\mathbf{r}-\mathbf{r}')$ is the two-body interaction potential.
+where, as before, $\hat{h}_0(\mathbf{r},t) = -\frac{\hbar^2}{2m}\nabla^2+V_{\mathrm{ext}}(\mathbf{r},t)$ and $V(\mathbf{r}-\mathbf{r}')$ is the two-body interaction potential.
 
-We now add to our approximations a frequent simplification of the interaction potential and consider all interactions as totally elastic contact collisions. The strength of this interaction is usually taken to be $g=4\pi\hbar^2a/m$, where $a$ is the s-wave scattering length, measured for a particular atom in the lab. Our two-body interaction potential then becomes,
+We now turn our attention to the particle interactions. We first note that in this derivation, a perturbation approach is taken, with the the single-particle eigenstates, $\phi_i({\bf r})$, used as a basis. As the functions $\phi_i({\bf r})$ are defined as solutions of the Schr\"odinger equation without interactions, strictly speaking, the resulting approach is applicable only when inter-particle interactions are weak. We further add to our approximations a simplification of the interaction potential, by considering all interactions as totally elastic contact collisions. Through scattering theory, the resulting strength of the interactions, $g$, can be related to the s-wave scattering length, $a_s$, which is measurable for a particular atom in the lab. This approach leads to a leading order approximation of $g=4\pi\hbar^2a_s/m$. Our two-body interaction potential then becomes,
 \begin{equation*}
 V(\mathbf{r}-\mathbf{r}') = g \delta(\mathbf{r}-\mathbf{r}'),
 \end{equation*}
@@ -193,7 +193,7 @@ We now make the Bogoliubov approximation \cite{bogo47}, a somewhat violent symme
 \end{equation*}
 where $N_0$ is the number of particles in the condensate. Written in this way, it is then possible to approximate the condensate density using $n(\mathbf{r},t) = |\psi(\mathbf{r},t)|^2$. Unfortunately a direct consequence of the action is that the physical state described by $\hat{\upPsi}(\mathbf{r},t)$ no longer satisfies the same symmetries as before. In particular, the total number of particles is not conserved. This approximation is justified by the understanding that as the condensate forms, it takes on a single phase, and all the particles in the condensate can be described by a single wavefunction. In addition, it is assumed that if there are many particles in the condensate, the exact value of $N_0$ does not affect the system state significantly, that is, $N_0 \approx N_0+1$. This approximation is essentially equivalent to the statement $\braket{\hat{\upPsi}(\mathbf{r},t)} = \psi(\mathbf{r},t) \ne 0$, where $\braket{...}$ denotes the ensemble average. The non-condensed field operator $\hat{\delta}(\mathbf{r},t)$ remains as an operator in the decomposition, and captures all the fluctuations around $\psi(\mathbf{r},t)$. It is generally assumed that $\braket{\hat{\delta}(\mathbf{r},t)}=0$.
 
-In principle, the classical field $\psi(\mathbf{r},t)$ is interpreted as the condensed atoms , however it can also be interpreted as the condensate atoms along with excitations of the system, as long as the occupation at high energy states $n_{i\gg1}$ and the size of quantum fluctuations are both negligible. The classical field, or c-field, approaches can be used to model finite temperature effects by modelling part of the thermal cloud with highly populated modes below a certain momentum cutoff, explored in Section \ref{section:cfield}.
+In principle, the classical field $\psi(\mathbf{r},t)$ is interpreted as the condensed atoms, however it can also be interpreted as the condensate atoms along with excitations of the system, as long as the occupation at high energy states and the size of quantum fluctuations are both negligible. The classical field, or c-field, approaches can be used to model finite temperature effects by modelling part of the thermal cloud with highly populated modes below a certain momentum cutoff, explored in Section \ref{section:cfield}.
 
 In the limit of $T\rightarrow0$, all of the particles become part of the condensate, so that $N=N_0$. The contribution from the non-condensate atoms can be neglected, $\hat{\delta}(\mathbf{r},t)=0$, and the field operator is written $\hat{\upPsi}(\mathbf{r},t) = \psi(\mathbf{r},t)$. In this case, the Heisenberg equation of motion in Equation \ref{eq:gpeqfthem} reduces to
 \begin{equation*}
@@ -248,23 +248,20 @@ Note that it can easily be shown $\frac{1}{R} \frac{\partial^2 R}{\partial x_j \
 &\Rightarrow \frac{\partial}{\partial t}\left(\frac{\hbar}{m} \frac{\partial \theta}{\partial x_k}\right) = \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{n}} \nabla^2\sqrt{n} \right)- \frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - \frac{2gR}{m}\frac{\partial R}{\partial x_k} - \frac{1}{m}\frac{\partial V}{\partial x_k}\\
 &\Rightarrow n\frac{\partial v_k}{\partial t} =n \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{n}} \nabla^2\sqrt{n} \right)- n\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) - 2gR^3\frac{\partial R}{\partial x_k} - n\frac{1}{m}\frac{\partial V}{\partial x_k}.
 \end{align*}
-
-By noticing that $p = \frac{1}{2}g \left ( \frac{n}{m} \right ) ^2 = \frac{gR^4}{2}$ we can write $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ and then,
+Introduce the pressure, defined as $p = \frac{1}{2}g \left ( \frac{n}{m} \right ) ^2 = \frac{gR^4}{2}$, and then using $\frac{\partial p}{\partial x_k} = 2gR^3\frac{\partial R}{\partial x_k}$ we can write,
 \begin{equation*}
 n\frac{\partial v_k}{\partial t} + n\frac{\partial}{\partial x_k} \left (\frac{v^2}{2}\right) =n \frac{\partial}{\partial x_k}\left(\frac{\hbar^2}{2m^2} \frac{1}{\sqrt{n}} \nabla^2\sqrt{n} \right) - \frac{\partial p}{\partial x_k} - mR^2\frac{\partial}{\partial x_k}\left ( \frac{V}{m}\right ).
 \end{equation*}
-
 We now now use the following two results,
 \begin{align*}
 v_j \frac{\partial}{\partial x_j}v_k &= \frac{\partial}{\partial x_k}\left ( \frac{v_jv_j}{2}\right )\\
 2\frac{\partial}{\partial x_k}\left( \frac{1}{\sqrt{n}} \frac{\partial^2}{\partial x_j \partial x_j} \sqrt{n}\right) &= \frac{1}{n} \frac{\partial}{\partial x_j}n \frac{\partial}{\partial x_j}\frac{\partial}{\partial x_k} \ln{n},
 \end{align*}
-
 and find,
 \begin{equation*}
 n\left ( \frac{\partial}{\partial t} v_k v_j\frac{\partial v_k}{\partial x_j}\right) = -\frac{\partial p}{\partial x_k} - \frac{\partial}{\partial x_j} P_{jk} - n \frac{\partial}{\partial x_k}\left( \frac{V}{m} \right),
 \end{equation*}
-where $P_{jk} = -\frac{\hbar^2}{4m^2}n\frac{\partial^2\ln{n}}{\partial x_j \partial x_k}$. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
+where $P_{jk} = -\frac{\hbar^2}{4m^2}n\frac{\partial^2\ln{n}}{\partial x_j \partial x_k}$ is the quantum pressure. Writing this in vector notation, we obtain an equation similar to the Euler equation for an inviscid fluid,
 \begin{equation}
 n\left( \frac{\partial \mathbf{v}}{\partial t} + \left( \mathbf{v} \cdot \nabla \right)\mathbf{v} \right) = -\nabla p - \nabla \mathbf{P} - n \nabla \left(\frac{V}{m}\right).
 \end{equation}
@@ -305,7 +302,7 @@ The kinetic energy can be further decomposed into compressible and incompressibl
 E_{\rm kin} = E^i_{\rm kin} + E^c_{\rm kin},
 \label{eq:Esplitdef}
 \end{equation*}
-by using $\sqrt{n}v_j = (\sqrt{n}v_j)^c + (\sqrt{n}v_j)^i$, with $\nabla(\sqrt{n}v_j)^i=0$, where $\mathbf{v}$ is the fluid velocity. The spectrum of $E^i_{\rm kin}$ can be defined so that a similar relation to Equation \ref{eq:Ekinspec} holds.
+by using $\sqrt{n}v_j = (\sqrt{n}v_j)^c + (\sqrt{n}v_j)^i$, with $\nabla(\sqrt{n}v_j)^i=0$, where $\mathbf{v}$ is the fluid velocity \cite{Nore}. The spectrum of $E^i_{\rm kin}$ can be defined so that a similar relation to Equation \ref{eq:Ekinspec} holds.
 
 
 \section{\label{appsection:force} Force}
@@ -314,9 +311,9 @@ A useful quantity to know for the study of superflow around a obstacle is the fo
 J_k &= n v_k,\\
 p &= \frac{g}{2}\left(\frac{n}{m}\right)^2,\\
 P_{jk} &= -\frac{\hbar^2}{4m^2} n \frac{\partial}{\partial x_j} \frac{\partial}{\partial x_k} \ln(n),\\
-T_{jk} &= n v_j v_k + p\mathrm{\delta}_{jk} + P_{jk}.
+T_{jk} &= n v_j v_k + p\mathrm{\delta}_{jk} + P_{jk},
 \end{align*}
-Then it can be shown that the two equations,
+where $J_k$ is momentum, $p$ is pressure, $P_{jk}$ is the quantum pressure, and $T_{jk}$ is the energy-momentum flux tensor. Then it can be shown that the two equations,
 \begin{align}
 \frac{\partial}{\partial t}n + \frac{\partial}{\partial x_k}J_k &= 0 \\
 \frac{\partial}{\partial t}J_k + \frac{\partial}{\partial x_j}T_{jk} + n \frac{\partial}{\partial x_k} \left( \frac{V}{m}\right) &= 0,\label{eq:force1}
@@ -340,7 +337,7 @@ where $n({\bf r},t) = |\psi({\bf r},t)|^2$. Rearranging for $\xi$, we find
 \begin{equation}
   \xi = \frac{\hbar}{\sqrt{mgn}}.
 \end{equation}
-Note that, in general, the healing length depends on the condensate density $n$. However, in a homogeneous system $n({\bf r},t) = \rho$ is the uniform density, and so we can write the healing length as
+Note that, in general, the healing length depends on the condensate density $n$. However, in a homogeneous system $n({\bf r},t) = \rho$ is the uniform density, and so we can write the homogeneous healing length as
 \begin{equation}
   \xi = \frac{\hbar}{\sqrt{mg\rho}}.
 \end{equation}
@@ -351,11 +348,11 @@ The weakly-interacting Bose gas has the dispersion relation,
 \begin{equation}
 E(p_e)=\sqrt{\frac{ngp_e^2}{m} + \frac{p_e^4}{4m^2}},
 \end{equation}
-where $n({\bf r},t) = |\psi({\bf r},t)|^2$ is the local condensate density, $p_e$ is the momentum of elementary excitations and $E(p_e)$ their energy \cite{NozieresPines}. Consider excitations with a small momentum $p_e$. Here the dispersion relation is linear,
+where $n({\bf r},t) = |\psi({\bf r},t)|^2$ is the local condensate density, $p_e$ is the momentum of elementary excitations and $E(p_e)$ their energy \cite{NozieresPines}. Consider excitations with a small momentum $p_e$. Here the dispersion relation is linear and sound-like,
 \begin{equation}
 E(p_e)\approx \sqrt{\frac{ng}{m}}p_e ,
 \end{equation}
-and becomes sound-like, with a velocity $c_{\rm local} = \sqrt{ng/m}$ dependent on the local condensate density $n({\bf r},t)$. In a homogeneous system $n({\bf r},t) = \rho$ is the uniform density, and so the speed of sound in a homogeneous system is
+with a speed of sound, $c_{\rm local} = \sqrt{ng/m}$, dependent on the local condensate density $n({\bf r},t)$. In a homogeneous system $n({\bf r},t) = \rho$ is the uniform density, and so the speed of sound in a homogeneous system is
 \begin{equation}
 c = \sqrt{\frac{\rho g}{m}}.
 \end{equation}
@@ -364,7 +361,7 @@ c = \sqrt{\frac{\rho g}{m}}.
 
 \begin{chapter}{\label{app:algorithms}Algorithms}
 \section{\label{appsection:vizalgos} Density/Phase Visualisation Technique}
-A technique to visualise both the wavefunction phase and density is sometimes used this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
+We describe here a technique to visualise both the wavefunction phase and density often used in this thesis. The advantage of the method is that it allows for an easy way to visualise the state of the phase of the system, while also retaining information about what areas of phase are unimportant due to the non-existence of fluid density in that region. Common problems with phase visualisation include the prevalence of ghost vortices\cite{tsubota_kasamatsu_02} when considering a trapped condensate; with this method the discontinuities introduced by ghost vortices are entirely unseen. Previously, this has been attained through the use of masks to hide the unimportant phase regions in trapped systems. These masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask. The method outlined in this section instead smoothly hides the unwanted areas of phase by using the density information in the system, disregarding the need for masks completely.
 \subsubsection{Plotting Algorithm}
 Initially, the phase plotting is performed as normal, a process involving a conversion of a set of values in the region $[-\pi,\pi)$ to an image (defined as a 2D grid of pixels of size $n\times m$). Examples include MATLAB's image/pcolor commands or gnuplot's splot command. It is recommended, but not required, that a periodic colourmap (such as MATLAB's `hsv') of equal lightness is used. The $n \times m$ pixels obtained from this procedure will most commonly be stored in the {\tt rgb} format, a triad of values $(r,g,b)$ corresponding to the values of the red, green and blue intensities of the pixel respectively. For a maximum intensity of $255$ (a common format for {\tt rgb} pixels), a pixel with value $(0,0,0)$ is black, and a pixel of $(255,255,255)$ is white.
 
