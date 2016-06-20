@@ -1,4 +1,4 @@
-\begin{thebibliography}{301}
+\begin{thebibliography}{307}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -117,6 +117,43 @@
   \emph{\bibinfo{title}{Quantized Vortices in {H}elium II}}
   (\bibinfo{publisher}{Cambridge University Press},
   \bibinfo{address}{Cambridge}, \bibinfo{year}{1991}).
+
+\bibitem[{\citenamefont{Landau}(1947)}]{Landau47}
+\bibinfo{author}{\bibfnamefont{L.~D.} \bibnamefont{Landau}},
+  \bibinfo{journal}{J. Phys. (USSR)} \textbf{\bibinfo{volume}{11}},
+  \bibinfo{pages}{91} (\bibinfo{year}{1947}).
+
+\bibitem[{\citenamefont{Palevsky et~al.}(1957)\citenamefont{Palevsky, Otnes,
+  Larsson, Pauli, and Stedman}}]{PhysRev.108.1346}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Palevsky}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Otnes}},
+  \bibinfo{author}{\bibfnamefont{K.~E.} \bibnamefont{Larsson}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Pauli}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Stedman}},
+  \bibinfo{journal}{Phys. Rev.} \textbf{\bibinfo{volume}{108}},
+  \bibinfo{pages}{1346} (\bibinfo{year}{1957}).
+
+\bibitem[{\citenamefont{Yarnell et~al.}(1958)\citenamefont{Yarnell, Arnold,
+  Bendt, and Kerr}}]{PhysRevLett.1.9}
+\bibinfo{author}{\bibfnamefont{J.~L.} \bibnamefont{Yarnell}},
+  \bibinfo{author}{\bibfnamefont{G.~P.} \bibnamefont{Arnold}},
+  \bibinfo{author}{\bibfnamefont{P.~J.} \bibnamefont{Bendt}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{E.~C.} \bibnamefont{Kerr}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{1}},
+  \bibinfo{pages}{9} (\bibinfo{year}{1958}).
+
+\bibitem[{\citenamefont{Henshaw}(1958)}]{PhysRevLett.1.127}
+\bibinfo{author}{\bibfnamefont{D.~G.} \bibnamefont{Henshaw}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{1}},
+  \bibinfo{pages}{127} (\bibinfo{year}{1958}).
+
+\bibitem[{\citenamefont{Palevsky et~al.}(1958)\citenamefont{Palevsky, Otnes,
+  and Larsson}}]{PhysRev.112.11}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Palevsky}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Otnes}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.~E.} \bibnamefont{Larsson}},
+  \bibinfo{journal}{Phys. Rev.} \textbf{\bibinfo{volume}{112}},
+  \bibinfo{pages}{11} (\bibinfo{year}{1958}).
 
 \bibitem[{\citenamefont{Phillips}(1998)}]{billphillips}
 \bibinfo{author}{\bibfnamefont{W.~D.} \bibnamefont{Phillips}},
@@ -2163,6 +2200,15 @@
   \bibnamefont{Barenghi}}, \bibinfo{journal}{Journal of Physics B: Atomic,
   Molecular and Optical Physics} \textbf{\bibinfo{volume}{47}},
   \bibinfo{pages}{095304} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Parker et~al.}(2004)\citenamefont{Parker, Proukakis,
+  Barenghi, and Adams}}]{PhysRevLett.92.160403}
+\bibinfo{author}{\bibfnamefont{N.~G.} \bibnamefont{Parker}},
+  \bibinfo{author}{\bibfnamefont{N.~P.} \bibnamefont{Proukakis}},
+  \bibinfo{author}{\bibfnamefont{C.~F.} \bibnamefont{Barenghi}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~S.} \bibnamefont{Adams}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{92}},
+  \bibinfo{pages}{160403} (\bibinfo{year}{2004}).
 
 \bibitem[{\citenamefont{Stagg et~al.}(2015{\natexlab{a}})\citenamefont{Stagg,
   Allen, Parker, and Barenghi}}]{stagg_allen_14}

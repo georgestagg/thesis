@@ -227,10 +227,10 @@ We again define a set of curves with a width around the diameter of a vortex cor
 
 For every vortex detected by this algorithm, the corresponding area in the vortex field is composed of several adjoined points in the numerical grid. For correct vortex counting, these multiple points must be classified as a single vortex. The bwlabel algorithm described in Algorithm \ref{algo_bwlabel} is used to obtain this required classification. The algorithm takes the vortex field as input and assigns each set of connected grid points (where $\Delta\theta(C_{[i,j]})\neq 0$) a label. An example output of bwlabel is shown in Figure \ref{fig:vortexfield}. To find the vortex location for a given label, we simply take the mean of all the $x$ and $y$ locations of points with the same label (the procedure is shown rigorously in Algorithm \ref{algo_calcvortexlocs}).
 
-The algorithm described in this section leads to more accurate vortex counts when vortices are densely packed. As a bonus the accuracy of detected vortex location is improved; the final output is a combination of information from several curves $C_{[i,j]}$, and so in good conditions the result is often accurate even if the phase singularity corresponding to a vortex lies between grid points. 
+The algorithm described in this section leads to more accurate vortex counts when vortices are densely packed. As a bonus the accuracy of detected vortex location is improved; the final output is a average of information from several curves $C_{[i,j]}$, and so in good conditions the result can be improved by a factor of 2 when the phase singularity corresponding to a vortex lies between grid points.
 
 \subsection{\label{section:gaussianblur} Further improving accuracy with a Gaussian blur}
-When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spatial waves from the vortex field using low-pass filtering. A common low-pass filter is the Gaussian blur \cite{shapiro2001computer}, applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to the vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
+When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spatial waves from the vortex field using low-pass filtering (the filter parameters should be chosen to remove waves with wavelength smaller than the size of a vortex core). A common low-pass filter is the Gaussian blur \cite{shapiro2001computer}, applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to the vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
 \begin{figure}[!ht]
   \centering
    \begin{tikzpicture}
@@ -297,7 +297,7 @@ A common problem when detecting vortices is the prevalence of invalid or uninter
   \caption{A trapped rotating condensate with $\Omega=0.7$, $\tilde{g}=2000$ and $\tilde{\mu}=25.27$. Ghost vortices can be seen in the phase as singularities where the corresponding density is near-zero.\label{fig:ghostvortex}}
  \end{figure}
 
-A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>1$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
+A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>\mu$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
 
 An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
 \begin{figure}[!ht]
@@ -375,7 +375,7 @@ An alternative method to avoid identifying ghost vortices presents itself when i
 \section{\label{section:vortexclustering} Quantifying vortex clustering in 2D}
 With the ability to detect vortex polarity and locations in 2D, we can begin to better understand vortex distribution and statistics in simulations. In this section we describe the various methods of quantifying vortex distribution, both simple and complex.
   \subsection{\label{section:vortexcounting} Vortex counting}
-  The simplest method of ascertaining vortex statistics is to simply count the number of vortices, $N_v$, in the entire system. A further obvious decomposition of this quantity is to count the number of positive and negative vortices separately, designated $N_+$ and $N_-$ respectively. With this information we can define an interesting property of a system's vortex distribution,
+  The simplest method of ascertaining vortex statistics is to simply count the number of vortices, $N_v$, in the entire system. A further obvious decomposition of this quantity is to count the number of positive and negative vortices separately, designated $N_+$ and $N_-$ respectively. With this information we can define a useful property of a system's vortex distribution,
   \begin{equation}
     P_v = \frac{N_+ - N_-}{N_v},
   \end{equation}
@@ -388,7 +388,7 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
   \begin{equation}\label{eq:ripleysktheory}
     K(s) = \lambda^{-1}E[\text{\# of points within distance $s$ of a randomly chosen point}],
   \end{equation}
-  where $\lambda$ is the density (number per unit area) of points. $K(s)$ can be analytically evaluated when it is known that points are distributed according to a homogeneous Poisson process, i.e. randomly placed in space. In this case each point is independent from all the other points and the resulting equation for $K(s)$ is known as complete spatial randomness (CSR),
+  where $\lambda$ is the density (number per unit area) of points and $E[]$ denotes expectation. $K(s)$ can be analytically evaluated when it is known that points are distributed according to a homogeneous Poisson process, i.e. randomly placed in space. In this case each point is independent from all the other points and the resulting equation for $K(s)$ is known as complete spatial randomness (CSR),
   \begin{equation}\label{eq:ripleyskcsr}
     K(s) = \pi s^2.
   \end{equation}
@@ -484,7 +484,7 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
   \caption{Sample points (left) used for estimating Ripley's $K$ and Besag's $L$ functions. Shown (right) are the estimated curves $\hat{K}(s)$ and $\hat{L}(s)-s$ (black solid lines) and the theoretical curves (dashed black lines) for points under complete spatial randomness. Here Equation \ref{eq:ripleyskedge} was used to calculate $\hat K(s)$. $\hat{L}(s)-s > 0$ for small values of $s$ and $\hat{L}(s)-s < 0$ for larger values of $s$, demonstrating that the sample points are clustered at small scales and sparse at larger scales.\label{fig:ripleyexample}}
  \end{figure}
 
-  The power of the $K$ and $L$ curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spatial pattern used to generate the points.
+  The power of the $K$ and $L$ curves is demonstrated in Figure \ref{fig:ripleyexample}, wherein $K(s)$ and $L(s)$ were estimated (taking edge-effects into account) from inhomogeneous sample points. Inhomogeneity was enforced by randomly placing 100 sample points within the region $x,y \in (-5,5)$, with two further randomly placed `clusters' of 100 points in the regions $x,y \in (-5,-4)$ and $x,y \in (4,5)$. The number of sample points and the region definitions used here are arbitrary, chosen simply for demonstration of the $K$ and $L$ curves. The curve $\hat{L}(s)-s$ clearly shows a positive region (suggesting clustering) on the scale of the cluster size, and a negative region (suggesting dispersion) on the scale of the box size, detecting from the point data alone exactly the spatial pattern used to generate the points.
 
   
 \subsection{\label{section:reevesalgorithm} Recursive Cluster Algorithm }
@@ -495,7 +495,7 @@ The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeve
 \item {\it Opposite sign vortices that are mutual nearest-neighbours are removed from the algorithm's consideration.}
 \item {\it Same-sign vortices that are closer to each other than either is to an opposite-sign vortex are placed in the same cluster.}
 \end{itemize}
-The rules are applied repeatedly in order until no more vortices can be added to the dipole or cluster groups. Any remaining vortices are labelled as ``free vortices''. An implementation of the algorithm, compatible with the output of the vortex detection algorithms in Section \ref{section:vortexidentifying}, is described in detail in Algorithm \ref{algo_rca}. A sample RCA decomposition of 200 randomly placed points with random polarity is demonstrated in Figure \ref{fig:rca}. It can be seen that the algorithm correctly picks out the chance clusters of like-signed points. 
+The rules are applied repeatedly in order until no more vortices can be added to the dipole or cluster groups. Any remaining vortices are labelled as ``free vortices''. An implementation of the algorithm, compatible with the output of the vortex detection algorithms in Section \ref{section:vortexidentifying}, is described in detail in Algorithm \ref{algo_rca}. A sample RCA decomposition of 200 randomly placed points with random polarity is demonstrated in Figure \ref{fig:rca}. It can be seen that the algorithm picks out the chance clusters of like-signed points. 
 
 \begin{figure}[!ht]
 \centering
@@ -524,6 +524,7 @@ where $C$ is the a set of vortices in a particular cluster, $N_C$ is the number 
 \begin{equation}\label{eq:rcacom}
   R_C = \frac{1}{N_C}\sum\limits_{i\in C} \left |{\rm r}_i - {\bf R}_C \right |.
 \end{equation}
+Note that while the results of the RCA are insensitive to small changes in the initial input, over time vortex distributions can radically change. This has the consequence that $\mathbf{R}_C$ and $R_C$ vary over time, and so time based averaging should also be used to gain statistics of vortex clustering.
 
 \section{\label{section:vortextracking} Building vortex trajectories}
 It is of interest to be able to track vortices over time, eventually leading to the building of vortex trajectories. The process of building trajectories from the location of many different points over time is known as particle linking. Note that in particle linking, although the location of particles is known, their identity is unknown (that is, the particles are not labelled) and so it is not immediately obvious what particle at one point in time corresponds to another at different times and so methods for particle linking are therefore often built through minimisation algorithms. 
@@ -629,8 +630,9 @@ The final result of these routines is that fluid wrapping around the numerical d
 \section{\label{section:quasi-condensate} Quasi-Condensate Visualisation}
 When simulating a finite temperature Bose gas, the raw numerical wavefunction is too noisy to allow direct visualization of vortical structures. This can be overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}. This wavefunction is constructed by filtering out high-frequency spatial modes from the classical field wavefunction, by 
 transforming the complex amplitudes via
-$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ then represents the long-wavelength component of the classical field.
-\begin{figure}[!ht]
+$\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ then represents the long-wavelength component of the classical field. By forcing the vortical structures to be described by a relatively low number of modes, the vortex lines can be clearly visualised.
+
+\begin{figure}
 \centering
 \includegraphics[width=0.35\linewidth]{numerics/figures/mess3d}%
     \begin{minipage}[b]{0.2\linewidth}
@@ -640,6 +642,8 @@ $\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. $\hat{\psi}$ the
     \includegraphics[width=0.35\linewidth]{numerics/figures/clean3d}
   \caption{(Left) Unfiltered wavefunction density isosurface, $|\psi|^2$, from a classical-field simulation with condensate fraction $\rho_0/\rho=0.22$ during equilibration. A vortex tangle is present but not visible by direct density visualisation. (Right) Filtered wavefunction density isosurface, $|\hat{\psi}|^2$, clearly showing the vortical structures in the gas.}\label{fig:quasicondensatefilter}
   \end{figure}
+
+We find the procedure produces satisfactory visualisation of the vortical structures in the quasi-condensate, and the numerical procedures involved are relatively simple and efficient. For these reasons we use the filtering method over more computationally complex methods of defining the quasi-condensate wavefunction, such as calculating the macroscopically occupied Penrose-Onsager eigenstate of the single-particle density matrix \cite{stringari}.
 
 The choice of $k_c$ is facilitated by the the bimodal distribution of occupation numbers in the wavefunction, a distribution which develops naturally through propagation of the GPE. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is the quasi-condensate, characterised by macroscopic mode populations and superfluid ordering. $k_c$ is chosen as the boundary in $k$-space between the quasi-condensate and the thermal gas. Figure \ref{fig:quasicondensatefilter} demonstrates the filtering technique in action.
 

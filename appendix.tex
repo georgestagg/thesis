@@ -1,4 +1,52 @@
 \begin{chapter}{Detailed Derivations\label{app:App2}}
+
+
+\section{\label{appsection:tl_cf_deriv} Critical temperature and condensate fraction for a non-interacting Bose gas}
+Consider a three-dimensional non-interacting Bose gas of volume $D^3$ confined by hard walls. The critical temperature, $T_\lambda$, is defined as the highest temperature at which macroscopic occupation of the ground state takes place. For a large number of particles, $N$, the zero-point energy in the system can be neglected, so that the energy of the ground state is $\epsilon_0 = 0$, and the energy levels can be considered as a continuous variable, $\epsilon$. The number of particles in excited states is then written,
+\begin{equation}
+N_{\rm ex}(T,\mu) = \int_0^\infty \!\! g(\epsilon)f(\epsilon)\,{\rm d}\epsilon = \int_0^\infty \!\! \frac{g(\epsilon)}{e^{(\epsilon - \mu) / k_{\rm B}T} - 1}\,{\rm d}\epsilon,
+\label{eq:nex_nex_int}
+\end{equation}
+where $g(\epsilon)$ is the density of states and $f(\epsilon)$ is the Bose-Einstein distribution. Note that equation \ref{eq:nex_nex_int} will achieve its greatest value when $\mu = 0$. We now consider the critical temperature, $T_\lambda$. At this temperature, it is possible for the total number of particles to be accommodated in excited states,
+\begin{equation}
+N = N_{\rm ex}(T_\lambda,0) = \int_0^\infty \!\! \frac{g(\epsilon)}{e^{\epsilon / k_{\rm B}T_\lambda} - 1}\,{\rm d}\epsilon.
+\label{eq:n_nex_tlam}
+\end{equation}
+The density of states for a three-dimensional gas confined by hard walls can be written as
+\begin{equation}
+g(\epsilon) = \frac{D^3 m^{3/2} \epsilon^{3/2-1} }{\sqrt{2} \pi^2 \hbar^3},
+\end{equation}
+where $m$ is the mass of a single particle \cite{Pethick}. Using this equation for $g(\epsilon)$ with Equation \ref{eq:n_nex_tlam}, the expression for the number of particles becomes
+\begin{equation}
+N = \frac{D^3 m^{3/2}}{\sqrt{2} \pi^2 \hbar^3}\int_0^\infty \! \frac{\epsilon^{3/2-1} }{ e^{\epsilon / k_{\rm B}T_\lambda} - 1}\,{\rm d}\epsilon.
+\end{equation}
+We now introduce a change of variable, $w = \epsilon/k_{\rm B}T_\lambda$, so that
+\begin{equation}
+N = \frac{D^3 (m k_{\rm B} T_\lambda)^{3/2}}{\sqrt{2} \pi^2 \hbar^3}\int_0^\infty \! \frac{w^{3/2-1}}{ e^w - 1}\,{\rm d}w = \frac{D^3 (m k_{\rm B} T_\lambda)^{3/2}}{\sqrt{2} \pi^2 \hbar^3} \Gamma(3/2)\zeta(3/2),
+\label{eq:NkbT}
+\end{equation}
+where $\Gamma(x)$ is the Gamma function, $\zeta(x) = \sum_{n=1}^\infty n^{-x}$ is the Riemann-zeta function, and using the relation $\int_0^\infty w^{x-1}/(e^{w}-1)\,{\rm d}w = \Gamma(x)\zeta(x)$. Rearranging \ref{eq:NkbT} for $T_\lambda$, and using $\Gamma(3/2) = \sqrt{\pi}/2$, leads to the expression,
+\begin{equation}
+T_\lambda = \frac{2\pi\hbar^2}{mk_{\rm B}}\left(\frac{\rho}{\zeta(3/2)} \right)^{2/3},
+\label{eq:TLam}
+\end{equation}
+where $\rho=N/D^3$ is the uniform number density.
+
+Now consider Equation \ref{eq:n_nex_tlam} with an arbitrary temperature $T<T_\lambda$. We can use the same procedure as above to write,
+\begin{equation}
+N_{\rm ex}(T,0) = \frac{D^3 (m k_{\rm B} T)^{3/2}}{\sqrt{2} \pi^2 \hbar^3} \Gamma(3/2)\zeta(3/2).
+\label{eq:n_nex_tlam2}
+\end{equation}
+By making use of both Equation \ref{eq:NkbT} and \ref{eq:n_nex_tlam2}, we find
+\begin{equation}
+N_{\rm ex}(T,0) = N\left( \frac{T}{T_\lambda}\right)^{3/2}.
+\label{eq:NexNTTl}
+\end{equation}
+The number of particles in the ground state is $N_0(T) = N - N_{\rm ex}(T,0)$, and so we can equivalently write Equation \ref{eq:NexNTTl} as,
+\begin{equation}
+\frac{N_0}{N} = 1 - \left(\frac{T}{T_\lambda}\right)^{3/2}.
+\end{equation}
+
 \section{\label{appsection:rk4deriv} Derivation of the Runge-Kutta scheme}
 Presented here is the derivation of the explicit second-order Runge-Kutta scheme. The ideas and methods easily extend to the forth-order scheme used in this thesis, but in the interests of brevity the entire proof will be given to second order, with the relevant forth order extensions clearly noted.
 Let an initial value problem be specified as
@@ -108,6 +156,7 @@ with appropriately chosen complex coefficients, $c(n_1...n_\infty,t)$. The value
 \begin{equation*}
 \int|\tilde{\upPsi}|^2~d\mathbf{r}=1 \Rightarrow \sum_{n_1...n_\infty}|c(n_1...n_\infty,t)|^2\frac{N!}{n_1!...n_\infty!} = 1.
 \end{equation*}
+As particles are indistinguishable, some sets of occupation numbers correspond to multiple N-particle states. The term $N!/n_1!...n_\infty!$ has been introduced in the sum, so as to take this into account.
 
 In this formulation, note that the state vectors $\ket{n_1...n_\infty}$ are time-independent, and the evolution of the system is entirely encoded in the values of $c(n_1...n_\infty,t)$. As part of the overall picture, we also must describe the movement of bosons between different states or energy levels. It is convenient to visualise this as the simultaneous destruction of a particle in state $j$ and creation of a particle in state $i$, described mathematically using the single particle annihilation and creation operators \cite{schiff1968},
 \begin{align*}
