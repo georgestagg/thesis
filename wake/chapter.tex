@@ -678,7 +678,7 @@ We have shown that the motion of an obstacle in a Bose-Einstein condensate produ
 in the inviscid superfluid thus mimic classical vortex patterns typical of viscous flows.  The effects which we describe (dependence of the critical velocity and cluster size on the obstacle's size, velocity and ellipticity) can be experimentally studied in atomic Bose-Einstein condensates using moving laser-induced potentials. They are also relevant to the motion of objects (such as vibrating wires, grids and forks) in superfluid helium, as the obstacle's ellipticity plays a role which is analogous to rough boundaries \cite{blaz08,brad05}. This idea is explored in detail in Chapter \ref{cha:afm}.
 
 \subsection{A `superfluid Reynolds number'}
-The work in this chapter has been built upon and expanded by Reeves \emph{et. al.} \cite{reeves_2015}. The group performed many 2D simulations using circular ($\varepsilon=1$) Gaussian beams over a large parameter space of $d$ and $v$. By applying the phase unwinding algorithm described in Section \ref{section:vortexremoval} to remove vortices from the periodic flow, the group performed many simulations at efficient resolutions with a high speed GPE numerical simulation GPU/CUDA code running on a cluster of graphics cards. The large number of simulations allowed Reeves \emph{et. al.} to identify a `superfluid Reynolds number', via dynamical similarity of a hard circular cylinder in classical viscous flow and superfluid flow in the presence of a soft Gaussian obstacle.
+The work in this chapter has been built upon and expanded by Reeves \emph{et. al.} \cite{reeves_2015}. The group performed many 2D simulations using circular ($\varepsilon=1$) Gaussian beams over a large parameter space of $d$ and $v$. By applying the phase unwinding algorithm described in Section \ref{section:vortexremoval} to remove vortices from the periodic flow, the group performed many simulations at efficient resolutions with a high speed GPE numerical simulation GPU/CUDA code running on a cluster of graphics cards. The large number of simulations allowed Reeves \emph{et. al.} to identify a superfluid Reynolds number, via dynamical similarity of a hard circular cylinder in classical viscous flow and superfluid flow in the presence of a soft Gaussian obstacle.
 
 Reeves \emph{et. al.} define the superfluid Reynolds number as,
 \begin{equation}
@@ -686,9 +686,23 @@ Reeves \emph{et. al.} define the superfluid Reynolds number as,
 \end{equation}
 where $D = 2d[\log(V_0/\mu)]^{1/2}$ is the effective cylinder width and $\kappa=\hbar/m$. For circular obstacles, ${\rm Re}_s$ characterises the transition to quantum turbulence, with the predicted development of an irregular wake at ${\rm Re}_s \approx 0.7$, irrespective of cylinder size. The authors go on to measure the Strouhal number,
 \begin{equation}
-{\rm St}_s = \frac{fD}{v},
+{\rm St} = \frac{fD}{v},
 \end{equation}
-where $f$ is defined as the dominant mode in the frequency power spectrum of the transverse force on the obstacle, $F_y$, defined in Appendix \ref{appsection:force}.
+where $f$ is the dominant frequency in the power spectrum of $F_y$, the transverse force on the obstacle (defined in Appendix \ref{appsection:force}). It was found that the Strouhal and superfluid Reynolds numbers lie on a ${\rm St}-{\rm Re}_s$ curve of the form ${\rm St} = {\rm St}_{\infty}[1-\alpha/({\rm Re}_s+\beta)]$, remarkably similar to the classical form ${\rm St} = {\rm St}_{\infty}(1-A/{\rm Re}_s)$. We have confirmed that our simulations with circular obstacles agree with this observation and are reasonably consistent with the best fitting ${\rm St}-{\rm Re}_s$ curve obtained by Reeves \emph{et. al.}, ${\rm St} = 0.1402[1-0.1126/({\rm Re}_s+0.2456)]$. A selection of our measurements are listed, along with the predicted values of ${\rm St}$, in Table \ref{tbl:re_st}.
 
+\begin{table}
+\centering
+\begin{tabular}{ccccc}
+$v/c$ & ${\rm Re}_s$ & $f\tau$ & ${\rm St}$ & Predicted ${\rm St}$ \\
+\hline \\ [-2ex]
+$0.500$ & $3.004$ & $3.053 \times 10^{-3}$& $0.1310$ & $0.1353$\\
+$0.450$ & $1.931$ & $3.187 \times 10^{-3}$& $0.1519$ & $0.1343$\\
+$0.400$ & $0.8584$ & $2.700 \times 10^{-3}$& $0.1363$ & $0.1259$\\
+$0.365$ & $0.1073$ & $1.329 \times 10^{-3}$& $0.0781$ & $0.0955$\\
+\hline
+\end{tabular}
+\caption{Measurements of quantities related to the calculation of the superfluid Reynolds number, ${\rm Re}_s$ \cite{reeves_2015}, from a selection of our simulations with $\varepsilon=1$ and $d=5\xi$. A predicted Strouhal number is also listed, based on the best fit ${\rm St}-{\rm Re}_s$ curve calculated in \cite{reeves_2015}. Our measurements of ${\rm St}$ agree well with the findings of Reeves \emph{et. al.}}
+\label{tbl:re_st}
+\end{table}
 
 \end{chapter}

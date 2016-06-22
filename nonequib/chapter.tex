@@ -24,7 +24,7 @@ Gross-Pitaesvkii equation. Their work has made a significant step in consolidati
 of the critical velocity to finite temperatures.
 
 In this chapter we model a fast quenched three-dimensional homogeneous Bose gas at finite
-temperature via classical field simulations. Following \cite{PhysRevA.66.013603} we evolve the gas from a selection of strongly non-equilibrium initial conditions and observe the growth and formation of a dense tangle of vortex lines in the superfluid part of the gas. We monitor the dynamics as the turbulent vortex tangle decays and the gas reaches thermalised equilibrium. By observing the vortex tangle kinetic energy spectrum and vortex line-density over time, we find a decay characteristic of ultra-quantum turbulence.
+temperature via classical field simulations. Following \cite{PhysRevA.66.013603} we evolve the gas from a selection of strongly non-equilibrium initial conditions and observe the growth and formation of a dense tangle of vortex lines in the superfluid part of the gas. By using a strongly non-equilibrium initial condition, with random phase at all points in space, we model an infinitely fast quenched system. We monitor the dynamics as the turbulent vortex tangle decays and the gas reaches thermalised equilibrium. By observing the vortex tangle kinetic energy spectrum and vortex line-density over time, we find a decay characteristic of ultra-quantum turbulence.
 
 With the resulting equilibrium states we insert a cylindrical obstacle with Gaussian profile and study the behaviour of the gas as it flows around the obstacle. We find that the critical velocity decreases with temperature and
 increases with condensate fraction (ratio of condensate to total density).
@@ -70,9 +70,9 @@ The GPE is evolved numerically, in the absence of any potential ($V = 0$), using
 
 \section{Formation of the turbulent vortex tangle}
 \subsection{Defining the quasi-condensate}
-The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumber $k$, up to the cutoff.  Self-ordering leads to the rapid growth in the occupation of low-$k$ modes [demonstrated in Figure \ref{fig:occupation}(a)], which initially evolves in a state of weak turbulence. Then the distribution evolves to a bimodal form.
-The high-$k$ part of the distribution is associated with the
-thermal excitations and low mode occupations. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
+The ensuing evolution from the strongly non-equilibrium initial conditions has been outlined previously \cite{PhysRevA.66.013603,pattinson_2014}.  Initially the mode occupation numbers $n_k$ are uniformly distributed over wavenumbers $k$. Theoretical studies of the relaxation of this state show that the system is initially in a regime of weak turbulence that can be described by the Boltzmann kinetic equation \cite{Svistunov_1991,Kagan_Svistunov_1992,Kagan_Svistunov_1994}.
+
+Self-ordering leads to a coherent regime where the phases of the complex amplitudes $a_{\bf k}$ become strongly correlated. This regime is marked by the rapid growth in the occupation of low-$k$ modes [demonstrated in Figure \ref{fig:occupation}(a)], so that the distribution evolves to a bimodal form. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
 
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
@@ -128,7 +128,7 @@ thermal excitations and low mode occupations. The low-$k$ part of the field is a
 
 
 
-From the bimodal distribution [visible in Figure \ref{fig:occupation} (b)], a wavenumber $k_c$ can be chosen as the boundary in $k$-space between the condensate part and the thermal part of the gas.  Here we take $k_c = 10~(2\pi/D)$, although our qualitative results are insensitive to the precise definition of $k_{\rm c}$. 
+From the bimodal distribution [visible in Figure \ref{fig:occupation} (b)], a wavenumber $k_c$ is chosen as the boundary in $k$-space between the condensate part and the thermal part of the gas. The formation of a `shoulder' in the integral distribution indicates that a macroscopic fraction of the particles reside in the low-k modes, which facilitates the choice of $k_c$.  Here we take $k_c = 10~(2\pi/D)$, although our qualitative results are insensitive to the precise value of $k_{\rm c}$. 
 
 The raw wavefunction, $\psi$, is too noisy to allow direct visualisation of the resulting superfluid vortex tangle. This is overcome by defining a quasi-condensate wavefunction $\hat{\psi}$, as established in \cite{PhysRevA.66.013603}. High-frequency modes are filtered from the classical field wavefunction by transforming the complex amplitudes via $\hat{a}_{{\bf k}} = a_{{\bf k}}\times\max\{1-k^{2}/k_c^2,0\}$. This filtering technique is demonstrated in Section \ref{section:quasi-condensate} and is analogous to spatial course-grained averaging, so that $\hat{\psi}$ contains the long-wavelength component of the classical field only.  The condensate fraction, $\rho_0/\rho$, is defined as the proportion of the entire gas within the quasi-condensate, where $\rho_0 = 1/D^3 \! \int |\hat\psi|^2\,{\rm d}{\bf r}$. Note that while GPE dynamics conserves $N$ for the entire gas, the quasi-condensate particle number is free to vary. As occupation of the low-$k$ modes grows and the quasi-condensate forms, $\rho_0/\rho$ grows significantly, but stabilises near its equilibrium value before the vortex tangle decays significantly. 
 
@@ -207,11 +207,11 @@ where $\alpha=0.2275$ is a fitting parameter. We will use this relation througho
         yticklabels={,,},
         xtick={0.043,0.1709,6.28},
         xticklabels={$k_D$, $k_\ell$, $k_\xi$} ]  
-          \addplot+[mark=none,black!99,ultra thick,dashed,domain=1.3:3.45] {(3e-2)*x^(-3)};
-      \addplot+[mark=none,black!99,ultra thick,dashed,domain=0.1:0.5] {(6e-1)*x^(-1)};    
+           \addplot+[mark=none,black!99,ultra thick,dashed,domain=0.5:1.4] {(0.15)*x^(-3)};  
           \addplot+[mark=none,black!50,dashed] coordinates {(6.28, 1e-5) (6.28, 10)};
       \addplot+[mark=none,black!50,dashed] coordinates {(0.043, 1e-5) (0.043, 10)};
       \addplot+[mark=none,black!50,dashed] coordinates {(0.1709, 1e-5) (0.1709, 10)};
+      \addplot+[mark=none,red!50,dashed] coordinates {(0.436, 1e-5) (0.436, 10)};
     \end{axis}
     \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
         width=0.6\linewidth,
@@ -233,13 +233,61 @@ where $\alpha=0.2275$ is a fitting parameter. We will use this relation througho
       \addplot+[red,only marks,mark options={scale=0.5}] file {nonequib/kk_vs_Eikin-CF02-t300.dat};
       \addplot+[green,only marks,mark options={scale=0.5}] file {nonequib/kk_vs_Eikin-CF05-t300.dat};
       \addplot+[mark=diamond*,blue,only marks,mark options={scale=0.7}] file {nonequib/kk_vs_Eikin-CF075-t300.dat};
-      \node at (axis cs: 3,0.004) {$k^{-3}$};
-      \node at (axis cs: 0.25,5.5) {$k^{-1}$};
+      \node at (axis cs: 1,0.6) {$k^{-3}$};
+    \end{axis}
+  \end{tikzpicture}
+
+\begin{tikzpicture}
+    \begin{axis}[ylabel near ticks,xlabel near ticks,
+        width=0.6\linewidth,
+        xlabel={},
+        ylabel={},
+        xmin=0.025,
+        xmax=9,
+        ymin=1e-2,
+        ymax=10,
+        major tick length = 0.00cm,
+        minor tick length = 0.00cm,
+    xmode=log,
+    ymode=log,
+    axis y line*=right,
+        axis x line*=top,
+        ytick={0},
+        yticklabels={,,},
+        xtick={0.043,0.256,6.28},
+        xticklabels={$k_D$, $k_\ell$, $k_\xi$} ]  
+          \addplot+[mark=none,black!99,ultra thick,dashed,domain=1.5:2.5] {(4e0)*x^(-3)}; 
+          \addplot+[mark=none,black!99,ultra thick,dashed,domain=0.35:1.4] {(3e0)*x^(-1)};
+          \addplot+[mark=none,black!50,dashed] coordinates {(6.28, 1e-5) (6.28, 10)};
+          \addplot+[mark=none,black!50,dashed] coordinates {(0.043, 1e-5) (0.043, 10)};
+          \addplot+[mark=none,black!50,dashed] coordinates {(0.256, 1e-5) (0.256, 10)};
+          \addplot+[mark=none,red!50,dashed] coordinates {(1.745, 1e-5) (1.745, 10)};
+    \end{axis}
+    \begin{axis}[samples=200,ylabel near ticks,xlabel near ticks,
+        width=0.6\linewidth,
+        xtick pos=left,
+        ytick pos=left,
+        xlabel=$k \xi$,
+        ylabel=$\hat{E}^i_{\rm kin}/\mu$,
+        xmin=0.025,
+        xmax=9,
+        ymin=1e-2,
+        ymax=10,
+        axis y line*=left,
+        axis x line*=bottom,
+        major tick length = 0.1cm,
+        minor tick length = 0.07cm,
+    xmode=log,
+    ymode=log,
+    restrict expr to domain={x}{0.0001:4.5}]
+      \addplot+[red,only marks,mark options={scale=0.5}] file {nonequib/kk_vs_Eikin-CF02-t300-kc40.dat};
+      \node at (axis cs: 2.5,0.8) {$k^{-3}$};
+      \node at (axis cs: 0.8,7) {$k^{-1}$};
     \end{axis}
   \end{tikzpicture}
   \caption{\label{fig:spectra}Incompressible kinetic energy spectrum for the quasi-condensate tangles with $\rho_0/\rho=0.22$ (red circles), $\rho_0/\rho=0.48$ (green squares), and $\rho_0/\rho=0.77$ (blue diamonds) at time $t/\tau=300$. Dashed lines show the scale of the healing length, $k_\xi$, the length scale of inter-vortex spacing $k_\ell$, and the length scale of the periodic box $k_D$. Guide lines proportional to $k^{-3}$ and $k^{-1}$ are also shown. }
 \end{figure}
-One method to characterise the turbulence of the vortex tangle formed in the quasi-condensate is by studying how the kinetic energy of the vortices is distributed over length scales. There are three length scales of particular interest: the length scale associated with the computational box, the length scale associated with the superfluid healing length, and the length scale associated with the inter-vortex spacing, $\ell$. The corresponding wavenumbers are $k_D=2\pi/D$, $k_\xi = 2\pi/\xi$, and $k_\ell = 2\pi/\ell$. The inter-vortex spacing can be approximated by $1/\sqrt{L}$, a relation derived through dimensional arguments where $L$ is the vortex line-density (length of vortex line per unit volume). These length scales provide the perspective required to interpret the distribution of energy.
+One method to characterise the turbulence of the vortex tangle formed in the quasi-condensate is by studying how the kinetic energy of the vortices is distributed over length scales. There are three length scales of particular interest: the length scale associated with the computational box, the length scale associated with the superfluid healing length, and the length scale associated with the inter-vortex spacing, $\ell$. The corresponding wavenumbers are $k_D=2\pi/D$, $k_\xi = 2\pi/\xi$, and $k_\ell = 2\pi/\ell$. The inter-vortex spacing can be approximated by $1/\sqrt{L}$, a relation derived through dimensional arguments where $L$ is the vortex line-density (length of vortex line per unit volume). These length scales provide the perspective required to interpret the distribution of energy. Note that the quantities $\xi$ and $\ell$ vary over time. As $\ell$ varies until equilibrium, we allow $k_\ell$ to be time dependent. On the other hand $\xi$ varies rapidly early times, quickly reaching an approximately steady value, so we use the value of $\xi$ at equilibrium to define a constant $k_\xi$.
 
 The kinetic energy of the quasi-condensate is defined as $E_{\rm kin} = \int\!\frac{\hbar^2}{2m}|\nabla\hat\psi|^2\,\mathrm{d}\mathbf{r}$.
  Using Parseval's theorem, the corresponding kinetic energy spectrum, $\hat{E}_{\rm kin}(k)$, can be written in terms of the angle-average of $\left |\mathcal{F}(\sqrt{E_{\rm kin}})\right |^2$ \cite{Nore},
@@ -250,7 +298,17 @@ where $\mathcal{F}$ denotes the Fourier transform, so that,
 \end{equation}
 The kinetic energy can be further decomposed into compressible and incompressible parts, $E_{\rm kin} = E^i_{\rm kin} + E^c_{\rm kin}$, by using the decomposition \cite{Nore} $\sqrt{n}v_j = (\sqrt{n}v_j)^c + (\sqrt{n}v_j)^i$, with $\nabla(\sqrt{n}v_j)^i=0$, where $n$ is the fluid density and $\mathbf{v}$ is the fluid velocity. The incompressible kinetic energy spectrum is then denoted $\hat{E}^i_{\rm kin}(k)$, defined similarly to $\hat{E}_{\rm kin}(k)$.
 
-We calculate the incompressible energy spectrum of the quasi-condensate at various temperatures, sampled at time $t/\tau=300$ so as to characterise the vortex tangle before significant decay, while providing enough time for the quasi-condensate to form. The resulting spectra are shown in Figure \ref{fig:spectra}. Most of each spectrum demonstrates a $\sim k^{-3}$ scaling, corresponding to the vortex core on the scale of $k_\ell<k<k_\xi$. For quasi-classical turbulence, we would expect a build up of kinetic energy at scales larger than the inter-vortex distance, $k_D<k<k_\ell$, demonstrating the famous Kolmogorov $k^{-5/3}$ power law scaling. In our simulations the incompressible kinetic energy spectrum does {\it not} show a definitive $k^{-5/3}$ scaling. The spectra instead show a marked lack of energy build up at scales $k_D<k<k_\ell$. In contrast to quasi-classical turbulence, ultra-quantum turbulence predicts a $k^{-1}$ scaling at scales $k_D<k<k_\ell$. A guide line proportional to this power law is shown Figure \ref{fig:spectra}.
+We calculate the incompressible energy spectrum of the quasi-condensate at various temperatures, sampled at time $t/\tau=300$ so as to characterise the vortex tangle before significant decay, while providing enough time for the quasi-condensate to form. %The resulting spectra are shown in Figure \ref{fig:spectra}. Most of each spectrum demonstrates a $\sim k^{-3}$ scaling, corresponding to the vortex core on the scale of $k_\ell<k<k_\xi$. For quasi-classical turbulence, we would expect a build up of kinetic energy at scales larger than the inter-vortex distance, $k_D<k<k_\ell$, demonstrating the famous Kolmogorov $k^{-5/3}$ power law scaling. In our simulations the incompressible kinetic energy spectrum does {\it not} show a definitive $k^{-5/3}$ scaling. The spectra instead show a marked lack of energy build up at scales $k_D<k<k_\ell$. In contrast to quasi-classical turbulence, ultra-quantum turbulence predicts a $k^{-1}$ scaling at scales $k_D<k<k_\ell$. A guide line proportional to this power law is shown Figure \ref{fig:spectra}.
+Figure \ref{fig:spectra} clearly
+shows that our turbulence is unlike turbulence in ordinary fluids.
+In classical turbulence, the energy is concentrated
+at the smallest wavenumber $k_D$, decreasing as $k^{-5/3}$ (the celebrated
+Kolmogorov scaling) in the region $k_D < k < k_{\ell}$. Figure \ref{fig:spectra}
+shows no pile-up of energy near $k_D$ and no Kolmogorov
+scaling; on the contrary, the energy peaks at length
+scales just above $k_{\ell}$.  The visible $k^{-3}$ dependence of the spectra
+in the region $k_\ell<k<k_\xi$ arises from the vortex cores 
+\cite{Nore}.
 
 \section{Relaxation of the vortex tangle}
 \begin{figure}
@@ -331,7 +389,7 @@ The integral scale provides a convenient measure of the distance over which velo
 \begin{equation}
 I = \int\limits_0^\infty\! f(r)\, \mathrm{d}r,
 \end{equation}
-and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex tangle evolution. Three lines corresponding to different temperatures are shown, with each line an average of 5 simulations. The value of $I$ increases as the vortex tangle decays in all of the simulated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ grows, but remains significantly less than $\ell$, demonstrating that as the vortex tangle evolves over time, there is no evidence of vortex lines ``bundling up'' to create a large scale flow.
+and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex tangle evolution. In all cases, at the time of $t=5000/\tau$ there remains only a single vortex ring in the system. Three lines corresponding to different temperatures are shown, with each line an average of 5 simulations. The value of $I$ increases as the vortex tangle decays in all of the simulated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ grows, but remains significantly less than $\ell$, demonstrating that as the vortex tangle evolves over time, there is no evidence of vortex lines ``bundling up'' to create a large scale flow.
 
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
@@ -343,12 +401,14 @@ and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex t
         ytick pos=left,
         xlabel={$r/\xi$},
         ylabel={$f$},
-        xmin=0,
-        xmax=20,
-        ymin=-0.1,
+        xmin=0.7,
+        xmax=25,
+        ymin=1e-4,
         ymax=1.1,
         major tick length = 0.1cm,
-        minor tick length = 0.07cm]
+	      minor tick length = 0.07cm,
+	      xmode=log,
+	      ymode=log]
       \addplot+[red,mark=none,ultra thick] file {nonequib/f_vs_r_CF02.dat};
       \addplot+[green,mark=none,ultra thick,dashed] file {nonequib/f_vs_r_CF05.dat};
       \addplot+[blue,mark=none,ultra thick,dash pattern=on 4pt off 1pt on 1pt off 1pt] file {nonequib/f_vs_r_CF075.dat};
@@ -572,7 +632,7 @@ Just above the critical velocity, where the vortex line-length density is relati
     \caption{\label{fig:vort-vals} Vortex line density $L$ (at an observation time $\hat{t}=500\tau$)  as a function of flow speed and condensate fraction, with the qualitative regimes of vortex nucleation indicated.  The markers correspond to the three representative cases shown in Figure \ref{fig:vort-lines}(a) [red circle], (b) [blue square] and (c) [green diamond].  This line length density data, obtained from 36 simulations, has been interpolated.  The obstacle has size $d=5\xi$.}
 \end{figure}
 
-We further characterise the vortex distribution by its polarisation through the quantity $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  A value $R \approx 0$ corresponds to vortex lines aligned predominantly along the $z$ axis, $R\approx 1$ corresponds to lines aligned predominantly along $y$, and $R\approx 0.5$ corresponds to an isotropic vortex distribution (in the $yz$ plane).  The parameter space of $R$ has the same qualitative form as that for $L$, increasing with velocity and decreasing with condensate fraction. $R$ typically lies in the range $0.1 \salt R\salt 0.4$ for the lines/rings regime, consistent with the presence of lines which are predominantly aligned along $z$ and rings which are elongated along $z$.  It is worth noting that while the occurrence of lines or rings, for a given flow velocity and condensate fraction, is sensitive to the initial conditions, the value of $R$ is highly reproducible (to within a few percent).       For the vortex tangle regime, $0.4 \salt R\salt 0.5$.  It is worth noting that this shows that the produced tangle can be highly isotropic, despite two-dimensional nature of the obstacle that generates it.
+We further characterise the vortex distribution by its polarisation through the quantity $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  A value $R \approx 0$ corresponds to vortex lines aligned predominantly along the $z$ axis, $R\approx 1$ corresponds to lines aligned predominantly along $y$, and $R\approx 0.5$ corresponds to an isotropic vortex distribution (in the $yz$ plane).  When measured at the same fixed observation time of $\hat{t}=500\tau$, the parameter space of $R$ has the same qualitative form as that for $L$, increasing with velocity and decreasing with condensate fraction. $R$ typically lies in the range $0.1 \salt R\salt 0.4$ for the lines/rings regime, consistent with the presence of lines which are predominantly aligned along $z$ and rings which are elongated along $z$.  It is worth noting that while the occurrence of lines or rings, for a given flow velocity and condensate fraction, is sensitive to the initial conditions, the value of $R$ is highly reproducible (to within a few percent).       For the vortex tangle regime, $0.4 \salt R\salt 0.5$.  It is worth noting that this shows that the produced tangle can be highly isotropic, despite two-dimensional nature of the obstacle that generates it.
 
 \section{Conclusions\label{sec:conclusions}}
 

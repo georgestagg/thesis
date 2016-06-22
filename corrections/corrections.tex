@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{color}
+\newcommand{\bq}[1]{\textcolor{blue}{#1}}
+\begin{document}
+
+\hrule
+\vspace{4pt}
+Corrections to {\it A Numerical Study of Vortices and Turbulence in Quantum Fluids}\\
+\vspace{-1pt}
+\hrule
+
+In the corrected thesis the following changes have occurred:
+
+\begin{itemize}
+\item Corrected spelling, grammar, and small errors throughout.
+\item Corrected throughout so that $\rho = \mu/g = N/D^3$ always takes uniform values and $n({\bf r},t) = |\psi({\bf r},t)|^2$ is always spatially dependent, for consistency.
+\item Page 5 -  Changed volume from $V$ to $D^3$, for consistency.
+\item Page 6 -  Added two sentences detailing the experimental observation of rotons and the $^4$He dispersion relation.
+\item Page 6 -  Added that quantised circulation is predicted by describing the system in terms of a wavefunction.
+\item Page 8 -  Added that s-wave scattering dominates over p-wave and d-wave scattering in the limit of low energy collisions.
+\item Page 9 -  Expanded description of attractive BEC instability to collapse.
+\item Page 9 -  Expanded on how a helium II or atomic superfluid can be forced to rotate.
+\item Page 11 - Rephrased ``fluids'' to ``interfacial fluid waves'' for accuracy, and removed the word ``shallow'' to avoid misleading readers, as shallow water waves are sometimes described by the {\it defocusing} NLS. 
+\item Page 12 - Added a sentence about the energy cascade.
+\item Page 12 - Added ``the collision of two vortex lines such that there is a change of topology'' as a description of reconnection.
+\item Page 13 - Rephrased the first sentence of Section 1.5.2.
+\item Page 18 - Rewrote this paragraph so as to describe the meaning of the symbols for the chemical potential ($\mu$) and particle mass ($m$), and introduce the definition of the terms $V_{\rm obj}$ and $V_{\rm trap}$.
+\item Page 18 - Swapped sections 2.3 and 2.4 so that I refer to equations only after they've appeared.
+\item Page 18 - Removed $\exp (-i\mu t / \hbar)$ from the rewritten version of $\psi$ for deriving the time independent GPE, as the $-\mu$ term is already in the GPE.
+\item Page 18 - Replaced ``$T\approx T_\lambda/2$'' with the more accurate ``providing the temperature of the system is small compared to the critical temperature for Bose-Einstein condensation''.
+\item Page 18 - Explained the reasoning behind Equation 2.7.
+\item Page 21 - Added a sentence explaining why the density must vanish at the centre of a vortex.
+\item Page 22 - Introduced the formula for the speed of sound $c$ for a homogeneous condensate here.
+\item Page 23 - Rewrote parts of Section 2.9 so as to rephrase the description of decaying imaginary time solutions.
+\item Page 27 - Removed the word ``coherent'' as $\psi$ is already in the mean field formulation.
+\item Page 27 - Corrected reference to Equation 2.2.
+\item Page 27 - Moved Figure 2.2 and associated text so that the meaning of $\gamma$ is introduced first.
+\item Page 31 - Corrected the vortex core solution by adding $\sqrt{\rho}$.
+\item Page 32 - Rephrased sentence on the ``asymptotic behaviour'' of $f(r)$, instead quoting the values of $f(0)$ and $f(r)$ as $r\rightarrow\infty$.
+\item Page 32 - Cited [183] in reference to the the accuracy of the Pad\'e approximation.
+\item Page 33 - Rephrased the $1/r$ dependence so that it references Equation 2.37 rather than a figure, and instead introduced Figure 2.7 (b) elsewhere.
+\item Page 33 - Rephrased the sentence introducing ``strongly repulsive'' interactions to define what ``strong'' means (the interaction term is large compared to the size of the kinetic energy term).
+\item Page 35 - Rephrased the distribution of $|a_k|$ used in our simulations so as to be more clear, and explained that the number density, $N/V$, and kinetic energy density, $E_{\rm kin}/V$, uniquely determines the dynamics and equilibrium temperature.
+\item Page 38 - Rewrote a paragraph in Section 3.1.2 to better describe the process of substituting and rearranging with $\xi$ to find the healing length in terms of $l_r$.
+\item Page 41 - Added a sentence defining the vortex field as the field of values $\Delta\theta(C_{[i,j]})$ for every $[i,j]$.
+\item Page 42 - Rephrased ``each connected component'' as ``each set of connected grid points where $\Delta\theta(C_{[i,j]})\neq 0$.
+\item Page 45 - Added a sentence explaining at what scale the low-pass filter should act.
+\item Page 49 - Added a sentence explaining that the parameters chosen to generate random points are arbitrary, chosen just for demonstration.
+\item Page 50 - Rephrased ``vortices `wrapping around''' to ``the `wrapping' of vortices around''.
+\item Page 51 - Removed the word ``correctly''.
+\item Page 51 - Added a paragraph explaining that $\mathbf{R}_C$ and $R_C$ vary over time, and so time based averaging should also be used.
+\item Page 54 - Expanded on why we use the filtering technique for the quasi-condensate definition.
+\item Page 60 - Added ``where $c$ is the speed of sound.'' to Figure 4.2.
+\item Page 61 - Expanded the explanation of why the finite boundary has a negligible effect of vortex shedding.
+\item Page 63 - Added that the reason the vortex pair separation decreases is due to the velocity field of surrounding nucleated vortices.
+\item Page 63 - Swapped Figures 4.5 and 4.6, so that Figure 4.5 is referenced in the text first.
+\item Page 63 - Moved paragraph explaining the Eulerian limit closer to the first mention of the Eulerian limit.
+\item Page 65 - Corrected the derivation of $v_{c2}$ in section 4.3.4 so that quantities are expressed in dimensional form.
+\item Page 66 - Defined $v_{c1}$ and $v_{c2}$ in the text.
+\item Page 67 - Extended the description of the ``superfluid Reynolds number'' and compared the findings of Reeves {\it et. al.} to our simulations.
+\item Page 74 - Corrected $N a l_z^3/l_r^3 \ll 1$ to $N a l_z^3/l_r^4 \ll 1$.
+\item Page 75 - Rephrased typical condensate sizing to ``only one or two orders of magnitude larger than the vortex core size''.
+\item Page 76 - Explained why Kelvin waves are suppressed in $z$.
+\item Page 77 - Explained why $V_0$ and $d$ are defined the way they are: ``so as to match the experimental parameters''.
+\item Page 78 - Added a sentence explaining the effect of changing $\gamma$.
+\item Page 80 - Described which line is which for $N_d(t)$ and $N_a(t)$ in the caption of Figure 5.5.
+\item Page 84 - Explained why $N_d$ is not of a decaying form, citing [?].
+\item Page 87 - Expanded the discussion of the crescent shaped density depletion, adding the observations of references [??,??,??].
+\item Page 85 - Detailed the 4-body loss argument.
+\item Page 88 - Quantified the reduction in sound production from using an elliptical obstacle by adding Figure 5.9, a plot of the compressible kinetic energy over time.
+\item Page 85 - Replaced ``governed by'' with ``whose shape is defined by''.
+\item Page 87 - Replaced ``semi-classical'' with ``quasi-classical'' for consistency.
+\item Page 88 - Rephrased the reference to the simulations of Frisch {\it et. al.} for style.
+\item Page 90 - Removed averaging from the energy density $\langle E \rangle/D^3 \rightarrow E/D^3$, as $E$ is already an integrated quantity .
+\item Page 92 - Added definition of the homogeneous density of the quasi-condensate, $\rho_0$.
+\item Page 93 - Added the sentence ``By using a strongly non-equilibrium initial condition, with random phase at all points in space, we model an infinitely fast quenched system.''
+\item Page 95 - Described the `shoulder' in the integral distribution, indicating a macroscopic fraction of the particles in low-k modes, facilitating the choice of $k_c$.
+\item Page 95 - Added that the specific weak turbulence prediction leads to the Boltzmann kinetic equation, referencing [??,??,??].
+\item Page 98 - Explained that $k_\ell$ is allowed to vary over time and $k_\xi$ is defined using the value of $\xi$ at equilibrium.
+\item Page 96 - Rephrased ``cooler simulations'' to ``lowest temperature simulations'' for style.
+\item Page 98 - Removed the $k^{-1}$ scaling prediction from the text and Figure 6.4.
+\item Page 98 - Added the plot of $\ell(t)$ to Figure 6.6 (b), so as to show an assertion made in the text.
+\item Page 102 - Added the sentence ``In all cases, at the time of $t=5000/\tau$ there remains only a single vortex ring in the system''.
+\item Page 111 - Described how we expect vortex kinetic energy loss to sound emission.
+\item Page 111 - Expanded the description of the HVBK equations.
+\item Page 111 - Clarified the $z$ boundary conditions.
+\item Page 113 - Clarified that $v_c \approx 0.36$ in the Eulerian limit (obstacle diameter $d \gg \xi$).
+\item Page 115 - Moved Table 7.1 closer to its first mention in text.
+\item Page 115 - Corrected the statement as surface roughness is not required for secondary vortex nucleation, but instead vastly reduces the velocity requirements.
+\item Page 111 - Changed all occurrences of values for $\beta$ from e.g $50\%$ to $0.5$.
+\item Page 111 - Clarified the definition of the formation of a boundary layer through the addition of Figure 7.8.
+\item Page 115 - Rephrased the description of why the largest mountains are the main producer of vorticity so as to correctly refer to local curvature.
+\item Page 122 - Repeated the definition of the velocity here.
+\item Page 118 - Referenced Figure 7.12 in the text.
+\item Page 120 - Rephrased ``which in superflow at absolute zero are absent'' to ``which in superflow at absolute zero operate through a fundamentally different mechanism''.
+\item Page 131 - Added a definition of the functions $\phi_i({\bf r})$.
+\item Page 132 - Added a description of why the derivation is only valid when particle interactions are weak.
+\item Page 139 - Expanded description of $\xi$ to show $\xi = \hbar/\sqrt{mgn}$ and $\xi = \hbar/\sqrt{mg\rho}$ are the same when considering a homogeneous system, as $n({\rm r},t) = \rho$ everywhere.
+\item Page 139 - Added detailed definition of the local and homogeneous speed of sound, $c_{\rm local}$ and $c$.
+\item Page ?? - Explained the origin of the normalisation term $N!/n_1!...n_\infty!$.
+
+\item Added the following references:
+\begin{itemize}
+\item[][19] L. D. Landau, J. Phys. (USSR) {\bf 11}, 91 (1947).
+\item[][20] H. Palevsky, K. Otnes, K. E. Larsson, R. Pauli, and R. Stedman, Phys. Rev. {\bf 108}, 1346
+(1957).
+\item[][21] J. L. Yarnell, G. P. Arnold, P. J. Bendt, and E. C. Kerr, Phys. Rev. Lett. {\bf 1}, 9 (1958).
+\item[][22] D. G. Henshaw, Phys. Rev. Lett. {\bf 1}, 127 (1958).
+\item[][23] H. Palevsky, K. Otnes, and K. E. Larsson, Phys. Rev. {\bf 112}, 11 (1958).
+\end{itemize}
+
+
+\item Page ?? - Added a section in the appendix, ``Critical temperature and condensate fraction for a non-interacting
+Bose gas''.
+
+\end{itemize}
+
+\end{document}

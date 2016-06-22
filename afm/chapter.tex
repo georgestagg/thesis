@@ -91,17 +91,12 @@ However the model is unsuitable for our purposes for several reasons.
 Firstly, it assumes that the vortex core is infinitesimal compared to 
 any other length scale, which is not the case if the
 vortex core size and wall roughness are comparable.
-Secondly, microscopic behaviours such as vortex nucleation or kinetic energy losses due
-to sound emission are not captured in the model. For example, VFM requires the arbitrary seeding of
-vortex loops in order to generate turbulence.
-Thirdly, it is difficult to generalise from smooth, geometrically simple (cylindrical or spherical)
+Secondly, microscopic behaviours such as vortex nucleation and the loss of vortex energy to sound emission are not captured in the model. For example, VFM requires the arbitrary seeding of vortex loops in order to generate turbulence, and sound emission during reconnection events and through Kelvin waves is neglected. Thirdly, it is difficult to generalise from smooth, geometrically simple (cylindrical or spherical)
 boundaries to the rough boundaries which interest us.
 
 Another approach which suffers similar difficulties \cite{Henderson} is
-the two--fluid Hall--Vinen--Bekarevich--Khalatnikov (HVBK)
-equations \cite{Salort2011,Salort2012}. Moreover, the HVBK equations are coarse--grained over
-length scales larger than the average vortex separation, hence the
-boundary conditions require further assumptions or the introduction of
+the Hall-Vinen-Bekarevich-Khalatnikov (HVBK)
+equations \cite{Salort2011,Salort2012}. The approach is a two fluid model, with an inviscid Euler superfluid component and a Navier-Stokes normal fluid component. The two fluids are coupled via a mutual friction which depends on a coarse-grained vorticity, defined by the local density of superfluid vortex lines. As multiple vortices contribute to the vorticity, the HVBK equations are coarse-grained over length scales larger than the average vortex separation, and so the boundary conditions require further assumptions or the introduction of
 unknown sliding/pinning parameters.
 
 
@@ -139,7 +134,9 @@ The GPE model is numerically simulated in the homogeneous form as described in S
   \caption{\label{fig:afmsmooth}AFM image of a section of the NbTi wire rough surface, mapped into the computational coordinate system and smoothed by a Gaussian blur (standard deviation 6 nm) so as to remove discontinuities in the surface profile. The profile used in our 2D simulations ($y=0.05\,\mu$m) is marked by a dashed line.}
 \end{figure}
 
-Our results are based on intensive simulations of the GPE over the entire AFM surface, resolved down to a sub-core scale of $\Delta=0.4\xi$. In $^4$He the vortex core size is $a_0 \approx 10^{-10}~\rm m$ \cite{Rayfield1964}, such that the AFM image has true core dimensions $(10^4 \times 10^4 \times 100) a_0^3$.  It is not computationally feasible to model the corresponding range of scales directly within the GPE; as such we map the AFM image onto the largest practical healing length volume of $(400 \times 400 \times 100) \xi^3$.  This is simulated in a box of size $(400 \times 400 \times 200) \xi^3$ (the numerical domain being twice as high as the highest point of the data in the third dimension), on a $1000\times 1000\times 500$ spatial grid, which is periodic in $x$ and $y$.  We smooth the original AFM data with a Gaussian blur (standard deviation 6 nm), so as to remove discontinuities in the surface profile, with the result shown in Figure \ref{fig:afmsmooth}. The rough surface is then incorporated into the GPE by setting a potential barrier $V=5\mu$ below the surface, heavily prohibiting density there; above the surface (where $V=0$) the density recovers to the bulk value $\rho$ over a length scale of the order of $\xi$. Section \ref{section:3dafmpotential} describes the form of $V$ we use in further detail. Additionally, in all our simulations the zero level of the $z$ dimension is arbitrarily shifted so that the minimum height of the two or three-dimensional surface profile is at the level $z=0$, so as to optimise use of the computational box. This leads to the boundary condition near $z=0$ direction to be the profile of the surface, and hard wall boundary is implemented at $z=200\xi$. The time evolution algorithm is the 4th order Runge-Kutta scheme described in Section \ref{section:RK4} with time step $\Delta t=0.01 \tau $, and is performed across 256 (2.6 GHz) cores of a high-performance {computer} cluster.
+Our results are based on intensive simulations of the GPE over the entire AFM surface, resolved down to a sub-core scale of $\Delta=0.4\xi$. In $^4$He the vortex core size is $a_0 \approx 10^{-10}~\rm m$ \cite{Rayfield1964}, such that the AFM image has true core dimensions $(10^4 \times 10^4 \times 100) a_0^3$.  It is not computationally feasible to model the corresponding range of scales directly within the GPE; as such we map the AFM image onto the largest practical healing length volume of $(400 \times 400 \times 100) \xi^3$.  This is simulated in a box of size $(400 \times 400 \times 200) \xi^3$, on a $1000\times 1000\times 500$ spatial grid, which is periodic in $x$ and $y$. The boundary condition near $z=0$ is the profile of the surface, and a hard wall boundary is implemented at $z=200\xi$. The numerical domain is twice as high as the highest point of the data in the third dimension. We find this domain adequate to avoid finite size effects; the region of interest is near the AFM surface, and the results of vortex lines interacting with the $z=200\xi$ boundary do not significantly affect this region.
+
+We smooth the original AFM data with a Gaussian blur (standard deviation 6 nm), so as to remove discontinuities in the surface profile, with the result shown in Figure \ref{fig:afmsmooth}. The rough surface is then incorporated into the GPE by setting a potential barrier $V=5\mu$ below the surface, heavily prohibiting density there; above the surface (where $V=0$) the density recovers to the bulk value $\rho$ over a length scale of the order of $\xi$. Section \ref{section:3dafmpotential} describes the form of $V$ we use in further detail. Additionally, in all our simulations the zero level of the $z$ dimension is arbitrarily shifted so that the minimum height of the two or three-dimensional surface profile is at the level $z=0$, so as to optimise use of the computational box. The time evolution algorithm is the 4th order Runge-Kutta scheme described in Section \ref{section:RK4} with time step $\Delta t=0.01 \tau $, and is performed across 256 (2.6 GHz) cores of a high-performance {computer} cluster.
 
 Our three-dimensional simulations model the entire rough surface by using the entire AFM data provided to us, imposed as a potential. However, in the interests of effective exploration of the parameter space, we also perform some simulations in reduced dimensionality. Here we simulate only a single row of the AFM data (marked in Figure \ref{fig:afmsmooth} and shown in detail in Figure \ref{fig:surfprofile}) using the 2D-GPE, ignoring the $y$ dimension. The selected row was chosen so as to contain a two-dimensional analogue of the steep prominences found along the wire's surface.
 
@@ -457,7 +454,8 @@ For the case where vortices combine into a larger-scale cluster, an interesting 
   }
 \caption{\label{fig:trunc} Same-time density snapshots for flow speed is $v=0.35\,c$, time $t=2440\tau$ and various levels of surface truncation: (a) $\beta=1$, (b) $\beta=0.7$, (c) $\beta=0.5$ and (d) $\beta=0.4$, where $\beta$ represents the truncation height relative to the highest point in the surface. Vortices with positive (negative) circulation are labelled with red (blue) markers.}
 \end{figure}
-It is evident by the snapshots shown in Figure \ref{fig:earlyvsv} that the vortex generation is dominated by the large single mountain in the surface. In fact, it can be reasoned that even if the imposed flow $v$ has a high enough velocity that the smaller provinces also act as vortex nucleation sites, the largest mountains will always lead to the largest local velocity and highest vortex nucleation frequency, and so will always be the main producer of vorticity.
+It is evident by the snapshots shown in Figure \ref{fig:earlyvsv} that the vortex generation is dominated by the large single mountain in the surface. %In fact, it can be reasoned that even if the imposed flow $v$ has a high enough velocity that the smaller provinces also act as vortex nucleation sites, the largest mountains will always lead to the largest local velocity and highest vortex nucleation frequency, and so will always be the main producer of vorticity.
+Tall surface prominences lead to a large local curvature and so induce a large local velocity, in analogy to the elliptical obstacles featured in Chapter \ref{cha:wake}. For this reason it can be reasoned that even if the imposed flow $v$ has a high enough velocity that the smaller provinces also act as vortex nucleation sites, the mountains that lead to the largest curvature will induce the highest local velocity and vortex nucleation frequency, and so will always be the main producer of vorticity.
 
 To further analyse how the height of the mountains affects fluid flow in the vicinity of a surface, we now describe how the situation changes with truncation of the mountain height, to a percentage $\beta$ of the maximum height $h_0$, i.e. $h(x,y) \rightarrow h(x,y) H(z/h_0=\beta)$, where $H(z)$ is the Heaviside step function ($\beta=1$ corresponds to no truncation, $\beta=0$ corresponds to complete truncation). For the AFM image we use, this truncation can be thought of as a way of varying surface roughness by removing the sharpest features.
 
@@ -468,9 +466,9 @@ Consider Figures \ref{fig:earlyvsv}, \ref{fig:prog} and \ref{fig:trunc}. Notice 
 
 In addition to the collection of vortices near the surface, for the cases where secondary clusters are formed vortex-antivortex pairs are able to pair together. In this case, they are two-dimensional analogue of vortex rings and so travel in the positive $z$ direction, away from the boundary layer and into the bulk.
 
-We now quantify the prevalence of the boundary layer throughout the parameter space of the system by studying the vortex distribution at late times. We define whether a boundary layer has formed in the following way. At $t=3000\tau$ (our maximum 2D simulation time) we measure the vortex distribution. If the median vortex height is less than the height of the tallest mountain, we say the vortices have formed a boundary layer (we employ the median here as the distribution of vortex height is skewed in the positive $z$ direction by the relatively small number of escaping vortex rings). If the median vortex height is larger than the height of the tallest mountain, we say a boundary layer has not formed. We perform simulations for a variety of truncation heights and flow velocities with the results shown in Table \ref{tbl:nv_bl}.
+We now quantify the prevalence of the boundary layer throughout the parameter space of the system by studying the vortex distribution at late times. We define whether a boundary layer has formed in the following way. At $t=3000\tau$ (our maximum 2D simulation time) we measure the vortex distribution. If the median vortex height is less than the height of the tallest mountain, we say the vortices have formed a boundary layer (we employ the median here as the distribution of vortex height is skewed in the positive $z$ direction by the relatively small number of escaping vortex rings). If the median vortex height is larger than the height of the tallest mountain, we say a boundary layer has not formed. Figure \ref{fig:median_nv} shows both cases, as well as a histogram of vortex height with the resulting median vortex height indicated for each case.
 
-Note that the effect is not universal, for higher velocities the vortex distribution instead fills the computational box. For low (but still super-critical) velocities, the vortices are distributed in agreement with a boundary layer, but with a reduced density of vortices.
+We perform simulations for a variety of truncation heights and flow velocities with the results shown in Table \ref{tbl:nv_bl}. Note that the boundary layer effect is not universal, for higher velocities the vortex distribution instead fills the computational box. For low (but still super-critical) velocities, the vortices are distributed in agreement with a boundary layer, but with a reduced density of vortices.
 
 %The total number of vortices $N_v$ increases with time (Figure \ref{fig:nvort}; initially this increase is rapid but over time it slows down as the number of vortices within the finite-sized box begins to saturate.
 %\begin{figure}
@@ -479,7 +477,126 @@ Note that the effect is not universal, for higher velocities the vortex distribu
 %\includegraphics[width=0.45\linewidth]{./afm/figures/nv_v}
 %\caption{\label{fig:nvort} (a) Number of vortices produced during $v=0.35c$ flow past the surface.  Shown are the numbers of total %vortices $N_v$ (solid line), positive vortices (dashed line) and negative vortices (dotted line). (b) Final number of vortices $N_v$ as a %function of the flow velocity $v$ for the 2d simulations.  Each data point represents the average of 20 measurements of $N_v$ in the %vicinity of $t=3000\tau$.}
 %\end{figure} 
-
+\begin{figure}
+\centering
+(a)\hspace{0.6\linewidth}~\\%
+\begin{tikzpicture}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.5\linewidth,
+xlabel={$x/\xi$},
+ylabel={$y/\xi$},
+xmin=-200,
+xmax=200,
+ymin=0,
+ymax=200,
+unit vector ratio=1 1 1,
+major tick length = 0.07cm,
+axis on top
+]
+\addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {/data/a8034837/Documents/Thesis/afm/spike-hist-1.png};
+\addplot+[mark=none,black,dashed,thick] coordinates {(-200, 48) (220, 48)};
+\end{axis}%
+\end{tikzpicture}%
+\raisebox{-0.8ex}{\begin{tikzpicture}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.303\linewidth,
+height=0.2\linewidth,
+xlabel={$y/\xi$},
+ylabel={Frequency},
+xtick pos = left,
+ytick pos = left,
+xmin=0,
+xmax=200,
+ymin=0,
+ymax=20,
+ylabel style={rotate=180},
+major tick length = 0.07cm,
+axis on top,
+ybar
+]
+\pgftransformrotate{90}
+\addplot+[hist={bins=10,}] table [y index=0] {/data/a8034837/Documents/Thesis/afm/spike-hist-1.dat};
+\end{axis}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.303\linewidth,
+height=0.2\linewidth,
+ytick={0},
+yticklabels={,,},
+xtick={0},
+xticklabels={,,},
+xmin=0,
+xmax=200,
+ymin=0,
+ymax=20,
+ylabel style={rotate=180},
+major tick length = 0.07cm,
+axis on top
+]
+\pgftransformrotate{90}
+\addplot+[mark=none,black,dashed,thick] coordinates {(48, 1e-5) (48, 100)};
+\end{axis}%
+\end{tikzpicture}%
+}\\%
+(b)\hspace{0.6\linewidth}~\\%
+\begin{tikzpicture}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.5\linewidth,
+xlabel={$x/\xi$},
+ylabel={$y/\xi$},
+xmin=-200,
+xmax=200,
+ymin=0,
+ymax=200,
+unit vector ratio=1 1 1,
+major tick length = 0.07cm,
+axis on top
+]
+\addplot graphics [xmin=-200,xmax=200,ymin=0,ymax=200] {/data/a8034837/Documents/Thesis/afm/spike-hist-2.png};
+\addplot+[mark=none,black,dashed,thick] coordinates {(-200, 90) (220, 90)};
+\end{axis}%
+\end{tikzpicture}%
+\raisebox{-0.8ex}{\begin{tikzpicture}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.303\linewidth,
+height=0.2\linewidth,
+xlabel={$y/\xi$},
+ylabel={Frequency},
+xtick pos = left,
+ytick pos = left,
+xmin=0,
+xmax=200,
+ymin=0,
+ymax=23,
+ylabel style={rotate=180},
+major tick length = 0.07cm,
+axis on top,
+ybar
+]
+\pgftransformrotate{90}
+\addplot+[hist={bins=10,}] table [y index=0] {/data/a8034837/Documents/Thesis/afm/spike-hist-2.dat};
+\end{axis}%
+\begin{axis}[ylabel near ticks,xlabel near ticks,
+width=0.303\linewidth,
+height=0.2\linewidth,
+ytick={0},
+yticklabels={,,},
+xtick={0},
+xticklabels={,,},
+xmin=0,
+xmax=200,
+ymin=0,
+ymax=23,
+ylabel style={rotate=180},
+major tick length = 0.07cm,
+axis on top
+]
+\pgftransformrotate{90}
+\addplot+[mark=none,black,dashed,thick] coordinates {(90, 1e-5) (90, 100)};
+\end{axis}%
+\end{tikzpicture}%
+}%
+\caption{\label{fig:median_nv} (Left) Density snapshots for flow speeds (a) $v=0.35\,c$ and (b) $v=0.55\,c$, at time $t=3000\tau$. Vortices with positive (negative) circulation are labelled with red (blue) markers. (Right) Histogram of vortex height with the median height shown as a black dashed line. If the median height is less than the height of the highest point of the surface, we say a boundary layer has formed.}
+\end{figure} 
  
 \section{Three-dimensional results}
 We now move on to focus on the three-dimensional case, modelling the 3D surface by utilising the entire AFM data set. Due to the large computational requirements of a fully 3D numerical simulation of the scale required, only the full height surface (no truncation) for only a few velocities is performed.
@@ -636,15 +753,15 @@ At later times (due to the modified velocity field by the saturated boundary lay
 \end{figure}
 
 \subsubsection{Velocity profile}
-We further explore the turbulent boundary layer by measuring the local velocity as a function of distance, so as to obtain a velocity profile. We measure the quantity 
+We further explore the turbulent boundary layer by measuring the local velocity, $\mathbf{v}_{\rm loc} = \hbar\nabla\theta/m$, as a function of distance, so as to obtain a velocity profile. We define the quantity 
 \begin{equation}
   v_{\rm xy}(z) = \langle v_{\rm loc}({\bf r}) \rangle_{\rm xy},
 \end{equation}
 where $\langle v_{\rm loc}({\bf r}) \rangle_{\rm xy}$ denotes averaging of the local fluid speed in the $xy$ plane. We measure $v_{\rm xy}(z)$ for all $z$ using an average of 10 snapshots at times $1130<t/\tau<1220$ (so that we measure the turbulent saturated regime). The resulting quantity $v_{\rm xy}(z)$ is a measurement of the typical local speed of the fluid flow at the height of $z$. For our simulation with $v=0.6\,c$, we find three regions in the profile of $v_{\rm xy}(z)$ (shown in Figure \ref{fig:velprof}).
 
-In the region $100\xi \lesssim z \lesssim 200\xi$, the local flow speed is $v_{\rm xy}(z)\approx0.6$, showing that the fluid velocity is unaffected by the rough surface at heights of more than the height of the tallest mountain.
+In the region $100\xi \lesssim z \lesssim 200\xi$, the local flow speed is $v_{\rm xy}(z)\approx0.6$, showing that the fluid velocity is unaffected by the rough surface at heights of more than the height of the tallest mountain. The small vortex rings in this region, after spatial averaging, are observed to have no effect on the mean speed of the flow. We also note that the effect of the finite hard wall boundary at $x=200\xi$ is minimal.
 
-In the region $40 \lesssim z \lesssim 100\xi$ the presence of vortices near the surface creates a velocity field that counteracts the imposed flow velocity. The overall effect is to slow the typical flow speed the closer to the surface it is measured, in analogy to a viscous boundary layer in classical fluids.
+In the region $40 \lesssim z \lesssim 100\xi$ the presence of vortices near the surface creates a velocity field that on the average counteracts the imposed flow velocity. The overall effect is to slow the typical flow speed the closer to the surface it is measured, in analogy to a viscous boundary layer in classical fluids.
 
 In the region $0 \lesssim z \lesssim 40\xi$ most of the computational volume is below the surface, and so only the fluid in the valleys is computed as part of the average. In this region the typical speed of the flow rapidly drops to almost zero.
 
@@ -663,7 +780,7 @@ In the region $0 \lesssim z \lesssim 40\xi$ most of the computational volume is 
         xmin=-180,
         xmax=180,
         ymin=0,
-        ymax=195,
+        ymax=200,
         major tick length = 0.07cm,
         axis on top,
       ]
@@ -677,7 +794,7 @@ In the region $0 \lesssim z \lesssim 40\xi$ most of the computational volume is 
         xmin=0,
         xmax=0.8,
         ymin=0,
-        ymax=195,
+        ymax=200,
         xtick pos=left,
         ytick pos=left,
         major tick length = 0.07cm,
@@ -694,7 +811,7 @@ In conclusion, we have modelled superflow over a real surface region of a thin N
 
 We have performed 2D simulations and explored the parameter space of surface roughness (modified by truncation of the `roughest' features in the wire) and flow velocity (imposed via a frame shift in the governing equation). For all roughness we have observed the formation of a 2D `boundary layer' at certain velocities exceeding the critical velocity, consisting of a collection of quantum vortices that remain in the vicinity of the surface. We find that imposing an even higher velocity destroys the boundary layer behaviour. Our large scale 3D simulations also confirm that, for at least one set of parameters, the formation of the boundary layer generalises to three dimensions. We have shown that the vortex line-density saturates over time in the layer, and have demonstrated a qualitatively similar boundary layer velocity profile as those seen in classical viscous fluids.
 
-Our findings are a surprising result because in fluid dynamics boundary layers usually arise from viscous forces, which in superflow at absolute zero are completely absent.  These findings further illustrate the deep analogies between classical and quantum fluids.
+Our findings are a surprising result because in fluid dynamics boundary layers arise from viscous forces, which in superflow at absolute zero operate through a fundamentally different mechanism.  These findings further illustrate the deep analogies between classical and quantum fluids.
 
 Our results suggest that in current helium II experiments the walls of channels which confine the flow of superfluid liquid helium and the surfaces of moving objects such as wires, grids, propellers, spheres may be covered by a thin `superfluid boundary layer' consisting of vortex loops and rings. The experimental implications of `superfluid boundary layers` on macroscopic
 observables need to be investigated.  This should particularly stimulate experiments in $^3$He-B, where, due to relative large healing length, it is possible to study flows with controlled surface height roughness. Our results could also be interpreted and potentially observable in the context of quasi-two-dimensional atomic BEC experiments, where recent work has enabled dynamic arbitrarily shaped obstacles, `painted' with blue-detuned laser light \cite{Henderson09}.
