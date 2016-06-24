@@ -175,6 +175,51 @@
 
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
+\usetikzlibrary{3d}
+\usepackage{pst-solides3d}
+
+\pgfmathsetmacro{\xdeg}{-20}
+\pgfmathsetmacro{\xx}{cos(\xdeg)}
+\pgfmathsetmacro{\xy}{sin(\xdeg)}
+
+\pgfmathsetmacro{\ydeg}{20}
+\pgfmathsetmacro{\yx}{cos(\ydeg)}
+\pgfmathsetmacro{\yy}{sin(\ydeg)}
+
+\pgfmathsetmacro{\zdeg}{90}
+\pgfmathsetmacro{\zx}{cos(\zdeg)}
+\pgfmathsetmacro{\zy}{sin(\zdeg)}
+
+\newcommand{\tdcyl}[5]{% origin x, origin y, origin z, radius, height
+    \path (1,0,0);
+    \pgfgetlastxy{\cylxx}{\cylxy}
+    \path (0,1,0);
+    \pgfgetlastxy{\cylyx}{\cylyy}
+    \path (0,0,1);
+    \pgfgetlastxy{\cylzx}{\cylzy}
+    \pgfmathsetmacro{\cylt}{(\cylzy * \cylyx - \cylzx * \cylyy)/ (\cylzy * \cylxx - \cylzx * \cylxy)}
+    \pgfmathsetmacro{\ang}{atan(\cylt)}
+    \pgfmathsetmacro{\ct}{1/sqrt(1 + (\cylt)^2)}
+    \pgfmathsetmacro{\st}{\cylt * \ct}
+    \filldraw[color=red!80!black,fill=red] (#4*\ct+#1,#4*\st+#2,#3) -- ++(0,0,#5) arc[start angle=\ang,delta angle=-180,radius=#4] -- ++(0,0,-#5) arc[start angle=\ang+180,delta angle=180,radius=#4];
+    \filldraw[color=red!80!black,fill=red] (#1,#2,#3+#5) circle[radius=#4];
+}
+
+\newcommand{\tdcylxy}[5]{% origin x, origin y, origin z, radius, height
+    \path (1,0,0);
+    \pgfgetlastxy{\cylxx}{\cylxy}
+    \path (0,1,0);
+    \pgfgetlastxy{\cylyx}{\cylyy}
+    \path (0,0,1);
+    \pgfgetlastxy{\cylzx}{\cylzy}
+    \pgfmathsetmacro{\cylt}{(\cylzy * \cylyx - \cylzx * \cylyy)/ (\cylzy * \cylxx - \cylzx * \cylxy)}
+    \pgfmathsetmacro{\ang}{atan(\cylt)}
+    \pgfmathsetmacro{\ct}{1/sqrt(1 + (\cylt)^2)}
+    \pgfmathsetmacro{\st}{\cylt * \ct}
+    \filldraw[color=red!80!black,fill=red] (#4*\ct+#1,#4*\st+#2,#3) -- ++(0,0,#5) arc[start angle=\ang,delta angle=180,radius=#4] -- ++(0,0,-#5) arc[start angle=\ang+180,delta angle=180,radius=#4];
+    \filldraw[color=red!80!black,fill=red] (#1,#2,#3) circle[radius=#4];
+}
+
 
 %\usepgfplotslibrary{external} 
 %\tikzexternalize

@@ -166,7 +166,7 @@ In particular, the decay rate is directly related to the size of the eigenvalues
 The imaginary time propagation method converges on the ground state solution very slowly and so we must perform many numerical steps to prepare an initial state. A silver lining of this drawback is that the method can be used to prepare almost any viable initial state. For example, an initial condition consisting of a Thomas-Fermi profile with many vortices can be made more accurate with this method by imposing the phase during imaginary time propagation. The result is a less violent start to condensate dynamics; minimal sound is produced due to the difference between the approximate initial condition and a true solution of the GPE.
 
 The energy can be used as a way to gauge the solution convergence. An example ground state solution for a 2D condensate in a harmonic trap is found using the imaginary time method and is shown with the energy in Figure \ref{fig_imagtimesolgs}. For $t_i > 0.6/\omega$ the computed ground state energy does not significantly change, a good indicator that the ground state has been found to sufficient accuracy.
-\begin{figure}[!ht]
+\begin{figure}
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -282,7 +282,7 @@ p_x & p_y & p_z \end{array} \right|.
 	\end{equation}
 	where $\gamma > 0$ for damping. Following these authors, this is the form of the DGPE used in numerical simulations in this thesis. Simple algebra shows that while not exactly equal to Equation \ref{eq:dissgpeA}, the difference is only in a factor of $\gamma^2$. When $\gamma \ll 1$, which is in most cases, this difference is negligible and makes no difference to qualitative behaviours. An example evolution using Equation \ref{eq:dissgpeB} is shown in Figure \ref{fig_excitationdecay}, also demonstrating the method of carefully choosing a value of $\mu$ using Algorithm \ref{algo_mu}, so that the equilibrium state approached using the DGPE matches the true ground state.
 
-	\begin{figure}[!ht]
+	\begin{figure}
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -426,7 +426,7 @@ We emphasise that the requirements of large occupation numbers and weak interact
 		\psi(x,t) = \sqrt{\rho}\exp\left(-\frac{i\mu}{\hbar}t\right)\left\{ \sqrt{1-\frac{v^2}{c^2}} \tanh\left[ \sqrt{1-\frac{v^2}{c^2}}\frac{(x-vt)}{\xi} \right ] + \frac{iv}{c}  \right \} ,
 	\end{equation}
 	where $v$ is the velocity of the soliton and $c=\sqrt{\rho g/m}$ is the speed of sound. Examples of dark solitons are seen in Figures \ref{fig_solitons} and \ref{fig_solitonmove}.
-	\begin{figure}[!ht]
+	\begin{figure}[b]
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -481,7 +481,7 @@ We emphasise that the requirements of large occupation numbers and weak interact
  \end{figure}
 
  Solitonic waves can exist in higher dimensional systems, but these are not solitons in the strict mathematical sense; the structures are unstable, and decay due to the snake instability \cite{PhysRevLett.86.2926, Dutton27072001}. Nevertheless, long living stable solitary waves can exist, particularly in quasi-1D geometries \cite{PhysRevA.62.053606}. 
- \begin{figure}[!ht]
+ \begin{figure}
 	\centering
    \begin{tikzpicture}
     \begin{axis}[
@@ -518,7 +518,7 @@ The 2D quantised vortex core solution (or equivalently the solution in the plane
 	\end{equation}
 where $n\in\mathbb{Z}$ is the charge or winding number of the vortex. Vortex solutions can be found numerically using the imaginary time propagation method outlined in Section \ref{section:imagTime} and an example 2D solution with $n=1$ is shown in Figure \ref{fig_vortexdensphase}.
 
-\begin{figure}[!ht]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}
 	  \begin{axis}[
@@ -549,7 +549,7 @@ No analytic form exists for the shape of the vortex core, $f_v(r)$, and it must 
 	\end{equation}
 which takes the values $f_v(0) = 0$ and $f_v(r) = 1$ as $r\rightarrow\infty$, and is close to the true vortex core shape everywhere \cite{berloff2004}. A comparison of the Pad\'e approximation and the true ($n=1$) vortex solution is shown in Figure \ref{fig_vortex} (a). Note that the density dip heals over a radius on the order of $5\xi$. While the density heals over a short area around the vortex, the presence of a vortex changes the phase in the entirety of the fluid; vortices are a truly non-local phenomenon and multiple vortices can interact even when separated much further than the size of their density cores.
 
-\begin{figure}[!ht]
+ \begin{figure}[!ht]
 	\hspace{-0.13\linewidth}(a)\hspace{0.45\linewidth}(b)\hspace{0.03\linewidth}\\
 	\centering
    \begin{tikzpicture}
@@ -589,7 +589,7 @@ which takes the values $f_v(0) = 0$ and $f_v(r) = 1$ as $r\rightarrow\infty$, an
   \end{tikzpicture}
   \caption{(a) A comparison of the true vortex solution (black solid line) at $x=0$, found by numerically propagating the GPE in imaginary time, and the Pad\'e approximation (red dashed line) for a vortex core with a charge of $n=1$. (b) Fluid velocity in the vicinity of a vortex at $x=0$ with charge $n=1$.}\label{fig_vortex}
  \end{figure}
-
+ 
  Figure \ref{fig_vortex} (b) shows the velocity field near a vortex. As seen in Section \ref{section:hydrodynamic}, the velocity of the fluid can be written $\mathbf{v} = \frac{h}{m}\nabla\theta$, where $\theta$ is the phase. We can use this with Equation \ref{eq_vortexsol} to find the velocity around a vortex,
 	\begin{equation}\label{eq_vortexvel}
 	\mathbf{v}(r,\varphi) = \frac{n \hbar}{mr} {\bm{\hat{\varphi}}},

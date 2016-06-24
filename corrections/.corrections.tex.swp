@@ -26,7 +26,7 @@ In the corrected thesis the following changes have occurred:
 \item Page 9 -  Expanded description of attractive BEC instability to collapse.
 \item Page 9 -  Expanded on how a helium II or atomic superfluid can be forced to rotate.
 \item Page 11 - Rephrased ``fluids'' to ``interfacial fluid waves'' for accuracy, and removed the word ``shallow'' to avoid misleading readers, as shallow water waves are sometimes described by the {\it defocusing} NLS. 
-\item Page 12 - Added a sentence about the energy cascade.
+\item Page 12 - Expanded the discussion of classical and quantum turbulence.
 \item Page 12 - Added ``the collision of two vortex lines such that there is a change of topology'' as a description of reconnection.
 \item Page 13 - Rephrased the first sentence of Section 1.5.2.
 \item Page 18 - Rewrote this paragraph so as to describe the meaning of the symbols for the chemical potential ($\mu$) and particle mass ($m$), and introduce the definition of the terms $V_{\rm obj}$ and $V_{\rm trap}$.
@@ -78,14 +78,23 @@ In the corrected thesis the following changes have occurred:
 \item Page 88 - Rephrased the reference to the simulations of Frisch {\it et. al.} for style.
 \item Page 90 - Removed averaging from the energy density $\langle E \rangle/D^3 \rightarrow E/D^3$, as $E$ is already an integrated quantity .
 \item Page 92 - Added definition of the homogeneous density of the quasi-condensate, $\rho_0$.
+\item Page ?? - Corrected $\sqrt{\rho}$ to $\sqrt{\rho\xi^3}$ in Equation 6.2.
 \item Page 93 - Added the sentence ``By using a strongly non-equilibrium initial condition, with random phase at all points in space, we model an infinitely fast quenched system.''
 \item Page 95 - Described the `shoulder' in the integral distribution, indicating a macroscopic fraction of the particles in low-k modes, facilitating the choice of $k_c$.
-\item Page 95 - Added that the specific weak turbulence prediction leads to the Boltzmann kinetic equation, referencing [??,??,??].
+\item Page 95 - Expanded the discussion on weak turbulence predictions, leadsing to R-J distribution.
+\item Page ?? - Added a second filtering level, $k_c=40 (2\pi/D)$, expanding discussion of quasi-condensate filtering throughout the chapter.
+\item Page ?? - Added a plot to Figure 6.4 showing the unfiltered incompressible kinetic energy.
+\item Page ?? - Added an inset to Figure 6.4 showing the incompressible kinetic energy filtered by $k_c=40 (2\pi/D)$.
+\item Page ?? - Updated table 6.2 so as to also show the power law fits for $k_c = 40 (2\pi/D)$.
+\item Page ?? - Explained in words the effect of $k_c$ on $f$ and $I$.
+\item Page ?? - Added Figure 6.10, a schematic picture of the polarisation $R$.
+\item Page ?? - Compared our results to those of Tsubota and Brachet.
 \item Page 98 - Explained that $k_\ell$ is allowed to vary over time and $k_\xi$ is defined using the value of $\xi$ at equilibrium.
 \item Page 96 - Rephrased ``cooler simulations'' to ``lowest temperature simulations'' for style.
 \item Page 98 - Removed the $k^{-1}$ scaling prediction from the text and Figure 6.4.
 \item Page 98 - Added the plot of $\ell(t)$ to Figure 6.6 (b), so as to show an assertion made in the text.
 \item Page 102 - Added the sentence ``In all cases, at the time of $t=5000/\tau$ there remains only a single vortex ring in the system''.
+\item Page ?? - Compared our system to that of Nore {\it et. al.} and Kobayashi {\it et. al.}.
 \item Page 111 - Described how we expect vortex kinetic energy loss to sound emission.
 \item Page 111 - Expanded the description of the HVBK equations.
 \item Page 111 - Clarified the $z$ boundary conditions.

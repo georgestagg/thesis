@@ -81,20 +81,21 @@
   \cleardoublepage
   \pagenumbering{arabic}                % Reset the page numbering style.
 
-  %\part{Introduction and Theory}
-  %\include{./intro/chapter}
-  %\include{./model/chapter}
-  %\include{./numerics/chapter}
- % \part{Numerical Studies}
+  \renewcommand{\floatpagefraction}{0.9}
+  \part{Introduction and Theory}
+  \include{./intro/chapter}
+  \include{./model/chapter}
+  \include{./numerics/chapter}
+  %\part{Numerical Studies}
   %\include{./wake/chapter}
   %\include{./shin/chapter}
-  \include{./nonequib/chapter}
+  %\include{./nonequib/chapter}
   %\include{./afm/chapter}
   %\include{./conclusions/chapter}
 
-  %\part{Appendix}
-  %\appendix
-  %\include{appendix}                    % An appendix.
+  \part{Appendix}
+  \appendix
+  \include{appendix}                    % An appendix.
 
   % Uncomment the line below if you want your Bibliography to appear in the
   % table of contents.
