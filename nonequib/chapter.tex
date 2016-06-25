@@ -2,7 +2,7 @@
 \section{Introduction}
 The experimental realisation of Bose-Einstein condensates (BEC) in weakly interacting atomic gases has stimulated great interest in the dynamics of quantum turbulence in condensates, a state dominated by an irregular tangle of quantised vortex lines, a defining feature of superfluids with circulation constrained by quantum mechanics. This is in contrast to everyday viscous fluids where eddies can have arbitrary shape, size and circulation.  Despite the differences between superfluids and classical fluids, the Kolmogorov energy spectra has been observed in superfluid turbulence \cite{Nore,Kobayashi,PhysRevLett.103.084501}, suggesting a deep link between them \cite{barenghi_skrbek_14}.
 
-Experimentally, quantum turbulence in atomic BECs can be generated as a result of broken symmetry after a fast quench into the BEC regime. The Kibble-Zurek mechanism \cite{0305-4470-9-8-029,Zurek85,KZvort99} then leads to the formation of turbulent vortex tangle. Other methods such as oscillating the trapping potential \cite{Henn} have also been demonstrated. The nature of a turbulent vortex tangle can be categorised based on the form of the energy spectrum, where two regimes have been identified. In Vinen or ultra-quantum turbulence, vortex tangles are random and have only a single length scale: the average inter-vortex spacing. In Kolmogorov or quasi-classical turbulence, the energy spectrum of the tangle follows the celebrated Kolmogorov $k^{-5/3}$ scaling, as in the classical regime. Numerical studies have linked the quasi-classical regime with the presence of metastable bundles of polarized quantum vortices \cite{bagg12}.
+Experimentally, quantum turbulence in atomic BECs can be generated as a result of broken symmetry after a fast quench into the BEC regime. The Kibble-Zurek mechanism \cite{0305-4470-9-8-029,Zurek85,KZvort99} then leads to the formation of turbulent vortex tangle. Other methods such as oscillating the trapping potential \cite{Henn} have also been demonstrated. The nature of a turbulent vortex tangle can be categorised based on the form of the energy spectrum, where two regimes have been identified. In Vinen or ultra-quantum turbulence, vortex tangles are random and have only a single length scale: the average inter-vortex spacing. In Kolmogorov or quasi-classical turbulence, the energy spectrum of the tangle follows the celebrated Kolmogorov $k^{-5/3}$ scaling, where $k$ is wavenumber, as in the classical regime. Numerical studies have linked the quasi-classical regime with the presence of metastable bundles of polarized quantum vortices \cite{bagg12}.
 
 The link between quantum and classical fluids has also been demonstrated in quasi-2D condensates, where it has been predicted that the wake of quantized vortices produced downstream of an obstacle can collectively mimic classical wakes, including the B{\' e}rnard-von K{\'a}rm{\' a}n vortex street \cite{saito10,stagg_parker_14,reeves_2015}. Theoretical studies leading to the prediction of 2D classical-like wakes are discussed in detail in Chapters \ref{cha:wake} and \ref{cha:shin} for the homogeneous and trapped case, respectively.
 
@@ -76,8 +76,6 @@ n^{\rm eq}_k = \frac{T}{k^2-\mu},
 \end{equation}
 where $T$ is temperature and $\mu$ is the chemical potential \cite{Newell01}.
 
-During evolution of the Bose gas, self-ordering leads to a coherent regime where the phases of the complex amplitudes $a_{\bf k}$ become strongly correlated. This regime is marked by the rapid growth in the occupation of low-$k$ modes [demonstrated in Figure \ref{fig:occupation}(a)], so that the distribution evolves to a bimodal form. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations, the equilibrium state of which closely follows the predicted Rayleigh-Jeans spectrum, albeit modified by the nonlinear interaction with the condensed particles \cite{PhysRevLett.95.263901}. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
-
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
 \begin{center}
@@ -92,12 +90,12 @@ During evolution of the Bose gas, self-ordering leads to a coherent regime where
         ymax=1e5,
         major tick length = 0.1cm,
         minor tick length = 0.07cm,
-		    xmode=log,
-		    ymode=log,
-	      xtick pos=left,
-	      ytick pos=left,
-	      clip mode=individual,
-		    ]
+        xmode=log,
+        ymode=log,
+        xtick pos=left,
+        ytick pos=left,
+        clip mode=individual,
+        ]
       \addplot+[mark=*,red,mark options={scale=0.5}] file {nonequib/occFk0_vs_kk.dat};
       \addplot+[mark=square*,orange,mark options={scale=0.5}] file {nonequib/occFk25_vs_kk.dat};
       \addplot+[mark=diamond*,magenta,mark options={scale=0.85}] file {nonequib/occFk75_vs_kk.dat};
@@ -106,39 +104,41 @@ During evolution of the Bose gas, self-ordering leads to a coherent regime where
       \addplot+[mark=none,red!90,thick,dashed] coordinates {(0.434, 1e-5) (0.434, 1e9)};
       \addplot+[mark=none,red!90,thick,dashed] coordinates {(1.736, 1e-5) (1.736, 1e9)};
       \node at (axis cs: 0.6,3e4) {$k_{c1}$};
-     	\node at (axis cs: 2.5,3e4) {$k_{c2}$};
-     	\addplot+[mark=none,color=black,dashed,thick,domain={0.5:1.5}] {0.15*(x)^(-2)};
-     	\node at (axis cs: 0.8,0.05) {$k^{-2}$};
+      \node at (axis cs: 2.5,3e4) {$k_{c2}$};
+      \addplot+[mark=none,color=black,dashed,thick,domain={0.5:1.5}] {0.15*(x)^(-2)};
+      \node at (axis cs: 0.8,0.05) {$k^{-2}$};
     \end{axis}%
   \end{tikzpicture}\hspace{0.06\linewidth}%
-	\begin{tikzpicture}%
-	    \begin{axis}[ylabel near ticks,xlabel near ticks,
-	        width=0.47\linewidth,
-	        xlabel=$k \xi$,
-	        ylabel={$F_k$},
-	        xmin=0,
-	        xmax=4,
-	        ymin=0,
-	        ymax=16e5,
-	        major tick length = 0.07cm,
-		      xtick pos=left,
-		      ytick pos=left
-			    ]
-	      \addplot+[mark=*,red,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk0_vs_kk.dat};
-	      \addplot+[mark=square*,orange,mark options={scale=0.5},mark repeat=8,mark phase=1] file {nonequib/cFk25_vs_kk.dat};
-	      \addplot+[mark=diamond*,magenta,mark options={scale=0.85},mark repeat=8,mark phase=1] file {nonequib/cFk75_vs_kk.dat};
-	      \addplot+[mark=pentagon*,green,mark options={scale=0.75},mark repeat=8,mark phase=1] file {nonequib/cFk200_vs_kk.dat};
-	      \addplot+[mark=triangle*,blue,mark options={scale=0.75},mark repeat=8,mark phase=2] file {nonequib/cFk1000_vs_kk.dat};
-	      \addplot+[mark=none,red!90,thick,dashed] coordinates {(0.434, -1) (0.434, 1e7)};
-	      \addplot+[mark=none,red!90,thick,dashed] coordinates {(1.736, -1) (1.736, 1e7)};
-     		\node at (axis cs: 0.7,1.5e6) {$k_{c1}$};
-     		\node at (axis cs: 2,1.5e6) {$k_{c2}$};
-	      \end{axis}%
-	  \end{tikzpicture}%
-	  \end{center}%
-  \caption{\label{fig:occupation} (a) Occupation numbers, $n_k$, of the Bose gas as it decays to equilibrium at times (red circles) $t/\tau=0$, (orange squares) $25$, (magenta diamonds) $75$, (green pentagons) $200$, and (blue triangles) $1000$. Here the final condensate fraction at equilibrium is $\rho_0/\rho = 0.50$. (b) Integral distribution of the particles, $F_k = \sum_{k'<k} n_{\bf k'}$, at the same times. $k_{c1} = 10~(2\pi/D)$ and $k_{c2} = 40~(2\pi/D)$ are labelled by red dashed lines. A line proportional to the predicted Rayleigh-Jeans distribution, $n_k \propto k^{-2}$, is also shown by a black dashed line.}
+  \begin{tikzpicture}%
+      \begin{axis}[ylabel near ticks,xlabel near ticks,
+          width=0.47\linewidth,
+          xlabel=$k \xi$,
+          ylabel={$F_k/10^6$},
+          xmin=0,
+          xmax=4,
+          ymin=0,
+          ymax=1.6,
+          major tick length = 0.07cm,
+          xtick pos=left,
+          ytick pos=left,
+          y filter/.code={\pgfmathparse{#1/1000000}\pgfmathresult},
+          ]
+        \addplot+[mark=*,red,mark options={scale=0.5},mark repeat=10,mark phase=1] file {nonequib/cFk0_vs_kk.dat};
+        \addplot+[mark=square*,orange,mark options={scale=0.5},mark repeat=8,mark phase=1] file {nonequib/cFk25_vs_kk.dat};
+        \addplot+[mark=diamond*,magenta,mark options={scale=0.85},mark repeat=8,mark phase=1] file {nonequib/cFk75_vs_kk.dat};
+        \addplot+[mark=pentagon*,green,mark options={scale=0.75},mark repeat=8,mark phase=1] file {nonequib/cFk200_vs_kk.dat};
+        \addplot+[mark=triangle*,blue,mark options={scale=0.75},mark repeat=8,mark phase=2] file {nonequib/cFk1000_vs_kk.dat};
+        \addplot+[mark=none,red!90,thick,dashed] coordinates {(0.434, -1) (0.434, 1e7)};
+        \addplot+[mark=none,red!90,thick,dashed] coordinates {(1.736, -1) (1.736, 1e7)};
+        \node at (axis cs: 0.7,1.5) {$k_{c1}$};
+        \node at (axis cs: 2,1.5) {$k_{c2}$};
+        \end{axis}%
+    \end{tikzpicture}%
+    \end{center}%
+  \caption{\label{fig:occupation} (a) Occupation numbers, $n_k$, of the Bose gas as it decays to equilibrium at times (red circles) $t/\tau=0$, (orange squares) $25$, (magenta diamonds) $75$, (green pentagons) $200$, and (blue triangles) $1000$. Here the final condensate fraction at equilibrium is $\rho_0/\rho = 0.50$. (b) Integral distribution of the particles, $F_k = \sum_{k'<k} n_{\bf k'}$, at the same times. $k_{c1} = 10~(2\pi/D)$ and $k_{c2} = 40~(2\pi/D)$ are labelled by red dashed lines. A line proportional to the Rayleigh-Jeans distribution with $\mu=0$, $n_k \propto k^{-2}$, is also shown by a black dashed line.}
 \end{figure}
 
+During evolution of the Bose gas, self-ordering leads to a coherent regime where the phases of the complex amplitudes $a_{\bf k}$ become strongly correlated. This regime is marked by the rapid growth in the occupation of low-$k$ modes [demonstrated in Figure \ref{fig:occupation}(a)], so that the distribution evolves to a bimodal form. The high-$k$ part of the distribution is associated with the thermal excitations and low mode occupations, the equilibrium state of which closely follows the predicted Rayleigh-Jeans spectrum, albeit modified by the nonlinear interaction with the condensed particles \cite{PhysRevLett.95.263901}. The low-$k$ part of the field is associated with the condensate, characterised by macroscopic mode populations and superfluid ordering. Due to the random phases used in the initial condition, a dense tangle of quantised vortices forms in the condensed part of the gas, shown in Figure \ref{fig:thermal}, which relaxes over very long times.
 
 
 From the bimodal distribution [visible in Figure \ref{fig:occupation} (b)], a wavenumber $k_c$ is chosen as the boundary in $k$-space between the condensate part and the thermal part of the gas. The formation of a `shoulder' in the integral distribution indicates that a macroscopic fraction of the particles reside in the low-k modes, which facilitates the choice of $k_c$. In this work we focus on the value, $k_{c1} = 10~(2\pi/D)$. However, in some cases we will also show quantities measured using a cutoff of $k_{c2} = 40~(2\pi/D)$, so as to emphasise the effect of the choice of $k_{c}$. These cases will be clearly marked as such.
@@ -201,6 +201,7 @@ where $\alpha=0.2275$ is a fitting parameter. We will use this relation througho
 
 \begin{figure}
 \centering
+\hspace*{-1cm}
 \makebox[\textwidth]{
 \begin{minipage}{1.1\textwidth}%
 \hspace*{0.6cm}(a) \hspace{8cm}(b)\\
@@ -491,20 +492,6 @@ Instead, the exponent $\beta \approx 1$ which we observe is consistent with the
 Walmsley \& Golov \cite{WalmsleyGolov2008}, who created the turbulence by
 injecting vortex rings in a sample of superfluid helium initially at rest.
 
-To confirm the ultra-quantum interpretation of the turbulence, we compute the velocity correlation function, $f(r)$, defined at a fixed point in time as
-\begin{equation}
-f(r) = \frac{\langle v_x({\bf r})v_x({\bf r} +  r\hat{\bf e}_x) \rangle}{\langle v_x({\bf r})^2 \rangle}
-\end{equation}
-where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. While we have used the $x$ direction in the definition of $f(r)$, due to the isotropic nature of the turbulence using the $y$ or $z$ direction leads to similar results. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. %%The value of $f(r)$ smoothly drops to approximately $0$ at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. 
-If the vortex lines are essentially randomly oriented, at distance $r \approx \ell/2$ the velocity correlation should vanish. Indeed, Figure \ref{fig:IS_t} (a) shows that at time $t/\tau=300$ (when we monitor the
-energy spectrum, and $\ell \approx 30 \xi$) the correlation function has become negligible at such distances.
-The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
-
-The integral scale provides a convenient measure of the distance over which velocities are correlated by producing a scalar value from the velocity correlation function. It is defined as
-\begin{equation}
-I = \int\limits_0^\infty\! f(r)\, \mathrm{d}r,
-\end{equation}
-and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex tangle evolution. In all cases, at the time of $t=5000/\tau$ there remains only a single vortex ring in the system. Three lines corresponding to different temperatures are shown, with each line an average of 5 simulations. The value of $I$ increases as the vortex tangle decays in all of the simulated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ grows, but remains significantly less than $\ell$, demonstrating that as the vortex tangle evolves over time, there is no evidence of vortex lines ``bundling up'' to create a large scale flow. We find that as with the incompressible kinetic energy and decay of vortex line-density, the qualitative behaviour of $f(r)$ and $L$ is largely unchanged by the choice of cutoff. Filtering less modes only has the effect of introducing disorder into the quasi-condensate wavefunction, slightly reducing the exact quantitative values of $f$ and $I$. 
 
 \begin{figure}
 \hspace*{1cm}(a)\hspace{7cm}(b)\hspace{3cm}
@@ -521,7 +508,7 @@ and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex t
         ymin=-0.1,
         ymax=1.1,
         major tick length = 0.1cm,
-	      minor tick length = 0.07cm]
+        minor tick length = 0.07cm]
       \addplot+[red,mark=none,ultra thick] file {nonequib/f_vs_r_CF02.dat};
       \addplot+[green,mark=none,ultra thick,dashed] file {nonequib/f_vs_r_CF05.dat};
       \addplot+[blue,mark=none,ultra thick,dash pattern=on 4pt off 1pt on 1pt off 1pt] file {nonequib/f_vs_r_CF075.dat};
@@ -547,8 +534,22 @@ and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex t
     \end{axis}
   \end{tikzpicture}
   \end{center}
-  \caption{\label{fig:IS_t}(a) Snapshots of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states with $\rho_0/\rho=0.25$ (red solid line), $\rho_0/\rho=0.50$ (green dashed line), and $\rho_0/\rho=0.75$ (blue dot-dashed line). (b) The integral scale as the quasi-condensate vortex tangle decays, for equilibrium states with $\rho_0/\rho=0.25$ (red circles), $\rho_0/\rho=0.50$ (green squares), and $\rho_0/\rho=0.75$ (blue diamonds). Also shown is the value of $\ell/2$ during decay for a quasi-condensate with equilibrium state $\rho_0/\rho=0.25$ (dashed line).}
+  \caption{\label{fig:IS_t}(a) Snapshots of the velocity correlation function $f(r)$ at time $t = 300\tau$ for equilibrium states with $\rho_0/\rho=0.25$ (red solid line), $\rho_0/\rho=0.50$ (green dashed line), and $\rho_0/\rho=0.75$ (blue dot-dashed line). (b) The integral scale as the quasi-condensate vortex tangle decays, for equilibrium states with $\rho_0/\rho=0.25$ (red circles), $\rho_0/\rho=0.50$ (green squares), and $\rho_0/\rho=0.75$ (blue diamonds). Also shown is the value of $\ell/2$ during decay for a quasi-condensate with equilibrium state $\rho_0/\rho=0.25$ (dashed line). Here the quasi-condensate is defined using a cutoff of $k_{c} = 10~(2\pi/D)$}
 \end{figure}
+To confirm the ultra-quantum interpretation of the turbulence, we compute the velocity correlation function, $f(r)$, defined at a fixed point in time as
+\begin{equation}
+f(r) = \frac{\langle v_x({\bf r})v_x({\bf r} +  r\hat{\bf e}_x) \rangle}{\langle v_x({\bf r})^2 \rangle}
+\end{equation}
+where $\mathbf{v}$ is the quasi-condensate fluid velocity and the ensemble average is performed over positions ${\bf r}$. While we have used the $x$ direction in the definition of $f(r)$, due to the isotropic nature of the turbulence using the $y$ or $z$ direction leads to similar results. The function is a dimensionless measure of velocity correlation at distance $r$, with $f(0)=1$, and is shown in Figure \ref{fig:IS_t} (a) for the three of our simulated parameter sets (spanning the range of temperatures) at a time of $t/\tau = 300$. The choice of time allows us to probe the velocity correlations after the quasi-condensate has formed, but before any significant decay of the vortex tangle has taken place. For the time chosen, the velocity correlation functions are not significantly different for each of our simulation parameters. %%The value of $f(r)$ smoothly drops to approximately $0$ at around $r/\xi = 20$. Short scale correlation is expected due to the structure of the fluid velocity around a vortex core. 
+If the vortex lines are essentially randomly oriented, at distance $r \approx \ell/2$ the velocity correlation should vanish. Indeed, Figure \ref{fig:IS_t} (a) shows that at time $t/\tau=300$ (when we monitor the
+energy spectrum, and $\ell \approx 30 \xi$) the correlation function has become negligible at such distances.
+The lack of velocity correlation at large scales suggests a lack of vortex bundles (collections of co-rotating aligned vortex lines of the same circulation), theorised to be the driving force of the large scale kinetic energy in quasi-classical turbulence.
+
+The integral scale provides a convenient measure of the distance over which velocities are correlated by producing a scalar value from the velocity correlation function. It is defined as
+\begin{equation}
+I = \int\limits_0^\infty\! f(r)\, \mathrm{d}r,
+\end{equation}
+and is shown in Figure \ref{fig:IS_t} (b) evolving over time during the vortex tangle evolution. In all cases, at the time of $t=5000/\tau$ there remains only a single vortex ring in the system. Three lines corresponding to different temperatures are shown, with each line an average of 5 simulations. The value of $I$ increases as the vortex tangle decays in all of the simulated cases, an expected result as vortices decay and so velocity becomes correlated over larger regions of space. At early times, $I(0)\approx0$, reflecting the random nature of the initial tangle. As the tangle decays, the value of $I$ grows, but remains significantly less than $\ell$, demonstrating that as the vortex tangle evolves over time, there is no evidence of vortex lines ``bundling up'' to create a large scale flow. We find that as with the incompressible kinetic energy and decay of vortex line-density, the qualitative behaviour of $f(r)$ and $L$ is largely unchanged by the choice of cutoff. Filtering less modes only has the effect of introducing disorder into the quasi-condensate wavefunction, slightly reducing the exact quantitative values of $f$ and $I$. 
 
 The results of the velocity correlation and integral scale measurements confirm the conclusions of the kinetic energy spectrum measurements, that is, there is no evidence of energy at scales larger than the inter-vortex spacing at any point during vortex decay, at all simulated temperatures. This is perhaps not such a surprising result, the initial vortex tangle is seeded and forms from random fluctuations in the phase of the 3D wavefunction, favouring the random nature of quasi-classical turbulence.
 
@@ -752,6 +753,7 @@ We further characterise the vortex distribution by its polarisation through the 
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {y};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {z};
+    \draw (-0.5,0,3) node[fill=white] {(a)};
     \tdcyl{0.8}{0.6}{0}{0.1}{2.2}
     \tdcyl{0.8}{1.2}{0}{0.1}{2.2}
 \end{tikzpicture}~%
@@ -774,6 +776,7 @@ We further characterise the vortex distribution by its polarisation through the 
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {z};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {y};
+    \draw (-0.5,0,3) node[fill=white] {(b)};
     \tdcylxy{0.8}{1.2}{0}{0.1}{2.2}
     \tdcylxy{0.8}{1.8}{0}{0.1}{2.2}
 \end{tikzpicture}~%
@@ -796,6 +799,7 @@ We further characterise the vortex distribution by its polarisation through the 
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {y};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {z};
+    \draw (-0.5,0,3) node[fill=white] {(c)};
     \begin{axis}[scale = 1.0,
        view={45}{21},
        xmin=-1.5,
@@ -898,7 +902,7 @@ We further characterise the vortex distribution by its polarisation through the 
      \draw (1.5,0,-0.8) node[fill=white] {$A_y = A_z$};
     \draw (6,0,1.5) node[fill=white] {$R = \frac{A_z}{A_y+A_z} = 0.5$};
 \end{tikzpicture}
-\caption{\label{fig:pol_R} Schematic of the vortex polarisation, $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  (Top) Vortex lines aligned predominantly along the $z$ axis. (Middle) Vortex lines aligned predominantly along $y$. (Bottom) A vortex ring in the $yz$ plane.}
+\caption{\label{fig:pol_R} Schematic of the vortex polarisation, $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  (a) Vortex lines aligned predominantly along the $z$ axis. (b) Vortex lines aligned predominantly along the $y$ axis. (c) A vortex ring lying in the $yz$ plane.}
 \end{figure}
 \section{Conclusions\label{sec:conclusions}}
 

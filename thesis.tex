@@ -81,17 +81,24 @@
   \cleardoublepage
   \pagenumbering{arabic}                % Reset the page numbering style.
 
-  \renewcommand{\floatpagefraction}{0.9}
+  \setcounter{totalnumber}{2}
+  \setcounter{topnumber}{1}
+  \setcounter{bottomnumber}{1}
+  \renewcommand{\textfraction}{0.05}
+  \renewcommand{\topfraction}{0.9}
+  \renewcommand{\bottomfraction}{0.9}
+  \renewcommand{\floatpagefraction}{0.8}
+
   \part{Introduction and Theory}
   \include{./intro/chapter}
   \include{./model/chapter}
   \include{./numerics/chapter}
-  %\part{Numerical Studies}
-  %\include{./wake/chapter}
-  %\include{./shin/chapter}
-  %\include{./nonequib/chapter}
-  %\include{./afm/chapter}
-  %\include{./conclusions/chapter}
+  \part{Numerical Studies}
+  \include{./wake/chapter}
+  \include{./shin/chapter}
+  \include{./nonequib/chapter}
+  \include{./afm/chapter}
+  \include{./conclusions/chapter}
 
   \part{Appendix}
   \appendix
