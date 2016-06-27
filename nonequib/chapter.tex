@@ -746,14 +746,13 @@ Just above the critical velocity, where the vortex line-length density is relati
     \caption{\label{fig:vort-vals} Vortex line density $L$ (at an observation time $\hat{t}=500\tau$)  as a function of flow speed and condensate fraction, with the qualitative regimes of vortex nucleation indicated.  The markers correspond to the three representative cases shown in Figure \ref{fig:vort-lines}(a) [red circle], (b) [blue square] and (c) [green diamond].  This line length density data, obtained from 36 simulations, has been interpolated.  The obstacle has size $d=5\xi$.}
 \end{figure}
 
-We further characterise the vortex distribution by its polarisation through the quantity $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  A value $R \approx 0$ corresponds to vortex lines aligned predominantly along the $z$ axis, $R\approx 1$ corresponds to lines aligned predominantly along $y$, and $R\approx 0.5$ corresponds to an isotropic vortex distribution (in the $yz$ plane). These three cases are demonstrated in Figure \ref{fig:pol_R}.  When measured at the same fixed observation time of $\hat{t}=500\tau$, the parameter space of $R$ has the same qualitative form as that for $L$, increasing with velocity and decreasing with condensate fraction. $R$ typically lies in the range $0.1 \salt R\salt 0.4$ for the lines/rings regime, consistent with the presence of lines which are predominantly aligned along $z$ and rings which are elongated along $z$.  It is worth noting that while the occurrence of lines or rings, for a given flow velocity and condensate fraction, is sensitive to the initial conditions, the value of $R$ is highly reproducible (to within a few percent). For the vortex tangle regime, $0.4 \salt R\salt 0.5$.  It is worth noting that this shows that the produced tangle can be highly isotropic, despite two-dimensional nature of the obstacle that generates it.
 \begin{figure}
 \centering%
 \begin{tikzpicture}[scale=.7,x={(\xx*1cm,\xy*1cm)},y={(\yx*1cm,\yy*1cm)},z={(\zx*1cm,\zy*1cm)}]
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {y};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {z};
-    \draw (-0.5,0,3) node[fill=white] {(a)};
+    \draw (-0.65,0,3) node[fill=white] {(a)};
     \tdcyl{0.8}{0.6}{0}{0.1}{2.2}
     \tdcyl{0.8}{1.2}{0}{0.1}{2.2}
 \end{tikzpicture}~%
@@ -776,7 +775,7 @@ We further characterise the vortex distribution by its polarisation through the 
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {z};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {y};
-    \draw (-0.5,0,3) node[fill=white] {(b)};
+    \draw (-0.65,3,0) node[fill=white] {(b)};
     \tdcylxy{0.8}{1.2}{0}{0.1}{2.2}
     \tdcylxy{0.8}{1.8}{0}{0.1}{2.2}
 \end{tikzpicture}~%
@@ -799,7 +798,7 @@ We further characterise the vortex distribution by its polarisation through the 
     \draw (0,0,0) -- (3,0,0) node[circle,fill=white] {x};
     \draw (0,0,0) -- (0,3,0) node[circle,fill=white] {y};
     \draw (0,0,0) -- (0,0,3) node[circle,fill=white] {z};
-    \draw (-0.5,0,3) node[fill=white] {(c)};
+    \draw (-0.65,0,3) node[fill=white] {(c)};
     \begin{axis}[scale = 1.0,
        view={45}{21},
        xmin=-1.5,
@@ -904,6 +903,8 @@ We further characterise the vortex distribution by its polarisation through the 
 \end{tikzpicture}
 \caption{\label{fig:pol_R} Schematic of the vortex polarisation, $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  (a) Vortex lines aligned predominantly along the $z$ axis. (b) Vortex lines aligned predominantly along the $y$ axis. (c) A vortex ring lying in the $yz$ plane.}
 \end{figure}
+
+We further characterise the vortex distribution by its polarisation through the quantity $R=A_z/(A_y+A_z)$, where $A_y$ and $A_z$ are the total area of vortices when the vortex distribution is projected along the $y$ and $z$ directions, respectively.  A value $R \approx 0$ corresponds to vortex lines aligned predominantly along the $z$ axis, $R\approx 1$ corresponds to lines aligned predominantly along $y$, and $R\approx 0.5$ corresponds to an isotropic vortex distribution (in the $yz$ plane). These three cases are demonstrated in Figure \ref{fig:pol_R}.  When measured at the same fixed observation time of $\hat{t}=500\tau$, the parameter space of $R$ has the same qualitative form as that for $L$, increasing with velocity and decreasing with condensate fraction. $R$ typically lies in the range $0.1 \salt R\salt 0.4$ for the lines/rings regime, consistent with the presence of lines which are predominantly aligned along $z$ and rings which are elongated along $z$.  It is worth noting that while the occurrence of lines or rings, for a given flow velocity and condensate fraction, is sensitive to the initial conditions, the value of $R$ is highly reproducible (to within a few percent). For the vortex tangle regime, $0.4 \salt R\salt 0.5$.  It is worth noting that this shows that the produced tangle can be highly isotropic, despite two-dimensional nature of the obstacle that generates it.
 \section{Conclusions\label{sec:conclusions}}
 
 Using classical field simulations, we have modelled a finite temperature homogeneous Bose gas, 
