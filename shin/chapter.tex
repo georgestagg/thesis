@@ -45,6 +45,9 @@ Following the experiment, the total potential acting on the condensate, $V({\bf 
 with $V_0=15 \mu$ and $d=11.31\mu$m, so as to match the experimental parameters.  The initial ground-state BEC is obtained by solving the GPE using the imaginary time method shown in Section \ref{section:imagTime}, with an enforced norm of $N=1.8\times 10^6$ to match the experimental value.  At $t=0$ the harmonic trap is centred at $x_0=18.5\mu$m. The trap is translated towards the left, at speed $v$, over a distance of $37 \mu$m; to smooth this speed curve we additionally include a linear acceleration/deceleration over $3.75$ms at the start/end, which is included as part of the $37\mu$m translation.  Once the trap is at rest, the obstacle amplitude $V_0$ is ramped down to zero over $0.4$s.
 
 \section{Number of Vortices Generated}
+Following removal of the obstacle, we determine the number of vortices in the system $N_v$ using the methods described in Section \ref{section:vortexidentifying}.  
+We limit our search to $75$ percent of the Thomas-Fermi radius \ngp{(centred on the centre-of-mass to account for sloshing motion)}; by avoiding the low density periphery we avoid artefacts from ghost vortices and match closely what is performed experimentally (since vortices close to the edge are not detected due to low signal-to-noise~\citep{shin_private}). 
+
 \begin{figure}
 \begin{center}
   \begin{tikzpicture}
@@ -74,8 +77,6 @@ with $V_0=15 \mu$ and $d=11.31\mu$m, so as to match the experimental parameters.
 \end{center}
 \caption{\label{fig:N_vV} Number of vortices $N_v$ in the condensate after removal of the obstacle. Shown are simulations of the GPE without dissipation (red squares), with dissipation $\gamma = 0.0003$ (blue circles) and experimental results extracted from Figure 1 of~\citep{kwon_moon_14} (black diamonds). Sigmoid fits are also shown as lines. Each point is averaged over $20$ ms once the obstacle amplitude reaches $V_0=0$.  For comparison, the speed of sound in the centre of the BEC is $c_{\rm local}\approx 4.6$ mm/s.  }
 \end{figure} 
-Following removal of the obstacle, we determine the number of vortices in the system $N_v$ using the methods described in Section \ref{section:vortexidentifying}.  
-We limit our search to $75$ percent of the Thomas-Fermi radius \ngp{(centred on the centre-of-mass to account for sloshing motion)}; by avoiding the low density periphery we avoid artefacts from ghost vortices and match closely what is performed experimentally (since vortices close to the edge are not detected due to low signal-to-noise~\citep{shin_private}). 
 
 In Figure \ref{fig:N_vV} we plot $N_v$ versus the translation speed $v$.  We see the same {\it qualitative} form between our simulations (red squares) and the experiment (black diamonds): above a critical speed $v_c \approx 0.45$mm/s vortices enter the system, nucleated by the relative motion between the obstacle and the superfluid, and for $v>v_c$ the growth in $N_v$ is initially rapid but tails off for $v\gg v_c$. Quantitatively, however, the GPE overestimates $N_v$.   One can expect that thermal dissipation, not accounted for in the GPE, will act to reduce the number of vortices in the system. Experimental limitations in resolving and counting vortices may also contribute to the over-estimate of $N_v$ from the GPE.
 
@@ -581,12 +582,12 @@ of these observed structures.  In this direction, an approach has recently been 
 It is evident from the snapshots in Figure \ref{fig:densSnapshots} that the initial translation of the condensate past the obstacle generates not just vortices but also shape excitations, sound waves (low-amplitude density waves), and high-amplitude density waves.  These additional excitations will heat the condensate and modify the subsequent turbulent dynamics in a highly nonlinear and complicated manner.  While reducing the translational speed reduces this disruption, this also reduces the number of vortices.  A less disruptive and more efficient (higher rate of vortex nucleation) means to generate vortices may be provided by employing a laser-induced obstacle of a form similar to that used in Chapter \ref{cha:wake}, with an {\it elliptical} rather than circular cross-section (experimentally attainable through cylindrical beam focusing).
 
 Repeating our simulations with such an elliptical obstacle, whose shape is defined by Equation (\ref{eq:potentialcylinder}), with arbitrary ellipticity $\varepsilon=3$ (the short/long axis being parallel/perpendicular to the flow) confirms the same qualitative behaviour as in Chapter \ref{cha:wake} for homogeneous systems \citep{stagg_parker_14}: the ellipticity acts to reduce the critical superfluid velocity and, for a given flow speed, increase the rate of vortex nucleation. To illustrate the merits of the elliptical obstacle, in Figure \ref{fig:ellipse} we depict snapshots of the condensate dynamics for ellipticity $\varepsilon=3$ and a translational speed of $v=0.8$mm/s. Despite a lower translational speed, the number of vortices generated by the time the obstacle is removed is almost identical to the circular example of Figure \ref{fig:N_vTime}.  As a consequence of the reduced translational speed, the condensate disruption is visibly reduced. This reduction is quantified by measurement of the compressible kinetic energy in the system over time, shown in Figure \ref{fig:ekinc_t}. It is also worth noting that the elliptical obstacle promotes the formation of clusters of like-signed vortices (see intermediate time), and thus may facilitate future exploration of coherent vortex structures.
-\begin{figure}[b]
+\begin{figure}
 \begin{center}
   \begin{tikzpicture}
   \begin{axis}[ylabel near ticks,xlabel near ticks,
         width=0.6\linewidth,
-        height=0.3\linewidth,
+        height=0.4\linewidth,
         xtick pos=left,
         ytick pos=left,
         xlabel={Time (s)},

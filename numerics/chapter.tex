@@ -1,13 +1,11 @@
 \begin{chapter}{\label{cha:numerics}Numerical Methods and Procedures}
 Throughout Part II of this thesis the focus will be on numerical simulation of superfluidity and Bose Einstein condensates. For accurate and robust conclusions, not only must relevant models be used (such as those described in Chapter \ref{cha:theoretical_model}), but high quality numerical simulation and data processing techniques are required. A collection of numerical methods that are used throughout Part II are described in detail in this chapter, with algorithmic implementations of the methods discussed also given in Appendix \ref{app:algorithms}.
 \section{\label{section:RK} Numerical procedures for 2D and 3D solutions}
-	\subsection{\label{section:RK4} Fourth order Runge-Kutta scheme}
-	The classical fourth-order Runge-Kutta formula (RK4) is described equivalently in many texts. We follow the description in \cite{NumericalRecipes}. Let an initial value problem be specified as
-	
+\subsection{\label{section:RK4} Fourth order Runge-Kutta scheme}
+The classical fourth-order Runge-Kutta formula (RK4) is described equivalently in many texts. We follow the description in \cite{NumericalRecipes}. Let an initial value problem be specified as	
 	\begin{align*}
 		\frac{\partial \psi}{\partial t} &= f(\psi,t),\hspace{0.25in}\psi(t_0) = \psi_0.
 	\end{align*}
-
 A step-size, $h>0$, is chosen as the parameter controlling how the solution is advanced over $t$. The scheme for estimating $\psi(t_n)= \psi_n$ is then written
 \begin{equation}
 \begin{split}
@@ -20,11 +18,9 @@ A step-size, $h>0$, is chosen as the parameter controlling how the solution is a
 		\label{eq:rk4}
 \end{split}
 \end{equation}
+An outline derivation of the Runge-Kutta scheme is shown in Appendix \ref{appsection:rk4deriv}.	In all of our relevant calculations the value of $f$ is set as the right hand side of the homogeneous or trapped GPE. The basic structure of our time stepping loop surrounding the RK4 method is shown in Algorithm \ref{algo_rk4} and can be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution. The following section outlines the methods we have implemented to ensure numerical solutions are converged.
 
-
-	An outline derivation of the Runge-Kutta scheme is shown in Appendix \ref{appsection:rk4deriv}.	In all of our relevant calculations the value of $f$ is set as the right hand side of the homogeneous or trapped GPE. The basic structure of our time stepping loop surrounding the RK4 method is shown in Algorithm \ref{algo_rk4} and can be repeated indefinitely to reach any $t>t_0$. The step size for a given set of parameters should be chosen small enough that smaller choices make no quantitative changes to the resulting solution. The following section outlines the methods we have implemented to ensure numerical solutions are converged.
-
-	\subsection{\label{section:numericalParams} Numerical stability and convergence}
+\subsection{\label{section:numericalParams} Numerical stability and convergence}
 	We now investigate numerical parameters which affect the stability of simulated superfluid systems. Our direct aim is to find a suitable discretisation of space and time so that, while simulations complete swiftly, our numerical quantities are converged (they are not sensitive to small changes in computational parameters) and that quantities conserved by the equations of motion are indeed conserved in the computed numerical solutions.
 
 	We begin by estimating $\Delta_x$, the required spatial grid spacing, by considering the width of the vortex core in a homogeneous system, a feature we would like well and accurately visualised in our numerical solutions. Through observation of a singly quantised vortex core solution of Equation \ref{eq_vortexsol} (demonstrated in Figure \ref{fig_vortex}) we observe a core radius of approximately $5\xi$. To ensure the vortex core structure is well resolved we decide to dedicate 10 grid points for a vortex core radius, suggesting a value of $\Delta_x = \xi/2$.
@@ -150,7 +146,6 @@ where $\mathrm{d}\mathbf{l}$ is the line element and $q\in\mathbb{Z}$. Further, 
 \subsection{\label{section:vortexloc} Basic vortex detection method}
 First define a set of curves $C_k$ with each curve lying on points of our numerical grid, so that a single $C_k$ encompasses only a small region of the fluid (ideally, $C_k$ should encompass a region at most the diameter of a vortex core). $\Delta\theta(C_k)$ is then approximated for each $k$ using numerical differentiation (2nd order finite differences) and numerical line integration (trapezium or Simpson rule). If $\Delta\theta(C_k) = 0$ to within numerical accuracy then we determine that the region inside $C_k$ contains no vortices. Otherwise the sign of $\Delta\theta(C_k)$ tells us the polarity of the encompassed vortex. Figure \ref{fig:vort_detect_simple} demonstrates the method by detection of a single vortex.
 
-In principle the result also allows us to calculate the exact charge of a vortex in terms of the quantum of circulation. However, for accurate determination of vortex location the curves $C_k$ must encompass a very small area, contain few grid points, and so accuracy is low. We use only the sign of the $\Delta\theta(C_k)$ so that the integration error makes minimal difference and results in an accurate detection of vortex polarity and location. As multiply charged ($|q|>1$) vortices are unstable (rapidly decaying into several singly charged vortices) there is no significant loss of information in practise.
 \begin{figure}
   \centering
    \begin{tikzpicture}[
@@ -194,6 +189,9 @@ In principle the result also allows us to calculate the exact charge of a vortex
   \end{tikzpicture}
   \caption{\label{fig:vort_detect_simple}The phase for a homogeneous system with a vortex located at (0,0). Also shown is an example set of curves $C_k$ for vortex identification. All $\Delta\theta(C_{k\neq13})\approx0$, and $\Delta\theta(C_{13})>0$. The conclusion is that a positive vortex lies in the region defined by $C_{13}$.}
  \end{figure}
+
+In principle the result also allows us to calculate the exact charge of a vortex in terms of the quantum of circulation. However, for accurate determination of vortex location the curves $C_k$ must encompass a very small area, contain few grid points, and so accuracy is low. We use only the sign of the $\Delta\theta(C_k)$ so that the integration error makes minimal difference and results in an accurate detection of vortex polarity and location. As multiply charged ($|q|>1$) vortices are unstable (rapidly decaying into several singly charged vortices) there is no significant loss of information in practise.
+
 \subsection{\label{section:vortexfield} Visualising vortex location with a vortex field}
 The basic vortex identification method set out in Section \ref{section:vortexloc} is quick to implement and useful when there are few well separated vortices, but one can easily imagine a situation where the method fails. One such case would be two vortices both lying within a single $C_k$ curve; in the case of two similarly charged vortices only a single vortex would be detected or in the case of two oppositely charged vortices potentially none at all! The solution is not always as simple as reducing the size of $C_k$, vortices can be densely packed and there are often too little grid points to make this reasonable.
 
@@ -231,7 +229,7 @@ The algorithm described in this section leads to more accurate vortex counts whe
 
 \subsection{\label{section:gaussianblur} Further improving accuracy with a Gaussian blur}
 When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (containing many vortices and waves), artefacts of the incorrect sign can be introduced by the numerical discretisation, differentiation and integration errors. Faint examples of these artefacts can be seen in Figure \ref{fig:vortexfield} surrounding the two labelled regions. These artefacts are spatially small (on the scale of $\Delta_x$) and so can be corrected by removing all high frequency spatial waves from the vortex field using low-pass filtering (the filter parameters should be chosen to remove waves with wavelength smaller than the size of a vortex core). A common low-pass filter is the Gaussian blur \cite{shapiro2001computer}, applied using a convolution. The Gaussian blur algorithm is described in Algorithm \ref{algo_gaussconv} and the result of applying the algorithm to the vortex field is shown in Figure \ref{fig:vortexfieldsmooth}. Note how the incorrectly signed artefacts surrounding the detected vortex regions are now removed.
-\begin{figure}[!ht]
+\begin{figure}
   \centering
    \begin{tikzpicture}
       \begin{axis}[
@@ -258,7 +256,7 @@ When using Algorithm \ref{algo_calcvortexfield} in `messy' wavefunctions (contai
 A by-product of applying a low-pass filter to the vortex field is that sharp edges in structures are blurred and spread out. To identify vortex locations a threshold function is therefore used before performing the bwlabel algorithm, i.e vortices are identified when $|\Delta\theta(C_{[i,j]})| > \Delta_{\rm th}$, where $\Delta_{\rm th}>0$ is some threshold. $\Delta_{\rm th}$ can be tweaked to make the vortex detection more or less sensitive (for either detecting vortices more easily in messy systems, or to ignore weak spurious signals in the vortex field) and in general will vary for each system.
 \subsection{\label{section:ghostvortex} Avoiding `ghost vortices'}
 A common problem when detecting vortices is the prevalence of invalid or uninteresting phase defects inside obstacles or when considering trapped condensates. In areas where the density is exactly zero the system phase becomes undefined. Depending on how the simulation is implemented these areas may fill with small numerical noise and cause many singularities to be detected. A similar phenomenon occurs in areas of near-zero density; well-defined singularities in the phase form but with an ill-defined vortex core in the density \cite{tsubota_kasamatsu_02}. Examples of these vortices are shown in the low density regions of Figure \ref{fig:ghostvortex}. As these singularities carry negligible angular momentum and energy they are of no interest and are termed `ghost vortices'.
-\begin{figure}[!ht]
+\begin{figure}
   \centering
    \begin{tikzpicture}
       \begin{axis}[
@@ -299,8 +297,7 @@ A common problem when detecting vortices is the prevalence of invalid or uninter
 
 A simple way to remove ghost vortices is to use a mask to hide vortices found in low-density regions in trapped systems and inside obstacles. While on the one hand it is easy to define a mask using the TF radius or considering where $V_{\rm trap} + V_{\rm obj}>\mu$, masks are quite arbitrary in nature and an overzealous mask may hide details. Additionally, any condensate with certain excitations such a breathing mode or centre of mass oscillation will periodically extend beyond a hard coded mask.
 
-An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
-\begin{figure}[!ht]
+\begin{figure}
 \begin{center}
 \begin{minipage}{0.8\linewidth}%
    \begin{tikzpicture}
@@ -372,6 +369,8 @@ An alternative method to avoid identifying ghost vortices presents itself when i
   \caption{Identifying vortices within a trapped rotating condensate with $\Omega=0.7$, $\tilde{g}=2000$ and $\tilde{\mu}=25.27$. (a) The smoothed vortex field using Algorithm \ref{algo_calcvortexfield}, (b) the smoothed vortex field using Algorithm \ref{algo_calcvortexfielddens}, (c) the system density with vortices identified using Algorithm \ref{algo_calcvortexfield}, and (d) the system density with vortices identified using Algorithm \ref{algo_calcvortexfielddens}. The ghost vortices seen in (a,c) are removed in (b,d).\label{fig:filtervortexlattice}}
  \end{figure}
 
+An alternative method to avoid identifying ghost vortices presents itself when implementing Algorithm \ref{algo_calcvortexfield}. The vortex field can be multiplied by the wavefunction density at every point {\it before} performing the Gaussian convolution step. The result is that in low-density areas the vortex field becomes completely zero and singularities in this region are no longer identified as vortices. At the centre of vortex cores the vortex field also goes to zero. However, enough vortex information remains in the vortex field in the vicinity of the vortex cores that vortices in high-density regions are still identified accurately after the Gaussian convolution. As before, the threshold value $\Delta_{\rm th}$ controls the sensitivity of this algorithm, in particular for detecting vortices in the low density regions of the condensate. Algorithm \ref{algo_calcvortexfielddens} describes this method in further detail and Figure \ref{fig:filtervortexlattice} shows the vortex field with and without the added step of multiplying by the density, demonstrating that the ghost vortices detected when using Algorithm \ref{algo_calcvortexfield} are indeed removed when using Algorithm \ref{algo_calcvortexfielddens}.
+
 \section{\label{section:vortexclustering} Quantifying vortex clustering in 2D}
 With the ability to detect vortex polarity and locations in 2D, we can begin to better understand vortex distribution and statistics in simulations. In this section we describe the various methods of quantifying vortex distribution, both simple and complex.
   \subsection{\label{section:vortexcounting} Vortex counting}
@@ -411,7 +410,7 @@ With the ability to detect vortex polarity and locations in 2D, we can begin to 
     \hat{L}(s) = \sqrt{\frac{\hat{K}(s)}{\pi}}.
   \end{equation}
   $L(s)$ has the useful properties that under CSR the variance is approximately constant \cite{ripley_1979}, which can be used as a secondary check, and $L(s) - s$ should be approximately zero for all $s$. Deviations from zero allow us to immediately identify in what way, as well as at what scale, spatial homogeneity is broken in the dataset.
-\begin{figure}[!ht]
+\begin{figure}
   \begin{minipage}{0.5\linewidth}%
   \begin{tikzpicture}[domain=-5:5]
     \begin{axis}[xlabel={$x$}, ylabel={$y$},
@@ -497,7 +496,7 @@ The algorithm we use is the Recursive Cluster Algorithm (RCA) developed by Reeve
 \end{itemize}
 The rules are applied repeatedly in order until no more vortices can be added to the dipole or cluster groups. Any remaining vortices are labelled as ``free vortices''. An implementation of the algorithm, compatible with the output of the vortex detection algorithms in Section \ref{section:vortexidentifying}, is described in detail in Algorithm \ref{algo_rca}. A sample RCA decomposition of 200 randomly placed points with random polarity is demonstrated in Figure \ref{fig:rca}. It can be seen that the algorithm picks out the chance clusters of like-signed points. 
 
-\begin{figure}[!ht]
+\begin{figure}
 \centering
   \begin{tikzpicture}[domain=-5:5]
     \begin{axis}[xlabel={$x$}, ylabel={$y$},
@@ -534,7 +533,7 @@ The first step in the particle linking method described here is to perform frame
 As the simulation develops, the number of vortices will change and so trajectories will necessary end early or begin at later times. A threshold value, $\Delta_v$, used in conjunction with the Hungarian algorithm controls if a track ends. If the Euclidean distance between a pair of vortices exceeds $\Delta_v$, it is assumed they cannot possibly be the same vortex, and they are not linked. The algorithm continues in fashion, linking pairs of vortices frame-to-frame until the end of the simulation is reached.
 
 Sometimes, due to numerical error or simulation dynamics, a vortex will not be detected for one or more time points before reappearing. The particle linking algorithm must take this into account, aiming to assign each vortex only a single trajectory. The second step in the method is to iterate once more through the data and investigate the ends of the trajectories. If a trajectory beginning is found close (once again taking into account euclidean distance and vortex charge) to the end of a previous trajectory within a certain number of time points, a link is made joining the two trajectories. Once again a threshold value compared to the distance between points in space and time. Should the trajectory ends be too far apart, it is assumed they are not the same vortex and remain unlinked. Figure \ref{fig:vortextracks} demonstrates the building of vortex trajectories in a trapped condensate.
-\begin{figure}[!ht]
+\begin{figure}
 \begin{center}
    \begin{tikzpicture}
       \begin{axis}[ylabel near ticks,xlabel near ticks,
@@ -579,7 +578,8 @@ A problem with long-time numerical simulations is the effects of the finite boun
 A particularly problematic example of this kind of situation is encountered often in the latter sections of this thesis: a simulation working in the moving frame with vortices nucleated via a potential obstacle. This system is of particular note because vortices that have fallen downstream wrap around the domain and re-approach the potential obstacle, modifying the nucleation dynamics and the drag force felt by the obstacle.
 
 The ideal solution would be to implement so-called {\it absorbing} boundary conditions. These boundaries allow waves and vortices to pass by, without any reflections, as if they had travelled through the boundary to infinity. An approximation for absorbing boundary conditions in a homogeneous GPE has been used to study flows patterns behind an obstacle \cite{reeves_2015}. Thin fringe areas are added near the outer edges of the numerical domain. A small dissipation $\gamma \approx 0.1$ is applied in this region, ramping up smoothly from $\gamma=0$ in the bulk to its maximal value in the fringe area. Inside the fringe region, waves and vortex pairs lose energy; the amplitude of waves decay and opposite-signed vortices move towards one-another so as to annihilate.
-\begin{figure}[!ht]
+
+\begin{figure}
 \begin{center}
    \begin{tikzpicture}
       \begin{axis}[ylabel near ticks,xlabel near ticks,

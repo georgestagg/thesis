@@ -53,34 +53,101 @@
 \contentsline {section}{\numberline {3.1} Numerical procedures for 2D and 3D solutions}{39}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1} Fourth order Runge-Kutta scheme}{39}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2} Numerical stability and convergence}{40}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2} Identifying vortices}{42}{section.3.2}
+\contentsline {section}{\numberline {3.2} Identifying vortices}{41}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1} Basic vortex detection method}{42}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2} Visualising vortex location with a vortex field}{43}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3} Further improving accuracy with a Gaussian blur}{45}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4} Avoiding `ghost vortices'}{46}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3} Quantifying vortex clustering in 2D}{48}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1} Vortex counting}{48}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2.3} Further improving accuracy with a Gaussian blur}{44}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4} Avoiding `ghost vortices'}{45}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3} Quantifying vortex clustering in 2D}{46}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1} Vortex counting}{47}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2} Ripley's $K$ and Besag's $L$ functions }{48}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3} Recursive Cluster Algorithm }{50}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4} Building vortex trajectories}{52}{section.3.4}
-\contentsline {section}{\numberline {3.5} Removing vortices with phase unwinding}{52}{section.3.5}
+\contentsline {section}{\numberline {3.4} Building vortex trajectories}{51}{section.3.4}
+\contentsline {section}{\numberline {3.5} Removing vortices with phase unwinding}{53}{section.3.5}
 \contentsline {section}{\numberline {3.6} Quasi-Condensate Visualisation}{54}{section.3.6}
 \contentsline {section}{\numberline {3.7} Evaluation of vortex line-length in 3D}{55}{section.3.7}
-\contentsline {part}{II\hspace {1em}Appendix}{57}{part.2}
-\contentsline {chapter}{\numberline {A}Detailed Derivations}{59}{appendix.A}
-\contentsline {section}{\numberline {A.1} Critical temperature and condensate fraction for a non-interacting Bose gas}{59}{section.A.1}
-\contentsline {section}{\numberline {A.2} Derivation of the Runge-Kutta scheme}{60}{section.A.2}
-\contentsline {section}{\numberline {A.3} Derivation of the Gross-Pitaevskii Equation}{63}{section.A.3}
-\contentsline {section}{\numberline {A.4} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{68}{section.A.4}
-\contentsline {chapter}{\numberline {B}Important Quantities}{71}{appendix.B}
-\contentsline {section}{\numberline {B.1} Energy}{71}{section.B.1}
-\contentsline {section}{\numberline {B.2} Force}{72}{section.B.2}
-\contentsline {section}{\numberline {B.3} Healing Length}{72}{section.B.3}
-\contentsline {section}{\numberline {B.4} Speed of sound}{73}{section.B.4}
-\contentsline {chapter}{\numberline {C}Algorithms}{75}{appendix.C}
-\contentsline {section}{\numberline {C.1} Density/Phase Visualisation Technique}{75}{section.C.1}
-\contentsline {subsubsection}{Plotting Algorithm}{75}{section*.30}
-\contentsline {subsubsection}{Colour space conversion - {\tt rgb} to {\tt hsl}}{76}{section*.31}
-\contentsline {subsubsection}{Colour space conversion - {\tt hsl} to {\tt rgb}}{76}{section*.32}
-\contentsline {section}{\numberline {C.2} Other Numerical Algorithms}{77}{section.C.2}
-\contentsline {chapter}{Bibliography}{84}{algocf.9}
+\contentsline {part}{II\hspace {1em}Numerical Studies}{57}{part.2}
+\contentsline {chapter}{\numberline {4}Classical-like wakes behind elliptical obstacles in Bose-Einstein condensates}{59}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{59}{section.4.1}
+\contentsline {section}{\numberline {4.2}Model}{60}{section.4.2}
+\contentsline {section}{\numberline {4.3}Two-Dimensional Wakes}{61}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Vortex emission from circular obstacles}{61}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Vortex emission from elliptical obstacles}{62}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Formation of the B\'enard--von K\'arm\'an vortex street}{64}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Critical Velocity past an Elliptical Obstacle}{65}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Role of Obstacle Size and Ellipticity on the Wake}{67}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Vortex Clustering}{67}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Three-Dimensional Wakes}{70}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Symmetric Wakes}{70}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Asymmetric Wakes}{71}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Conclusions}{72}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}A `superfluid Reynolds number'}{73}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {5}Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Model}{76}{section.5.2}
+\contentsline {section}{\numberline {5.3}Number of Vortices Generated}{77}{section.5.3}
+\contentsline {section}{\numberline {5.4}Stages of the Condensate Evolution}{78}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Vortex Nucleation and Wake Formation}{79}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Vortex Randomization}{80}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Vortex Decay}{81}{subsection.5.4.3}
+\contentsline {subsubsection}{Kwon's decay model}{83}{section*.46}
+\contentsline {subsubsection}{Modified decay model}{84}{section*.47}
+\contentsline {section}{\numberline {5.5}Crescent-Shaped Density Structures}{86}{section.5.5}
+\contentsline {section}{\numberline {5.6}Vortex Generation via an Elliptical Obstacle}{87}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusions}{88}{section.5.7}
+\contentsline {chapter}{\numberline {6}Quasi-classical turbulence and the critical velocity in a quenched Bose gas}{91}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{91}{section.6.1}
+\contentsline {section}{\numberline {6.2}Classical field method}{93}{section.6.2}
+\contentsline {section}{\numberline {6.3}Formation of the turbulent vortex tangle}{95}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Defining the quasi-condensate}{95}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Approximate temperature of the gas}{97}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Energy scales of the vortex tangle}{98}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Relaxation of the vortex tangle}{100}{section.6.4}
+\contentsline {section}{\numberline {6.5}Moving obstacle at finite-temperature}{103}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Critical velocity for vortex nucleation}{103}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Vortex nucleation pattern}{105}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}Conclusions}{109}{section.6.6}
+\contentsline {chapter}{\numberline {7}Flow past a rough surface}{111}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{111}{section.7.1}
+\contentsline {section}{\numberline {7.2}Method}{112}{section.7.2}
+\contentsline {section}{\numberline {7.3}Two-dimensional results}{115}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Vortex nucleation}{116}{subsection.7.3.1}
+\contentsline {subsubsection}{Early-time vortex nucleation}{116}{section*.68}
+\contentsline {subsubsection}{Secondary clusters}{117}{section*.71}
+\contentsline {subsubsection}{Truncated surfaces}{117}{section*.74}
+\contentsline {subsection}{\numberline {7.3.2}Two-dimensional boundary layer}{119}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}Three-dimensional results}{120}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Vortex nucleation from the surface}{121}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Three-dimensional boundary layer}{122}{subsection.7.4.2}
+\contentsline {subsubsection}{Vortex line-length density}{123}{section*.79}
+\contentsline {subsection}{\numberline {7.4.3}Vortex ring generation through the vortex mill mechanism}{124}{subsection.7.4.3}
+\contentsline {subsubsection}{Velocity profile}{125}{section*.82}
+\contentsline {section}{\numberline {7.5}Conclusions}{126}{section.7.5}
+\contentsline {chapter}{\numberline {8}Conclusions and future work}{129}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusions}{129}{section.8.1}
+\contentsline {subsubsection}{Classical-like wakes behind elliptical obstacles in Bose-Einstein condensates}{129}{section*.84}
+\contentsline {subsubsection}{Decay of 2D quantum turbulence in a highly oblate Bose-Einstein condensate}{130}{section*.85}
+\contentsline {subsubsection}{Quasi-classical turbulence and the critical velocity in a quenched Bose gas}{130}{section*.86}
+\contentsline {subsubsection}{Simulating the rough surface of a ``Floppy Wire''}{131}{section*.87}
+\contentsline {section}{\numberline {8.2}Future work}{131}{section.8.2}
+\contentsline {subsubsection}{Other quantum analogues of classical-like wakes}{131}{section*.88}
+\contentsline {subsubsection}{Finite temperature trapped Bose gas}{131}{section*.90}
+\contentsline {subsubsection}{Exploring the superfluid boundary layer}{132}{section*.91}
+\contentsline {part}{III\hspace {1em}Appendix}{133}{part.3}
+\contentsline {chapter}{\numberline {A}Detailed Derivations}{135}{appendix.A}
+\contentsline {section}{\numberline {A.1} Critical temperature and condensate fraction for a non-interacting Bose gas}{135}{section.A.1}
+\contentsline {section}{\numberline {A.2} Derivation of the Runge-Kutta scheme}{136}{section.A.2}
+\contentsline {section}{\numberline {A.3} Derivation of the Gross-Pitaevskii Equation}{139}{section.A.3}
+\contentsline {section}{\numberline {A.4} Derivation of the Hydrodynamic Equations via the Madelung Transformation}{144}{section.A.4}
+\contentsline {chapter}{\numberline {B}Important Quantities}{147}{appendix.B}
+\contentsline {section}{\numberline {B.1} Energy}{147}{section.B.1}
+\contentsline {section}{\numberline {B.2} Force}{148}{section.B.2}
+\contentsline {section}{\numberline {B.3} Healing Length}{148}{section.B.3}
+\contentsline {section}{\numberline {B.4} Speed of sound}{149}{section.B.4}
+\contentsline {chapter}{\numberline {C}Algorithms}{151}{appendix.C}
+\contentsline {section}{\numberline {C.1} Density/Phase Visualisation Technique}{151}{section.C.1}
+\contentsline {subsubsection}{Plotting Algorithm}{151}{section*.92}
+\contentsline {subsubsection}{Colour space conversion - {\tt rgb} to {\tt hsl}}{152}{section*.93}
+\contentsline {subsubsection}{Colour space conversion - {\tt hsl} to {\tt rgb}}{152}{section*.94}
+\contentsline {section}{\numberline {C.2} Other Numerical Algorithms}{153}{section.C.2}
+\contentsline {chapter}{Bibliography}{160}{algocf.9}
